@@ -1,0 +1,173 @@
+/* This file is generated, do not edit! */
+package unreal;
+@:pythonImport("unreal", "TextureGroup") extern class TextureGroup {
+	static public var TEXTUREGROUP_16_BIT_DATA : Dynamic;
+	static public var TEXTUREGROUP_8_BIT_DATA : Dynamic;
+	static public var TEXTUREGROUP_BOKEH : Dynamic;
+	static public var TEXTUREGROUP_CHARACTER : Dynamic;
+	static public var TEXTUREGROUP_CHARACTER_NORMAL_MAP : Dynamic;
+	static public var TEXTUREGROUP_CHARACTER_SPECULAR : Dynamic;
+	static public var TEXTUREGROUP_CINEMATIC : Dynamic;
+	static public var TEXTUREGROUP_COLOR_LOOKUP_TABLE : Dynamic;
+	static public var TEXTUREGROUP_EFFECTS : Dynamic;
+	static public var TEXTUREGROUP_EFFECTS_NOT_FILTERED : Dynamic;
+	static public var TEXTUREGROUP_HIERARCHICAL_LOD : Dynamic;
+	static public var TEXTUREGROUP_IES_LIGHT_PROFILE : Dynamic;
+	static public var TEXTUREGROUP_IMPOSTOR : Dynamic;
+	static public var TEXTUREGROUP_IMPOSTOR_NORMAL_DEPTH : Dynamic;
+	static public var TEXTUREGROUP_LIGHTMAP : Dynamic;
+	static public var TEXTUREGROUP_MOBILE_FLATTENED : Dynamic;
+	static public var TEXTUREGROUP_PIXELS2D : Dynamic;
+	static public var TEXTUREGROUP_PROC_BUILDING_FACE : Dynamic;
+	static public var TEXTUREGROUP_PROC_BUILDING_LIGHT_MAP : Dynamic;
+	static public var TEXTUREGROUP_PROJECT01 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT02 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT03 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT04 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT05 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT06 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT07 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT08 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT09 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT10 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT11 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT12 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT13 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT14 : Dynamic;
+	static public var TEXTUREGROUP_PROJECT15 : Dynamic;
+	static public var TEXTUREGROUP_RENDER_TARGET : Dynamic;
+	static public var TEXTUREGROUP_SHADOWMAP : Dynamic;
+	static public var TEXTUREGROUP_SKYBOX : Dynamic;
+	static public var TEXTUREGROUP_TERRAIN_HEIGHTMAP : Dynamic;
+	static public var TEXTUREGROUP_TERRAIN_WEIGHTMAP : Dynamic;
+	static public var TEXTUREGROUP_UI : Dynamic;
+	static public var TEXTUREGROUP_VEHICLE : Dynamic;
+	static public var TEXTUREGROUP_VEHICLE_NORMAL_MAP : Dynamic;
+	static public var TEXTUREGROUP_VEHICLE_SPECULAR : Dynamic;
+	static public var TEXTUREGROUP_WEAPON : Dynamic;
+	static public var TEXTUREGROUP_WEAPON_NORMAL_MAP : Dynamic;
+	static public var TEXTUREGROUP_WEAPON_SPECULAR : Dynamic;
+	static public var TEXTUREGROUP_WORLD : Dynamic;
+	static public var TEXTUREGROUP_WORLD_NORMAL_MAP : Dynamic;
+	static public var TEXTUREGROUP_WORLD_SPECULAR : Dynamic;
+	/**
+		Metaclass type for all UE4 exposed enum instances
+	**/
+	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	/**
+		Implement delattr(self, name).
+	**/
+	public function __delattr__(name:Dynamic):Dynamic;
+	/**
+		Default dir() implementation.
+	**/
+	public function __dir__():Dynamic;
+	static public var __doc__ : Dynamic;
+	/**
+		Return self==value.
+	**/
+	public function __eq__(value:Dynamic):Dynamic;
+	/**
+		Default object formatter.
+	**/
+	public function __format__(format_spec:Dynamic):Dynamic;
+	/**
+		Return self>=value.
+	**/
+	public function __ge__(value:Dynamic):Dynamic;
+	/**
+		Return getattr(self, name).
+	**/
+	public function __getattribute__(name:Dynamic):Dynamic;
+	/**
+		Return self>value.
+	**/
+	public function __gt__(value:Dynamic):Dynamic;
+	/**
+		Return hash(self).
+	**/
+	public function __hash__():Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
+		This method is called when a class is subclassed.
+		
+		The default implementation does nothing. It may be
+		overridden to extend subclasses.
+	**/
+	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	/**
+		Return self<=value.
+	**/
+	public function __le__(value:Dynamic):Dynamic;
+	/**
+		Return self<value.
+	**/
+	public function __lt__(value:Dynamic):Dynamic;
+	/**
+		Return self!=value.
+	**/
+	public function __ne__(value:Dynamic):Dynamic;
+	/**
+		Create and return a new object.  See help(type) for accurate signature.
+	**/
+	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Helper for pickle.
+	**/
+	public function __reduce__():Dynamic;
+	/**
+		Helper for pickle.
+	**/
+	public function __reduce_ex__(protocol:Dynamic):Dynamic;
+	/**
+		Return repr(self).
+	**/
+	public function __repr__():Dynamic;
+	/**
+		Implement setattr(self, name, value).
+	**/
+	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
+	/**
+		Size of object in memory, in bytes.
+	**/
+	public function __sizeof__():Dynamic;
+	/**
+		Return str(self).
+	**/
+	public function __str__():Dynamic;
+	/**
+		Abstract classes can override this to customize issubclass().
+		
+		This is invoked early on by abc.ABCMeta.__subclasscheck__().
+		It should return True, False or NotImplemented.  If it returns
+		NotImplemented, the normal algorithm is used.  Otherwise, it
+		overrides the normal algorithm (and the outcome is cached).
+	**/
+	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public var _wrapper_meta_data : Dynamic;
+	/**
+		X.cast(object) -> enum -- cast the given object to this Unreal enum type
+	**/
+	@:native("cast")
+	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	/**
+		The name of this enum entry
+	**/
+	public var name : Dynamic;
+	/**
+		X.static_enum() -> Enum -- get the Unreal enum of this type
+	**/
+	public function static_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	/**
+		The numeric value of this enum entry
+	**/
+	public var value : Dynamic;
+}
