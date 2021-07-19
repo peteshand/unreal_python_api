@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_blackboard_value(node_owner, key) -> None
 		Resets indicated value to "not set" value, based on values type
@@ -122,7 +122,7 @@ package unreal;
 		    node_owner (BTNode): 
 		    key (BlackboardKeySelector):
 	**/
-	public function clear_blackboard_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_blackboard_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_blackboard_value_as_vector(node_owner, key) -> None
 		(DEPRECATED) Use ClearBlackboardValue instead
@@ -132,11 +132,11 @@ package unreal;
 		    node_owner (BTNode): 
 		    key (BlackboardKeySelector):
 	**/
-	public function clear_blackboard_value_as_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_blackboard_value_as_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'get_blackboard' was renamed to 'get_owners_blackboard'.
 	**/
-	public function get_blackboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_actor(node_owner, key) -> Actor
 		Get Blackboard Value as Actor
@@ -148,7 +148,7 @@ package unreal;
 		Returns:
 		    Actor:
 	**/
-	public function get_blackboard_value_as_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_bool(node_owner, key) -> bool
 		Get Blackboard Value as Bool
@@ -160,7 +160,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function get_blackboard_value_as_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_class(node_owner, key) -> type(Class)
 		Get Blackboard Value as Class
@@ -172,7 +172,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_blackboard_value_as_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_enum(node_owner, key) -> uint8
 		Get Blackboard Value as Enum
@@ -184,7 +184,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	public function get_blackboard_value_as_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_float(node_owner, key) -> float
 		Get Blackboard Value as Float
@@ -196,7 +196,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_blackboard_value_as_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_int(node_owner, key) -> int32
 		Get Blackboard Value as Int
@@ -208,7 +208,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_blackboard_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_name(node_owner, key) -> Name
 		Get Blackboard Value as Name
@@ -220,7 +220,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function get_blackboard_value_as_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_object(node_owner, key) -> Object
 		Get Blackboard Value as Object
@@ -232,7 +232,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function get_blackboard_value_as_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_rotator(node_owner, key) -> Rotator
 		Get Blackboard Value as Rotator
@@ -244,7 +244,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_blackboard_value_as_rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_string(node_owner, key) -> str
 		Get Blackboard Value as String
@@ -256,7 +256,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_blackboard_value_as_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard_value_as_vector(node_owner, key) -> Vector
 		Get Blackboard Value as Vector
@@ -268,7 +268,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_blackboard_value_as_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard_value_as_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -276,7 +276,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -311,7 +311,7 @@ package unreal;
 		Returns:
 		    BehaviorTreeComponent:
 	**/
-	public function get_owner_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_owner_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_owners_blackboard(node_owner) -> BlackboardComponent
 		Get Owners Blackboard
@@ -322,7 +322,7 @@ package unreal;
 		Returns:
 		    BlackboardComponent:
 	**/
-	public function get_owners_blackboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_owners_blackboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_path_name() -> str -- get the path name of this instance
 	**/
@@ -352,7 +352,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (bool):
 	**/
-	public function set_blackboard_value_as_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_class(node_owner, key, value) -> None
 		Set Blackboard Value as Class
@@ -362,7 +362,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (type(Class)):
 	**/
-	public function set_blackboard_value_as_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_enum(node_owner, key, value) -> None
 		Set Blackboard Value as Enum
@@ -372,7 +372,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (uint8):
 	**/
-	public function set_blackboard_value_as_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_float(node_owner, key, value) -> None
 		Set Blackboard Value as Float
@@ -382,7 +382,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (float):
 	**/
-	public function set_blackboard_value_as_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_int(node_owner, key, value) -> None
 		Set Blackboard Value as Int
@@ -392,7 +392,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (int32):
 	**/
-	public function set_blackboard_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_name(node_owner, key, value) -> None
 		Set Blackboard Value as Name
@@ -402,7 +402,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (Name):
 	**/
-	public function set_blackboard_value_as_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_object(node_owner, key, value) -> None
 		Set Blackboard Value as Object
@@ -412,7 +412,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (Object):
 	**/
-	public function set_blackboard_value_as_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_rotator(node_owner, key, value) -> None
 		Set Blackboard Value as Rotator
@@ -422,7 +422,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (Rotator):
 	**/
-	public function set_blackboard_value_as_rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_string(node_owner, key, value) -> None
 		Set Blackboard Value as String
@@ -432,7 +432,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (str):
 	**/
-	public function set_blackboard_value_as_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_blackboard_value_as_vector(node_owner, key, value) -> None
 		Set Blackboard Value as Vector
@@ -442,7 +442,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (Vector):
 	**/
-	public function set_blackboard_value_as_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_blackboard_value_as_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -460,11 +460,11 @@ package unreal;
 		    node_owner (BTNode): 
 		    owning_actor (Actor):
 	**/
-	public function start_using_external_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function start_using_external_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.stop_using_external_event(node_owner) -> None
 		Save variables marked as "instance memory" and clear owning actor
@@ -473,5 +473,5 @@ package unreal;
 		Args:
 		    node_owner (BTNode):
 	**/
-	public function stop_using_external_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function stop_using_external_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

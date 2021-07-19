@@ -70,7 +70,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Implement iter(self).
 	**/
@@ -139,13 +139,13 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	static public var _wrapper_meta_data : Dynamic;
 	/**
 		X.cast(type, obj) -> FixedArray -- cast the given object to this Unreal fixed-array type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.copy() -> FixedArray -- copy this Unreal fixed-array
 	**/

@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -119,7 +119,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_currency_base(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_currency_base(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_currency_float(value, rounding_mode, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324, minimum_fractional_digits=0, maximum_fractional_digits=3, currency_code="") -> Text
 		Converts a passed in float to a text formatted as a currency
@@ -138,7 +138,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_currency_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_currency_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_currency_integer(value, rounding_mode, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324, minimum_fractional_digits=0, maximum_fractional_digits=3, currency_code="") -> Text
 		Converts a passed in integer to a text formatted as a currency
@@ -157,7 +157,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_currency_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_currency_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_date_date_time(date_time) -> Text
 		Converts a passed in date & time to a text, formatted as a date using an invariant timezone. This will use the given date & time as-is, so it's assumed to already be in the correct timezone.
@@ -168,7 +168,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_date_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_date_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_date_time_date_time(in_) -> Text
 		Converts a passed in date & time to a text, formatted as a date & time using an invariant timezone. This will use the given date & time as-is, so it's assumed to already be in the correct timezone.
@@ -179,7 +179,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_date_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_date_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_percent_float(value, rounding_mode, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324, minimum_fractional_digits=0, maximum_fractional_digits=3) -> Text
 		Converts a passed in float to a text, formatted as a percent
@@ -197,7 +197,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_percent_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_percent_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_time_date_time(in_) -> Text
 		Converts a passed in date & time to a text, formatted as a time using an invariant timezone. This will use the given date & time as-is, so it's assumed to already be in the correct timezone.
@@ -208,7 +208,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_time_zone_date_date_time(date_time, time_zone="") -> Text
 		Converts a passed in date & time to a text, formatted as a date using the given timezone (default is the local timezone). This will convert the given date & time from UTC to the given timezone (taking into account DST).
@@ -220,7 +220,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_time_zone_date_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_time_zone_date_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_time_zone_date_time_date_time(date_time, time_zone="") -> Text
 		Converts a passed in date & time to a text, formatted as a date & time using the given timezone (default is the local timezone). This will convert the given date & time from UTC to the given timezone (taking into account DST).
@@ -232,7 +232,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_time_zone_date_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_time_zone_date_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_time_zone_time_date_time(date_time, time_zone="") -> Text
 		Converts a passed in date & time to a text, formatted as a time using the given timezone (default is the local timezone). This will convert the given date & time from UTC to the given timezone (taking into account DST).
@@ -244,7 +244,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_time_zone_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_time_zone_time_date_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_timespan_timespan(timespan) -> Text
 		Converts a passed in time span to a text, formatted as a time span
@@ -255,7 +255,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function as_timespan_timespan(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_timespan_timespan(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -264,7 +264,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_bool_to_text(bool) -> Text
 		Converts a boolean value to formatted text, either 'true' or 'false'
@@ -275,7 +275,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_bool_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_bool_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_byte_to_text(value) -> Text
 		Converts a byte value to formatted text
@@ -286,7 +286,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_byte_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_byte_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_color_to_text(color) -> Text
 		Converts a linear color value to localized formatted text, in the form '(R=,G=,B=,A=)'
@@ -297,7 +297,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_color_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_color_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_float_to_text(value, rounding_mode, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324, minimum_fractional_digits=0, maximum_fractional_digits=3) -> Text
 		Converts a passed in float to text based on formatting options
@@ -315,7 +315,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_float_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_float_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_int64_to_text(value, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324) -> Text
 		Converts a passed in integer to text based on formatting options
@@ -330,7 +330,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_int64_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_int64_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_int_to_text(value, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324) -> Text
 		Converts a passed in integer to text based on formatting options
@@ -345,7 +345,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_int_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_int_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_name_to_text(name) -> Text
 		Converts Name to culture invariant text
@@ -356,7 +356,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_name_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_name_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_object_to_text(obj) -> Text
 		Converts a UObject value to culture invariant text by calling the object's GetName method
@@ -367,7 +367,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_object_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_object_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_rotator_to_text(rot) -> Text
 		Converts a rotator value to localized formatted text, in the form 'P= Y= R='
@@ -378,7 +378,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_rotator_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_rotator_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_string_to_text(string) -> Text
 		Converts string to culture invariant text. Use Format or Make Literal Text to create localizable text
@@ -389,7 +389,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_string_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_text_to_string(text) -> str
 		Converts localizable text to the string
@@ -400,7 +400,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_text_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_text_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_transform_to_text(trans) -> Text
 		Converts a transform value to localized formatted text, in the form 'Translation: X= Y= Z= Rotation: P= Y= R= Scale: X= Y= Z='
@@ -411,7 +411,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_transform_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_transform_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_vector2d_to_text(vec) -> Text
 		Converts a vector2d value to localized formatted text, in the form 'X= Y='
@@ -422,7 +422,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_vector2d_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_vector2d_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_vector_to_text(vec) -> Text
 		Converts a vector value to localized formatted text, in the form 'X= Y= Z='
@@ -433,7 +433,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function conv_vector_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_vector_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_ignore_case_text_text(a, b) -> bool
 		Returns true if A and B are linguistically equal (A == B), ignoring case.
@@ -445,7 +445,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_ignore_case_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_ignore_case_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_text_text(a, b) -> bool
 		Returns true if A and B are linguistically equal (A == B).
@@ -457,7 +457,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_text_in_localization_table(namespace, key) -> Text or None
 		Attempts to find existing Text using the representation found in the loc tables for the specified namespace and key.
@@ -471,7 +471,7 @@ package unreal;
 		
 		    out_text (Text):
 	**/
-	public function find_text_in_localization_table(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_text_in_localization_table(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -479,7 +479,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -491,7 +491,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function get_empty_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_empty_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_fname() -> FName -- get the name of this instance
 	**/
@@ -538,7 +538,7 @@ package unreal;
 		
 		    error_message (Text):
 	**/
-	public function is_polyglot_data_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_polyglot_data_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -554,7 +554,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_ignore_case_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_ignore_case_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.not_equal_text_text(a, b) -> bool
 		Returns true if A and B are linguistically not equal (A != B).
@@ -566,7 +566,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_text_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.polyglot_data_to_text(polyglot_data) -> Text
 		Get the text instance created from this polyglot data.
@@ -577,7 +577,7 @@ package unreal;
 		Returns:
 		    Text: The text instance, or an empty text if the data is invalid.
 	**/
-	public function polyglot_data_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function polyglot_data_to_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -593,7 +593,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.string_table_id_and_key_from_text(text) -> (out_table_id=Name, out_key=str) or None
 		Attempts to find the String Table ID and key used by the given text.
@@ -608,7 +608,7 @@ package unreal;
 		
 		    out_key (str):
 	**/
-	public function string_table_id_and_key_from_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function string_table_id_and_key_from_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_from_string_table(table_id, key) -> Text
 		Attempts to create a text instance from a string table ID and key.
@@ -621,7 +621,7 @@ package unreal;
 		Returns:
 		    Text: The found text, or a dummy text if the entry could not be found.
 	**/
-	public function text_from_string_table(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_from_string_table(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_is_culture_invariant(text) -> bool
 		Returns true if text is culture invariant.
@@ -632,7 +632,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function text_is_culture_invariant(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_is_culture_invariant(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_is_empty(text) -> bool
 		Returns true if text is empty.
@@ -643,7 +643,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function text_is_empty(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_is_empty(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_is_from_string_table(text) -> bool
 		Returns true if the given text is referencing a string table.
@@ -654,7 +654,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function text_is_from_string_table(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_is_from_string_table(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_is_transient(text) -> bool
 		Returns true if text is transient.
@@ -665,7 +665,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function text_is_transient(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_is_transient(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_to_lower(text) -> Text
 		Transforms the text to lowercase in a culture correct way.
@@ -677,7 +677,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function text_to_lower(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_to_lower(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_to_upper(text) -> Text
 		Transforms the text to uppercase in a culture correct way.
@@ -689,7 +689,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function text_to_upper(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_to_upper(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_trim_preceding(text) -> Text
 		Removes whitespace characters from the front of the text.
@@ -700,7 +700,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function text_trim_preceding(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_trim_preceding(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_trim_preceding_and_trailing(text) -> Text
 		Removes whitespace characters from the front and end of the text.
@@ -711,7 +711,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function text_trim_preceding_and_trailing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_trim_preceding_and_trailing(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.text_trim_trailing(text) -> Text
 		Removes trailing whitespace characters.
@@ -722,5 +722,5 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function text_trim_trailing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function text_trim_trailing(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

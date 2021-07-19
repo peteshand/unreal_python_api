@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -147,7 +147,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.change_polygons_vertex_instances(vertex_instances_for_polygons) -> None
 		Change Polygons Vertex Instances
@@ -517,7 +517,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_edge_connected_polygon(edge_id, connected_polygon_number) -> PolygonID
 		Returns the indexed polygon connected to this edge
@@ -1050,7 +1050,7 @@ package unreal;
 		Returns:
 		    EdgeID:
 	**/
-	public function invalid_edge_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function invalid_edge_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.invalid_polygon_group_id() -> PolygonGroupID
 		Invalid Polygon Group ID
@@ -1058,7 +1058,7 @@ package unreal;
 		Returns:
 		    PolygonGroupID:
 	**/
-	public function invalid_polygon_group_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function invalid_polygon_group_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.invalid_polygon_id() -> PolygonID
 		Invalid Polygon ID
@@ -1066,7 +1066,7 @@ package unreal;
 		Returns:
 		    PolygonID:
 	**/
-	public function invalid_polygon_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function invalid_polygon_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.invalid_vertex_id() -> VertexID
 		Statics
@@ -1074,7 +1074,7 @@ package unreal;
 		Returns:
 		    VertexID:
 	**/
-	public function invalid_vertex_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function invalid_vertex_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.is_being_modified() -> bool
 		
@@ -1196,7 +1196,7 @@ package unreal;
 		Returns:
 		    EdgeID:
 	**/
-	public function make_edge_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_edge_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_polygon_group_id(polygon_group_index) -> PolygonGroupID
 		Make Polygon Group ID
@@ -1207,7 +1207,7 @@ package unreal;
 		Returns:
 		    PolygonGroupID:
 	**/
-	public function make_polygon_group_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_polygon_group_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_polygon_id(polygon_index) -> PolygonID
 		Make Polygon ID
@@ -1218,7 +1218,7 @@ package unreal;
 		Returns:
 		    PolygonID:
 	**/
-	public function make_polygon_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_polygon_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_vertex_id(vertex_index) -> VertexID
 		Make Vertex ID
@@ -1229,7 +1229,7 @@ package unreal;
 		Returns:
 		    VertexID:
 	**/
-	public function make_vertex_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_vertex_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -1493,7 +1493,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(int32):  [Read-Only] How many levels to subdivide this mesh.  Zero will turn off subdivisions
 	**/

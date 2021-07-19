@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_ai_controller(controlled_actor) -> AIController
 		The way it works exactly is if the actor passed in is a pawn, then the function retrieves
@@ -125,7 +125,7 @@ package unreal;
 		Returns:
 		    AIController:
 	**/
-	public function get_ai_controller(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_ai_controller(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_blackboard(target) -> BlackboardComponent
 		Get Blackboard
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    BlackboardComponent:
 	**/
-	public function get_blackboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_blackboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -154,7 +154,7 @@ package unreal;
 		Returns:
 		    NavigationPath:
 	**/
-	public function get_current_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_path_index(controller) -> int32
 		Return the path index the given controller is currently at. Returns INDEX_NONE if no path.
@@ -165,7 +165,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_current_path_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_path_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_path_points(controller) -> Array(Vector)
 		Returns an array of navigation path points given controller is currently using.
@@ -176,11 +176,11 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	public function get_current_path_points(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_path_points(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -207,7 +207,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_next_nav_link_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_next_nav_link_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -238,7 +238,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_ai_direction(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_ai_direction(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_ai_location(location) -> bool
 		Is Valid AILocation
@@ -249,7 +249,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_ai_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_ai_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_ai_rotation(rotation) -> bool
 		Is Valid AIRotation
@@ -260,7 +260,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_ai_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_ai_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.lock_ai_resources_with_animation(anim_instance, lock_movement, lock_ai_logic) -> None
 		locks indicated AI resources of animated pawn
@@ -270,7 +270,7 @@ package unreal;
 		    lock_movement (bool): 
 		    lock_ai_logic (bool):
 	**/
-	public function lock_ai_resources_with_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function lock_ai_resources_with_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -289,7 +289,7 @@ package unreal;
 		    message_source (Object): 
 		    success (bool):
 	**/
-	public function send_ai_message(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function send_ai_message(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -306,7 +306,7 @@ package unreal;
 		    controller (Controller): 
 		    goal (Actor):
 	**/
-	public function simple_move_to_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function simple_move_to_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.simple_move_to_location(controller, goal) -> None
 		Simple Move to Location
@@ -315,7 +315,7 @@ package unreal;
 		    controller (Controller): 
 		    goal (Vector):
 	**/
-	public function simple_move_to_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function simple_move_to_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_ai_from_class(world_context_object, pawn_class, behavior_tree, location, rotation=[0.000000, 0.000000, 0.000000], no_collision_fail=False, owner=None) -> Pawn
 		Spawns AI agent of a given class. The PawnClass needs to have AIController
@@ -333,11 +333,11 @@ package unreal;
 		Returns:
 		    Pawn:
 	**/
-	public function spawn_ai_from_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_ai_from_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.unlock_ai_resources_with_animation(anim_instance, unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources
@@ -347,5 +347,5 @@ package unreal;
 		    unlock_movement (bool): 
 		    unlock_ai_logic (bool):
 	**/
-	public function unlock_ai_resources_with_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function unlock_ai_resources_with_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

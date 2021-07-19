@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -141,7 +141,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_mouse_position_on_platform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_mouse_position_on_platform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_mouse_position_on_viewport(world_context_object) -> Vector2D
 		Gets the platform's mouse cursor position in the local space of the viewport widget.
@@ -152,7 +152,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_mouse_position_on_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_mouse_position_on_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_mouse_position_scaled_by_dpi(player) -> (location_x=float, location_y=float) or None
 		Gets the mouse position of the player controller, scaled by the DPI.  If you're trying to go from raw mouse screenspace coordinates
@@ -171,7 +171,7 @@ package unreal;
 		
 		    location_y (float):
 	**/
-	public function get_mouse_position_scaled_by_dpi(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_mouse_position_scaled_by_dpi(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -200,7 +200,7 @@ package unreal;
 		Returns:
 		    Geometry:
 	**/
-	public function get_player_screen_widget_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_player_screen_widget_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -215,7 +215,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_viewport_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_viewport_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_viewport_size(world_context_object) -> Vector2D
 		Gets the size of the game viewport.
@@ -226,7 +226,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_viewport_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_viewport_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_viewport_widget_geometry(world_context_object) -> Geometry
 		Gets the geometry of the widget holding all widgets added to the "Viewport".  You
@@ -239,7 +239,7 @@ package unreal;
 		Returns:
 		    Geometry:
 	**/
-	public function get_viewport_widget_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_viewport_widget_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_world() -> World -- get the world associated with this instance (if any)
 	**/
@@ -263,7 +263,7 @@ package unreal;
 		
 		    screen_position (Vector2D): The position in the viewport with quality scale removed and DPI scale remove.
 	**/
-	public function project_world_location_to_widget_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function project_world_location_to_widget_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_all_widgets(world_context_object) -> None
 		Removes all widgets from the viewport.
@@ -271,7 +271,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function remove_all_widgets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_all_widgets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -294,7 +294,7 @@ package unreal;
 		Returns:
 		    BorderSlot:
 	**/
-	public function slot_as_border_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_border_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_canvas_slot(widget) -> CanvasPanelSlot
 		Gets the slot object on the child widget as a Canvas Slot, allowing you to manipulate layout information.
@@ -305,7 +305,7 @@ package unreal;
 		Returns:
 		    CanvasPanelSlot:
 	**/
-	public function slot_as_canvas_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_canvas_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_grid_slot(widget) -> GridSlot
 		Gets the slot object on the child widget as a Grid Slot, allowing you to manipulate layout information.
@@ -316,7 +316,7 @@ package unreal;
 		Returns:
 		    GridSlot:
 	**/
-	public function slot_as_grid_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_grid_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_horizontal_box_slot(widget) -> HorizontalBoxSlot
 		Gets the slot object on the child widget as a Horizontal Box Slot, allowing you to manipulate its information.
@@ -327,7 +327,7 @@ package unreal;
 		Returns:
 		    HorizontalBoxSlot:
 	**/
-	public function slot_as_horizontal_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_horizontal_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_overlay_slot(widget) -> OverlaySlot
 		Gets the slot object on the child widget as a Overlay Slot, allowing you to manipulate layout information.
@@ -338,7 +338,7 @@ package unreal;
 		Returns:
 		    OverlaySlot:
 	**/
-	public function slot_as_overlay_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_overlay_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_safe_box_slot(widget) -> SafeZoneSlot
 		Gets the slot object on the child widget as a Safe Box Slot, allowing you to manipulate its information.
@@ -349,7 +349,7 @@ package unreal;
 		Returns:
 		    SafeZoneSlot:
 	**/
-	public function slot_as_safe_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_safe_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_scale_box_slot(widget) -> ScaleBoxSlot
 		Gets the slot object on the child widget as a Scale Box Slot, allowing you to manipulate its information.
@@ -360,7 +360,7 @@ package unreal;
 		Returns:
 		    ScaleBoxSlot:
 	**/
-	public function slot_as_scale_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_scale_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_scroll_box_slot(widget) -> ScrollBoxSlot
 		Gets the slot object on the child widget as a Scroll Box Slot, allowing you to manipulate its information.
@@ -371,7 +371,7 @@ package unreal;
 		Returns:
 		    ScrollBoxSlot:
 	**/
-	public function slot_as_scroll_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_scroll_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_size_box_slot(widget) -> SizeBoxSlot
 		Gets the slot object on the child widget as a Size Box Slot, allowing you to manipulate its information.
@@ -382,7 +382,7 @@ package unreal;
 		Returns:
 		    SizeBoxSlot:
 	**/
-	public function slot_as_size_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_size_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_uniform_grid_slot(widget) -> UniformGridSlot
 		Gets the slot object on the child widget as a Uniform Grid Slot, allowing you to manipulate layout information.
@@ -393,7 +393,7 @@ package unreal;
 		Returns:
 		    UniformGridSlot:
 	**/
-	public function slot_as_uniform_grid_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_uniform_grid_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_vertical_box_slot(widget) -> VerticalBoxSlot
 		Gets the slot object on the child widget as a Vertical Box Slot, allowing you to manipulate its information.
@@ -404,7 +404,7 @@ package unreal;
 		Returns:
 		    VerticalBoxSlot:
 	**/
-	public function slot_as_vertical_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_vertical_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_widget_switcher_slot(widget) -> WidgetSwitcherSlot
 		Gets the slot object on the child widget as a Widget Switcher Slot, allowing you to manipulate its information.
@@ -415,7 +415,7 @@ package unreal;
 		Returns:
 		    WidgetSwitcherSlot:
 	**/
-	public function slot_as_widget_switcher_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_widget_switcher_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.slot_as_wrap_box_slot(widget) -> WrapBoxSlot
 		Gets the slot object on the child widget as a Wrap Box Slot, allowing you to manipulate its information.
@@ -426,9 +426,9 @@ package unreal;
 		Returns:
 		    WrapBoxSlot:
 	**/
-	public function slot_as_wrap_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slot_as_wrap_box_slot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

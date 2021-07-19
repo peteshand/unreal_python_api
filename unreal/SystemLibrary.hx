@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    DebugFloatHistory:
 	**/
-	public function add_float_history_sample(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_float_history_sample(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.begin_transaction(context, description, primary_object) -> int32
 		Begin a new undo transaction. An undo transaction is defined as all actions which take place when the user selects "undo" a single time.
@@ -132,7 +132,7 @@ package unreal;
 		Returns:
 		    int32: The number of active actions when BeginTransaction was called (values greater than 0 indicate that there was already an existing undo transaction in progress), or -1 on failure.
 	**/
-	public function begin_transaction(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function begin_transaction(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_overlap_actors(world_context_object, box_pos, box_extent, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given axis-aligned box.
@@ -150,11 +150,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	public function box_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'box_overlap_actors_new' was renamed to 'box_overlap_actors'.
 	**/
-	public function box_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_overlap_components(world_context_object, box_pos, extent, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
 		Returns an array of components that overlap the given axis-aligned box.
@@ -172,11 +172,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	public function box_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'box_overlap_components_new' was renamed to 'box_overlap_components'.
 	**/
-	public function box_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_trace_multi(world_context_object, start, end, half_size, orientation, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a box along the given line and returns all hits encountered.
@@ -202,7 +202,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish. The blocking hit will be the last hit, if there was one.
 	**/
-	public function box_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_trace_multi_by_profile(world_context_object, start, end, half_size, orientation, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a box against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -229,7 +229,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish. The blocking hit will be the last hit, if there was one.
 	**/
-	public function box_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_trace_multi_for_objects(world_context_object, start, end, half_size, orientation, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a box along the given line and returns all hits encountered.
@@ -255,7 +255,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function box_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_trace_single(world_context_object, start, end, half_size, orientation, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a box along the given line and returns the first blocking hit encountered.
@@ -281,7 +281,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function box_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_trace_single_by_profile(world_context_object, start, end, half_size, orientation, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a box against the world and return the first blocking hit using a specific profile
@@ -306,7 +306,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function box_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.box_trace_single_for_objects(world_context_object, start, end, half_size, orientation, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a box along the given line and returns the first hit encountered.
@@ -332,7 +332,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function box_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function box_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -347,7 +347,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function can_launch_url(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function can_launch_url(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cancel_transaction(index) -> None
 		Cancel the current transaction, and no longer capture actions to be placed in the undo buffer.
@@ -356,7 +356,7 @@ package unreal;
 		Args:
 		    index (int32): The action counter to cancel transactions from (as returned by a call to BeginTransaction).
 	**/
-	public function cancel_transaction(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function cancel_transaction(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_overlap_actors(world_context_object, capsule_pos, radius, half_height, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given capsule.
@@ -375,11 +375,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	public function capsule_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'capsule_overlap_actors_new' was renamed to 'capsule_overlap_actors'.
 	**/
-	public function capsule_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_overlap_components(world_context_object, capsule_pos, radius, half_height, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
 		Returns an array of components that overlap the given capsule.
@@ -398,11 +398,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	public function capsule_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'capsule_overlap_components_new' was renamed to 'capsule_overlap_components'.
 	**/
-	public function capsule_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_trace_multi(world_context_object, start, end, radius, half_height, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a capsule along the given line and returns all hits encountered up to and including the first blocking hit.
@@ -428,7 +428,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function capsule_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_trace_multi_by_profile(world_context_object, start, end, radius, half_height, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a capsule against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -455,7 +455,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function capsule_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_trace_multi_for_objects(world_context_object, start, end, radius, half_height, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a capsule along the given line and returns all hits encountered.
@@ -481,11 +481,11 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function capsule_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'capsule_trace_multi_new' was renamed to 'capsule_trace_multi'.
 	**/
-	public function capsule_trace_multi_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_multi_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_trace_single(world_context_object, start, end, radius, half_height, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a capsule along the given line and returns the first blocking hit encountered.
@@ -511,7 +511,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function capsule_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_trace_single_by_profile(world_context_object, start, end, radius, half_height, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a capsule against the world and return the first blocking hit using a specific profile
@@ -536,7 +536,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function capsule_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.capsule_trace_single_for_objects(world_context_object, start, end, radius, half_height, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a capsule along the given line and returns the first hit encountered.
@@ -562,16 +562,16 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function capsule_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'capsule_trace_single_new' was renamed to 'capsule_trace_single'.
 	**/
-	public function capsule_trace_single_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function capsule_trace_single_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_and_invalidate_timer_handle(world_context_object, handle) -> TimerHandle
 		Clears a set timer.
@@ -585,7 +585,7 @@ package unreal;
 		
 		    handle (TimerHandle):
 	**/
-	public function clear_and_invalidate_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_and_invalidate_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_timer(object, function_name) -> None
 		Clears a set timer.
@@ -594,7 +594,7 @@ package unreal;
 		    object (Object): Object that implements the delegate function. Defaults to self (this blueprint)
 		    function_name (str): Delegate function name. Can be a K2 function or a Custom Event.
 	**/
-	public function clear_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_timer_delegate(delegate) -> None
 		Clears a set timer.
@@ -603,7 +603,7 @@ package unreal;
 		Args:
 		    delegate (TimerDynamicDelegate):
 	**/
-	public function clear_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_timer_handle(world_context_object, handle) -> None
 		Clears a set timer.
@@ -613,13 +613,13 @@ package unreal;
 		    world_context_object (Object): 
 		    handle (TimerHandle): The handle of the timer to clear.
 	**/
-	public function clear_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.collect_garbage() -> None
 		Deletes all unreferenced objects, keeping only referenced objects (this command will be queued and happen at the end of the frame)
 		Note: This can be a slow operation, and should only be performed where a hitch would be acceptable
 	**/
-	public function collect_garbage(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function collect_garbage(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.component_overlap_actors(component, component_transform, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given component.
@@ -636,11 +636,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	public function component_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function component_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'component_overlap_actors_new' was renamed to 'component_overlap_actors'.
 	**/
-	public function component_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function component_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.component_overlap_components(component, component_transform, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
 		Returns an array of components that overlap the given component.
@@ -657,11 +657,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	public function component_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function component_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'component_overlap_components_new' was renamed to 'component_overlap_components'.
 	**/
-	public function component_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function component_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.control_screensaver(allow_screen_saver) -> None
 		Allows or inhibits screensaver
@@ -669,7 +669,7 @@ package unreal;
 		Args:
 		    allow_screen_saver (bool): If false, don't allow screensaver if possible, otherwise allow default behavior
 	**/
-	public function control_screensaver(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function control_screensaver(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_interface_to_object(interface) -> Object
 		Converts an interfance into an object
@@ -680,7 +680,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function conv_interface_to_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_interface_to_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_primary_asset_id_to_string(primary_asset_id) -> str
 		Converts a Primary Asset Id to a string. The other direction is not provided because it cannot be validated
@@ -691,7 +691,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_primary_asset_id_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_primary_asset_id_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_primary_asset_type_to_string(primary_asset_type) -> str
 		Converts a Primary Asset Type to a string. The other direction is not provided because it cannot be validated
@@ -702,7 +702,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_primary_asset_type_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_primary_asset_type_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_soft_class_path_to_soft_class_ref(soft_class_path) -> Class
 		Converts a Soft Class Path into a base Soft Class Reference, this is not guaranteed to be resolvable
@@ -713,7 +713,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	public function conv_soft_class_path_to_soft_class_ref(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_soft_class_path_to_soft_class_ref(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_soft_class_reference_to_string(soft_class_reference) -> str
 		Converts a Soft Class Reference to a string. The other direction is not provided because it cannot be validated
@@ -724,7 +724,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_soft_class_reference_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_soft_class_reference_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_soft_obj_path_to_soft_obj_ref(soft_object_path) -> Object
 		Converts a Soft Object Path into a base Soft Object Reference, this is not guaranteed to be resolvable
@@ -735,7 +735,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function conv_soft_obj_path_to_soft_obj_ref(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_soft_obj_path_to_soft_obj_ref(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_soft_object_reference_to_string(soft_object_reference) -> str
 		Converts a Soft Object Reference to a string. The other direction is not provided because it cannot be validated
@@ -746,7 +746,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_soft_object_reference_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_soft_object_reference_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.convert_to_absolute_path(filename) -> str
 		Converts passed in filename to use a absolute path
@@ -757,7 +757,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function convert_to_absolute_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function convert_to_absolute_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.convert_to_relative_path(filename) -> str
 		Converts passed in filename to use a relative path
@@ -768,7 +768,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function convert_to_relative_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function convert_to_relative_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_copy_for_undo_buffer(object_to_modify) -> None
 		Mark as modified.
@@ -776,7 +776,7 @@ package unreal;
 		Args:
 		    object_to_modify (Object):
 	**/
-	public function create_copy_for_undo_buffer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_copy_for_undo_buffer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.delay(world_context_object, duration, latent_info) -> None
 		Perform a latent action with a delay (specified in seconds).  Calling again while it is counting down will be ignored.
@@ -786,7 +786,7 @@ package unreal;
 		    duration (float): length of delay (in seconds).
 		    latent_info (LatentActionInfo): The latent action.
 	**/
-	public function delay(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function delay(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.does_implement_interface(test_object, interface) -> bool
 		Does Implement Interface
@@ -798,7 +798,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function does_implement_interface(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function does_implement_interface(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_arrow(world_context_object, line_start, line_end, arrow_size, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw directional arrow, pointing from LineStart to LineEnd.
@@ -812,7 +812,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_arrow(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_arrow(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_box(world_context_object, center, extent, line_color, rotation=[0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug box
@@ -826,7 +826,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_camera(camera_actor, camera_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draw a debug camera shape.
@@ -836,7 +836,7 @@ package unreal;
 		    camera_color (LinearColor): 
 		    duration (float):
 	**/
-	public function draw_debug_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_capsule(world_context_object, center, half_height, radius, rotation, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug capsule
@@ -851,7 +851,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_capsule(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_capsule(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_circle(world_context_object, center, radius, num_segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000, y_axis=[0.000000, 1.000000, 0.000000], z_axis=[0.000000, 0.000000, 1.000000], draw_axis=False) -> None
 		Draw a debug circle!
@@ -868,7 +868,7 @@ package unreal;
 		    z_axis (Vector): 
 		    draw_axis (bool):
 	**/
-	public function draw_debug_circle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_circle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_cone(world_context_object, origin, direction, length, angle_width, angle_height, num_sides, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cone
@@ -886,7 +886,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_cone(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_cone(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_cone_in_degrees(world_context_object, origin, direction, length=100.000000, angle_width=45.000000, angle_height=45.000000, num_sides=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cone
@@ -904,7 +904,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_cone_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_cone_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_coordinate_system(world_context_object, axis_loc, axis_rot, scale=1.000000, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug coordinate system.
@@ -917,7 +917,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_coordinate_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_coordinate_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_cylinder(world_context_object, start, end, radius=100.000000, segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cylinder
@@ -932,7 +932,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_cylinder(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_cylinder(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_float_history_location(world_context_object, float_history, draw_location, draw_size, draw_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a 2D Histogram of size 'DrawSize' based FDebugFloatHistory struct, using DrawLocation for the location in the world, rotation will face camera of first player.
@@ -945,7 +945,7 @@ package unreal;
 		    draw_color (LinearColor): 
 		    duration (float):
 	**/
-	public function draw_debug_float_history_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_float_history_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_float_history_transform(world_context_object, float_history, draw_transform, draw_size, draw_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a 2D Histogram of size 'DrawSize' based FDebugFloatHistory struct, using DrawTransform for the position in the world.
@@ -958,7 +958,7 @@ package unreal;
 		    draw_color (LinearColor): 
 		    duration (float):
 	**/
-	public function draw_debug_float_history_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_float_history_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_frustum(world_context_object, frustum_transform, frustum_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draws a debug frustum.
@@ -970,7 +970,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_frustum(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_frustum(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_line(world_context_object, line_start, line_end, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug line
@@ -983,7 +983,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_line(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_line(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_plane(world_context_object, plane_coordinates, location, size, plane_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a debug plane.
@@ -996,7 +996,7 @@ package unreal;
 		    plane_color (LinearColor): 
 		    duration (float):
 	**/
-	public function draw_debug_plane(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_plane(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_point(world_context_object, position, size, point_color, duration=0.000000) -> None
 		Draw a debug point
@@ -1008,7 +1008,7 @@ package unreal;
 		    point_color (LinearColor): 
 		    duration (float):
 	**/
-	public function draw_debug_point(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_point(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_sphere(world_context_object, center, radius=100.000000, segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug sphere
@@ -1022,7 +1022,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	public function draw_debug_sphere(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_sphere(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_debug_string(world_context_object, text_location, text, test_base_actor=None, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draw a debug string at a 3d world location.
@@ -1035,7 +1035,7 @@ package unreal;
 		    text_color (LinearColor): 
 		    duration (float):
 	**/
-	public function draw_debug_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_debug_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.end_transaction() -> int32
 		Attempt to end the current undo transaction. Only successful if the transaction's action counter is 1.
@@ -1044,7 +1044,7 @@ package unreal;
 		Returns:
 		    int32: The number of active actions when EndTransaction was called (a value of 1 indicates that the transaction was successfully closed), or -1 on failure.
 	**/
-	public function end_transaction(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function end_transaction(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_primary_asset_id(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1056,7 +1056,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_primary_asset_type(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1068,7 +1068,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_primary_asset_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_primary_asset_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_soft_class_reference(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1080,7 +1080,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_soft_object_reference(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1092,7 +1092,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.execute_console_command(world_context_object, command, specific_player=None) -> None
 		Executes a console command, optionally on a specific controller
@@ -1102,23 +1102,23 @@ package unreal;
 		    command (str): Command to send to the console
 		    specific_player (PlayerController): If specified, the console command will be routed through the specified player
 	**/
-	public function execute_console_command(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function execute_console_command(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'experimental_close_ad_banner' was renamed to 'force_close_ad_banner'.
 	**/
-	public function experimental_close_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function experimental_close_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'experimental_hide_ad_banner' was renamed to 'hide_ad_banner'.
 	**/
-	public function experimental_hide_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function experimental_hide_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'experimental_show_ad_banner' was renamed to 'show_ad_banner'.
 	**/
-	public function experimental_show_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function experimental_show_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'experimental_show_game_center_leaderboard' was renamed to 'show_platform_specific_leaderboard_screen'.
 	**/
-	public function experimental_show_game_center_leaderboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function experimental_show_game_center_leaderboard(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.flush_debug_strings(world_context_object) -> None
 		Removes all debug strings.
@@ -1126,7 +1126,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function flush_debug_strings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function flush_debug_strings(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.flush_persistent_debug_lines(world_context_object) -> None
 		Flush all persistent debug lines and shapes.
@@ -1134,13 +1134,13 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function flush_persistent_debug_lines(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function flush_persistent_debug_lines(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.force_close_ad_banner() -> None
 		Forces closed any displayed ad. Can lead to loss of revenue
 		(iOS and Android only)
 	**/
-	public function force_close_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function force_close_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_actor_bounds(actor) -> (origin=Vector, box_extent=Vector)
 		Get Actor Bounds
@@ -1156,7 +1156,7 @@ package unreal;
 		
 		    box_extent (Vector):
 	**/
-	public function get_actor_bounds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_actor_bounds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_actor_list_from_component_list(component_list, actor_class_filter) -> Array(Actor)
 		Returns an array of unique actors represented by the given list of components.
@@ -1170,7 +1170,7 @@ package unreal;
 		
 		    out_actor_list (Array(Actor)): Start of line segment.
 	**/
-	public function get_actor_list_from_component_list(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_actor_list_from_component_list(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_ad_id_count() -> int32
 		Retrieves the total number of Ad IDs that can be selected between
@@ -1178,7 +1178,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_ad_id_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_ad_id_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -1193,7 +1193,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_class_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_class_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_class_from_primary_asset_id(primary_asset_id) -> type(Class)
 		Returns the Blueprint Class associated with a Primary Asset Id, this will only return a valid object if it is in memory, it will not load it
@@ -1204,7 +1204,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_class_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_class_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_command_line() -> str
 		Returns the command line that the process was launched with.
@@ -1212,7 +1212,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_command_line(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_command_line(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_component_bounds(component) -> (origin=Vector, box_extent=Vector, sphere_radius=float)
 		Get bounds
@@ -1229,7 +1229,7 @@ package unreal;
 		
 		    sphere_radius (float):
 	**/
-	public function get_component_bounds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_component_bounds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_console_variable_bool_value(variable_name) -> bool
 		Evaluates, if it exists, whether the specified integer console variable has a non-zero value (true) or not (false).
@@ -1240,7 +1240,7 @@ package unreal;
 		Returns:
 		    bool: True if found and has a non-zero value, false otherwise.
 	**/
-	public function get_console_variable_bool_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_console_variable_bool_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_console_variable_float_value(variable_name) -> float
 		Attempts to retrieve the value of the specified float console variable, if it exists.
@@ -1251,7 +1251,7 @@ package unreal;
 		Returns:
 		    float: The value if found, 0 otherwise.
 	**/
-	public function get_console_variable_float_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_console_variable_float_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_console_variable_int_value(variable_name) -> int32
 		Attempts to retrieve the value of the specified integer console variable, if it exists.
@@ -1262,7 +1262,7 @@ package unreal;
 		Returns:
 		    int32: The value if found, 0 otherwise.
 	**/
-	public function get_console_variable_int_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_console_variable_int_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_convenient_windowed_resolutions() -> Array(IntPoint) or None
 		Gets the list of windowed resolutions which are convenient for the current primary display size.
@@ -1272,7 +1272,7 @@ package unreal;
 		
 		    resolutions (Array(IntPoint)):
 	**/
-	public function get_convenient_windowed_resolutions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_convenient_windowed_resolutions(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_bundle_state(primary_asset_id, force_current_state) -> Array(Name) or None
 		Returns the list of loaded bundles for a given Primary Asset. This will return false if the asset is not loaded at all.
@@ -1287,7 +1287,7 @@ package unreal;
 		
 		    out_bundles (Array(Name)):
 	**/
-	public function get_current_bundle_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_bundle_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_language() -> str
 		Get the default language (for localization) used by this platform
@@ -1297,7 +1297,7 @@ package unreal;
 		Returns:
 		    str: The language as an IETF language tag (eg, "zh-Hans-CN")
 	**/
-	public function get_default_language(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_language(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_locale() -> str
 		Get the default locale (for internationalization) used by this platform
@@ -1306,11 +1306,11 @@ package unreal;
 		Returns:
 		    str: The locale as an IETF language tag (eg, "zh-Hans-CN")
 	**/
-	public function get_default_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_device_id() -> str
 		Returns the platform specific unique device id
@@ -1318,7 +1318,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_device_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_device_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_display_name(object) -> str
 		Returns the display name (or actor label), for displaying as a debugging aid.
@@ -1331,7 +1331,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -1343,7 +1343,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_engine_version(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_engine_version(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_fname() -> FName -- get the name of this instance
 	**/
@@ -1355,7 +1355,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	public function get_frame_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_frame_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
 	**/
@@ -1367,7 +1367,7 @@ package unreal;
 		Returns:
 		    str: The game's bundle identifier or package name.
 	**/
-	public function get_game_bundle_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_game_bundle_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_game_name() -> str
 		Get the name of the current game
@@ -1375,7 +1375,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_game_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_game_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_game_time_in_seconds(world_context_object) -> float
 		Get the current game time, in seconds. This stops when the game is paused and is affected by slomo.
@@ -1386,7 +1386,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_game_time_in_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_game_time_in_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_gamepad_button_glyph(button_key, controller_index) -> Texture2D
 		Returns glyph assigned to a gamepad button (or a null ptr if not assigned) (iOS and tvOS only)
@@ -1398,7 +1398,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	public function get_gamepad_button_glyph(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_gamepad_button_glyph(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_gamepad_controller_name(controller_id) -> str
 		Returns name of controller if assigned to a gamepad (or None if not assigned) (Android and iOS only)
@@ -1409,7 +1409,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_gamepad_controller_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_gamepad_controller_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_local_currency_code() -> str
 		Returns the currency code associated with the device's locale
@@ -1417,7 +1417,7 @@ package unreal;
 		Returns:
 		    str: the currency code associated with the device's locale
 	**/
-	public function get_local_currency_code(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_currency_code(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_local_currency_symbol() -> str
 		Returns the currency symbol associated with the device's locale
@@ -1425,7 +1425,7 @@ package unreal;
 		Returns:
 		    str: the currency symbol associated with the device's locale
 	**/
-	public function get_local_currency_symbol(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_currency_symbol(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_min_y_resolution_for3d_view() -> int32
 		Gets the smallest Y resolution we want to support in the 3D view, clamped within reasons
@@ -1433,7 +1433,7 @@ package unreal;
 		Returns:
 		    int32: value in pixels
 	**/
-	public function get_min_y_resolution_for3d_view(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_min_y_resolution_for3d_view(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_min_y_resolution_for_ui() -> int32
 		Gets the smallest Y resolution we want to support in the UI, clamped within reasons
@@ -1441,7 +1441,7 @@ package unreal;
 		Returns:
 		    int32: value in pixels
 	**/
-	public function get_min_y_resolution_for_ui(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_min_y_resolution_for_ui(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -1456,7 +1456,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function get_object_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_object_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_object_name(object) -> str
 		Returns the actual object name.
@@ -1467,7 +1467,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_object_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_object_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -1482,7 +1482,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function get_outer_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_outer_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
 	**/
@@ -1497,7 +1497,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_platform_user_dir() -> str
 		Get the current user dir from the OS
@@ -1505,7 +1505,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_platform_user_dir(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_platform_user_dir(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_platform_user_name() -> str
 		Get the current user name from the OS
@@ -1513,7 +1513,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_platform_user_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_platform_user_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_preferred_languages() -> Array(str)
 		Returns an array of the user's preferred languages in order of preference
@@ -1521,7 +1521,7 @@ package unreal;
 		Returns:
 		    Array(str): An array of language IDs ordered from most preferred to least
 	**/
-	public function get_preferred_languages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_preferred_languages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_primary_asset_id_from_class(class_) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Class, this can return an invalid one if not registered
@@ -1532,7 +1532,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	public function get_primary_asset_id_from_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_primary_asset_id_from_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_primary_asset_id_from_object(object) -> PrimaryAssetId
 		Returns the Primary Asset Id for an Object, this can return an invalid one if not registered
@@ -1543,7 +1543,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	public function get_primary_asset_id_from_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_primary_asset_id_from_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_primary_asset_id_from_soft_class_reference(soft_class_reference) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Soft Class Reference, this can return an invalid one if not registered
@@ -1554,7 +1554,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	public function get_primary_asset_id_from_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_primary_asset_id_from_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_primary_asset_id_from_soft_object_reference(soft_object_reference) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Soft Object Reference, this can return an invalid one if not registered
@@ -1565,7 +1565,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	public function get_primary_asset_id_from_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_primary_asset_id_from_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_primary_asset_id_list(primary_asset_type) -> Array(PrimaryAssetId)
 		Returns list of PrimaryAssetIds for a PrimaryAssetType
@@ -1578,7 +1578,7 @@ package unreal;
 		
 		    out_primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	public function get_primary_asset_id_list(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_primary_asset_id_list(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_primary_assets_with_bundle_state(required_bundles, excluded_bundles, valid_types, force_current_state) -> Array(PrimaryAssetId)
 		Returns the list of assets that are in a given bundle state. Required Bundles must be specified
@@ -1597,7 +1597,7 @@ package unreal;
 		
 		    out_primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	public function get_primary_assets_with_bundle_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_primary_assets_with_bundle_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_project_content_directory() -> str
 		Get the content directory of the current project
@@ -1605,7 +1605,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_project_content_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_project_content_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_project_directory() -> str
 		Get the directory of the current project
@@ -1613,7 +1613,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_project_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_project_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_project_saved_directory() -> str
 		Get the saved directory of the current project
@@ -1621,7 +1621,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_project_saved_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_project_saved_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_rendering_detail_mode() -> int32
 		Get the clamped state of r.DetailMode, see console variable help (allows for scalability, cannot be used in construction scripts)
@@ -1632,7 +1632,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_rendering_detail_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_rendering_detail_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_rendering_material_quality_level() -> int32
 		Get the clamped state of r.MaterialQualityLevel, see console variable help (allows for scalability, cannot be used in construction scripts)
@@ -1643,7 +1643,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_rendering_material_quality_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_rendering_material_quality_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_soft_class_reference_from_primary_asset_id(primary_asset_id) -> Class
 		Returns the Blueprint Class Id associated with a Primary Asset Id, this works even if the asset is not loaded
@@ -1654,7 +1654,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	public function get_soft_class_reference_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_soft_class_reference_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_soft_object_reference_from_primary_asset_id(primary_asset_id) -> Object
 		Returns the Object Id associated with a Primary Asset Id, this works even if the asset is not loaded
@@ -1665,7 +1665,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function get_soft_object_reference_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_soft_object_reference_from_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_supported_fullscreen_resolutions() -> Array(IntPoint) or None
 		Gets the list of support fullscreen resolutions.
@@ -1675,7 +1675,7 @@ package unreal;
 		
 		    resolutions (Array(IntPoint)):
 	**/
-	public function get_supported_fullscreen_resolutions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_supported_fullscreen_resolutions(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_system_path(object) -> str
 		Returns the full system path to a UObject
@@ -1687,7 +1687,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_system_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_system_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timer_elapsed_time(object, function_name) -> float
 		Returns elapsed time for the given delegate (time since current countdown iteration began).
@@ -1699,7 +1699,7 @@ package unreal;
 		Returns:
 		    float: How long has elapsed since the current iteration of the timer began.
 	**/
-	public function get_timer_elapsed_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timer_elapsed_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timer_elapsed_time_delegate(delegate) -> float
 		Returns elapsed time for the given delegate (time since current countdown iteration began).
@@ -1711,7 +1711,7 @@ package unreal;
 		Returns:
 		    float: How long has elapsed since the current iteration of the timer began.
 	**/
-	public function get_timer_elapsed_time_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timer_elapsed_time_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timer_elapsed_time_handle(world_context_object, handle) -> float
 		Returns elapsed time for the given handle (time since current countdown iteration began).
@@ -1723,7 +1723,7 @@ package unreal;
 		Returns:
 		    float: How long has elapsed since the current iteration of the timer began.
 	**/
-	public function get_timer_elapsed_time_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timer_elapsed_time_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timer_remaining_time(object, function_name) -> float
 		Returns time until the timer will next execute its delegate.
@@ -1735,7 +1735,7 @@ package unreal;
 		Returns:
 		    float: How long is remaining in the current iteration of the timer.
 	**/
-	public function get_timer_remaining_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timer_remaining_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timer_remaining_time_delegate(delegate) -> float
 		Returns time until the timer will next execute its delegate.
@@ -1747,7 +1747,7 @@ package unreal;
 		Returns:
 		    float: How long is remaining in the current iteration of the timer.
 	**/
-	public function get_timer_remaining_time_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timer_remaining_time_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timer_remaining_time_handle(world_context_object, handle) -> float
 		Returns time until the timer will next execute its handle.
@@ -1759,7 +1759,7 @@ package unreal;
 		Returns:
 		    float: How long is remaining in the current iteration of the timer.
 	**/
-	public function get_timer_remaining_time_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timer_remaining_time_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -1772,7 +1772,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_unique_device_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_unique_device_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_volume_buttons_handled_by_system() -> bool
 		Returns true if system default handling of volume up and volume down buttons enabled (Android only)
@@ -1780,7 +1780,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function get_volume_buttons_handled_by_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_volume_buttons_handled_by_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_world() -> World -- get the world associated with this instance (if any)
 	**/
@@ -1790,7 +1790,7 @@ package unreal;
 		Hides the ad banner (iAd on iOS, or AdMob on Android). Will force close the ad if it's open
 		(iOS and Android only)
 	**/
-	public function hide_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function hide_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.invalidate_timer_handle(handle) -> (TimerHandle, handle=TimerHandle)
 		Invalidate the supplied TimerHandle and return it.
@@ -1803,7 +1803,7 @@ package unreal;
 		
 		    handle (TimerHandle):
 	**/
-	public function invalidate_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function invalidate_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_controller_assigned_to_gamepad(controller_id) -> bool
 		Returns true if controller id assigned to a gamepad (Android and iOS only)
@@ -1814,7 +1814,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_controller_assigned_to_gamepad(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_controller_assigned_to_gamepad(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_dedicated_server(world_context_object) -> bool
 		Returns whether this is running on a dedicated server
@@ -1825,7 +1825,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_dedicated_server(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_dedicated_server(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_interstitial_ad_available() -> bool
 		Returns true if the requested interstitial ad is loaded and ready
@@ -1834,7 +1834,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_interstitial_ad_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_interstitial_ad_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_interstitial_ad_requested() -> bool
 		Returns true if the requested interstitial ad has been successfully requested (false if load request fails)
@@ -1843,7 +1843,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_interstitial_ad_requested(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_interstitial_ad_requested(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_logged_in(specific_player) -> bool
 		Returns whether the player is logged in to the currently active online subsystem.
@@ -1854,7 +1854,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_logged_in(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_logged_in(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_packaged_for_distribution() -> bool
 		Returns whether this is a build that is packaged for distribution
@@ -1862,7 +1862,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_packaged_for_distribution(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_packaged_for_distribution(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_screensaver_enabled() -> bool
 		Returns true if screen saver is enabled.
@@ -1870,7 +1870,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_screensaver_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_screensaver_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_server(world_context_object) -> bool
 		Returns whether the world this object is in is the host or not
@@ -1881,7 +1881,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_server(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_server(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_split_screen(world_context_object) -> bool
 		Returns whether we're currently running in split screen (more than one local player).
@@ -1892,7 +1892,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_split_screen(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_split_screen(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_standalone(world_context_object) -> bool
 		Returns whether this game instance is stand alone (no networking).
@@ -1903,7 +1903,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_standalone(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_standalone(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_timer_active(object, function_name) -> bool
 		Returns true if a timer exists and is active for the given delegate, false otherwise.
@@ -1915,7 +1915,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is active.
 	**/
-	public function is_timer_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_timer_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_timer_active_delegate(delegate) -> bool
 		Returns true if a timer exists and is active for the given delegate, false otherwise.
@@ -1927,7 +1927,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is active.
 	**/
-	public function is_timer_active_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_timer_active_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_timer_active_handle(world_context_object, handle) -> bool
 		Returns true if a timer exists and is active for the given handle, false otherwise.
@@ -1939,7 +1939,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is active.
 	**/
-	public function is_timer_active_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_timer_active_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_timer_paused(object, function_name) -> bool
 		Returns true if a timer exists and is paused for the given delegate, false otherwise.
@@ -1951,7 +1951,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is paused.
 	**/
-	public function is_timer_paused(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_timer_paused(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_timer_paused_delegate(delegate) -> bool
 		Returns true if a timer exists and is paused for the given delegate, false otherwise.
@@ -1963,7 +1963,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is paused.
 	**/
-	public function is_timer_paused_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_timer_paused_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_timer_paused_handle(world_context_object, handle) -> bool
 		Returns true if a timer exists and is paused for the given handle, false otherwise.
@@ -1975,7 +1975,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is paused.
 	**/
-	public function is_timer_paused_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_timer_paused_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_unattended() -> bool
 		Returns true if running unattended (-unattended is on the command line)
@@ -1983,7 +1983,7 @@ package unreal;
 		Returns:
 		    bool: Unattended state
 	**/
-	public function is_unattended(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_unattended(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid(object) -> bool
 		Return true if the object is usable : non-null and not pending kill
@@ -1994,7 +1994,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_class(class_) -> bool
 		Return true if the class is usable : non-null and not pending kill
@@ -2005,7 +2005,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_primary_asset_id(primary_asset_id) -> bool
 		Returns true if the Primary Asset Id is valid
@@ -2016,7 +2016,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_primary_asset_type(primary_asset_type) -> bool
 		Returns list of Primary Asset Ids for a PrimaryAssetType
@@ -2027,7 +2027,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_primary_asset_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_primary_asset_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_soft_class_reference(soft_class_reference) -> bool
 		Returns true if the Soft Class Reference is not null
@@ -2038,7 +2038,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_soft_object_reference(soft_object_reference) -> bool
 		Returns true if the Soft Object Reference is not null
@@ -2049,7 +2049,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_timer_handle(handle) -> bool
 		Returns whether the timer handle is valid. This does not indicate that there is an active timer that this handle references, but rather that it once referenced a valid timer.
@@ -2060,7 +2060,7 @@ package unreal;
 		Returns:
 		    bool: Whether the timer handle is valid.
 	**/
-	public function is_valid_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.launch_url(url) -> None
 		Opens the specified URL in the platform's web browser of choice
@@ -2068,7 +2068,7 @@ package unreal;
 		Args:
 		    url (str):
 	**/
-	public function launch_url(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function launch_url(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_multi(world_context_object, start, end, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Does a collision trace along the given line and returns all hits encountered up to and including the first blocking hit.
@@ -2092,7 +2092,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	public function line_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_multi_by_profile(world_context_object, start, end, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Trace a ray against the world using a specific profile and return overlapping hits and then first blocking hit
@@ -2117,7 +2117,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	public function line_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_multi_for_objects(world_context_object, start, end, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Does a collision trace along the given line and returns all hits encountered.
@@ -2141,11 +2141,11 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	public function line_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'line_trace_multi_new' was renamed to 'line_trace_multi'.
 	**/
-	public function line_trace_multi_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_multi_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_single(world_context_object, start, end, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Does a collision trace along the given line and returns the first blocking hit encountered.
@@ -2169,7 +2169,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function line_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_single_by_profile(world_context_object, start, end, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Trace a ray against the world using a specific profile and return the first blocking hit
@@ -2192,7 +2192,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function line_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_single_for_objects(world_context_object, start, end, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Does a collision trace along the given line and returns the first hit encountered.
@@ -2216,11 +2216,11 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function line_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'line_trace_single_new' was renamed to 'line_trace_single'.
 	**/
-	public function line_trace_single_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_single_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_asset_blocking(asset) -> Object
 		Resolves or loads a Soft Object Reference immediately, this will cause hitches and Async Load Asset should be used if possible
@@ -2231,7 +2231,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function load_asset_blocking(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_asset_blocking(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_class_asset_blocking(asset_class) -> type(Class)
 		Resolves or loads a Soft Class Reference immediately, this will cause hitches and Async Load Class Asset should be used if possible
@@ -2242,7 +2242,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function load_class_asset_blocking(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_class_asset_blocking(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_interstitial_ad(ad_id_index) -> None
 		Will load a fullscreen interstitial AdMob ad. Call this before using ShowInterstitialAd
@@ -2251,7 +2251,7 @@ package unreal;
 		Args:
 		    ad_id_index (int32): The index of the ID to select for the ad to show
 	**/
-	public function load_interstitial_ad(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_interstitial_ad(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_bool(value) -> bool
 		Creates a literal bool
@@ -2262,7 +2262,7 @@ package unreal;
 		Returns:
 		    bool: The literal bool
 	**/
-	public function make_literal_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_byte(value) -> uint8
 		Creates a literal byte
@@ -2273,7 +2273,7 @@ package unreal;
 		Returns:
 		    uint8: The literal byte
 	**/
-	public function make_literal_byte(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_byte(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_float(value) -> float
 		Creates a literal float
@@ -2284,7 +2284,7 @@ package unreal;
 		Returns:
 		    float: The literal float
 	**/
-	public function make_literal_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_int(value) -> int32
 		Creates a literal integer
@@ -2295,7 +2295,7 @@ package unreal;
 		Returns:
 		    int32: The literal integer
 	**/
-	public function make_literal_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_name(value) -> Name
 		Creates a literal name
@@ -2306,7 +2306,7 @@ package unreal;
 		Returns:
 		    Name: The literal name
 	**/
-	public function make_literal_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_string(value) -> str
 		Creates a literal string
@@ -2317,7 +2317,7 @@ package unreal;
 		Returns:
 		    str: The literal string
 	**/
-	public function make_literal_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_literal_text(value) -> Text
 		Creates a literal FText
@@ -2328,7 +2328,7 @@ package unreal;
 		Returns:
 		    Text: The literal FText
 	**/
-	public function make_literal_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_literal_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -2350,7 +2350,7 @@ package unreal;
 		    move_action (MoveComponentAction): required movement behavior
 		    latent_info (LatentActionInfo): The latent action
 	**/
-	public function move_component_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function move_component_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.normalize_filename(filename) -> str
 		Convert all / and \ to TEXT("/")
@@ -2361,7 +2361,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function normalize_filename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function normalize_filename(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.not_equal_primary_asset_id(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2373,7 +2373,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_primary_asset_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.not_equal_primary_asset_type(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2385,7 +2385,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_primary_asset_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_primary_asset_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.not_equal_soft_class_reference(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2397,7 +2397,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_soft_class_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.not_equal_soft_object_reference(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2409,7 +2409,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_soft_object_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.parse_command_line(cmd_line) -> (out_tokens=Array(str), out_switches=Array(str), out_params=Map(str, str))
 		* Parses the given string into loose tokens, switches (arguments that begin with - or /) and parameters (-mySwitch=myVar)
@@ -2428,7 +2428,7 @@ package unreal;
 		
 		    out_params (Map(str, str)):
 	**/
-	public function parse_command_line(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function parse_command_line(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.parse_param(string, param) -> bool
 		Returns true if the string has -param in it (do not specify the leading -)
@@ -2440,7 +2440,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function parse_param(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function parse_param(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.parse_param_value(string, param) -> str or None
 		Returns 'value' if -option=value is in the string
@@ -2454,7 +2454,7 @@ package unreal;
 		
 		    out_value (str):
 	**/
-	public function parse_param_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function parse_param_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pause_timer(object, function_name) -> None
 		Pauses a set timer at its current elapsed time.
@@ -2463,7 +2463,7 @@ package unreal;
 		    object (Object): Object that implements the delegate function. Defaults to self (this blueprint)
 		    function_name (str): Delegate function name. Can be a K2 function or a Custom Event.
 	**/
-	public function pause_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pause_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pause_timer_delegate(delegate) -> None
 		Pauses a set timer at its current elapsed time.
@@ -2472,7 +2472,7 @@ package unreal;
 		Args:
 		    delegate (TimerDynamicDelegate):
 	**/
-	public function pause_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pause_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pause_timer_handle(world_context_object, handle) -> None
 		Pauses a set timer at its current elapsed time.
@@ -2481,7 +2481,7 @@ package unreal;
 		    world_context_object (Object): 
 		    handle (TimerHandle): The handle of the timer to pause.
 	**/
-	public function pause_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pause_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.print_string(world_context_object, string="Hello", print_to_screen=True, print_to_log=True, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=2.000000) -> None
 		Prints a string to the log, and optionally, to the screen
@@ -2495,7 +2495,7 @@ package unreal;
 		    text_color (LinearColor): Whether or not to print the output to the console
 		    duration (float): The display duration (if Print to Screen is True). Using negative number will result in loading the duration time from the config.
 	**/
-	public function print_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function print_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.print_text(world_context_object, text="Hello", print_to_screen=True, print_to_log=True, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=2.000000) -> None
 		Prints text to the log, and optionally, to the screen
@@ -2509,12 +2509,12 @@ package unreal;
 		    text_color (LinearColor): Whether or not to print the output to the console
 		    duration (float): The display duration (if Print to Screen is True). Using negative number will result in loading the duration time from the config.
 	**/
-	public function print_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function print_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.quit_editor() -> None
 		Exit the editor
 	**/
-	public function quit_editor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function quit_editor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.quit_game(world_context_object, specific_player, quit_preference, ignore_platform_restrictions) -> None
 		Exit the current game
@@ -2525,13 +2525,13 @@ package unreal;
 		    quit_preference (QuitPreference): Form of quitting.
 		    ignore_platform_restrictions (bool): Ignores and best-practices based on platform (e.g PS4 games should never quit). Non-shipping only
 	**/
-	public function quit_game(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function quit_game(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.register_for_remote_notifications() -> None
 		Requests permission to send remote notifications to the user's device.
 		(Android and iOS only)
 	**/
-	public function register_for_remote_notifications(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function register_for_remote_notifications(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -2543,12 +2543,12 @@ package unreal;
 		Args:
 		    controller_id (int32):
 	**/
-	public function reset_gamepad_assignment_to_controller(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reset_gamepad_assignment_to_controller(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.reset_gamepad_assignments() -> None
 		Resets the gamepad to player controller id assignments (Android and iOS only)
 	**/
-	public function reset_gamepad_assignments(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reset_gamepad_assignments(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.retriggerable_delay(world_context_object, duration, latent_info) -> None
 		Perform a latent action with a retriggerable delay (specified in seconds).  Calling again while it is counting down will reset the countdown to Duration.
@@ -2558,7 +2558,7 @@ package unreal;
 		    duration (float): length of delay (in seconds).
 		    latent_info (LatentActionInfo): The latent action.
 	**/
-	public function retriggerable_delay(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function retriggerable_delay(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -2574,7 +2574,7 @@ package unreal;
 		Args:
 		    block (bool):
 	**/
-	public function set_gamepads_block_device_feedback(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_gamepads_block_device_feedback(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_suppress_viewport_transition_message(world_context_object, state) -> None
 		Sets the state of the transition message rendered by the viewport. (The blue text displayed when the game is paused and so forth.)
@@ -2583,11 +2583,11 @@ package unreal;
 		    world_context_object (Object): World context
 		    state (bool):
 	**/
-	public function set_suppress_viewport_transition_message(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_suppress_viewport_transition_message(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'set_supress_viewport_transition_message' was renamed to 'set_suppress_viewport_transition_message'.
 	**/
-	public function set_supress_viewport_transition_message(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_supress_viewport_transition_message(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_timer(object, function_name, time, looping, initial_start_delay=0.000000, initial_start_delay_variance=0.000000) -> TimerHandle
 		Set a timer to execute delegate. Setting an existing timer will reset that timer with updated parameters.
@@ -2603,7 +2603,7 @@ package unreal;
 		Returns:
 		    TimerHandle: The timer handle to pass to other timer functions to manipulate this timer.
 	**/
-	public function set_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_timer_delegate(delegate, time, looping, initial_start_delay=0.000000, initial_start_delay_variance=0.000000) -> TimerHandle
 		Set a timer to execute delegate. Setting an existing timer will reset that timer with updated parameters.
@@ -2618,7 +2618,7 @@ package unreal;
 		Returns:
 		    TimerHandle: The timer handle to pass to other timer functions to manipulate this timer.
 	**/
-	public function set_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_user_activity(user_activity) -> None
 		Tells the engine what the user is doing for debug, analytics, etc.
@@ -2626,7 +2626,7 @@ package unreal;
 		Args:
 		    user_activity (UserActivity):
 	**/
-	public function set_user_activity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_user_activity(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_volume_buttons_handled_by_system(enabled) -> None
 		Allows or inhibits system default handling of volume up and volume down buttons (Android only)
@@ -2634,7 +2634,7 @@ package unreal;
 		Args:
 		    enabled (bool): If true, allow Android to handle volume up and down events
 	**/
-	public function set_volume_buttons_handled_by_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_volume_buttons_handled_by_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_window_title(title) -> None
 		Sets the game window title
@@ -2642,7 +2642,7 @@ package unreal;
 		Args:
 		    title (Text):
 	**/
-	public function set_window_title(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_window_title(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.show_ad_banner(ad_id_index, show_on_bottom_of_screen) -> None
 		Will show an ad banner (iAd on iOS, or AdMob on Android) on the top or bottom of screen, on top of the GL view (doesn't resize the view)
@@ -2652,13 +2652,13 @@ package unreal;
 		    ad_id_index (int32): The index of the ID to select for the ad to show
 		    show_on_bottom_of_screen (bool): If true, the iAd will be shown at the bottom of the screen, top otherwise
 	**/
-	public function show_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function show_ad_banner(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.show_interstitial_ad() -> None
 		Shows the loaded interstitial ad (loaded with LoadInterstitialAd)
 		(Android only)
 	**/
-	public function show_interstitial_ad(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function show_interstitial_ad(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.show_platform_specific_achievements_screen(specific_player) -> None
 		Displays the built-in achievements GUI (iOS and Android only; this function may be renamed or moved in a future release)
@@ -2666,7 +2666,7 @@ package unreal;
 		Args:
 		    specific_player (PlayerController): Specific player's achievements to show. May not be supported on all platforms. If null, defaults to the player with ControllerId 0
 	**/
-	public function show_platform_specific_achievements_screen(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function show_platform_specific_achievements_screen(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.show_platform_specific_leaderboard_screen(category_name) -> None
 		Displays the built-in leaderboard GUI (iOS and Android only; this function may be renamed or moved in a future release)
@@ -2674,7 +2674,7 @@ package unreal;
 		Args:
 		    category_name (str):
 	**/
-	public function show_platform_specific_leaderboard_screen(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function show_platform_specific_leaderboard_screen(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.snapshot_object(object) -> None
 		Notify the current transaction (if any) that this object is about to be modified and should be snapshot for intermediate update.
@@ -2684,7 +2684,7 @@ package unreal;
 		Args:
 		    object (Object): The object that is about to be modified.
 	**/
-	public function snapshot_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function snapshot_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_overlap_actors(world_context_object, sphere_pos, sphere_radius, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given sphere.
@@ -2702,11 +2702,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	public function sphere_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_overlap_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'sphere_overlap_actors_new' was renamed to 'sphere_overlap_actors'.
 	**/
-	public function sphere_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_overlap_actors_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_overlap_components(world_context_object, sphere_pos, sphere_radius, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
 		Returns an array of components that overlap the given sphere.
@@ -2724,11 +2724,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	public function sphere_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_overlap_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'sphere_overlap_components_new' was renamed to 'sphere_overlap_components'.
 	**/
-	public function sphere_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_overlap_components_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_trace_multi(world_context_object, start, end, radius, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a sphere along the given line and returns all hits encountered up to and including the first blocking hit.
@@ -2753,7 +2753,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function sphere_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_multi(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_trace_multi_by_profile(world_context_object, start, end, radius, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a sphere against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -2779,7 +2779,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function sphere_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_multi_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_trace_multi_for_objects(world_context_object, start, end, radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a sphere along the given line and returns all hits encountered.
@@ -2804,11 +2804,11 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	public function sphere_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_multi_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'sphere_trace_multi_new' was renamed to 'sphere_trace_multi'.
 	**/
-	public function sphere_trace_multi_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_multi_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_trace_single(world_context_object, start, end, radius, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a sphere along the given line and returns the first blocking hit encountered.
@@ -2833,7 +2833,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function sphere_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_single(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_trace_single_by_profile(world_context_object, start, end, radius, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a sphere against the world and return the first blocking hit using a specific profile
@@ -2857,7 +2857,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function sphere_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_single_by_profile(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sphere_trace_single_for_objects(world_context_object, start, end, radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a sphere along the given line and returns the first hit encountered.
@@ -2882,15 +2882,15 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	public function sphere_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_single_for_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'sphere_trace_single_new' was renamed to 'sphere_trace_single'.
 	**/
-	public function sphere_trace_single_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sphere_trace_single_new(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.timer_exists(object, function_name) -> bool
 		Returns true is a timer for the given delegate exists, false otherwise.
@@ -2902,7 +2902,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists.
 	**/
-	public function timer_exists(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function timer_exists(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.timer_exists_delegate(delegate) -> bool
 		Returns true is a timer for the given delegate exists, false otherwise.
@@ -2914,7 +2914,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists.
 	**/
-	public function timer_exists_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function timer_exists_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.timer_exists_handle(world_context_object, handle) -> bool
 		Returns true is a timer for the given handle exists, false otherwise.
@@ -2926,7 +2926,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists.
 	**/
-	public function timer_exists_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function timer_exists_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.transact_object(object) -> None
 		Notify the current transaction (if any) that this object is about to be modified and should be placed into the undo buffer.
@@ -2936,7 +2936,7 @@ package unreal;
 		Args:
 		    object (Object): The object that is about to be modified.
 	**/
-	public function transact_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function transact_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.un_pause_timer(object, function_name) -> None
 		Resumes a paused timer from its current elapsed time.
@@ -2945,7 +2945,7 @@ package unreal;
 		    object (Object): Object that implements the delegate function. Defaults to self (this blueprint)
 		    function_name (str): Delegate function name. Can be a K2 function or a Custom Event.
 	**/
-	public function un_pause_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function un_pause_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.un_pause_timer_delegate(delegate) -> None
 		Resumes a paused timer from its current elapsed time.
@@ -2954,7 +2954,7 @@ package unreal;
 		Args:
 		    delegate (TimerDynamicDelegate):
 	**/
-	public function un_pause_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function un_pause_timer_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.un_pause_timer_handle(world_context_object, handle) -> None
 		Resumes a paused timer from its current elapsed time.
@@ -2963,7 +2963,7 @@ package unreal;
 		    world_context_object (Object): 
 		    handle (TimerHandle): The handle of the timer to unpause.
 	**/
-	public function un_pause_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function un_pause_timer_handle(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.unload_primary_asset(primary_asset_id) -> None
 		Unloads a primary asset, which allows it to be garbage collected if nothing else is referencing it
@@ -2971,7 +2971,7 @@ package unreal;
 		Args:
 		    primary_asset_id (PrimaryAssetId):
 	**/
-	public function unload_primary_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function unload_primary_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.unload_primary_asset_list(primary_asset_id_list) -> None
 		Unloads a primary asset, which allows it to be garbage collected if nothing else is referencing it
@@ -2979,11 +2979,11 @@ package unreal;
 		Args:
 		    primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	public function unload_primary_asset_list(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function unload_primary_asset_list(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.unregister_for_remote_notifications() -> None
 		Requests Requests unregistering from receiving remote notifications to the user's device.
 		(Android only)
 	**/
-	public function unregister_for_remote_notifications(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function unregister_for_remote_notifications(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

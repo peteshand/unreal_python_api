@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.check_in_file(file, description, silent=False) -> bool
 		Use currently set source control provider to check in a file.
@@ -127,7 +127,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function check_in_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function check_in_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.check_in_files(files, description, silent=False) -> bool
 		Use currently set source control provider to check in specified files.
@@ -141,7 +141,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function check_in_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function check_in_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.check_out_file(file, silent=False) -> bool
 		Use currently set source control provider to check out a file.
@@ -154,7 +154,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function check_out_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function check_out_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.check_out_files(files, silent=False) -> bool
 		Use currently set source control provider to check out specified files.
@@ -167,7 +167,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function check_out_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function check_out_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.check_out_or_add_file(file, silent=False) -> bool
 		Use currently set source control provider to check out file or mark it for add.
@@ -180,7 +180,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function check_out_or_add_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function check_out_or_add_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.copy_file(source_file, dest_file, silent=False) -> bool
 		Use currently set source control provider to copy a file.
@@ -194,7 +194,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function copy_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function copy_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.current_provider() -> str
 		Determine the name of the current source control provider.
@@ -202,7 +202,7 @@ package unreal;
 		Returns:
 		    str: the name of the current source control provider. If one is not set then "None" is returned.
 	**/
-	public function current_provider(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function current_provider(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -210,7 +210,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -255,7 +255,7 @@ package unreal;
 		Returns:
 		    bool: true if source control is available, false if it is not
 	**/
-	public function is_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_enabled() -> bool
 		Determine if there is a source control system enabled
@@ -263,7 +263,7 @@ package unreal;
 		Returns:
 		    bool: true if enabled, false if not
 	**/
-	public function is_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.last_error_msg() -> Text
 		Get status text set by SourceControl system if an error occurs regardless whether bSilent is set or not.
@@ -272,7 +272,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function last_error_msg(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function last_error_msg(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.mark_file_for_add(file, silent=False) -> bool
 		Use currently set source control provider to mark a file for add. Does nothing (and returns true) if the file is already under SC
@@ -285,7 +285,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function mark_file_for_add(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function mark_file_for_add(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.mark_file_for_delete(file, silent=False) -> bool
 		Use currently set source control provider to remove file from source control and
@@ -299,7 +299,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function mark_file_for_delete(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function mark_file_for_delete(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.mark_files_for_add(files, silent=False) -> bool
 		Use currently set source control provider to mark files for add. Does nothing (and returns true) for any file that is already under SC
@@ -312,7 +312,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function mark_files_for_add(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function mark_files_for_add(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -329,7 +329,7 @@ package unreal;
 		Returns:
 		    SourceControlState: Source control state - see USourceControlState. It will have bIsValid set to false if it could not have its values set.
 	**/
-	public function query_file_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function query_file_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -346,7 +346,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function revert_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function revert_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.revert_files(files, silent=False) -> bool
 		Use currently set source control provider to revert files regardless whether any changes will be lost or not.
@@ -359,7 +359,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function revert_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function revert_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.revert_unchanged_file(file, silent=False) -> bool
 		Use currently set source control provider to revert a file provided no changes have been made.
@@ -372,7 +372,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function revert_unchanged_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function revert_unchanged_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.revert_unchanged_files(files, silent=False) -> bool
 		Use currently set source control provider to revert files provided no changes have been made.
@@ -385,7 +385,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function revert_unchanged_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function revert_unchanged_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -397,7 +397,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sync_file(file, silent=False) -> bool
 		Use currently set source control provider to sync a file or directory to the head revision.
@@ -410,7 +410,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function sync_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sync_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sync_files(files, silent=False) -> bool
 		Use currently set source control provider to sync files or directories to the head revision.
@@ -423,5 +423,5 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	public function sync_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sync_files(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

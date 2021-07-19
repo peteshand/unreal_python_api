@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -151,7 +151,7 @@ package unreal;
 		Returns:
 		    NiagaraParameterCollectionInstance:
 	**/
-	public function get_niagara_parameter_collection(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_parameter_collection(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -185,7 +185,7 @@ package unreal;
 		    override_name (str): 
 		    skeletal_mesh_component (SkeletalMeshComponent):
 	**/
-	public function override_system_user_variable_skeletal_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function override_system_user_variable_skeletal_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.override_system_user_variable_static_mesh(niagara_system, override_name, static_mesh) -> None
 		Override System User Variable Static Mesh
@@ -195,7 +195,7 @@ package unreal;
 		    override_name (str): 
 		    static_mesh (StaticMesh):
 	**/
-	public function override_system_user_variable_static_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function override_system_user_variable_static_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.override_system_user_variable_static_mesh_component(niagara_system, override_name, static_mesh_component) -> None
 		Sets a Niagara StaticMesh parameter by name, overriding locally if necessary.
@@ -205,7 +205,7 @@ package unreal;
 		    override_name (str): 
 		    static_mesh_component (StaticMeshComponent):
 	**/
-	public function override_system_user_variable_static_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function override_system_user_variable_static_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -227,7 +227,7 @@ package unreal;
 		    override_name (str): 
 		    sampling_regions (Array(Name)):
 	**/
-	public function set_skeletal_mesh_data_interface_sampling_regions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_skeletal_mesh_data_interface_sampling_regions(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_texture_object(niagara_system, override_name, texture) -> None
 		Overrides the Texture Object for a Niagara Texture Data Interface User Parameter.
@@ -237,7 +237,7 @@ package unreal;
 		    override_name (str): 
 		    texture (Texture):
 	**/
-	public function set_texture_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_texture_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_volume_texture_object(niagara_system, override_name, texture) -> None
 		Overrides the Volume Texture for a Niagara Volume Texture Data Interface User Parameter.
@@ -247,7 +247,7 @@ package unreal;
 		    override_name (str): 
 		    texture (VolumeTexture):
 	**/
-	public function set_volume_texture_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_volume_texture_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_system_at_location(world_context_object, system_template, location, rotation=[0.000000, 0.000000, 0.000000], scale=[1.000000, 1.000000, 1.000000], auto_destroy=True, auto_activate=True, pooling_method=NCPoolMethod.NONE, pre_cull_check=True) -> NiagaraComponent
 		Spawns a Niagara System at the specified world location/rotation
@@ -266,7 +266,7 @@ package unreal;
 		Returns:
 		    NiagaraComponent: The spawned UNiagaraComponent
 	**/
-	public function spawn_system_at_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_system_at_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_system_attached(system_template, attach_to_component, attach_point_name, location, rotation, location_type, auto_destroy, auto_activate=True, pooling_method=NCPoolMethod.NONE, pre_cull_check=True) -> NiagaraComponent
 		Spawn System Attached
@@ -286,9 +286,9 @@ package unreal;
 		Returns:
 		    NiagaraComponent:
 	**/
-	public function spawn_system_attached(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_system_attached(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

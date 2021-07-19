@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.does_data_table_row_exist(table, row_name) -> bool
 		Returns whether or not Table contains a row named RowName
@@ -125,7 +125,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function does_data_table_row_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function does_data_table_row_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.evaluate_curve_table_row(curve_table, row_name, xy, context_string) -> (out_result=EvaluateCurveTableResult, out_xy=float)
 		Evaluate Curve Table Row
@@ -143,7 +143,7 @@ package unreal;
 		
 		    out_xy (float):
 	**/
-	public function evaluate_curve_table_row(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function evaluate_curve_table_row(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.fill_data_table_from_csv_file(data_table, csv_file_path) -> bool
 		Empty and fill a Data Table from CSV file.
@@ -155,7 +155,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	public function fill_data_table_from_csv_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function fill_data_table_from_csv_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.fill_data_table_from_csv_string(data_table, csv_string) -> bool
 		Empty and fill a Data Table from CSV string.
@@ -167,7 +167,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	public function fill_data_table_from_csv_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function fill_data_table_from_csv_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.fill_data_table_from_json_file(data_table, json_file_path, import_row_struct=None) -> bool
 		Empty and fill a Data Table from JSON file.
@@ -180,7 +180,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	public function fill_data_table_from_json_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function fill_data_table_from_json_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.fill_data_table_from_json_string(data_table, json_string) -> bool
 		Empty and fill a Data Table from JSON string.
@@ -192,7 +192,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	public function fill_data_table_from_json_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function fill_data_table_from_json_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -208,7 +208,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	public function get_data_table_column_as_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_data_table_column_as_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_data_table_row_names(table) -> Array(Name)
 		Get Data Table Row Names
@@ -221,11 +221,11 @@ package unreal;
 		
 		    out_row_names (Array(Name)):
 	**/
-	public function get_data_table_row_names(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_data_table_row_names(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -281,5 +281,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

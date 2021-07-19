@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -119,12 +119,12 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	public function cancel_download(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function cancel_download(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_asset_pack_location(name) -> (GooglePADErrorCode, location=int32)
 		Get location handle of requested asset pack (release when done)
@@ -137,7 +137,7 @@ package unreal;
 		
 		    location (int32):
 	**/
-	public function get_asset_pack_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_asset_pack_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_assets_path(location) -> str
 		Get asset path from from location
@@ -148,7 +148,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_assets_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_assets_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_bytes_downloaded(state) -> int32
 		Get the number of bytes downloaded from a download state
@@ -159,7 +159,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_bytes_downloaded(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_bytes_downloaded(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -167,7 +167,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_download_state(name) -> (GooglePADErrorCode, state=int32)
 		Get download state handle of an asset pack (release when done)
@@ -180,7 +180,7 @@ package unreal;
 		
 		    state (int32):
 	**/
-	public function get_download_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_download_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_download_status(state) -> GooglePADDownloadStatus
 		Get download status from a download state
@@ -191,7 +191,7 @@ package unreal;
 		Returns:
 		    GooglePADDownloadStatus:
 	**/
-	public function get_download_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_download_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -229,7 +229,7 @@ package unreal;
 		
 		    status (GooglePADCellularDataConfirmStatus):
 	**/
-	public function get_show_cellular_data_confirmation_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_show_cellular_data_confirmation_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_storage_method(location) -> GooglePADStorageMethod
 		Get storage method from location
@@ -240,7 +240,7 @@ package unreal;
 		Returns:
 		    GooglePADStorageMethod:
 	**/
-	public function get_storage_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_storage_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_total_bytes_to_download(state) -> int32
 		Get the total number of bytes to download from a download state
@@ -251,7 +251,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_total_bytes_to_download(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_total_bytes_to_download(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -271,7 +271,7 @@ package unreal;
 		Args:
 		    location (int32):
 	**/
-	public function release_asset_pack_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function release_asset_pack_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.release_download_state(state) -> None
 		Release download state resources
@@ -279,7 +279,7 @@ package unreal;
 		Args:
 		    state (int32):
 	**/
-	public function release_download_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function release_download_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -294,7 +294,7 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	public function request_download(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function request_download(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.request_info(asset_packs) -> GooglePADErrorCode
 		Request information about a set of asset packs
@@ -305,7 +305,7 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	public function request_info(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function request_info(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.request_removal(name) -> GooglePADErrorCode
 		Request removal of an asset pack
@@ -316,7 +316,7 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	public function request_removal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function request_removal(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -332,9 +332,9 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	public function show_cellular_data_confirmation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function show_cellular_data_confirmation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

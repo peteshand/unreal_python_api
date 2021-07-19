@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -124,7 +124,7 @@ package unreal;
 		
 		    context (DrawToRenderTargetContext):
 	**/
-	public function begin_draw_canvas_to_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function begin_draw_canvas_to_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -133,7 +133,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_render_target2d(world_context_object, texture_render_target, clear_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Clears the specified render target with the given ClearColor.
@@ -143,7 +143,7 @@ package unreal;
 		    texture_render_target (TextureRenderTarget2D): 
 		    clear_color (LinearColor):
 	**/
-	public function clear_render_target2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_render_target2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.convert_render_target_to_texture2d_editor_only(world_context_object, render_target, texture) -> None
 		Copies the contents of a render target to a UTexture2D
@@ -154,7 +154,7 @@ package unreal;
 		    render_target (TextureRenderTarget2D): 
 		    texture (Texture2D):
 	**/
-	public function convert_render_target_to_texture2d_editor_only(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function convert_render_target_to_texture2d_editor_only(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_render_target2d(world_context_object, width=256, height=256, format=TextureRenderTargetFormat.RTF_RGBA16F, clear_color=[0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps=False) -> TextureRenderTarget2D
 		Creates a new render target and initializes it to the specified dimensions
@@ -170,7 +170,7 @@ package unreal;
 		Returns:
 		    TextureRenderTarget2D:
 	**/
-	public function create_render_target2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_render_target2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_render_target2d_array(world_context_object, width=256, height=256, slices=1, format=TextureRenderTargetFormat.RTF_RGBA16F, clear_color=[0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps=False) -> TextureRenderTarget2DArray
 		Creates a new render target array and initializes it to the specified dimensions
@@ -187,7 +187,7 @@ package unreal;
 		Returns:
 		    TextureRenderTarget2DArray:
 	**/
-	public function create_render_target2d_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_render_target2d_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_render_target_volume(world_context_object, width=16, height=16, depth=16, format=TextureRenderTargetFormat.RTF_RGBA16F, clear_color=[0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps=False) -> TextureRenderTargetVolume
 		Creates a new volume render target and initializes it to the specified dimensions
@@ -204,7 +204,7 @@ package unreal;
 		Returns:
 		    TextureRenderTargetVolume:
 	**/
-	public function create_render_target_volume(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_render_target_volume(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.draw_material_to_render_target(world_context_object, texture_render_target, material) -> None
 		Renders a quad with the material applied to the specified render target.
@@ -216,7 +216,7 @@ package unreal;
 		    texture_render_target (TextureRenderTarget2D): 
 		    material (MaterialInterface):
 	**/
-	public function draw_material_to_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function draw_material_to_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.end_draw_canvas_to_render_target(world_context_object, context) -> None
 		Must be paired with a BeginDrawCanvasToRenderTarget to complete rendering to a render target.
@@ -225,7 +225,7 @@ package unreal;
 		    world_context_object (Object): 
 		    context (DrawToRenderTargetContext):
 	**/
-	public function end_draw_canvas_to_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function end_draw_canvas_to_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.export_render_target(world_context_object, texture_render_target, file_path, file_name) -> None
 		Exports a render target as a HDR or PNG image onto the disk (depending on the format of the render target)
@@ -236,7 +236,7 @@ package unreal;
 		    file_path (str): 
 		    file_name (str):
 	**/
-	public function export_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function export_render_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.export_texture2d(world_context_object, texture, file_path, file_name) -> None
 		Exports a Texture2D as a HDR image onto the disk.
@@ -247,7 +247,7 @@ package unreal;
 		    file_path (str): 
 		    file_name (str):
 	**/
-	public function export_texture2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function export_texture2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -255,7 +255,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -303,7 +303,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	public function import_buffer_as_texture2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_buffer_as_texture2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.import_file_as_texture2d(world_context_object, filename) -> Texture2D
 		Imports a texture file from disk and creates Texture2D from it.
@@ -315,7 +315,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	public function import_file_as_texture2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_file_as_texture2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -335,7 +335,7 @@ package unreal;
 		Returns:
 		    Color:
 	**/
-	public function read_render_target_pixel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function read_render_target_pixel(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.read_render_target_raw_pixel(world_context_object, texture_render_target, x, y) -> LinearColor
 		Incredibly inefficient and slow operation! Read a value as-is from a render target using integer pixel coordinates.
@@ -349,7 +349,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function read_render_target_raw_pixel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function read_render_target_raw_pixel(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.read_render_target_raw_uv(world_context_object, texture_render_target, u, v) -> LinearColor
 		Incredibly inefficient and slow operation! Read a value as-is color from a render target using UV [0,1]x[0,1] coordinates.
@@ -363,7 +363,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function read_render_target_raw_uv(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function read_render_target_raw_uv(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.read_render_target_uv(world_context_object, texture_render_target, u, v) -> Color
 		Incredibly inefficient and slow operation! Read a value as sRGB color from a render target using UV [0,1]x[0,1] coordinates.
@@ -379,7 +379,7 @@ package unreal;
 		Returns:
 		    Color:
 	**/
-	public function read_render_target_uv(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function read_render_target_uv(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.release_render_target2d(texture_render_target) -> None
 		Manually releases GPU resources of a render target. This is useful for blueprint creating a lot of render target that would
@@ -388,7 +388,7 @@ package unreal;
 		Args:
 		    texture_render_target (TextureRenderTarget2D):
 	**/
-	public function release_render_target2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function release_render_target2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -407,7 +407,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	public function render_target_create_static_texture2d_editor_only(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function render_target_create_static_texture2d_editor_only(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_cast_inset_shadow_for_all_attachments(primitive_component, cast_inset_shadow, light_attachments_as_group) -> None
 		Set the inset shadow casting state of the given component and all its child attachments.
@@ -418,7 +418,7 @@ package unreal;
 		    cast_inset_shadow (bool): 
 		    light_attachments_as_group (bool):
 	**/
-	public function set_cast_inset_shadow_for_all_attachments(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_cast_inset_shadow_for_all_attachments(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -430,5 +430,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.execute_python_command(python_command) -> bool
 		Execute the given Python command.
@@ -124,7 +124,7 @@ package unreal;
 		Returns:
 		    bool: true if the command ran successfully, false if there were errors (the output log will show the errors).
 	**/
-	public function execute_python_command(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function execute_python_command(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.execute_python_command_ex(python_command, execution_mode=PythonCommandExecutionMode.EXECUTE_FILE, file_execution_scope=PythonFileExecutionScope.PRIVATE) -> (command_result=str, log_output=Array(PythonLogOutputEntry)) or None
 		Execute the given Python command.
@@ -141,7 +141,7 @@ package unreal;
 		
 		    log_output (Array(PythonLogOutputEntry)): The log output captured while running the command.
 	**/
-	public function execute_python_command_ex(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function execute_python_command_ex(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -149,7 +149,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -193,7 +193,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_python_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_python_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -213,5 +213,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

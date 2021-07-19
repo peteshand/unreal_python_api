@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -117,7 +117,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: The new level, or NULL if the level couldn't added.
 	**/
-	public function add_level_to_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_level_to_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_level_to_world_with_transform(world, level_package_name, level_streaming_class, level_transform) -> LevelStreaming
 		Adds the named level package to the world at the given position.  Does nothing if the level already exists in the world.
@@ -131,7 +131,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: The new level, or NULL if the level couldn't added.
 	**/
-	public function add_level_to_world_with_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_level_to_world_with_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -140,7 +140,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_new_streaming_level(level_streaming_class, new_level_path="", move_selected_actors_into_new_level=False) -> LevelStreaming
 		Creates a new streaming level in the current world
@@ -153,7 +153,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: Returns the newly created level, or NULL on failure
 	**/
-	public function create_new_streaming_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_new_streaming_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -161,7 +161,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -209,7 +209,7 @@ package unreal;
 		Returns:
 		    true    If a level was removed.
 	**/
-	public function make_level_current(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_level_current(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -227,7 +227,7 @@ package unreal;
 		Returns:
 		    int32: The number of actors that were successfully moved to the new level
 	**/
-	public function move_actors_to_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function move_actors_to_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.move_selected_actors_to_level(dest_level, warn_about_references=True) -> int32
 		Moves the currently selected actors to the specified streaming level. The new actors will be selected
@@ -239,7 +239,7 @@ package unreal;
 		Returns:
 		    int32: The number of actors that were successfully moved to the new level
 	**/
-	public function move_selected_actors_to_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function move_selected_actors_to_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -262,7 +262,7 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	public function set_level_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_level_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_levels_visibility(levels, should_be_visible, force_layers_visible, modify_mode=LevelVisibilityDirtyMode.MODIFY_ON_CHANGE) -> None
 		Sets a level's visibility in the editor. More efficient than SetLevelsVisibility when changing the visibility of multiple levels simultaneously.
@@ -273,9 +273,9 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	public function set_levels_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_levels_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

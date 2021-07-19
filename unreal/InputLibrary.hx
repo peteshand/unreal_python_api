@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -109,7 +109,7 @@ package unreal;
 		X.calibrate_tilt() -> None
 		Calibrate the tilt for the input device
 	**/
-	public function calibrate_tilt(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calibrate_tilt(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -118,7 +118,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_input_chord_input_chord(a, b) -> bool
 		Test if the input chords are equal (A == B)
@@ -130,7 +130,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_input_chord_input_chord(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_input_chord_input_chord(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_key_key(a, b) -> bool
 		Test if the input key are equal (A == B)
@@ -142,7 +142,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_key_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_key_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_analog_value(input) -> float
 		Get Analog Value
@@ -153,7 +153,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_analog_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_analog_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -161,7 +161,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -184,7 +184,7 @@ package unreal;
 		Returns:
 		    Key: Key name
 	**/
-	public function get_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -215,7 +215,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_user_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_user_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_world() -> World -- get the world associated with this instance (if any)
 	**/
@@ -230,7 +230,7 @@ package unreal;
 		Returns:
 		    Text: The display name of the input chord
 	**/
-	public function input_chord_get_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_chord_get_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_alt_down(input) -> bool
 		Returns true if either alt key was down when this event occurred
@@ -241,7 +241,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_alt_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_alt_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_command_down(input) -> bool
 		Returns true if either command key was down when this event occurred
@@ -252,7 +252,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_command_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_command_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_control_down(input) -> bool
 		Returns true if either control key was down when this event occurred
@@ -263,7 +263,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_control_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_control_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_left_alt_down(input) -> bool
 		Returns true if left alt key was down when this event occurred
@@ -274,7 +274,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_left_alt_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_left_alt_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_left_command_down(input) -> bool
 		Returns true if left command key was down when this event occurred
@@ -285,7 +285,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_left_command_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_left_command_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_left_control_down(input) -> bool
 		Returns true if left control key was down when this event occurred
@@ -296,7 +296,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_left_control_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_left_control_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_left_shift_down(input) -> bool
 		Returns true if left shift key was down when this event occurred
@@ -307,7 +307,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_left_shift_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_left_shift_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_repeat(input) -> bool
 		Returns whether or not this character is an auto-repeated keystroke
@@ -318,7 +318,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_repeat(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_repeat(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_right_alt_down(input) -> bool
 		Returns true if right alt key was down when this event occurred
@@ -329,7 +329,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_right_alt_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_right_alt_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_right_command_down(input) -> bool
 		Returns true if right command key was down when this event occurred
@@ -340,7 +340,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_right_command_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_right_command_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_right_control_down(input) -> bool
 		Returns true if left control key was down when this event occurred
@@ -351,7 +351,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_right_control_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_right_control_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_right_shift_down(input) -> bool
 		Returns true if right shift key was down when this event occurred
@@ -362,7 +362,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_right_shift_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_right_shift_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.input_event_is_shift_down(input) -> bool
 		Returns true if either shift key was down when this event occurred
@@ -373,7 +373,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function input_event_is_shift_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function input_event_is_shift_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_get_display_name(key) -> Text
 		Returns the display name of the key.
@@ -384,7 +384,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function key_get_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_get_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_get_navigation_action(key) -> UINavigationAction
 		Key Get Navigation Action
@@ -396,7 +396,7 @@ package unreal;
 		Returns:
 		    UINavigationAction:
 	**/
-	public function key_get_navigation_action(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_get_navigation_action(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_get_navigation_action_from_key(key_event) -> UINavigationAction
 		Returns the navigation action corresponding to this key, or Invalid if not found
@@ -407,7 +407,7 @@ package unreal;
 		Returns:
 		    UINavigationAction:
 	**/
-	public function key_get_navigation_action_from_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_get_navigation_action_from_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_get_navigation_direction_from_analog(analog_event) -> UINavigation
 		Returns the navigation action corresponding to this key, or Invalid if not found
@@ -418,7 +418,7 @@ package unreal;
 		Returns:
 		    UINavigation:
 	**/
-	public function key_get_navigation_direction_from_analog(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_get_navigation_direction_from_analog(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_get_navigation_direction_from_key(key_event) -> UINavigation
 		Returns the navigation action corresponding to this key, or Invalid if not found
@@ -429,7 +429,7 @@ package unreal;
 		Returns:
 		    UINavigation:
 	**/
-	public function key_get_navigation_direction_from_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_get_navigation_direction_from_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_analog(key) -> bool
 		Returns true if the key is an analog axis
@@ -440,7 +440,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_analog(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_analog(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_axis1d(key) -> bool
 		Returns true if the key is a 1D (float) axis
@@ -451,7 +451,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_axis1d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_axis1d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_axis2d(key) -> bool
 		Returns true if the key is a 2D (vector) axis
@@ -462,7 +462,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_axis2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_axis2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_axis3d(key) -> bool
 		Returns true if the key is a 3D (vector) axis
@@ -473,7 +473,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_axis3d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_axis3d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_button_axis(key) -> bool
 		Returns true if the key is a 1D axis emulating a digital button press.
@@ -484,7 +484,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_button_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_button_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_digital(key) -> bool
 		Returns true if the key is a digital button press
@@ -495,11 +495,11 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_digital(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_digital(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'key_is_float_axis' was renamed to 'key_is_axis1d'.
 	**/
-	public function key_is_float_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_float_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_gamepad_key(key) -> bool
 		Returns true if the key is a gamepad button
@@ -510,7 +510,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_gamepad_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_gamepad_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_keyboard_key(key) -> bool
 		Returns true if the key is a keyboard button
@@ -521,7 +521,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_keyboard_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_keyboard_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_modifier_key(key) -> bool
 		Returns true if the key is a modifier key: Ctrl, Command, Alt, Shift
@@ -532,7 +532,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_modifier_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_modifier_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_mouse_button(key) -> bool
 		Returns true if the key is a mouse button
@@ -543,7 +543,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_mouse_button(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_mouse_button(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_valid(key) -> bool
 		Returns true if this is a valid key.
@@ -554,7 +554,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.key_is_vector_axis(key) -> bool
 		Returns true if the key is a vector axis
@@ -567,7 +567,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function key_is_vector_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function key_is_vector_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -582,7 +582,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function pointer_event_get_cursor_delta(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_cursor_delta(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_effecting_button(input) -> Key
 		Mouse button that caused this event to be raised (possibly FKey::Invalid)
@@ -593,7 +593,7 @@ package unreal;
 		Returns:
 		    Key:
 	**/
-	public function pointer_event_get_effecting_button(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_effecting_button(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_gesture_delta(input) -> Vector2D
 		Returns the change in gesture value since the last gesture event of the same type.
@@ -604,7 +604,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function pointer_event_get_gesture_delta(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_gesture_delta(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_gesture_type(input) -> SlateGesture
 		Returns the type of touch gesture
@@ -615,7 +615,7 @@ package unreal;
 		Returns:
 		    SlateGesture:
 	**/
-	public function pointer_event_get_gesture_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_gesture_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_last_screen_space_position(input) -> Vector2D
 		Returns the position of the cursor in screen space last time we handled an input event
@@ -626,7 +626,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function pointer_event_get_last_screen_space_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_last_screen_space_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_pointer_index(input) -> int32
 		Returns the unique identifier of the pointer (e.g., finger index)
@@ -637,7 +637,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function pointer_event_get_pointer_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_pointer_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_screen_space_position(input) -> Vector2D
 		Returns The position of the cursor in screen space
@@ -648,7 +648,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function pointer_event_get_screen_space_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_screen_space_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_touchpad_index(input) -> int32
 		Returns the index of the touch pad that generated this event (for platforms with multiple touch pads per user)
@@ -659,7 +659,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function pointer_event_get_touchpad_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_touchpad_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_user_index(input) -> int32
 		Returns the index of the user that caused the event
@@ -670,7 +670,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function pointer_event_get_user_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_user_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_get_wheel_delta(input) -> float
 		How much did the mouse wheel turn since the last mouse event
@@ -681,7 +681,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function pointer_event_get_wheel_delta(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_get_wheel_delta(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_is_mouse_button_down(input, mouse_button) -> bool
 		Mouse buttons that are currently pressed
@@ -693,7 +693,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function pointer_event_is_mouse_button_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_is_mouse_button_down(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pointer_event_is_touch_event(input) -> bool
 		Returns true if this event a result from a touch (as opposed to a mouse)
@@ -704,7 +704,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function pointer_event_is_touch_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pointer_event_is_touch_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -720,5 +720,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

@@ -66,7 +66,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Implement iter(self).
 	**/
@@ -127,13 +127,13 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	static public var _wrapper_meta_data : Dynamic;
 	/**
 		X.cast(key, value, obj) -> Map -- cast the given object to this Unreal map type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.clear() -> None -- remove all items from this Unreal map
 	**/
@@ -145,7 +145,7 @@ package unreal;
 	/**
 		X.fromkeys(sequence, value=None) -> Map -- returns a new Unreal map of keys from the sequence using the given value (types are inferred)
 	**/
-	public function fromkeys(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function fromkeys(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get(key, default=None) -> value -- x[key] if key in x, otherwise default
 	**/

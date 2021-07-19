@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Args:
 		    activation_event (str): The string passed into the Schedule call for the notification to be cancelled
 	**/
-	public function cancel_local_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function cancel_local_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cancel_local_notification_by_id(notification_id) -> None
 		Cancel a local notification given the ActivationEvent
@@ -124,17 +124,17 @@ package unreal;
 		Args:
 		    notification_id (int32): The Id returned from one of the ScheduleLocalNotification* functions
 	**/
-	public function cancel_local_notification_by_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function cancel_local_notification_by_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_all_local_notifications() -> None
 		Clear all pending local notifications. Typically this will be done before scheduling new notifications when going into the background
 	**/
-	public function clear_all_local_notifications(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_all_local_notifications(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -142,7 +142,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_device_orientation() -> ScreenOrientation
 		
@@ -150,7 +150,7 @@ package unreal;
 		Returns:
 		    ScreenOrientation: the current device orientation
 	**/
-	public function get_device_orientation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_device_orientation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -176,7 +176,7 @@ package unreal;
 		
 		    fire_date (int32): Returns the time the notification was activated
 	**/
-	public function get_launch_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_launch_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -224,7 +224,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function schedule_local_notification_at_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function schedule_local_notification_at_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.schedule_local_notification_badge_at_time(fire_date_time, local_time, activation_event) -> int32
 		Schedule a local notification badge at a specific time, inLocalTime specifies the current local time or if UTC time should be used
@@ -237,7 +237,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function schedule_local_notification_badge_at_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function schedule_local_notification_badge_at_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.schedule_local_notification_badge_from_now(in_seconds_from_now, activation_event) -> None
 		Schedule a local notification badge to fire inSecondsFromNow from now
@@ -246,7 +246,7 @@ package unreal;
 		    in_seconds_from_now (int32): The seconds until the notification should fire
 		    activation_event (str): A string that is passed in the delegate callback when the app is brought into the foreground from the user activating the notification
 	**/
-	public function schedule_local_notification_badge_from_now(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function schedule_local_notification_badge_from_now(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.schedule_local_notification_from_now(in_seconds_from_now, title, body, action, activation_event) -> int32
 		Schedule a local notification to fire inSecondsFromNow from now
@@ -261,7 +261,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function schedule_local_notification_from_now(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function schedule_local_notification_from_now(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -273,5 +273,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

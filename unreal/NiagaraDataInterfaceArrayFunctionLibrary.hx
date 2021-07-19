@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -149,7 +149,7 @@ package unreal;
 		Returns:
 		    Array(bool):
 	**/
-	public function get_niagara_array_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_color(niagara_system, override_name) -> Array(LinearColor)
 		Gets a copy of Niagara FLinearColor Data.
@@ -161,7 +161,7 @@ package unreal;
 		Returns:
 		    Array(LinearColor):
 	**/
-	public function get_niagara_array_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_float(niagara_system, override_name) -> Array(float)
 		Gets a copy of Niagara Float Data.
@@ -173,7 +173,7 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	public function get_niagara_array_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_int32(niagara_system, override_name) -> Array(int32)
 		Gets a copy of Niagara Int32 Data.
@@ -185,7 +185,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function get_niagara_array_int32(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_int32(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_quat(niagara_system, override_name) -> Array(Quat)
 		Gets a copy of Niagara FQuat Data.
@@ -197,7 +197,7 @@ package unreal;
 		Returns:
 		    Array(Quat):
 	**/
-	public function get_niagara_array_quat(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_quat(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_vector(niagara_system, override_name) -> Array(Vector)
 		Gets a copy of Niagara FVector Data.
@@ -209,7 +209,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	public function get_niagara_array_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_vector2d(niagara_system, override_name) -> Array(Vector2D)
 		Gets a copy of Niagara FVector2D Data.
@@ -221,7 +221,7 @@ package unreal;
 		Returns:
 		    Array(Vector2D):
 	**/
-	public function get_niagara_array_vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_niagara_array_vector4(niagara_system, override_name) -> Array(Vector4)
 		Gets a copy of Niagara FVector4 Data.
@@ -233,7 +233,7 @@ package unreal;
 		Returns:
 		    Array(Vector4):
 	**/
-	public function get_niagara_array_vector4(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_niagara_array_vector4(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -279,7 +279,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(bool)):
 	**/
-	public function set_niagara_array_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_color(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FLinearColor Data.
@@ -289,7 +289,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(LinearColor)):
 	**/
-	public function set_niagara_array_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_float(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array Float Data.
@@ -299,7 +299,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(float)):
 	**/
-	public function set_niagara_array_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_int32(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array Int32 Data.
@@ -309,7 +309,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(int32)):
 	**/
-	public function set_niagara_array_int32(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_int32(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_quat(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FQuat Data.
@@ -319,7 +319,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(Quat)):
 	**/
-	public function set_niagara_array_quat(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_quat(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_vector(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FVector Data.
@@ -329,7 +329,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(Vector)):
 	**/
-	public function set_niagara_array_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_vector2d(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FVector2D Data.
@@ -339,7 +339,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(Vector2D)):
 	**/
-	public function set_niagara_array_vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_niagara_array_vector4(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FVector4 Data.
@@ -349,9 +349,9 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(Vector4)):
 	**/
-	public function set_niagara_array_vector4(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_niagara_array_vector4(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

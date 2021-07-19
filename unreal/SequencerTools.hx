@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,12 +113,12 @@ package unreal;
 		X.cancel_movie_render() -> None
 		Attempts to cancel an in-progress Render to Movie. Does nothing if there is no render in progress.
 	**/
-	public function cancel_movie_render(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function cancel_movie_render(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_event(sequence, section, endpoint, payload) -> MovieSceneEvent
 		Create an event from a previously created blueprint endpoint and a payload. The resulting event should be added only
@@ -134,7 +134,7 @@ package unreal;
 		Returns:
 		    MovieSceneEvent: The created movie event. See: CreateQuickBinding
 	**/
-	public function create_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_event(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_quick_binding(sequence, object, function_name, call_in_editor) -> SequencerQuickBindingResult
 		Create a quick binding to an actor's member method to be used in an event sequence.
@@ -148,7 +148,7 @@ package unreal;
 		Returns:
 		    SequencerQuickBindingResult: The created binding.
 	**/
-	public function create_quick_binding(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_quick_binding(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.export_anim_sequence(world, sequence, anim_sequence, export_option, binding) -> bool
 		* Export Passed in Binding as an Anim Seqquence.
@@ -171,7 +171,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function export_anim_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function export_anim_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.export_fbx(world, sequence, bindings, override_options, fbx_file_name) -> bool
 		* Export Passed in Bindings to FBX
@@ -192,7 +192,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function export_fbx(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function export_fbx(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_bound_objects(world, sequence, bindings, range) -> Array(SequencerBoundObjects)
 		* Retrieve all objects currently bound to the specified binding identifiers. The sequence will be evaluated in lower bound of the specified range,
@@ -207,7 +207,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBoundObjects):
 	**/
-	public function get_bound_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_bound_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -215,7 +215,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -246,7 +246,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBoundObjects):
 	**/
-	public function get_object_bindings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_object_bindings(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -288,7 +288,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function import_fbx(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_fbx(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.import_fbx_to_control_rig(world, sequence, actor_with_control_rig_track, selected_control_rig_names, import_fbx_control_rig_settings, import_filename) -> bool
 		* Import FBX onto a control rig with the specified track name
@@ -312,7 +312,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function import_fbx_to_control_rig(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_fbx_to_control_rig(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_event_endpoint_valid(endpoint) -> bool
 		Check if an endpoint is valid and can be used to create movie scene event.
@@ -323,7 +323,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_event_endpoint_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_event_endpoint_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_rendering_movie() -> bool
 		Returns if Render to Movie is currently in progress.
@@ -331,7 +331,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_rendering_movie(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_rendering_movie(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -353,7 +353,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function render_movie(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function render_movie(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -365,5 +365,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

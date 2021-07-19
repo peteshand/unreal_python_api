@@ -52,7 +52,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -101,7 +101,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -154,7 +154,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(PyTestChildStruct):  [Read-Write] Child Struct
 	**/
@@ -178,12 +178,12 @@ package unreal;
 		X.emit_script_error() -> None
 		Emit Script Error
 	**/
-	public function emit_script_error(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function emit_script_error(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.emit_script_warning() -> None
 		Emit Script Warning
 	**/
-	public function emit_script_warning(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function emit_script_warning(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(PyTestEnum):  [Read-Write] Enum
 	**/
@@ -263,7 +263,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -352,7 +352,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function return_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function return_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.return_map() -> Map(int32, bool)
 		Return Map
@@ -360,7 +360,7 @@ package unreal;
 		Returns:
 		    Map(int32, bool):
 	**/
-	public function return_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function return_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.return_set() -> Set(int32)
 		Return Set
@@ -368,7 +368,7 @@ package unreal;
 		Returns:
 		    Set(int32):
 	**/
-	public function return_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function return_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -380,7 +380,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(str):  [Read-Write] String
 	**/

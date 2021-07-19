@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_bool_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, bool_value) -> NiagaraClipboardFunctionInput
 		Create Bool Local Value Input
@@ -128,7 +128,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_bool_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_bool_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_data_value_input(outer, input_name, has_edit_condition, edit_condition_value, data_value) -> NiagaraClipboardFunctionInput
 		Create Data Value Input
@@ -143,7 +143,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_data_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_data_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_dynamic_value_input(outer, input_name, input_type_name, has_edit_condition, edit_condition_value, dynamic_value_name, dynamic_value) -> NiagaraClipboardFunctionInput
 		Create Dynamic Value Input
@@ -160,7 +160,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_dynamic_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_dynamic_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_enum_local_value_input(outer, input_name, has_edit_condition, edit_codition_value, enum_type, enum_value) -> NiagaraClipboardFunctionInput
 		Create Enum Local Value Input
@@ -176,7 +176,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_enum_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_enum_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_expression_value_input(outer, input_name, input_type_name, has_edit_condition, edit_condition_value, expression_value) -> NiagaraClipboardFunctionInput
 		Create Expression Value Input
@@ -192,7 +192,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_expression_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_expression_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_float_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, local_value) -> NiagaraClipboardFunctionInput
 		Create Float Local Value Input
@@ -207,7 +207,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_float_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_float_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_int_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, local_value) -> NiagaraClipboardFunctionInput
 		Create Int Local Value Input
@@ -222,7 +222,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_int_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_int_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_linked_value_input(outer, input_name, input_type_name, has_edit_condition, edit_condition_value, linked_value) -> NiagaraClipboardFunctionInput
 		Create Linked Value Input
@@ -238,7 +238,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_linked_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_linked_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_struct_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, struct_value) -> NiagaraClipboardFunctionInput
 		Create Struct Local Value Input
@@ -253,7 +253,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_struct_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_struct_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_vec2_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, vec2_value) -> NiagaraClipboardFunctionInput
 		Create Vec 2Local Value Input
@@ -268,7 +268,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_vec2_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_vec2_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_vec3_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, vec3_value) -> NiagaraClipboardFunctionInput
 		Create Vec 3Local Value Input
@@ -283,7 +283,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	public function create_vec3_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_vec3_local_value_input(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -291,7 +291,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -330,7 +330,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function get_type_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_type_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -358,7 +358,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.try_get_input_by_name(inputs, input_name) -> (out_succeeded=bool, out_input=NiagaraClipboardFunctionInput)
 		Try Get Input by Name
@@ -374,7 +374,7 @@ package unreal;
 		
 		    out_input (NiagaraClipboardFunctionInput):
 	**/
-	public function try_get_input_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function try_get_input_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.try_get_local_value_as_float(input) -> (out_succeeded=bool, out_value=float)
 		Try Get Local Value as Float
@@ -389,7 +389,7 @@ package unreal;
 		
 		    out_value (float):
 	**/
-	public function try_get_local_value_as_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function try_get_local_value_as_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.try_get_local_value_as_int(input) -> (out_succeeded=bool, out_value=int32)
 		Try Get Local Value as Int
@@ -404,7 +404,7 @@ package unreal;
 		
 		    out_value (int32):
 	**/
-	public function try_get_local_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function try_get_local_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.try_set_local_value_as_int(input, value, loose_typing=True) -> bool
 		Try Set Local Value as Int
@@ -419,5 +419,5 @@ package unreal;
 		
 		    out_succeeded (bool):
 	**/
-	public function try_set_local_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function try_set_local_value_as_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

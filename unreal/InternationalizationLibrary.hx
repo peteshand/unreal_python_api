@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_current_asset_group_culture(asset_group, save_to_config=False) -> None
 		Clear the given asset group category culture.
@@ -122,7 +122,7 @@ package unreal;
 		    asset_group (Name): The asset group to clear the culture for.
 		    save_to_config (bool): If true, save the new setting to the users' "GameUserSettings" config so that it persists after a reload.
 	**/
-	public function clear_current_asset_group_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_current_asset_group_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -138,7 +138,7 @@ package unreal;
 		Returns:
 		    str: The display name of the culture, or the given culture code on failure.
 	**/
-	public function get_culture_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_culture_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_asset_group_culture(asset_group) -> str
 		Get the given asset group category culture.
@@ -150,7 +150,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	public function get_current_asset_group_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_asset_group_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_culture() -> str
 		Get the current culture as an IETF language tag:
@@ -162,7 +162,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	public function get_current_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_language() -> str
 		Get the current language (for localization) as an IETF language tag:
@@ -173,7 +173,7 @@ package unreal;
 		Returns:
 		    str: The language as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	public function get_current_language(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_language(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_locale() -> str
 		Get the current locale (for internationalization) as an IETF language tag:
@@ -184,11 +184,11 @@ package unreal;
 		Returns:
 		    str: The locale as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	public function get_current_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -214,7 +214,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of cultures as IETF language tags (eg, "zh-Hans-CN").
 	**/
-	public function get_localized_cultures(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_localized_cultures(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -229,7 +229,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	public function get_native_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_native_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -256,7 +256,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	public function get_suitable_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_suitable_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -285,7 +285,7 @@ package unreal;
 		Returns:
 		    bool: True if the culture was set, false otherwise.
 	**/
-	public function set_current_asset_group_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_asset_group_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_current_culture(culture, save_to_config=False) -> bool
 		Set the current culture.
@@ -298,7 +298,7 @@ package unreal;
 		Returns:
 		    bool: True if the culture was set, false otherwise.
 	**/
-	public function set_current_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_culture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_current_language(culture, save_to_config=False) -> bool
 		Set *only* the current language (for localization).
@@ -311,7 +311,7 @@ package unreal;
 		Returns:
 		    bool: True if the language was set, false otherwise.
 	**/
-	public function set_current_language(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_language(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_current_language_and_locale(culture, save_to_config=False) -> bool
 		Set the current language (for localization) and locale (for internationalization).
@@ -323,7 +323,7 @@ package unreal;
 		Returns:
 		    bool: True if the language and locale were set, false otherwise.
 	**/
-	public function set_current_language_and_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_language_and_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_current_locale(culture, save_to_config=False) -> bool
 		Set *only* the current locale (for internationalization).
@@ -336,7 +336,7 @@ package unreal;
 		Returns:
 		    bool: True if the locale was set, false otherwise.
 	**/
-	public function set_current_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_locale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -348,5 +348,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

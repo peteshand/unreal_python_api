@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    FrameNumber:
 	**/
-	public function add_frame_number_frame_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_frame_number_frame_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_frame_number_integer(a, b) -> FrameNumber
 		Addition (FrameNumber A + int B)
@@ -128,7 +128,7 @@ package unreal;
 		Returns:
 		    FrameNumber:
 	**/
-	public function add_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -137,7 +137,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_frame_rate_to_seconds(frame_rate) -> float
 		Converts an FrameRate to a float ie: 1/30 returns 0.0333333
@@ -148,7 +148,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function conv_frame_rate_to_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_frame_rate_to_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_qualified_frame_time_to_seconds(frame_time) -> float
 		Converts an QualifiedFrameTime to seconds.
@@ -159,7 +159,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function conv_qualified_frame_time_to_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_qualified_frame_time_to_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_timecode_to_string(timecode, force_sign_display=False) -> str
 		Converts an Timecode to a string (hh:mm:ss:ff). If bForceSignDisplay then the number sign will always be prepended instead of just when expressing a negative time.
@@ -171,7 +171,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_timecode_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_timecode_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.divide_frame_number_integer(a, b) -> FrameNumber
 		Divide (FrameNumber A / B)
@@ -183,7 +183,7 @@ package unreal;
 		Returns:
 		    FrameNumber:
 	**/
-	public function divide_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function divide_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.frame_number_to_integer(frame_number) -> int32
 		Converts a FrameNumber to an int32 for use in functions that take int32 frame counts for convenience.
@@ -194,7 +194,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function frame_number_to_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function frame_number_to_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -202,7 +202,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -238,7 +238,7 @@ package unreal;
 		Returns:
 		    Timecode:
 	**/
-	public function get_timecode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timecode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_timecode_frame_rate() -> FrameRate
 		Gets the current timecode frame rate.
@@ -246,7 +246,7 @@ package unreal;
 		Returns:
 		    FrameRate:
 	**/
-	public function get_timecode_frame_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_timecode_frame_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -265,7 +265,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_framerate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_framerate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_multiple_of(frame_rate, other_framerate) -> bool
 		Checks if this framerate is an even multiple of another framerate, ie: 60 is a multiple of 30, but 59.94 is not.
@@ -277,7 +277,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_multiple_of(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_multiple_of(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -293,7 +293,7 @@ package unreal;
 		Returns:
 		    FrameNumber:
 	**/
-	public function multiply_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function multiply_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.multiply_seconds_frame_rate(time_in_seconds, frame_rate) -> FrameTime
 		Multiplies a value in seconds against a FrameRate to get a new FrameTime.
@@ -305,7 +305,7 @@ package unreal;
 		Returns:
 		    FrameTime:
 	**/
-	public function multiply_seconds_frame_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function multiply_seconds_frame_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -330,11 +330,11 @@ package unreal;
 		Returns:
 		    FrameTime:
 	**/
-	public function snap_frame_time_to_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function snap_frame_time_to_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.subtract_frame_number_frame_number(a, b) -> FrameNumber
 		Subtraction (FrameNumber A - FrameNumber B)
@@ -346,7 +346,7 @@ package unreal;
 		Returns:
 		    FrameNumber:
 	**/
-	public function subtract_frame_number_frame_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function subtract_frame_number_frame_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.subtract_frame_number_integer(a, b) -> FrameNumber
 		Subtraction (FrameNumber A - int B)
@@ -358,7 +358,7 @@ package unreal;
 		Returns:
 		    FrameNumber:
 	**/
-	public function subtract_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function subtract_frame_number_integer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.transform_time(source_time, source_rate, destination_rate) -> FrameTime
 		Converts the specified time from one framerate to another framerate. This is useful for converting between tick resolution and display rate.
@@ -371,5 +371,5 @@ package unreal;
 		Returns:
 		    FrameTime:
 	**/
-	public function transform_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function transform_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

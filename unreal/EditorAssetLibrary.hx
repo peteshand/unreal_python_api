@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.checkout_asset(asset_to_checkout) -> bool
 		Checkout the asset from the Content Browser.
@@ -124,7 +124,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function checkout_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function checkout_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.checkout_directory(directory_path, recursive=True) -> bool
 		Checkout assets from the Content Browser. It will load the assets if needed.
@@ -137,7 +137,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function checkout_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function checkout_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.checkout_loaded_asset(asset_to_checkout) -> bool
 		Checkout the asset from the Content Browser.
@@ -148,7 +148,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function checkout_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function checkout_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.checkout_loaded_assets(assets_to_checkout) -> bool
 		Checkout the assets from the Content Browser.
@@ -159,7 +159,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function checkout_loaded_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function checkout_loaded_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.consolidate_assets(asset_to_consolidate_to, assets_to_consolidate) -> bool
 		Consolidates an asset by replacing all references/uses of the provided AssetsToConsolidate with references to AssetToConsolidateTo.
@@ -176,7 +176,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function consolidate_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function consolidate_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.delete_asset(asset_path_to_delete) -> bool
 		Delete the package the assets live in. All objects that live in the package will be deleted.
@@ -190,7 +190,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function delete_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function delete_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.delete_directory(directory_path) -> bool
 		Delete the packages inside a directory. If the directory is then empty, delete the directory.
@@ -205,7 +205,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function delete_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function delete_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.delete_loaded_asset(asset_to_delete) -> bool
 		Delete an asset from the Content Browser that is already loaded.
@@ -219,7 +219,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function delete_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function delete_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.delete_loaded_assets(assets_to_delete) -> bool
 		Delete assets from the Content Browser that are already loaded.
@@ -233,7 +233,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function delete_loaded_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function delete_loaded_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.do_assets_exist(asset_paths) -> bool
 		Check if the assets exist in the Content Browser.
@@ -244,7 +244,7 @@ package unreal;
 		Returns:
 		    bool: True if they exist and it is valid.
 	**/
-	public function do_assets_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function do_assets_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.does_asset_exist(asset_path) -> bool
 		Check if the asset exists in the Content Browser.
@@ -255,7 +255,7 @@ package unreal;
 		Returns:
 		    bool: True if it does exist and it is valid.
 	**/
-	public function does_asset_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function does_asset_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.does_directory_exist(directory_path) -> bool
 		Check is the directory exist in the Content Browser.
@@ -266,7 +266,7 @@ package unreal;
 		Returns:
 		    bool: True if it does exist and it is valid.
 	**/
-	public function does_directory_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function does_directory_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.does_directory_have_assets(directory_path, recursive=True) -> bool
 		Check if there any asset that exist in the directory.
@@ -278,7 +278,7 @@ package unreal;
 		Returns:
 		    bool: True if there is any assets.
 	**/
-	public function does_directory_have_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function does_directory_have_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.duplicate_asset(source_asset_path, destination_asset_path) -> Object
 		Duplicate an asset from the Content Browser. Will try to checkout the file. The Asset will be loaded before being duplicated.
@@ -290,7 +290,7 @@ package unreal;
 		Returns:
 		    Object: The duplicated object if the operation succeeds.
 	**/
-	public function duplicate_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function duplicate_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.duplicate_directory(source_directory_path, destination_directory_path) -> bool
 		Duplicate asset from the Content Browser that are in the folder.
@@ -303,7 +303,7 @@ package unreal;
 		Returns:
 		    bool: The duplicated object if the operation succeeds.
 	**/
-	public function duplicate_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function duplicate_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.duplicate_loaded_asset(source_asset, destination_asset_path) -> Object
 		Duplicate an asset from the Content Browser that is already loaded. Will try to checkout the file.
@@ -315,7 +315,7 @@ package unreal;
 		Returns:
 		    Object: The duplicated object if the operation succeeds
 	**/
-	public function duplicate_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function duplicate_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_asset_data(asset_path) -> AssetData
 		Return the AssetData for the Asset that can then be used with the more complex lib AssetRegistryHelpers.
@@ -326,7 +326,7 @@ package unreal;
 		Returns:
 		    AssetData: The AssetData found.
 	**/
-	public function find_asset_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_asset_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_package_referencers_for_asset(asset_path, load_assets_to_confirm=False) -> Array(str)
 		Find Package Referencers for an asset. Only Soft and Hard dependencies would be looked for.
@@ -342,7 +342,7 @@ package unreal;
 		Returns:
 		    Array(str): The package path of the referencers.
 	**/
-	public function find_package_referencers_for_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_package_referencers_for_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -350,7 +350,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -374,7 +374,7 @@ package unreal;
 		Returns:
 		    str: The string value associated with the tag.
 	**/
-	public function get_metadata_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_metadata_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_metadata_tag_values(object) -> Map(Name, str)
 		Get all tags/values of a loaded asset's metadata.
@@ -385,7 +385,7 @@ package unreal;
 		Returns:
 		    Map(Name, str): The list of all Tags and Values.
 	**/
-	public function get_metadata_tag_values(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_metadata_tag_values(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -413,7 +413,7 @@ package unreal;
 		Returns:
 		    str: If valid, the asset Path of the loaded asset.
 	**/
-	public function get_path_name_for_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_path_name_for_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tag_values(asset_path) -> Map(Name, str)
 		Gets all TagValues (from Asset Registry) associated with an (unloaded) asset as strings value.
@@ -424,7 +424,7 @@ package unreal;
 		Returns:
 		    Map(Name, str): The list of all TagName & TagValue.
 	**/
-	public function get_tag_values(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tag_values(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -444,7 +444,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of asset found.
 	**/
-	public function list_asset_by_tag_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function list_asset_by_tag_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.list_assets(directory_path, recursive=True, include_folder=False) -> Array(str)
 		Return the list of all the assets found in the DirectoryPath.
@@ -457,7 +457,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of asset found.
 	**/
-	public function list_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function list_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_asset(asset_path) -> Object
 		Load an asset from the Content Browser. It will verify if the object is already loaded and only load it if it's necessary.
@@ -468,7 +468,7 @@ package unreal;
 		Returns:
 		    Object: Found or loaded asset.
 	**/
-	public function load_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_blueprint_class(asset_path) -> type(Class)
 		Load a Blueprint asset from the Content Browser and return its generated class. It will verify if the object is already loaded and only load it if it's necessary.
@@ -479,7 +479,7 @@ package unreal;
 		Returns:
 		    type(Class): Found or loaded class.
 	**/
-	public function load_blueprint_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_blueprint_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_directory(directory_path) -> bool
 		Create the directory on disk and in the Content Browser.
@@ -490,7 +490,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function make_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -503,7 +503,7 @@ package unreal;
 		    object (Object): The object from which to retrieve the metadata.
 		    tag (Name): The tag to remove from the metadata.
 	**/
-	public function remove_metadata_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_metadata_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -520,7 +520,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function rename_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function rename_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.rename_directory(source_directory_path, destination_directory_path) -> bool
 		Rename assets from the Content Browser that are in the folder.
@@ -533,7 +533,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function rename_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function rename_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.rename_loaded_asset(source_asset, destination_asset_path) -> bool
 		Rename an asset from the Content Browser that is already loaded.
@@ -546,7 +546,7 @@ package unreal;
 		Returns:
 		    bool: The if the operation succeeds.
 	**/
-	public function rename_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function rename_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_asset(asset_to_save, only_if_is_dirty=True) -> bool
 		Save the packages the assets live in. All objects that live in the package will be saved.
@@ -559,7 +559,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function save_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_directory(directory_path, only_if_is_dirty=True, recursive=True) -> bool
 		Save the packages the assets live in inside the directory. All objects that are in the directory will be saved.
@@ -573,7 +573,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function save_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_directory(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_loaded_asset(asset_to_save, only_if_is_dirty=True) -> bool
 		Save the packages the assets live in. All objects that live in the package will be saved. Will try to checkout the file.
@@ -585,7 +585,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function save_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_loaded_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_loaded_assets(assets_to_save, only_if_is_dirty=True) -> bool
 		Save the packages the assets live in. All objects that live in the package will be saved. Will try to checkout the files.
@@ -597,7 +597,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function save_loaded_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_loaded_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -615,11 +615,11 @@ package unreal;
 		    tag (Name): The tag to set in the metadata.
 		    value (str): The string value to associate with the tag.
 	**/
-	public function set_metadata_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_metadata_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.sync_browser_to_objects(asset_paths) -> None
 		Sync the Content Browser to the given asset(s)
@@ -627,5 +627,5 @@ package unreal;
 		Args:
 		    asset_paths (Array(str)): The list of asset paths to sync to in the Content Browser
 	**/
-	public function sync_browser_to_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function sync_browser_to_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

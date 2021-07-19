@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_dynamic_material_instance(world_context_object, parent, optional_name="None", creation_flags=MIDCreationFlags.NONE) -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance which you can modify during gameplay.
@@ -127,11 +127,11 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_dynamic_material_instance(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_dynamic_material_instance(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'create_material_instance_dynamic' was renamed to 'create_dynamic_material_instance'.
 	**/
-	public function create_material_instance_dynamic(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_material_instance_dynamic(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -139,7 +139,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -180,7 +180,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_scalar_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_scalar_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -197,7 +197,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function get_vector_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_vector_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_world() -> World -- get the world associated with this instance (if any)
 	**/
@@ -228,7 +228,7 @@ package unreal;
 		    parameter_name (Name): 
 		    parameter_value (float):
 	**/
-	public function set_scalar_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_scalar_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_vector_parameter_value(world_context_object, collection, parameter_name, parameter_value) -> None
 		Sets a vector parameter value on the material collection instance. Logs if ParameterName is invalid.
@@ -239,9 +239,9 @@ package unreal;
 		    parameter_name (Name): 
 		    parameter_value (LinearColor):
 	**/
-	public function set_vector_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_vector_parameter_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

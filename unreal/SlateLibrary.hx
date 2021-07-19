@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    Vector2D: Transforms AbsoluteCoordinate into the local space of this Geometry.
 	**/
-	public function absolute_to_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function absolute_to_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.absolute_to_viewport(world_context_object, absolute_desktop_coordinate) -> (pixel_position=Vector2D, viewport_position=Vector2D)
 		Translates absolute coordinate in desktop space of the geometry provided into local viewport coordinates.
@@ -132,7 +132,7 @@ package unreal;
 		
 		    viewport_position (Vector2D): The position in the space of other widgets in the viewport.  Like if you wanted to add another widget to the viewport at the same position in viewport space as this location, this is what you would use.
 	**/
-	public function absolute_to_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function absolute_to_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -141,7 +141,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_slate_brush(a, b) -> bool
 		Returns whether brushes A and B are identical.
@@ -153,7 +153,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_slate_brush(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_slate_brush(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_absolute_size(geometry) -> Vector2D
 		Returns the size of the geometry in absolute space.
@@ -164,7 +164,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_absolute_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_absolute_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -172,7 +172,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -195,7 +195,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_local_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_local_top_left(geometry) -> Vector2D
 		Returns the local top/left of the geometry in local space.
@@ -206,7 +206,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_local_top_left(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_top_left(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -242,7 +242,7 @@ package unreal;
 		Returns:
 		    bool: true if the provided location in absolute coordinates is within the bounds of this geometry.
 	**/
-	public function is_under_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_under_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.local_to_absolute(geometry, local_coordinate) -> Vector2D
 		Translates local coordinates into absolute coordinates
@@ -256,7 +256,7 @@ package unreal;
 		Returns:
 		    Vector2D: Absolute coordinates
 	**/
-	public function local_to_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function local_to_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.local_to_viewport(world_context_object, geometry, local_coordinate) -> (pixel_position=Vector2D, viewport_position=Vector2D)
 		Translates local coordinate of the geometry provided into local viewport coordinates.
@@ -273,7 +273,7 @@ package unreal;
 		
 		    viewport_position (Vector2D): The position in the space of other widgets in the viewport.  Like if you wanted to add another widget to the viewport at the same position in viewport space as this location, this is what you would use.
 	**/
-	public function local_to_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function local_to_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -293,7 +293,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.transform_scalar_absolute_to_local(geometry, absolute_scalar) -> float
 		Transform Scalar Absolute to Local
@@ -305,7 +305,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function transform_scalar_absolute_to_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function transform_scalar_absolute_to_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.transform_scalar_local_to_absolute(geometry, local_scalar) -> float
 		Transform Scalar Local to Absolute
@@ -317,7 +317,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function transform_scalar_local_to_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function transform_scalar_local_to_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.transform_vector_absolute_to_local(geometry, absolute_vector) -> Vector2D
 		Transform Vector Absolute to Local
@@ -329,7 +329,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function transform_vector_absolute_to_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function transform_vector_absolute_to_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.transform_vector_local_to_absolute(geometry, local_vector) -> Vector2D
 		Transform Vector Local to Absolute
@@ -341,5 +341,5 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function transform_vector_local_to_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function transform_vector_local_to_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

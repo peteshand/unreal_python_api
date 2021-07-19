@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_end_seconds(range) -> float
 		Get the ending time for the specified range in seconds, if it has one. Defined as the first time that is outside of the range.
@@ -147,7 +147,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_end_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_end_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_fname() -> FName -- get the name of this instance
 	**/
@@ -182,7 +182,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_start_seconds(range) -> float
 		Get the starting time for the specified range in seconds, if it has one. Defined as the first valid time that is inside the range.
@@ -193,7 +193,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_start_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_start_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -212,7 +212,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_end(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_end(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.has_start(range) -> bool
 		Check whether this range has a start
@@ -223,7 +223,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_start(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_start(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -240,7 +240,7 @@ package unreal;
 		
 		    range (SequencerScriptingRange):
 	**/
-	public function remove_end(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_end(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_start(range) -> SequencerScriptingRange
 		Remove the start from this range, making it infinite
@@ -253,7 +253,7 @@ package unreal;
 		
 		    range (SequencerScriptingRange):
 	**/
-	public function remove_start(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_start(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -279,7 +279,7 @@ package unreal;
 		
 		    range (SequencerScriptingRange):
 	**/
-	public function set_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_end_seconds(range, end) -> SequencerScriptingRange
 		Set the ending time for the specified range in seconds. Interpreted as the first time that is outside of the range.
@@ -293,7 +293,7 @@ package unreal;
 		
 		    range (SequencerScriptingRange):
 	**/
-	public function set_end_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_end_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_start_frame(range, start) -> SequencerScriptingRange
 		Set the starting frame for the specified range. Interpreted as the first valid frame that is inside the range.
@@ -307,7 +307,7 @@ package unreal;
 		
 		    range (SequencerScriptingRange):
 	**/
-	public function set_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_start_seconds(range, start) -> SequencerScriptingRange
 		Set the starting time for the specified range in seconds. Interpreted as the first valid time that is inside the range.
@@ -321,9 +321,9 @@ package unreal;
 		
 		    range (SequencerScriptingRange):
 	**/
-	public function set_start_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_start_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

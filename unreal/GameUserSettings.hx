@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -139,7 +139,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.confirm_video_mode() -> None
 		Mark current video mode settings (fullscreenmode/resolution) as being confirmed by the user
@@ -185,7 +185,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_resolution() -> IntPoint
 		Returns the default resolution when no resolution is set
@@ -193,7 +193,7 @@ package unreal;
 		Returns:
 		    IntPoint:
 	**/
-	public function get_default_resolution(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_resolution(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_default_resolution_scale() -> float
 		Gets the desired resolution quality based on DesiredScreenWidth/Height and the current screen resolution
@@ -209,7 +209,7 @@ package unreal;
 		Returns:
 		    WindowMode:
 	**/
-	public function get_default_window_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_window_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_window_position() -> IntPoint
 		Returns the default window position when no position is set
@@ -217,7 +217,7 @@ package unreal;
 		Returns:
 		    IntPoint:
 	**/
-	public function get_default_window_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_window_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_desktop_resolution() -> IntPoint
 		Returns user's desktop resolution, in pixels.
@@ -249,7 +249,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_frame_pace(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_frame_pace(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_frame_rate_limit() -> float
 		Gets the user's frame rate limit (0 indiciates the frame rate limit is disabled)
@@ -277,7 +277,7 @@ package unreal;
 		Returns:
 		    GameUserSettings:
 	**/
-	public function get_game_user_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_game_user_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_last_confirmed_fullscreen_mode() -> WindowMode
 		Returns the last confirmed user setting for game window fullscreen mode.
@@ -414,7 +414,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_sync_interval(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_sync_interval(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_texture_quality() -> int32
 		Returns the texture quality (0..4, higher is better)
@@ -722,7 +722,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.supports_hdr_display_output() -> bool
 		Whether the curently running system supports HDR display output

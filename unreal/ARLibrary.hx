@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function add_manual_environment_capture_probe(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_manual_environment_capture_probe(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_runtime_candidate_image(session_config, candidate_texture, friendly_name, physical_width) -> ARCandidateImage
 		Create an ARCandidateImage object and add it to the ARCandidateImageList of the given \c UARSessionConfig object.
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    ARCandidateImage: A \c UARCandidateImage Object pointer if the underlying ARPlatform added the candidate image at runtime successfully. Return nullptr otherwise.
 	**/
-	public function add_runtime_candidate_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_runtime_candidate_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_tracked_point_with_name(world_transform, point_name, delete_points_with_same_name=True) -> bool
 		Manually add a tracked point with name and world transform.
@@ -152,7 +152,7 @@ package unreal;
 		Returns:
 		    bool: if the operation succeeds. Note that this is an async operation - the added point won't be available until a few frames later.
 	**/
-	public function add_tracked_point_with_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_tracked_point_with_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.calculate_alignment_transform(transform_in_first_coordinate_system, transform_in_second_coordinate_system) -> Transform
 		Computes a transform that aligns two coordinate systems. Requires the transform of the same known point in each coordinate system.
@@ -166,7 +166,7 @@ package unreal;
 		
 		    alignment_transform (Transform):
 	**/
-	public function calculate_alignment_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calculate_alignment_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.calculate_closest_intersection(start_points, end_points) -> Vector
 		Alignment helpers
@@ -180,7 +180,7 @@ package unreal;
 		
 		    closest_intersection (Vector):
 	**/
-	public function calculate_closest_intersection(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calculate_closest_intersection(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -189,7 +189,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.debug_draw_pin(ar_pin, world_context_object, color=[0.000000, 0.000000, 0.000000, 0.000000], scale=5.000000, persist_for_seconds=0.000000) -> None
 		Given a \c UARPin, draw it for debugging purposes.
@@ -201,7 +201,7 @@ package unreal;
 		    scale (float): 
 		    persist_for_seconds (float):
 	**/
-	public function debug_draw_pin(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function debug_draw_pin(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.debug_draw_tracked_geometry(tracked_geometry, world_context_object, color=[0.000000, 0.000000, 0.000000, 0.000000], outline_thickness=5.000000, persist_for_seconds=0.000000) -> None
 		Given some real-world geometry being tracked by the Augmented Reality system, draw it on the screen for debugging purposes (rudimentary)
@@ -213,7 +213,7 @@ package unreal;
 		    outline_thickness (float): 
 		    persist_for_seconds (float):
 	**/
-	public function debug_draw_tracked_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function debug_draw_tracked_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_tracked_points_by_name(point_name) -> Array(ARTrackedPoint)
 		
@@ -224,7 +224,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedPoint): a list of the tracked points with the given name
 	**/
-	public function find_tracked_points_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_tracked_points_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_alignment_transform() -> Transform
 		
@@ -232,7 +232,7 @@ package unreal;
 		Returns:
 		    Transform: the alignment transform, see "SetAlignmentTransform"
 	**/
-	public function get_alignment_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_alignment_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_geometries() -> Array(ARTrackedGeometry)
 		
@@ -240,7 +240,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedGeometry): a list of all the real-world geometry as currently seen by the Augmented Reality system
 	**/
-	public function get_all_geometries(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_geometries(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_geometries_by_class(geometry_class) -> Array(ARTrackedGeometry)
 		
@@ -251,7 +251,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedGeometry): a list of all the real-world geometry of the specified class as currently seen by the Augmented Reality system
 	**/
-	public function get_all_geometries_by_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_geometries_by_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_pins() -> Array(ARPin)
 		Get a list of all the \c UARPin objects that the Augmented Reality session is currently using to connect virtual objects to real-world, tracked locations.
@@ -259,7 +259,7 @@ package unreal;
 		Returns:
 		    Array(ARPin):
 	**/
-	public function get_all_pins(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_pins(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_tracked2d_poses() -> Array(ARPose2D)
 		
@@ -267,7 +267,7 @@ package unreal;
 		Returns:
 		    Array(ARPose2D): all the 2D poses tracked by the AR system
 	**/
-	public function get_all_tracked2d_poses(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_tracked2d_poses(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_tracked_environment_capture_probes() -> Array(AREnvironmentCaptureProbe)
 		Get All Tracked Environment Capture Probes
@@ -276,7 +276,7 @@ package unreal;
 		Returns:
 		    Array(AREnvironmentCaptureProbe):
 	**/
-	public function get_all_tracked_environment_capture_probes(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_tracked_environment_capture_probes(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_tracked_images() -> Array(ARTrackedImage)
 		Get All Tracked Images
@@ -285,7 +285,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedImage):
 	**/
-	public function get_all_tracked_images(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_tracked_images(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_tracked_planes() -> Array(ARPlaneGeometry)
 		Get All Tracked Planes
@@ -294,7 +294,7 @@ package unreal;
 		Returns:
 		    Array(ARPlaneGeometry):
 	**/
-	public function get_all_tracked_planes(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_tracked_planes(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_tracked_points() -> Array(ARTrackedPoint)
 		Get All Tracked Points
@@ -303,7 +303,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedPoint):
 	**/
-	public function get_all_tracked_points(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_tracked_points(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_tracked_poses() -> Array(ARTrackedPose)
 		Get All Tracked Poses
@@ -312,7 +312,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedPose):
 	**/
-	public function get_all_tracked_poses(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_tracked_poses(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_ar_session_status() -> ARSessionStatus
 		It is intended that you check the status of the Augmented Reality session on every frame and take action accordingly.
@@ -321,7 +321,7 @@ package unreal;
 		Returns:
 		    ARSessionStatus: The status of a current Augmented Reality session: e.g. Running or Not running for a specific reason.
 	**/
-	public function get_ar_session_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_ar_session_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_ar_texture(texture_type) -> ARTexture
 		
@@ -332,7 +332,7 @@ package unreal;
 		Returns:
 		    ARTexture: the AR texture for the specified type
 	**/
-	public function get_ar_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_ar_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_ar_world_scale() -> float
 		
@@ -340,7 +340,7 @@ package unreal;
 		Returns:
 		    float: the AR world scale, see "SetARWorldScale"
 	**/
-	public function get_ar_world_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_ar_world_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_camera_depth() -> ARTextureCameraDepth
 		Get Camera Depth
@@ -349,7 +349,7 @@ package unreal;
 		Returns:
 		    ARTextureCameraDepth:
 	**/
-	public function get_camera_depth(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_camera_depth(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_camera_image() -> ARTextureCameraImage
 		Get Camera Image
@@ -358,7 +358,7 @@ package unreal;
 		Returns:
 		    ARTextureCameraImage:
 	**/
-	public function get_camera_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_camera_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_camera_intrinsics() -> ARCameraIntrinsics or None
 		
@@ -368,7 +368,7 @@ package unreal;
 		
 		    out_camera_intrinsics (ARCameraIntrinsics):
 	**/
-	public function get_camera_intrinsics(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_camera_intrinsics(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -384,11 +384,11 @@ package unreal;
 		Returns:
 		    ARLightEstimate: a \c UARLighEstimate that can be cast to a derived class.
 	**/
-	public function get_current_light_estimate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_light_estimate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -412,7 +412,7 @@ package unreal;
 		Returns:
 		    int32: the max number of faces can be tracked at the same time
 	**/
-	public function get_number_of_tracked_faces_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_number_of_tracked_faces_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_object_classification_at_location(world_location, max_location_diff=10.000000) -> (out_classification=ARObjectClassification, out_classification_location=Vector) or None
 		Try to determine the classification of the object at a world space location
@@ -433,7 +433,7 @@ package unreal;
 		
 		    out_classification_location (Vector):
 	**/
-	public function get_object_classification_at_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_object_classification_at_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -454,7 +454,7 @@ package unreal;
 		Returns:
 		    ARTexture:
 	**/
-	public function get_person_segmentation_depth_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_person_segmentation_depth_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_person_segmentation_image() -> ARTexture
 		Get Person Segmentation Image
@@ -463,7 +463,7 @@ package unreal;
 		Returns:
 		    ARTexture:
 	**/
-	public function get_person_segmentation_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_person_segmentation_image(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_point_cloud() -> Array(Vector)
 		
@@ -471,7 +471,7 @@ package unreal;
 		Returns:
 		    Array(Vector): the raw point cloud view of the AR scene
 	**/
-	public function get_point_cloud(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_point_cloud(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_session_config() -> ARSessionConfig
 		
@@ -479,7 +479,7 @@ package unreal;
 		Returns:
 		    ARSessionConfig: the configuration that the current session was started with.
 	**/
-	public function get_session_config(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_session_config(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_supported_video_formats(session_type) -> Array(ARVideoFormat)
 		
@@ -490,7 +490,7 @@ package unreal;
 		Returns:
 		    Array(ARVideoFormat): The list of supported video formats for this device
 	**/
-	public function get_supported_video_formats(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_supported_video_formats(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tracking_quality() -> ARTrackingQuality
 		
@@ -498,7 +498,7 @@ package unreal;
 		Returns:
 		    ARTrackingQuality: how well the tracking system is performing at the moment
 	**/
-	public function get_tracking_quality(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tracking_quality(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tracking_quality_reason() -> ARTrackingQualityReason
 		
@@ -506,7 +506,7 @@ package unreal;
 		Returns:
 		    ARTrackingQualityReason: The reason for the current limited tracking state
 	**/
-	public function get_tracking_quality_reason(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tracking_quality_reason(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -522,7 +522,7 @@ package unreal;
 		Returns:
 		    ARWorldMappingState: the current world mapping status for the AR world
 	**/
-	public function get_world_mapping_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_world_mapping_status(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_ar_pin_local_store_ready() -> bool
 		Is ARPin Local Store Ready
@@ -530,7 +530,7 @@ package unreal;
 		Returns:
 		    bool: True if local store is ready for use.
 	**/
-	public function is_ar_pin_local_store_ready(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_ar_pin_local_store_ready(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_ar_pin_local_store_supported() -> bool
 		Is ARPin Local Store Supported
@@ -538,7 +538,7 @@ package unreal;
 		Returns:
 		    bool: True if Local Pin saving is supported by the device/platform.
 	**/
-	public function is_ar_pin_local_store_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_ar_pin_local_store_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_ar_supported() -> bool
 		Checks if the current device can support AR
@@ -546,7 +546,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_ar_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_ar_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_scene_reconstruction_supported(session_type, scene_reconstruction_method) -> bool
 		
@@ -558,7 +558,7 @@ package unreal;
 		Returns:
 		    bool: if a particular scene reconstruction method is supported with the specified session type on the current platform
 	**/
-	public function is_scene_reconstruction_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_scene_reconstruction_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_session_tracking_feature_supported(session_type, session_tracking_feature) -> bool
 		
@@ -570,7 +570,7 @@ package unreal;
 		Returns:
 		    bool: if a particular session feature is supported with the specified session type on the current platform
 	**/
-	public function is_session_tracking_feature_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_session_tracking_feature_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_session_type_supported(session_type) -> bool
 		Test whether this type of session is supported by the current Augmented Reality platform.
@@ -582,11 +582,11 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_session_type_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_session_type_supported(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'is_wmr_anchor_store_ready' was renamed to 'is_ar_pin_local_store_ready'.
 	**/
-	public function is_wmr_anchor_store_ready(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_wmr_anchor_store_ready(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_tracked_objects(screen_coord, test_feature_points=True, test_ground_plane=True, test_plane_extents=True, test_plane_boundary_polygon=True) -> Array(ARTraceResult)
 		Perform a line trace against any real-world geometry as tracked by the AR system.
@@ -601,7 +601,7 @@ package unreal;
 		Returns:
 		    Array(ARTraceResult): a list of \c FARTraceResult sorted by distance from camera.
 	**/
-	public function line_trace_tracked_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_tracked_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.line_trace_tracked_objects3d(start, end, test_feature_points=True, test_ground_plane=True, test_plane_extents=True, test_plane_boundary_polygon=True) -> Array(ARTraceResult)
 		Perform a line trace against any real-world geometry as tracked by the AR system.
@@ -617,7 +617,7 @@ package unreal;
 		Returns:
 		    Array(ARTraceResult): a list of \c FARTraceResult sorted by distance from camera.
 	**/
-	public function line_trace_tracked_objects3d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function line_trace_tracked_objects3d(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_ar_pins_from_local_store() -> Map(Name, ARPin)
 		Load all ARPins from local save
@@ -626,7 +626,7 @@ package unreal;
 		Returns:
 		    Map(Name, ARPin): Map of SaveName:ARPin.
 	**/
-	public function load_ar_pins_from_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_ar_pins_from_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -635,7 +635,7 @@ package unreal;
 		X.pause_ar_session() -> None
 		Pause a running Augmented Reality session without clearing existing state.
 	**/
-	public function pause_ar_session(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pause_ar_session(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pin_component(component_to_pin, pin_to_world_transform, tracked_geometry=None, debug_name="None") -> ARPin
 		Pin an Unreal Component to a location in tracking spce (i.e. the real world).
@@ -649,7 +649,7 @@ package unreal;
 		Returns:
 		    ARPin: an object representing the pin that connects \c ComponentToPin component to a real-world location and optionally to the \c TrackedGeometry.
 	**/
-	public function pin_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pin_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pin_component_to_ar_pin(component_to_pin, pin) -> bool
 		Associate a component with an ARPin, so that its transform will be updated by the pin.  Any previously associated component will be detached.
@@ -661,7 +661,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation was successful.
 	**/
-	public function pin_component_to_ar_pin(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pin_component_to_ar_pin(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pin_component_to_trace_result(component_to_pin, trace_result, debug_name="None") -> ARPin
 		A convenient version of \c PinComponent() that can be used in conjunction
@@ -675,16 +675,16 @@ package unreal;
 		Returns:
 		    ARPin:
 	**/
-	public function pin_component_to_trace_result(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pin_component_to_trace_result(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_all_ar_pins_from_local_store() -> None
 		Remove all ARPins from the local store
 	**/
-	public function remove_all_ar_pins_from_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_all_ar_pins_from_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'remove_all_ar_pins_from_wmr_anchor_store' was renamed to 'remove_all_ar_pins_from_local_store'.
 	**/
-	public function remove_all_ar_pins_from_wmr_anchor_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_all_ar_pins_from_wmr_anchor_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_ar_pin_from_local_store(save_name) -> None
 		Remove an ARPin from the local store
@@ -692,7 +692,7 @@ package unreal;
 		Args:
 		    save_name (Name):
 	**/
-	public function remove_ar_pin_from_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_ar_pin_from_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_pin(pin_to_remove) -> None
 		Remove a pin such that it no longer updates the associated component.
@@ -700,7 +700,7 @@ package unreal;
 		Args:
 		    pin_to_remove (ARPin):
 	**/
-	public function remove_pin(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_pin(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -715,7 +715,7 @@ package unreal;
 		Returns:
 		    IntPoint:
 	**/
-	public function resize_xr_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function resize_xr_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_ar_pin_to_local_store(save_name, pin) -> bool
 		Save an ARPin to local store
@@ -727,7 +727,7 @@ package unreal;
 		Returns:
 		    bool: True if saved successfully.
 	**/
-	public function save_ar_pin_to_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_ar_pin_to_local_store(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_alignment_transform(alignment_transform) -> None
 		Set a transform that will be applied to the tracking space. This effectively moves any camera
@@ -744,7 +744,7 @@ package unreal;
 		Args:
 		    alignment_transform (Transform):
 	**/
-	public function set_alignment_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_alignment_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_ar_world_origin_location_and_rotation(origin_location, origin_rotation, is_transform_in_world_space=True, maintain_up_direction=True) -> None
 		For a point P in the AR local space, whose location and rotation are "OriginLocation" and "OriginRotation" in the world space
@@ -758,7 +758,7 @@ package unreal;
 		    is_transform_in_world_space (bool): 
 		    maintain_up_direction (bool):
 	**/
-	public function set_ar_world_origin_location_and_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_ar_world_origin_location_and_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_ar_world_scale(world_scale) -> None
 		Helper function that modifies the alignment transform scale so that virtual content in the world space appears to be "scaled".
@@ -768,7 +768,7 @@ package unreal;
 		Args:
 		    world_scale (float):
 	**/
-	public function set_ar_world_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_ar_world_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -784,7 +784,7 @@ package unreal;
 		Args:
 		    on_off (bool):
 	**/
-	public function set_enabled_xr_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_enabled_xr_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.start_ar_session(session_config) -> None
 		Begin a new Augmented Reality session. Subsequently, use the \c GetARSessionStatus() function to figure out the status of the session.
@@ -792,16 +792,16 @@ package unreal;
 		Args:
 		    session_config (ARSessionConfig): Describes the tracking method to use, what kind of geometry to detect in the world, etc.
 	**/
-	public function start_ar_session(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function start_ar_session(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.stop_ar_session() -> None
 		Stop a running Augmented Reality session and clear any state.
 	**/
-	public function stop_ar_session(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function stop_ar_session(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.toggle_ar_capture(on_off, capture_type) -> bool
 		Starts or stops a battery intensive service on device.
@@ -813,7 +813,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function toggle_ar_capture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function toggle_ar_capture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.unpin_component(component_to_unpin) -> None
 		Given a pinned \c ComponentToUnpin, remove its attachment to the real world.
@@ -821,5 +821,5 @@ package unreal;
 		Args:
 		    component_to_unpin (SceneComponent):
 	**/
-	public function unpin_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function unpin_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

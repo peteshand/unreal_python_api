@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.export_scene(export_selected_actors_only) -> None
 		Exports the current scene
@@ -121,7 +121,7 @@ package unreal;
 		Args:
 		    export_selected_actors_only (bool):
 	**/
-	public function export_scene(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function export_scene(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -129,7 +129,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_dirty_content_packages() -> Array(Package)
 		Appends array with all currently dirty content packages.
@@ -139,7 +139,7 @@ package unreal;
 		
 		    out_dirty_packages (Array(Package)): Array to append dirty packages to.
 	**/
-	public function get_dirty_content_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_dirty_content_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_dirty_map_packages() -> Array(Package)
 		Appends array with all currently dirty map packages.
@@ -149,7 +149,7 @@ package unreal;
 		
 		    out_dirty_packages (Array(Package)): Array to append dirty packages to.
 	**/
-	public function get_dirty_map_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_dirty_map_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -193,7 +193,7 @@ package unreal;
 		Args:
 		    filename (str):
 	**/
-	public function import_scene(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_scene(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_map(filename) -> World
 		Loads the specified map.  Does not prompt the user to save the current map.
@@ -204,7 +204,7 @@ package unreal;
 		Returns:
 		    World: true if the map was loaded successfully.
 	**/
-	public function load_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_map_with_dialog() -> World
 		Prompts the user to save the current map if necessary, the presents a load dialog and
@@ -213,7 +213,7 @@ package unreal;
 		Returns:
 		    World:
 	**/
-	public function load_map_with_dialog(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_map_with_dialog(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -228,7 +228,7 @@ package unreal;
 		Returns:
 		    World:
 	**/
-	public function new_blank_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function new_blank_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.new_map_from_template(path_to_template_level, save_existing_map) -> World
 		New Map from Template
@@ -240,7 +240,7 @@ package unreal;
 		Returns:
 		    World:
 	**/
-	public function new_map_from_template(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function new_map_from_template(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.reload_packages(packages_to_reload, interaction_mode=ReloadPackagesInteractionMode.INTERACTIVE) -> (out_any_packages_reloaded=bool, out_error_message=Text)
 		Helper function that attempts to reload the specified top-level packages.
@@ -256,7 +256,7 @@ package unreal;
 		
 		    out_error_message (Text): An error message specifying any problems with reloading packages
 	**/
-	public function reload_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reload_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -268,7 +268,7 @@ package unreal;
 		Returns:
 		    bool: true on success, False on fail
 	**/
-	public function save_current_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_current_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_dirty_packages(save_map_packages, save_content_packages) -> bool
 		Looks at all currently loaded packages and saves them if their "bDirty" flag is set.
@@ -281,7 +281,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	public function save_dirty_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_dirty_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_dirty_packages_with_dialog(save_map_packages, save_content_packages) -> bool
 		Looks at all currently loaded packages and saves them if their "bDirty" flag is set.
@@ -294,7 +294,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	public function save_dirty_packages_with_dialog(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_dirty_packages_with_dialog(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_map(world, asset_path) -> bool
 		Saves the specified map, returning true on success.
@@ -306,7 +306,7 @@ package unreal;
 		Returns:
 		    bool: true if the map was saved successfully.
 	**/
-	public function save_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_packages(packages_to_save, only_dirty) -> bool
 		Save all packages.
@@ -319,7 +319,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	public function save_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_packages_with_dialog(packages_to_save, only_dirty) -> bool
 		Save all packages. Optionally prompting the user to select which packages to save.
@@ -332,7 +332,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	public function save_packages_with_dialog(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_packages_with_dialog(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -344,7 +344,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.unload_packages(packages_to_unload) -> (out_any_packages_unloaded=bool, out_error_message=Text)
 		Unloads a list of packages
@@ -359,5 +359,5 @@ package unreal;
 		
 		    out_error_message (Text):
 	**/
-	public function unload_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function unload_packages(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

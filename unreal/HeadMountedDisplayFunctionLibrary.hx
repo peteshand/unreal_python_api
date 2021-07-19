@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Args:
 		    external_tracking_transform (Transform): The transform in world-coordinates, of the reference marker of the external tracking system
 	**/
-	public function calibrate_external_tracking_to_hmd(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calibrate_external_tracking_to_hmd(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -125,7 +125,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_xr_timed_input_action_delegate(action_path) -> None
 		/ Clear a delegate to get an OpenXR action event with action time.
@@ -133,7 +133,7 @@ package unreal;
 		Args:
 		    action_path (Name):
 	**/
-	public function clear_xr_timed_input_action_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_xr_timed_input_action_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.configure_gestures(gesture_config) -> bool
 		Specify which gestures to capture.
@@ -144,7 +144,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function configure_gestures(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function configure_gestures(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.connect_remote_xr_device(ip_address, bit_rate) -> XRDeviceConnectionResult
 		Connect to a remote device
@@ -156,12 +156,12 @@ package unreal;
 		Returns:
 		    XRDeviceConnectionResult:
 	**/
-	public function connect_remote_xr_device(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function connect_remote_xr_device(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.disconnect_remote_xr_device() -> None
 		Disconnect remote AR Device
 	**/
-	public function disconnect_remote_xr_device(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function disconnect_remote_xr_device(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.enable_hmd(enable) -> bool
 		Switches to/from using HMD and stereo rendering.
@@ -172,7 +172,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean)            True, if the request was successful.
 	**/
-	public function enable_hmd(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enable_hmd(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.enable_low_persistence_mode(enable) -> None
 		Switches between low and full persistence modes.
@@ -181,7 +181,7 @@ package unreal;
 		Args:
 		    enable (bool): (in) 'true' to enable low persistence mode; 'false' otherwise
 	**/
-	public function enable_low_persistence_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enable_low_persistence_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.enumerate_tracked_devices(system_id="None", device_type=XRTrackedDeviceType.ANY) -> Array(XRDeviceId)
 		Cross XR-System query that will list all XR devices currently being tracked.
@@ -193,7 +193,7 @@ package unreal;
 		Returns:
 		    Array(XRDeviceId): A list of device identifiers matching the query. Use these to query and operate on the device (e.g. through GetDevicePose, AddDeviceVisualizationComponent, etc.)
 	**/
-	public function enumerate_tracked_devices(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enumerate_tracked_devices(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -230,11 +230,11 @@ package unreal;
 		
 		    angular_velocity_rad_per_sec (Vector):
 	**/
-	public function get_controller_transform_for_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_controller_transform_for_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_device_pose(xr_device_id) -> (is_tracked=bool, orientation=Rotator, has_positional_tracking=bool, position=Vector)
 		Cross XR-System query that returns a specific device's tracked position and orientation (in tracking space).
@@ -253,7 +253,7 @@ package unreal;
 		
 		    position (Vector): [out] Represents the device's current position - NOTE: this value is not late updated and will be behind the render thread
 	**/
-	public function get_device_pose(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_device_pose(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_device_world_pose(world_context, xr_device_id) -> (is_tracked=bool, orientation=Rotator, has_positional_tracking=bool, position=Vector)
 		Cross XR-System query that returns a specific device's position and orientation in world space.
@@ -273,7 +273,7 @@ package unreal;
 		
 		    position (Vector): [out] Represents the device's current position - NOTE: this value is not late updated and will be behind the render thread
 	**/
-	public function get_device_world_pose(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_device_world_pose(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -298,7 +298,7 @@ package unreal;
 		
 		    hmd_data (XRHMDData):
 	**/
-	public function get_hmd_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_hmd_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_hmd_device_name() -> Name
 		Returns the name of the device, so scripts can modify their behaviour appropriately
@@ -306,7 +306,7 @@ package unreal;
 		Returns:
 		    Name: FName specific to the currently active HMD device type.  "None" implies no device, "Unknown" implies a device with no description.
 	**/
-	public function get_hmd_device_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_hmd_device_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_hmd_worn_state() -> HMDWornState
 		Returns the worn state of the device.
@@ -314,7 +314,7 @@ package unreal;
 		Returns:
 		    HMDWornState: Unknown, Worn, NotWorn.  If the platform does not detect this it will always return Unknown.
 	**/
-	public function get_hmd_worn_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_hmd_worn_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_motion_controller_data(world_context, hand) -> XRMotionControllerData
 		Cross XR-System query that returns critical information about the motion controller (position, orientation, hand/finger position)
@@ -328,7 +328,7 @@ package unreal;
 		
 		    motion_controller_data (XRMotionControllerData):
 	**/
-	public function get_motion_controller_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_motion_controller_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -340,7 +340,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_of_tracking_sensors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_num_of_tracking_sensors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_orientation_and_position() -> (device_rotation=Rotator, device_position=Vector)
 		Grabs the current orientation and position for the HMD.  If positional tracking is not available, DevicePosition will be a zero vector
@@ -352,7 +352,7 @@ package unreal;
 		
 		    device_position (Vector): (out) The device's current position, in its own tracking space
 	**/
-	public function get_orientation_and_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_orientation_and_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -376,7 +376,7 @@ package unreal;
 		Returns:
 		    float: (float)      The pixel density to be used in VR mode.
 	**/
-	public function get_pixel_density(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_pixel_density(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_positional_tracking_camera_parameters() -> (camera_origin=Vector, camera_rotation=Rotator, hfov=float, vfov=float, camera_distance=float, near_plane=float, far_plane=float)
 		If the HMD has a positional sensor, this will return the game-world location of it, as well as the parameters for the bounding region of tracking.
@@ -400,7 +400,7 @@ package unreal;
 		
 		    far_plane (float): (out) Far plane distance of the tracking volume, in world-space
 	**/
-	public function get_positional_tracking_camera_parameters(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_positional_tracking_camera_parameters(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_screen_percentage() -> float
 		Get Screen Percentage
@@ -409,7 +409,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_screen_percentage(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_screen_percentage(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tracking_origin() -> HMDTrackingOrigin
 		Returns current tracking origin type (eye level or floor level).
@@ -417,7 +417,7 @@ package unreal;
 		Returns:
 		    HMDTrackingOrigin:
 	**/
-	public function get_tracking_origin(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tracking_origin(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tracking_sensor_parameters(index=0) -> (origin=Vector, rotation=Rotator, left_fov=float, right_fov=float, top_fov=float, bottom_fov=float, distance=float, near_plane=float, far_plane=float, is_active=bool)
 		If the HMD has a positional sensor, this will return the game-world location of it, as well as the parameters for the bounding region of tracking.
@@ -449,7 +449,7 @@ package unreal;
 		
 		    is_active (bool): (out) True, if the query for the specified sensor succeeded.
 	**/
-	public function get_tracking_sensor_parameters(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tracking_sensor_parameters(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tracking_to_world_transform(world_context) -> Transform
 		Returns a transform that can be used to convert points from tracking space to world space.
@@ -461,7 +461,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_tracking_to_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tracking_to_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -473,7 +473,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_version_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_version_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_vr_focus_state() -> (use_focus=bool, has_focus=bool)
 		Returns current state of VR focus.
@@ -485,7 +485,7 @@ package unreal;
 		
 		    has_focus (bool): (out) if set to true, then this App currently has VR focus.
 	**/
-	public function get_vr_focus_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_vr_focus_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_world() -> World -- get the world associated with this instance (if any)
 	**/
@@ -500,7 +500,7 @@ package unreal;
 		Returns:
 		    float: How many Unreal units correspond to one meter in the real world
 	**/
-	public function get_world_to_meters_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_world_to_meters_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_xr_system_flags() -> int32
 		Returns the flags for the device, so scripts can modify their behaviour appropriately
@@ -508,7 +508,7 @@ package unreal;
 		Returns:
 		    int32: IsAR, IsTablet, IsHeadMounted.  Returns false
 	**/
-	public function get_xr_system_flags(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_xr_system_flags(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.has_valid_tracking_position() -> bool
 		If the HMD supports positional tracking, whether or not we are currently being tracked
@@ -516,7 +516,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_valid_tracking_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_valid_tracking_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_device_tracking(xr_device_id) -> bool
 		Cross XR-System query that returns whether the specified device is tracked or not.
@@ -527,7 +527,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_device_tracking(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_device_tracking(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_head_mounted_display_connected() -> bool
 		Returns whether or not the HMD hardware is connected and ready to use.  It may or may not actually be in use.
@@ -535,7 +535,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean)  status whether the HMD hardware is connected and ready to use.  It may or may not actually be in use.
 	**/
-	public function is_head_mounted_display_connected(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_head_mounted_display_connected(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_head_mounted_display_enabled() -> bool
 		Returns whether or not we are currently using the head mounted display.
@@ -543,7 +543,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean)  status of HMD
 	**/
-	public function is_head_mounted_display_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_head_mounted_display_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_in_low_persistence_mode() -> bool
 		Returns true, if HMD is in low persistence mode. 'false' otherwise.
@@ -552,7 +552,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_in_low_persistence_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_in_low_persistence_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_spectator_screen_mode_controllable() -> bool
 		Return true if spectator screen mode control is available.
@@ -560,7 +560,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_spectator_screen_mode_controllable(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_spectator_screen_mode_controllable(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -578,7 +578,7 @@ package unreal;
 		    yaw (float): (in) the desired yaw to be set after orientation reset.
 		    options (OrientPositionSelector): (in) specifies either position, orientation or both should be reset.
 	**/
-	public function reset_orientation_and_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reset_orientation_and_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_clipping_planes(near, far) -> None
 		Sets near and far clipping planes (NCP and FCP) for stereo rendering. Similar to 'stereo ncp= fcp' console command, but NCP and FCP set by this
@@ -588,7 +588,7 @@ package unreal;
 		    near (float): (in) Near clipping plane, in centimeters
 		    far (float): (in) Far clipping plane, in centimeters
 	**/
-	public function set_clipping_planes(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_clipping_planes(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -600,11 +600,11 @@ package unreal;
 	/**
 		deprecated: 'set_social_screen_mode' was renamed to 'set_spectator_screen_mode'.
 	**/
-	public function set_social_screen_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_social_screen_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		deprecated: 'set_social_screen_texture' was renamed to 'set_spectator_screen_texture'.
 	**/
-	public function set_social_screen_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_social_screen_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_spectator_screen_mode(mode) -> None
 		Sets the social screen mode.
@@ -612,7 +612,7 @@ package unreal;
 		Args:
 		    mode (SpectatorScreenMode): (in) The social screen Mode.
 	**/
-	public function set_spectator_screen_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_spectator_screen_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_spectator_screen_mode_texture_plus_eye_layout(eye_rect_min, eye_rect_max, texture_rect_min, texture_rect_max, draw_eye_first=True, clear_black=False, use_alpha=False) -> None
 		Setup the layout for ESpectatorScreenMode::TexturePlusEye.
@@ -626,7 +626,7 @@ package unreal;
 		    clear_black (bool): 
 		    use_alpha (bool):
 	**/
-	public function set_spectator_screen_mode_texture_plus_eye_layout(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_spectator_screen_mode_texture_plus_eye_layout(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_spectator_screen_texture(texture) -> None
 		Change the texture displayed on the social screen
@@ -634,7 +634,7 @@ package unreal;
 		Args:
 		    texture (Texture):
 	**/
-	public function set_spectator_screen_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_spectator_screen_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_tracking_origin(origin) -> None
 		Sets current tracking origin type (eye level or floor level).
@@ -642,7 +642,7 @@ package unreal;
 		Args:
 		    origin (HMDTrackingOrigin):
 	**/
-	public function set_tracking_origin(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_tracking_origin(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_world_to_meters_scale(world_context, new_scale=100.000000) -> None
 		Sets the World to Meters scale, which changes the scale of the world as perceived by the player
@@ -651,7 +651,7 @@ package unreal;
 		    world_context (Object): 
 		    new_scale (float): Specifies how many Unreal units correspond to one meter in the real world
 	**/
-	public function set_world_to_meters_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_world_to_meters_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_xr_disconnect_delegate(disconnected_delegate) -> None
 		Set XRDisconnect Delegate
@@ -659,7 +659,7 @@ package unreal;
 		Args:
 		    disconnected_delegate (XRDeviceOnDisconnectDelegate):
 	**/
-	public function set_xr_disconnect_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_xr_disconnect_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_xr_timed_input_action_delegate(action_name, delegate) -> None
 		Hook up a delegate to get an OpenXR action event with action time.
@@ -672,11 +672,11 @@ package unreal;
 		    action_name (Name): 
 		    delegate (XRTimedInputActionDelegate):
 	**/
-	public function set_xr_timed_input_action_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_xr_timed_input_action_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.update_external_tracking_hmd_position(external_tracking_transform) -> None
 		Called after calibration to attempt to pull the internal tracker (e.g. HMD tracking) in line with the external tracker
@@ -687,5 +687,5 @@ package unreal;
 		Args:
 		    external_tracking_transform (Transform): The transform in world-coordinates, of the reference marker of the external tracking system
 	**/
-	public function update_external_tracking_hmd_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function update_external_tracking_hmd_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

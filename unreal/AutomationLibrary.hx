@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -114,7 +114,7 @@ package unreal;
 		    occurrences (int32): 
 		    exact_match (bool):
 	**/
-	public function add_expected_log_error(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_expected_log_error(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.are_automated_tests_running() -> bool
 		Lets you know if any automated tests are running, or are about to run and the automation system is spinning up tests.
@@ -122,7 +122,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function are_automated_tests_running(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function are_automated_tests_running(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.automation_wait_for_loading(world_context_object, latent_info, options) -> None
 		Automation Wait for Loading
@@ -132,7 +132,7 @@ package unreal;
 		    latent_info (LatentActionInfo): 
 		    options (AutomationWaitForLoadingOptions):
 	**/
-	public function automation_wait_for_loading(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function automation_wait_for_loading(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -141,7 +141,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.disable_stat_group(world_context_object, group_name) -> None
 		Disable Stat Group
@@ -150,7 +150,7 @@ package unreal;
 		    world_context_object (Object): 
 		    group_name (Name):
 	**/
-	public function disable_stat_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function disable_stat_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.enable_stat_group(world_context_object, group_name) -> None
 		Enable Stat Group
@@ -159,7 +159,7 @@ package unreal;
 		    world_context_object (Object): 
 		    group_name (Name):
 	**/
-	public function enable_stat_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enable_stat_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -167,7 +167,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_screenshot_options_for_gameplay(tolerance=ComparisonTolerance.LOW, delay=0.200000) -> AutomationScreenshotOptions
 		Get Default Screenshot Options for Gameplay
@@ -179,7 +179,7 @@ package unreal;
 		Returns:
 		    AutomationScreenshotOptions:
 	**/
-	public function get_default_screenshot_options_for_gameplay(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_screenshot_options_for_gameplay(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_screenshot_options_for_rendering(tolerance=ComparisonTolerance.LOW, delay=0.200000) -> AutomationScreenshotOptions
 		Get Default Screenshot Options for Rendering
@@ -191,7 +191,7 @@ package unreal;
 		Returns:
 		    AutomationScreenshotOptions:
 	**/
-	public function get_default_screenshot_options_for_rendering(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_screenshot_options_for_rendering(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -230,7 +230,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_stat_call_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_stat_call_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_stat_exc_average(stat_name) -> float
 		Get Stat Exc Average
@@ -241,7 +241,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_stat_exc_average(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_stat_exc_average(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_stat_exc_max(stat_name) -> float
 		Get Stat Exc Max
@@ -252,7 +252,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_stat_exc_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_stat_exc_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_stat_inc_average(stat_name) -> float
 		Get Stat Inc Average
@@ -263,7 +263,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_stat_inc_average(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_stat_inc_average(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_stat_inc_max(stat_name) -> float
 		Get Stat Inc Max
@@ -274,7 +274,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_stat_inc_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_stat_inc_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -307,7 +307,7 @@ package unreal;
 		    world_context_object (Object): 
 		    value (int32): 0:Cinematic, 1:Epic...etc.
 	**/
-	public function set_scalability_quality_level_relative_to_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_scalability_quality_level_relative_to_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_scalability_quality_to_epic(world_context_object) -> None
 		Set Scalability Quality to Epic
@@ -315,7 +315,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function set_scalability_quality_to_epic(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_scalability_quality_to_epic(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_scalability_quality_to_low(world_context_object) -> None
 		Set Scalability Quality to Low
@@ -323,11 +323,11 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function set_scalability_quality_to_low(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_scalability_quality_to_low(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.take_automation_screenshot(world_context_object, latent_info, name, notes, options) -> None
 		Takes a screenshot of the game's viewport.  Does not capture any UI.
@@ -339,7 +339,7 @@ package unreal;
 		    notes (str): 
 		    options (AutomationScreenshotOptions):
 	**/
-	public function take_automation_screenshot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function take_automation_screenshot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.take_automation_screenshot_at_camera(world_context_object, latent_info, camera, name_override, notes, options) -> None
 		Takes a screenshot of the game's viewport, from a particular camera actors POV.  Does not capture any UI.
@@ -352,7 +352,7 @@ package unreal;
 		    notes (str): 
 		    options (AutomationScreenshotOptions):
 	**/
-	public function take_automation_screenshot_at_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function take_automation_screenshot_at_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.take_automation_screenshot_of_ui(world_context_object, latent_info, name, options) -> None
 		Take Automation Screenshot Of UI
@@ -363,7 +363,7 @@ package unreal;
 		    name (str): 
 		    options (AutomationScreenshotOptions):
 	**/
-	public function take_automation_screenshot_of_ui(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function take_automation_screenshot_of_ui(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.take_high_res_screenshot(res_x, res_y, filename, camera=None, mask_enabled=False, capture_hdr=False, comparison_tolerance=ComparisonTolerance.LOW, comparison_notes="", delay=0.000000) -> AutomationEditorTask
 		take high res screenshot in editor.
@@ -382,5 +382,5 @@ package unreal;
 		Returns:
 		    AutomationEditorTask:
 	**/
-	public function take_high_res_screenshot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function take_high_res_screenshot(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

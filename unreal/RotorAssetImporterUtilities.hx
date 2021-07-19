@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -112,7 +112,7 @@ package unreal;
 		Args:
 		    static_mesh_component (StaticMeshComponent):
 	**/
-	public function apply_high_precision_normals(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function apply_high_precision_normals(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.apply_high_precision_normals_asset(static_mesh) -> None
 		Apply High Precision Normals Asset
@@ -120,7 +120,7 @@ package unreal;
 		Args:
 		    static_mesh (StaticMesh):
 	**/
-	public function apply_high_precision_normals_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function apply_high_precision_normals_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -129,7 +129,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -137,7 +137,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -157,7 +157,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	public function get_material_locations(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_material_locations(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -192,7 +192,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function hash_asset_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function hash_asset_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -208,7 +208,7 @@ package unreal;
 		Args:
 		    static_mesh (StaticMesh):
 	**/
-	public function reset_static_materials(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reset_static_materials(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -231,7 +231,7 @@ package unreal;
 		Returns:
 		    ConfigurableRootObject:
 	**/
-	public function spawn_configurable_root_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_configurable_root_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_static_mesh_component(parent_component, static_mesh, static_mesh_component_name, root_object) -> StaticMeshComponent
 		Spawn Static Mesh Component
@@ -245,7 +245,7 @@ package unreal;
 		Returns:
 		    StaticMeshComponent:
 	**/
-	public function spawn_static_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_static_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_variant_set_component(parent_component, static_mesh_instance_name, variant_set_name, root_object) -> ConfigurableVariantSetComponent
 		Spawn Variant Set Component
@@ -259,9 +259,9 @@ package unreal;
 		Returns:
 		    ConfigurableVariantSetComponent:
 	**/
-	public function spawn_variant_set_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_variant_set_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

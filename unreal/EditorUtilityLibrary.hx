@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_actor_reference(path_to_actor) -> Actor
 		Attempts to find the actor specified by PathToActor in the current editor world
@@ -132,7 +132,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -168,7 +168,7 @@ package unreal;
 		Returns:
 		    Array(AssetData):
 	**/
-	public function get_selected_asset_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_asset_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_assets() -> Array(Object)
 		Gets the set of currently selected assets
@@ -176,7 +176,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_selected_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_assets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_blueprint_classes() -> Array(type(Class))
 		Gets the set of currently selected classes
@@ -184,7 +184,7 @@ package unreal;
 		Returns:
 		    Array(type(Class)):
 	**/
-	public function get_selected_blueprint_classes(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_blueprint_classes(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selection_bounds() -> (origin=Vector, box_extent=Vector, sphere_radius=float)
 		Get Selection Bounds
@@ -198,7 +198,7 @@ package unreal;
 		
 		    sphere_radius (float):
 	**/
-	public function get_selection_bounds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selection_bounds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selection_set() -> Array(Actor)
 		Get Selection Set
@@ -206,7 +206,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function get_selection_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selection_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -231,7 +231,7 @@ package unreal;
 		    asset (Object): 
 		    new_name (str):
 	**/
-	public function rename_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function rename_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -243,5 +243,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

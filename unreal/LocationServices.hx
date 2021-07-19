@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -112,7 +112,7 @@ package unreal;
 		Returns:
 		    bool: true if the mobile device has enabled the appropriate service for the app
 	**/
-	public function are_location_services_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function are_location_services_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -121,7 +121,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -129,7 +129,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -150,7 +150,7 @@ package unreal;
 		Returns:
 		    LocationServicesData: the last known location from updates
 	**/
-	public function get_last_known_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_last_known_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_location_services_impl() -> LocationServicesImpl
 		* Returns the Location Services implementation object. Intended to be used to set up the FLocationServicesData_OnLocationChanged
@@ -160,7 +160,7 @@ package unreal;
 		Returns:
 		    LocationServicesImpl: the Android or IOS impl object
 	**/
-	public function get_location_services_impl(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_location_services_impl(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -197,7 +197,7 @@ package unreal;
 		Returns:
 		    bool: true if Initialization was succesful
 	**/
-	public function init_location_services(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function init_location_services(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_location_accuracy_available(accuracy) -> bool
 		Checks if the supplied Accuracy is available on the current device.
@@ -208,7 +208,7 @@ package unreal;
 		Returns:
 		    bool: true if the mobile device can support the Accuracy, false if it will use a different accuracy
 	**/
-	public function is_location_accuracy_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_location_accuracy_available(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -232,11 +232,11 @@ package unreal;
 		Returns:
 		    bool: true if startup successful
 	**/
-	public function start_location_services(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function start_location_services(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.stop_location_services() -> bool
 		Stops the updates of location from the Location Service that was started with StartLocationService
@@ -244,5 +244,5 @@ package unreal;
 		Returns:
 		    bool: true if stop is successful
 	**/
-	public function stop_location_services(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function stop_location_services(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

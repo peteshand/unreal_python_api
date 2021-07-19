@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_distance_from_camera(trace_result) -> float
 		
@@ -132,7 +132,7 @@ package unreal;
 		Returns:
 		    float: the distance from the camera to the traced location in Unreal Units.
 	**/
-	public function get_distance_from_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_distance_from_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -155,7 +155,7 @@ package unreal;
 		Returns:
 		    Transform: The transform of the trace result in tracking space (after it is modified by the \c AlignmentTransform). \see SetAlignmentTransform()
 	**/
-	public function get_local_to_tracking_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_to_tracking_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_local_to_world_transform(trace_result) -> Transform
 		
@@ -166,7 +166,7 @@ package unreal;
 		Returns:
 		    Transform: Get the transform of the trace result in Unreal World Space.
 	**/
-	public function get_local_to_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_to_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_local_transform(trace_result) -> Transform
 		
@@ -177,7 +177,7 @@ package unreal;
 		Returns:
 		    Transform: Get the transform of the trace result in the AR system's local space.
 	**/
-	public function get_local_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_local_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -204,7 +204,7 @@ package unreal;
 		Returns:
 		    ARLineTraceChannels: Get the type of the tracked object (if any) that effected this trace result.
 	**/
-	public function get_trace_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_trace_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_tracked_geometry(trace_result) -> ARTrackedGeometry
 		
@@ -215,7 +215,7 @@ package unreal;
 		Returns:
 		    ARTrackedGeometry: Get the real-world object (as observed by the Augmented Reality system) that was intersected by the line trace.
 	**/
-	public function get_tracked_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tracked_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -243,5 +243,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

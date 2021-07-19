@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -148,7 +148,7 @@ package unreal;
 		
 		    is_my_turn (bool):
 	**/
-	public function get_is_my_turn(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_is_my_turn(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_my_player_index(world_context_object, player_controller, match_id) -> int32
 		out
@@ -163,7 +163,7 @@ package unreal;
 		
 		    player_index (int32):
 	**/
-	public function get_my_player_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_my_player_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -195,7 +195,7 @@ package unreal;
 		
 		    player_display_name (str):
 	**/
-	public function get_player_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_player_display_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -217,7 +217,7 @@ package unreal;
 		    player_controller (PlayerController): 
 		    object (Object):
 	**/
-	public function register_turn_based_match_interface_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function register_turn_based_match_interface_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -233,5 +233,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

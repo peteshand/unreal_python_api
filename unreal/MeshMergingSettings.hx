@@ -86,7 +86,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self|=value.
 	**/
@@ -223,7 +223,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self/value.
 	**/
@@ -249,7 +249,7 @@ package unreal;
 		X.cast(object) -> struct -- cast the given object to this Unreal struct type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(bool):  [Read-Write] Whether or not the lightmap resolution should be computed by summing the lightmap resolutions for the input Mesh Components
 	**/
@@ -309,7 +309,7 @@ package unreal;
 	/**
 		X.static_struct() -> Struct -- get the Unreal struct of this type
 	**/
-	public function static_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(int32):  [Read-Write] The lightmap resolution used both for generating lightmap UV coordinates, and also set on the generated static mesh
 	**/

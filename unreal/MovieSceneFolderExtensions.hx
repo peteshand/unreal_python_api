@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    bool: True if the addition is successful
 	**/
-	public function add_child_folder(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_child_folder(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_child_master_track(folder, master_track) -> bool
 		Add a master track to this folder
@@ -128,7 +128,7 @@ package unreal;
 		Returns:
 		    bool: True if the addition is successful
 	**/
-	public function add_child_master_track(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_child_master_track(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_child_object_binding(folder, object_binding) -> bool
 		Add a guid for an object binding to this folder
@@ -140,7 +140,7 @@ package unreal;
 		Returns:
 		    bool: True if the addition is successful
 	**/
-	public function add_child_object_binding(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_child_object_binding(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -149,7 +149,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_child_folders(folder) -> Array(MovieSceneFolder)
 		Get the child folders of a given folder
@@ -160,7 +160,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneFolder): The child folders associated with the given folder
 	**/
-	public function get_child_folders(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_child_folders(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_child_master_tracks(folder) -> Array(MovieSceneTrack)
 		Get the master tracks contained by this folder
@@ -171,7 +171,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack): The master tracks under the given folder
 	**/
-	public function get_child_master_tracks(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_child_master_tracks(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_child_object_bindings(folder) -> Array(SequencerBindingProxy)
 		Get the object bindings contained by this folder
@@ -182,7 +182,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBindingProxy): The object bindings under the given folder
 	**/
-	public function get_child_object_bindings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_child_object_bindings(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -190,7 +190,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -209,7 +209,7 @@ package unreal;
 		Returns:
 		    Color: The display color of the given folder
 	**/
-	public function get_folder_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_folder_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_folder_name(folder) -> Name
 		Get the given folder's display name
@@ -220,7 +220,7 @@ package unreal;
 		Returns:
 		    Name: The target folder's name
 	**/
-	public function get_folder_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_folder_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
 	**/
@@ -264,7 +264,7 @@ package unreal;
 		Returns:
 		    bool: True if the removal succeeds
 	**/
-	public function remove_child_folder(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_child_folder(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_child_master_track(folder, master_track) -> bool
 		Remove a master track from the given folder
@@ -276,7 +276,7 @@ package unreal;
 		Returns:
 		    bool: True if the removal succeeds
 	**/
-	public function remove_child_master_track(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_child_master_track(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_child_object_binding(folder, object_binding) -> bool
 		Remove an object binding from the given folder
@@ -288,7 +288,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds
 	**/
-	public function remove_child_object_binding(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_child_object_binding(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -312,7 +312,7 @@ package unreal;
 		Returns:
 		    bool: True if the folder's display color is set successfully
 	**/
-	public function set_folder_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_folder_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_folder_name(folder, folder_name) -> bool
 		Set the name of the given folder
@@ -324,9 +324,9 @@ package unreal;
 		Returns:
 		    bool: True if the setting of the folder name succeeds
 	**/
-	public function set_folder_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_folder_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

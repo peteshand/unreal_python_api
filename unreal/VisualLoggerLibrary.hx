@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.enable_recording(enabled) -> None
 		Enable Recording
@@ -121,7 +121,7 @@ package unreal;
 		Args:
 		    enabled (bool):
 	**/
-	public function enable_recording(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enable_recording(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -129,7 +129,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -178,7 +178,7 @@ package unreal;
 		    log_category (Name): 
 		    add_to_message_log (bool):
 	**/
-	public function log_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function log_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.log_location(world_context_object, location, text, object_color=[0.000000, 0.000000, 0.000000, 0.000000], radius=10.000000, log_category="VisLogBP", add_to_message_log=False) -> None
 		Logs location as sphere with given radius - recording for Visual Logs has to be enabled to record this data
@@ -192,7 +192,7 @@ package unreal;
 		    log_category (Name): 
 		    add_to_message_log (bool):
 	**/
-	public function log_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function log_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.log_segment(world_context_object, segment_start, segment_end, text, object_color=[0.000000, 0.000000, 0.000000, 0.000000], thickness=0.000000, category_name="VisLogBP", add_to_message_log=False) -> None
 		Log Segment
@@ -207,7 +207,7 @@ package unreal;
 		    category_name (Name): 
 		    add_to_message_log (bool):
 	**/
-	public function log_segment(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function log_segment(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.log_text(world_context_object, text, log_category="VisLogBP", add_to_message_log=False) -> None
 		Logs simple text string with Visual Logger - recording for Visual Logs has to be enabled to record this data
@@ -218,7 +218,7 @@ package unreal;
 		    log_category (Name): 
 		    add_to_message_log (bool):
 	**/
-	public function log_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function log_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -231,7 +231,7 @@ package unreal;
 		    source_owner (Object): 
 		    destination_owner (Object):
 	**/
-	public function redirect_vislog(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function redirect_vislog(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -247,5 +247,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

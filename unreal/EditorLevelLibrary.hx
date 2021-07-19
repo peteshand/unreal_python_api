@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,12 +113,12 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.clear_actor_selection_set() -> None
 		Remove all actors from the selection set
 	**/
-	public function clear_actor_selection_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_actor_selection_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.convert_actors(actors, actor_class, static_mesh_package_path) -> Array(Actor)
 		Replace in the level all Actors provided with a new actor of type ActorClass. Destroy all Actors provided.
@@ -131,7 +131,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function convert_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function convert_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_proxy_mesh_actor(actors_to_merge, merge_options) -> StaticMeshActor or None
 		Build a proxy mesh actor that can replace a set of mesh actors.
@@ -145,7 +145,7 @@ package unreal;
 		
 		    out_merged_actor (StaticMeshActor): generated actor if requested
 	**/
-	public function create_proxy_mesh_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_proxy_mesh_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.destroy_actor(actor_to_destroy) -> bool
 		Destroy the actor from the world editor. Notify the Editor that the actor got destroyed.
@@ -156,22 +156,22 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function destroy_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function destroy_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.editor_end_play() -> None
 		Editor End Play
 	**/
-	public function editor_end_play(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function editor_end_play(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.editor_invalidate_viewports() -> None
 		Editor Invalidate Viewports
 	**/
-	public function editor_invalidate_viewports(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function editor_invalidate_viewports(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.editor_play_simulate() -> None
 		Editor Play Simulate
 	**/
-	public function editor_play_simulate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function editor_play_simulate(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.editor_set_game_view(game_view) -> None
 		Editor Set Game View
@@ -179,12 +179,12 @@ package unreal;
 		Args:
 		    game_view (bool):
 	**/
-	public function editor_set_game_view(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function editor_set_game_view(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.eject_pilot_level_actor() -> None
 		Eject Pilot Level Actor
 	**/
-	public function eject_pilot_level_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function eject_pilot_level_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_actor_reference(path_to_actor) -> Actor
 		Attempts to find the actor specified by PathToActor in the current editor world
@@ -195,7 +195,7 @@ package unreal;
 		Returns:
 		    Actor: A reference to the actor, or none if it wasn't found
 	**/
-	public function get_actor_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_actor_reference(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_level_actors() -> Array(Actor)
 		Find all loaded Actors in the world editor. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -203,7 +203,7 @@ package unreal;
 		Returns:
 		    Array(Actor): List of found Actors
 	**/
-	public function get_all_level_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_level_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_level_actors_components() -> Array(ActorComponent)
 		Find all loaded ActorComponent own by an actor in the world editor. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -211,7 +211,7 @@ package unreal;
 		Returns:
 		    Array(ActorComponent): List of found ActorComponent
 	**/
-	public function get_all_level_actors_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_level_actors_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -219,7 +219,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -231,7 +231,7 @@ package unreal;
 		Returns:
 		    World: The World used by the world editor.
 	**/
-	public function get_editor_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_editor_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_fname() -> FName -- get the name of this instance
 	**/
@@ -247,7 +247,7 @@ package unreal;
 		Returns:
 		    World:
 	**/
-	public function get_game_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_game_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_level_viewport_camera_info() -> (camera_location=Vector, camera_rotation=Rotator) or None
 		Gets information about the camera position for the primary level editor viewport.  In non-editor builds, these will be zeroed
@@ -259,7 +259,7 @@ package unreal;
 		
 		    camera_rotation (Rotator): (out) Current rotation of the level editing viewport camera, or zero if none found
 	**/
-	public function get_level_viewport_camera_info(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_level_viewport_camera_info(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -286,7 +286,7 @@ package unreal;
 		Returns:
 		    Array(World):
 	**/
-	public function get_pie_worlds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_pie_worlds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_level_actors() -> Array(Actor)
 		Find all loaded Actors that are selected in the world editor. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -294,7 +294,7 @@ package unreal;
 		Returns:
 		    Array(Actor): List of found Actors
 	**/
-	public function get_selected_level_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_level_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -316,7 +316,7 @@ package unreal;
 		Returns:
 		    Actor: The new created actor.
 	**/
-	public function join_static_mesh_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function join_static_mesh_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.load_level(asset_path) -> bool
 		Close the current Persistent Level (without saving it). Loads the specified level.
@@ -327,7 +327,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function load_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function load_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.merge_static_mesh_actors(actors_to_merge, merge_options) -> StaticMeshActor or None
 		Merge the meshes into a unique mesh with the provided StaticMeshActors. There are multiple options on how to merge the meshes and their materials.
@@ -343,7 +343,7 @@ package unreal;
 		
 		    out_merged_actor (StaticMeshActor): The new created actor, if requested.
 	**/
-	public function merge_static_mesh_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function merge_static_mesh_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -358,7 +358,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function new_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function new_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.new_level_from_template(asset_path, template_asset_path) -> bool
 		Close the current Persistent Level (without saving it). Create a new Level base on another level and save it. Load the new created level.
@@ -370,7 +370,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function new_level_from_template(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function new_level_from_template(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pilot_level_actor(actor_to_pilot) -> None
 		Pilot Level Actor
@@ -378,7 +378,7 @@ package unreal;
 		Args:
 		    actor_to_pilot (Actor):
 	**/
-	public function pilot_level_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pilot_level_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -392,7 +392,7 @@ package unreal;
 		    material_to_be_replaced (MaterialInterface): Material we want to replace.
 		    new_material (MaterialInterface): Material to replace MaterialToBeReplaced by.
 	**/
-	public function replace_mesh_components_materials(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace_mesh_components_materials(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.replace_mesh_components_materials_on_actors(actors, material_to_be_replaced, new_material) -> None
 		Find the references of the material MaterialToReplaced on all the MeshComponents of all the Actors provided and replace it by NewMaterial.
@@ -402,7 +402,7 @@ package unreal;
 		    material_to_be_replaced (MaterialInterface): Material we want to replace.
 		    new_material (MaterialInterface): Material to replace MaterialToBeReplaced by.
 	**/
-	public function replace_mesh_components_materials_on_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace_mesh_components_materials_on_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.replace_mesh_components_meshes(mesh_components, mesh_to_be_replaced, new_mesh) -> None
 		Find the references of the mesh MeshToBeReplaced on all the MeshComponents provided and replace it by NewMesh.
@@ -413,7 +413,7 @@ package unreal;
 		    mesh_to_be_replaced (StaticMesh): Mesh we want to replace.
 		    new_mesh (StaticMesh): Mesh to replace MeshToBeReplaced by.
 	**/
-	public function replace_mesh_components_meshes(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace_mesh_components_meshes(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.replace_mesh_components_meshes_on_actors(actors, mesh_to_be_replaced, new_mesh) -> None
 		Find the references of the mesh MeshToBeReplaced on all the MeshComponents of all the Actors provided and replace it by NewMesh.
@@ -423,7 +423,7 @@ package unreal;
 		    mesh_to_be_replaced (StaticMesh): Mesh we want to replace.
 		    new_mesh (StaticMesh): Mesh to replace MeshToBeReplaced by.
 	**/
-	public function replace_mesh_components_meshes_on_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace_mesh_components_meshes_on_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_all_dirty_levels() -> bool
 		Saves all Level currently loaded by the World Editor.
@@ -431,7 +431,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function save_all_dirty_levels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_all_dirty_levels(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.save_current_level() -> bool
 		Saves the specified Level. Must already be saved at lease once to have a valid path.
@@ -439,12 +439,12 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function save_current_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function save_current_level(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.select_nothing() -> None
 		Selects nothing in the editor (another way to clear the selection)
 	**/
-	public function select_nothing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function select_nothing(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_actor_selection_state(actor, should_be_selected) -> None
 		Set the selection state for the selected actor
@@ -453,7 +453,7 @@ package unreal;
 		    actor (Actor): 
 		    should_be_selected (bool):
 	**/
-	public function set_actor_selection_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_actor_selection_state(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_current_level_by_name(level_name) -> bool
 		Set the current level used by the world editor.
@@ -465,7 +465,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	public function set_current_level_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_level_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -482,7 +482,7 @@ package unreal;
 		    camera_location (Vector): Location the camera will be moved to.
 		    camera_rotation (Rotator): Rotation the camera will be set to.
 	**/
-	public function set_level_viewport_camera_info(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_level_viewport_camera_info(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_selected_level_actors(actors_to_select) -> None
 		Clear the current world editor selection and select the provided actors. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -490,7 +490,7 @@ package unreal;
 		Args:
 		    actors_to_select (Array(Actor)): Actor that should be selected in the world editor.
 	**/
-	public function set_selected_level_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_selected_level_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_actor_from_class(actor_class, location, rotation=[0.000000, 0.000000, 0.000000], transient=False) -> Actor
 		Create an actor and place it in the world editor. Can be created from a Blueprint or a Class.
@@ -505,7 +505,7 @@ package unreal;
 		Returns:
 		    Actor: The created actor.
 	**/
-	public function spawn_actor_from_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_actor_from_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.spawn_actor_from_object(object_to_use, location, rotation=[0.000000, 0.000000, 0.000000], transient=False) -> Actor
 		Create an actor and place it in the world editor. The Actor can be created from a Factory, Archetype, Blueprint, Class or an Asset.
@@ -520,9 +520,9 @@ package unreal;
 		Returns:
 		    Actor: The created actor.
 	**/
-	public function spawn_actor_from_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function spawn_actor_from_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

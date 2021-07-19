@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,17 +113,17 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.close_level_sequence() -> None
 		* Close
 	**/
-	public function close_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function close_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.empty_selection() -> None
 		Empties the current selection.
 	**/
-	public function empty_selection(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function empty_selection(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_bound_objects(object_binding) -> Array(Object)
 		Get the object bound to the given binding ID with the current level sequence editor
@@ -134,7 +134,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_bound_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_bound_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -146,7 +146,7 @@ package unreal;
 		Returns:
 		    LevelSequence:
 	**/
-	public function get_current_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_current_time() -> int32
 		Get the current playback position in frames
@@ -154,11 +154,11 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_current_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_current_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -194,7 +194,7 @@ package unreal;
 		Returns:
 		    Array(SequencerChannelProxy):
 	**/
-	public function get_selected_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_folders() -> Array(MovieSceneFolder)
 		Gets the currently selected folders.
@@ -202,7 +202,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneFolder):
 	**/
-	public function get_selected_folders(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_folders(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_objects() -> Array(Guid)
 		Gets the currently selected Object Guids
@@ -210,7 +210,7 @@ package unreal;
 		Returns:
 		    Array(Guid):
 	**/
-	public function get_selected_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_sections() -> Array(MovieSceneSection)
 		Gets the currently selected sections.
@@ -218,7 +218,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneSection):
 	**/
-	public function get_selected_sections(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_sections(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_selected_tracks() -> Array(MovieSceneTrack)
 		Gets the currently selected tracks.
@@ -226,7 +226,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack):
 	**/
-	public function get_selected_tracks(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_selected_tracks(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -242,7 +242,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_level_sequence_locked(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_level_sequence_locked(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_playing() -> bool
 		Check whether the sequence is actively playing.
@@ -250,7 +250,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_playing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_playing(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -265,22 +265,22 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function open_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function open_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.pause() -> None
 		Pause the current level sequence
 	**/
-	public function pause(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pause(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.play() -> None
 		Play the current level sequence
 	**/
-	public function play(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function play(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.refresh_current_level_sequence() -> None
 		Refresh Sequencer UI.
 	**/
-	public function refresh_current_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function refresh_current_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -292,7 +292,7 @@ package unreal;
 		Args:
 		    channels (Array(SequencerChannelProxy)):
 	**/
-	public function select_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function select_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.select_folders(folders) -> None
 		Select folders
@@ -300,7 +300,7 @@ package unreal;
 		Args:
 		    folders (Array(MovieSceneFolder)):
 	**/
-	public function select_folders(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function select_folders(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.select_objects(object_binding) -> None
 		Select objects by GUID
@@ -308,7 +308,7 @@ package unreal;
 		Args:
 		    object_binding (Array(Guid)):
 	**/
-	public function select_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function select_objects(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.select_sections(sections) -> None
 		Select sections
@@ -316,7 +316,7 @@ package unreal;
 		Args:
 		    sections (Array(MovieSceneSection)):
 	**/
-	public function select_sections(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function select_sections(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.select_tracks(tracks) -> None
 		Select tracks
@@ -324,7 +324,7 @@ package unreal;
 		Args:
 		    tracks (Array(MovieSceneTrack)):
 	**/
-	public function select_tracks(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function select_tracks(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_current_time(new_frame) -> None
 		Set playback position for the current level sequence in frames
@@ -332,7 +332,7 @@ package unreal;
 		Args:
 		    new_frame (int32):
 	**/
-	public function set_current_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_current_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -348,9 +348,9 @@ package unreal;
 		Args:
 		    lock (bool):
 	**/
-	public function set_lock_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lock_level_sequence(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

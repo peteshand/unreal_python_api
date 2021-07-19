@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.conv_guid_to_string(guid) -> str
 		Converts a GUID value to a string, in the form 'A-B-C-D'
@@ -124,7 +124,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function conv_guid_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_guid_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.equal_equal_guid_guid(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equal_equal_guid_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_guid_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -144,7 +144,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -193,7 +193,7 @@ package unreal;
 		
 		    guid (Guid):
 	**/
-	public function invalidate_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function invalidate_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid_guid(guid) -> bool
 		Checks whether the given GUID is valid
@@ -204,7 +204,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -216,7 +216,7 @@ package unreal;
 		Returns:
 		    Guid:
 	**/
-	public function new_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function new_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.not_equal_guid_guid(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -228,7 +228,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal_guid_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_guid_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.parse_string_to_guid(guid_string) -> (out_guid=Guid, success=bool)
 		Converts a String of format EGuidFormats to a Guid. Returns Guid OutGuid, Returns bool Success
@@ -243,7 +243,7 @@ package unreal;
 		
 		    success (bool):
 	**/
-	public function parse_string_to_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function parse_string_to_guid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -259,5 +259,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

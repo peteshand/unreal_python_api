@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,24 +99,24 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_currency(val, code) -> Text -- convert the given number (specified in the smallest unit for the given currency) to a culture correct Unreal text currency representation
 	**/
-	public function as_currency(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_currency(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_number(num) -> Text -- convert the given number to a culture correct Unreal text representation
 	**/
-	public function as_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.as_percent(num) -> Text -- convert the given number to a culture correct Unreal text percentgage representation
 	**/
-	public function as_percent(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function as_percent(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.cast(object) -> Text -- cast the given object to this Unreal text type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.format(...) -> Text -- use this Unreal text as a format pattern and generate a new text using the format arguments (may be a mapping, sequence, or set of (optionally named) arguments)
 	**/

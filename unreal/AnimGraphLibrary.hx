@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -123,7 +123,7 @@ package unreal;
 		
 		    history (PositionHistory):
 	**/
-	public function calculate_velocity_from_position_history(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calculate_velocity_from_position_history(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.calculate_velocity_from_sockets(delta_seconds, component, socket_or_bone_name, reference_socket_or_bone, socket_space, offset_in_bone_space, history, number_of_samples, velocity_min, velocity_max, easing_type, custom_curve) -> (float, history=PositionHistory)
 		This function calculates the velocity of an offset position on a bone / socket over time.
@@ -149,7 +149,7 @@ package unreal;
 		
 		    history (PositionHistory):
 	**/
-	public function calculate_velocity_from_sockets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calculate_velocity_from_sockets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -158,7 +158,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.direction_between_sockets(component, socket_or_bone_name_from, socket_or_bone_name_to) -> Vector
 		Computes the direction between two bones / sockets.
@@ -171,7 +171,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function direction_between_sockets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function direction_between_sockets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.distance_between_sockets(component, socket_or_bone_name_a, socket_space_a, socket_or_bone_name_b, socket_space_b, remap_range, range_min, range_max, out_range_min, out_range_max) -> float
 		Computes the distance between two bones / sockets and can remap the range.
@@ -191,7 +191,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function distance_between_sockets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function distance_between_sockets(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -199,7 +199,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -248,12 +248,12 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function k2_end_profiling_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function k2_end_profiling_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.k2_start_profiling_timer() -> None
 		This function starts measuring the time for a profiling bracket
 	**/
-	public function k2_start_profiling_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function k2_start_profiling_timer(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.look_at(current_transform, target_position, look_at_vector, use_up_vector, up_vector, clamp_cone_in_degree) -> Transform
 		Computes the transform which is "looking" at target position with a local axis.
@@ -269,7 +269,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function look_at(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function look_at(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_float_from_perlin_noise(value, range_out_min, range_out_max) -> float
 		This function creates perlin noise for a single float and then range map to RangeOut
@@ -282,7 +282,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function make_float_from_perlin_noise(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_float_from_perlin_noise(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.make_vector_from_perlin_noise(x, y, z, range_out_min_x, range_out_max_x, range_out_min_y, range_out_max_y, range_out_min_z, range_out_max_z) -> Vector
 		This function creates perlin noise from input X, Y, Z, and then range map to RangeOut, and out put to OutX, OutY, OutZ
@@ -301,7 +301,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function make_vector_from_perlin_noise(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_vector_from_perlin_noise(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -321,7 +321,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.two_bone_ik(root_pos, joint_pos, end_pos, joint_target, effector, allow_stretching, start_stretch_ratio, max_stretch_scale) -> (out_joint_pos=Vector, out_end_pos=Vector)
 		Computes the transform for two bones using inverse kinematics.
@@ -343,5 +343,5 @@ package unreal;
 		
 		    out_end_pos (Vector): The resulting position for the end (wrist)
 	**/
-	public function two_bone_ik(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function two_bone_ik(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

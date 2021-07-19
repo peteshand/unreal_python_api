@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -121,7 +121,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_local_navigation_grid_for_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_local_navigation_grid_for_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_local_navigation_grid_for_capsule(world_context_object, location, capsule_radius, capsule_half_height, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		Add Local Navigation Grid for Capsule
@@ -138,7 +138,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_local_navigation_grid_for_capsule(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_local_navigation_grid_for_capsule(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_local_navigation_grid_for_point(world_context_object, location, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		creates new grid data for single point
@@ -153,7 +153,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_local_navigation_grid_for_point(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_local_navigation_grid_for_point(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.add_local_navigation_grid_for_points(world_context_object, locations, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		creates single grid data for set of points
@@ -168,7 +168,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_local_navigation_grid_for_points(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_local_navigation_grid_for_points(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -177,7 +177,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_local_navigation_grid_path(world_context_object, start, end) -> Array(Vector) or None
 		Find Local Navigation Grid Path
@@ -192,7 +192,7 @@ package unreal;
 		
 		    path_points (Array(Vector)):
 	**/
-	public function find_local_navigation_grid_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_local_navigation_grid_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -200,7 +200,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -250,7 +250,7 @@ package unreal;
 		    grid_id (int32): 
 		    rebuild_grids (bool):
 	**/
-	public function remove_local_navigation_grid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_local_navigation_grid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -274,9 +274,9 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_local_navigation_grid_density(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_local_navigation_grid_density(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

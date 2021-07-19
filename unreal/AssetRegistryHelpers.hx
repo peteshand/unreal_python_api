@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_asset_data(asset, allow_blueprint_class=False) -> AssetData
 		Creates asset data from a UObject.
@@ -125,7 +125,7 @@ package unreal;
 		Returns:
 		    AssetData:
 	**/
-	public function create_asset_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_asset_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_asset(asset_data) -> Object
 		Returns the asset UObject if it is loaded or loads the asset if it is unloaded then returns the result
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function get_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_asset_registry() -> AssetRegistry
 		Get Asset Registry
@@ -144,7 +144,7 @@ package unreal;
 		Returns:
 		    AssetRegistry:
 	**/
-	public function get_asset_registry(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_asset_registry(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_class(asset_data) -> type(Class)
 		Get Class
@@ -155,11 +155,11 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -174,7 +174,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_export_text_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_export_text_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_fname() -> FName -- get the name of this instance
 	**/
@@ -189,7 +189,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -219,7 +219,7 @@ package unreal;
 		
 		    out_tag_value (str):
 	**/
-	public function get_tag_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_tag_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -238,7 +238,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_asset_loaded(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_asset_loaded(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_redirector(asset_data) -> bool
 		Returns true if the this asset is a redirector.
@@ -249,7 +249,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_redirector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_redirector(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_u_asset(asset_data) -> bool
 		Returns true if this is the primary asset in a package, true for maps and assets but false for secondary objects like class redirectors
@@ -260,7 +260,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_u_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_u_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_valid(asset_data) -> bool
 		Checks to see if this AssetData refers to an asset or is NULL
@@ -271,7 +271,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_valid(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -299,11 +299,11 @@ package unreal;
 		Returns:
 		    ARFilter:
 	**/
-	public function set_filter_tags_and_values(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_filter_tags_and_values(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.to_soft_object_path(asset_data) -> SoftObjectPath
 		Convert to a SoftObjectPath for loading
@@ -314,5 +314,5 @@ package unreal;
 		Returns:
 		    SoftObjectPath:
 	**/
-	public function to_soft_object_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function to_soft_object_path(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

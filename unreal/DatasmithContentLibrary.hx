@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_datasmith_user_data(object_class) -> Array(DatasmithUserData)
 		Find all Datasmith User Data of loaded objects of the given type.
@@ -127,7 +127,7 @@ package unreal;
 		
 		    out_user_data (Array(DatasmithUserData)): Output array of Datasmith User Data.
 	**/
-	public function get_all_datasmith_user_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_datasmith_user_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_all_objects_and_values_for_key(key, object_class) -> (out_objects=Array(Object), out_values=Array(str))
 		Find all loaded objects of the given type that have a Datasmith User Data that contains the given key and their associated values.
@@ -144,7 +144,7 @@ package unreal;
 		
 		    out_values (Array(str)): Output array of values associated with each object in OutObjects.
 	**/
-	public function get_all_objects_and_values_for_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_all_objects_and_values_for_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -159,7 +159,7 @@ package unreal;
 		Returns:
 		    DatasmithUserData: The Datasmith User Data if it exists; nullptr, otherwise
 	**/
-	public function get_datasmith_user_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_datasmith_user_data(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_datasmith_user_data_keys_and_values_for_value(object, string_to_match) -> (out_keys=Array(Name), out_values=Array(str))
 		Get the keys and values for which the associated value contains the string to match for the Datasmith User Data of the given object.
@@ -175,7 +175,7 @@ package unreal;
 		
 		    out_values (Array(str)): Output array of values associated to the keys.
 	**/
-	public function get_datasmith_user_data_keys_and_values_for_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_datasmith_user_data_keys_and_values_for_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_datasmith_user_data_value_for_key(object, key) -> str
 		Get the value of the given key for the Datasmith User Data of the given object.
@@ -187,11 +187,11 @@ package unreal;
 		Returns:
 		    str: The string value associated with the given key
 	**/
-	public function get_datasmith_user_data_value_for_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_datasmith_user_data_value_for_key(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -247,5 +247,5 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

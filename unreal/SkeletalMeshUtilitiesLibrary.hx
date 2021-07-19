@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -121,7 +121,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -147,7 +147,7 @@ package unreal;
 		
 		    out_build_options (SkeletalMeshBuildSettings): The build settings where we copy the build options.
 	**/
-	public function get_lod_build_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_lod_build_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_lod_count(skeletal_mesh) -> int32
 		Retrieve the number of LOD contain in the specified skeletal mesh.
@@ -158,7 +158,7 @@ package unreal;
 		Returns:
 		    int32: The LOD number.
 	**/
-	public function get_lod_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_lod_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_name() -> str -- get the name of this instance
 	**/
@@ -174,7 +174,7 @@ package unreal;
 		Returns:
 		    int32: Number of vertices. Returns 0 if invalid mesh or LOD index.
 	**/
-	public function get_num_verts(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_num_verts(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -207,7 +207,7 @@ package unreal;
 		Returns:
 		    int32: The index of the LOD that was imported or re-imported. Will return INDEX_NONE if anything goes bad.
 	**/
-	public function import_lod(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_lod(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -225,7 +225,7 @@ package unreal;
 		Returns:
 		    bool: true if succeed. If mesh reduction is not available this will return false.
 	**/
-	public function regenerate_lod(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function regenerate_lod(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.reimport_all_custom_lo_ds(skeletal_mesh) -> bool
 		Re-import the specified skeletal mesh and all the custom LODs.
@@ -236,7 +236,7 @@ package unreal;
 		Returns:
 		    bool: true if re-import works, false otherwise see log for explanation.
 	**/
-	public function reimport_all_custom_lo_ds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reimport_all_custom_lo_ds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.remove_lo_ds(skeletal_mesh, to_remove_lo_ds) -> bool
 		Remove all the specified LODs. This function will remove all the valid LODs in the list.
@@ -249,7 +249,7 @@ package unreal;
 		Returns:
 		    bool: true if the successfully remove all the LODs. False otherwise, but evedn if it return false it will have removed all valid LODs.
 	**/
-	public function remove_lo_ds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_lo_ds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
@@ -266,7 +266,7 @@ package unreal;
 		Returns:
 		    bool: true if the renaming succeeded.
 	**/
-	public function rename_socket(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function rename_socket(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
 	**/
@@ -284,11 +284,11 @@ package unreal;
 		    lod_index (int32): The LOD we will apply the build settings.
 		    build_options (SkeletalMeshBuildSettings): The build settings we want to apply to the LOD.
 	**/
-	public function set_lod_build_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lod_build_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.strip_lod_geometry(skeletal_mesh, lod_index, texture_mask, threshold) -> bool
 		This function will strip all triangle in the specified LOD that don't have any UV area pointing on a black pixel in the TextureMask.
@@ -303,5 +303,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function strip_lod_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function strip_lod_geometry(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

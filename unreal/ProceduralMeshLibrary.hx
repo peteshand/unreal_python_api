@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -122,7 +122,7 @@ package unreal;
 		
 		    tangents (Array(ProcMeshTangent)):
 	**/
-	public function calculate_tangents_for_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function calculate_tangents_for_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
 	**/
@@ -131,7 +131,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.convert_quad_to_triangles(triangles, vert0, vert1, vert2, vert3) -> Array(int32)
 		Add a quad, specified by four indices, to a triangle index buffer as two triangles.
@@ -148,7 +148,7 @@ package unreal;
 		
 		    triangles (Array(int32)):
 	**/
-	public function convert_quad_to_triangles(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function convert_quad_to_triangles(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.copy_procedural_mesh_from_static_mesh_component(static_mesh_component, lod_index, proc_mesh_component, create_collision) -> None
 		Copy materials from StaticMeshComponent to ProceduralMeshComponent.
@@ -159,7 +159,7 @@ package unreal;
 		    proc_mesh_component (ProceduralMeshComponent): 
 		    create_collision (bool):
 	**/
-	public function copy_procedural_mesh_from_static_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function copy_procedural_mesh_from_static_mesh_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_grid_mesh_split(num_x, num_y, grid_spacing=16.000000) -> (triangles=Array(int32), vertices=Array(Vector), u_vs=Array(Vector2D), uv1s=Array(Vector2D))
 		Generate a vertex buffer, index buffer and UVs for a grid mesh where each quad is split, with standard 0-1 UVs on UV0 and point sampled texel center UVs for UV1.
@@ -184,7 +184,7 @@ package unreal;
 		
 		    uv1s (Array(Vector2D)):
 	**/
-	public function create_grid_mesh_split(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_grid_mesh_split(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_grid_mesh_triangles(num_x, num_y, winding) -> Array(int32)
 		Generate an index buffer for a grid of quads.
@@ -200,7 +200,7 @@ package unreal;
 		
 		    triangles (Array(int32)):
 	**/
-	public function create_grid_mesh_triangles(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_grid_mesh_triangles(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.create_grid_mesh_welded(num_x, num_y, grid_spacing=16.000000) -> (triangles=Array(int32), vertices=Array(Vector), u_vs=Array(Vector2D))
 		Generate a vertex buffer, index buffer and UVs for a tessellated grid mesh.
@@ -222,7 +222,7 @@ package unreal;
 		
 		    u_vs (Array(Vector2D)):
 	**/
-	public function create_grid_mesh_welded(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function create_grid_mesh_welded(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.generate_box_mesh(box_radius) -> (vertices=Array(Vector), triangles=Array(int32), normals=Array(Vector), u_vs=Array(Vector2D), tangents=Array(ProcMeshTangent))
 		Generate vertex and index buffer for a simple box, given the supplied dimensions. Normals, UVs and tangents are also generated for each vertex.
@@ -243,7 +243,7 @@ package unreal;
 		
 		    tangents (Array(ProcMeshTangent)):
 	**/
-	public function generate_box_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function generate_box_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -251,7 +251,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -301,7 +301,7 @@ package unreal;
 		
 		    tangents (Array(ProcMeshTangent)):
 	**/
-	public function get_section_from_procedural_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_section_from_procedural_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_section_from_static_mesh(mesh, lod_index, section_index) -> (vertices=Array(Vector), triangles=Array(int32), normals=Array(Vector), u_vs=Array(Vector2D), tangents=Array(ProcMeshTangent))
 		Grab geometry data from a StaticMesh asset.
@@ -324,7 +324,7 @@ package unreal;
 		
 		    tangents (Array(ProcMeshTangent)):
 	**/
-	public function get_section_from_static_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_section_from_static_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -366,9 +366,9 @@ package unreal;
 		
 		    out_other_half_proc_mesh (ProceduralMeshComponent): If bCreateOtherHalf is set, this is the new component created. Its owner will be the same as the supplied InProcMesh.
 	**/
-	public function slice_procedural_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function slice_procedural_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

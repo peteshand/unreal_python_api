@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		(Class):  [Read-Only] Crowd Manager Class
 	**/
@@ -141,7 +141,7 @@ package unreal;
 		Returns:
 		    NavigationPath:
 	**/
-	public function find_path_to_actor_synchronously(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_path_to_actor_synchronously(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_path_to_location_synchronously(world_context_object, path_start, path_end, pathfinding_context=None, filter_class=None) -> NavigationPath
 		Finds path instantly, in a FindPath Synchronously.
@@ -156,7 +156,7 @@ package unreal;
 		Returns:
 		    NavigationPath:
 	**/
-	public function find_path_to_location_synchronously(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_path_to_location_synchronously(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -164,7 +164,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -191,7 +191,7 @@ package unreal;
 		Returns:
 		    NavigationSystemV1:
 	**/
-	public function get_navigation_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_navigation_system(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_outer() -> Object -- get the outer object from this instance (if any)
 	**/
@@ -216,7 +216,7 @@ package unreal;
 		
 		    path_cost (float):
 	**/
-	public function get_path_cost(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_path_cost(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_path_length(world_context_object, path_start, path_end, nav_data=None, filter_class=None) -> (NavigationQueryResult, path_length=float)
 		Potentially expensive. Use with caution
@@ -233,7 +233,7 @@ package unreal;
 		
 		    path_length (float):
 	**/
-	public function get_path_length(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_path_length(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_path_name() -> str -- get the path name of this instance
 	**/
@@ -254,7 +254,7 @@ package unreal;
 		
 		    random_location (Vector):
 	**/
-	public function get_random_location_in_navigable_radius(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_random_location_in_navigable_radius(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_random_point_in_navigable_radius(world_context_object, origin, radius, nav_data=None, filter_class=None) -> Vector or None
 		K2 Get Random Point in Navigable Radius
@@ -271,7 +271,7 @@ package unreal;
 		
 		    random_location (Vector):
 	**/
-	public function get_random_point_in_navigable_radius(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_random_point_in_navigable_radius(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_random_reachable_point_in_radius(world_context_object, origin, radius, nav_data=None, filter_class=None) -> Vector or None
 		Generates a random location reachable from given Origin location.
@@ -288,7 +288,7 @@ package unreal;
 		
 		    random_location (Vector):
 	**/
-	public function get_random_reachable_point_in_radius(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_random_reachable_point_in_radius(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -307,7 +307,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_navigation_being_built(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_navigation_being_built(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.is_navigation_being_built_or_locked(world_context_object) -> bool
 		Is Navigation Being Built or Locked
@@ -318,7 +318,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_navigation_being_built_or_locked(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_navigation_being_built_or_locked(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.k2_replace_area_in_octree_data(object, old_area, new_area) -> bool
 		K2 Replace Area in Octree Data
@@ -352,7 +352,7 @@ package unreal;
 		
 		    hit_location (Vector): if line was obstructed this will be set to hit location. Otherwise it contains SegmentEnd
 	**/
-	public function navigation_raycast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function navigation_raycast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.on_navigation_bounds_updated(nav_volume) -> None
 		
@@ -382,7 +382,7 @@ package unreal;
 		
 		    projected_location (Vector):
 	**/
-	public function project_point_to_navigation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function project_point_to_navigation(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.register_navigation_invoker(invoker, tile_generation_radius=3000.000000, tile_removal_radius=5000.000000) -> None
 		Registers given actor as a "navigation enforcer" which means navigation system will
@@ -431,7 +431,7 @@ package unreal;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.unregister_navigation_invoker(invoker) -> None
 		Removes given actor from the list of active navigation enforcers.

@@ -50,7 +50,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -99,7 +99,7 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
 	**/
@@ -113,7 +113,7 @@ package unreal;
 		X.cast(object) -> Object -- cast the given object to this Unreal object type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.find_channels_by_type(section, channel_type) -> Array(MovieSceneScriptingChannel)
 		Find all channels that belong to the specified UMovieSceneSection that match the specific type. This will filter out any children who do not inherit
@@ -126,7 +126,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneScriptingChannel): An array containing any key channels that match the type specified
 	**/
-	public function find_channels_by_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_channels_by_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_channels(section) -> Array(MovieSceneScriptingChannel)
 		Find all channels that belong to the specified UMovieSceneSection. Some sections have many channels (such as
@@ -139,7 +139,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneScriptingChannel): An array containing any key channels that match the type specified
 	**/
-	public function get_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
@@ -147,7 +147,7 @@ package unreal;
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
 	**/
-	public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
 	**/
@@ -162,7 +162,7 @@ package unreal;
 		Returns:
 		    int32: End frame of this section
 	**/
-	public function get_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_end_frame_seconds(section) -> float
 		Get end time in seconds
@@ -173,7 +173,7 @@ package unreal;
 		Returns:
 		    float: End time of this section
 	**/
-	public function get_end_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_end_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_fname() -> FName -- get the name of this instance
 	**/
@@ -206,7 +206,7 @@ package unreal;
 		Returns:
 		    int32: The frame at the parent sequence
 	**/
-	public function get_parent_sequence_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_parent_sequence_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_path_name() -> str -- get the path name of this instance
 	**/
@@ -221,7 +221,7 @@ package unreal;
 		Returns:
 		    int32: Start frame of this section
 	**/
-	public function get_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.get_start_frame_seconds(section) -> float
 		Get start time in seconds
@@ -232,7 +232,7 @@ package unreal;
 		Returns:
 		    float: Start time of this section
 	**/
-	public function get_start_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_start_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
 	**/
@@ -251,7 +251,7 @@ package unreal;
 		Returns:
 		    bool: Whether this section has a valid end frame (else infinite)
 	**/
-	public function has_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.has_start_frame(section) -> bool
 		Has start frame
@@ -262,7 +262,7 @@ package unreal;
 		Returns:
 		    bool: Whether this section has a valid start frame (else infinite)
 	**/
-	public function has_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
 	**/
@@ -287,7 +287,7 @@ package unreal;
 		    section (MovieSceneSection): The section within which to set the end frame
 		    end_frame (int32): The desired start frame for this section
 	**/
-	public function set_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_end_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_end_frame_bounded(section, is_bounded) -> None
 		Set end frame bounded
@@ -296,7 +296,7 @@ package unreal;
 		    section (MovieSceneSection): The section to set whether the end frame is bounded or not
 		    is_bounded (bool):
 	**/
-	public function set_end_frame_bounded(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_end_frame_bounded(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_end_frame_seconds(section, end_time) -> None
 		Set end time in seconds
@@ -305,7 +305,7 @@ package unreal;
 		    section (MovieSceneSection): The section within which to set the end time
 		    end_time (float): The desired end time for this section
 	**/
-	public function set_end_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_end_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_range(section, start_frame, end_frame) -> None
 		Set range
@@ -315,7 +315,7 @@ package unreal;
 		    start_frame (int32): The desired start frame for this section
 		    end_frame (int32): The desired end frame for this section
 	**/
-	public function set_range(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_range(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_range_seconds(section, start_time, end_time) -> None
 		Set range in seconds
@@ -325,7 +325,7 @@ package unreal;
 		    start_time (float): The desired start frame for this section
 		    end_time (float): The desired end frame for this section
 	**/
-	public function set_range_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_range_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_start_frame(section, start_frame) -> None
 		Set start frame
@@ -334,7 +334,7 @@ package unreal;
 		    section (MovieSceneSection): The section within which to set the start frame
 		    start_frame (int32): The desired start frame for this section
 	**/
-	public function set_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_start_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_start_frame_bounded(section, is_bounded) -> None
 		Set start frame bounded
@@ -343,7 +343,7 @@ package unreal;
 		    section (MovieSceneSection): The section to set whether the start frame is bounded or not
 		    is_bounded (bool):
 	**/
-	public function set_start_frame_bounded(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_start_frame_bounded(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.set_start_frame_seconds(section, start_time) -> None
 		Set start time in seconds
@@ -352,9 +352,9 @@ package unreal;
 		    section (MovieSceneSection): The section within which to set the start time
 		    start_time (float): The desired start time for this section
 	**/
-	public function set_start_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_start_frame_seconds(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
 }

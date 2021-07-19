@@ -64,7 +64,7 @@ package unreal;
 		The default implementation does nothing. It may be
 		overridden to extend subclasses.
 	**/
-	public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		Return self<=value.
 	**/
@@ -113,13 +113,13 @@ package unreal;
 		NotImplemented, the normal algorithm is used.  Otherwise, it
 		overrides the normal algorithm (and the outcome is cached).
 	**/
-	public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	static public var _wrapper_meta_data : Dynamic;
 	/**
 		X.cast(object) -> enum -- cast the given object to this Unreal enum type
 	**/
 	@:native("cast")
-	public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		The name of this enum entry
 	**/
@@ -127,7 +127,7 @@ package unreal;
 	/**
 		X.static_enum() -> Enum -- get the Unreal enum of this type
 	**/
-	public function static_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function static_enum(args:haxe.extern.Rest<Dynamic>):Dynamic;
 	/**
 		The numeric value of this enum entry
 	**/
