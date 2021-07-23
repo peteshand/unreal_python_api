@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "EditorStaticMeshLibrary") extern class EditorStaticMeshLibrary {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "EditorStaticMeshLibrary") extern class EditorStaticMeshLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -44,67 +10,6 @@ package unreal;
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
 	/**
 		X.add_simple_collisions(static_mesh, shape_type) -> int32
 		Same as AddSimpleCollisionsWithNotification but changes are automatically applied.
@@ -116,7 +21,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_simple_collisions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_simple_collisions(static_mesh:Dynamic, shape_type:Dynamic):Int;
 	/**
 		X.add_simple_collisions_with_notification(static_mesh, shape_type, apply_changes) -> int32
 		Add simple collisions to a static mesh.
@@ -130,7 +35,7 @@ package unreal;
 		Returns:
 		    int32: An integer indicating the index of the collision newly created. A negative value indicates the addition failed.
 	**/
-	static public function add_simple_collisions_with_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_simple_collisions_with_notification(static_mesh:Dynamic, shape_type:Dynamic, apply_changes:Dynamic):Int;
 	/**
 		X.add_uv_channel(static_mesh, lod_index) -> bool
 		Adds an empty UV channel at the end of the existing channels on the given LOD of a StaticMesh.
@@ -142,7 +47,7 @@ package unreal;
 		Returns:
 		    bool: true if a UV channel was added.
 	**/
-	static public function add_uv_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_uv_channel(static_mesh:Dynamic, lod_index:Dynamic):Bool;
 	/**
 		X.bulk_set_convex_decomposition_collisions(static_meshes, hull_count, max_hull_verts, hull_precision) -> bool
 		Same as SetConvexDecompositionCollisionsWithNotification but changes are automatically applied.
@@ -156,7 +61,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function bulk_set_convex_decomposition_collisions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function bulk_set_convex_decomposition_collisions(static_meshes:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic):Bool;
 	/**
 		X.bulk_set_convex_decomposition_collisions_with_notification(static_meshes, hull_count, max_hull_verts, hull_precision, apply_changes) -> bool
 		Compute convex collisions for a set of static meshes.
@@ -173,16 +78,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the addition was successful or not.
 	**/
-	static public function bulk_set_convex_decomposition_collisions_with_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function bulk_set_convex_decomposition_collisions_with_notification(static_meshes:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic, apply_changes:Dynamic):Bool;
 	/**
 		X.enable_section_cast_shadow(static_mesh, cast_shadow, lod_index, section_index) -> None
 		Enables/disables mesh section shadow casting for a specific LOD.
@@ -193,7 +89,7 @@ package unreal;
 		    lod_index (int32): Index of the StaticMesh LOD.
 		    section_index (int32): Index of the StaticMesh Section.
 	**/
-	static public function enable_section_cast_shadow(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enable_section_cast_shadow(static_mesh:Dynamic, cast_shadow:Dynamic, lod_index:Dynamic, section_index:Dynamic):Void;
 	/**
 		X.enable_section_collision(static_mesh, collision_enabled, lod_index, section_index) -> None
 		Enables/disables mesh section collision for a specific LOD.
@@ -204,7 +100,7 @@ package unreal;
 		    lod_index (int32): Index of the StaticMesh LOD.
 		    section_index (int32): Index of the StaticMesh Section.
 	**/
-	static public function enable_section_collision(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function enable_section_collision(static_mesh:Dynamic, collision_enabled:Dynamic, lod_index:Dynamic, section_index:Dynamic):Void;
 	/**
 		X.generate_box_uv_channel(static_mesh, lod_index, uv_channel_index, position, orientation, size) -> bool
 		Generates box UV mapping in the specified UV channel on the given LOD of a StaticMesh.
@@ -220,7 +116,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV mapping was generated.
 	**/
-	static public function generate_box_uv_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function generate_box_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic, position:Dynamic, orientation:Dynamic, size:Dynamic):Bool;
 	/**
 		X.generate_cylindrical_uv_channel(static_mesh, lod_index, uv_channel_index, position, orientation, tiling) -> bool
 		Generates cylindrical UV mapping in the specified UV channel on the given LOD of a StaticMesh.
@@ -236,7 +132,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV mapping was generated.
 	**/
-	static public function generate_cylindrical_uv_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function generate_cylindrical_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic, position:Dynamic, orientation:Dynamic, tiling:Dynamic):Bool;
 	/**
 		X.generate_planar_uv_channel(static_mesh, lod_index, uv_channel_index, position, orientation, tiling) -> bool
 		Generates planar UV mapping in the specified UV channel on the given LOD of a StaticMesh.
@@ -252,11 +148,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV mapping was generated.
 	**/
-	static public function generate_planar_uv_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function generate_planar_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic, position:Dynamic, orientation:Dynamic, tiling:Dynamic):Bool;
 	/**
 		X.get_collision_complexity(static_mesh) -> CollisionTraceFlag
 		Get the Collision Trace behavior of a static mesh
@@ -267,7 +159,7 @@ package unreal;
 		Returns:
 		    CollisionTraceFlag: the Collision Trace behavior.
 	**/
-	static public function get_collision_complexity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_collision_complexity(static_mesh:Dynamic):unreal.CollisionTraceFlag;
 	/**
 		X.get_convex_collision_count(static_mesh) -> int32
 		Get number of convex collisions present on a static mesh.
@@ -278,23 +170,7 @@ package unreal;
 		Returns:
 		    int32: An integer representing the number of convex collisions on the input static mesh. An negative value indicates that the command could not be executed. See log for explanation.
 	**/
-	static public function get_convex_collision_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_convex_collision_count(static_mesh:Dynamic):Int;
 	/**
 		X.get_lod_build_settings(static_mesh, lod_index) -> MeshBuildSettings
 		Copy the build options with the specified LOD build settings.
@@ -308,7 +184,7 @@ package unreal;
 		
 		    out_build_options (MeshBuildSettings): The build settings where we copy the build options.
 	**/
-	static public function get_lod_build_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_lod_build_settings(static_mesh:Dynamic, lod_index:Dynamic):unreal.MeshBuildSettings;
 	/**
 		X.get_lod_count(static_mesh) -> int32
 		Get number of LODs present on a static mesh.
@@ -319,7 +195,7 @@ package unreal;
 		Returns:
 		    int32: the number of LODs present on the input mesh. An negative value indicates that the command could not be executed. See log for explanation.
 	**/
-	static public function get_lod_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_lod_count(static_mesh:Dynamic):Int;
 	/**
 		X.get_lod_reduction_settings(static_mesh, lod_index) -> MeshReductionSettings
 		Copy the reduction options with the specified LOD reduction settings.
@@ -333,7 +209,7 @@ package unreal;
 		
 		    out_reduction_options (MeshReductionSettings): The reduction settings where we copy the reduction options.
 	**/
-	static public function get_lod_reduction_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_lod_reduction_settings(static_mesh:Dynamic, lod_index:Dynamic):unreal.MeshReductionSettings;
 	/**
 		X.get_lod_screen_sizes(static_mesh) -> Array(float)
 		Get an array of LOD screen sizes for evaluation.
@@ -344,11 +220,7 @@ package unreal;
 		Returns:
 		    Array(float): array of LOD screen sizes.
 	**/
-	static public function get_lod_screen_sizes(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_lod_screen_sizes(static_mesh:Dynamic):Dynamic;
 	/**
 		X.get_num_uv_channels(static_mesh, lod_index) -> int32
 		Returns the number of UV channels for the given LOD of a StaticMesh.
@@ -360,7 +232,7 @@ package unreal;
 		Returns:
 		    int32: the number of UV channels.
 	**/
-	static public function get_num_uv_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_num_uv_channels(static_mesh:Dynamic, lod_index:Dynamic):Int;
 	/**
 		X.get_number_materials(static_mesh) -> int32
 		Get number of StaticMesh verts for an LOD
@@ -371,7 +243,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_number_materials(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_number_materials(static_mesh:Dynamic):Int;
 	/**
 		X.get_number_verts(static_mesh, lod_index) -> int32
 		Get number of StaticMesh verts for an LOD
@@ -383,19 +255,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_number_verts(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_number_verts(static_mesh:Dynamic, lod_index:Dynamic):Int;
 	/**
 		X.get_simple_collision_count(static_mesh) -> int32
 		Get number of simple collisions present on a static mesh.
@@ -406,15 +266,7 @@ package unreal;
 		Returns:
 		    int32: An integer representing the number of simple collisions on the input static mesh. An negative value indicates that the command could not be executed. See log for explanation.
 	**/
-	static public function get_simple_collision_count(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_simple_collision_count(static_mesh:Dynamic):Int;
 	/**
 		X.has_instance_vertex_colors(static_mesh_component) -> bool
 		Check whether a static mesh component has vertex colors
@@ -425,7 +277,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function has_instance_vertex_colors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_instance_vertex_colors(static_mesh_component:Dynamic):Bool;
 	/**
 		X.has_vertex_colors(static_mesh) -> bool
 		Check whether a static mesh has vertex colors
@@ -436,7 +288,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function has_vertex_colors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function has_vertex_colors(static_mesh:Dynamic):Bool;
 	/**
 		X.import_lod(base_static_mesh, lod_index, source_filename) -> int32
 		Import or re-import a LOD into the specified base mesh. If the LOD do not exist it will import it and add it to the base static mesh. If the LOD already exist it will re-import the specified LOD.
@@ -449,7 +301,7 @@ package unreal;
 		Returns:
 		    int32: the index of the LOD that was imported or re-imported. Will return INDEX_NONE if anything goes bad.
 	**/
-	static public function import_lod(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function import_lod(base_static_mesh:Dynamic, lod_index:Dynamic, source_filename:Dynamic):Int;
 	/**
 		X.insert_uv_channel(static_mesh, lod_index, uv_channel_index) -> bool
 		Inserts an empty UV channel at the specified channel index on the given LOD of a StaticMesh.
@@ -462,7 +314,7 @@ package unreal;
 		Returns:
 		    bool: true if a UV channel was added.
 	**/
-	static public function insert_uv_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function insert_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic):Bool;
 	/**
 		X.is_section_collision_enabled(static_mesh, lod_index, section_index) -> bool
 		Checks if a specific LOD mesh section has collision.
@@ -475,11 +327,7 @@ package unreal;
 		Returns:
 		    bool: True is the collision is enabled for the specified LOD of the StaticMesh section.
 	**/
-	static public function is_section_collision_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_section_collision_enabled(static_mesh:Dynamic, lod_index:Dynamic, section_index:Dynamic):Bool;
 	/**
 		X.reimport_all_custom_lo_ds(static_mesh) -> bool
 		Re-import all the custom LODs present in the specified static mesh.
@@ -490,7 +338,7 @@ package unreal;
 		Returns:
 		    bool: true if re-import all LODs works, false otherwise see log for explanation.
 	**/
-	static public function reimport_all_custom_lo_ds(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reimport_all_custom_lo_ds(static_mesh:Dynamic):Bool;
 	/**
 		X.remove_collisions(static_mesh) -> bool
 		Same as RemoveCollisionsWithNotification but changes are applied.
@@ -501,7 +349,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function remove_collisions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_collisions(static_mesh:Dynamic):Bool;
 	/**
 		X.remove_collisions_with_notification(static_mesh, apply_changes) -> bool
 		Remove collisions from a static mesh.
@@ -514,7 +362,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the removal was successful or not.
 	**/
-	static public function remove_collisions_with_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_collisions_with_notification(static_mesh:Dynamic, apply_changes:Dynamic):Bool;
 	/**
 		X.remove_lods(static_mesh) -> bool
 		Remove LODs on a static mesh except LOD 0.
@@ -525,7 +373,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the removal was successful, true, or not.
 	**/
-	static public function remove_lods(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_lods(static_mesh:Dynamic):Bool;
 	/**
 		X.remove_uv_channel(static_mesh, lod_index, uv_channel_index) -> bool
 		Removes the UV channel at the specified channel index on the given LOD of a StaticMesh.
@@ -538,11 +386,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV channel was removed.
 	**/
-	static public function remove_uv_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic):Bool;
 	/**
 		X.set_allow_cpu_access(static_mesh, allow_cpu_access) -> None
 		Sets StaticMeshFlag bAllowCPUAccess
@@ -551,7 +395,7 @@ package unreal;
 		    static_mesh (StaticMesh): 
 		    allow_cpu_access (bool):
 	**/
-	static public function set_allow_cpu_access(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_allow_cpu_access(static_mesh:Dynamic, allow_cpu_access:Dynamic):Void;
 	/**
 		X.set_convex_decomposition_collisions(static_mesh, hull_count, max_hull_verts, hull_precision) -> bool
 		Same as SetConvexDecompositionCollisionsWithNotification but changes are automatically applied.
@@ -565,7 +409,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function set_convex_decomposition_collisions(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_convex_decomposition_collisions(static_mesh:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic):Bool;
 	/**
 		X.set_convex_decomposition_collisions_with_notification(static_mesh, hull_count, max_hull_verts, hull_precision, apply_changes) -> bool
 		Add a convex collision to a static mesh.
@@ -582,15 +426,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the addition was successful or not.
 	**/
-	static public function set_convex_decomposition_collisions_with_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_convex_decomposition_collisions_with_notification(static_mesh:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic, apply_changes:Dynamic):Bool;
 	/**
 		X.set_generate_lightmap_uv(static_mesh, generate_lightmap_u_vs) -> bool
 		Set Generate Lightmap UVs for StaticMesh
@@ -602,7 +438,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function set_generate_lightmap_uv(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_generate_lightmap_uv(static_mesh:Dynamic, generate_lightmap_u_vs:Dynamic):Bool;
 	/**
 		X.set_lod_build_settings(static_mesh, lod_index, build_options) -> None
 		Set the LOD build options for the specified LOD index.
@@ -612,7 +448,7 @@ package unreal;
 		    lod_index (int32): The LOD we will apply the build settings.
 		    build_options (MeshBuildSettings): The build settings we want to apply to the LOD.
 	**/
-	static public function set_lod_build_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lod_build_settings(static_mesh:Dynamic, lod_index:Dynamic, build_options:Dynamic):Void;
 	/**
 		X.set_lod_from_static_mesh(destination_static_mesh, destination_lod_index, source_static_mesh, source_lod_index, reuse_existing_material_slots) -> int32
 		Adds or create a LOD at DestinationLodIndex using the geometry from SourceStaticMesh SourceLodIndex
@@ -627,7 +463,7 @@ package unreal;
 		Returns:
 		    int32: The index of the LOD that was set. It can be different than DestinationLodIndex if it wasn't a valid index. A negative value indicates that the LOD was not set. See log for explanation.
 	**/
-	static public function set_lod_from_static_mesh(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lod_from_static_mesh(destination_static_mesh:Dynamic, destination_lod_index:Dynamic, source_static_mesh:Dynamic, source_lod_index:Dynamic, reuse_existing_material_slots:Dynamic):Int;
 	/**
 		X.set_lod_reduction_settings(static_mesh, lod_index, reduction_options) -> None
 		Set the LOD reduction for the specified LOD index.
@@ -637,7 +473,7 @@ package unreal;
 		    lod_index (int32): The LOD we will apply the reduction settings.
 		    reduction_options (MeshReductionSettings): The reduction settings we want to apply to the LOD.
 	**/
-	static public function set_lod_reduction_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lod_reduction_settings(static_mesh:Dynamic, lod_index:Dynamic, reduction_options:Dynamic):Void;
 	/**
 		X.set_lods(static_mesh, reduction_options) -> int32
 		Same as SetLodsWithNotification but changes are applied.
@@ -649,7 +485,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function set_lods(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lods(static_mesh:Dynamic, reduction_options:Dynamic):Int;
 	/**
 		X.set_lods_with_notification(static_mesh, reduction_options, apply_changes) -> int32
 		Remove then add LODs on a static mesh.
@@ -665,9 +501,5 @@ package unreal;
 		Returns:
 		    int32: the number of LODs generated on the input mesh. An negative value indicates that the reduction could not be performed. See log for explanation. No action will be performed if ReductionOptions.ReductionSettings is empty
 	**/
-	static public function set_lods_with_notification(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_lods_with_notification(static_mesh:Dynamic, reduction_options:Dynamic, apply_changes:Dynamic):Int;
 }

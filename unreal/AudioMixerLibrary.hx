@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "AudioMixerLibrary") extern class AudioMixerLibrary {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "AudioMixerLibrary") extern class AudioMixerLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -45,67 +11,6 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
 		X.add_master_submix_effect(world_context_object, submix_effect_preset) -> None
 		Adds a submix effect preset to the master submix.
 		
@@ -113,7 +18,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_effect_preset (SoundEffectSubmixPreset):
 	**/
-	static public function add_master_submix_effect(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_master_submix_effect(world_context_object:Dynamic, submix_effect_preset:Dynamic):Void;
 	/**
 		X.add_source_effect_to_preset_chain(world_context_object, preset_chain, entry) -> None
 		Adds source effect entry to preset chain. Only effects the instance of the preset chain
@@ -123,7 +28,7 @@ package unreal;
 		    preset_chain (SoundEffectSourcePresetChain): 
 		    entry (SourceEffectChainEntry):
 	**/
-	static public function add_source_effect_to_preset_chain(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_source_effect_to_preset_chain(world_context_object:Dynamic, preset_chain:Dynamic, entry:Dynamic):Void;
 	/**
 		X.add_submix_effect(world_context_object, sound_submix, submix_effect_preset) -> int32
 		Adds a submix effect preset to the given submix at the end of its submix effect chain. Returns the number of submix effects.
@@ -136,16 +41,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_submix_effect(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function add_submix_effect(world_context_object:Dynamic, sound_submix:Dynamic, submix_effect_preset:Dynamic):Int;
 	/**
 		X.clear_master_submix_effects(world_context_object) -> None
 		Clears all master submix effects.
@@ -153,7 +49,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	static public function clear_master_submix_effects(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_master_submix_effects(world_context_object:Dynamic):Void;
 	/**
 		X.clear_submix_effect_chain_override(world_context_object, sound_submix, fade_time_sec) -> None
 		Clears all submix effect overrides on the given submix and returns it to the default effect chain.
@@ -163,7 +59,7 @@ package unreal;
 		    sound_submix (SoundSubmix): 
 		    fade_time_sec (float):
 	**/
-	static public function clear_submix_effect_chain_override(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_submix_effect_chain_override(world_context_object:Dynamic, sound_submix:Dynamic, fade_time_sec:Dynamic):Void;
 	/**
 		X.clear_submix_effects(world_context_object, sound_submix) -> None
 		Clears all submix effects on the given submix.
@@ -172,27 +68,7 @@ package unreal;
 		    world_context_object (Object): 
 		    sound_submix (SoundSubmix):
 	**/
-	static public function clear_submix_effects(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function clear_submix_effects(world_context_object:Dynamic, sound_submix:Dynamic):Void;
 	/**
 		X.get_magnitude_for_frequencies(world_context_object, frequencies, submix_to_analyze=None) -> Array(float)
 		Start spectrum analysis of the audio output. By leaving the Submix To Analyze blank, you can analyze the master output of the game.
@@ -207,11 +83,7 @@ package unreal;
 		
 		    magnitudes (Array(float)):
 	**/
-	static public function get_magnitude_for_frequencies(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_magnitude_for_frequencies(world_context_object:Dynamic, frequencies:Dynamic, submix_to_analyze:Dynamic):Dynamic;
 	/**
 		X.get_number_of_entries_in_source_effect_chain(world_context_object, preset_chain) -> int32
 		Returns the number of effect chain entries in the given source effect chain.
@@ -223,19 +95,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_number_of_entries_in_source_effect_chain(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_number_of_entries_in_source_effect_chain(world_context_object:Dynamic, preset_chain:Dynamic):Int;
 	/**
 		X.get_phase_for_frequencies(world_context_object, frequencies, submix_to_analyze=None) -> Array(float)
 		Start spectrum analysis of the audio output. By leaving the Submix To Analyze blank, you can analyze the master output of the game.
@@ -250,15 +110,7 @@ package unreal;
 		
 		    phases (Array(float)):
 	**/
-	static public function get_phase_for_frequencies(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_phase_for_frequencies(world_context_object:Dynamic, frequencies:Dynamic, submix_to_analyze:Dynamic):Dynamic;
 	/**
 		X.is_audio_bus_active(world_context_object, audio_bus) -> bool
 		Queries if the given audio bus is active (and audio can be mixed to it).
@@ -270,7 +122,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_audio_bus_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_audio_bus_active(world_context_object:Dynamic, audio_bus:Dynamic):Bool;
 	/**
 		X.make_full_spectrum_spectral_analysis_band_settings(num_bands=30, minimum_frequency=40.000000, maximum_frequency=16000.000000, attack_time_msec=10, release_time_msec=10) -> Array(SoundSubmixSpectralAnalysisBandSettings)
 		Make an array of logarithmically spaced bands.
@@ -285,7 +137,7 @@ package unreal;
 		Returns:
 		    Array(SoundSubmixSpectralAnalysisBandSettings):
 	**/
-	static public function make_full_spectrum_spectral_analysis_band_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_full_spectrum_spectral_analysis_band_settings(num_bands:Dynamic, minimum_frequency:Dynamic, maximum_frequency:Dynamic, attack_time_msec:Dynamic, release_time_msec:Dynamic):Dynamic;
 	/**
 		X.make_musical_spectral_analysis_band_settings(num_semitones=60, starting_musical_note=MusicalNoteName.C, starting_octave=2, attack_time_msec=10, release_time_msec=10) -> Array(SoundSubmixSpectralAnalysisBandSettings)
 		Make an array of musically spaced bands with ascending frequency.
@@ -300,7 +152,7 @@ package unreal;
 		Returns:
 		    Array(SoundSubmixSpectralAnalysisBandSettings):
 	**/
-	static public function make_musical_spectral_analysis_band_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_musical_spectral_analysis_band_settings(num_semitones:Dynamic, starting_musical_note:Dynamic, starting_octave:Dynamic, attack_time_msec:Dynamic, release_time_msec:Dynamic):Dynamic;
 	/**
 		X.make_preset_spectral_analysis_band_settings(band_preset_type, num_bands=10, attack_time_msec=10, release_time_msec=10) -> Array(SoundSubmixSpectralAnalysisBandSettings)
 		Make an array of bands which span the frequency range of a given EAudioSpectrumBandPresetType.
@@ -314,11 +166,7 @@ package unreal;
 		Returns:
 		    Array(SoundSubmixSpectralAnalysisBandSettings):
 	**/
-	static public function make_preset_spectral_analysis_band_settings(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function make_preset_spectral_analysis_band_settings(band_preset_type:Dynamic, num_bands:Dynamic, attack_time_msec:Dynamic, release_time_msec:Dynamic):Dynamic;
 	/**
 		X.pause_recording_output(world_context_object, submix_to_pause=None) -> None
 		Pause recording audio, without finalizing the recording to disk. By leaving the Submix To Record field blank, you can record the master output of the game.
@@ -327,7 +175,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_to_pause (SoundSubmix):
 	**/
-	static public function pause_recording_output(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function pause_recording_output(world_context_object:Dynamic, submix_to_pause:Dynamic):Void;
 	/**
 		X.prime_sound_cue_for_playback(sound_cue) -> None
 		Begin loading any sounds referenced by a sound cue into the cache so that it can be played immediately.
@@ -335,7 +183,7 @@ package unreal;
 		Args:
 		    sound_cue (SoundCue):
 	**/
-	static public function prime_sound_cue_for_playback(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function prime_sound_cue_for_playback(sound_cue:Dynamic):Void;
 	/**
 		X.prime_sound_for_playback(sound_wave, on_load_completion) -> None
 		Begin loading a sound into the cache so that it can be played immediately.
@@ -344,7 +192,7 @@ package unreal;
 		    sound_wave (SoundWave): 
 		    on_load_completion (OnSoundLoadComplete):
 	**/
-	static public function prime_sound_for_playback(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function prime_sound_for_playback(sound_wave:Dynamic, on_load_completion:Dynamic):Void;
 	/**
 		X.remove_master_submix_effect(world_context_object, submix_effect_preset) -> None
 		Removes a submix effect preset from the master submix.
@@ -353,7 +201,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_effect_preset (SoundEffectSubmixPreset):
 	**/
-	static public function remove_master_submix_effect(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_master_submix_effect(world_context_object:Dynamic, submix_effect_preset:Dynamic):Void;
 	/**
 		X.remove_source_effect_from_preset_chain(world_context_object, preset_chain, entry_index) -> None
 		Adds source effect entry to preset chain. Only affects the instance of preset chain.
@@ -363,7 +211,7 @@ package unreal;
 		    preset_chain (SoundEffectSourcePresetChain): 
 		    entry_index (int32):
 	**/
-	static public function remove_source_effect_from_preset_chain(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_source_effect_from_preset_chain(world_context_object:Dynamic, preset_chain:Dynamic, entry_index:Dynamic):Void;
 	/**
 		X.remove_submix_effect_preset(world_context_object, sound_submix, submix_effect_preset) -> None
 		Removes all instances of a submix effect preset from the given submix.
@@ -373,7 +221,7 @@ package unreal;
 		    sound_submix (SoundSubmix): 
 		    submix_effect_preset (SoundEffectSubmixPreset):
 	**/
-	static public function remove_submix_effect_preset(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_submix_effect_preset(world_context_object:Dynamic, sound_submix:Dynamic, submix_effect_preset:Dynamic):Void;
 	/**
 		X.remove_submix_effect_preset_at_index(world_context_object, sound_submix, submix_chain_index) -> None
 		Removes the submix effect at the given submix chain index, if there is a submix effect at that index.
@@ -383,11 +231,7 @@ package unreal;
 		    sound_submix (SoundSubmix): 
 		    submix_chain_index (int32):
 	**/
-	static public function remove_submix_effect_preset_at_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function remove_submix_effect_preset_at_index(world_context_object:Dynamic, sound_submix:Dynamic, submix_chain_index:Dynamic):Void;
 	/**
 		X.replace_sound_effect_submix(world_context_object, sound_submix, submix_chain_index, submix_effect_preset) -> None
 		Replaces the submix effect at the given submix chain index, adds the effect if there is none at that index.
@@ -398,7 +242,7 @@ package unreal;
 		    submix_chain_index (int32): 
 		    submix_effect_preset (SoundEffectSubmixPreset):
 	**/
-	static public function replace_sound_effect_submix(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace_sound_effect_submix(world_context_object:Dynamic, sound_submix:Dynamic, submix_chain_index:Dynamic, submix_effect_preset:Dynamic):Void;
 	/**
 		X.resume_recording_output(world_context_object, submix_to_pause=None) -> None
 		Resume recording audio after pausing. By leaving the Submix To Pause field blank, you can record the master output of the game.
@@ -407,7 +251,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_to_pause (SoundSubmix):
 	**/
-	static public function resume_recording_output(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function resume_recording_output(world_context_object:Dynamic, submix_to_pause:Dynamic):Void;
 	/**
 		X.set_bypass_source_effect_chain_entry(world_context_object, preset_chain, entry_index, bypassed) -> None
 		Set whether or not to bypass the effect at the source effect chain index.
@@ -418,15 +262,7 @@ package unreal;
 		    entry_index (int32): 
 		    bypassed (bool):
 	**/
-	static public function set_bypass_source_effect_chain_entry(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_bypass_source_effect_chain_entry(world_context_object:Dynamic, preset_chain:Dynamic, entry_index:Dynamic, bypassed:Dynamic):Void;
 	/**
 		X.set_submix_effect_chain_override(world_context_object, sound_submix, submix_effect_preset_chain, fade_time_sec) -> None
 		Sets a submix effect chain override on the given submix. The effect chain will cross fade from the base effect chain or current override to the new override.
@@ -437,7 +273,7 @@ package unreal;
 		    submix_effect_preset_chain (Array(SoundEffectSubmixPreset)): 
 		    fade_time_sec (float):
 	**/
-	static public function set_submix_effect_chain_override(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function set_submix_effect_chain_override(world_context_object:Dynamic, sound_submix:Dynamic, submix_effect_preset_chain:Dynamic, fade_time_sec:Dynamic):Void;
 	/**
 		X.start_analyzing_output(world_context_object, submix_to_analyze=None, fft_size=FFTSize.DEFAULT_SIZE, interpolation_method=FFTPeakInterpolationMethod.LINEAR, window_type=FFTWindowType.HANN, hop_size=0.000000, spectrum_type=AudioSpectrumType.MAGNITUDE_SPECTRUM) -> None
 		Start spectrum analysis of the audio output. By leaving the Submix To Analyze blank, you can analyze the master output of the game.
@@ -451,7 +287,7 @@ package unreal;
 		    hop_size (float): 
 		    spectrum_type (AudioSpectrumType):
 	**/
-	static public function start_analyzing_output(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function start_analyzing_output(world_context_object:Dynamic, submix_to_analyze:Dynamic, fft_size:Dynamic, interpolation_method:Dynamic, window_type:Dynamic, hop_size:Dynamic, spectrum_type:Dynamic):Void;
 	/**
 		X.start_audio_bus(world_context_object, audio_bus) -> None
 		Starts the given audio bus.
@@ -460,7 +296,7 @@ package unreal;
 		    world_context_object (Object): 
 		    audio_bus (AudioBus):
 	**/
-	static public function start_audio_bus(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function start_audio_bus(world_context_object:Dynamic, audio_bus:Dynamic):Void;
 	/**
 		X.start_recording_output(world_context_object, expected_duration, submix_to_record=None) -> None
 		Start recording audio. By leaving the Submix To Record field blank, you can record the master output of the game.
@@ -470,11 +306,7 @@ package unreal;
 		    expected_duration (float): 
 		    submix_to_record (SoundSubmix):
 	**/
-	static public function start_recording_output(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function start_recording_output(world_context_object:Dynamic, expected_duration:Dynamic, submix_to_record:Dynamic):Void;
 	/**
 		X.stop_analyzing_output(world_context_object, submix_to_stop_analyzing=None) -> None
 		Start spectrum analysis of the audio output. By leaving the Submix To Stop Analyzing blank, you can analyze the master output of the game.
@@ -483,7 +315,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_to_stop_analyzing (SoundSubmix):
 	**/
-	static public function stop_analyzing_output(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function stop_analyzing_output(world_context_object:Dynamic, submix_to_stop_analyzing:Dynamic):Void;
 	/**
 		X.stop_audio_bus(world_context_object, audio_bus) -> None
 		Stops the given audio bus.
@@ -492,7 +324,7 @@ package unreal;
 		    world_context_object (Object): 
 		    audio_bus (AudioBus):
 	**/
-	static public function stop_audio_bus(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function stop_audio_bus(world_context_object:Dynamic, audio_bus:Dynamic):Void;
 	/**
 		X.stop_recording_output(world_context_object, export_type, name, path, submix_to_record=None, existing_sound_wave_to_overwrite=None) -> SoundWave
 		Stop recording audio. Path can be absolute, or relative (to the /Saved/BouncedWavFiles folder). By leaving the Submix To Record field blank, you can record the master output of the game.
@@ -508,7 +340,7 @@ package unreal;
 		Returns:
 		    SoundWave:
 	**/
-	static public function stop_recording_output(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function stop_recording_output(world_context_object:Dynamic, export_type:Dynamic, name:Dynamic, path:Dynamic, submix_to_record:Dynamic, existing_sound_wave_to_overwrite:Dynamic):unreal.SoundWave;
 	/**
 		X.trim_audio_cache(megabytes_to_free) -> float
 		Trim memory used by the audio cache. Returns the number of megabytes freed.
@@ -519,5 +351,5 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function trim_audio_cache(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function trim_audio_cache(megabytes_to_free:Dynamic):Float;
 }

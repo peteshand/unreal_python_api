@@ -1,76 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "SubmixEffectDynamicsProcessorSettings") extern class SubmixEffectDynamicsProcessorSettings {
-	/**
-		Return self+value.
-	**/
-	public function __add__(value:Dynamic):Dynamic;
-	/**
-		Return self&value.
-	**/
-	public function __and__(value:Dynamic):Dynamic;
-	/**
-		self != 0
-	**/
-	public function __bool__():Dynamic;
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.__copy__() -> struct -- copy this Unreal struct
-	**/
-	public function __copy__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
-	/**
-		Return self+=value.
-	**/
-	public function __iadd__(value:Dynamic):Dynamic;
-	/**
-		Return self&=value.
-	**/
-	public function __iand__(value:Dynamic):Dynamic;
-	/**
-		Return self<<=value.
-	**/
-	public function __ilshift__(value:Dynamic):Dynamic;
-	/**
-		Return self%=value.
-	**/
-	public function __imod__(value:Dynamic):Dynamic;
-	/**
-		Return self*=value.
-	**/
-	public function __imul__(value:Dynamic):Dynamic;
+@:pythonImport("unreal", "SubmixEffectDynamicsProcessorSettings") extern class SubmixEffectDynamicsProcessorSettings extends unreal.StructBase {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -81,261 +11,71 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self|=value.
-	**/
-	public function __ior__(value:Dynamic):Dynamic;
-	/**
-		Return self>>=value.
-	**/
-	public function __irshift__(value:Dynamic):Dynamic;
-	/**
-		Return self-=value.
-	**/
-	public function __isub__(value:Dynamic):Dynamic;
-	/**
-		Return self/=value.
-	**/
-	public function __itruediv__(value:Dynamic):Dynamic;
-	/**
-		Return self^=value.
-	**/
-	public function __ixor__(value:Dynamic):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<<value.
-	**/
-	public function __lshift__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self%value.
-	**/
-	public function __mod__(value:Dynamic):Dynamic;
-	/**
-		Return self*value.
-	**/
-	public function __mul__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		-self
-	**/
-	public function __neg__():Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Return self|value.
-	**/
-	public function __or__(value:Dynamic):Dynamic;
-	/**
-		Return value+self.
-	**/
-	public function __radd__(value:Dynamic):Dynamic;
-	/**
-		Return value&self.
-	**/
-	public function __rand__(value:Dynamic):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Return value<<self.
-	**/
-	public function __rlshift__(value:Dynamic):Dynamic;
-	/**
-		Return value%self.
-	**/
-	public function __rmod__(value:Dynamic):Dynamic;
-	/**
-		Return value*self.
-	**/
-	public function __rmul__(value:Dynamic):Dynamic;
-	/**
-		Return value|self.
-	**/
-	public function __ror__(value:Dynamic):Dynamic;
-	/**
-		Return value>>self.
-	**/
-	public function __rrshift__(value:Dynamic):Dynamic;
-	/**
-		Return self>>value.
-	**/
-	public function __rshift__(value:Dynamic):Dynamic;
-	/**
-		Return value-self.
-	**/
-	public function __rsub__(value:Dynamic):Dynamic;
-	/**
-		Return value/self.
-	**/
-	public function __rtruediv__(value:Dynamic):Dynamic;
-	/**
-		Return value^self.
-	**/
-	public function __rxor__(value:Dynamic):Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Return self-value.
-	**/
-	public function __sub__(value:Dynamic):Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self/value.
-	**/
-	public function __truediv__(value:Dynamic):Dynamic;
-	/**
-		Return self^value.
-	**/
-	public function __xor__(value:Dynamic):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal struct initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
 		(bool):  [Read-Write] Toggles treating the attack and release envelopes as analog-style vs digital-style (Analog will respond a bit more naturally/slower)
 	**/
-	public var analog_mode : Dynamic;
-	/**
-		x.assign(object) -> None -- assign the value of this Unreal struct to value of the given object
-	**/
-	public function assign(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var analog_mode : Bool;
 	/**
 		(float):  [Read-Write] The amount of time to ramp into any dynamics processing effect
 	**/
-	public var attack_time_msec : Dynamic;
-	/**
-		X.cast(object) -> struct -- cast the given object to this Unreal struct type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.copy() -> struct -- copy this Unreal struct
-	**/
-	public function copy(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var attack_time_msec : Float;
 	/**
 		(SubmixEffectDynamicsProcessorType):  [Read-Write] Type of processor to apply
 	**/
-	public var dynamics_processor_type : Dynamic;
+	public var dynamics_processor_type : unreal.SubmixEffectDynamicsProcessorType;
 	/**
 		(SoundSubmix):  [Read-Write] If set, uses output of provided submix as modulator of input signal for dynamics processor (Uses input signal as default modulator)
 	**/
-	public var external_submix : Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var external_submix : unreal.SoundSubmix;
 	/**
 		(float):  [Read-Write] The input gain of the dynamics processor
 	**/
-	public var input_gain_db : Dynamic;
+	public var input_gain_db : Float;
 	/**
 		(bool):  [Read-Write] Audition the key modulation signal, bypassing enveloping and processing the input signal.
 	**/
-	public var key_audition : Dynamic;
+	public var key_audition : Bool;
 	/**
 		(float):  [Read-Write] Gain to apply to key signal if external input is supplied
 	**/
-	public var key_gain_db : Dynamic;
+	public var key_gain_db : Float;
 	/**
 		(SubmixEffectDynamicProcessorFilterSettings):  [Read-Write] High Shelf filter settings for key signal (external signal if supplied or input signal if not)
 	**/
-	public var key_highshelf : Dynamic;
+	public var key_highshelf : unreal.SubmixEffectDynamicProcessorFilterSettings;
 	/**
 		(SubmixEffectDynamicProcessorFilterSettings):  [Read-Write] Low Shelf filter settings for key signal (external signal if supplied or input signal if not)
 	**/
-	public var key_lowshelf : Dynamic;
+	public var key_lowshelf : unreal.SubmixEffectDynamicProcessorFilterSettings;
 	/**
 		(float):  [Read-Write] The knee bandwidth of the processor to use
 	**/
-	public var knee_bandwidth_db : Dynamic;
+	public var knee_bandwidth_db : Float;
 	/**
 		(SubmixEffectDynamicsChannelLinkMode):  [Read-Write] Mode of peak detection if key signal is multi-channel
 	**/
-	public var link_mode : Dynamic;
+	public var link_mode : unreal.SubmixEffectDynamicsChannelLinkMode;
 	/**
 		(float):  [Read-Write] The amount of time to look ahead of the current audio (Allows for transients to be included in dynamics processing)
 	**/
-	public var look_ahead_msec : Dynamic;
+	public var look_ahead_msec : Float;
 	/**
 		(float):  [Read-Write] The output gain of the dynamics processor
 	**/
-	public var output_gain_db : Dynamic;
+	public var output_gain_db : Float;
 	/**
 		(SubmixEffectDynamicsPeakMode):  [Read-Write] Mode of peak detection used on input key signal
 	**/
-	public var peak_mode : Dynamic;
+	public var peak_mode : unreal.SubmixEffectDynamicsPeakMode;
 	/**
 		(float):  [Read-Write] The dynamics processor ratio used for compression/expansion
 	**/
-	public var ratio : Dynamic;
+	public var ratio : Float;
 	/**
 		(float):  [Read-Write] The amount of time to release the dynamics processing effect
 	**/
-	public var release_time_msec : Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_struct() -> Struct -- get the Unreal struct of this type
-	**/
-	static public function static_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var release_time_msec : Float;
 	/**
 		(float):  [Read-Write] The threshold at which to perform a dynamics processing operation
 	**/
-	public var threshold_db : Dynamic;
-	/**
-		x.to_tuple() -> tuple -- break this Unreal struct into a tuple of its properties
-	**/
-	public function to_tuple(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var threshold_db : Float;
 }

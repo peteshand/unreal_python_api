@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Variant") extern class Variant {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "Variant") extern class Variant extends unreal.Object {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -45,76 +11,6 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
 		x.get_actor(actor_index) -> Actor
 		Get Actor
 		
@@ -124,15 +20,7 @@ package unreal;
 		Returns:
 		    Actor:
 	**/
-	public function get_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_actor(actor_index:Dynamic):unreal.Actor;
 	/**
 		x.get_dependency(index) -> VariantDependency
 		Get the dependency at index 'Index' by value. Will crash if index is invalid
@@ -143,7 +31,7 @@ package unreal;
 		Returns:
 		    VariantDependency:
 	**/
-	public function get_dependency(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_dependency(index:Dynamic):unreal.VariantDependency;
 	/**
 		x.get_dependents(level_variant_sets, only_enabled_dependencies) -> Array(Variant)
 		Returns all the variants that have this variant as a dependency
@@ -155,7 +43,7 @@ package unreal;
 		Returns:
 		    Array(Variant):
 	**/
-	public function get_dependents(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_dependents(level_variant_sets:Dynamic, only_enabled_dependencies:Dynamic):Dynamic;
 	/**
 		x.get_display_text() -> Text
 		Get Display Text
@@ -163,23 +51,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	public function get_display_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_display_text():unreal.Text;
 	/**
 		x.get_num_actors() -> int32
 		Get Num Actors
@@ -187,7 +59,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_num_actors():Int;
 	/**
 		x.get_num_dependencies() -> int32
 		Get Num Dependencies
@@ -195,15 +67,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_dependencies(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_num_dependencies():Int;
 	/**
 		x.get_parent() -> VariantSet
 		Get Parent
@@ -211,11 +75,7 @@ package unreal;
 		Returns:
 		    VariantSet:
 	**/
-	public function get_parent(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_parent():unreal.VariantSet;
 	/**
 		x.get_thumbnail() -> Texture2D
 		Gets the thumbnail currently used for this variant
@@ -223,15 +83,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	public function get_thumbnail(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_thumbnail():unreal.Texture2D;
 	/**
 		x.is_active() -> bool
 		Returns true if none of our properties are dirty
@@ -239,15 +91,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_active():Bool;
 	/**
 		x.set_display_text(new_display_text) -> None
 		Set Display Text
@@ -255,15 +99,7 @@ package unreal;
 		Args:
 		    new_display_text (Text):
 	**/
-	public function set_display_text(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_display_text(new_display_text:Dynamic):Void;
 	/**
 		x.set_thumbnail_from_camera(world_context_object, camera_transform, fov_degrees=50.000000, min_z=50.000000, gamma=2.200000) -> None
 		Set Thumbnail from Camera
@@ -275,12 +111,12 @@ package unreal;
 		    min_z (float): 
 		    gamma (float):
 	**/
-	public function set_thumbnail_from_camera(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_thumbnail_from_camera(world_context_object:Dynamic, camera_transform:Dynamic, fov_degrees:Dynamic, min_z:Dynamic, gamma:Dynamic):Void;
 	/**
 		x.set_thumbnail_from_editor_viewport() -> None
 		Sets the thumbnail from the active editor viewport. Doesn't do anything if the Editor is not available
 	**/
-	public function set_thumbnail_from_editor_viewport(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_thumbnail_from_editor_viewport():Void;
 	/**
 		x.set_thumbnail_from_file(file_path) -> None
 		Set Thumbnail from File
@@ -288,7 +124,7 @@ package unreal;
 		Args:
 		    file_path (str):
 	**/
-	public function set_thumbnail_from_file(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_thumbnail_from_file(file_path:Dynamic):Void;
 	/**
 		x.set_thumbnail_from_texture(new_thumbnail) -> None
 		Sets the thumbnail to use for this variant. Can receive nullptr to clear it
@@ -296,14 +132,10 @@ package unreal;
 		Args:
 		    new_thumbnail (Texture2D):
 	**/
-	public function set_thumbnail_from_texture(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_thumbnail_from_texture(new_thumbnail:Dynamic):Void;
 	/**
 		x.switch_on() -> None
 		Switch On
 	**/
-	public function switch_on(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function switch_on():Void;
 }

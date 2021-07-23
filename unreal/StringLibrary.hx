@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "StringLibrary") extern class StringLibrary {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "StringLibrary") extern class StringLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -44,67 +10,6 @@ package unreal;
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
 	/**
 		X.build_string_bool(append_to, prefix, bool, suffix) -> str
 		Converts a boolean->string, creating a new string in the form AppendTo+Prefix+InBool+Suffix
@@ -118,7 +23,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_bool(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_bool(append_to:Dynamic, prefix:Dynamic, bool:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_color(append_to, prefix, color, suffix) -> str
 		Converts a color->string, creating a new string in the form AppendTo+Prefix+InColor+Suffix
@@ -132,7 +37,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_color(append_to:Dynamic, prefix:Dynamic, color:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_float(append_to, prefix, float, suffix) -> str
 		Converts a float->string, create a new string in the form AppendTo+Prefix+InFloat+Suffix
@@ -146,7 +51,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_float(append_to:Dynamic, prefix:Dynamic, float:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_int(append_to, prefix, int, suffix) -> str
 		Converts a int->string, creating a new string in the form AppendTo+Prefix+InInt+Suffix
@@ -160,7 +65,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_int(append_to:Dynamic, prefix:Dynamic, int:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_int_vector(append_to, prefix, int_vector, suffix) -> str
 		Converts an IntVector->string, creating a new string in the form AppendTo+Prefix+InIntVector+Suffix
@@ -174,7 +79,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_int_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_int_vector(append_to:Dynamic, prefix:Dynamic, int_vector:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_name(append_to, prefix, name, suffix) -> str
 		Converts a color->string, creating a new string in the form AppendTo+Prefix+InName+Suffix
@@ -188,7 +93,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_name(append_to:Dynamic, prefix:Dynamic, name:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_object(append_to, prefix, obj, suffix) -> str
 		Converts a object->string, creating a new string in the form AppendTo+Prefix+object name+Suffix
@@ -202,7 +107,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_object(append_to:Dynamic, prefix:Dynamic, obj:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_rotator(append_to, prefix, rot, suffix) -> str
 		Converts a rotator->string, creating a new string in the form AppendTo+Prefix+InRot+Suffix
@@ -216,7 +121,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_rotator(append_to:Dynamic, prefix:Dynamic, rot:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_vector(append_to, prefix, vector, suffix) -> str
 		Converts a vector->string, creating a new string in the form AppendTo+Prefix+InVector+Suffix
@@ -230,7 +135,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_vector(append_to:Dynamic, prefix:Dynamic, vector:Dynamic, suffix:Dynamic):String;
 	/**
 		X.build_string_vector2d(append_to, prefix, vector2d, suffix) -> str
 		Converts a vector2d->string, creating a new string in the form AppendTo+Prefix+InVector2d+Suffix
@@ -244,16 +149,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function build_string_vector2d(append_to:Dynamic, prefix:Dynamic, vector2d:Dynamic, suffix:Dynamic):String;
 	/**
 		X.concat_str_str(a, b) -> str
 		Concatenates two strings together to make a new string
@@ -265,7 +161,7 @@ package unreal;
 		Returns:
 		    str: A new string which is the concatenation of A+B
 	**/
-	static public function concat_str_str(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function concat_str_str(a:Dynamic, b:Dynamic):String;
 	/**
 		X.contains(search_in, substring, use_case=False, search_from_end=False) -> bool
 		Returns whether this string contains the specified substring.
@@ -279,7 +175,7 @@ package unreal;
 		Returns:
 		    bool: Returns whether the string contains the substring
 	**/
-	static public function contains(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function contains(search_in:Dynamic, substring:Dynamic, use_case:Dynamic, search_from_end:Dynamic):Bool;
 	/**
 		X.conv_bool_to_string(bool) -> str
 		Converts a boolean value to a string, either 'true' or 'false'
@@ -290,7 +186,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_bool_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_bool_to_string(bool:Dynamic):String;
 	/**
 		X.conv_byte_to_string(byte) -> str
 		Converts a byte value to a string
@@ -301,7 +197,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_byte_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_byte_to_string(byte:Dynamic):String;
 	/**
 		X.conv_color_to_string(color) -> str
 		Converts a linear color value to a string, in the form '(R=,G=,B=,A=)'
@@ -312,7 +208,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_color_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_color_to_string(color:Dynamic):String;
 	/**
 		X.conv_float_to_string(float) -> str
 		Converts a float value to a string
@@ -323,7 +219,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_float_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_float_to_string(float:Dynamic):String;
 	/**
 		X.conv_int_point_to_string(int_point) -> str
 		Converts an IntPoint value to a string, in the form 'X= Y='
@@ -334,7 +230,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_int_point_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_int_point_to_string(int_point:Dynamic):String;
 	/**
 		X.conv_int_to_string(int) -> str
 		Converts an integer value to a string
@@ -345,7 +241,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_int_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_int_to_string(int:Dynamic):String;
 	/**
 		X.conv_int_vector_to_string(int_vec) -> str
 		Converts an IntVector value to a string, in the form 'X= Y= Z='
@@ -356,7 +252,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_int_vector_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_int_vector_to_string(int_vec:Dynamic):String;
 	/**
 		X.conv_matrix_to_string(matrix) -> str
 		Converts a name value to a string
@@ -367,7 +263,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_matrix_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_matrix_to_string(matrix:Dynamic):String;
 	/**
 		X.conv_name_to_string(name) -> str
 		Converts a name value to a string
@@ -378,7 +274,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_name_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_name_to_string(name:Dynamic):String;
 	/**
 		X.conv_object_to_string(obj) -> str
 		Converts a UObject value to a string by calling the object's GetName method
@@ -389,7 +285,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_object_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_object_to_string(obj:Dynamic):String;
 	/**
 		X.conv_rotator_to_string(rot) -> str
 		Converts a rotator value to a string, in the form 'P= Y= R='
@@ -400,7 +296,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_rotator_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_rotator_to_string(rot:Dynamic):String;
 	/**
 		X.conv_string_to_color(string) -> (out_converted_color=LinearColor, out_is_valid=bool)
 		Convert String Back To Color. IsValid indicates whether or not the string could be successfully converted.
@@ -415,7 +311,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_color(string:Dynamic):python.Tuple<Dynamic>;
 	/**
 		X.conv_string_to_float(string) -> float
 		Converts a string to a float value
@@ -426,7 +322,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function conv_string_to_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_float(string:Dynamic):Float;
 	/**
 		X.conv_string_to_int(string) -> int32
 		Converts a string to a int value
@@ -437,7 +333,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function conv_string_to_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_int(string:Dynamic):Int;
 	/**
 		X.conv_string_to_name(string) -> Name
 		Converts a string to a name value
@@ -448,7 +344,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	static public function conv_string_to_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_name(string:Dynamic):unreal.Name;
 	/**
 		X.conv_string_to_rotator(string) -> (out_converted_rotator=Rotator, out_is_valid=bool)
 		Convert String Back To Rotator. IsValid indicates whether or not the string could be successfully converted.
@@ -463,7 +359,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_rotator(string:Dynamic):python.Tuple<Dynamic>;
 	/**
 		X.conv_string_to_vector(string) -> (out_converted_vector=Vector, out_is_valid=bool)
 		Convert String Back To Vector. IsValid indicates whether or not the string could be successfully converted.
@@ -478,7 +374,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_vector(string:Dynamic):python.Tuple<Dynamic>;
 	/**
 		X.conv_string_to_vector2d(string) -> (out_converted_vector2d=Vector2D, out_is_valid=bool)
 		Convert String Back To Vector2D. IsValid indicates whether or not the string could be successfully converted.
@@ -493,7 +389,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_string_to_vector2d(string:Dynamic):python.Tuple<Dynamic>;
 	/**
 		X.conv_transform_to_string(trans) -> str
 		Converts a transform value to a string, in the form 'Translation: X= Y= Z= Rotation: P= Y= R= Scale: X= Y= Z='
@@ -504,7 +400,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_transform_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_transform_to_string(trans:Dynamic):String;
 	/**
 		X.conv_vector2d_to_string(vec) -> str
 		Converts a vector2d value to a string, in the form 'X= Y='
@@ -515,7 +411,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_vector2d_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_vector2d_to_string(vec:Dynamic):String;
 	/**
 		X.conv_vector_to_string(vec) -> str
 		Converts a vector value to a string, in the form 'X= Y= Z='
@@ -526,7 +422,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_vector_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function conv_vector_to_string(vec:Dynamic):String;
 	/**
 		X.cull_array(source_string) -> (int32, array=Array(str))
 		Takes an array of strings and removes any zero length entries.
@@ -539,7 +435,7 @@ package unreal;
 		
 		    array (Array(str)): The array to cull
 	**/
-	static public function cull_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function cull_array(source_string:Dynamic):Dynamic;
 	/**
 		X.ends_with(source_string, suffix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string ends with given string.
@@ -552,7 +448,7 @@ package unreal;
 		Returns:
 		    bool: true if this string ends with specified text, false otherwise
 	**/
-	static public function ends_with(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function ends_with(source_string:Dynamic, suffix:Dynamic, search_case:Dynamic):Bool;
 	/**
 		X.equal_equal_str_str(a, b) -> bool
 		Test if the input strings are equal (A == B)
@@ -564,7 +460,7 @@ package unreal;
 		Returns:
 		    bool: True if the strings are equal, false otherwise
 	**/
-	static public function equal_equal_str_str(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_str_str(a:Dynamic, b:Dynamic):Bool;
 	/**
 		X.equal_equal_stri_stri(a, b) -> bool
 		Test if the input strings are equal (A == B), ignoring case
@@ -576,7 +472,7 @@ package unreal;
 		Returns:
 		    bool: True if the strings are equal, false otherwise
 	**/
-	static public function equal_equal_stri_stri(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function equal_equal_stri_stri(a:Dynamic, b:Dynamic):Bool;
 	/**
 		X.find_substring(search_in, substring, use_case=False, search_from_end=False, start_position=-1) -> int32
 		Finds the starting index of a substring in the a specified string
@@ -591,7 +487,7 @@ package unreal;
 		Returns:
 		    int32: The index (starting from 0 if bSearchFromEnd is false) of the first occurence of the substring
 	**/
-	static public function find_substring(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function find_substring(search_in:Dynamic, substring:Dynamic, use_case:Dynamic, search_from_end:Dynamic, start_position:Dynamic):Int;
 	/**
 		X.get_character_array_from_string(source_string) -> Array(str)
 		Returns an array that contains one entry for each character in SourceString
@@ -602,7 +498,7 @@ package unreal;
 		Returns:
 		    Array(str): An array containing one entry for each character in SourceString
 	**/
-	static public function get_character_array_from_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_character_array_from_string(source_string:Dynamic):Dynamic;
 	/**
 		X.get_character_as_number(source_string, index=0) -> int32
 		Gets a single character from the string (as an integer)
@@ -614,43 +510,7 @@ package unreal;
 		Returns:
 		    int32: The integer value of the character or 0 if index is out of range
 	**/
-	static public function get_character_as_number(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_character_as_number(source_string:Dynamic, index:Dynamic):Int;
 	/**
 		X.get_substring(source_string, start_index=0, length=1) -> str
 		Returns a substring from the string starting at the specified position
@@ -663,15 +523,7 @@ package unreal;
 		Returns:
 		    str: The requested substring
 	**/
-	static public function get_substring(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function get_substring(source_string:Dynamic, start_index:Dynamic, length:Dynamic):String;
 	/**
 		X.is_empty(string) -> bool
 		Returns true if the string is empty
@@ -682,7 +534,7 @@ package unreal;
 		Returns:
 		    bool: Whether or not the string is empty
 	**/
-	static public function is_empty(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_empty(string:Dynamic):Bool;
 	/**
 		X.is_numeric(source_string) -> bool
 		* Checks if a string contains only numeric characters
@@ -694,7 +546,7 @@ package unreal;
 		Returns:
 		    bool: true if the string only contains numeric characters
 	**/
-	static public function is_numeric(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function is_numeric(source_string:Dynamic):Bool;
 	/**
 		X.join_string_array(source_array, separator=" ") -> str
 		Concatenates an array of strings into a single string.
@@ -706,7 +558,7 @@ package unreal;
 		Returns:
 		    str: The final, joined, separated string.
 	**/
-	static public function join_string_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function join_string_array(source_array:Dynamic, separator:Dynamic):String;
 	/**
 		X.left(source_string, count) -> str
 		Returns the left most given number of characters
@@ -718,7 +570,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function left(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function left(source_string:Dynamic, count:Dynamic):String;
 	/**
 		X.left_chop(source_string, count) -> str
 		Returns the left most characters from the string chopping the given number of characters from the end
@@ -730,7 +582,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function left_chop(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function left_chop(source_string:Dynamic, count:Dynamic):String;
 	/**
 		X.left_pad(source_string, ch_count) -> str
 		* Pad the left of this string for a specified number of characters
@@ -743,7 +595,7 @@ package unreal;
 		Returns:
 		    str: The padded string
 	**/
-	static public function left_pad(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function left_pad(source_string:Dynamic, ch_count:Dynamic):String;
 	/**
 		X.len(s) -> int32
 		Returns the number of characters in the string
@@ -754,7 +606,7 @@ package unreal;
 		Returns:
 		    int32: The number of chars in the string
 	**/
-	static public function len(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function len(s:Dynamic):Int;
 	/**
 		X.matches_wildcard(source_string, wildcard, search_case=SearchCase.IGNORE_CASE) -> bool
 		Searches this string for a given wild card
@@ -768,7 +620,7 @@ package unreal;
 		Returns:
 		    bool: true if this string matches the *?-type wildcard given.
 	**/
-	static public function matches_wildcard(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function matches_wildcard(source_string:Dynamic, wildcard:Dynamic, search_case:Dynamic):Bool;
 	/**
 		X.mid(source_string, start, count) -> str
 		Returns the substring from Start position for Count characters.
@@ -781,11 +633,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function mid(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function mid(source_string:Dynamic, start:Dynamic, count:Dynamic):String;
 	/**
 		X.not_equal_str_str(a, b) -> bool
 		Test if the input string are not equal (A != B)
@@ -797,7 +645,7 @@ package unreal;
 		Returns:
 		    bool: Returns true if the input strings are not equal, false if they are equal
 	**/
-	static public function not_equal_str_str(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_str_str(a:Dynamic, b:Dynamic):Bool;
 	/**
 		X.not_equal_stri_stri(a, b) -> bool
 		Test if the input string are not equal (A != B), ignoring case differences
@@ -809,7 +657,7 @@ package unreal;
 		Returns:
 		    bool: Returns true if the input strings are not equal, false if they are equal
 	**/
-	static public function not_equal_stri_stri(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function not_equal_stri_stri(a:Dynamic, b:Dynamic):Bool;
 	/**
 		X.parse_into_array(source_string, delimiter=" ", cull_empty_strings=True) -> Array(str)
 		Gets an array of strings from a source string divided up by a separator and empty strings can optionally be culled.
@@ -822,11 +670,7 @@ package unreal;
 		Returns:
 		    Array(str): The array of string that have been separated
 	**/
-	static public function parse_into_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function parse_into_array(source_string:Dynamic, delimiter:Dynamic, cull_empty_strings:Dynamic):Dynamic;
 	/**
 		X.replace(source_string, from_, to, search_case=SearchCase.IGNORE_CASE) -> str
 		Replace all occurrences of a substring in this string
@@ -840,7 +684,7 @@ package unreal;
 		Returns:
 		    str: a copy of this string with the replacement made
 	**/
-	static public function replace(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace(source_string:Dynamic, from_:Dynamic, to:Dynamic, search_case:Dynamic):String;
 	/**
 		X.replace_inline(source_string, search_text, replacement_text, search_case=SearchCase.IGNORE_CASE) -> (int32, source_string=str)
 		Replace all occurrences of SearchText with ReplacementText in this string.
@@ -856,7 +700,7 @@ package unreal;
 		
 		    source_string (str):
 	**/
-	static public function replace_inline(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function replace_inline(source_string:Dynamic, search_text:Dynamic, replacement_text:Dynamic, search_case:Dynamic):String;
 	/**
 		X.reverse(source_string) -> str
 		Returns a copy of this string, with the characters in reverse order
@@ -867,7 +711,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function reverse(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function reverse(source_string:Dynamic):String;
 	/**
 		X.right(source_string, count) -> str
 		Returns the string to the right of the specified location, counting back from the right (end of the word).
@@ -879,7 +723,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function right(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function right(source_string:Dynamic, count:Dynamic):String;
 	/**
 		X.right_chop(source_string, count) -> str
 		Returns the string to the right of the specified location, counting forward from the left (from the beginning of the word).
@@ -891,7 +735,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function right_chop(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function right_chop(source_string:Dynamic, count:Dynamic):String;
 	/**
 		X.right_pad(source_string, ch_count) -> str
 		* Pad the right of this string for a specified number of characters
@@ -904,15 +748,7 @@ package unreal;
 		Returns:
 		    str: The padded string
 	**/
-	static public function right_pad(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function right_pad(source_string:Dynamic, ch_count:Dynamic):String;
 	/**
 		X.split(source_string, str, search_case=SearchCase.IGNORE_CASE, search_dir=SearchDir.FROM_START) -> (left_s=str, right_s=str) or None
 		Splits this string at given string position case sensitive.
@@ -930,7 +766,7 @@ package unreal;
 		
 		    right_s (str): out the string to the right of InStr, not updated if return is false
 	**/
-	static public function split(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function split(source_string:Dynamic, str:Dynamic, search_case:Dynamic, search_dir:Dynamic):Dynamic;
 	/**
 		X.starts_with(source_string, prefix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string starts with given string.
@@ -943,11 +779,7 @@ package unreal;
 		Returns:
 		    bool: true if this string begins with specified text, false otherwise
 	**/
-	static public function starts_with(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function starts_with(source_string:Dynamic, prefix:Dynamic, search_case:Dynamic):Bool;
 	/**
 		X.time_seconds_to_string(seconds) -> str
 		Convert a number of seconds into minutes:seconds.milliseconds format string (including leading zeroes)
@@ -958,7 +790,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the seconds parameter
 	**/
-	static public function time_seconds_to_string(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function time_seconds_to_string(seconds:Dynamic):String;
 	/**
 		X.to_lower(source_string) -> str
 		Returns a string converted to Lower case
@@ -969,7 +801,7 @@ package unreal;
 		Returns:
 		    str: The string in lower case
 	**/
-	static public function to_lower(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function to_lower(source_string:Dynamic):String;
 	/**
 		X.to_upper(source_string) -> str
 		Returns a string converted to Upper case
@@ -980,7 +812,7 @@ package unreal;
 		Returns:
 		    str: The string in upper case
 	**/
-	static public function to_upper(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function to_upper(source_string:Dynamic):String;
 	/**
 		X.trim(source_string) -> str
 		Removes whitespace characters from the front of this string.
@@ -991,7 +823,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function trim(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function trim(source_string:Dynamic):String;
 	/**
 		X.trim_trailing(source_string) -> str
 		Removes trailing whitespace characters
@@ -1002,5 +834,5 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function trim_trailing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function trim_trailing(source_string:Dynamic):String;
 }

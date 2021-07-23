@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "LayersSubsystem") extern class LayersSubsystem {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "LayersSubsystem") extern class LayersSubsystem extends unreal.EditorSubsystem {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -44,67 +10,6 @@ package unreal;
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
 	/**
 		x.add_actor_to_layer(actor, layer_name) -> bool
 		Adds the actor to the named layer.
@@ -116,7 +21,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was added.  false is returned if the actor already belongs to the layer.
 	**/
-	public function add_actor_to_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_actor_to_layer(actor:Dynamic, layer_name:Dynamic):Bool;
 	/**
 		x.add_actor_to_layers(actor, layer_names) -> bool
 		Adds the provided actor to the named layers.
@@ -128,7 +33,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was added to at least one of the provided layers.
 	**/
-	public function add_actor_to_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_actor_to_layers(actor:Dynamic, layer_names:Dynamic):Bool;
 	/**
 		x.add_actors_to_layer(actors, layer_name) -> bool
 		Add the actors to the named layer
@@ -140,7 +45,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added to the layer.  false is returned if all the actors already belonged to the layer.
 	**/
-	public function add_actors_to_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_actors_to_layer(actors:Dynamic, layer_name:Dynamic):Bool;
 	/**
 		x.add_actors_to_layers(actors, layer_names) -> bool
 		Add the actors to the named layers
@@ -152,7 +57,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added to at least one layer.  false is returned if all the actors already belonged to all specified layers.
 	**/
-	public function add_actors_to_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_actors_to_layers(actors:Dynamic, layer_names:Dynamic):Bool;
 	/**
 		x.add_all_layer_names_to() -> Array(Name)
 		Gets all known layers and appends their names to the provide array
@@ -162,7 +67,7 @@ package unreal;
 		
 		    out_layer_names (Array(Name)):
 	**/
-	public function add_all_layer_names_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_all_layer_names_to():Dynamic;
 	/**
 		x.add_all_layers_to() -> Array(Layer)
 		Gets all known layers and appends them to the provided array
@@ -172,7 +77,7 @@ package unreal;
 		
 		    out_layers (Array(Layer)):
 	**/
-	public function add_all_layers_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_all_layers_to():Dynamic;
 	/**
 		x.add_level_layer_information(level) -> None
 		Aggregates any information regarding layers associated with the level and it contents
@@ -180,7 +85,7 @@ package unreal;
 		Args:
 		    level (Level): The process
 	**/
-	public function add_level_layer_information(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_level_layer_information(level:Dynamic):Void;
 	/**
 		x.add_selected_actors_to_layer(layer_name) -> bool
 		Adds selected actors to the named layer.
@@ -191,7 +96,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added.  false is returned if all selected actors already belong to the named layer.
 	**/
-	public function add_selected_actors_to_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_selected_actors_to_layer(layer_name:Dynamic):Bool;
 	/**
 		x.add_selected_actors_to_layers(layer_names) -> bool
 		Adds selected actors to the named layers.
@@ -202,7 +107,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added.  false is returned if all selected actors already belong to the named layers.
 	**/
-	public function add_selected_actors_to_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_selected_actors_to_layers(layer_names:Dynamic):Bool;
 	/**
 		x.append_actors_from_layer(layer_name) -> Array(Actor)
 		Appends all the actors associated with the specified layer.
@@ -215,7 +120,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): The list to append the found actors to.
 	**/
-	public function append_actors_from_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function append_actors_from_layer(layer_name:Dynamic):Dynamic;
 	/**
 		x.append_actors_from_layers(layer_names) -> Array(Actor)
 		Appends all the actors associated with ANY of the specified layers.
@@ -228,16 +133,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): The list to append the found actors to.
 	**/
-	public function append_actors_from_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function append_actors_from_layers(layer_names:Dynamic):Dynamic;
 	/**
 		x.create_layer(layer_name) -> Layer
 		Creates a ULayer Object for the named layer
@@ -248,7 +144,7 @@ package unreal;
 		Returns:
 		    Layer: The newly created ULayer Object for the named layer
 	**/
-	public function create_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function create_layer(layer_name:Dynamic):unreal.Layer;
 	/**
 		x.delete_layer(layer_to_delete) -> None
 		Deletes the provided layer, disassociating all actors from them
@@ -256,7 +152,7 @@ package unreal;
 		Args:
 		    layer_to_delete (Name): A valid layer name
 	**/
-	public function delete_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function delete_layer(layer_to_delete:Dynamic):Void;
 	/**
 		x.delete_layers(layers_to_delete) -> None
 		Deletes all of the provided layers, disassociating all actors from them
@@ -264,7 +160,7 @@ package unreal;
 		Args:
 		    layers_to_delete (Array(Name)): A valid list of layer names.
 	**/
-	public function delete_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function delete_layers(layers_to_delete:Dynamic):Void;
 	/**
 		x.disassociate_actor_from_layers(actor) -> bool
 		Disassociates an Actor's layers from the layer system, general used before deleting the Actor
@@ -275,17 +171,17 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function disassociate_actor_from_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function disassociate_actor_from_layers(actor:Dynamic):Bool;
 	/**
 		x.editor_map_change() -> None
 		Delegate handler for FEditorDelegates::MapChange. It internally calls LayersChanged.Broadcast.
 	**/
-	public function editor_map_change(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function editor_map_change():Void;
 	/**
 		x.editor_refresh_layer_browser() -> None
 		Delegate handler for FEditorDelegates::RefreshLayerBrowser. It internally calls UpdateAllActorsVisibility to refresh the actors of each layer.
 	**/
-	public function editor_refresh_layer_browser(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function editor_refresh_layer_browser():Void;
 	/**
 		x.get_actors_from_layer(layer_name) -> Array(Actor)
 		Gets all the actors associated with the specified layer. Analog to AppendActorsFromLayer but it returns rather than appends the actors.
@@ -296,7 +192,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The list to assign the found actors to.
 	**/
-	public function get_actors_from_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_actors_from_layer(layer_name:Dynamic):Dynamic;
 	/**
 		x.get_actors_from_layers(layer_names) -> Array(Actor)
 		Gets all the actors associated with ANY of the specified layers. Analog to AppendActorsFromLayers but it returns rather than appends the actors.
@@ -307,27 +203,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The list to assign the found actors to.
 	**/
-	public function get_actors_from_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_actors_from_layers(layer_names:Dynamic):Dynamic;
 	/**
 		x.get_layer(layer_name) -> Layer
 		Gets the ULayer Object of the named layer
@@ -338,23 +214,7 @@ package unreal;
 		Returns:
 		    Layer: The ULayer Object of the provided layer name
 	**/
-	public function get_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_layer(layer_name:Dynamic):unreal.Layer;
 	/**
 		x.get_selected_actors() -> Array(Actor)
 		Find and return the selected actors.
@@ -362,19 +222,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The selected AActor's as a TArray.
 	**/
-	public function get_selected_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World
-		Get the current UWorld object.
-		
-		Returns:
-		    World: The UWorld* object
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_selected_actors():Dynamic;
 	/**
 		x.initialize_new_actor_layers(actor) -> bool
 		Synchronizes an newly created Actor's layers with the layer system
@@ -385,7 +233,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function initialize_new_actor_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function initialize_new_actor_layers(actor:Dynamic):Bool;
 	/**
 		x.is_actor_valid_for_layer(actor) -> bool
 		Checks to see if the specified actor is in an appropriate state to interact with layers
@@ -396,7 +244,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_actor_valid_for_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_actor_valid_for_layer(actor:Dynamic):Bool;
 	/**
 		x.is_layer(layer_name) -> bool
 		Checks whether the ULayer Object of the provided layer name exists.
@@ -407,16 +255,12 @@ package unreal;
 		Returns:
 		    bool: If true a valid ULayer Object was found; if false, a valid ULayer object was not found
 	**/
-	public function is_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_layer(layer_name:Dynamic):Bool;
 	/**
 		x.make_all_layers_visible() -> None
 		Set the visibility of all layers to true
 	**/
-	public function make_all_layers_visible(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function make_all_layers_visible():Void;
 	/**
 		x.remove_actor_from_layer(actor, layer_to_remove, update_stats=True) -> bool
 		Removes an actor from the specified layer.
@@ -429,7 +273,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was removed from the layer.  false is returned if the actor already belonged to the layer.
 	**/
-	public function remove_actor_from_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_actor_from_layer(actor:Dynamic, layer_to_remove:Dynamic, update_stats:Dynamic):Bool;
 	/**
 		x.remove_actor_from_layers(actor, layer_names, update_stats=True) -> bool
 		Removes the provided actor from the named layers.
@@ -442,7 +286,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was removed from at least one of the provided layers.
 	**/
-	public function remove_actor_from_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_actor_from_layers(actor:Dynamic, layer_names:Dynamic, update_stats:Dynamic):Bool;
 	/**
 		x.remove_actors_from_layer(actors, layer_name, update_stats=True) -> bool
 		Removes the actors from the specified layer.
@@ -455,7 +299,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was removed from the layer.  false is returned if all the actors already belonged to the layer.
 	**/
-	public function remove_actors_from_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_actors_from_layer(actors:Dynamic, layer_name:Dynamic, update_stats:Dynamic):Bool;
 	/**
 		x.remove_actors_from_layers(actors, layer_names, update_stats=True) -> bool
 		Remove the actors to the named layers
@@ -468,7 +312,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was removed from at least one layer.  false is returned if none of the actors belonged to any of the specified layers.
 	**/
-	public function remove_actors_from_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_actors_from_layers(actors:Dynamic, layer_names:Dynamic, update_stats:Dynamic):Bool;
 	/**
 		x.remove_level_layer_information(level) -> None
 		Purges any information regarding layers associated with the level and it contents
@@ -476,7 +320,7 @@ package unreal;
 		Args:
 		    level (Level): The process
 	**/
-	public function remove_level_layer_information(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_level_layer_information(level:Dynamic):Void;
 	/**
 		x.remove_selected_actors_from_layer(layer_name) -> bool
 		Removes the selected actors from the named layer.
@@ -487,7 +331,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added.  false is returned if all selected actors already belong to the named layer.
 	**/
-	public function remove_selected_actors_from_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_selected_actors_from_layer(layer_name:Dynamic):Bool;
 	/**
 		x.remove_selected_actors_from_layers(layer_names) -> bool
 		Removes selected actors from the named layers.
@@ -498,11 +342,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was removed.
 	**/
-	public function remove_selected_actors_from_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function remove_selected_actors_from_layers(layer_names:Dynamic):Bool;
 	/**
 		x.rename_layer(original_layer_name, new_layer_name) -> bool
 		Renames the provided originally named layer to the provided new name
@@ -514,7 +354,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function rename_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function rename_layer(original_layer_name:Dynamic, new_layer_name:Dynamic):Bool;
 	/**
 		x.select_actors_in_layer(layer_name, select, notify, select_even_if_hidden=False) -> bool
 		Selects/de-selects actors belonging to the named layer.
@@ -528,7 +368,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was selected/deselected.
 	**/
-	public function select_actors_in_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function select_actors_in_layer(layer_name:Dynamic, select:Dynamic, notify:Dynamic, select_even_if_hidden:Dynamic):Bool;
 	/**
 		x.select_actors_in_layers(layer_names, select, notify, select_even_if_hidden=False) -> bool
 		Selects/de-selects actors belonging to the named layers.
@@ -542,15 +382,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was selected/deselected.
 	**/
-	public function select_actors_in_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function select_actors_in_layers(layer_names:Dynamic, select:Dynamic, notify:Dynamic, select_even_if_hidden:Dynamic):Bool;
 	/**
 		x.set_layer_visibility(layer_name, is_visible) -> None
 		Changes the named layer's visibility to the provided state
@@ -559,7 +391,7 @@ package unreal;
 		    layer_name (Name): The name of the layer to affect.
 		    is_visible (bool): If true the layer will be visible; if false, the layer will not be visible.
 	**/
-	public function set_layer_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_layer_visibility(layer_name:Dynamic, is_visible:Dynamic):Void;
 	/**
 		x.set_layers_visibility(layer_names, is_visible) -> None
 		Changes visibility of the named layers to the provided state
@@ -568,11 +400,7 @@ package unreal;
 		    layer_names (Array(Name)): The names of the layers to affect
 		    is_visible (bool): If true the layers will be visible; if false, the layers will not be visible
 	**/
-	public function set_layers_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_layers_visibility(layer_names:Dynamic, is_visible:Dynamic):Void;
 	/**
 		x.toggle_layer_visibility(layer_name) -> None
 		Toggles the named layer's visibility
@@ -580,7 +408,7 @@ package unreal;
 		Args:
 		    layer_name (Name): The name of the layer to affect
 	**/
-	public function toggle_layer_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function toggle_layer_visibility(layer_name:Dynamic):Void;
 	/**
 		x.toggle_layers_visibility(layer_names) -> None
 		Toggles the visibility of all of the named layers
@@ -588,7 +416,7 @@ package unreal;
 		Args:
 		    layer_names (Array(Name)): The names of the layers to affect
 	**/
-	public function toggle_layers_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function toggle_layers_visibility(layer_names:Dynamic):Void;
 	/**
 		x.try_get_layer(layer_name) -> Layer or None
 		Attempts to get the ULayer Object of the provided layer name.
@@ -601,7 +429,7 @@ package unreal;
 		
 		    out_layer (Layer):
 	**/
-	public function try_get_layer(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function try_get_layer(layer_name:Dynamic):Dynamic;
 	/**
 		x.update_actor_all_views_visibility(actor) -> None
 		Updates per-view visibility for the given actor for all views
@@ -609,7 +437,7 @@ package unreal;
 		Args:
 		    actor (Actor): Actor to update
 	**/
-	public function update_actor_all_views_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function update_actor_all_views_visibility(actor:Dynamic):Void;
 	/**
 		x.update_actor_visibility(actor, notify_selection_change, redraw_viewports) -> (out_selection_changed=bool, out_actor_modified=bool) or None
 		Updates the provided actors visibility in the viewports
@@ -626,7 +454,7 @@ package unreal;
 		
 		    out_actor_modified (bool): [OUT]         Whether the actor was modified
 	**/
-	public function update_actor_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function update_actor_visibility(actor:Dynamic, notify_selection_change:Dynamic, redraw_viewports:Dynamic):Dynamic;
 	/**
 		x.update_all_actors_visibility(notify_selection_change, redraw_viewports) -> bool
 		Updates the visibility of all actors in the viewports
@@ -638,7 +466,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function update_all_actors_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function update_all_actors_visibility(notify_selection_change:Dynamic, redraw_viewports:Dynamic):Bool;
 	/**
 		x.update_all_view_visibility(layer_that_changed) -> None
 		Updates the visibility for all actors for all views.
@@ -646,5 +474,5 @@ package unreal;
 		Args:
 		    layer_that_changed (Name): If one layer was changed (toggled in view pop-up, etc), then we only need to modify actors that use that layer.
 	**/
-	public function update_all_view_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function update_all_view_visibility(layer_that_changed:Dynamic):Void;
 }

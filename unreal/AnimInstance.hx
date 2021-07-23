@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "AnimInstance") extern class AnimInstance {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "AnimInstance") extern class AnimInstance extends unreal.Object {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -45,86 +11,25 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
 		x.blueprint_begin_play() -> None
 		Executed when begin play is called on the owning component
 	**/
-	public function blueprint_begin_play(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function blueprint_begin_play():Void;
 	/**
 		x.blueprint_initialize_animation() -> None
 		Executed when the Animation is initialized
 	**/
-	public function blueprint_initialize_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function blueprint_initialize_animation():Void;
 	/**
 		x.blueprint_linked_animation_layers_initialized() -> None
 		Executed when the all Linked Animation Layers are initialized
 	**/
-	public function blueprint_linked_animation_layers_initialized(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function blueprint_linked_animation_layers_initialized():Void;
 	/**
 		x.blueprint_post_evaluate_animation() -> None
 		Executed after the Animation is evaluated
 	**/
-	public function blueprint_post_evaluate_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function blueprint_post_evaluate_animation():Void;
 	/**
 		x.blueprint_update_animation(delta_time_x) -> None
 		Executed when the Animation is updated
@@ -132,7 +37,7 @@ package unreal;
 		Args:
 		    delta_time_x (float):
 	**/
-	public function blueprint_update_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function blueprint_update_animation(delta_time_x:Dynamic):Void;
 	/**
 		x.calculate_direction(velocity, base_rotation) -> float
 		Returns degree of the angle betwee velocity and Rotation forward vector
@@ -145,25 +50,16 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function calculate_direction(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function calculate_direction(velocity:Dynamic, base_rotation:Dynamic):Float;
 	/**
 		deprecated: 'clear_layer_overlay' was renamed to 'unlink_anim_class_layers'.
 	**/
-	public function clear_layer_overlay(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clear_layer_overlay():Void;
 	/**
 		x.clear_morph_targets() -> None
 		Clears the current morph targets.
 	**/
-	public function clear_morph_targets(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clear_morph_targets():Void;
 	/**
 		x.get_active_curve_names(curve_type) -> Array(Name)
 		This returns last up-to-date list of active curve names
@@ -176,7 +72,7 @@ package unreal;
 		
 		    out_names (Array(Name)):
 	**/
-	public function get_active_curve_names(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_active_curve_names(curve_type:Dynamic):Dynamic;
 	/**
 		x.get_all_curve_names() -> Array(Name)
 		This returns all curve names
@@ -186,11 +82,7 @@ package unreal;
 		
 		    out_names (Array(Name)):
 	**/
-	public function get_all_curve_names(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_all_curve_names():Dynamic;
 	/**
 		x.get_current_active_montage() -> AnimMontage
 		Get a current Active Montage in this AnimInstance.
@@ -199,7 +91,7 @@ package unreal;
 		Returns:
 		    AnimMontage:
 	**/
-	public function get_current_active_montage(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_current_active_montage():unreal.AnimMontage;
 	/**
 		x.get_curve_value(curve_name) -> float
 		Returns the value of a named curve.
@@ -210,31 +102,15 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_curve_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_curve_value(curve_name:Dynamic):Float;
 	/**
 		deprecated: 'get_layer_sub_instance_by_class' was renamed to 'get_linked_anim_layer_instance_by_class'.
 	**/
-	public function get_layer_sub_instance_by_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_layer_sub_instance_by_class():Void;
 	/**
 		deprecated: 'get_layer_sub_instance_by_group' was renamed to 'get_linked_anim_layer_instance_by_group'.
 	**/
-	public function get_layer_sub_instance_by_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_layer_sub_instance_by_group():Void;
 	/**
 		x.get_linked_anim_graph_instance_by_tag(tag) -> AnimInstance
 		Runs through all nodes, attempting to find the first linked instance by name/tag
@@ -245,7 +121,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_graph_instance_by_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linked_anim_graph_instance_by_tag(tag:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_graph_instances_by_tag(tag) -> Array(AnimInstance)
 		Runs through all nodes, attempting to find all linked instances that match the name/tag
@@ -258,7 +134,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_graph_instances_by_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linked_anim_graph_instances_by_tag(tag:Dynamic):Dynamic;
 	/**
 		x.get_linked_anim_layer_instance_by_class(class_) -> AnimInstance
 		Gets the first layer linked instance corresponding to the specified class
@@ -269,7 +145,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linked_anim_layer_instance_by_class(class_:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group(group) -> AnimInstance
 		Gets the layer linked instance corresponding to the specified group
@@ -280,7 +156,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linked_anim_layer_instance_by_group(group:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group_and_class(group, class_) -> AnimInstance
 		Gets layer linked instance that matches group and class
@@ -292,7 +168,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_group_and_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linked_anim_layer_instance_by_group_and_class(group:Dynamic, class_:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instances_by_group(group) -> Array(AnimInstance)
 		Runs through all nodes, attempting to find all distinct layer linked instances in the group
@@ -305,19 +181,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_layer_instances_by_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linked_anim_layer_instances_by_group(group:Dynamic):Dynamic;
 	/**
 		x.get_owning_actor() -> Actor
 		Returns the owning actor of this AnimInstance
@@ -325,7 +189,7 @@ package unreal;
 		Returns:
 		    Actor:
 	**/
-	public function get_owning_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_owning_actor():unreal.Actor;
 	/**
 		x.get_owning_component() -> SkeletalMeshComponent
 		Returns the skeletal mesh component that has created this AnimInstance
@@ -333,11 +197,7 @@ package unreal;
 		Returns:
 		    SkeletalMeshComponent:
 	**/
-	public function get_owning_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_owning_component():unreal.SkeletalMeshComponent;
 	/**
 		x.get_propagate_notifies_to_linked_instances() -> bool
 		Get whether to propagate notifies to any linked anim instances
@@ -345,7 +205,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function get_propagate_notifies_to_linked_instances(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_propagate_notifies_to_linked_instances():Bool;
 	/**
 		x.get_receive_notifies_from_linked_instances() -> bool
 		Get whether to process notifies from any linked anim instances
@@ -353,15 +213,15 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function get_receive_notifies_from_linked_instances(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_receive_notifies_from_linked_instances():Bool;
 	/**
 		deprecated: 'get_sub_instance_by_tag' was renamed to 'get_linked_anim_graph_instance_by_tag'.
 	**/
-	public function get_sub_instance_by_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_sub_instance_by_tag():Void;
 	/**
 		deprecated: 'get_sub_instances_by_tag' was renamed to 'get_linked_anim_graph_instances_by_tag'.
 	**/
-	public function get_sub_instances_by_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_sub_instances_by_tag():Void;
 	/**
 		x.get_sync_group_position(sync_group_name) -> MarkerSyncAnimPosition
 		Get Sync Group Position
@@ -372,7 +232,7 @@ package unreal;
 		Returns:
 		    MarkerSyncAnimPosition:
 	**/
-	public function get_sync_group_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_sync_group_position(sync_group_name:Dynamic):unreal.MarkerSyncAnimPosition;
 	/**
 		x.get_time_to_closest_marker(sync_group, marker_name) -> float or None
 		--- AI communication end ---
@@ -386,15 +246,7 @@ package unreal;
 		
 		    out_marker_time (float):
 	**/
-	public function get_time_to_closest_marker(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_time_to_closest_marker(sync_group:Dynamic, marker_name:Dynamic):Dynamic;
 	/**
 		x.has_marker_been_hit_this_frame(sync_group, marker_name) -> bool
 		Has Marker Been Hit This Frame
@@ -406,7 +258,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_marker_been_hit_this_frame(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function has_marker_been_hit_this_frame(sync_group:Dynamic, marker_name:Dynamic):Bool;
 	/**
 		x.is_any_montage_playing() -> bool
 		Returns true if any montage is playing currently. Doesn't mean it's active though, it could be blending out.
@@ -414,7 +266,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_any_montage_playing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_any_montage_playing():Bool;
 	/**
 		x.is_playing_slot_animation(asset, slot_node_name) -> bool
 		Return true if it's playing the slot animation
@@ -426,7 +278,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_playing_slot_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_playing_slot_animation(asset:Dynamic, slot_node_name:Dynamic):Bool;
 	/**
 		x.is_sync_group_between_markers(sync_group_name, previous_marker, next_marker, respect_marker_order=True) -> bool
 		Is Sync Group Between Markers
@@ -440,15 +292,15 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_sync_group_between_markers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_sync_group_between_markers(sync_group_name:Dynamic, previous_marker:Dynamic, next_marker:Dynamic, respect_marker_order:Dynamic):Bool;
 	/**
 		deprecated: 'kismet_initialize_animation' was renamed to 'blueprint_initialize_animation'.
 	**/
-	public function kismet_initialize_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function kismet_initialize_animation():Void;
 	/**
 		deprecated: 'kismet_update_animation' was renamed to 'blueprint_update_animation'.
 	**/
-	public function kismet_update_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function kismet_update_animation():Void;
 	/**
 		x.link_anim_class_layers(class_) -> None
 		Runs through all layer nodes, attempting to find layer nodes that are implemented by the specified class, then sets up a linked instance of the class for each.
@@ -459,7 +311,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function link_anim_class_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function link_anim_class_layers(class_:Dynamic):Void;
 	/**
 		x.link_anim_graph_by_tag(tag, class_) -> None
 		Runs through all nodes, attempting to find a linked instance by name/tag, then sets the class of each node if the tag matches
@@ -468,7 +320,7 @@ package unreal;
 		    tag (Name): 
 		    class_ (type(Class)):
 	**/
-	public function link_anim_graph_by_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function link_anim_graph_by_tag(tag:Dynamic, class_:Dynamic):Void;
 	/**
 		x.lock_ai_resources(lock_movement, lock_ai_logic) -> None
 		locks indicated AI resources of animated pawn
@@ -479,11 +331,7 @@ package unreal;
 		    lock_movement (bool): 
 		    lock_ai_logic (bool):
 	**/
-	public function lock_ai_resources(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function lock_ai_resources(lock_movement:Dynamic, lock_ai_logic:Dynamic):Void;
 	/**
 		x.montage_get_blend_time(montage) -> float
 		Get the current blend time of the Montage.
@@ -495,7 +343,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_get_blend_time(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_get_blend_time(montage:Dynamic):Float;
 	/**
 		x.montage_get_current_section(montage=None) -> Name
 		Returns the name of the current animation montage section.
@@ -506,7 +354,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function montage_get_current_section(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_get_current_section(montage:Dynamic):unreal.Name;
 	/**
 		x.montage_get_is_stopped(montage) -> bool
 		return true if Montage is not currently active. (not valid or blending out)
@@ -517,7 +365,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function montage_get_is_stopped(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_get_is_stopped(montage:Dynamic):Bool;
 	/**
 		x.montage_get_play_rate(montage) -> float
 		Get PlayRate for Montage.
@@ -530,7 +378,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_get_play_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_get_play_rate(montage:Dynamic):Float;
 	/**
 		x.montage_get_position(montage) -> float
 		Get Current Montage Position
@@ -541,7 +389,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_get_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_get_position(montage:Dynamic):Float;
 	/**
 		x.montage_is_active(montage) -> bool
 		Returns true if the animation montage is active. If the Montage reference is NULL, it will return true if any Montage is active.
@@ -552,7 +400,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function montage_is_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_is_active(montage:Dynamic):Bool;
 	/**
 		x.montage_is_playing(montage) -> bool
 		Returns true if the animation montage is currently active and playing.
@@ -564,7 +412,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function montage_is_playing(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_is_playing(montage:Dynamic):Bool;
 	/**
 		x.montage_jump_to_section(section_name, montage=None) -> None
 		Makes a montage jump to a named section. If Montage reference is NULL, it will do that to all active montages.
@@ -573,7 +421,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_section(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_jump_to_section(section_name:Dynamic, montage:Dynamic):Void;
 	/**
 		x.montage_jump_to_sections_end(section_name, montage=None) -> None
 		Makes a montage jump to the end of a named section. If Montage reference is NULL, it will do that to all active montages.
@@ -582,7 +430,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_sections_end(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_jump_to_sections_end(section_name:Dynamic, montage:Dynamic):Void;
 	/**
 		x.montage_pause(montage=None) -> None
 		Pauses the animation montage. If reference is NULL, it will pause ALL active montages.
@@ -590,7 +438,7 @@ package unreal;
 		Args:
 		    montage (AnimMontage):
 	**/
-	public function montage_pause(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_pause(montage:Dynamic):Void;
 	/**
 		x.montage_play(montage_to_play, play_rate=1.000000, return_value_type=MontagePlayReturnType.MONTAGE_LENGTH, time_to_start_montage_at=0.000000, stop_all_montages=True) -> float
 		Plays an animation montage. Returns the length of the animation montage in seconds. Returns 0.f if failed to play.
@@ -605,7 +453,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_play(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_play(montage_to_play:Dynamic, play_rate:Dynamic, return_value_type:Dynamic, time_to_start_montage_at:Dynamic, stop_all_montages:Dynamic):Float;
 	/**
 		x.montage_resume(montage) -> None
 		Resumes a paused animation montage. If reference is NULL, it will resume ALL active montages.
@@ -613,7 +461,7 @@ package unreal;
 		Args:
 		    montage (AnimMontage):
 	**/
-	public function montage_resume(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_resume(montage:Dynamic):Void;
 	/**
 		x.montage_set_next_section(section_name_to_change, next_section, montage=None) -> None
 		Relink new next section AFTER SectionNameToChange in run-time
@@ -627,7 +475,7 @@ package unreal;
 		    next_section (Name): : new next section
 		    montage (AnimMontage):
 	**/
-	public function montage_set_next_section(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_set_next_section(section_name_to_change:Dynamic, next_section:Dynamic, montage:Dynamic):Void;
 	/**
 		x.montage_set_play_rate(montage, new_play_rate=1.000000) -> None
 		Change AnimMontage play rate. NewPlayRate = 1.0 is the default playback rate.
@@ -636,7 +484,7 @@ package unreal;
 		    montage (AnimMontage): 
 		    new_play_rate (float):
 	**/
-	public function montage_set_play_rate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_set_play_rate(montage:Dynamic, new_play_rate:Dynamic):Void;
 	/**
 		x.montage_set_position(montage, new_position) -> None
 		Set position.
@@ -645,7 +493,7 @@ package unreal;
 		    montage (AnimMontage): 
 		    new_position (float):
 	**/
-	public function montage_set_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_set_position(montage:Dynamic, new_position:Dynamic):Void;
 	/**
 		x.montage_stop(blend_out_time, montage=None) -> None
 		Stops the animation montage. If reference is NULL, it will stop ALL active montages.
@@ -654,7 +502,7 @@ package unreal;
 		    blend_out_time (float): 
 		    montage (AnimMontage):
 	**/
-	public function montage_stop(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_stop(blend_out_time:Dynamic, montage:Dynamic):Void;
 	/**
 		x.montage_stop_group_by_name(blend_out_time, group_name) -> None
 		Stops all active montages belonging to a group.
@@ -663,23 +511,23 @@ package unreal;
 		    blend_out_time (float): 
 		    group_name (Name):
 	**/
-	public function montage_stop_group_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function montage_stop_group_by_name(blend_out_time:Dynamic, group_name:Dynamic):Void;
 	/**
 		(OnAllMontageInstancesEndedMCDelegate):  [Read-Write] Called when all Montage instances have ended.
 	**/
-	public var on_all_montage_instances_ended : Dynamic;
+	public var on_all_montage_instances_ended : unreal.OnAllMontageInstancesEndedMCDelegate;
 	/**
 		(OnMontageBlendingOutStartedMCDelegate):  [Read-Write] Called when a montage starts blending out, whether interrupted or finished
 	**/
-	public var on_montage_blending_out : Dynamic;
+	public var on_montage_blending_out : unreal.OnMontageBlendingOutStartedMCDelegate;
 	/**
 		(OnMontageEndedMCDelegate):  [Read-Write] Called when a montage has ended, whether interrupted or finished
 	**/
-	public var on_montage_ended : Dynamic;
+	public var on_montage_ended : unreal.OnMontageEndedMCDelegate;
 	/**
 		(OnMontageStartedMCDelegate):  [Read-Write] Called when a montage has started
 	**/
-	public var on_montage_started : Dynamic;
+	public var on_montage_started : unreal.OnMontageStartedMCDelegate;
 	/**
 		x.play_slot_animation(asset, slot_node_name, blend_in_time=0.250000, blend_out_time=0.250000, play_rate=1.000000, loop_count=1) -> float
 		Play Slot Animation
@@ -695,7 +543,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function play_slot_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function play_slot_animation(asset:Dynamic, slot_node_name:Dynamic, blend_in_time:Dynamic, blend_out_time:Dynamic, play_rate:Dynamic, loop_count:Dynamic):Float;
 	/**
 		x.play_slot_animation_as_dynamic_montage(asset, slot_node_name, blend_in_time=0.250000, blend_out_time=0.250000, play_rate=1.000000, loop_count=1, blend_out_trigger_time=-1.000000, time_to_start_montage_at=0.000000) -> AnimMontage
 		Play normal animation asset on the slot node by creating a dynamic UAnimMontage. You can only play one asset (whether montage or animsequence) at a time per SlotGroup.
@@ -713,11 +561,7 @@ package unreal;
 		Returns:
 		    AnimMontage:
 	**/
-	public function play_slot_animation_as_dynamic_montage(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function play_slot_animation_as_dynamic_montage(asset:Dynamic, slot_node_name:Dynamic, blend_in_time:Dynamic, blend_out_time:Dynamic, play_rate:Dynamic, loop_count:Dynamic, blend_out_trigger_time:Dynamic, time_to_start_montage_at:Dynamic):unreal.AnimMontage;
 	/**
 		x.reset_dynamics(teleport_type) -> None
 		Reset any dynamics running simulation-style updates (e.g. on teleport, time skip etc.)
@@ -725,7 +569,7 @@ package unreal;
 		Args:
 		    teleport_type (TeleportType):
 	**/
-	public function reset_dynamics(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function reset_dynamics(teleport_type:Dynamic):Void;
 	/**
 		x.save_pose_snapshot(snapshot_name) -> None
 		Takes a snapshot of the current skeletal mesh component pose & saves it internally.
@@ -735,19 +579,11 @@ package unreal;
 		Args:
 		    snapshot_name (Name):
 	**/
-	public function save_pose_snapshot(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function save_pose_snapshot(snapshot_name:Dynamic):Void;
 	/**
 		deprecated: 'set_layer_overlay' was renamed to 'link_anim_class_layers'.
 	**/
-	public function set_layer_overlay(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_layer_overlay():Void;
 	/**
 		x.set_morph_target(morph_target_name, value) -> None
 		Sets a morph target to a certain weight.
@@ -756,7 +592,7 @@ package unreal;
 		    morph_target_name (Name): 
 		    value (float):
 	**/
-	public function set_morph_target(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_morph_target(morph_target_name:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_propagate_notifies_to_linked_instances(set) -> None
 		Set whether to propagate notifies to any linked anim instances
@@ -764,7 +600,7 @@ package unreal;
 		Args:
 		    set (bool):
 	**/
-	public function set_propagate_notifies_to_linked_instances(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_propagate_notifies_to_linked_instances(set:Dynamic):Void;
 	/**
 		x.set_receive_notifies_from_linked_instances(set) -> None
 		Set whether to process notifies from any linked anim instances
@@ -772,7 +608,7 @@ package unreal;
 		Args:
 		    set (bool):
 	**/
-	public function set_receive_notifies_from_linked_instances(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_receive_notifies_from_linked_instances(set:Dynamic):Void;
 	/**
 		x.set_root_motion_mode(value) -> None
 		Set RootMotionMode
@@ -780,11 +616,11 @@ package unreal;
 		Args:
 		    value (RootMotionMode):
 	**/
-	public function set_root_motion_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_root_motion_mode(value:Dynamic):Void;
 	/**
 		deprecated: 'set_sub_instance_class_by_tag' was renamed to 'link_anim_graph_by_tag'.
 	**/
-	public function set_sub_instance_class_by_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_sub_instance_class_by_tag():Void;
 	/**
 		x.snapshot_pose(snapshot) -> PoseSnapshot
 		Takes a snapshot of the current skeletal mesh component pose and saves it to the specified snapshot.
@@ -799,11 +635,7 @@ package unreal;
 		
 		    snapshot (PoseSnapshot):
 	**/
-	public function snapshot_pose(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function snapshot_pose(snapshot:Dynamic):unreal.PoseSnapshot;
 	/**
 		x.stop_slot_animation(blend_out_time=0.250000, slot_node_name="None") -> None
 		Stops currently playing slot animation slot or all
@@ -812,7 +644,7 @@ package unreal;
 		    blend_out_time (float): 
 		    slot_node_name (Name):
 	**/
-	public function stop_slot_animation(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function stop_slot_animation(blend_out_time:Dynamic, slot_node_name:Dynamic):Void;
 	/**
 		x.try_get_pawn_owner() -> Pawn
 		kismet event functions
@@ -820,7 +652,7 @@ package unreal;
 		Returns:
 		    Pawn:
 	**/
-	public function try_get_pawn_owner(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function try_get_pawn_owner():unreal.Pawn;
 	/**
 		x.unlink_anim_class_layers(class_) -> None
 		Runs through all layer nodes, attempting to find layer nodes that are currently running the specified class, then resets each to its default value.
@@ -830,7 +662,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function unlink_anim_class_layers(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function unlink_anim_class_layers(class_:Dynamic):Void;
 	/**
 		x.unlock_ai_resources(unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources.
@@ -841,5 +673,5 @@ package unreal;
 		    unlock_movement (bool): 
 		    unlock_ai_logic (bool):
 	**/
-	public function unlock_ai_resources(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function unlock_ai_resources(unlock_movement:Dynamic, unlock_ai_logic:Dynamic):Void;
 }

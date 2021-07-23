@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "PrimitiveComponent") extern class PrimitiveComponent {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "PrimitiveComponent") extern class PrimitiveComponent extends unreal.SceneComponent {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -45,87 +11,6 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
-		(bool):  [Read-Write] If RelativeLocation should be considered relative to the world, rather than the parent
-	**/
-	public var absolute_location : Dynamic;
-	/**
-		(bool):  [Read-Write] If RelativeRotation should be considered relative to the world, rather than the parent
-	**/
-	public var absolute_rotation : Dynamic;
-	/**
-		(bool):  [Read-Write] If RelativeScale3D should be considered relative to the world, rather than the parent
-	**/
-	public var absolute_scale : Dynamic;
-	/**
-		x.activate(reset=False) -> None
-		Activates the SceneComponent, should be overridden by native child classes.
-		
-		Args:
-		    reset (bool): Whether the activation should happen even if ShouldActivate returns false.
-	**/
-	public function activate(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
 		x.add_angular_impulse(impulse, bone_name="None", vel_change=False) -> None
 		Add Angular Impulse
 		deprecated: Use AddAngularImpulseInRadians instead
@@ -135,7 +20,7 @@ package unreal;
 		    bone_name (Name): 
 		    vel_change (bool):
 	**/
-	public function add_angular_impulse(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_angular_impulse(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
 	/**
 		x.add_angular_impulse_in_degrees(impulse, bone_name="None", vel_change=False) -> None
 		Add an angular impulse to a single rigid body. Good for one time instant burst.
@@ -145,7 +30,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply angular impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in angular velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_angular_impulse_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_angular_impulse_in_degrees(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
 	/**
 		x.add_angular_impulse_in_radians(impulse, bone_name="None", vel_change=False) -> None
 		Add an angular impulse to a single rigid body. Good for one time instant burst.
@@ -155,7 +40,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply angular impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in angular velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_angular_impulse_in_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_angular_impulse_in_radians(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
 	/**
 		x.add_force(force, bone_name="None", accel_change=False) -> None
 		Add a force to a single rigid body.
@@ -166,7 +51,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 		    accel_change (bool): If true, Force is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 	**/
-	public function add_force(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_force(force:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
 	/**
 		x.add_force_at_location(force, location, bone_name="None") -> None
 		Add a force to a single rigid body at a particular location in world space.
@@ -177,7 +62,7 @@ package unreal;
 		    location (Vector): Location to apply force, in world space.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 	**/
-	public function add_force_at_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_force_at_location(force:Dynamic, location:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.add_force_at_location_local(force, location, bone_name="None") -> None
 		Add a force to a single rigid body at a particular location. Both Force and Location should be in body space.
@@ -188,11 +73,11 @@ package unreal;
 		    location (Vector): Location to apply force, in component space.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 	**/
-	public function add_force_at_location_local(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_force_at_location_local(force:Dynamic, location:Dynamic, bone_name:Dynamic):Void;
 	/**
 		deprecated: 'add_force_at_position' was renamed to 'add_force_at_location'.
 	**/
-	public function add_force_at_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_force_at_position():Void;
 	/**
 		x.add_impulse(impulse, bone_name="None", vel_change=False) -> None
 		Add an impulse to a single rigid body. Good for one time instant burst.
@@ -202,7 +87,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_impulse(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_impulse(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
 	/**
 		x.add_impulse_at_location(impulse, location, bone_name="None") -> None
 		Add an impulse to a single rigid body at a specific location.
@@ -212,56 +97,11 @@ package unreal;
 		    location (Vector): Point in world space to apply impulse at.
 		    bone_name (Name): If a SkeletalMeshComponent, name of bone to apply impulse to. 'None' indicates root body.
 	**/
-	public function add_impulse_at_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_impulse_at_location(impulse:Dynamic, location:Dynamic, bone_name:Dynamic):Void;
 	/**
 		deprecated: 'add_impulse_at_position' was renamed to 'add_impulse_at_location'.
 	**/
-	public function add_impulse_at_position(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_local_offset(delta_location, sweep, teleport) -> HitResult
-		Adds a delta to the location of the component in its local reference frame
-		
-		Args:
-		    delta_location (Vector): Change in location of the component in its local reference frame.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_local_offset(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_local_rotation(delta_rotation, sweep, teleport) -> HitResult
-		Adds a delta to the rotation of the component in its local reference frame
-		
-		Args:
-		    delta_rotation (Rotator): Change in rotation of the component in its local reference frame.
-		    sweep (bool): Whether we sweep to the destination (currently not supported for rotation).
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts).
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_local_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_local_transform(delta_transform, sweep, teleport) -> HitResult
-		Adds a delta to the transform of the component in its local reference frame. Scale is unchanged.
-		
-		Args:
-		    delta_transform (Transform): Change in transform of the component in its local reference frame. Scale is unchanged.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_local_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_impulse_at_position():Void;
 	/**
 		x.add_radial_force(origin, radius, strength, falloff, accel_change=False) -> None
 		Add a force to all bodies in this component, originating from the supplied world-space location.
@@ -273,7 +113,7 @@ package unreal;
 		    falloff (RadialImpulseFalloff): Allows you to control the strength of the force as a function of distance from Origin.
 		    accel_change (bool): If true, Strength is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 	**/
-	public function add_radial_force(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_radial_force(origin:Dynamic, radius:Dynamic, strength:Dynamic, falloff:Dynamic, accel_change:Dynamic):Void;
 	/**
 		x.add_radial_impulse(origin, radius, strength, falloff, vel_change=False) -> None
 		Add an impulse to all rigid bodies in this component, radiating out from the specified position.
@@ -285,53 +125,7 @@ package unreal;
 		    falloff (RadialImpulseFalloff): Allows you to control the strength of the impulse as a function of distance from Origin.
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_radial_impulse(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_relative_location(delta_location, sweep, teleport) -> HitResult
-		Adds a delta to the translation of the component relative to its parent
-		
-		Args:
-		    delta_location (Vector): Change in location of the component relative to its parent
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_relative_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_relative_rotation(delta_rotation, sweep, teleport) -> HitResult
-		Adds a delta the rotation of the component relative to its parent
-		
-		Args:
-		    delta_rotation (Rotator): Change in rotation of the component relative to is parent.
-		    sweep (bool): Whether we sweep to the destination (currently not supported for rotation).
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts).
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_relative_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_tick_prerequisite_actor(prerequisite_actor) -> None
-		Make this component tick after PrerequisiteActor
-		
-		Args:
-		    prerequisite_actor (Actor):
-	**/
-	public function add_tick_prerequisite_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_tick_prerequisite_component(prerequisite_component) -> None
-		Make this component tick after PrerequisiteComponent.
-		
-		Args:
-		    prerequisite_component (ActorComponent):
-	**/
-	public function add_tick_prerequisite_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_radial_impulse(origin:Dynamic, radius:Dynamic, strength:Dynamic, falloff:Dynamic, vel_change:Dynamic):Void;
 	/**
 		x.add_torque(torque, bone_name="None", accel_change=False) -> None
 		Add Torque
@@ -342,7 +136,7 @@ package unreal;
 		    bone_name (Name): 
 		    accel_change (bool):
 	**/
-	public function add_torque(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_torque(torque:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
 	/**
 		x.add_torque_in_degrees(torque, bone_name="None", accel_change=False) -> None
 		Add a torque to a single rigid body.
@@ -352,7 +146,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply torque to. 'None' indicates root body.
 		    accel_change (bool): If true, Torque is taken as a change in angular acceleration instead of a physical torque (i.e. mass will have no effect).
 	**/
-	public function add_torque_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_torque_in_degrees(torque:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
 	/**
 		x.add_torque_in_radians(torque, bone_name="None", accel_change=False) -> None
 		Add a torque to a single rigid body.
@@ -362,125 +156,37 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply torque to. 'None' indicates root body.
 		    accel_change (bool): If true, Torque is taken as a change in angular acceleration instead of a physical torque (i.e. mass will have no effect).
 	**/
-	public function add_torque_in_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_world_offset(delta_location, sweep, teleport) -> HitResult
-		Adds a delta to the location of the component in world space.
-		
-		Args:
-		    delta_location (Vector): Change in location in world space for the component.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_world_offset(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_world_rotation(delta_rotation, sweep, teleport) -> HitResult
-		Adds a delta to the rotation of the component in world space.
-		
-		Args:
-		    delta_rotation (Rotator): Change in rotation in world space for the component.
-		    sweep (bool): Whether we sweep to the destination (currently not supported for rotation).
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_world_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_world_transform(delta_transform, sweep, teleport) -> HitResult
-		Adds a delta to the transform of the component in world space. Ignores scale and sets it to (1,1,1).
-		
-		Args:
-		    delta_transform (Transform): Change in transform in world space for the component. Scale is ignored.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.add_world_transform_keep_scale(delta_transform, sweep, teleport) -> HitResult
-		Adds a delta to the transform of the component in world space. Scale is unchanged.
-		
-		Args:
-		    delta_transform (Transform): Change in transform in world space for the component. Scale is ignored since we preserve the original scale.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function add_world_transform_keep_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_torque_in_radians(torque:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
 	/**
 		(bool):  [Read-Only] Controls whether the primitive should affect dynamic distance field lighting methods.  This flag is only used if CastShadow is true. *
 	**/
-	public var affect_distance_field_lighting : Dynamic;
+	public var affect_distance_field_lighting : Bool;
 	/**
 		(bool):  [Read-Only] Controls whether the primitive should inject light into the Light Propagation Volume.  This flag is only used if CastShadow is true. *
 	**/
-	public var affect_dynamic_indirect_lighting : Dynamic;
+	public var affect_dynamic_indirect_lighting : Bool;
 	/**
 		(bool):  [Read-Only] Whether to accept cull distance volumes to modify cached cull distance.
 	**/
-	public var allow_cull_distance_volume : Dynamic;
+	public var allow_cull_distance_volume : Bool;
 	/**
 		(bool):  [Read-Only] Indicates if we'd like to create physics state all the time (for collision and simulation).
 		If you set this to false, it still will create physics state if collision or simulation activated.
 		This can help performance if you'd like to avoid overhead of creating physics state when triggers
 	**/
-	public var always_create_physics_state : Dynamic;
+	public var always_create_physics_state : Bool;
 	/**
 		(bool):  [Read-Write] True for damage to this component to apply physics impulse, false to opt out of these impulses.
 	**/
-	public var apply_impulse_on_damage : Dynamic;
-	/**
-		deprecated: 'attach_to' was renamed to 'k2_attach_to'.
-	**/
-	public function attach_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.attach_to_component(parent, socket_name, location_rule, rotation_rule, scale_rule, weld_simulated_bodies) -> bool
-		Attach this component to another scene component, optionally at a named socket. It is valid to call this on components whether or not they have been Registered.
-		
-		Args:
-		    parent (SceneComponent): Parent to attach to.
-		    socket_name (Name): Optional socket to attach to on the parent.
-		    location_rule (AttachmentRule): How to handle translation when attaching.
-		    rotation_rule (AttachmentRule): How to handle rotation when attaching.
-		    scale_rule (AttachmentRule): How to handle scale when attaching.
-		    weld_simulated_bodies (bool): Whether to weld together simulated physics bodies.
-		
-		Returns:
-		    bool: True if attachment is successful (or already attached to requested parent/socket), false if attachment is rejected and there is no change in AttachParent.
-	**/
-	public function attach_to_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		(bool):  [Read-Only] Whether the component is activated at creation or must be explicitly activated.
-	**/
-	public var auto_activate : Dynamic;
-	/**
-		deprecated: 'b_absolute_translation' was renamed to 'absolute_location'.
-	**/
-	public var b_absolute_translation : Dynamic;
+	public var apply_impulse_on_damage : Bool;
 	/**
 		(bool):  [Read-Write] If true, the proxy generation process will use instancing to render this imposter
 	**/
-	public var batch_imposters_as_instances : Dynamic;
+	public var batch_imposters_as_instances : Bool;
 	/**
 		(BodyInstance):  [Read-Only] Physics scene information for this component, holds a single rigid body with multiple shapes.
 	**/
-	public var body_instance : Dynamic;
+	public var body_instance : unreal.BodyInstance;
 	/**
 		x.box_overlap_component(box_centre, box, trace_complex, show_trace, persistent_show_trace) -> (hit_location=Vector, hit_normal=Vector, bone_name=Name, out_hit=HitResult) or None
 		Perform a box overlap against a single component as an AABB (No rotation)
@@ -503,16 +209,12 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function box_overlap_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function box_overlap_component(box_centre:Dynamic, box:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
 	/**
 		(float):  [Read-Only] The distance to cull this primitive at.
 		A CachedMaxDrawDistance of 0 indicates that the primitive should not be culled by distance.
 	**/
-	public var cached_max_draw_distance : Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var cached_max_draw_distance : Float;
 	/**
 		deprecated: 'can_be_character_base' was renamed to 'can_character_step_up_on'.
 	**/
@@ -529,90 +231,70 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function can_character_step_up(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function can_character_step_up(pawn:Dynamic):Bool;
 	/**
 		(CanBeCharacterBase):  [Read-Write] Determine whether a Character can step up onto this component.
 		This controls whether they can try to step up on it when they bump in to it, not whether they can walk on it after landing on it.
 		FWalkableSlopeOverride:
 	**/
-	public var can_character_step_up_on : Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var can_character_step_up_on : unreal.CanBeCharacterBase;
 	/**
 		(bool):  [Read-Only] Whether this component should cast shadows from lights that have bCastShadowsFromCinematicObjectsOnly enabled.
 		This is useful for characters in a cinematic with special cinematic lights, where the cost of shadowmap rendering of the environment is undesired.
 	**/
-	public var cast_cinematic_shadow : Dynamic;
+	public var cast_cinematic_shadow : Bool;
 	/**
 		(bool):  [Read-Only] Whether the object should cast contact shadows.
 		This flag is only used if CastShadow is true.
 	**/
-	public var cast_contact_shadow : Dynamic;
+	public var cast_contact_shadow : Bool;
 	/**
 		(bool):  [Read-Only] Controls whether the primitive should cast shadows in the case of non precomputed shadowing.  This flag is only used if CastShadow is true. *
 	**/
-	public var cast_dynamic_shadow : Dynamic;
+	public var cast_dynamic_shadow : Bool;
 	/**
 		(bool):  [Read-Only] When enabled, the component will be rendering into the far shadow cascades (only for directional lights).
 	**/
-	public var cast_far_shadow : Dynamic;
+	public var cast_far_shadow : Bool;
 	/**
 		(bool):  [Read-Only] If true, the primitive will cast shadows even if bHidden is true.
 		Controls whether the primitive should cast shadows when hidden.
 		This flag is only used if CastShadow is true.
 	**/
-	public var cast_hidden_shadow : Dynamic;
+	public var cast_hidden_shadow : Bool;
 	/**
 		(bool):  [Read-Only] Whether this component should create a per-object shadow that gives higher effective shadow resolution.
 		Useful for cinematic character shadowing. Assumed to be enabled if bSelfShadowOnly is enabled.
 	**/
-	public var cast_inset_shadow : Dynamic;
+	public var cast_inset_shadow : Bool;
 	/**
 		(bool):  [Read-Only] Controls whether the primitive component should cast a shadow or not.
 	**/
-	public var cast_shadow : Dynamic;
+	public var cast_shadow : Bool;
 	/**
 		(bool):  [Read-Only] Whether this primitive should cast dynamic shadows as if it were a two sided material.
 	**/
-	public var cast_shadow_as_two_sided : Dynamic;
+	public var cast_shadow_as_two_sided : Bool;
 	/**
 		(bool):  [Read-Only] Whether the object should cast a static shadow from shadow casting lights.  This flag is only used if CastShadow is true.
 	**/
-	public var cast_static_shadow : Dynamic;
+	public var cast_static_shadow : Bool;
 	/**
 		(bool):  [Read-Only] Whether the object should cast a volumetric translucent shadow.
 		Volumetric translucent shadows are useful for primitives with smoothly changing opacity like particles representing a volume,
 		But have artifacts when used on highly opaque surfaces.
 	**/
-	public var cast_volumetric_translucent_shadow : Dynamic;
+	public var cast_volumetric_translucent_shadow : Bool;
 	/**
 		x.clear_move_ignore_actors() -> None
 		Clear the list of actors we ignore when moving.
 	**/
-	public function clear_move_ignore_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clear_move_ignore_actors():Void;
 	/**
 		x.clear_move_ignore_components() -> None
 		Clear the list of components we ignore when moving.
 	**/
-	public function clear_move_ignore_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.component_has_tag(tag) -> bool
-		See if this component contains the supplied tag
-		
-		Args:
-		    tag (Name): 
-		
-		Returns:
-		    bool:
-	**/
-	public function component_has_tag(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		(Array(Name)):  [Read-Write] Array of tags that can be used for grouping and categorizing. Can also be accessed from scripting.
-	**/
-	public var component_tags : Dynamic;
+	public function clear_move_ignore_components():Void;
 	/**
 		x.copy_array_of_move_ignore_actors() -> Array(Actor)
 		Returns the list of actors we currently ignore when moving.
@@ -620,7 +302,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function copy_array_of_move_ignore_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function copy_array_of_move_ignore_actors():Dynamic;
 	/**
 		x.copy_array_of_move_ignore_components() -> Array(PrimitiveComponent)
 		Returns the list of actors we currently ignore when moving.
@@ -628,7 +310,7 @@ package unreal;
 		Returns:
 		    Array(PrimitiveComponent):
 	**/
-	public function copy_array_of_move_ignore_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function copy_array_of_move_ignore_components():Dynamic;
 	/**
 		x.create_and_set_material_instance_dynamic(element_index) -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance for the specified element index.  The parent of the instance is set to the material being replaced.
@@ -640,7 +322,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_and_set_material_instance_dynamic(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function create_and_set_material_instance_dynamic(element_index:Dynamic):unreal.MaterialInstanceDynamic;
 	/**
 		x.create_and_set_material_instance_dynamic_from_material(element_index, parent) -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance for the specified element index.  The parent of the instance is set to the material being replaced.
@@ -653,7 +335,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_and_set_material_instance_dynamic_from_material(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function create_and_set_material_instance_dynamic_from_material(element_index:Dynamic, parent:Dynamic):unreal.MaterialInstanceDynamic;
 	/**
 		x.create_dynamic_material_instance(element_index, source_material=None, optional_name="None") -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance for the specified element index, optionally from the supplied material.
@@ -666,91 +348,35 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_dynamic_material_instance(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function create_dynamic_material_instance(element_index:Dynamic, source_material:Dynamic, optional_name:Dynamic):unreal.MaterialInstanceDynamic;
 	/**
 		(int32):  [Read-Only] Optionally write this 0-255 value to the stencil buffer in CustomDepth pass (Requires project setting or r.CustomDepth == 3)
 	**/
-	public var custom_depth_stencil_value : Dynamic;
+	public var custom_depth_stencil_value : Int;
 	/**
 		(RendererStencilMask):  [Read-Only] Mask used for stencil buffer writes.
 	**/
-	public var custom_depth_stencil_write_mask : Dynamic;
-	/**
-		x.deactivate() -> None
-		Deactivates the SceneComponent.
-	**/
-	public function deactivate(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.destroy_component(object) -> None
-		Unregister and mark for pending kill a component.  This may not be used to destroy a component that is owned by an actor unless the owning actor is calling the function.
-		
-		Args:
-		    object (Object):
-	**/
-	public function destroy_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.detach_from_component(location_rule=DetachmentRule.KEEP_RELATIVE, rotation_rule=DetachmentRule.KEEP_RELATIVE, scale_rule=DetachmentRule.KEEP_RELATIVE, call_modify=True) -> None
-		Detach this component from whatever it is attached to. Automatically unwelds components that are welded together (See WeldTo)
-		
-		Args:
-		    location_rule (DetachmentRule): How to handle translations when detaching.
-		    rotation_rule (DetachmentRule): How to handle rotation when detaching.
-		    scale_rule (DetachmentRule): How to handle scales when detaching.
-		    call_modify (bool): If true, call Modify() on the component and the current attach parent component
-	**/
-	public function detach_from_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.detach_from_parent(maintain_world_position=False, call_modify=True) -> None
-		Detach from Parent
-		
-		Args:
-		    maintain_world_position (bool): 
-		    call_modify (bool):
-	**/
-	public function detach_from_parent(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		(DetailMode):  [Read-Only] If detail mode is >= system detail mode, primitive won't be rendered.
-	**/
-	public var detail_mode : Dynamic;
-	/**
-		x.does_socket_exist(socket_name) -> bool
-		Return true if socket with the given name exists
-		
-		Args:
-		    socket_name (Name): Name of the socket or the bone to get the transform
-		
-		Returns:
-		    bool:
-	**/
-	public function does_socket_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var custom_depth_stencil_write_mask : unreal.RendererStencilMask;
 	/**
 		(bool):  [Read-Write] If true, and if World setting has bEnableHierarchicalLOD equal to true, then this component will be included when generating a Proxy mesh for the parent Actor
 	**/
-	public var enable_auto_lod_generation : Dynamic;
+	public var enable_auto_lod_generation : Bool;
 	/**
 		(Array(int32)):  [Read-Write] Which specific HLOD levels this component should be excluded from
 	**/
-	public var exclude_for_specific_hlod_levels : Dynamic;
+	public var exclude_for_specific_hlod_levels : Array<Dynamic>;
 	/**
 		(bool):  [Read-Only] If set, then it overrides any bLightAttachmentsAsGroup set in a parent.
 	**/
-	public var exclude_from_light_attachment_group : Dynamic;
+	public var exclude_from_light_attachment_group : Bool;
 	/**
 		(bool):  [Read-Only] If true, forces mips for textures used by this component to be resident when this component's level is loaded.
 	**/
-	public var force_mip_streaming : Dynamic;
+	public var force_mip_streaming : Bool;
 	/**
 		(bool):  [Read-Write] Generate Overlap Events
 	**/
-	public var generate_overlap_events : Dynamic;
-	/**
-		x.get_all_socket_names() -> Array(Name)
-		Gets the names of all the sockets on the component.
-		
-		Returns:
-		    Array(Name): Get the names of all the sockets on the component.
-	**/
-	public function get_all_socket_names(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var generate_overlap_events : Bool;
 	/**
 		x.get_angular_damping() -> float
 		Returns the angular damping of this component.
@@ -758,23 +384,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_angular_damping(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_attach_parent() -> SceneComponent
-		Get the SceneComponent we are attached to.
-		
-		Returns:
-		    SceneComponent:
-	**/
-	public function get_attach_parent(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_attach_socket_name() -> Name
-		Get the socket we are attached to.
-		
-		Returns:
-		    Name:
-	**/
-	public function get_attach_socket_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_angular_damping():Float;
 	/**
 		x.get_center_of_mass(bone_name="None") -> Vector
 		Get the center of mass of a single body. In the case of a welded body this will return the center of mass of the entire welded body (including its parent and children)
@@ -786,35 +396,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_center_of_mass(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_child_component(child_index) -> SceneComponent
-		Gets the attached child component at the specified location
-		
-		Args:
-		    child_index (int32): 
-		
-		Returns:
-		    SceneComponent:
-	**/
-	public function get_child_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_children_components(include_all_descendants) -> Array(SceneComponent)
-		Gets all components that are attached to this component, possibly recursively
-		
-		Args:
-		    include_all_descendants (bool): Whether to include all descendants in the list of children (i.e. grandchildren, great grandchildren, etc.)
-		
-		Returns:
-		    Array(SceneComponent): 
-		
-		    children (Array(SceneComponent)): The list of attached child components
-	**/
-	public function get_children_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_center_of_mass(bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_closest_point_on_collision(point, bone_name="None") -> (float, out_point_on_body=Vector)
 		Returns the distance and closest point to the collision surface.
@@ -829,7 +411,7 @@ package unreal;
 		
 		    out_point_on_body (Vector): Point on the surface of collision closest to Point
 	**/
-	public function get_closest_point_on_collision(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_closest_point_on_collision(point:Dynamic, bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_collision_enabled() -> CollisionEnabled
 		Returns the form of collision for this component
@@ -837,7 +419,7 @@ package unreal;
 		Returns:
 		    CollisionEnabled:
 	**/
-	public function get_collision_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_collision_enabled():unreal.CollisionEnabled;
 	/**
 		x.get_collision_object_type() -> CollisionChannel
 		Gets the collision object type
@@ -845,7 +427,7 @@ package unreal;
 		Returns:
 		    CollisionChannel:
 	**/
-	public function get_collision_object_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_collision_object_type():unreal.CollisionChannel;
 	/**
 		x.get_collision_profile_name() -> Name
 		Get the collision profile name
@@ -853,7 +435,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function get_collision_profile_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_collision_profile_name():unreal.Name;
 	/**
 		x.get_collision_response_to_channel(channel) -> CollisionResponseType
 		Gets the response type given a specific channel
@@ -864,47 +446,7 @@ package unreal;
 		Returns:
 		    CollisionResponseType:
 	**/
-	public function get_collision_response_to_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_component_tick_interval() -> float
-		Returns the tick interval for this component's primary tick function, which is the frequency in seconds at which it will be executed
-		
-		Returns:
-		    float:
-	**/
-	public function get_component_tick_interval(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_component_velocity() -> Vector
-		Get velocity of the component: either ComponentVelocity, or the velocity of the physics body if simulating physics.
-		
-		Returns:
-		    Vector: Velocity of the component
-	**/
-	public function get_component_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_forward_vector() -> Vector
-		Get the forward (X) unit direction vector from this component, in world space.
-		
-		Returns:
-		    Vector:
-	**/
-	public function get_forward_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_collision_response_to_channel(channel:Dynamic):unreal.CollisionResponseType;
 	/**
 		x.get_inertia_tensor(bone_name="None") -> Vector
 		Returns the inertia tensor of this component in kg cm^2. The inertia tensor is in local component space.
@@ -915,7 +457,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_inertia_tensor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_inertia_tensor(bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_linear_damping() -> float
 		Returns the linear damping of this component.
@@ -923,7 +465,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_linear_damping(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_linear_damping():Float;
 	/**
 		x.get_mass() -> float
 		Returns the mass of this component in kg.
@@ -931,7 +473,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_mass(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_mass():Float;
 	/**
 		x.get_mass_scale(bone_name="None") -> float
 		Returns the mass scale used to calculate the mass of a single physics body
@@ -942,7 +484,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_mass_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_mass_scale(bone_name:Dynamic):Float;
 	/**
 		x.get_material(element_index) -> MaterialInterface
 		Returns the material used by the element at the specified index
@@ -953,7 +495,7 @@ package unreal;
 		Returns:
 		    MaterialInterface: the material used by the indexed element of this mesh.
 	**/
-	public function get_material(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_material(element_index:Dynamic):unreal.MaterialInterface;
 	/**
 		x.get_material_from_collision_face_index(face_index) -> (MaterialInterface, section_index=int32)
 		Try and retrieve the material applied to a particular collision face of mesh. Used with face index returned from collision trace.
@@ -966,23 +508,11 @@ package unreal;
 		
 		    section_index (int32): Section of the mesh that the face belongs to
 	**/
-	public function get_material_from_collision_face_index(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_material_from_collision_face_index(face_index:Dynamic):Int;
 	/**
 		deprecated: 'get_move_ignore_actors' was renamed to 'copy_array_of_move_ignore_actors'.
 	**/
-	public function get_move_ignore_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_num_children_components() -> int32
-		Gets the number of attached children components
-		
-		Returns:
-		    int32:
-	**/
-	public function get_num_children_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_move_ignore_actors():Void;
 	/**
 		x.get_num_materials() -> int32
 		Return number of material elements in this primitive
@@ -990,15 +520,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_materials(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_num_materials():Int;
 	/**
 		x.get_overlapping_actors(class_filter=None) -> Array(Actor)
 		Returns a list of actors that this component is overlapping.
@@ -1011,7 +533,7 @@ package unreal;
 		
 		    overlapping_actors (Array(Actor)): [out] Returned list of overlapping actors
 	**/
-	public function get_overlapping_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_overlapping_actors(class_filter:Dynamic):Dynamic;
 	/**
 		x.get_overlapping_components() -> Array(PrimitiveComponent)
 		Returns unique list of components this component is overlapping.
@@ -1021,29 +543,7 @@ package unreal;
 		
 		    out_overlapping_components (Array(PrimitiveComponent)):
 	**/
-	public function get_overlapping_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_owner() -> Actor
-		Follow the Outer chain to get the  AActor  that 'Owns' this component
-		
-		Returns:
-		    Actor:
-	**/
-	public function get_owner(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_parent_components() -> Array(SceneComponent)
-		Gets all attachment parent components up to and including the root component
-		
-		Returns:
-		    Array(SceneComponent): 
-		
-		    parents (Array(SceneComponent)):
-	**/
-	public function get_parent_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_overlapping_components():Dynamic;
 	/**
 		x.get_physics_angular_velocity(bone_name="None") -> Vector
 		Get Physics Angular Velocity
@@ -1055,7 +555,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_physics_angular_velocity(bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_physics_angular_velocity_in_degrees(bone_name="None") -> Vector
 		Get the angular velocity of a single body, in degrees per second.
@@ -1066,7 +566,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_physics_angular_velocity_in_degrees(bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_physics_angular_velocity_in_radians(bone_name="None") -> Vector
 		Get the angular velocity of a single body, in radians per second.
@@ -1077,7 +577,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity_in_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_physics_angular_velocity_in_radians(bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_physics_linear_velocity(bone_name="None") -> Vector
 		Get the linear velocity of a single body.
@@ -1088,7 +588,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_linear_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_physics_linear_velocity(bone_name:Dynamic):unreal.Vector;
 	/**
 		x.get_physics_linear_velocity_at_point(point, bone_name="None") -> Vector
 		Get the linear velocity of a point on a single body.
@@ -1100,105 +600,23 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_linear_velocity_at_point(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_physics_volume() -> PhysicsVolume
-		Get the PhysicsVolume overlapping this component.
-		
-		Returns:
-		    PhysicsVolume:
-	**/
-	public function get_physics_volume(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_physics_linear_velocity_at_point(point:Dynamic, bone_name:Dynamic):unreal.Vector;
 	/**
 		deprecated: 'get_rb_angular_velocity' was renamed to 'get_physics_angular_velocity'.
 	**/
-	public function get_rb_angular_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_rb_angular_velocity():Void;
 	/**
 		deprecated: 'get_rb_linear_velocity' was renamed to 'get_physics_linear_velocity'.
 	**/
-	public function get_rb_linear_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_relative_transform() -> Transform
-		Returns the transform of the component relative to its parent
-		
-		Returns:
-		    Transform:
-	**/
-	public function get_relative_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_right_vector() -> Vector
-		Get the right (Y) unit direction vector from this component, in world space.
-		
-		Returns:
-		    Vector:
-	**/
-	public function get_right_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_socket_location(socket_name) -> Vector
-		Get world-space socket or bone location.
-		
-		Args:
-		    socket_name (Name): Name of the socket or the bone to get the transform
-		
-		Returns:
-		    Vector: Socket transform in world space if socket if found. Otherwise it will return component's transform in world space.
-	**/
-	public function get_socket_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_socket_quaternion(socket_name) -> Quat
-		Get world-space socket or bone FQuat rotation.
-		deprecated: Use GetSocketRotation instead, Quat is not fully supported in blueprints.
-		
-		Args:
-		    socket_name (Name): Name of the socket or the bone to get the transform
-		
-		Returns:
-		    Quat: Socket transform in world space if socket if found. Otherwise it will return component's transform in world space.
-	**/
-	public function get_socket_quaternion(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_socket_rotation(socket_name) -> Rotator
-		Get world-space socket or bone  FRotator rotation.
-		
-		Args:
-		    socket_name (Name): Name of the socket or the bone to get the transform
-		
-		Returns:
-		    Rotator: Socket transform in world space if socket if found. Otherwise it will return component's transform in world space.
-	**/
-	public function get_socket_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_socket_transform(socket_name, transform_space=RelativeTransformSpace.RTS_WORLD) -> Transform
-		Get world-space socket transform.
-		
-		Args:
-		    socket_name (Name): Name of the socket or the bone to get the transform
-		    transform_space (RelativeTransformSpace): 
-		
-		Returns:
-		    Transform: Socket transform in world space if socket if found. Otherwise it will return component's transform in world space.
-	**/
-	public function get_socket_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_rb_linear_velocity():Void;
 	/**
 		deprecated: 'get_touching_actors' was renamed to 'get_overlapping_actors'.
 	**/
-	public function get_touching_actors(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_touching_actors():Void;
 	/**
 		deprecated: 'get_touching_components' was renamed to 'get_overlapping_components'.
 	**/
-	public function get_touching_components(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_up_vector() -> Vector
-		Get the up (Z) unit direction vector from this component, in world space.
-		
-		Returns:
-		    Vector:
-	**/
-	public function get_up_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_touching_components():Void;
 	/**
 		x.get_walkable_slope_override() -> WalkableSlopeOverride
 		Returns the slope override struct for this component.
@@ -1206,47 +624,7 @@ package unreal;
 		Returns:
 		    WalkableSlopeOverride:
 	**/
-	public function get_walkable_slope_override(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world_location() -> Vector
-		Return location of the component, in world space
-		
-		Returns:
-		    Vector:
-	**/
-	public function get_world_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world_rotation() -> Rotator
-		Returns rotation of the component, in world space.
-		
-		Returns:
-		    Rotator:
-	**/
-	public function get_world_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world_scale() -> Vector
-		Returns scale of the component, in world space.
-		
-		Returns:
-		    Vector:
-	**/
-	public function get_world_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world_transform() -> Transform
-		Get the current component-to-world transform for this component
-		
-		Returns:
-		    Transform:
-	**/
-	public function get_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		(bool):  [Read-Only] Whether to hide the primitive in game, if the primitive is Visible.
-	**/
-	public var hidden_in_game : Dynamic;
+	public function get_walkable_slope_override():unreal.WalkableSlopeOverride;
 	/**
 		x.ignore_actor_when_moving(actor, should_ignore) -> None
 		Tells this component whether to ignore collision with all components of a specific Actor when this component is moved.
@@ -1257,7 +635,7 @@ package unreal;
 		    actor (Actor): 
 		    should_ignore (bool):
 	**/
-	public function ignore_actor_when_moving(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function ignore_actor_when_moving(actor:Dynamic, should_ignore:Dynamic):Void;
 	/**
 		x.ignore_component_when_moving(component, should_ignore) -> None
 		Tells this component whether to ignore collision with another component when this component is moved.
@@ -1268,27 +646,19 @@ package unreal;
 		    component (PrimitiveComponent): 
 		    should_ignore (bool):
 	**/
-	public function ignore_component_when_moving(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function ignore_component_when_moving(component:Dynamic, should_ignore:Dynamic):Void;
 	/**
 		(bool):  [Read-Write] Will ignore radial forces applied to this component.
 	**/
-	public var ignore_radial_force : Dynamic;
+	public var ignore_radial_force : Bool;
 	/**
 		(bool):  [Read-Write] Will ignore radial impulses applied to this component.
 	**/
-	public var ignore_radial_impulse : Dynamic;
+	public var ignore_radial_impulse : Bool;
 	/**
 		(IndirectLightingCacheQuality):  [Read-Only] Quality of indirect lighting for Movable primitives.  This has a large effect on Indirect Lighting Cache update time.
 	**/
-	public var indirect_lighting_cache_quality : Dynamic;
-	/**
-		x.is_active() -> bool
-		Returns whether the component is active or not
-		
-		Returns:
-		    bool: The active state of the component.
-	**/
-	public function is_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var indirect_lighting_cache_quality : unreal.IndirectLightingCacheQuality;
 	/**
 		x.is_any_rigid_body_awake() -> bool
 		Returns if any body in this component is currently awake and simulating.
@@ -1296,23 +666,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_any_rigid_body_awake(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.is_any_simulating_physics() -> bool
-		Returns whether the specified body is currently using physics simulation
-		
-		Returns:
-		    bool:
-	**/
-	public function is_any_simulating_physics(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.is_being_destroyed() -> bool
-		Returns whether the component is in the process of being destroyed.
-		
-		Returns:
-		    bool:
-	**/
-	public function is_being_destroyed(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_any_rigid_body_awake():Bool;
 	/**
 		x.is_collision_enabled() -> bool
 		Utility to see if there is any form of collision (query or physics) enabled on this component.
@@ -1320,19 +674,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_collision_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.is_component_tick_enabled() -> bool
-		Returns whether this component has tick enabled or not
-		
-		Returns:
-		    bool:
-	**/
-	public function is_component_tick_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		(bool):  [Read-Only] If true, the component will be excluded from non-editor builds
-	**/
-	public var is_editor_only : Dynamic;
+	public function is_collision_enabled():Bool;
 	/**
 		x.is_gravity_enabled() -> bool
 		Returns whether this component is affected by gravity. Returns always false if the component is not simulated.
@@ -1340,7 +682,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_gravity_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_gravity_enabled():Bool;
 	/**
 		x.is_overlapping_actor(other) -> bool
 		Check whether this component is overlapping any component of the given Actor.
@@ -1351,7 +693,7 @@ package unreal;
 		Returns:
 		    bool: Whether this component is overlapping any component of the given Actor.
 	**/
-	public function is_overlapping_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_overlapping_actor(other:Dynamic):Bool;
 	/**
 		x.is_overlapping_component(other_comp) -> bool
 		Check whether this component is overlapping another component.
@@ -1362,7 +704,7 @@ package unreal;
 		Returns:
 		    bool: Whether this component is overlapping another component.
 	**/
-	public function is_overlapping_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_overlapping_component(other_comp:Dynamic):Bool;
 	/**
 		x.is_physics_collision_enabled() -> bool
 		Utility to see if there is any physics collision enabled on this component.
@@ -1370,7 +712,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_physics_collision_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_physics_collision_enabled():Bool;
 	/**
 		x.is_query_collision_enabled() -> bool
 		Utility to see if there is any query collision enabled on this component.
@@ -1378,59 +720,26 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_query_collision_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.is_simulating_physics(bone_name="None") -> bool
-		Returns whether the specified body is currently using physics simulation
-		
-		Args:
-		    bone_name (Name): 
-		
-		Returns:
-		    bool:
-	**/
-	public function is_simulating_physics(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.is_visible() -> bool
-		Returns true if this component is visible in the current context
-		
-		Returns:
-		    bool:
-	**/
-	public function is_visible(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.k2_attach_to(parent, socket_name="None", attach_type=AttachLocation.KEEP_RELATIVE_OFFSET, weld_simulated_bodies=True) -> bool
-		K2 Attach To
-		
-		Args:
-		    parent (SceneComponent): 
-		    socket_name (Name): 
-		    attach_type (AttachLocation): 
-		    weld_simulated_bodies (bool): 
-		
-		Returns:
-		    bool:
-	**/
-	public function k2_attach_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_query_collision_enabled():Bool;
 	/**
 		(float):  [Read-Only] Max draw distance exposed to LDs. The real max draw distance is the min (disregarding 0) of this and volumes affecting this object.
 	**/
-	public var ld_max_draw_distance : Dynamic;
+	public var ld_max_draw_distance : Float;
 	/**
 		(bool):  [Read-Only] Whether to light this component and any attachments as a group.  This only has effect on the root component of an attachment tree.
 		When enabled, attached component shadowing settings like bCastInsetShadow, bCastVolumetricTranslucentShadow, etc, will be ignored.
 		This is useful for improving performance when multiple movable components are attached together.
 	**/
-	public var light_attachments_as_group : Dynamic;
+	public var light_attachments_as_group : Bool;
 	/**
 		(LightingChannels):  [Read-Only] Channels that this component should be in.  Lights with matching channels will affect the component.
 		These channels only apply to opaque materials, direct lighting, and dynamic lighting and shadowing.
 	**/
-	public var lighting_channels : Dynamic;
+	public var lighting_channels : unreal.LightingChannels;
 	/**
 		(LightmapType):  [Read-Only] Controls the type of lightmap used for this component.
 	**/
-	public var lightmap_type : Dynamic;
+	public var lightmap_type : unreal.LightmapType;
 	/**
 		x.line_trace_component(trace_start, trace_end, trace_complex, show_trace, persistent_show_trace) -> (hit_location=Vector, hit_normal=Vector, bone_name=Name, out_hit=HitResult) or None
 		Perform a line trace against a single component
@@ -1453,68 +762,48 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function line_trace_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function line_trace_component(trace_start:Dynamic, trace_end:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
 	/**
 		(float):  [Read-Only] Multiplier used to scale the Light Propagation Volume light injection bias, to reduce light bleeding.
 		Set to 0 for no bias, 1 for default or higher for increased biasing (e.g. for
 		thin geometry such as walls)
 	**/
-	public var lpv_bias_multiplier : Dynamic;
+	public var lpv_bias_multiplier : Float;
 	/**
 		(float):  [Read-Only] The minimum distance at which the primitive should be rendered,
 		measured in world space units from the center of the primitive's bounding sphere to the camera position.
 	**/
-	public var min_draw_distance : Dynamic;
-	/**
-		(ComponentMobility):  [Read-Only] How often this component is allowed to move, used to make various optimizations. Only safe to set in constructor.
-	**/
-	public var mobility : Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		deprecated: 'modify_frequency' was renamed to 'mobility'.
-	**/
-	public var modify_frequency : Dynamic;
+	public var min_draw_distance : Float;
 	/**
 		(bool):  [Read-Write] If true, this component will generate individual overlaps for each overlapping physics body if it is a multi-body component. When false, this component will
 		generate only one overlap, regardless of how many physics bodies it has and how many of them are overlapping another component/body. This flag has no
 		influence on single body components.
 	**/
-	public var multi_body_overlap : Dynamic;
+	public var multi_body_overlap : Bool;
 	/**
 		(bool):  [Read-Only] When enabled this object will not be culled by distance. This is ignored if a child of a HLOD.
 	**/
-	public var never_distance_cull : Dynamic;
+	public var never_distance_cull : Bool;
 	/**
 		(ComponentBeginCursorOverSignature):  [Read-Write] Event called when the mouse cursor is moved over this component and mouse over events are enabled in the player controller
 	**/
-	public var on_begin_cursor_over : Dynamic;
+	public var on_begin_cursor_over : unreal.ComponentBeginCursorOverSignature;
 	/**
 		(ComponentOnClickedSignature):  [Read-Write] Event called when the left mouse button is clicked while the mouse is over this component and click events are enabled in the player controller
 	**/
-	public var on_clicked : Dynamic;
-	/**
-		(ActorComponentActivatedSignature):  [Read-Write] Called when the component has been activated, with parameter indicating if it was from a reset
-	**/
-	public var on_component_activated : Dynamic;
+	public var on_clicked : unreal.ComponentOnClickedSignature;
 	/**
 		(ComponentBeginOverlapSignature):  [Read-Write] Event called when something starts to overlaps this component, for example a player walking into a trigger.
 		For events when objects have a blocking collision, for example a player hitting a wall, see 'Hit' events.
 		Both this component and the other one must have GetGenerateOverlapEvents() set to true to generate overlap events.: 
 		When receiving an overlap from another object's movement, the directions of 'Hit.Normal' and 'Hit.ImpactNormal' will be adjusted to indicate force from the other object against this object.:
 	**/
-	public var on_component_begin_overlap : Dynamic;
-	/**
-		(ActorComponentDeactivateSignature):  [Read-Write] Called when the component has been deactivated
-	**/
-	public var on_component_deactivated : Dynamic;
+	public var on_component_begin_overlap : unreal.ComponentBeginOverlapSignature;
 	/**
 		(ComponentEndOverlapSignature):  [Read-Write] Event called when something stops overlapping this component
 		Both this component and the other one must have GetGenerateOverlapEvents() set to true to generate overlap events.:
 	**/
-	public var on_component_end_overlap : Dynamic;
+	public var on_component_end_overlap : unreal.ComponentEndOverlapSignature;
 	/**
 		(ComponentHitSignature):  [Read-Write] Event called when a component hits (or is hit by) something solid. This could happen due to things like Character movement, using Set Location with 'sweep' enabled, or physics simulation.
 		For events when objects overlap (e.g. walking into a trigger) see the 'Overlap' event.
@@ -1522,51 +811,47 @@ package unreal;
 		When receiving a hit from another object's movement, the directions of 'Hit.Normal' and 'Hit.ImpactNormal' will be adjusted to indicate force from the other object against this object.: 
 		NormalImpulse will be filled in for physics-simulating bodies, but will be zero for swept-component blocking collisions.:
 	**/
-	public var on_component_hit : Dynamic;
+	public var on_component_hit : unreal.ComponentHitSignature;
 	/**
 		(ComponentSleepSignature):  [Read-Write] Event called when the underlying physics objects is put to sleep
 	**/
-	public var on_component_sleep : Dynamic;
+	public var on_component_sleep : unreal.ComponentSleepSignature;
 	/**
 		(ComponentWakeSignature):  [Read-Write] Event called when the underlying physics objects is woken up
 	**/
-	public var on_component_wake : Dynamic;
+	public var on_component_wake : unreal.ComponentWakeSignature;
 	/**
 		(ComponentEndCursorOverSignature):  [Read-Write] Event called when the mouse cursor is moved off this component and mouse over events are enabled in the player controller
 	**/
-	public var on_end_cursor_over : Dynamic;
+	public var on_end_cursor_over : unreal.ComponentEndCursorOverSignature;
 	/**
 		(ComponentOnInputTouchBeginSignature):  [Read-Write] Event called when a touch input is received over this component when touch events are enabled in the player controller
 	**/
-	public var on_input_touch_begin : Dynamic;
+	public var on_input_touch_begin : unreal.ComponentOnInputTouchBeginSignature;
 	/**
 		(ComponentOnInputTouchEndSignature):  [Read-Write] Event called when a touch input is released over this component when touch events are enabled in the player controller
 	**/
-	public var on_input_touch_end : Dynamic;
+	public var on_input_touch_end : unreal.ComponentOnInputTouchEndSignature;
 	/**
 		(ComponentBeginTouchOverSignature):  [Read-Write] Event called when a finger is moved over this component when touch over events are enabled in the player controller
 	**/
-	public var on_input_touch_enter : Dynamic;
+	public var on_input_touch_enter : unreal.ComponentBeginTouchOverSignature;
 	/**
 		(ComponentEndTouchOverSignature):  [Read-Write] Event called when a finger is moved off this component when touch over events are enabled in the player controller
 	**/
-	public var on_input_touch_leave : Dynamic;
+	public var on_input_touch_leave : unreal.ComponentEndTouchOverSignature;
 	/**
 		(ComponentOnReleasedSignature):  [Read-Write] Event called when the left mouse button is released while the mouse is over this component click events are enabled in the player controller
 	**/
-	public var on_released : Dynamic;
+	public var on_released : unreal.ComponentOnReleasedSignature;
 	/**
 		(bool):  [Read-Only] If this is True, this component will only be visible when the view actor is the component's owner, directly or indirectly.
 	**/
-	public var only_owner_see : Dynamic;
+	public var only_owner_see : Bool;
 	/**
 		(bool):  [Read-Only] If this is True, this component won't be visible when the view actor is the component's owner, directly or indirectly.
 	**/
-	public var owner_no_see : Dynamic;
-	/**
-		(PhysicsVolumeChanged):  [Read-Write] Delegate that will be called when PhysicsVolume has been changed *
-	**/
-	public var physics_volume_changed_delegate : Dynamic;
+	public var owner_no_see : Bool;
 	/**
 		x.put_rigid_body_to_sleep(bone_name="None") -> None
 		Force a single body back to sleep.
@@ -1574,119 +859,43 @@ package unreal;
 		Args:
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to put to sleep. 'None' indicates root body.
 	**/
-	public function put_rigid_body_to_sleep(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.receive_begin_play() -> None
-		Blueprint implementable event for when the component is beginning play, called before its owning actor's BeginPlay
-		or when the component is dynamically created if the Actor has already BegunPlay.
-	**/
-	public function receive_begin_play(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.receive_end_play(end_play_reason) -> None
-		Blueprint implementable event for when the component ends play, generally via destruction or its Actor's EndPlay.
-		
-		Args:
-		    end_play_reason (EndPlayReason):
-	**/
-	public function receive_end_play(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		deprecated: 'receive_initialize_component' was renamed to 'receive_begin_play'.
-	**/
-	public function receive_initialize_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function put_rigid_body_to_sleep(bone_name:Dynamic):Void;
 	/**
 		(bool):  [Read-Only] Mobile only:
 		If disabled this component will not receive CSM shadows. (Components that do not receive CSM may have reduced shading cost)
 	**/
-	public var receive_mobile_csm_shadows : Dynamic;
-	/**
-		x.receive_tick(delta_seconds) -> None
-		Event called every frame if tick is enabled
-		
-		Args:
-		    delta_seconds (float):
-	**/
-	public function receive_tick(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		deprecated: 'receive_uninitialize_component' was renamed to 'receive_end_play'.
-	**/
-	public function receive_uninitialize_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var receive_mobile_csm_shadows : Bool;
 	/**
 		(bool):  [Read-Only] Whether the primitive receives decals.
 	**/
-	public var receives_decals : Dynamic;
-	/**
-		(Vector):  [Read-Only] Location of the component relative to its parent
-	**/
-	public var relative_location : Dynamic;
-	/**
-		(Rotator):  [Read-Only] Rotation of the component relative to its parent
-	**/
-	public var relative_rotation : Dynamic;
-	/**
-		(Vector):  [Read-Only] Non-uniform scaling of the component relative to its parent.
-		Note that scaling is always applied in local space (no shearing etc)
-	**/
-	public var relative_scale3d : Dynamic;
-	/**
-		deprecated: 'relative_translation' was renamed to 'relative_location'.
-	**/
-	public var relative_translation : Dynamic;
-	/**
-		x.remove_tick_prerequisite_actor(prerequisite_actor) -> None
-		Remove tick dependency on PrerequisiteActor.
-		
-		Args:
-		    prerequisite_actor (Actor):
-	**/
-	public function remove_tick_prerequisite_actor(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.remove_tick_prerequisite_component(prerequisite_component) -> None
-		Remove tick dependency on PrerequisiteComponent.
-		
-		Args:
-		    prerequisite_component (ActorComponent):
-	**/
-	public function remove_tick_prerequisite_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var receives_decals : Bool;
 	/**
 		(bool):  [Read-Only] If true, this component will be rendered in the CustomDepth pass (usually used for outlines)
 	**/
-	public var render_custom_depth : Dynamic;
+	public var render_custom_depth : Bool;
 	/**
 		(bool):  [Read-Only] If true, this component will be rendered in the depth pass even if it's not rendered in the main pass
 	**/
-	public var render_in_depth_pass : Dynamic;
+	public var render_in_depth_pass : Bool;
 	/**
 		(bool):  [Read-Only] If true, this component will be rendered in the main pass (z prepass, basepass, transparency)
 	**/
-	public var render_in_main_pass : Dynamic;
+	public var render_in_main_pass : Bool;
 	/**
 		(bool):  [Read-Write] True if physics should be replicated to autonomous proxies. This should be true for
 		server-authoritative simulations, and false for client authoritative simulations.
 	**/
-	public var replicate_physics_to_autonomous_proxy : Dynamic;
-	/**
-		(bool):  [Read-Only] Is this component currently replicating? Should the network code consider it for replication? Owning Actor must be replicating first!
-	**/
-	public var replicates : Dynamic;
-	/**
-		x.reset_relative_transform() -> None
-		Reset the transform of the component relative to its parent. Sets relative location to zero, relative rotation to no rotation, and Scale to 1.
-	**/
-	public function reset_relative_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var replicate_physics_to_autonomous_proxy : Bool;
 	/**
 		(bool):  [Read-Write] If true, component sweeps will return the material in their hit result.
 		MoveComponent(), FHitResult:
 	**/
-	public var return_material_on_move : Dynamic;
+	public var return_material_on_move : Bool;
 	/**
 		(Array(RuntimeVirtualTexture)):  [Read-Write] Array of runtime virtual textures into which we draw the mesh for this actor.
 		The material also needs to be set up to output to a virtual texture.
 	**/
-	public var runtime_virtual_textures : Dynamic;
+	public var runtime_virtual_textures : Array<Dynamic>;
 	/**
 		x.scale_by_moment_of_inertia(input_vector, bone_name="None") -> Vector
 		Scales the given vector by the world space moment of inertia. Useful for computing the torque needed to rotate an object.
@@ -1698,31 +907,12 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function scale_by_moment_of_inertia(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function scale_by_moment_of_inertia(input_vector:Dynamic, bone_name:Dynamic):unreal.Vector;
 	/**
 		(bool):  [Read-Only] When enabled, the component will only cast a shadow on itself and not other components in the world.
 		This is especially useful for first person weapons, and forces bCastInsetShadow to be enabled.
 	**/
-	public var self_shadow_only : Dynamic;
-	/**
-		x.set_absolute(new_absolute_location=False, new_absolute_rotation=False, new_absolute_scale=False) -> None
-		Set which parts of the relative transform should be relative to parent, and which should be relative to world
-		
-		Args:
-		    new_absolute_location (bool): 
-		    new_absolute_rotation (bool): 
-		    new_absolute_scale (bool):
-	**/
-	public function set_absolute(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_active(new_active, reset=False) -> None
-		Sets whether the component is active or not
-		
-		Args:
-		    new_active (bool): The new active state of the component
-		    reset (bool): Whether the activation should happen even if ShouldActivate returns false.
-	**/
-	public function set_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var self_shadow_only : Bool;
 	/**
 		x.set_all_mass_scale(mass_scale=1.000000) -> None
 		Change the mass scale used fo all bodies in this component
@@ -1730,7 +920,7 @@ package unreal;
 		Args:
 		    mass_scale (float):
 	**/
-	public function set_all_mass_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_all_mass_scale(mass_scale:Dynamic):Void;
 	/**
 		x.set_all_physics_angular_velocity_in_degrees(new_ang_vel, add_to_current=False) -> None
 		Set the angular velocity of all bodies in this component.
@@ -1739,7 +929,7 @@ package unreal;
 		    new_ang_vel (Vector): New angular velocity to apply to physics, in degrees per second.
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of all bodies.
 	**/
-	public function set_all_physics_angular_velocity_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_all_physics_angular_velocity_in_degrees(new_ang_vel:Dynamic, add_to_current:Dynamic):Void;
 	/**
 		x.set_all_physics_angular_velocity_in_radians(new_ang_vel, add_to_current=False) -> None
 		Set the angular velocity of all bodies in this component.
@@ -1748,7 +938,7 @@ package unreal;
 		    new_ang_vel (Vector): New angular velocity to apply to physics, in radians per second.
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of all bodies.
 	**/
-	public function set_all_physics_angular_velocity_in_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_all_physics_angular_velocity_in_radians(new_ang_vel:Dynamic, add_to_current:Dynamic):Void;
 	/**
 		x.set_all_physics_linear_velocity(new_vel, add_to_current=False) -> None
 		Set the linear velocity of all bodies in this component.
@@ -1757,11 +947,11 @@ package unreal;
 		    new_vel (Vector): New linear velocity to apply to physics.
 		    add_to_current (bool): If true, NewVel is added to the existing velocity of the body.
 	**/
-	public function set_all_physics_linear_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_all_physics_linear_velocity(new_vel:Dynamic, add_to_current:Dynamic):Void;
 	/**
 		deprecated: 'set_all_rb_linear_velocity' was renamed to 'set_all_physics_linear_velocity'.
 	**/
-	public function set_all_rb_linear_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_all_rb_linear_velocity():Void;
 	/**
 		x.set_all_use_ccd(use_ccd) -> None
 		Set whether all bodies in this component should use Continuous Collision Detection
@@ -1769,7 +959,7 @@ package unreal;
 		Args:
 		    use_ccd (bool):
 	**/
-	public function set_all_use_ccd(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_all_use_ccd(use_ccd:Dynamic):Void;
 	/**
 		x.set_angular_damping(damping) -> None
 		Sets the angular damping of this component.
@@ -1777,15 +967,7 @@ package unreal;
 		Args:
 		    damping (float):
 	**/
-	public function set_angular_damping(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_auto_activate(new_auto_activate) -> None
-		Sets whether the component should be auto activate or not. Only safe during construction scripts.
-		
-		Args:
-		    new_auto_activate (bool): The new auto activate state of the component
-	**/
-	public function set_auto_activate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_angular_damping(damping:Dynamic):Void;
 	/**
 		x.set_bounds_scale(new_bounds_scale=1.000000) -> None
 		Scale the bounds of this object, used for frustum culling. Useful for features like WorldPositionOffset.
@@ -1793,7 +975,7 @@ package unreal;
 		Args:
 		    new_bounds_scale (float):
 	**/
-	public function set_bounds_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_bounds_scale(new_bounds_scale:Dynamic):Void;
 	/**
 		x.set_cast_inset_shadow(cast_inset_shadow) -> None
 		Changes the value of CastInsetShadow.
@@ -1801,7 +983,7 @@ package unreal;
 		Args:
 		    cast_inset_shadow (bool):
 	**/
-	public function set_cast_inset_shadow(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_cast_inset_shadow(cast_inset_shadow:Dynamic):Void;
 	/**
 		x.set_cast_shadow(new_cast_shadow) -> None
 		Changes the value of CastShadow.
@@ -1809,7 +991,7 @@ package unreal;
 		Args:
 		    new_cast_shadow (bool):
 	**/
-	public function set_cast_shadow(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_cast_shadow(new_cast_shadow:Dynamic):Void;
 	/**
 		x.set_center_of_mass(center_of_mass_offset, bone_name="None") -> None
 		Set the center of mass of a single body. This will offset the physx-calculated center of mass.
@@ -1819,7 +1001,7 @@ package unreal;
 		    center_of_mass_offset (Vector): User specified offset for the center of mass of this object, from the calculated location.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to set center of mass of. 'None' indicates root body.
 	**/
-	public function set_center_of_mass(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_center_of_mass(center_of_mass_offset:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_collision_enabled(new_type) -> None
 		Controls what kind of collision is enabled for this body
@@ -1827,7 +1009,7 @@ package unreal;
 		Args:
 		    new_type (CollisionEnabled):
 	**/
-	public function set_collision_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_collision_enabled(new_type:Dynamic):Void;
 	/**
 		x.set_collision_object_type(channel) -> None
 		Changes the collision channel that this object uses when it moves
@@ -1835,7 +1017,7 @@ package unreal;
 		Args:
 		    channel (CollisionChannel): The new channel for this component to use
 	**/
-	public function set_collision_object_type(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_collision_object_type(channel:Dynamic):Void;
 	/**
 		x.set_collision_profile_name(collision_profile_name, update_overlaps=True) -> None
 		Set Collision Profile Name
@@ -1846,7 +1028,7 @@ package unreal;
 		    collision_profile_name (Name): : New Profile Name
 		    update_overlaps (bool):
 	**/
-	public function set_collision_profile_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_collision_profile_name(collision_profile_name:Dynamic, update_overlaps:Dynamic):Void;
 	/**
 		x.set_collision_response_to_all_channels(new_response) -> None
 		Changes all ResponseToChannels container for this PrimitiveComponent. to be NewResponse
@@ -1854,7 +1036,7 @@ package unreal;
 		Args:
 		    new_response (CollisionResponseType): What the new response should be to the supplied Channel
 	**/
-	public function set_collision_response_to_all_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_collision_response_to_all_channels(new_response:Dynamic):Void;
 	/**
 		x.set_collision_response_to_channel(channel, new_response) -> None
 		Changes a member of the ResponseToChannels container for this PrimitiveComponent.
@@ -1863,31 +1045,7 @@ package unreal;
 		    channel (CollisionChannel): The channel to change the response of
 		    new_response (CollisionResponseType): What the new response should be to the supplied Channel
 	**/
-	public function set_collision_response_to_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_component_tick_enabled(enabled) -> None
-		Set this component's tick functions to be enabled or disabled. Only has an effect if the function is registered
-		
-		Args:
-		    enabled (bool): Whether it should be enabled or not
-	**/
-	public function set_component_tick_enabled(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_component_tick_interval(tick_interval) -> None
-		Sets the tick interval for this component's primary tick function. Does not enable the tick interval. Takes effect on next tick.
-		
-		Args:
-		    tick_interval (float): The duration between ticks for this component's primary tick function
-	**/
-	public function set_component_tick_interval(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_component_tick_interval_and_cooldown(tick_interval) -> None
-		Sets the tick interval for this component's primary tick function. Does not enable the tick interval. Takes effect imediately.
-		
-		Args:
-		    tick_interval (float): The duration between ticks for this component's primary tick function
-	**/
-	public function set_component_tick_interval_and_cooldown(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_collision_response_to_channel(channel:Dynamic, new_response:Dynamic):Void;
 	/**
 		x.set_constraint_mode(constraint_mode) -> None
 		Sets the constraint mode of the component.
@@ -1895,7 +1053,7 @@ package unreal;
 		Args:
 		    constraint_mode (DOFMode): The type of constraint to use.
 	**/
-	public function set_constraint_mode(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_constraint_mode(constraint_mode:Dynamic):Void;
 	/**
 		x.set_cull_distance(new_cull_distance) -> None
 		Changes the value of CullDistance.
@@ -1903,7 +1061,7 @@ package unreal;
 		Args:
 		    new_cull_distance (float): The value to assign to CullDistance.
 	**/
-	public function set_cull_distance(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_cull_distance(new_cull_distance:Dynamic):Void;
 	/**
 		x.set_custom_depth_stencil_value(value) -> None
 		Sets the CustomDepth stencil value (0 - 255) and marks the render state dirty.
@@ -1911,7 +1069,7 @@ package unreal;
 		Args:
 		    value (int32):
 	**/
-	public function set_custom_depth_stencil_value(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_custom_depth_stencil_value(value:Dynamic):Void;
 	/**
 		x.set_custom_depth_stencil_write_mask(write_mask_bit) -> None
 		Sets the CustomDepth stencil write mask and marks the render state dirty.
@@ -1919,7 +1077,7 @@ package unreal;
 		Args:
 		    write_mask_bit (RendererStencilMask):
 	**/
-	public function set_custom_depth_stencil_write_mask(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_custom_depth_stencil_write_mask(write_mask_bit:Dynamic):Void;
 	/**
 		x.set_custom_primitive_data_float(data_index, value) -> None
 		Set custom primitive data at index DataIndex. This sets the run-time data only, so it doesn't serialize.
@@ -1928,7 +1086,7 @@ package unreal;
 		    data_index (int32): 
 		    value (float):
 	**/
-	public function set_custom_primitive_data_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_custom_primitive_data_float(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_custom_primitive_data_vector2(data_index, value) -> None
 		Set custom primitive data, two floats at once, from index DataIndex to index DataIndex + 1. This sets the run-time data only, so it doesn't serialize.
@@ -1937,7 +1095,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector2D):
 	**/
-	public function set_custom_primitive_data_vector2(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_custom_primitive_data_vector2(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_custom_primitive_data_vector3(data_index, value) -> None
 		Set custom primitive data, three floats at once, from index DataIndex to index DataIndex + 2. This sets the run-time data only, so it doesn't serialize.
@@ -1946,7 +1104,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector):
 	**/
-	public function set_custom_primitive_data_vector3(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_custom_primitive_data_vector3(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_custom_primitive_data_vector4(data_index, value) -> None
 		Set custom primitive data, four floats at once, from index DataIndex to index DataIndex + 3. This sets the run-time data only, so it doesn't serialize.
@@ -1955,7 +1113,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector4):
 	**/
-	public function set_custom_primitive_data_vector4(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_custom_primitive_data_vector4(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_default_custom_primitive_data_float(data_index, value) -> None
 		Set default custom primitive data at index DataIndex, and marks the render state dirty
@@ -1964,7 +1122,7 @@ package unreal;
 		    data_index (int32): 
 		    value (float):
 	**/
-	public function set_default_custom_primitive_data_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_default_custom_primitive_data_float(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_default_custom_primitive_data_vector2(data_index, value) -> None
 		Set default custom primitive data, two floats at once, from index DataIndex to index DataIndex + 1, and marks the render state dirty
@@ -1973,7 +1131,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector2D):
 	**/
-	public function set_default_custom_primitive_data_vector2(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_default_custom_primitive_data_vector2(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_default_custom_primitive_data_vector3(data_index, value) -> None
 		Set default custom primitive data, three floats at once, from index DataIndex to index DataIndex + 2, and marks the render state dirty
@@ -1982,7 +1140,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector):
 	**/
-	public function set_default_custom_primitive_data_vector3(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_default_custom_primitive_data_vector3(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_default_custom_primitive_data_vector4(data_index, value) -> None
 		Set default custom primitive data, four floats at once, from index DataIndex to index DataIndex + 3, and marks the render state dirty
@@ -1991,15 +1149,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector4):
 	**/
-	public function set_default_custom_primitive_data_vector4(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_default_custom_primitive_data_vector4(data_index:Dynamic, value:Dynamic):Void;
 	/**
 		x.set_enable_gravity(gravity_enabled) -> None
 		Enables/disables whether this component is affected by gravity. This applies only to components with bSimulatePhysics set to true.
@@ -2007,7 +1157,7 @@ package unreal;
 		Args:
 		    gravity_enabled (bool):
 	**/
-	public function set_enable_gravity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_enable_gravity(gravity_enabled:Dynamic):Void;
 	/**
 		x.set_exclude_from_light_attachment_group(exclude_from_light_attachment_group) -> None
 		Changes the value of ExcludeFromLightAttachmentGroup.
@@ -2015,24 +1165,7 @@ package unreal;
 		Args:
 		    exclude_from_light_attachment_group (bool):
 	**/
-	public function set_exclude_from_light_attachment_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_hidden_in_game(new_hidden, propagate_to_children=False) -> None
-		Changes the value of bHiddenInGame, if false this will disable Visibility during gameplay
-		
-		Args:
-		    new_hidden (bool): 
-		    propagate_to_children (bool):
-	**/
-	public function set_hidden_in_game(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_is_replicated(should_replicate) -> None
-		Enable or disable replication. This is the equivalent of RemoteRole for actors (only a bool is required for components)
-		
-		Args:
-		    should_replicate (bool):
-	**/
-	public function set_is_replicated(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_exclude_from_light_attachment_group(exclude_from_light_attachment_group:Dynamic):Void;
 	/**
 		x.set_light_attachments_as_group(light_attachments_as_group) -> None
 		Changes the value of LightAttachmentsAsGroup.
@@ -2040,7 +1173,7 @@ package unreal;
 		Args:
 		    light_attachments_as_group (bool):
 	**/
-	public function set_light_attachments_as_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_light_attachments_as_group(light_attachments_as_group:Dynamic):Void;
 	/**
 		x.set_lighting_channels(channel0, channel1, channel2) -> None
 		Set Lighting Channels
@@ -2050,7 +1183,7 @@ package unreal;
 		    channel1 (bool): 
 		    channel2 (bool):
 	**/
-	public function set_lighting_channels(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_lighting_channels(channel0:Dynamic, channel1:Dynamic, channel2:Dynamic):Void;
 	/**
 		x.set_linear_damping(damping) -> None
 		Sets the linear damping of this component.
@@ -2058,7 +1191,7 @@ package unreal;
 		Args:
 		    damping (float):
 	**/
-	public function set_linear_damping(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_linear_damping(damping:Dynamic):Void;
 	/**
 		x.set_mass_override_in_kg(bone_name="None", mass_in_kg=1.000000, override_mass=True) -> None
 		Override the mass (in Kg) of a single physics body.
@@ -2070,7 +1203,7 @@ package unreal;
 		    mass_in_kg (float): 
 		    override_mass (bool):
 	**/
-	public function set_mass_override_in_kg(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_mass_override_in_kg(bone_name:Dynamic, mass_in_kg:Dynamic, override_mass:Dynamic):Void;
 	/**
 		x.set_mass_scale(bone_name="None", mass_scale=1.000000) -> None
 		Change the mass scale used to calculate the mass of a single physics body
@@ -2079,7 +1212,7 @@ package unreal;
 		    bone_name (Name): 
 		    mass_scale (float):
 	**/
-	public function set_mass_scale(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_mass_scale(bone_name:Dynamic, mass_scale:Dynamic):Void;
 	/**
 		x.set_material(element_index, material) -> None
 		Changes the material applied to an element of the mesh.
@@ -2091,7 +1224,7 @@ package unreal;
 		Returns:
 		    the material used by the indexed element of this mesh.
 	**/
-	public function set_material(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_material(element_index:Dynamic, material:Dynamic):Dynamic;
 	/**
 		x.set_material_by_name(material_slot_name, material) -> None
 		Changes the material applied to an element of the mesh.
@@ -2103,19 +1236,11 @@ package unreal;
 		Returns:
 		    the material used by the indexed element of this mesh.
 	**/
-	public function set_material_by_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_mobility(new_mobility) -> None
-		Set how often this component is allowed to move during runtime. Causes a component re-register if the component is already registered
-		
-		Args:
-		    new_mobility (ComponentMobility):
-	**/
-	public function set_mobility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_material_by_name(material_slot_name:Dynamic, material:Dynamic):Dynamic;
 	/**
 		deprecated: 'set_movement_channel' was renamed to 'set_collision_object_type'.
 	**/
-	public function set_movement_channel(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_movement_channel():Void;
 	/**
 		x.set_notify_rigid_body_collision(new_notify_rigid_body_collision) -> None
 		Changes the value of bNotifyRigidBodyCollision
@@ -2123,7 +1248,7 @@ package unreal;
 		Args:
 		    new_notify_rigid_body_collision (bool):
 	**/
-	public function set_notify_rigid_body_collision(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_notify_rigid_body_collision(new_notify_rigid_body_collision:Dynamic):Void;
 	/**
 		x.set_only_owner_see(new_only_owner_see) -> None
 		Changes the value of bOnlyOwnerSee.
@@ -2131,7 +1256,7 @@ package unreal;
 		Args:
 		    new_only_owner_see (bool):
 	**/
-	public function set_only_owner_see(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_only_owner_see(new_only_owner_see:Dynamic):Void;
 	/**
 		x.set_owner_no_see(new_owner_no_see) -> None
 		Changes the value of bOwnerNoSee.
@@ -2139,7 +1264,7 @@ package unreal;
 		Args:
 		    new_owner_no_see (bool):
 	**/
-	public function set_owner_no_see(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_owner_no_see(new_owner_no_see:Dynamic):Void;
 	/**
 		x.set_phys_material_override(new_phys_material) -> None
 		Changes the current PhysMaterialOverride for this component.
@@ -2149,7 +1274,7 @@ package unreal;
 		Args:
 		    new_phys_material (PhysicalMaterial):
 	**/
-	public function set_phys_material_override(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_phys_material_override(new_phys_material:Dynamic):Void;
 	/**
 		x.set_physics_angular_velocity(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set Physics Angular Velocity
@@ -2160,7 +1285,7 @@ package unreal;
 		    add_to_current (bool): 
 		    bone_name (Name):
 	**/
-	public function set_physics_angular_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_angular_velocity(new_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_physics_angular_velocity_in_degrees(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the angular velocity of a single body.
@@ -2171,7 +1296,7 @@ package unreal;
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_angular_velocity_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_angular_velocity_in_degrees(new_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_physics_angular_velocity_in_radians(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the angular velocity of a single body.
@@ -2182,7 +1307,7 @@ package unreal;
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_angular_velocity_in_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_angular_velocity_in_radians(new_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_physics_linear_velocity(new_vel, add_to_current=False, bone_name="None") -> None
 		Set the linear velocity of a single body.
@@ -2193,7 +1318,7 @@ package unreal;
 		    add_to_current (bool): If true, NewVel is added to the existing velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_linear_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_linear_velocity(new_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_physics_max_angular_velocity(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set Physics Max Angular Velocity
@@ -2204,7 +1329,7 @@ package unreal;
 		    add_to_current (bool): 
 		    bone_name (Name):
 	**/
-	public function set_physics_max_angular_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_max_angular_velocity(new_max_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_physics_max_angular_velocity_in_degrees(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the maximum angular velocity of a single body.
@@ -2214,7 +1339,7 @@ package unreal;
 		    add_to_current (bool): If true, NewMaxAngVel is added to the existing maximum angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify maximum angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_max_angular_velocity_in_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_max_angular_velocity_in_degrees(new_max_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_physics_max_angular_velocity_in_radians(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the maximum angular velocity of a single body.
@@ -2224,15 +1349,15 @@ package unreal;
 		    add_to_current (bool): If true, NewMaxAngVel is added to the existing maximum angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify maximum angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_max_angular_velocity_in_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_physics_max_angular_velocity_in_radians(new_max_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
 	/**
 		deprecated: 'set_rb_angular_velocity' was renamed to 'set_physics_angular_velocity'.
 	**/
-	public function set_rb_angular_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_rb_angular_velocity():Void;
 	/**
 		deprecated: 'set_rb_linear_velocity' was renamed to 'set_physics_linear_velocity'.
 	**/
-	public function set_rb_linear_velocity(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_rb_linear_velocity():Void;
 	/**
 		x.set_receives_decals(new_receives_decals) -> None
 		Changes the value of bReceivesDecals.
@@ -2240,76 +1365,7 @@ package unreal;
 		Args:
 		    new_receives_decals (bool):
 	**/
-	public function set_receives_decals(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_relative_location(new_location, sweep, teleport) -> HitResult
-		Set the location of the component relative to its parent
-		
-		Args:
-		    new_location (Vector): New location of the component relative to its parent.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_relative_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_relative_location_and_rotation(new_location, new_rotation, sweep, teleport) -> HitResult
-		Set the location and rotation of the component relative to its parent
-		
-		Args:
-		    new_location (Vector): New location of the component relative to its parent.
-		    new_rotation (Rotator): New rotation of the component relative to its parent.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_relative_location_and_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_relative_rotation(new_rotation, sweep, teleport) -> HitResult
-		Set the rotation of the component relative to its parent
-		
-		Args:
-		    new_rotation (Rotator): New rotation of the component relative to its parent
-		    sweep (bool): Whether we sweep to the destination (currently not supported for rotation).
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts).
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_relative_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_relative_scale3d(new_scale3d) -> None
-		Set the non-uniform scale of the component relative to its parent
-		
-		Args:
-		    new_scale3d (Vector):
-	**/
-	public function set_relative_scale3d(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_relative_transform(new_transform, sweep, teleport) -> HitResult
-		Set the transform of the component relative to its parent
-		
-		Args:
-		    new_transform (Transform): New transform of the component relative to its parent.
-		    sweep (bool): Whether we sweep to the destination (currently not supported for rotation).
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts).
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_relative_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_receives_decals(new_receives_decals:Dynamic):Void;
 	/**
 		x.set_render_custom_depth(value) -> None
 		Sets the bRenderCustomDepth property and marks the render state dirty.
@@ -2317,7 +1373,7 @@ package unreal;
 		Args:
 		    value (bool):
 	**/
-	public function set_render_custom_depth(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_render_custom_depth(value:Dynamic):Void;
 	/**
 		x.set_render_in_main_pass(value) -> None
 		Sets bRenderInMainPass property and marks the render state dirty.
@@ -2325,7 +1381,7 @@ package unreal;
 		Args:
 		    value (bool):
 	**/
-	public function set_render_in_main_pass(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_render_in_main_pass(value:Dynamic):Void;
 	/**
 		x.set_simulate_physics(simulate) -> None
 		Sets whether or not a single body should use physics simulation, or should be 'fixed' (kinematic).
@@ -2334,7 +1390,7 @@ package unreal;
 		Args:
 		    simulate (bool): New simulation state for single body
 	**/
-	public function set_simulate_physics(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_simulate_physics(simulate:Dynamic):Void;
 	/**
 		x.set_single_sample_shadow_from_stationary_lights(new_single_sample_shadow_from_stationary_lights) -> None
 		Changes the value of bSingleSampleShadowFromStationaryLights.
@@ -2342,23 +1398,7 @@ package unreal;
 		Args:
 		    new_single_sample_shadow_from_stationary_lights (bool):
 	**/
-	public function set_single_sample_shadow_from_stationary_lights(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_tick_group(new_tick_group) -> None
-		Changes the ticking group for this component
-		
-		Args:
-		    new_tick_group (TickingGroup):
-	**/
-	public function set_tick_group(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_tickable_when_paused(tickable_when_paused) -> None
-		Sets whether this component can tick when paused.
-		
-		Args:
-		    tickable_when_paused (bool):
-	**/
-	public function set_tickable_when_paused(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_single_sample_shadow_from_stationary_lights(new_single_sample_shadow_from_stationary_lights:Dynamic):Void;
 	/**
 		x.set_translucent_sort_priority(new_translucent_sort_priority) -> None
 		Changes the value of TranslucentSortPriority.
@@ -2366,7 +1406,7 @@ package unreal;
 		Args:
 		    new_translucent_sort_priority (int32):
 	**/
-	public function set_translucent_sort_priority(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_translucent_sort_priority(new_translucent_sort_priority:Dynamic):Void;
 	/**
 		x.set_use_ccd(use_ccd, bone_name="None") -> None
 		Set whether this component should use Continuous Collision Detection
@@ -2375,16 +1415,7 @@ package unreal;
 		    use_ccd (bool): 
 		    bone_name (Name):
 	**/
-	public function set_use_ccd(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_visibility(new_visibility, propagate_to_children=False) -> None
-		Set visibility of the component, if during game use this to turn on/off
-		
-		Args:
-		    new_visibility (bool): 
-		    propagate_to_children (bool):
-	**/
-	public function set_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set_use_ccd(use_ccd:Dynamic, bone_name:Dynamic):Void;
 	/**
 		x.set_walkable_slope_override(new_override) -> None
 		Sets a new slope override for this component instance.
@@ -2392,101 +1423,13 @@ package unreal;
 		Args:
 		    new_override (WalkableSlopeOverride):
 	**/
-	public function set_walkable_slope_override(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_world_location(new_location, sweep, teleport) -> HitResult
-		Put this component at the specified location in world space. Updates relative location to achieve the final world location.
-		
-		Args:
-		    new_location (Vector): New location in world space for the component.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_world_location(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_world_location_and_rotation(new_location, new_rotation, sweep, teleport) -> HitResult
-		Set the relative location and rotation of the component to put it at the supplied pose in world space.
-		
-		Args:
-		    new_location (Vector): New location in world space for the component.
-		    new_rotation (Rotator): New rotation in world space for the component.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_world_location_and_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_world_rotation(new_rotation, sweep, teleport) -> HitResult
-		* Put this component at the specified rotation in world space. Updates relative rotation to achieve the final world rotation.
-		*
-		
-		Args:
-		    new_rotation (Rotator): New rotation in world space for the component. *
-		    sweep (bool): Whether we sweep to the destination (currently not supported for rotation). *
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). *                                                      If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). *                                                      If false, physics velocity is updated based on the change in position (affecting ragdoll parts). *                                                      If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true. *
-	**/
-	public function set_world_rotation(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_world_scale3d(new_scale) -> None
-		Set the relative scale of the component to put it at the supplied scale in world space.
-		
-		Args:
-		    new_scale (Vector): New scale in world space for this component.
-	**/
-	public function set_world_scale3d(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_world_transform(new_transform, sweep, teleport) -> HitResult
-		Set the transform of the component in world space.
-		
-		Args:
-		    new_transform (Transform): New transform in world space for the component.
-		    sweep (bool): Whether we sweep to the destination location, triggering overlaps along the way and stopping short of the target if blocked by something. Only the root component is swept and checked for blocking collision, child components move without sweeping. If collision is off, this has no effect.
-		    teleport (bool): Whether we teleport the physics state (if physics collision is enabled for this object). If true, physics velocity for this object is unchanged (so ragdoll parts are not affected by change in location). If false, physics velocity is updated based on the change in position (affecting ragdoll parts). If CCD is on and not teleporting, this will affect objects along the entire sweep volume.
-		
-		Returns:
-		    HitResult: 
-		
-		    sweep_hit_result (HitResult): Hit result from any impact if sweep is true.
-	**/
-	public function set_world_transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		(bool):  [Read-Write] Whether or not the cached PhysicsVolume this component overlaps should be updated when the component is moved.
-		GetPhysicsVolume():
-	**/
-	public var should_update_physics_volume : Dynamic;
+	public function set_walkable_slope_override(new_override:Dynamic):Void;
 	/**
 		(bool):  [Read-Only] Whether the whole component should be shadowed as one from stationary lights, which makes shadow receiving much cheaper.
 		When enabled shadowing data comes from the volume lighting samples precomputed by Lightmass, which are very sparse.
 		This is currently only used on stationary directional lights.
 	**/
-	public var single_sample_shadow_from_stationary_lights : Dynamic;
-	/**
-		x.snap_to(parent, socket_name="None") -> bool
-		Snap To
-		deprecated: Use AttachToComponent instead.
-		
-		Args:
-		    parent (SceneComponent): 
-		    socket_name (Name): 
-		
-		Returns:
-		    bool:
-	**/
-	public function snap_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var single_sample_shadow_from_stationary_lights : Bool;
 	/**
 		x.sphere_overlap_component(sphere_centre, sphere_radius, trace_complex, show_trace, persistent_show_trace) -> (hit_location=Vector, hit_normal=Vector, bone_name=Name, out_hit=HitResult) or None
 		Perform a sphere overlap against a single component
@@ -2509,7 +1452,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function sphere_overlap_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function sphere_overlap_component(sphere_centre:Dynamic, sphere_radius:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
 	/**
 		x.sphere_trace_component(trace_start, trace_end, sphere_radius, trace_complex, show_trace, persistent_show_trace) -> (hit_location=Vector, hit_normal=Vector, bone_name=Name, out_hit=HitResult) or None
 		Perform a sphere trace against a single component
@@ -2533,30 +1476,13 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function sphere_trace_component(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.toggle_active() -> None
-		Toggles the active state of the component
-	**/
-	public function toggle_active(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.toggle_visibility(propagate_to_children=False) -> None
-		Toggle visibility of the component
-		
-		Args:
-		    propagate_to_children (bool):
-	**/
-	public function toggle_visibility(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function sphere_trace_component(trace_start:Dynamic, trace_end:Dynamic, sphere_radius:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
 	/**
 		(bool):  [Read-Write] If true, component sweeps with this component should trace against complex collision during movement (for example, each triangle of a mesh).
 		If false, collision will be resolved against simple collision bounds instead.
 		MoveComponent():
 	**/
-	public var trace_complex_on_move : Dynamic;
+	public var trace_complex_on_move : Bool;
 	/**
 		(int32):  [Read-Only] Translucent objects with a lower sort priority draw behind objects with a higher priority.
 		Translucent objects with the same priority are rendered from back-to-front based on their bounds origin.
@@ -2566,51 +1492,42 @@ package unreal;
 		Warning: This should never be set to a non-default value unless you know what you are doing, as it will prevent the renderer from sorting correctly.
 		It is especially problematic on dynamic gameplay effects.
 	**/
-	public var translucency_sort_priority : Dynamic;
+	public var translucency_sort_priority : Int;
 	/**
 		(bool):  [Read-Only] Treat this primitive as part of the background for occlusion purposes. This can be used as an optimization to reduce the cost of rendering skyboxes, large ground planes that are part of the vista, etc.
 	**/
-	public var treat_as_background_for_occlusion : Dynamic;
+	public var treat_as_background_for_occlusion : Bool;
 	/**
 		(bool):  [Read-Only] Whether to render the primitive in the depth only pass.
 		This should generally be true for all objects, and let the renderer make decisions about whether to render objects in the depth only pass.
 		if any rendering features rely on a complete depth only pass, this variable needs to go away.:
 	**/
-	public var use_as_occluder : Dynamic;
-	/**
-		(bool):  [Read-Write] If true, this component uses its parents bounds when attached.
-		This can be a significant optimization with many components attached together.
-	**/
-	public var use_attach_parent_bound : Dynamic;
+	public var use_as_occluder : Bool;
 	/**
 		(bool):  [Read-Write] Use the Maximum LOD Mesh (imposter) instead of including Mesh data from this component in the Proxy Generation process
 	**/
-	public var use_max_lod_as_imposter : Dynamic;
+	public var use_max_lod_as_imposter : Bool;
 	/**
 		(RuntimeVirtualTextureMainPassType):  [Read-Only] Controls if this component draws in the main pass as well as in the virtual texture.
 	**/
-	public var virtual_texture_render_pass_type : Dynamic;
-	/**
-		(bool):  [Read-Only] Whether to completely draw the primitive; if false, the primitive is not drawn, does not cast a shadow.
-	**/
-	public var visible : Dynamic;
+	public var virtual_texture_render_pass_type : unreal.RuntimeVirtualTextureMainPassType;
 	/**
 		(bool):  [Read-Only] If true, this component will be visible in ray tracing effects. Turning this off will remove it from ray traced reflections, shadows, etc.
 	**/
-	public var visible_in_ray_tracing : Dynamic;
+	public var visible_in_ray_tracing : Bool;
 	/**
 		(bool):  [Read-Only] If true, this component will be visible in real-time sky light reflection captures.
 	**/
-	public var visible_in_real_time_sky_captures : Dynamic;
+	public var visible_in_real_time_sky_captures : Bool;
 	/**
 		(bool):  [Read-Only] If true, this component will be visible in reflection captures.
 	**/
-	public var visible_in_reflection_captures : Dynamic;
+	public var visible_in_reflection_captures : Bool;
 	/**
 		x.wake_all_rigid_bodies() -> None
 		Ensure simulation is running for all bodies in this component.
 	**/
-	public function wake_all_rigid_bodies(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function wake_all_rigid_bodies():Void;
 	/**
 		x.wake_rigid_body(bone_name="None") -> None
 		'Wake' physics simulation for a single body.
@@ -2618,7 +1535,7 @@ package unreal;
 		Args:
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to wake. 'None' indicates root body.
 	**/
-	public function wake_rigid_body(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function wake_rigid_body(bone_name:Dynamic):Void;
 	/**
 		x.was_recently_rendered(tolerance=0.200000) -> bool
 		Returns true if this component has been rendered "recently", with a tolerance in seconds to define what "recent" means.
@@ -2630,5 +1547,5 @@ package unreal;
 		Returns:
 		    bool: Whether this actor was recently rendered.
 	**/
-	public function was_recently_rendered(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function was_recently_rendered(tolerance:Dynamic):Bool;
 }

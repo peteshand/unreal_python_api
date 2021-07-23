@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Vector") extern class Vector {
+@:pythonImport("unreal", "Vector") extern class Vector extends unreal.StructBase {
 	static public var BACKWARD : Dynamic;
 	static public var DOWN : Dynamic;
 	static public var FORWARD : Dynamic;
@@ -9,76 +9,6 @@ package unreal;
 	static public var RIGHT : Dynamic;
 	static public var UP : Dynamic;
 	static public var ZERO : Dynamic;
-	/**
-		Return self+value.
-	**/
-	public function __add__(value:Dynamic):Dynamic;
-	/**
-		Return self&value.
-	**/
-	public function __and__(value:Dynamic):Dynamic;
-	/**
-		self != 0
-	**/
-	public function __bool__():Dynamic;
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.__copy__() -> struct -- copy this Unreal struct
-	**/
-	public function __copy__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
-	/**
-		Return self+=value.
-	**/
-	public function __iadd__(value:Dynamic):Dynamic;
-	/**
-		Return self&=value.
-	**/
-	public function __iand__(value:Dynamic):Dynamic;
-	/**
-		Return self<<=value.
-	**/
-	public function __ilshift__(value:Dynamic):Dynamic;
-	/**
-		Return self%=value.
-	**/
-	public function __imod__(value:Dynamic):Dynamic;
-	/**
-		Return self*=value.
-	**/
-	public function __imul__(value:Dynamic):Dynamic;
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -89,163 +19,6 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self|=value.
-	**/
-	public function __ior__(value:Dynamic):Dynamic;
-	/**
-		Return self>>=value.
-	**/
-	public function __irshift__(value:Dynamic):Dynamic;
-	/**
-		Return self-=value.
-	**/
-	public function __isub__(value:Dynamic):Dynamic;
-	/**
-		Return self/=value.
-	**/
-	public function __itruediv__(value:Dynamic):Dynamic;
-	/**
-		Return self^=value.
-	**/
-	public function __ixor__(value:Dynamic):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<<value.
-	**/
-	public function __lshift__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self%value.
-	**/
-	public function __mod__(value:Dynamic):Dynamic;
-	/**
-		Return self*value.
-	**/
-	public function __mul__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		-self
-	**/
-	public function __neg__():Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Return self|value.
-	**/
-	public function __or__(value:Dynamic):Dynamic;
-	/**
-		Return value+self.
-	**/
-	public function __radd__(value:Dynamic):Dynamic;
-	/**
-		Return value&self.
-	**/
-	public function __rand__(value:Dynamic):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Return value<<self.
-	**/
-	public function __rlshift__(value:Dynamic):Dynamic;
-	/**
-		Return value%self.
-	**/
-	public function __rmod__(value:Dynamic):Dynamic;
-	/**
-		Return value*self.
-	**/
-	public function __rmul__(value:Dynamic):Dynamic;
-	/**
-		Return value|self.
-	**/
-	public function __ror__(value:Dynamic):Dynamic;
-	/**
-		Return value>>self.
-	**/
-	public function __rrshift__(value:Dynamic):Dynamic;
-	/**
-		Return self>>value.
-	**/
-	public function __rshift__(value:Dynamic):Dynamic;
-	/**
-		Return value-self.
-	**/
-	public function __rsub__(value:Dynamic):Dynamic;
-	/**
-		Return value/self.
-	**/
-	public function __rtruediv__(value:Dynamic):Dynamic;
-	/**
-		Return value^self.
-	**/
-	public function __rxor__(value:Dynamic):Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Return self-value.
-	**/
-	public function __sub__(value:Dynamic):Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self/value.
-	**/
-	public function __truediv__(value:Dynamic):Dynamic;
-	/**
-		Return self^value.
-	**/
-	public function __xor__(value:Dynamic):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal struct initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
 		x.add(b) -> Vector
 		Vector addition
 		
@@ -255,7 +28,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function add(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add(b:Dynamic):unreal.Vector;
 	/**
 		x.add_bounded(add_vect, radius) -> None
 		Add a vector to this and clamp the result to an axis aligned cube centered at the origin.
@@ -264,7 +37,7 @@ package unreal;
 		    add_vect (Vector): Vector to add.
 		    radius (float): Half size of the cube.
 	**/
-	public function add_bounded(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_bounded(add_vect:Dynamic, radius:Dynamic):Void;
 	/**
 		x.add_float(b) -> Vector
 		Adds a float to each component of a vector
@@ -275,7 +48,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function add_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_float(b:Dynamic):unreal.Vector;
 	/**
 		x.add_int(b) -> Vector
 		Adds an integer to each component of a vector
@@ -286,15 +59,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function add_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.assign(vector) -> None
-		Assign the values of the supplied vector.
-		
-		Args:
-		    vector (Vector): Vector to copy values from.
-	**/
-	public function assign(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function add_int(b:Dynamic):unreal.Vector;
 	/**
 		x.bounded_to_box(box_min, box_max) -> Vector
 		Get a copy of this vector, clamped inside of the specified axis aligned cube.
@@ -306,7 +71,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function bounded_to_box(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function bounded_to_box(box_min:Dynamic, box_max:Dynamic):unreal.Vector;
 	/**
 		x.bounded_to_cube(radius) -> Vector
 		Get a copy of this vector, clamped inside of an axis aligned cube centered at the origin.
@@ -317,12 +82,7 @@ package unreal;
 		Returns:
 		    Vector: A copy of this vector, bound by cube.
 	**/
-	public function bounded_to_cube(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> struct -- cast the given object to this Unreal struct type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function bounded_to_cube(radius:Dynamic):unreal.Vector;
 	/**
 		x.clamped_size(min, max) -> Vector
 		Create a copy of this vector, with its magnitude/size/length clamped between Min and Max.
@@ -334,7 +94,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function clamped_size(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clamped_size(min:Dynamic, max:Dynamic):unreal.Vector;
 	/**
 		x.clamped_size2d(min, max) -> Vector
 		Create a copy of this vector, with the 2D magnitude/size/length clamped between Min and Max. Z is unchanged.
@@ -346,7 +106,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function clamped_size2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clamped_size2d(min:Dynamic, max:Dynamic):unreal.Vector;
 	/**
 		x.clamped_size_max(max) -> Vector
 		Create a copy of this vector, with its maximum magnitude/size/length clamped to MaxSize.
@@ -357,7 +117,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function clamped_size_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clamped_size_max(max:Dynamic):unreal.Vector;
 	/**
 		x.clamped_size_max2d(max) -> Vector
 		Create a copy of this vector, with the maximum 2D magnitude/size/length clamped to MaxSize. Z is unchanged.
@@ -368,11 +128,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function clamped_size_max2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.copy() -> struct -- copy this Unreal struct
-	**/
-	public function copy(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function clamped_size_max2d(max:Dynamic):unreal.Vector;
 	/**
 		x.cosine_angle2d(b) -> float
 		Returns the cosine of the angle between this vector and another projected onto the XY plane (no Z).
@@ -383,7 +139,7 @@ package unreal;
 		Returns:
 		    float: The cosine.
 	**/
-	public function cosine_angle2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function cosine_angle2d(b:Dynamic):Float;
 	/**
 		x.cross(b) -> Vector
 		Returns the cross product of two 3d vectors - see http://mathworld.wolfram.com/CrossProduct.html
@@ -394,7 +150,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function cross(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function cross(b:Dynamic):unreal.Vector;
 	/**
 		x.direction_unit_to(to) -> Vector
 		Find the unit direction vector from one position to another or (0,0,0) if positions are the same.
@@ -405,7 +161,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function direction_unit_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function direction_unit_to(to:Dynamic):unreal.Vector;
 	/**
 		x.distance(v2) -> float
 		Distance between two points.
@@ -416,7 +172,7 @@ package unreal;
 		Returns:
 		    float: The distance between two points.
 	**/
-	public function distance(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function distance(v2:Dynamic):Float;
 	/**
 		x.distance2d(v2) -> float
 		Euclidean distance between two points in the XY plane (ignoring Z).
@@ -427,7 +183,7 @@ package unreal;
 		Returns:
 		    float: The distance between two points in the XY plane.
 	**/
-	public function distance2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function distance2d(v2:Dynamic):Float;
 	/**
 		x.distance2d_squared(v2) -> float
 		Squared euclidean distance between two points in the XY plane (ignoring Z).
@@ -438,7 +194,7 @@ package unreal;
 		Returns:
 		    float: The distance between two points in the XY plane.
 	**/
-	public function distance2d_squared(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function distance2d_squared(v2:Dynamic):Float;
 	/**
 		x.distance_squared(v2) -> float
 		Squared distance between two points.
@@ -449,7 +205,7 @@ package unreal;
 		Returns:
 		    float: The squared distance between two points.
 	**/
-	public function distance_squared(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function distance_squared(v2:Dynamic):Float;
 	/**
 		x.divide(b=[1.000000, 1.000000, 1.000000]) -> Vector
 		Element-wise Vector division (Result = {A.x/B.x, A.y/B.y, A.z/B.z})
@@ -460,7 +216,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function divide(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function divide(b:Dynamic):unreal.Vector;
 	/**
 		x.divide_float(b=1.000000) -> Vector
 		Vector divide by a float
@@ -471,7 +227,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function divide_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function divide_float(b:Dynamic):unreal.Vector;
 	/**
 		x.divide_int(b=1) -> Vector
 		Vector divide by an integer
@@ -482,7 +238,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function divide_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function divide_int(b:Dynamic):unreal.Vector;
 	/**
 		x.dot(b) -> float
 		Returns the dot product of two 3d vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -493,7 +249,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function dot(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function dot(b:Dynamic):Float;
 	/**
 		x.equals(b) -> bool
 		Returns true if vector A is equal to vector B (A == B)
@@ -504,7 +260,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equals(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function equals(b:Dynamic):Bool;
 	/**
 		x.get_abs() -> Vector
 		Get a copy of this vector with absolute value of each component.
@@ -512,7 +268,7 @@ package unreal;
 		Returns:
 		    Vector: A copy of this vector with absolute value of each component.
 	**/
-	public function get_abs(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_abs():unreal.Vector;
 	/**
 		x.get_abs_max() -> float
 		Find the maximum absolute element (abs(X), abs(Y) or abs(Z)) of a vector
@@ -520,7 +276,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_abs_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_abs_max():Float;
 	/**
 		x.get_abs_min() -> float
 		Find the minimum absolute element (abs(X), abs(Y) or abs(Z)) of a vector
@@ -528,11 +284,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_abs_min(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_abs_min():Float;
 	/**
 		x.get_max(b) -> Vector
 		Find the maximum elements (X, Y and Z) between the two vector's components
@@ -543,7 +295,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_max(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_max(b:Dynamic):unreal.Vector;
 	/**
 		x.get_max_element() -> float
 		Find the maximum element (X, Y or Z) of a vector
@@ -551,7 +303,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_max_element(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_max_element():Float;
 	/**
 		x.get_min(b) -> Vector
 		Find the minimum elements (X, Y and Z) between the two vector's components
@@ -562,7 +314,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_min(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_min(b:Dynamic):unreal.Vector;
 	/**
 		x.get_min_element() -> float
 		Find the minimum element (X, Y or Z) of a vector
@@ -570,7 +322,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_min_element(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_min_element():Float;
 	/**
 		x.get_projection() -> Vector
 		Projects 2D components of vector based on Z.
@@ -578,7 +330,7 @@ package unreal;
 		Returns:
 		    Vector: Projected version of vector based on Z.
 	**/
-	public function get_projection(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_projection():unreal.Vector;
 	/**
 		x.get_sign_vector() -> Vector
 		Get a copy of the vector as sign only.
@@ -587,7 +339,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_sign_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function get_sign_vector():unreal.Vector;
 	/**
 		x.heading_angle() -> float
 		Convert a direction vector into a 'heading' angle.
@@ -595,7 +347,7 @@ package unreal;
 		Returns:
 		    float: 'Heading' angle between +/-PI radians. 0 is pointing down +X.
 	**/
-	public function heading_angle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function heading_angle():Float;
 	/**
 		x.interp_spring_to(target, spring_state, stiffness, critical_damping_factor, delta_time, mass=1.000000) -> (Vector, spring_state=VectorSpringState)
 		Uses a simple spring model to interpolate a vector from Current to Target.
@@ -613,7 +365,7 @@ package unreal;
 		
 		    spring_state (VectorSpringState):
 	**/
-	public function interp_spring_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function interp_spring_to(target:Dynamic, spring_state:Dynamic, stiffness:Dynamic, critical_damping_factor:Dynamic, delta_time:Dynamic, mass:Dynamic):unreal.VectorSpringState;
 	/**
 		x.interp_to(target, delta_time, interp_speed) -> Vector
 		Tries to reach Target based on distance from Current position, giving a nice smooth feeling when tracking a position.
@@ -626,7 +378,7 @@ package unreal;
 		Returns:
 		    Vector: New interpolated position
 	**/
-	public function interp_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function interp_to(target:Dynamic, delta_time:Dynamic, interp_speed:Dynamic):unreal.Vector;
 	/**
 		x.interp_to_constant(target, delta_time, interp_speed) -> Vector
 		Tries to reach Target at a constant rate.
@@ -639,7 +391,7 @@ package unreal;
 		Returns:
 		    Vector: New interpolated position
 	**/
-	public function interp_to_constant(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function interp_to_constant(target:Dynamic, delta_time:Dynamic, interp_speed:Dynamic):unreal.Vector;
 	/**
 		x.is_nan() -> bool
 		Determines if any component is not a number (NAN)
@@ -647,7 +399,7 @@ package unreal;
 		Returns:
 		    bool: true if one or more components is NAN, otherwise false.
 	**/
-	public function is_nan(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_nan():Bool;
 	/**
 		x.is_near_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if vector A is equal to vector B (A == B) within a specified error tolerance
@@ -659,7 +411,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_near_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
 	/**
 		x.is_nearly_zero(tolerance=0.000100) -> bool
 		Checks whether vector is near to zero within a specified tolerance.
@@ -670,7 +422,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	public function is_nearly_zero(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_nearly_zero(tolerance:Dynamic):Bool;
 	/**
 		x.is_normal() -> bool
 		Determines if vector is normalized / unit (length 1).
@@ -678,7 +430,7 @@ package unreal;
 		Returns:
 		    bool: true if normalized, false otherwise.
 	**/
-	public function is_normal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_normal():Bool;
 	/**
 		x.is_not_near_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if vector A is not equal to vector B (A != B) within a specified error tolerance
@@ -690,7 +442,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_not_near_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
 	/**
 		x.is_uniform(tolerance=0.000100) -> bool
 		Checks whether all components of this vector are the same, within a tolerance.
@@ -701,7 +453,7 @@ package unreal;
 		Returns:
 		    bool: true if the vectors are equal within tolerance limits, false otherwise.
 	**/
-	public function is_uniform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_uniform(tolerance:Dynamic):Bool;
 	/**
 		x.is_unit(squared_lenth_tolerance=0.000100) -> bool
 		Determines if vector is normalized / unit (length 1) within specified squared tolerance.
@@ -712,7 +464,7 @@ package unreal;
 		Returns:
 		    bool: true if unit, false otherwise.
 	**/
-	public function is_unit(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_unit(squared_lenth_tolerance:Dynamic):Bool;
 	/**
 		x.is_zero() -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -720,7 +472,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is exactly zero, otherwise false.
 	**/
-	public function is_zero(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_zero():Bool;
 	/**
 		x.length() -> float
 		Returns the length of the vector
@@ -728,7 +480,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function length(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function length():Float;
 	/**
 		x.length2d() -> float
 		Returns the length of the vector's XY components.
@@ -736,7 +488,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function length2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function length2d():Float;
 	/**
 		x.length2d_squared() -> float
 		Returns the squared length of the vector's XY components.
@@ -744,7 +496,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function length2d_squared(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function length2d_squared():Float;
 	/**
 		x.length_squared() -> float
 		Returns the squared length of the vector
@@ -752,7 +504,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function length_squared(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function length_squared():Float;
 	/**
 		x.lerp_to(b, alpha) -> Vector
 		Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1)
@@ -764,7 +516,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function lerp_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function lerp_to(b:Dynamic, alpha:Dynamic):unreal.Vector;
 	/**
 		x.linear_color() -> LinearColor
 		Converts a vector to LinearColor
@@ -772,7 +524,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function linear_color(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function linear_color():unreal.LinearColor;
 	/**
 		x.mirror_by_plane(plane) -> Vector
 		Mirrors a vector about a plane.
@@ -783,7 +535,7 @@ package unreal;
 		Returns:
 		    Vector: Mirrored vector.
 	**/
-	public function mirror_by_plane(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function mirror_by_plane(plane:Dynamic):unreal.Vector;
 	/**
 		x.mirror_by_vector(surface_normal) -> Vector
 		Given a direction vector and a surface normal, returns the vector reflected across the surface normal.
@@ -795,7 +547,7 @@ package unreal;
 		Returns:
 		    Vector: Reflected vector.
 	**/
-	public function mirror_by_vector(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function mirror_by_vector(surface_normal:Dynamic):unreal.Vector;
 	/**
 		x.multiply(b) -> Vector
 		Element-wise Vector multiplication (Result = {A.x*B.x, A.y*B.y, A.z*B.z})
@@ -806,7 +558,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function multiply(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function multiply(b:Dynamic):unreal.Vector;
 	/**
 		x.multiply_float(b) -> Vector
 		Scales Vector A by B
@@ -817,7 +569,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function multiply_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function multiply_float(b:Dynamic):unreal.Vector;
 	/**
 		x.multiply_int(b) -> Vector
 		Scales Vector A by B
@@ -828,7 +580,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function multiply_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function multiply_int(b:Dynamic):unreal.Vector;
 	/**
 		x.negated() -> Vector
 		Negate a vector.
@@ -836,7 +588,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function negated(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function negated():unreal.Vector;
 	/**
 		x.normal(tolerance=0.000100) -> Vector
 		Gets a normalized unit copy of the vector, ensuring it is safe to do so based on the length.
@@ -848,7 +600,7 @@ package unreal;
 		Returns:
 		    Vector: A normalized copy if safe, (0,0,0) otherwise.
 	**/
-	public function normal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function normal(tolerance:Dynamic):unreal.Vector;
 	/**
 		x.normal2d(tolerance=0.000100) -> Vector
 		Gets a normalized unit copy of the 2D components of the vector, ensuring it is safe to do so. Z is set to zero.
@@ -860,7 +612,7 @@ package unreal;
 		Returns:
 		    Vector: Normalized copy if safe, (0,0,0) otherwise.
 	**/
-	public function normal2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function normal2d(tolerance:Dynamic):unreal.Vector;
 	/**
 		x.normal_unsafe() -> Vector
 		Calculates normalized unit version of vector without checking for zero length.
@@ -868,7 +620,7 @@ package unreal;
 		Returns:
 		    Vector: Normalized version of vector.
 	**/
-	public function normal_unsafe(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function normal_unsafe():unreal.Vector;
 	/**
 		x.normalize(tolerance=0.000000) -> None
 		Normalize this vector in-place if it is large enough or set it to (0,0,0) otherwise.
@@ -876,7 +628,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of vector for normalization.
 	**/
-	public function normalize(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function normalize(tolerance:Dynamic):Void;
 	/**
 		x.not_equal(b) -> bool
 		Returns true if vector A is not equal to vector B (A != B)
@@ -887,7 +639,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function not_equal(b:Dynamic):Bool;
 	/**
 		x.project_on_to(target) -> Vector
 		Projects one vector (V) onto another (Target) and returns the projected vector.
@@ -899,7 +651,7 @@ package unreal;
 		Returns:
 		    Vector: V projected on to Target.
 	**/
-	public function project_on_to(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function project_on_to(target:Dynamic):unreal.Vector;
 	/**
 		x.project_on_to_normal(normal) -> Vector
 		Gets a copy of this vector projected onto the input vector, which is assumed to be unit length.
@@ -910,7 +662,7 @@ package unreal;
 		Returns:
 		    Vector: Projected vector.
 	**/
-	public function project_on_to_normal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function project_on_to_normal(normal:Dynamic):unreal.Vector;
 	/**
 		x.project_on_to_plane(plane_normal) -> Vector
 		Projects a vector onto a plane defined by a normalized vector (PlaneNormal).
@@ -921,7 +673,7 @@ package unreal;
 		Returns:
 		    Vector: Vector projected onto the plane.
 	**/
-	public function project_on_to_plane(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function project_on_to_plane(plane_normal:Dynamic):unreal.Vector;
 	/**
 		x.project_point_on_to_plane(plane_base, plane_normal) -> Vector
 		Projects/snaps a point onto a plane defined by a point on the plane and a plane normal.
@@ -933,7 +685,7 @@ package unreal;
 		Returns:
 		    Vector: Point projected onto the plane.
 	**/
-	public function project_point_on_to_plane(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function project_point_on_to_plane(plane_base:Dynamic, plane_normal:Dynamic):unreal.Vector;
 	/**
 		x.quaternion() -> Quat
 		Return the Quaternion orientation corresponding to the direction in which the vector points.
@@ -943,7 +695,7 @@ package unreal;
 		Returns:
 		    Quat: Quaternion from the Vector's direction, without any roll.
 	**/
-	public function quaternion(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function quaternion():unreal.Quat;
 	/**
 		x.random_point_in_box_extents(box_extent) -> Vector
 		Returns a random point within the specified bounding box using the first vector as an origin and the second as the box extents.
@@ -954,7 +706,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function random_point_in_box_extents(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function random_point_in_box_extents(box_extent:Dynamic):unreal.Vector;
 	/**
 		x.reciprocal() -> Vector
 		Gets the reciprocal of this vector, avoiding division by zero.
@@ -963,7 +715,7 @@ package unreal;
 		Returns:
 		    Vector: Reciprocal of this vector.
 	**/
-	public function reciprocal(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function reciprocal():unreal.Vector;
 	/**
 		x.rotate(b) -> Vector
 		Returns result of vector A rotated by Rotator B
@@ -974,7 +726,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function rotate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function rotate(b:Dynamic):unreal.Vector;
 	/**
 		x.rotate_angle_axis(angle_deg, axis) -> Vector
 		Returns result of vector A rotated by AngleDeg around Axis
@@ -986,7 +738,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function rotate_angle_axis(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function rotate_angle_axis(angle_deg:Dynamic, axis:Dynamic):unreal.Vector;
 	/**
 		x.rotator() -> Rotator
 		Return the FRotator orientation corresponding to the direction in which the vector points.
@@ -995,7 +747,7 @@ package unreal;
 		Returns:
 		    Rotator: FRotator from the Vector's direction, without any roll.
 	**/
-	public function rotator(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function rotator():unreal.Rotator;
 	/**
 		x.rotator_from_axis_and_angle(angle) -> Rotator
 		Create a rotation from an this axis and supplied angle (in degrees)
@@ -1006,7 +758,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function rotator_from_axis_and_angle(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function rotator_from_axis_and_angle(angle:Dynamic):unreal.Rotator;
 	/**
 		x.set(x, y, z) -> None
 		Set the values of the vector directly.
@@ -1016,15 +768,7 @@ package unreal;
 		    y (float): 
 		    z (float):
 	**/
-	public function set(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function set(x:Dynamic, y:Dynamic, z:Dynamic):Void;
 	/**
 		x.snapped_to_grid(grid_size) -> Vector
 		Gets a copy of this vector snapped to a grid.
@@ -1035,11 +779,7 @@ package unreal;
 		Returns:
 		    Vector: A copy of this vector snapped to a grid.
 	**/
-	public function snapped_to_grid(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_struct() -> Struct -- get the Unreal struct of this type
-	**/
-	static public function static_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function snapped_to_grid(grid_size:Dynamic):unreal.Vector;
 	/**
 		x.subtract(b) -> Vector
 		Vector subtraction
@@ -1050,7 +790,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function subtract(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function subtract(b:Dynamic):unreal.Vector;
 	/**
 		x.subtract_float(b) -> Vector
 		Subtracts a float from each component of a vector
@@ -1061,7 +801,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function subtract_float(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function subtract_float(b:Dynamic):unreal.Vector;
 	/**
 		x.subtract_int(b) -> Vector
 		Subtracts an integer from each component of a vector
@@ -1072,7 +812,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function subtract_int(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function subtract_int(b:Dynamic):unreal.Vector;
 	/**
 		x.to_degrees() -> Vector
 		Converts a vector containing radian values to a vector containing degree values.
@@ -1080,7 +820,7 @@ package unreal;
 		Returns:
 		    Vector: Vector  containing degree values
 	**/
-	public function to_degrees(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function to_degrees():unreal.Vector;
 	/**
 		x.to_radians() -> Vector
 		Converts a vector containing degree values to a vector containing radian values.
@@ -1088,11 +828,7 @@ package unreal;
 		Returns:
 		    Vector: Vector containing radian values
 	**/
-	public function to_radians(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.to_tuple() -> tuple -- break this Unreal struct into a tuple of its properties
-	**/
-	public function to_tuple(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function to_radians():unreal.Vector;
 	/**
 		x.transform() -> Transform
 		Convert a vector to a transform. Uses vector as location
@@ -1100,7 +836,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function transform(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function transform():unreal.Transform;
 	/**
 		x.truncated() -> IntVector
 		Rounds A to an integer with truncation towards zero for each element in a vector.  (e.g. -1.7 truncated to -1, 2.8 truncated to 2)
@@ -1108,7 +844,7 @@ package unreal;
 		Returns:
 		    IntVector:
 	**/
-	public function truncated(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function truncated():unreal.IntVector;
 	/**
 		x.unit_cartesian_to_spherical() -> Vector2D
 		Converts a Cartesian unit vector into spherical coordinates on the unit sphere.
@@ -1116,7 +852,7 @@ package unreal;
 		Returns:
 		    Vector2D: Output Theta will be in the range [0, PI], and output Phi will be in the range [-PI, PI].
 	**/
-	public function unit_cartesian_to_spherical(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function unit_cartesian_to_spherical():unreal.Vector2D;
 	/**
 		x.unrotate(b) -> Vector
 		Returns result of vector A rotated by the inverse of Rotator B
@@ -1127,12 +863,12 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function unrotate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function unrotate(b:Dynamic):unreal.Vector;
 	/**
 		x.unwind_euler() -> None
 		When this vector contains Euler angles (degrees), ensure that angles are between +/-180
 	**/
-	public function unwind_euler(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function unwind_euler():Void;
 	/**
 		x.vector2d() -> Vector2D
 		Convert a Vector to a Vector2D using the Vector's (X, Y) coordinates
@@ -1140,17 +876,17 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function vector2d(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function vector2d():unreal.Vector2D;
 	/**
 		(float):  [Read-Write] X
 	**/
-	public var x : Dynamic;
+	public var x : Float;
 	/**
 		(float):  [Read-Write] Y
 	**/
-	public var y : Dynamic;
+	public var y : Float;
 	/**
 		(float):  [Read-Write] Z
 	**/
-	public var z : Dynamic;
+	public var z : Float;
 }

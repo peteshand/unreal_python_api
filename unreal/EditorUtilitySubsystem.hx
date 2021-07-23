@@ -1,40 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "EditorUtilitySubsystem") extern class EditorUtilitySubsystem {
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
+@:pythonImport("unreal", "EditorUtilitySubsystem") extern class EditorUtilitySubsystem extends unreal.EditorSubsystem {
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -45,76 +11,6 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
 		x.close_tab_by_id(new_tab_id) -> bool
 		Given an ID for a tab, try to find and close an existing tab. Returns true if it found a tab to close.
 		
@@ -124,7 +20,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function close_tab_by_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function close_tab_by_id(new_tab_id:Dynamic):Bool;
 	/**
 		x.does_tab_exist(new_tab_id) -> bool
 		Given an ID for a tab, try to find an existing tab. Returns true if it found a tab.
@@ -135,7 +31,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function does_tab_exist(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function does_tab_exist(new_tab_id:Dynamic):Bool;
 	/**
 		x.find_utility_widget_from_blueprint(blueprint) -> EditorUtilityWidget
 		Given an editor utility widget blueprint, get the widget it creates. This will return a null pointer if the widget is not currently in a tab.
@@ -146,55 +42,7 @@ package unreal;
 		Returns:
 		    EditorUtilityWidget:
 	**/
-	public function find_utility_widget_from_blueprint(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function find_utility_widget_from_blueprint(blueprint:Dynamic):unreal.EditorUtilityWidget;
 	/**
 		x.register_and_execute_task(new_task) -> None
 		Register and Execute Task
@@ -202,7 +50,7 @@ package unreal;
 		Args:
 		    new_task (EditorUtilityTask):
 	**/
-	public function register_and_execute_task(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function register_and_execute_task(new_task:Dynamic):Void;
 	/**
 		x.register_tab_and_get_id(blueprint) -> Name
 		Register Tab and Get ID
@@ -215,7 +63,7 @@ package unreal;
 		
 		    new_tab_id (Name):
 	**/
-	public function register_tab_and_get_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function register_tab_and_get_id(blueprint:Dynamic):unreal.Name;
 	/**
 		x.release_instance_of_asset(asset) -> None
 		Allow startup object to be garbage collected
@@ -223,19 +71,7 @@ package unreal;
 		Args:
 		    asset (Object):
 	**/
-	public function release_instance_of_asset(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function release_instance_of_asset(asset:Dynamic):Void;
 	/**
 		x.spawn_and_register_tab(blueprint) -> EditorUtilityWidget
 		Spawn and Register Tab
@@ -246,7 +82,7 @@ package unreal;
 		Returns:
 		    EditorUtilityWidget:
 	**/
-	public function spawn_and_register_tab(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function spawn_and_register_tab(blueprint:Dynamic):unreal.EditorUtilityWidget;
 	/**
 		x.spawn_and_register_tab_and_get_id(blueprint) -> (EditorUtilityWidget, new_tab_id=Name)
 		Spawn and Register Tab and Get ID
@@ -259,7 +95,7 @@ package unreal;
 		
 		    new_tab_id (Name):
 	**/
-	public function spawn_and_register_tab_and_get_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function spawn_and_register_tab_and_get_id(blueprint:Dynamic):unreal.Name;
 	/**
 		x.spawn_registered_tab_by_id(new_tab_id) -> bool
 		Given an ID for a tab, try to find a tab spawner that matches, and then spawn a tab. Returns true if it was able to find a matching tab spawner
@@ -270,11 +106,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function spawn_registered_tab_by_id(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function spawn_registered_tab_by_id(new_tab_id:Dynamic):Bool;
 	/**
 		x.try_run(asset) -> bool
 		Try Run
@@ -285,5 +117,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function try_run(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function try_run(asset:Dynamic):Bool;
 }

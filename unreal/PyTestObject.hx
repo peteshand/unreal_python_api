@@ -1,42 +1,8 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "PyTestObject") extern class PyTestObject {
+@:pythonImport("unreal", "PyTestObject") extern class PyTestObject extends unreal.Object {
 	static public var CONSTANT_VALUE : Dynamic;
 	static public var OTHER_CONSTANT_VALUE : Dynamic;
-	public function __class__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Implement delattr(self, name).
-	**/
-	public function __delattr__(name:Dynamic):Dynamic;
-	/**
-		Default dir() implementation.
-	**/
-	public function __dir__():Dynamic;
-	static public var __doc__ : Dynamic;
-	/**
-		Return self==value.
-	**/
-	public function __eq__(value:Dynamic):Dynamic;
-	/**
-		Default object formatter.
-	**/
-	public function __format__(format_spec:Dynamic):Dynamic;
-	/**
-		Return self>=value.
-	**/
-	public function __ge__(value:Dynamic):Dynamic;
-	/**
-		Return getattr(self, name).
-	**/
-	public function __getattribute__(name:Dynamic):Dynamic;
-	/**
-		Return self>value.
-	**/
-	public function __gt__(value:Dynamic):Dynamic;
-	/**
-		Return hash(self).
-	**/
-	public function __hash__():Dynamic;
 	/**
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
@@ -47,70 +13,9 @@ package unreal;
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
-		This method is called when a class is subclassed.
-		
-		The default implementation does nothing. It may be
-		overridden to extend subclasses.
-	**/
-	static public function __init_subclass__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		Return self<=value.
-	**/
-	public function __le__(value:Dynamic):Dynamic;
-	/**
-		Return self<value.
-	**/
-	public function __lt__(value:Dynamic):Dynamic;
-	/**
-		Return self!=value.
-	**/
-	public function __ne__(value:Dynamic):Dynamic;
-	/**
-		Create and return a new object.  See help(type) for accurate signature.
-	**/
-	static public function __new__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce__():Dynamic;
-	/**
-		Helper for pickle.
-	**/
-	public function __reduce_ex__(protocol:Dynamic):Dynamic;
-	/**
-		Return repr(self).
-	**/
-	public function __repr__():Dynamic;
-	/**
-		Implement setattr(self, name, value).
-	**/
-	public function __setattr__(name:Dynamic, value:Dynamic):Dynamic;
-	/**
-		Size of object in memory, in bytes.
-	**/
-	public function __sizeof__():Dynamic;
-	/**
-		Return str(self).
-	**/
-	public function __str__():Dynamic;
-	/**
-		Abstract classes can override this to customize issubclass().
-		
-		This is invoked early on by abc.ABCMeta.__subclasscheck__().
-		It should return True, False or NotImplemented.  If it returns
-		NotImplemented, the normal algorithm is used.  Otherwise, it
-		overrides the normal algorithm (and the outcome is cached).
-	**/
-	static public function __subclasshook__(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x._post_init() -> None -- called during Unreal object initialization (equivalent to PostInitProperties in C++)
-	**/
-	public function _post_init(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	static public var _wrapper_meta_data : Dynamic;
-	/**
 		(bool):  [Read-Write] Bool
 	**/
-	public var bool : Dynamic;
+	public var bool : Bool;
 	/**
 		x.call_func_blueprint_implementable(value) -> int32
 		Call Func Blueprint Implementable
@@ -121,7 +26,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function call_func_blueprint_implementable(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function call_func_blueprint_implementable(value:Dynamic):Int;
 	/**
 		x.call_func_blueprint_native(value) -> int32
 		Call Func Blueprint Native
@@ -132,7 +37,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function call_func_blueprint_native(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function call_func_blueprint_native(value:Dynamic):Int;
 	/**
 		x.call_func_blueprint_native_ref(out_struct) -> PyTestStruct
 		Call Func Blueprint Native Ref
@@ -145,24 +50,15 @@ package unreal;
 		
 		    out_struct (PyTestStruct):
 	**/
-	public function call_func_blueprint_native_ref(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.call_method(name, args=tuple(), kwargs=dict()) -> object -- call a method on this object via Unreal reflection using the given ordered (tuple) or named (dict) argument data - allows calling methods that don't have Python glue
-	**/
-	public function call_method(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.cast(object) -> Object -- cast the given object to this Unreal object type
-	**/
-	@:native("cast")
-	static public function _cast(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function call_func_blueprint_native_ref(out_struct:Dynamic):unreal.PyTestStruct;
 	/**
 		(PyTestChildStruct):  [Read-Write] Child Struct
 	**/
-	public var child_struct : Dynamic;
+	public var child_struct : unreal.PyTestChildStruct;
 	/**
 		(PyTestDelegate):  [Read-Write] Delegate
 	**/
-	public var delegate : Dynamic;
+	public var delegate : unreal.PyTestDelegate;
 	/**
 		x.delegate_property_callback(value) -> int32
 		Delegate Property Callback
@@ -173,26 +69,26 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function delegate_property_callback(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function delegate_property_callback(value:Dynamic):Int;
 	/**
 		X.emit_script_error() -> None
 		Emit Script Error
 	**/
-	static public function emit_script_error(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function emit_script_error():Void;
 	/**
 		X.emit_script_warning() -> None
 		Emit Script Warning
 	**/
-	static public function emit_script_warning(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function emit_script_warning():Void;
 	/**
 		(PyTestEnum):  [Read-Write] Enum
 	**/
 	@:native("enum")
-	public var _enum : Dynamic;
+	public var _enum : unreal.PyTestEnum;
 	/**
 		(float):  [Read-Write] Float
 	**/
-	public var float : Dynamic;
+	public var float : Float;
 	/**
 		x.func_blueprint_implementable(value) -> int32
 		Func Blueprint Implementable
@@ -203,7 +99,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function func_blueprint_implementable(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function func_blueprint_implementable(value:Dynamic):Int;
 	/**
 		x.func_blueprint_native(value) -> int32
 		Func Blueprint Native
@@ -214,7 +110,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function func_blueprint_native(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function func_blueprint_native(value:Dynamic):Int;
 	/**
 		x.func_blueprint_native_ref(out_struct) -> PyTestStruct
 		Func Blueprint Native Ref
@@ -227,7 +123,7 @@ package unreal;
 		
 		    out_struct (PyTestStruct):
 	**/
-	public function func_blueprint_native_ref(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function func_blueprint_native_ref(out_struct:Dynamic):unreal.PyTestStruct;
 	/**
 		x.func_taking_py_test_child_struct(struct) -> None
 		Func Taking Py Test Child Struct
@@ -235,7 +131,7 @@ package unreal;
 		Args:
 		    struct (PyTestChildStruct):
 	**/
-	public function func_taking_py_test_child_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function func_taking_py_test_child_struct(struct:Dynamic):Void;
 	/**
 		x.func_taking_py_test_delegate(delegate, value) -> int32
 		Func Taking Py Test Delegate
@@ -247,7 +143,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function func_taking_py_test_delegate(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function func_taking_py_test_delegate(delegate:Dynamic, value:Dynamic):Int;
 	/**
 		x.func_taking_py_test_struct(struct) -> None
 		Func Taking Py Test Struct
@@ -255,55 +151,11 @@ package unreal;
 		Args:
 		    struct (PyTestStruct):
 	**/
-	public function func_taking_py_test_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_class() -> Class -- get the Unreal class of this instance
-	**/
-	public function get_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
-	**/
-	static public function get_default_object(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_editor_property(name) -> object -- get the value of any property visible to the editor
-	**/
-	public function get_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_fname() -> FName -- get the name of this instance
-	**/
-	public function get_fname(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_full_name() -> str -- get the full name (class name + full path) of this instance
-	**/
-	public function get_full_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_name() -> str -- get the name of this instance
-	**/
-	public function get_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outer() -> Object -- get the outer object from this instance (if any)
-	**/
-	public function get_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_outermost() -> Package -- get the outermost object (the package) from this instance
-	**/
-	public function get_outermost(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_path_name() -> str -- get the path name of this instance
-	**/
-	public function get_path_name(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_typed_outer(type) -> type() -- get the first outer object of the given type from this instance (if any)
-	**/
-	public function get_typed_outer(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.get_world() -> World -- get the world associated with this instance (if any)
-	**/
-	public function get_world(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function func_taking_py_test_struct(struct:Dynamic):Void;
 	/**
 		(int32):  [Read-Write] Int
 	**/
-	public var int : Dynamic;
+	public var int : Int;
 	/**
 		x.is_bool_set() -> bool
 		Is Bool Set
@@ -311,7 +163,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_bool_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function is_bool_set():Bool;
 	/**
 		x.legacy_func_taking_py_test_struct(struct) -> None
 		Legacy Func Taking Py Test Struct
@@ -320,15 +172,11 @@ package unreal;
 		Args:
 		    struct (PyTestStruct):
 	**/
-	public function legacy_func_taking_py_test_struct(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.modify(bool) -> bool -- inform that this instance is about to be modified (tracks changes for undo/redo if transactional)
-	**/
-	public function modify(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function legacy_func_taking_py_test_struct(struct:Dynamic):Void;
 	/**
 		(PyTestMulticastDelegate):  [Read-Write] Multicast Delegate
 	**/
-	public var multicast_delegate : Dynamic;
+	public var multicast_delegate : unreal.PyTestMulticastDelegate;
 	/**
 		x.multicast_delegate_property_callback(str) -> None
 		Multicast Delegate Property Callback
@@ -336,15 +184,11 @@ package unreal;
 		Args:
 		    str (str):
 	**/
-	public function multicast_delegate_property_callback(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public function multicast_delegate_property_callback(str:Dynamic):Void;
 	/**
 		(Name):  [Read-Write] Name
 	**/
-	public var name : Dynamic;
-	/**
-		x.rename(name=None, outer=None) -> bool -- rename this instance
-	**/
-	public function rename(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	public var name : unreal.Name;
 	/**
 		X.return_array() -> Array(int32)
 		Return Array
@@ -352,7 +196,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	static public function return_array(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function return_array():Dynamic;
 	/**
 		X.return_map() -> Map(int32, bool)
 		Return Map
@@ -360,7 +204,7 @@ package unreal;
 		Returns:
 		    Map(int32, bool):
 	**/
-	static public function return_map(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function return_map():Dynamic;
 	/**
 		X.return_set() -> Set(int32)
 		Return Set
@@ -368,27 +212,15 @@ package unreal;
 		Returns:
 		    Set(int32):
 	**/
-	static public function return_set(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_properties(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
-	**/
-	public function set_editor_property(args:haxe.extern.Rest<Dynamic>):Dynamic;
-	/**
-		X.static_class() -> Class -- get the Unreal class of this type
-	**/
-	static public function static_class(args:haxe.extern.Rest<Dynamic>):Dynamic;
+	static public function return_set():Dynamic;
 	/**
 		(str):  [Read-Write] String
 	**/
-	public var string : Dynamic;
+	public var string : String;
 	/**
 		(Array(str)):  [Read-Write] String Array
 	**/
-	public var string_array : Dynamic;
+	public var string_array : Array<Dynamic>;
 	/**
 		(Map(str, int32)):  [Read-Write] String Int Map
 	**/
@@ -400,13 +232,13 @@ package unreal;
 	/**
 		(PyTestStruct):  [Read-Write] Struct
 	**/
-	public var struct : Dynamic;
+	public var struct : unreal.PyTestStruct;
 	/**
 		(Array(PyTestStruct)):  [Read-Write] Struct Array
 	**/
-	public var struct_array : Dynamic;
+	public var struct_array : Array<Dynamic>;
 	/**
 		(Text):  [Read-Write] Text
 	**/
-	public var text : Dynamic;
+	public var text : unreal.Text;
 }
