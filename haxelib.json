@@ -1,0 +1,10 @@
+{
+    "name":"unreal.py",
+    "url":"https://github.com/peteshand/unreal_python_api",
+    "license":"MIT",
+    "tags":["ue4", "ue5", "unreal", "unreal engine", "python"],
+    "description":"Unreal Engine Python API externs",
+    "version":"0.0.1",
+    "contributors": ["p.j.shand"],
+    "classPath": "src"
+}
