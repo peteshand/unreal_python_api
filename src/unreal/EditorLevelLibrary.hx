@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorLevelLibrary") extern class EditorLevelLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.clear_actor_selection_set() -> None
 		Remove all actors from the selection set
 	**/
@@ -27,7 +18,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	static public function convert_actors(actors:Dynamic, actor_class:Dynamic, static_mesh_package_path:Dynamic):Dynamic;
+	static public function convert_actors(actors:Array<Actor>, actor_class:Class<Dynamic>, static_mesh_package_path:String):Array<Actor>;
 	/**
 		X.create_proxy_mesh_actor(actors_to_merge, merge_options) -> StaticMeshActor or None
 		Build a proxy mesh actor that can replace a set of mesh actors.
@@ -41,7 +32,7 @@ package unreal;
 		
 		    out_merged_actor (StaticMeshActor): generated actor if requested
 	**/
-	static public function create_proxy_mesh_actor(actors_to_merge:Dynamic, merge_options:Dynamic):Dynamic;
+	static public function create_proxy_mesh_actor(actors_to_merge:Array<StaticMeshActor>, merge_options:unreal.EditorScriptingCreateProxyMeshActorOptions):Dynamic;
 	/**
 		X.destroy_actor(actor_to_destroy) -> bool
 		Destroy the actor from the world editor. Notify the Editor that the actor got destroyed.
@@ -52,7 +43,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function destroy_actor(actor_to_destroy:Dynamic):Bool;
+	static public function destroy_actor(actor_to_destroy:unreal.Actor):Bool;
 	/**
 		X.editor_end_play() -> None
 		Editor End Play
@@ -75,7 +66,7 @@ package unreal;
 		Args:
 		    game_view (bool):
 	**/
-	static public function editor_set_game_view(game_view:Dynamic):Void;
+	static public function editor_set_game_view(game_view:Bool):Void;
 	/**
 		X.eject_pilot_level_actor() -> None
 		Eject Pilot Level Actor
@@ -91,7 +82,7 @@ package unreal;
 		Returns:
 		    Actor: A reference to the actor, or none if it wasn't found
 	**/
-	static public function get_actor_reference(path_to_actor:Dynamic):unreal.Actor;
+	static public function get_actor_reference(path_to_actor:String):unreal.Actor;
 	/**
 		X.get_all_level_actors() -> Array(Actor)
 		Find all loaded Actors in the world editor. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -99,7 +90,7 @@ package unreal;
 		Returns:
 		    Array(Actor): List of found Actors
 	**/
-	static public function get_all_level_actors():Dynamic;
+	static public function get_all_level_actors():Array<Actor>;
 	/**
 		X.get_all_level_actors_components() -> Array(ActorComponent)
 		Find all loaded ActorComponent own by an actor in the world editor. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -107,7 +98,7 @@ package unreal;
 		Returns:
 		    Array(ActorComponent): List of found ActorComponent
 	**/
-	static public function get_all_level_actors_components():Dynamic;
+	static public function get_all_level_actors_components():Array<ActorComponent>;
 	/**
 		X.get_editor_world() -> World
 		Find the World in the world editor. It can then be used as WorldContext by other libraries like GameplayStatics.
@@ -146,7 +137,7 @@ package unreal;
 		Returns:
 		    Array(World):
 	**/
-	static public function get_pie_worlds(include_dedicated_server:Dynamic):Dynamic;
+	static public function get_pie_worlds(include_dedicated_server:Bool):Array<World>;
 	/**
 		X.get_selected_level_actors() -> Array(Actor)
 		Find all loaded Actors that are selected in the world editor. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -154,7 +145,7 @@ package unreal;
 		Returns:
 		    Array(Actor): List of found Actors
 	**/
-	static public function get_selected_level_actors():Dynamic;
+	static public function get_selected_level_actors():Array<Actor>;
 	/**
 		X.join_static_mesh_actors(actors_to_join, join_options) -> Actor
 		Create a new Actor in the level that contains a duplicate of all the Actors Static Meshes Component.
@@ -168,7 +159,7 @@ package unreal;
 		Returns:
 		    Actor: The new created actor.
 	**/
-	static public function join_static_mesh_actors(actors_to_join:Dynamic, join_options:Dynamic):unreal.Actor;
+	static public function join_static_mesh_actors(actors_to_join:Array<StaticMeshActor>, join_options:unreal.EditorScriptingJoinStaticMeshActorsOptions):unreal.Actor;
 	/**
 		X.load_level(asset_path) -> bool
 		Close the current Persistent Level (without saving it). Loads the specified level.
@@ -179,7 +170,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function load_level(asset_path:Dynamic):Bool;
+	static public function load_level(asset_path:String):Bool;
 	/**
 		X.merge_static_mesh_actors(actors_to_merge, merge_options) -> StaticMeshActor or None
 		Merge the meshes into a unique mesh with the provided StaticMeshActors. There are multiple options on how to merge the meshes and their materials.
@@ -195,7 +186,7 @@ package unreal;
 		
 		    out_merged_actor (StaticMeshActor): The new created actor, if requested.
 	**/
-	static public function merge_static_mesh_actors(actors_to_merge:Dynamic, merge_options:Dynamic):Dynamic;
+	static public function merge_static_mesh_actors(actors_to_merge:Array<StaticMeshActor>, merge_options:unreal.EditorScriptingMergeStaticMeshActorsOptions):Dynamic;
 	/**
 		X.new_level(asset_path) -> bool
 		Close the current Persistent Level (without saving it). Create a new blank Level and save it. Load the new created level.
@@ -206,7 +197,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function new_level(asset_path:Dynamic):Bool;
+	static public function new_level(asset_path:String):Bool;
 	/**
 		X.new_level_from_template(asset_path, template_asset_path) -> bool
 		Close the current Persistent Level (without saving it). Create a new Level base on another level and save it. Load the new created level.
@@ -218,7 +209,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function new_level_from_template(asset_path:Dynamic, template_asset_path:Dynamic):Bool;
+	static public function new_level_from_template(asset_path:String, template_asset_path:String):Bool;
 	/**
 		X.pilot_level_actor(actor_to_pilot) -> None
 		Pilot Level Actor
@@ -226,7 +217,7 @@ package unreal;
 		Args:
 		    actor_to_pilot (Actor):
 	**/
-	static public function pilot_level_actor(actor_to_pilot:Dynamic):Void;
+	static public function pilot_level_actor(actor_to_pilot:unreal.Actor):Void;
 	/**
 		X.replace_mesh_components_materials(mesh_components, material_to_be_replaced, new_material) -> None
 		Find the references of the material MaterialToReplaced on all the MeshComponents provided and replace it by NewMaterial.
@@ -236,7 +227,7 @@ package unreal;
 		    material_to_be_replaced (MaterialInterface): Material we want to replace.
 		    new_material (MaterialInterface): Material to replace MaterialToBeReplaced by.
 	**/
-	static public function replace_mesh_components_materials(mesh_components:Dynamic, material_to_be_replaced:Dynamic, new_material:Dynamic):Void;
+	static public function replace_mesh_components_materials(mesh_components:Array<MeshComponent>, material_to_be_replaced:unreal.MaterialInterface, new_material:unreal.MaterialInterface):Void;
 	/**
 		X.replace_mesh_components_materials_on_actors(actors, material_to_be_replaced, new_material) -> None
 		Find the references of the material MaterialToReplaced on all the MeshComponents of all the Actors provided and replace it by NewMaterial.
@@ -246,7 +237,7 @@ package unreal;
 		    material_to_be_replaced (MaterialInterface): Material we want to replace.
 		    new_material (MaterialInterface): Material to replace MaterialToBeReplaced by.
 	**/
-	static public function replace_mesh_components_materials_on_actors(actors:Dynamic, material_to_be_replaced:Dynamic, new_material:Dynamic):Void;
+	static public function replace_mesh_components_materials_on_actors(actors:Array<Actor>, material_to_be_replaced:unreal.MaterialInterface, new_material:unreal.MaterialInterface):Void;
 	/**
 		X.replace_mesh_components_meshes(mesh_components, mesh_to_be_replaced, new_mesh) -> None
 		Find the references of the mesh MeshToBeReplaced on all the MeshComponents provided and replace it by NewMesh.
@@ -257,7 +248,7 @@ package unreal;
 		    mesh_to_be_replaced (StaticMesh): Mesh we want to replace.
 		    new_mesh (StaticMesh): Mesh to replace MeshToBeReplaced by.
 	**/
-	static public function replace_mesh_components_meshes(mesh_components:Dynamic, mesh_to_be_replaced:Dynamic, new_mesh:Dynamic):Void;
+	static public function replace_mesh_components_meshes(mesh_components:Array<StaticMeshComponent>, mesh_to_be_replaced:unreal.StaticMesh, new_mesh:unreal.StaticMesh):Void;
 	/**
 		X.replace_mesh_components_meshes_on_actors(actors, mesh_to_be_replaced, new_mesh) -> None
 		Find the references of the mesh MeshToBeReplaced on all the MeshComponents of all the Actors provided and replace it by NewMesh.
@@ -267,7 +258,7 @@ package unreal;
 		    mesh_to_be_replaced (StaticMesh): Mesh we want to replace.
 		    new_mesh (StaticMesh): Mesh to replace MeshToBeReplaced by.
 	**/
-	static public function replace_mesh_components_meshes_on_actors(actors:Dynamic, mesh_to_be_replaced:Dynamic, new_mesh:Dynamic):Void;
+	static public function replace_mesh_components_meshes_on_actors(actors:Array<Actor>, mesh_to_be_replaced:unreal.StaticMesh, new_mesh:unreal.StaticMesh):Void;
 	/**
 		X.save_all_dirty_levels() -> bool
 		Saves all Level currently loaded by the World Editor.
@@ -297,7 +288,7 @@ package unreal;
 		    actor (Actor): 
 		    should_be_selected (bool):
 	**/
-	static public function set_actor_selection_state(actor:Dynamic, should_be_selected:Dynamic):Void;
+	static public function set_actor_selection_state(actor:unreal.Actor, should_be_selected:Bool):Void;
 	/**
 		X.set_current_level_by_name(level_name) -> bool
 		Set the current level used by the world editor.
@@ -309,7 +300,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function set_current_level_by_name(level_name:Dynamic):Bool;
+	static public function set_current_level_by_name(level_name:unreal.Name):Bool;
 	/**
 		X.set_level_viewport_camera_info(camera_location, camera_rotation) -> None
 		Sets information about the camera position for the primary level editor viewport.
@@ -318,7 +309,7 @@ package unreal;
 		    camera_location (Vector): Location the camera will be moved to.
 		    camera_rotation (Rotator): Rotation the camera will be set to.
 	**/
-	static public function set_level_viewport_camera_info(camera_location:Dynamic, camera_rotation:Dynamic):Void;
+	static public function set_level_viewport_camera_info(camera_location:unreal.Vector, camera_rotation:unreal.Rotator):Void;
 	/**
 		X.set_selected_level_actors(actors_to_select) -> None
 		Clear the current world editor selection and select the provided actors. Exclude actor that are pending kill, in PIE, PreviewEditor, ...
@@ -326,7 +317,7 @@ package unreal;
 		Args:
 		    actors_to_select (Array(Actor)): Actor that should be selected in the world editor.
 	**/
-	static public function set_selected_level_actors(actors_to_select:Dynamic):Void;
+	static public function set_selected_level_actors(actors_to_select:Array<Actor>):Void;
 	/**
 		X.spawn_actor_from_class(actor_class, location, rotation=[0.000000, 0.000000, 0.000000], transient=False) -> Actor
 		Create an actor and place it in the world editor. Can be created from a Blueprint or a Class.
@@ -341,7 +332,7 @@ package unreal;
 		Returns:
 		    Actor: The created actor.
 	**/
-	static public function spawn_actor_from_class(actor_class:Dynamic, location:Dynamic, rotation:Dynamic, transient:Dynamic):unreal.Actor;
+	static public function spawn_actor_from_class(actor_class:Class<Dynamic>, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], transient:Bool = false):unreal.Actor;
 	/**
 		X.spawn_actor_from_object(object_to_use, location, rotation=[0.000000, 0.000000, 0.000000], transient=False) -> Actor
 		Create an actor and place it in the world editor. The Actor can be created from a Factory, Archetype, Blueprint, Class or an Asset.
@@ -356,5 +347,5 @@ package unreal;
 		Returns:
 		    Actor: The created actor.
 	**/
-	static public function spawn_actor_from_object(object_to_use:Dynamic, location:Dynamic, rotation:Dynamic, transient:Dynamic):unreal.Actor;
+	static public function spawn_actor_from_object(object_to_use:unreal.Object, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], transient:Bool = false):unreal.Actor;
 }

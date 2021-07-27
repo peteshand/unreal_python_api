@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorFilterLibrary") extern class EditorFilterLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.by_actor_label(target_array, name_sub_string, string_match=EditorScriptingStringMatchType.CONTAINS, filter_type=EditorScriptingFilterType.INCLUDE, ignore_case=True) -> Array(Actor)
 		Filter the array based on the Actor's label (what we see in the editor)
 		
@@ -24,7 +15,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The filtered list.
 	**/
-	static public function by_actor_label(target_array:Dynamic, name_sub_string:Dynamic, string_match:Dynamic, filter_type:Dynamic, ignore_case:Dynamic):Dynamic;
+	static public function by_actor_label(target_array:Array<Actor>, name_sub_string:String, string_match:unreal.EditorScriptingStringMatchType = EditorScriptingStringMatchType.CONTAINS, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE, ignore_case:Bool = true):Array<Actor>;
 	/**
 		X.by_actor_tag(target_array, tag, filter_type=EditorScriptingFilterType.INCLUDE) -> Array(Actor)
 		Filter the array by Tag the Actor contains
@@ -37,7 +28,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The filtered list.
 	**/
-	static public function by_actor_tag(target_array:Dynamic, tag:Dynamic, filter_type:Dynamic):Dynamic;
+	static public function by_actor_tag(target_array:Array<Actor>, tag:unreal.Name, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE):Array<Actor>;
 	/**
 		X.by_class(target_array, object_class, filter_type=EditorScriptingFilterType.INCLUDE) -> Array(Object)
 		Filter the array based on the Object's class.
@@ -50,7 +41,7 @@ package unreal;
 		Returns:
 		    Array(Object): The filtered list.
 	**/
-	static public function by_class(target_array:Dynamic, object_class:Dynamic, filter_type:Dynamic):Dynamic;
+	static public function by_class(target_array:Array<Object>, object_class:Class<Dynamic>, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE):Array<Object>;
 	/**
 		X.by_id_name(target_array, name_sub_string, string_match=EditorScriptingStringMatchType.CONTAINS, filter_type=EditorScriptingFilterType.INCLUDE) -> Array(Object)
 		Filter the array based on the Object's ID name.
@@ -64,7 +55,7 @@ package unreal;
 		Returns:
 		    Array(Object): The filtered list.
 	**/
-	static public function by_id_name(target_array:Dynamic, name_sub_string:Dynamic, string_match:Dynamic, filter_type:Dynamic):Dynamic;
+	static public function by_id_name(target_array:Array<Object>, name_sub_string:String, string_match:unreal.EditorScriptingStringMatchType = EditorScriptingStringMatchType.CONTAINS, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE):Array<Object>;
 	/**
 		X.by_layer(target_array, layer_name, filter_type=EditorScriptingFilterType.INCLUDE) -> Array(Actor)
 		Filter the array by Layer the Actor belongs to.
@@ -77,7 +68,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The filtered list.
 	**/
-	static public function by_layer(target_array:Dynamic, layer_name:Dynamic, filter_type:Dynamic):Dynamic;
+	static public function by_layer(target_array:Array<Actor>, layer_name:unreal.Name, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE):Array<Actor>;
 	/**
 		X.by_level_name(target_array, level_name, filter_type=EditorScriptingFilterType.INCLUDE) -> Array(Actor)
 		Filter the array by Level the Actor belongs to.
@@ -90,7 +81,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The filtered list.
 	**/
-	static public function by_level_name(target_array:Dynamic, level_name:Dynamic, filter_type:Dynamic):Dynamic;
+	static public function by_level_name(target_array:Array<Actor>, level_name:unreal.Name, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE):Array<Actor>;
 	/**
 		X.by_selection(target_array, filter_type=EditorScriptingFilterType.INCLUDE) -> Array(Actor)
 		Filter the array based on Object's selection.
@@ -102,5 +93,5 @@ package unreal;
 		Returns:
 		    Array(Actor): The filtered list.
 	**/
-	static public function by_selection(target_array:Dynamic, filter_type:Dynamic):Dynamic;
+	static public function by_selection(target_array:Array<Actor>, filter_type:unreal.EditorScriptingFilterType = EditorScriptingFilterType.INCLUDE):Array<Actor>;
 }

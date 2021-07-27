@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorStaticMeshLibrary") extern class EditorStaticMeshLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_simple_collisions(static_mesh, shape_type) -> int32
 		Same as AddSimpleCollisionsWithNotification but changes are automatically applied.
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_simple_collisions(static_mesh:Dynamic, shape_type:Dynamic):Int;
+	static public function add_simple_collisions(static_mesh:unreal.StaticMesh, shape_type:unreal.ScriptingCollisionShapeType):Int;
 	/**
 		X.add_simple_collisions_with_notification(static_mesh, shape_type, apply_changes) -> int32
 		Add simple collisions to a static mesh.
@@ -35,7 +26,7 @@ package unreal;
 		Returns:
 		    int32: An integer indicating the index of the collision newly created. A negative value indicates the addition failed.
 	**/
-	static public function add_simple_collisions_with_notification(static_mesh:Dynamic, shape_type:Dynamic, apply_changes:Dynamic):Int;
+	static public function add_simple_collisions_with_notification(static_mesh:unreal.StaticMesh, shape_type:unreal.ScriptingCollisionShapeType, apply_changes:Bool):Int;
 	/**
 		X.add_uv_channel(static_mesh, lod_index) -> bool
 		Adds an empty UV channel at the end of the existing channels on the given LOD of a StaticMesh.
@@ -47,7 +38,7 @@ package unreal;
 		Returns:
 		    bool: true if a UV channel was added.
 	**/
-	static public function add_uv_channel(static_mesh:Dynamic, lod_index:Dynamic):Bool;
+	static public function add_uv_channel(static_mesh:unreal.StaticMesh, lod_index:Int):Bool;
 	/**
 		X.bulk_set_convex_decomposition_collisions(static_meshes, hull_count, max_hull_verts, hull_precision) -> bool
 		Same as SetConvexDecompositionCollisionsWithNotification but changes are automatically applied.
@@ -61,7 +52,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function bulk_set_convex_decomposition_collisions(static_meshes:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic):Bool;
+	static public function bulk_set_convex_decomposition_collisions(static_meshes:Array<StaticMesh>, hull_count:Int, max_hull_verts:Int, hull_precision:Int):Bool;
 	/**
 		X.bulk_set_convex_decomposition_collisions_with_notification(static_meshes, hull_count, max_hull_verts, hull_precision, apply_changes) -> bool
 		Compute convex collisions for a set of static meshes.
@@ -78,7 +69,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the addition was successful or not.
 	**/
-	static public function bulk_set_convex_decomposition_collisions_with_notification(static_meshes:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic, apply_changes:Dynamic):Bool;
+	static public function bulk_set_convex_decomposition_collisions_with_notification(static_meshes:Array<StaticMesh>, hull_count:Int, max_hull_verts:Int, hull_precision:Int, apply_changes:Bool):Bool;
 	/**
 		X.enable_section_cast_shadow(static_mesh, cast_shadow, lod_index, section_index) -> None
 		Enables/disables mesh section shadow casting for a specific LOD.
@@ -89,7 +80,7 @@ package unreal;
 		    lod_index (int32): Index of the StaticMesh LOD.
 		    section_index (int32): Index of the StaticMesh Section.
 	**/
-	static public function enable_section_cast_shadow(static_mesh:Dynamic, cast_shadow:Dynamic, lod_index:Dynamic, section_index:Dynamic):Void;
+	static public function enable_section_cast_shadow(static_mesh:unreal.StaticMesh, cast_shadow:Bool, lod_index:Int, section_index:Int):Void;
 	/**
 		X.enable_section_collision(static_mesh, collision_enabled, lod_index, section_index) -> None
 		Enables/disables mesh section collision for a specific LOD.
@@ -100,7 +91,7 @@ package unreal;
 		    lod_index (int32): Index of the StaticMesh LOD.
 		    section_index (int32): Index of the StaticMesh Section.
 	**/
-	static public function enable_section_collision(static_mesh:Dynamic, collision_enabled:Dynamic, lod_index:Dynamic, section_index:Dynamic):Void;
+	static public function enable_section_collision(static_mesh:unreal.StaticMesh, collision_enabled:Bool, lod_index:Int, section_index:Int):Void;
 	/**
 		X.generate_box_uv_channel(static_mesh, lod_index, uv_channel_index, position, orientation, size) -> bool
 		Generates box UV mapping in the specified UV channel on the given LOD of a StaticMesh.
@@ -116,7 +107,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV mapping was generated.
 	**/
-	static public function generate_box_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic, position:Dynamic, orientation:Dynamic, size:Dynamic):Bool;
+	static public function generate_box_uv_channel(static_mesh:unreal.StaticMesh, lod_index:Int, uv_channel_index:Int, position:unreal.Vector, orientation:unreal.Rotator, size:unreal.Vector):Bool;
 	/**
 		X.generate_cylindrical_uv_channel(static_mesh, lod_index, uv_channel_index, position, orientation, tiling) -> bool
 		Generates cylindrical UV mapping in the specified UV channel on the given LOD of a StaticMesh.
@@ -132,7 +123,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV mapping was generated.
 	**/
-	static public function generate_cylindrical_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic, position:Dynamic, orientation:Dynamic, tiling:Dynamic):Bool;
+	static public function generate_cylindrical_uv_channel(static_mesh:unreal.StaticMesh, lod_index:Int, uv_channel_index:Int, position:unreal.Vector, orientation:unreal.Rotator, tiling:unreal.Vector2D):Bool;
 	/**
 		X.generate_planar_uv_channel(static_mesh, lod_index, uv_channel_index, position, orientation, tiling) -> bool
 		Generates planar UV mapping in the specified UV channel on the given LOD of a StaticMesh.
@@ -148,7 +139,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV mapping was generated.
 	**/
-	static public function generate_planar_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic, position:Dynamic, orientation:Dynamic, tiling:Dynamic):Bool;
+	static public function generate_planar_uv_channel(static_mesh:unreal.StaticMesh, lod_index:Int, uv_channel_index:Int, position:unreal.Vector, orientation:unreal.Rotator, tiling:unreal.Vector2D):Bool;
 	/**
 		X.get_collision_complexity(static_mesh) -> CollisionTraceFlag
 		Get the Collision Trace behavior of a static mesh
@@ -159,7 +150,7 @@ package unreal;
 		Returns:
 		    CollisionTraceFlag: the Collision Trace behavior.
 	**/
-	static public function get_collision_complexity(static_mesh:Dynamic):unreal.CollisionTraceFlag;
+	static public function get_collision_complexity(static_mesh:unreal.StaticMesh):unreal.CollisionTraceFlag;
 	/**
 		X.get_convex_collision_count(static_mesh) -> int32
 		Get number of convex collisions present on a static mesh.
@@ -170,7 +161,7 @@ package unreal;
 		Returns:
 		    int32: An integer representing the number of convex collisions on the input static mesh. An negative value indicates that the command could not be executed. See log for explanation.
 	**/
-	static public function get_convex_collision_count(static_mesh:Dynamic):Int;
+	static public function get_convex_collision_count(static_mesh:unreal.StaticMesh):Int;
 	/**
 		X.get_lod_build_settings(static_mesh, lod_index) -> MeshBuildSettings
 		Copy the build options with the specified LOD build settings.
@@ -184,7 +175,7 @@ package unreal;
 		
 		    out_build_options (MeshBuildSettings): The build settings where we copy the build options.
 	**/
-	static public function get_lod_build_settings(static_mesh:Dynamic, lod_index:Dynamic):unreal.MeshBuildSettings;
+	static public function get_lod_build_settings(static_mesh:unreal.StaticMesh, lod_index:Int):unreal.MeshBuildSettings;
 	/**
 		X.get_lod_count(static_mesh) -> int32
 		Get number of LODs present on a static mesh.
@@ -195,7 +186,7 @@ package unreal;
 		Returns:
 		    int32: the number of LODs present on the input mesh. An negative value indicates that the command could not be executed. See log for explanation.
 	**/
-	static public function get_lod_count(static_mesh:Dynamic):Int;
+	static public function get_lod_count(static_mesh:unreal.StaticMesh):Int;
 	/**
 		X.get_lod_reduction_settings(static_mesh, lod_index) -> MeshReductionSettings
 		Copy the reduction options with the specified LOD reduction settings.
@@ -209,7 +200,7 @@ package unreal;
 		
 		    out_reduction_options (MeshReductionSettings): The reduction settings where we copy the reduction options.
 	**/
-	static public function get_lod_reduction_settings(static_mesh:Dynamic, lod_index:Dynamic):unreal.MeshReductionSettings;
+	static public function get_lod_reduction_settings(static_mesh:unreal.StaticMesh, lod_index:Int):unreal.MeshReductionSettings;
 	/**
 		X.get_lod_screen_sizes(static_mesh) -> Array(float)
 		Get an array of LOD screen sizes for evaluation.
@@ -220,7 +211,7 @@ package unreal;
 		Returns:
 		    Array(float): array of LOD screen sizes.
 	**/
-	static public function get_lod_screen_sizes(static_mesh:Dynamic):Dynamic;
+	static public function get_lod_screen_sizes(static_mesh:unreal.StaticMesh):Array<float>;
 	/**
 		X.get_num_uv_channels(static_mesh, lod_index) -> int32
 		Returns the number of UV channels for the given LOD of a StaticMesh.
@@ -232,7 +223,7 @@ package unreal;
 		Returns:
 		    int32: the number of UV channels.
 	**/
-	static public function get_num_uv_channels(static_mesh:Dynamic, lod_index:Dynamic):Int;
+	static public function get_num_uv_channels(static_mesh:unreal.StaticMesh, lod_index:Int):Int;
 	/**
 		X.get_number_materials(static_mesh) -> int32
 		Get number of StaticMesh verts for an LOD
@@ -243,7 +234,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_number_materials(static_mesh:Dynamic):Int;
+	static public function get_number_materials(static_mesh:unreal.StaticMesh):Int;
 	/**
 		X.get_number_verts(static_mesh, lod_index) -> int32
 		Get number of StaticMesh verts for an LOD
@@ -255,7 +246,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_number_verts(static_mesh:Dynamic, lod_index:Dynamic):Int;
+	static public function get_number_verts(static_mesh:unreal.StaticMesh, lod_index:Int):Int;
 	/**
 		X.get_simple_collision_count(static_mesh) -> int32
 		Get number of simple collisions present on a static mesh.
@@ -266,7 +257,7 @@ package unreal;
 		Returns:
 		    int32: An integer representing the number of simple collisions on the input static mesh. An negative value indicates that the command could not be executed. See log for explanation.
 	**/
-	static public function get_simple_collision_count(static_mesh:Dynamic):Int;
+	static public function get_simple_collision_count(static_mesh:unreal.StaticMesh):Int;
 	/**
 		X.has_instance_vertex_colors(static_mesh_component) -> bool
 		Check whether a static mesh component has vertex colors
@@ -277,7 +268,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function has_instance_vertex_colors(static_mesh_component:Dynamic):Bool;
+	static public function has_instance_vertex_colors(static_mesh_component:unreal.StaticMeshComponent):Bool;
 	/**
 		X.has_vertex_colors(static_mesh) -> bool
 		Check whether a static mesh has vertex colors
@@ -288,7 +279,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function has_vertex_colors(static_mesh:Dynamic):Bool;
+	static public function has_vertex_colors(static_mesh:unreal.StaticMesh):Bool;
 	/**
 		X.import_lod(base_static_mesh, lod_index, source_filename) -> int32
 		Import or re-import a LOD into the specified base mesh. If the LOD do not exist it will import it and add it to the base static mesh. If the LOD already exist it will re-import the specified LOD.
@@ -301,7 +292,7 @@ package unreal;
 		Returns:
 		    int32: the index of the LOD that was imported or re-imported. Will return INDEX_NONE if anything goes bad.
 	**/
-	static public function import_lod(base_static_mesh:Dynamic, lod_index:Dynamic, source_filename:Dynamic):Int;
+	static public function import_lod(base_static_mesh:unreal.StaticMesh, lod_index:Int, source_filename:String):Int;
 	/**
 		X.insert_uv_channel(static_mesh, lod_index, uv_channel_index) -> bool
 		Inserts an empty UV channel at the specified channel index on the given LOD of a StaticMesh.
@@ -314,7 +305,7 @@ package unreal;
 		Returns:
 		    bool: true if a UV channel was added.
 	**/
-	static public function insert_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic):Bool;
+	static public function insert_uv_channel(static_mesh:unreal.StaticMesh, lod_index:Int, uv_channel_index:Int):Bool;
 	/**
 		X.is_section_collision_enabled(static_mesh, lod_index, section_index) -> bool
 		Checks if a specific LOD mesh section has collision.
@@ -327,7 +318,7 @@ package unreal;
 		Returns:
 		    bool: True is the collision is enabled for the specified LOD of the StaticMesh section.
 	**/
-	static public function is_section_collision_enabled(static_mesh:Dynamic, lod_index:Dynamic, section_index:Dynamic):Bool;
+	static public function is_section_collision_enabled(static_mesh:unreal.StaticMesh, lod_index:Int, section_index:Int):Bool;
 	/**
 		X.reimport_all_custom_lo_ds(static_mesh) -> bool
 		Re-import all the custom LODs present in the specified static mesh.
@@ -338,7 +329,7 @@ package unreal;
 		Returns:
 		    bool: true if re-import all LODs works, false otherwise see log for explanation.
 	**/
-	static public function reimport_all_custom_lo_ds(static_mesh:Dynamic):Bool;
+	static public function reimport_all_custom_lo_ds(static_mesh:unreal.StaticMesh):Bool;
 	/**
 		X.remove_collisions(static_mesh) -> bool
 		Same as RemoveCollisionsWithNotification but changes are applied.
@@ -349,7 +340,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function remove_collisions(static_mesh:Dynamic):Bool;
+	static public function remove_collisions(static_mesh:unreal.StaticMesh):Bool;
 	/**
 		X.remove_collisions_with_notification(static_mesh, apply_changes) -> bool
 		Remove collisions from a static mesh.
@@ -362,7 +353,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the removal was successful or not.
 	**/
-	static public function remove_collisions_with_notification(static_mesh:Dynamic, apply_changes:Dynamic):Bool;
+	static public function remove_collisions_with_notification(static_mesh:unreal.StaticMesh, apply_changes:Bool):Bool;
 	/**
 		X.remove_lods(static_mesh) -> bool
 		Remove LODs on a static mesh except LOD 0.
@@ -373,7 +364,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the removal was successful, true, or not.
 	**/
-	static public function remove_lods(static_mesh:Dynamic):Bool;
+	static public function remove_lods(static_mesh:unreal.StaticMesh):Bool;
 	/**
 		X.remove_uv_channel(static_mesh, lod_index, uv_channel_index) -> bool
 		Removes the UV channel at the specified channel index on the given LOD of a StaticMesh.
@@ -386,7 +377,7 @@ package unreal;
 		Returns:
 		    bool: true if the UV channel was removed.
 	**/
-	static public function remove_uv_channel(static_mesh:Dynamic, lod_index:Dynamic, uv_channel_index:Dynamic):Bool;
+	static public function remove_uv_channel(static_mesh:unreal.StaticMesh, lod_index:Int, uv_channel_index:Int):Bool;
 	/**
 		X.set_allow_cpu_access(static_mesh, allow_cpu_access) -> None
 		Sets StaticMeshFlag bAllowCPUAccess
@@ -395,7 +386,7 @@ package unreal;
 		    static_mesh (StaticMesh): 
 		    allow_cpu_access (bool):
 	**/
-	static public function set_allow_cpu_access(static_mesh:Dynamic, allow_cpu_access:Dynamic):Void;
+	static public function set_allow_cpu_access(static_mesh:unreal.StaticMesh, allow_cpu_access:Bool):Void;
 	/**
 		X.set_convex_decomposition_collisions(static_mesh, hull_count, max_hull_verts, hull_precision) -> bool
 		Same as SetConvexDecompositionCollisionsWithNotification but changes are automatically applied.
@@ -409,7 +400,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function set_convex_decomposition_collisions(static_mesh:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic):Bool;
+	static public function set_convex_decomposition_collisions(static_mesh:unreal.StaticMesh, hull_count:Int, max_hull_verts:Int, hull_precision:Int):Bool;
 	/**
 		X.set_convex_decomposition_collisions_with_notification(static_mesh, hull_count, max_hull_verts, hull_precision, apply_changes) -> bool
 		Add a convex collision to a static mesh.
@@ -426,7 +417,7 @@ package unreal;
 		Returns:
 		    bool: A boolean indicating if the addition was successful or not.
 	**/
-	static public function set_convex_decomposition_collisions_with_notification(static_mesh:Dynamic, hull_count:Dynamic, max_hull_verts:Dynamic, hull_precision:Dynamic, apply_changes:Dynamic):Bool;
+	static public function set_convex_decomposition_collisions_with_notification(static_mesh:unreal.StaticMesh, hull_count:Int, max_hull_verts:Int, hull_precision:Int, apply_changes:Bool):Bool;
 	/**
 		X.set_generate_lightmap_uv(static_mesh, generate_lightmap_u_vs) -> bool
 		Set Generate Lightmap UVs for StaticMesh
@@ -438,7 +429,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function set_generate_lightmap_uv(static_mesh:Dynamic, generate_lightmap_u_vs:Dynamic):Bool;
+	static public function set_generate_lightmap_uv(static_mesh:unreal.StaticMesh, generate_lightmap_u_vs:Bool):Bool;
 	/**
 		X.set_lod_build_settings(static_mesh, lod_index, build_options) -> None
 		Set the LOD build options for the specified LOD index.
@@ -448,7 +439,7 @@ package unreal;
 		    lod_index (int32): The LOD we will apply the build settings.
 		    build_options (MeshBuildSettings): The build settings we want to apply to the LOD.
 	**/
-	static public function set_lod_build_settings(static_mesh:Dynamic, lod_index:Dynamic, build_options:Dynamic):Void;
+	static public function set_lod_build_settings(static_mesh:unreal.StaticMesh, lod_index:Int, build_options:unreal.MeshBuildSettings):Void;
 	/**
 		X.set_lod_from_static_mesh(destination_static_mesh, destination_lod_index, source_static_mesh, source_lod_index, reuse_existing_material_slots) -> int32
 		Adds or create a LOD at DestinationLodIndex using the geometry from SourceStaticMesh SourceLodIndex
@@ -463,7 +454,7 @@ package unreal;
 		Returns:
 		    int32: The index of the LOD that was set. It can be different than DestinationLodIndex if it wasn't a valid index. A negative value indicates that the LOD was not set. See log for explanation.
 	**/
-	static public function set_lod_from_static_mesh(destination_static_mesh:Dynamic, destination_lod_index:Dynamic, source_static_mesh:Dynamic, source_lod_index:Dynamic, reuse_existing_material_slots:Dynamic):Int;
+	static public function set_lod_from_static_mesh(destination_static_mesh:unreal.StaticMesh, destination_lod_index:Int, source_static_mesh:unreal.StaticMesh, source_lod_index:Int, reuse_existing_material_slots:Bool):Int;
 	/**
 		X.set_lod_reduction_settings(static_mesh, lod_index, reduction_options) -> None
 		Set the LOD reduction for the specified LOD index.
@@ -473,7 +464,7 @@ package unreal;
 		    lod_index (int32): The LOD we will apply the reduction settings.
 		    reduction_options (MeshReductionSettings): The reduction settings we want to apply to the LOD.
 	**/
-	static public function set_lod_reduction_settings(static_mesh:Dynamic, lod_index:Dynamic, reduction_options:Dynamic):Void;
+	static public function set_lod_reduction_settings(static_mesh:unreal.StaticMesh, lod_index:Int, reduction_options:unreal.MeshReductionSettings):Void;
 	/**
 		X.set_lods(static_mesh, reduction_options) -> int32
 		Same as SetLodsWithNotification but changes are applied.
@@ -485,7 +476,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function set_lods(static_mesh:Dynamic, reduction_options:Dynamic):Int;
+	static public function set_lods(static_mesh:unreal.StaticMesh, reduction_options:unreal.EditorScriptingMeshReductionOptions):Int;
 	/**
 		X.set_lods_with_notification(static_mesh, reduction_options, apply_changes) -> int32
 		Remove then add LODs on a static mesh.
@@ -501,5 +492,5 @@ package unreal;
 		Returns:
 		    int32: the number of LODs generated on the input mesh. An negative value indicates that the reduction could not be performed. See log for explanation. No action will be performed if ReductionOptions.ReductionSettings is empty
 	**/
-	static public function set_lods_with_notification(static_mesh:Dynamic, reduction_options:Dynamic, apply_changes:Dynamic):Int;
+	static public function set_lods_with_notification(static_mesh:unreal.StaticMesh, reduction_options:unreal.EditorScriptingMeshReductionOptions, apply_changes:Bool):Int;
 }

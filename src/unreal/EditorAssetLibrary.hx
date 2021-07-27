@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorAssetLibrary") extern class EditorAssetLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.checkout_asset(asset_to_checkout) -> bool
 		Checkout the asset from the Content Browser.
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function checkout_asset(asset_to_checkout:Dynamic):Bool;
+	static public function checkout_asset(asset_to_checkout:String):Bool;
 	/**
 		X.checkout_directory(directory_path, recursive=True) -> bool
 		Checkout assets from the Content Browser. It will load the assets if needed.
@@ -33,7 +24,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function checkout_directory(directory_path:Dynamic, recursive:Dynamic):Bool;
+	static public function checkout_directory(directory_path:String, recursive:Bool = true):Bool;
 	/**
 		X.checkout_loaded_asset(asset_to_checkout) -> bool
 		Checkout the asset from the Content Browser.
@@ -44,7 +35,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function checkout_loaded_asset(asset_to_checkout:Dynamic):Bool;
+	static public function checkout_loaded_asset(asset_to_checkout:unreal.Object):Bool;
 	/**
 		X.checkout_loaded_assets(assets_to_checkout) -> bool
 		Checkout the assets from the Content Browser.
@@ -55,7 +46,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function checkout_loaded_assets(assets_to_checkout:Dynamic):Bool;
+	static public function checkout_loaded_assets(assets_to_checkout:Array<Object>):Bool;
 	/**
 		X.consolidate_assets(asset_to_consolidate_to, assets_to_consolidate) -> bool
 		Consolidates an asset by replacing all references/uses of the provided AssetsToConsolidate with references to AssetToConsolidateTo.
@@ -72,7 +63,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function consolidate_assets(asset_to_consolidate_to:Dynamic, assets_to_consolidate:Dynamic):Bool;
+	static public function consolidate_assets(asset_to_consolidate_to:unreal.Object, assets_to_consolidate:Array<Object>):Bool;
 	/**
 		X.delete_asset(asset_path_to_delete) -> bool
 		Delete the package the assets live in. All objects that live in the package will be deleted.
@@ -86,7 +77,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function delete_asset(asset_path_to_delete:Dynamic):Bool;
+	static public function delete_asset(asset_path_to_delete:String):Bool;
 	/**
 		X.delete_directory(directory_path) -> bool
 		Delete the packages inside a directory. If the directory is then empty, delete the directory.
@@ -101,7 +92,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function delete_directory(directory_path:Dynamic):Bool;
+	static public function delete_directory(directory_path:String):Bool;
 	/**
 		X.delete_loaded_asset(asset_to_delete) -> bool
 		Delete an asset from the Content Browser that is already loaded.
@@ -115,7 +106,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function delete_loaded_asset(asset_to_delete:Dynamic):Bool;
+	static public function delete_loaded_asset(asset_to_delete:unreal.Object):Bool;
 	/**
 		X.delete_loaded_assets(assets_to_delete) -> bool
 		Delete assets from the Content Browser that are already loaded.
@@ -129,7 +120,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function delete_loaded_assets(assets_to_delete:Dynamic):Bool;
+	static public function delete_loaded_assets(assets_to_delete:Array<Object>):Bool;
 	/**
 		X.do_assets_exist(asset_paths) -> bool
 		Check if the assets exist in the Content Browser.
@@ -140,7 +131,7 @@ package unreal;
 		Returns:
 		    bool: True if they exist and it is valid.
 	**/
-	static public function do_assets_exist(asset_paths:Dynamic):Bool;
+	static public function do_assets_exist(asset_paths:Array<str>):Bool;
 	/**
 		X.does_asset_exist(asset_path) -> bool
 		Check if the asset exists in the Content Browser.
@@ -151,7 +142,7 @@ package unreal;
 		Returns:
 		    bool: True if it does exist and it is valid.
 	**/
-	static public function does_asset_exist(asset_path:Dynamic):Bool;
+	static public function does_asset_exist(asset_path:String):Bool;
 	/**
 		X.does_directory_exist(directory_path) -> bool
 		Check is the directory exist in the Content Browser.
@@ -162,7 +153,7 @@ package unreal;
 		Returns:
 		    bool: True if it does exist and it is valid.
 	**/
-	static public function does_directory_exist(directory_path:Dynamic):Bool;
+	static public function does_directory_exist(directory_path:String):Bool;
 	/**
 		X.does_directory_have_assets(directory_path, recursive=True) -> bool
 		Check if there any asset that exist in the directory.
@@ -174,7 +165,7 @@ package unreal;
 		Returns:
 		    bool: True if there is any assets.
 	**/
-	static public function does_directory_have_assets(directory_path:Dynamic, recursive:Dynamic):Bool;
+	static public function does_directory_have_assets(directory_path:String, recursive:Bool = true):Bool;
 	/**
 		X.duplicate_asset(source_asset_path, destination_asset_path) -> Object
 		Duplicate an asset from the Content Browser. Will try to checkout the file. The Asset will be loaded before being duplicated.
@@ -186,7 +177,7 @@ package unreal;
 		Returns:
 		    Object: The duplicated object if the operation succeeds.
 	**/
-	static public function duplicate_asset(source_asset_path:Dynamic, destination_asset_path:Dynamic):unreal.Object;
+	static public function duplicate_asset(source_asset_path:String, destination_asset_path:String):unreal.Object;
 	/**
 		X.duplicate_directory(source_directory_path, destination_directory_path) -> bool
 		Duplicate asset from the Content Browser that are in the folder.
@@ -199,7 +190,7 @@ package unreal;
 		Returns:
 		    bool: The duplicated object if the operation succeeds.
 	**/
-	static public function duplicate_directory(source_directory_path:Dynamic, destination_directory_path:Dynamic):Bool;
+	static public function duplicate_directory(source_directory_path:String, destination_directory_path:String):Bool;
 	/**
 		X.duplicate_loaded_asset(source_asset, destination_asset_path) -> Object
 		Duplicate an asset from the Content Browser that is already loaded. Will try to checkout the file.
@@ -211,7 +202,7 @@ package unreal;
 		Returns:
 		    Object: The duplicated object if the operation succeeds
 	**/
-	static public function duplicate_loaded_asset(source_asset:Dynamic, destination_asset_path:Dynamic):unreal.Object;
+	static public function duplicate_loaded_asset(source_asset:unreal.Object, destination_asset_path:String):unreal.Object;
 	/**
 		X.find_asset_data(asset_path) -> AssetData
 		Return the AssetData for the Asset that can then be used with the more complex lib AssetRegistryHelpers.
@@ -222,7 +213,7 @@ package unreal;
 		Returns:
 		    AssetData: The AssetData found.
 	**/
-	static public function find_asset_data(asset_path:Dynamic):unreal.AssetData;
+	static public function find_asset_data(asset_path:String):unreal.AssetData;
 	/**
 		X.find_package_referencers_for_asset(asset_path, load_assets_to_confirm=False) -> Array(str)
 		Find Package Referencers for an asset. Only Soft and Hard dependencies would be looked for.
@@ -238,7 +229,7 @@ package unreal;
 		Returns:
 		    Array(str): The package path of the referencers.
 	**/
-	static public function find_package_referencers_for_asset(asset_path:Dynamic, load_assets_to_confirm:Dynamic):Dynamic;
+	static public function find_package_referencers_for_asset(asset_path:String, load_assets_to_confirm:Bool = false):Array<str>;
 	/**
 		X.get_metadata_tag(object, tag) -> str
 		Get the value associated with the given tag of a loaded asset's metadata.
@@ -250,7 +241,7 @@ package unreal;
 		Returns:
 		    str: The string value associated with the tag.
 	**/
-	static public function get_metadata_tag(object:Dynamic, tag:Dynamic):String;
+	static public function get_metadata_tag(object:unreal.Object, tag:unreal.Name):String;
 	/**
 		X.get_metadata_tag_values(object) -> Map(Name, str)
 		Get all tags/values of a loaded asset's metadata.
@@ -261,7 +252,7 @@ package unreal;
 		Returns:
 		    Map(Name, str): The list of all Tags and Values.
 	**/
-	static public function get_metadata_tag_values(object:Dynamic):Dynamic;
+	static public function get_metadata_tag_values(object:unreal.Object):Dynamic;
 	/**
 		X.get_path_name_for_loaded_asset(loaded_asset) -> str
 		Return a valid AssetPath for a loaded asset. The asset need to be a valid asset in the Content Browser.
@@ -273,7 +264,7 @@ package unreal;
 		Returns:
 		    str: If valid, the asset Path of the loaded asset.
 	**/
-	static public function get_path_name_for_loaded_asset(loaded_asset:Dynamic):String;
+	static public function get_path_name_for_loaded_asset(loaded_asset:unreal.Object):String;
 	/**
 		X.get_tag_values(asset_path) -> Map(Name, str)
 		Gets all TagValues (from Asset Registry) associated with an (unloaded) asset as strings value.
@@ -284,7 +275,7 @@ package unreal;
 		Returns:
 		    Map(Name, str): The list of all TagName & TagValue.
 	**/
-	static public function get_tag_values(asset_path:Dynamic):Dynamic;
+	static public function get_tag_values(asset_path:String):Dynamic;
 	/**
 		X.list_asset_by_tag_value(tag_name, tag_value) -> Array(str)
 		Return the list of all the assets that have the pair of Tag/Value.
@@ -296,7 +287,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of asset found.
 	**/
-	static public function list_asset_by_tag_value(tag_name:Dynamic, tag_value:Dynamic):Dynamic;
+	static public function list_asset_by_tag_value(tag_name:unreal.Name, tag_value:String):Array<str>;
 	/**
 		X.list_assets(directory_path, recursive=True, include_folder=False) -> Array(str)
 		Return the list of all the assets found in the DirectoryPath.
@@ -309,7 +300,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of asset found.
 	**/
-	static public function list_assets(directory_path:Dynamic, recursive:Dynamic, include_folder:Dynamic):Dynamic;
+	static public function list_assets(directory_path:String, recursive:Bool = true, include_folder:Bool = false):Array<str>;
 	/**
 		X.load_asset(asset_path) -> Object
 		Load an asset from the Content Browser. It will verify if the object is already loaded and only load it if it's necessary.
@@ -320,7 +311,7 @@ package unreal;
 		Returns:
 		    Object: Found or loaded asset.
 	**/
-	static public function load_asset(asset_path:Dynamic):unreal.Object;
+	static public function load_asset(asset_path:String):unreal.Object;
 	/**
 		X.load_blueprint_class(asset_path) -> type(Class)
 		Load a Blueprint asset from the Content Browser and return its generated class. It will verify if the object is already loaded and only load it if it's necessary.
@@ -331,7 +322,7 @@ package unreal;
 		Returns:
 		    type(Class): Found or loaded class.
 	**/
-	static public function load_blueprint_class(asset_path:Dynamic):Dynamic;
+	static public function load_blueprint_class(asset_path:String):Class<Dynamic>;
 	/**
 		X.make_directory(directory_path) -> bool
 		Create the directory on disk and in the Content Browser.
@@ -342,7 +333,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function make_directory(directory_path:Dynamic):Bool;
+	static public function make_directory(directory_path:String):Bool;
 	/**
 		X.remove_metadata_tag(object, tag) -> None
 		Remove the given tag from a loaded asset's metadata.
@@ -351,7 +342,7 @@ package unreal;
 		    object (Object): The object from which to retrieve the metadata.
 		    tag (Name): The tag to remove from the metadata.
 	**/
-	static public function remove_metadata_tag(object:Dynamic, tag:Dynamic):Void;
+	static public function remove_metadata_tag(object:unreal.Object, tag:unreal.Name):Void;
 	/**
 		X.rename_asset(source_asset_path, destination_asset_path) -> bool
 		Rename an asset from the Content Browser. Equivalent to a Move operation.
@@ -364,7 +355,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function rename_asset(source_asset_path:Dynamic, destination_asset_path:Dynamic):Bool;
+	static public function rename_asset(source_asset_path:String, destination_asset_path:String):Bool;
 	/**
 		X.rename_directory(source_directory_path, destination_directory_path) -> bool
 		Rename assets from the Content Browser that are in the folder.
@@ -377,7 +368,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function rename_directory(source_directory_path:Dynamic, destination_directory_path:Dynamic):Bool;
+	static public function rename_directory(source_directory_path:String, destination_directory_path:String):Bool;
 	/**
 		X.rename_loaded_asset(source_asset, destination_asset_path) -> bool
 		Rename an asset from the Content Browser that is already loaded.
@@ -390,7 +381,7 @@ package unreal;
 		Returns:
 		    bool: The if the operation succeeds.
 	**/
-	static public function rename_loaded_asset(source_asset:Dynamic, destination_asset_path:Dynamic):Bool;
+	static public function rename_loaded_asset(source_asset:unreal.Object, destination_asset_path:String):Bool;
 	/**
 		X.save_asset(asset_to_save, only_if_is_dirty=True) -> bool
 		Save the packages the assets live in. All objects that live in the package will be saved.
@@ -403,7 +394,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function save_asset(asset_to_save:Dynamic, only_if_is_dirty:Dynamic):Bool;
+	static public function save_asset(asset_to_save:String, only_if_is_dirty:Bool = true):Bool;
 	/**
 		X.save_directory(directory_path, only_if_is_dirty=True, recursive=True) -> bool
 		Save the packages the assets live in inside the directory. All objects that are in the directory will be saved.
@@ -417,7 +408,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function save_directory(directory_path:Dynamic, only_if_is_dirty:Dynamic, recursive:Dynamic):Bool;
+	static public function save_directory(directory_path:String, only_if_is_dirty:Bool = true, recursive:Bool = true):Bool;
 	/**
 		X.save_loaded_asset(asset_to_save, only_if_is_dirty=True) -> bool
 		Save the packages the assets live in. All objects that live in the package will be saved. Will try to checkout the file.
@@ -429,7 +420,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function save_loaded_asset(asset_to_save:Dynamic, only_if_is_dirty:Dynamic):Bool;
+	static public function save_loaded_asset(asset_to_save:unreal.Object, only_if_is_dirty:Bool = true):Bool;
 	/**
 		X.save_loaded_assets(assets_to_save, only_if_is_dirty=True) -> bool
 		Save the packages the assets live in. All objects that live in the package will be saved. Will try to checkout the files.
@@ -441,7 +432,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds.
 	**/
-	static public function save_loaded_assets(assets_to_save:Dynamic, only_if_is_dirty:Dynamic):Bool;
+	static public function save_loaded_assets(assets_to_save:Array<Object>, only_if_is_dirty:Bool = true):Bool;
 	/**
 		X.set_metadata_tag(object, tag, value) -> None
 		Set the value associated with a given tag of a loaded asset's metadata.
@@ -451,7 +442,7 @@ package unreal;
 		    tag (Name): The tag to set in the metadata.
 		    value (str): The string value to associate with the tag.
 	**/
-	static public function set_metadata_tag(object:Dynamic, tag:Dynamic, value:Dynamic):Void;
+	static public function set_metadata_tag(object:unreal.Object, tag:unreal.Name, value:String):Void;
 	/**
 		X.sync_browser_to_objects(asset_paths) -> None
 		Sync the Content Browser to the given asset(s)
@@ -459,5 +450,5 @@ package unreal;
 		Args:
 		    asset_paths (Array(str)): The list of asset paths to sync to in the Content Browser
 	**/
-	static public function sync_browser_to_objects(asset_paths:Dynamic):Void;
+	static public function sync_browser_to_objects(asset_paths:Array<str>):Void;
 }
