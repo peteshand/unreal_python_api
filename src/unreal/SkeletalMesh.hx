@@ -59,7 +59,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of morph targets
 	**/
-	public function get_all_morph_target_names():Array<str>;
+	public function get_all_morph_target_names():Array<String>;
 	/**
 		x.get_bounds() -> BoxSphereBounds
 		Get the extended bounds of this mesh (imported bounds plus bounds extension)
@@ -190,7 +190,7 @@ package unreal;
 		Returns:
 		    bool: true if the successfully remove all the LODs. False otherwise, but evedn if it return false it will have removed all valid LODs.
 	**/
-	public function remove_lo_ds(to_remove_lo_ds:Array<int32>):Bool;
+	public function remove_lo_ds(to_remove_lo_ds:Array<Int>):Bool;
 	/**
 		x.rename_socket(old_name, new_name) -> bool
 		Rename a socket within a skeleton

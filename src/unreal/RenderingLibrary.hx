@@ -146,7 +146,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	static public function import_buffer_as_texture2d(world_context_object:unreal.Object, buffer:Array<uint8>):unreal.Texture2D;
+	static public function import_buffer_as_texture2d(world_context_object:unreal.Object, buffer:Array<UInt>):unreal.Texture2D;
 	/**
 		X.import_file_as_texture2d(world_context_object, filename) -> Texture2D
 		Imports a texture file from disk and creates Texture2D from it.

@@ -18,7 +18,7 @@ package unreal;
 		Returns:
 		    Array(uint8):
 	**/
-	public function get_candidate_object_data():Array<uint8>;
+	public function get_candidate_object_data():Array<UInt>;
 	/**
 		x.get_friendly_name() -> str
 		
@@ -43,7 +43,7 @@ package unreal;
 		Args:
 		    candidate_object (Array(uint8)):
 	**/
-	public function set_candidate_object_data(candidate_object:Array<uint8>):Void;
+	public function set_candidate_object_data(candidate_object:Array<UInt>):Void;
 	/**
 		x.set_friendly_name(new_name) -> None
 		Set Friendly Name

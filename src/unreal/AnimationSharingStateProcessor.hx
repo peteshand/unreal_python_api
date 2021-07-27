@@ -25,5 +25,5 @@ package unreal;
 		
 		    should_process (bool):
 	**/
-	public function process_actor_state(actor:unreal.Actor, current_state:Dynamic, on_demand_state:Dynamic):python.Tuple<Dynamic>;
+	public function process_actor_state(actor:unreal.Actor, current_state:UInt, on_demand_state:UInt):python.Tuple<Dynamic>;
 }

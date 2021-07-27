@@ -15,7 +15,7 @@ package unreal;
 		
 		    out_proxies (Array(str)): Will contain the names of available proxy directories, if any.
 	**/
-	public function get_proxies():Array<str>;
+	public function get_proxies():Array<String>;
 	/**
 		x.get_sequence_path() -> str
 		Get the path to the image sequence directory to be played.

@@ -58,7 +58,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Only] [PhysX Only] This physics body's solver iteration count for position. Increasing this will be more CPU intensive, but better stabilized.
 	**/
-	public var position_solver_iteration_count : Dynamic;
+	public var position_solver_iteration_count : UInt;
 	/**
 		(SleepFamily):  [Read-Write] The set of values used in considering when put this body to sleep.
 	**/
@@ -74,7 +74,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Only] [PhysX Only] This physics body's solver iteration count for velocity. Increasing this will be more CPU intensive, but better stabilized.
 	**/
-	public var velocity_solver_iteration_count : Dynamic;
+	public var velocity_solver_iteration_count : UInt;
 	/**
 		(WalkableSlopeOverride):  [Read-Only] Custom walkable slope override setting for this instance.
 		GetWalkableSlopeOverride(), SetWalkableSlopeOverride():

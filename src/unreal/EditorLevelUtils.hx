@@ -100,5 +100,5 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	static public function set_levels_visibility(levels:Array<Level>, should_be_visible:Array<bool>, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode = LevelVisibilityDirtyMode.MODIFY_ON_CHANGE):Void;
+	static public function set_levels_visibility(levels:Array<Level>, should_be_visible:Array<Bool>, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode = LevelVisibilityDirtyMode.MODIFY_ON_CHANGE):Void;
 }

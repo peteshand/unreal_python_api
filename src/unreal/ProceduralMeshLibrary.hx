@@ -18,7 +18,7 @@ package unreal;
 		
 		    tangents (Array(ProcMeshTangent)):
 	**/
-	static public function calculate_tangents_for_mesh(vertices:Array<Vector>, triangles:Array<int32>, u_vs:Array<Vector2D>):python.Tuple<Dynamic>;
+	static public function calculate_tangents_for_mesh(vertices:Array<Vector>, triangles:Array<Int>, u_vs:Array<Vector2D>):python.Tuple<Dynamic>;
 	/**
 		X.convert_quad_to_triangles(triangles, vert0, vert1, vert2, vert3) -> Array(int32)
 		Add a quad, specified by four indices, to a triangle index buffer as two triangles.
@@ -35,7 +35,7 @@ package unreal;
 		
 		    triangles (Array(int32)):
 	**/
-	static public function convert_quad_to_triangles(triangles:Array<int32>, vert0:Int, vert1:Int, vert2:Int, vert3:Int):Array<int32>;
+	static public function convert_quad_to_triangles(triangles:Array<Int>, vert0:Int, vert1:Int, vert2:Int, vert3:Int):Array<Int>;
 	/**
 		X.copy_procedural_mesh_from_static_mesh_component(static_mesh_component, lod_index, proc_mesh_component, create_collision) -> None
 		Copy materials from StaticMeshComponent to ProceduralMeshComponent.
@@ -87,7 +87,7 @@ package unreal;
 		
 		    triangles (Array(int32)):
 	**/
-	static public function create_grid_mesh_triangles(num_x:Int, num_y:Int, winding:Bool):Array<int32>;
+	static public function create_grid_mesh_triangles(num_x:Int, num_y:Int, winding:Bool):Array<Int>;
 	/**
 		X.create_grid_mesh_welded(num_x, num_y, grid_spacing=16.000000) -> (triangles=Array(int32), vertices=Array(Vector), u_vs=Array(Vector2D))
 		Generate a vertex buffer, index buffer and UVs for a tessellated grid mesh.

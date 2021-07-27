@@ -24,7 +24,7 @@ package unreal;
 		
 		    out_path_list (Array(str)):
 	**/
-	public function get_all_cached_paths():Array<str>;
+	public function get_all_cached_paths():Array<String>;
 	/**
 		x.get_asset_by_object_path(object_path, include_only_on_disk_assets=False) -> AssetData
 		Gets the asset data for the specified object path
@@ -136,7 +136,7 @@ package unreal;
 		
 		    out_path_list (Array(str)):
 	**/
-	public function get_sub_paths(base_path:String, recurse:Bool):Array<str>;
+	public function get_sub_paths(base_path:String, recurse:Bool):Array<String>;
 	/**
 		x.has_assets(package_path, recursive=False) -> bool
 		Does the given path contain assets, optionally also testing sub-paths?
@@ -187,7 +187,7 @@ package unreal;
 		    file_paths (Array(str)): 
 		    force_rescan (bool):
 	**/
-	public function scan_files_synchronous(file_paths:Array<str>, force_rescan:Bool = false):Void;
+	public function scan_files_synchronous(file_paths:Array<String>, force_rescan:Bool = false):Void;
 	/**
 		x.scan_modified_asset_files(file_paths) -> None
 		Forces a rescan of specific filenames, call this when you need to refresh from disk
@@ -195,7 +195,7 @@ package unreal;
 		Args:
 		    file_paths (Array(str)):
 	**/
-	public function scan_modified_asset_files(file_paths:Array<str>):Void;
+	public function scan_modified_asset_files(file_paths:Array<String>):Void;
 	/**
 		x.scan_paths_synchronous(paths, force_rescan=False) -> None
 		Scan the supplied paths recursively right now and populate the asset registry. If bForceRescan is true, the paths will be scanned again, even if they were previously scanned
@@ -204,7 +204,7 @@ package unreal;
 		    paths (Array(str)): 
 		    force_rescan (bool):
 	**/
-	public function scan_paths_synchronous(paths:Array<str>, force_rescan:Bool = false):Void;
+	public function scan_paths_synchronous(paths:Array<String>, force_rescan:Bool = false):Void;
 	/**
 		x.search_all_assets(synchronous_search) -> None
 		Look for all assets on disk (can be async or synchronous)

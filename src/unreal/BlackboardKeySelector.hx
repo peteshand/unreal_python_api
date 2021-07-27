@@ -13,7 +13,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] ID of selected key
 	**/
-	public var selected_key_id : Dynamic;
+	public var selected_key_id : UInt;
 	/**
 		(Name):  [Read-Write] name of selected key
 	**/

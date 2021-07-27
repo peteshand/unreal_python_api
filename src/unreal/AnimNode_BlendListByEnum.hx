@@ -4,5 +4,5 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] The currently selected pose (as an enum value)
 	**/
-	public var active_enum_value : Dynamic;
+	public var active_enum_value : UInt;
 }

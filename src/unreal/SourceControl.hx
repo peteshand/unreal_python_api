@@ -28,7 +28,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_in_files(files:Array<str>, description:String, silent:Bool = false):Bool;
+	static public function check_in_files(files:Array<String>, description:String, silent:Bool = false):Bool;
 	/**
 		X.check_out_file(file, silent=False) -> bool
 		Use currently set source control provider to check out a file.
@@ -54,7 +54,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_out_files(files:Array<str>, silent:Bool = false):Bool;
+	static public function check_out_files(files:Array<String>, silent:Bool = false):Bool;
 	/**
 		X.check_out_or_add_file(file, silent=False) -> bool
 		Use currently set source control provider to check out file or mark it for add.
@@ -155,7 +155,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function mark_files_for_add(files:Array<str>, silent:Bool = false):Bool;
+	static public function mark_files_for_add(files:Array<String>, silent:Bool = false):Bool;
 	/**
 		X.query_file_state(file, silent=False) -> SourceControlState
 		Use currently set source control provider to query a file's source control state.
@@ -194,7 +194,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function revert_files(files:Array<str>, silent:Bool = false):Bool;
+	static public function revert_files(files:Array<String>, silent:Bool = false):Bool;
 	/**
 		X.revert_unchanged_file(file, silent=False) -> bool
 		Use currently set source control provider to revert a file provided no changes have been made.
@@ -220,7 +220,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function revert_unchanged_files(files:Array<str>, silent:Bool = false):Bool;
+	static public function revert_unchanged_files(files:Array<String>, silent:Bool = false):Bool;
 	/**
 		X.sync_file(file, silent=False) -> bool
 		Use currently set source control provider to sync a file or directory to the head revision.
@@ -246,5 +246,5 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function sync_files(files:Array<str>, silent:Bool = false):Bool;
+	static public function sync_files(files:Array<String>, silent:Bool = false):Bool;
 }

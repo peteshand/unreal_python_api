@@ -81,7 +81,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function combine(paths:Array<str>):String;
+	static public function combine(paths:Array<String>):String;
 	/**
 		X.convert_from_sandbox_path(path, sandbox_name) -> str
 		Converts a sandbox (in Saved/Sandboxes) path to a normal path.
@@ -340,7 +340,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_editor_localization_paths():Array<str>;
+	static public function get_editor_localization_paths():Array<String>;
 	/**
 		X.get_engine_localization_paths() -> Array(str)
 		Returns a list of engine-specific localization paths
@@ -348,7 +348,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_engine_localization_paths():Array<str>;
+	static public function get_engine_localization_paths():Array<String>;
 	/**
 		X.get_extension(path, include_dot=False) -> str
 		Gets the extension for this filename.
@@ -368,7 +368,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_game_localization_paths():Array<str>;
+	static public function get_game_localization_paths():Array<String>;
 	/**
 		X.get_invalid_file_system_chars() -> str
 		Returns a string containing all invalid characters as dictated by the operating system
@@ -403,7 +403,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_property_name_localization_paths():Array<str>;
+	static public function get_property_name_localization_paths():Array<String>;
 	/**
 		X.get_relative_path_to_root() -> str
 		Gets the relative path to get from BaseDir to RootDirectory
@@ -419,7 +419,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_restricted_folder_names():Array<str>;
+	static public function get_restricted_folder_names():Array<String>;
 	/**
 		X.get_tool_tip_localization_paths() -> Array(str)
 		Returns a list of tool tip localization paths
@@ -427,7 +427,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_tool_tip_localization_paths():Array<str>;
+	static public function get_tool_tip_localization_paths():Array<String>;
 	/**
 		X.has_project_persistent_download_dir() -> bool
 		* Returns true if a writable directory for downloaded data that persists across play sessions is available

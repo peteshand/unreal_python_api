@@ -8,7 +8,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] Captured byte property
 	**/
-	public var captured_byte_property : Dynamic;
+	public var captured_byte_property : UInt;
 	/**
 		(Color):  [Read-Write] Captured FColor property
 	**/

@@ -12,7 +12,7 @@ package unreal;
 		Returns:
 		    Array(bool):
 	**/
-	static public function get_niagara_array_bool(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name):Array<bool>;
+	static public function get_niagara_array_bool(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name):Array<Bool>;
 	/**
 		X.get_niagara_array_color(niagara_system, override_name) -> Array(LinearColor)
 		Gets a copy of Niagara FLinearColor Data.
@@ -36,7 +36,7 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	static public function get_niagara_array_float(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name):Array<float>;
+	static public function get_niagara_array_float(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name):Array<Float>;
 	/**
 		X.get_niagara_array_int32(niagara_system, override_name) -> Array(int32)
 		Gets a copy of Niagara Int32 Data.
@@ -48,7 +48,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	static public function get_niagara_array_int32(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name):Array<int32>;
+	static public function get_niagara_array_int32(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name):Array<Int>;
 	/**
 		X.get_niagara_array_quat(niagara_system, override_name) -> Array(Quat)
 		Gets a copy of Niagara FQuat Data.
@@ -106,7 +106,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(bool)):
 	**/
-	static public function set_niagara_array_bool(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name, array_data:Array<bool>):Void;
+	static public function set_niagara_array_bool(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name, array_data:Array<Bool>):Void;
 	/**
 		X.set_niagara_array_color(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FLinearColor Data.
@@ -126,7 +126,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(float)):
 	**/
-	static public function set_niagara_array_float(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name, array_data:Array<float>):Void;
+	static public function set_niagara_array_float(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name, array_data:Array<Float>):Void;
 	/**
 		X.set_niagara_array_int32(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array Int32 Data.
@@ -136,7 +136,7 @@ package unreal;
 		    override_name (Name): 
 		    array_data (Array(int32)):
 	**/
-	static public function set_niagara_array_int32(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name, array_data:Array<int32>):Void;
+	static public function set_niagara_array_int32(niagara_system:unreal.NiagaraComponent, override_name:unreal.Name, array_data:Array<Int>):Void;
 	/**
 		X.set_niagara_array_quat(niagara_system, override_name, array_data) -> None
 		Sets Niagara Array FQuat Data.

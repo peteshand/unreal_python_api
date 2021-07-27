@@ -22,7 +22,7 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	public function get_key_frame_values_for_table(table_index:Float):Array<float>;
+	public function get_key_frame_values_for_table(table_index:Float):Array<Float>;
 	/**
 		x.get_max_table_index() -> int32
 		Get the number of curves in the wave table. (returns -1 if there is no asset)

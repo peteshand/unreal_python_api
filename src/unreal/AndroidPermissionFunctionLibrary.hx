@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    AndroidPermissionCallbackProxy:
 	**/
-	static public function acquire_permissions(permissions:Array<str>):unreal.AndroidPermissionCallbackProxy;
+	static public function acquire_permissions(permissions:Array<String>):unreal.AndroidPermissionCallbackProxy;
 	/**
 		X.check_permission(permission) -> bool
 		check if the permission is already granted

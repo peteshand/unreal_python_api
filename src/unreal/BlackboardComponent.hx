@@ -67,7 +67,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	public function get_value_as_enum(key_name:unreal.Name):Dynamic;
+	public function get_value_as_enum(key_name:unreal.Name):UInt;
 	/**
 		x.get_value_as_float(key_name) -> float
 		Get Value as Float
@@ -182,7 +182,7 @@ package unreal;
 		    key_name (Name): 
 		    enum_value (uint8):
 	**/
-	public function set_value_as_enum(key_name:unreal.Name, enum_value:Dynamic):Void;
+	public function set_value_as_enum(key_name:unreal.Name, enum_value:UInt):Void;
 	/**
 		x.set_value_as_float(key_name, float_value) -> None
 		Set Value as Float

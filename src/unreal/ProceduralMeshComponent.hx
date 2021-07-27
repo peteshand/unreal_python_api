@@ -44,7 +44,7 @@ package unreal;
 		    create_collision (bool): Indicates whether collision should be created for this section. This adds significant cost.
 	**/
 	@:deprecated
-	public function create_mesh_section(section_index:Int, vertices:Array<Vector>, triangles:Array<int32>, normals:Array<Vector>, uv0:Array<Vector2D>, vertex_colors:Array<Color>, tangents:Array<ProcMeshTangent>, create_collision:Bool):Void;
+	public function create_mesh_section(section_index:Int, vertices:Array<Vector>, triangles:Array<Int>, normals:Array<Vector>, uv0:Array<Vector2D>, vertex_colors:Array<Color>, tangents:Array<ProcMeshTangent>, create_collision:Bool):Void;
 	/**
 		x.create_mesh_section_linear_color(section_index, vertices, triangles, normals, uv0, uv1, uv2, uv3, vertex_colors, tangents, create_collision) -> None
 		Create/replace a section for this procedural mesh component.
@@ -62,7 +62,7 @@ package unreal;
 		    tangents (Array(ProcMeshTangent)): Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
 		    create_collision (bool): Indicates whether collision should be created for this section. This adds significant cost.
 	**/
-	public function create_mesh_section_linear_color(section_index:Int, vertices:Array<Vector>, triangles:Array<int32>, normals:Array<Vector>, uv0:Array<Vector2D>, uv1:Array<Vector2D>, uv2:Array<Vector2D>, uv3:Array<Vector2D>, vertex_colors:Array<LinearColor>, tangents:Array<ProcMeshTangent>, create_collision:Bool):Void;
+	public function create_mesh_section_linear_color(section_index:Int, vertices:Array<Vector>, triangles:Array<Int>, normals:Array<Vector>, uv0:Array<Vector2D>, uv1:Array<Vector2D>, uv2:Array<Vector2D>, uv3:Array<Vector2D>, vertex_colors:Array<LinearColor>, tangents:Array<ProcMeshTangent>, create_collision:Bool):Void;
 	/**
 		x.get_num_sections() -> int32
 		Returns number of sections currently created for this component

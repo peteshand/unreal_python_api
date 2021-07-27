@@ -91,7 +91,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_data_table_column_as_string(data_table:unreal.DataTable, property_name:unreal.Name):Array<str>;
+	static public function get_data_table_column_as_string(data_table:unreal.DataTable, property_name:unreal.Name):Array<String>;
 	/**
 		X.get_data_table_row_names(table) -> Array(Name)
 		Get Data Table Row Names

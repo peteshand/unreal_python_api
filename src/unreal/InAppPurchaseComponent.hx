@@ -40,7 +40,7 @@ package unreal;
 		Returns:
 		    bool: False if an items details query is already running, true otherwise.
 	**/
-	public function try_get_items_details_async(item_i_ds:Array<str>):Bool;
+	public function try_get_items_details_async(item_i_ds:Array<String>):Bool;
 	/**
 		x.try_get_purchase_history_async(num_pages) -> bool
 		Attempts to retrieve the app's purchase history.

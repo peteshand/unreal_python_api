@@ -1381,7 +1381,7 @@ package unreal;
 		Returns:
 		    Array(str): An array of language IDs ordered from most preferred to least
 	**/
-	static public function get_preferred_languages():Array<str>;
+	static public function get_preferred_languages():Array<String>;
 	/**
 		X.get_primary_asset_id_from_class(class_) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Class, this can return an invalid one if not registered
@@ -2132,7 +2132,7 @@ package unreal;
 		Returns:
 		    uint8: The literal byte
 	**/
-	static public function make_literal_byte(value:Dynamic):Dynamic;
+	static public function make_literal_byte(value:UInt):UInt;
 	/**
 		X.make_literal_float(value) -> float
 		Creates a literal float

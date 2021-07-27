@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Text") extern class Text extends Dynamic {
+@:pythonImport("unreal", "Text") extern class Text extends unreal._WrapperBase {
 	/**
 		X.as_currency(val, code) -> Text -- convert the given number (specified in the smallest unit for the given currency) to a culture correct Unreal text currency representation
 	**/

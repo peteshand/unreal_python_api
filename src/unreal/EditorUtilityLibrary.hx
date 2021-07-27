@@ -35,7 +35,7 @@ package unreal;
 		Returns:
 		    Array(type(Class)):
 	**/
-	static public function get_selected_blueprint_classes():Array<type(Class>;
+	static public function get_selected_blueprint_classes():Array<Dynamic>;
 	/**
 		X.get_selection_bounds() -> (origin=Vector, box_extent=Vector, sphere_radius=float)
 		Get Selection Bounds

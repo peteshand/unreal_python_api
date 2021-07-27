@@ -188,7 +188,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	static public function return_array():Array<int32>;
+	static public function return_array():Array<Int>;
 	/**
 		X.return_map() -> Map(int32, bool)
 		Return Map

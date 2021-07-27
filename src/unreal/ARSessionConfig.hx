@@ -152,7 +152,7 @@ package unreal;
 		Returns:
 		    Array(uint8):
 	**/
-	public function get_world_map_data():Array<uint8>;
+	public function get_world_map_data():Array<UInt>;
 	/**
 		x.set_candidate_object_list(candidate_objects) -> None
 		
@@ -242,7 +242,7 @@ package unreal;
 		Args:
 		    world_map_data (Array(uint8)):
 	**/
-	public function set_world_map_data(world_map_data:Array<uint8>):Void;
+	public function set_world_map_data(world_map_data:Array<UInt>):Void;
 	/**
 		x.should_enable_auto_focus() -> bool
 		

@@ -270,7 +270,7 @@ package unreal;
 		    prev_custom_mode (uint8): Custom mode before the change (applicable if PrevMovementMode is Custom)
 		    new_custom_mode (uint8): New custom mode (applicable if NewMovementMode is Custom)
 	**/
-	public function on_movement_mode_changed(prev_movement_mode:unreal.MovementMode, new_movement_mode:unreal.MovementMode, prev_custom_mode:Dynamic, new_custom_mode:Dynamic):Void;
+	public function on_movement_mode_changed(prev_movement_mode:unreal.MovementMode, new_movement_mode:unreal.MovementMode, prev_custom_mode:UInt, new_custom_mode:UInt):Void;
 	/**
 		(CharacterReachedApexSignature):  [Read-Write] Broadcast when Character's jump reaches its apex. Needs CharacterMovement->bNotifyApex = true
 	**/

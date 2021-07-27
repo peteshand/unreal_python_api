@@ -97,7 +97,7 @@ package unreal;
 		    assets_to_export (Array(str)): List of full asset names (e.g /Game/Path/Asset) to export
 		    export_path (str): The directory path to export to.
 	**/
-	public function export_assets(assets_to_export:Array<str>, export_path:String):Void;
+	public function export_assets(assets_to_export:Array<String>, export_path:String):Void;
 	/**
 		x.export_assets_with_dialog(assets_to_export, prompt_for_individual_filenames) -> None
 		Exports the specified objects to file. First prompting the user to pick an export directory and optionally prompting the user to pick a unique directory per file
@@ -106,7 +106,7 @@ package unreal;
 		    assets_to_export (Array(str)): List of assets to export
 		    prompt_for_individual_filenames (bool):
 	**/
-	public function export_assets_with_dialog(assets_to_export:Array<str>, prompt_for_individual_filenames:Bool):Void;
+	public function export_assets_with_dialog(assets_to_export:Array<String>, prompt_for_individual_filenames:Bool):Void;
 	/**
 		x.find_soft_references_to_object(target_object) -> Array(Object)
 		Returns list of objects that soft reference the given soft object path. This will load assets into memory to verify

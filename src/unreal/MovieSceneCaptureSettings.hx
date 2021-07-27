@@ -99,5 +99,5 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] How much to zero-pad frame numbers on filenames
 	**/
-	public var zero_pad_frame_numbers : Dynamic;
+	public var zero_pad_frame_numbers : UInt;
 }

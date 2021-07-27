@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "FixedArray") extern class FixedArray extends Dynamic {
+@:pythonImport("unreal", "FixedArray") extern class FixedArray extends unreal._WrapperBase {
 	/**
 		Return self+value.
 	**/

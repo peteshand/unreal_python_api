@@ -46,7 +46,7 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	static public function get_available_display_frequencies():Array<float>;
+	static public function get_available_display_frequencies():Array<Float>;
 	/**
 		X.get_base_rotation_and_base_offset_in_meters() -> (out_rotation=Rotator, out_base_offset_in_meters=Vector)
 		Returns current base rotation and base offset.

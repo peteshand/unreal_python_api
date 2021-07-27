@@ -214,7 +214,7 @@ package unreal;
 		This is automatically replicated through the Character owner and for client-server movement functions.
 		SetMovementMode():
 	**/
-	public var custom_movement_mode : Dynamic;
+	public var custom_movement_mode : UInt;
 	/**
 		(MovementMode):  [Read-Write] Default movement mode when not in water. Used at player startup or when teleported.
 		DefaultWaterMovementMode: 
@@ -816,7 +816,7 @@ package unreal;
 		    new_movement_mode (MovementMode): The new movement mode
 		    new_custom_mode (uint8): The new custom sub-mode, only applicable if NewMovementMode is Custom.
 	**/
-	public function set_movement_mode(new_movement_mode:unreal.MovementMode, new_custom_mode:Dynamic = 0):Void;
+	public function set_movement_mode(new_movement_mode:unreal.MovementMode, new_custom_mode:UInt = 0):Void;
 	/**
 		x.set_walkable_floor_angle(walkable_floor_angle) -> None
 		Set the max angle in degrees of a walkable surface for the character. Also computes WalkableFloorZ.

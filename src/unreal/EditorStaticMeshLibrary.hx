@@ -211,7 +211,7 @@ package unreal;
 		Returns:
 		    Array(float): array of LOD screen sizes.
 	**/
-	static public function get_lod_screen_sizes(static_mesh:unreal.StaticMesh):Array<float>;
+	static public function get_lod_screen_sizes(static_mesh:unreal.StaticMesh):Array<Float>;
 	/**
 		X.get_num_uv_channels(static_mesh, lod_index) -> int32
 		Returns the number of UV channels for the given LOD of a StaticMesh.

@@ -74,7 +74,7 @@ package unreal;
 		
 		    magnitudes (Array(float)):
 	**/
-	static public function get_magnitude_for_frequencies(world_context_object:unreal.Object, frequencies:Array<float>, submix_to_analyze:unreal.SoundSubmix = null):Array<float>;
+	static public function get_magnitude_for_frequencies(world_context_object:unreal.Object, frequencies:Array<Float>, submix_to_analyze:unreal.SoundSubmix = null):Array<Float>;
 	/**
 		X.get_number_of_entries_in_source_effect_chain(world_context_object, preset_chain) -> int32
 		Returns the number of effect chain entries in the given source effect chain.
@@ -101,7 +101,7 @@ package unreal;
 		
 		    phases (Array(float)):
 	**/
-	static public function get_phase_for_frequencies(world_context_object:unreal.Object, frequencies:Array<float>, submix_to_analyze:unreal.SoundSubmix = null):Array<float>;
+	static public function get_phase_for_frequencies(world_context_object:unreal.Object, frequencies:Array<Float>, submix_to_analyze:unreal.SoundSubmix = null):Array<Float>;
 	/**
 		X.is_audio_bus_active(world_context_object, audio_bus) -> bool
 		Queries if the given audio bus is active (and audio can be mixed to it).

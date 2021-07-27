@@ -88,7 +88,7 @@ package unreal;
 		Returns:
 		    bool: true if the successfully remove all the LODs. False otherwise, but evedn if it return false it will have removed all valid LODs.
 	**/
-	static public function remove_lo_ds(skeletal_mesh:unreal.SkeletalMesh, to_remove_lo_ds:Array<int32>):Bool;
+	static public function remove_lo_ds(skeletal_mesh:unreal.SkeletalMesh, to_remove_lo_ds:Array<Int>):Bool;
 	/**
 		X.rename_socket(skeletal_mesh, old_name, new_name) -> bool
 		Rename a socket within a skeleton

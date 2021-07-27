@@ -173,7 +173,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function conv_byte_to_text(value:Dynamic):unreal.Text;
+	static public function conv_byte_to_text(value:UInt):unreal.Text;
 	/**
 		X.conv_color_to_text(color) -> Text
 		Converts a linear color value to localized formatted text, in the form '(R=,G=,B=,A=)'

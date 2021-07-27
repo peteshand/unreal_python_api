@@ -867,7 +867,7 @@ package unreal;
 		
 		    out_new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function insert_edge_loop(edge_id:unreal.EdgeID, splits:Array<float>):Array<EdgeID>;
+	public function insert_edge_loop(edge_id:unreal.EdgeID, splits:Array<Float>):Array<EdgeID>;
 	/**
 		x.inset_polygons(polygon_i_ds, inset_fixed_distance, inset_progress_toward_center, mode) -> (out_new_center_polygon_i_ds=Array(PolygonID), out_new_side_polygon_i_ds=Array(PolygonID))
 		Inset Polygons
@@ -1196,7 +1196,7 @@ package unreal;
 		    edge_i_ds (Array(EdgeID)): 
 		    edges_new_crease_sharpness (Array(float)):
 	**/
-	public function set_edges_crease_sharpness(edge_i_ds:Array<EdgeID>, edges_new_crease_sharpness:Array<float>):Void;
+	public function set_edges_crease_sharpness(edge_i_ds:Array<EdgeID>, edges_new_crease_sharpness:Array<Float>):Void;
 	/**
 		x.set_edges_hardness(edge_i_ds, edges_new_is_hard) -> None
 		Set Edges Hardness
@@ -1205,7 +1205,7 @@ package unreal;
 		    edge_i_ds (Array(EdgeID)): 
 		    edges_new_is_hard (Array(bool)):
 	**/
-	public function set_edges_hardness(edge_i_ds:Array<EdgeID>, edges_new_is_hard:Array<bool>):Void;
+	public function set_edges_hardness(edge_i_ds:Array<EdgeID>, edges_new_is_hard:Array<Bool>):Void;
 	/**
 		x.set_edges_hardness_automatically(edge_i_ds, max_dot_product_for_soft_edge) -> None
 		Set Edges Hardness Automatically
@@ -1263,7 +1263,7 @@ package unreal;
 		    vertex_i_ds (Array(VertexID)): 
 		    vertices_new_corner_sharpness (Array(float)):
 	**/
-	public function set_vertices_corner_sharpness(vertex_i_ds:Array<VertexID>, vertices_new_corner_sharpness:Array<float>):Void;
+	public function set_vertices_corner_sharpness(vertex_i_ds:Array<VertexID>, vertices_new_corner_sharpness:Array<Float>):Void;
 	/**
 		x.split_edge(edge_id, splits) -> Array(VertexID)
 		Split Edge
@@ -1277,7 +1277,7 @@ package unreal;
 		
 		    out_new_vertex_i_ds (Array(VertexID)):
 	**/
-	public function split_edge(edge_id:unreal.EdgeID, splits:Array<float>):Array<VertexID>;
+	public function split_edge(edge_id:unreal.EdgeID, splits:Array<Float>):Array<VertexID>;
 	/**
 		x.split_polygonal_mesh(plane) -> (polygon_i_ds1=Array(PolygonID), polygon_i_ds2=Array(PolygonID), boundary_i_ds=Array(EdgeID))
 		Split Polygonal Mesh

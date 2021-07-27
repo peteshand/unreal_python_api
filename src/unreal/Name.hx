@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Name") extern class Name extends Dynamic {
+@:pythonImport("unreal", "Name") extern class Name extends unreal._WrapperBase {
 	/**
 		X.cast(object) -> Name -- cast the given object to this Unreal name type
 	**/

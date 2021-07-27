@@ -72,7 +72,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] The number of mips to use (default = 1).
 	**/
-	public var num_mips : Dynamic;
+	public var num_mips : UInt;
 	/**
 		(MediaTextureOutputFormat):  [Read-Write] Output Format
 	**/

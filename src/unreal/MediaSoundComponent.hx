@@ -86,5 +86,5 @@ package unreal;
 		    frequencies_to_analyze (Array(float)): 
 		    fft_size (MediaSoundComponentFFTSize):
 	**/
-	public function set_spectral_analysis_settings(frequencies_to_analyze:Array<float>, fft_size:unreal.MediaSoundComponentFFTSize = MediaSoundComponentFFTSize.MEDIUM_512):Void;
+	public function set_spectral_analysis_settings(frequencies_to_analyze:Array<Float>, fft_size:unreal.MediaSoundComponentFFTSize = MediaSoundComponentFFTSize.MEDIUM_512):Void;
 }

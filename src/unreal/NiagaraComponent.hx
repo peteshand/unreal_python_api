@@ -150,7 +150,7 @@ package unreal;
 		    Array(float):
 	**/
 	@:deprecated
-	public function get_niagara_particle_values_debug_only(emitter_name:String, value_name:String):Array<float>;
+	public function get_niagara_particle_values_debug_only(emitter_name:String, value_name:String):Array<Float>;
 	/**
 		x.get_preview_lod_distance() -> int32
 		Get Preview LODDistance

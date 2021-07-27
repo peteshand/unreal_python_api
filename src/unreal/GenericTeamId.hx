@@ -4,5 +4,5 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] Team ID
 	**/
-	public var team_id : Dynamic;
+	public var team_id : UInt;
 }

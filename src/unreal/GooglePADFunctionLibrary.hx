@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	static public function cancel_download(asset_packs:Array<str>):unreal.GooglePADErrorCode;
+	static public function cancel_download(asset_packs:Array<String>):unreal.GooglePADErrorCode;
 	/**
 		X.get_asset_pack_location(name) -> (GooglePADErrorCode, location=int32)
 		Get location handle of requested asset pack (release when done)
@@ -129,7 +129,7 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	static public function request_download(asset_packs:Array<str>):unreal.GooglePADErrorCode;
+	static public function request_download(asset_packs:Array<String>):unreal.GooglePADErrorCode;
 	/**
 		X.request_info(asset_packs) -> GooglePADErrorCode
 		Request information about a set of asset packs
@@ -140,7 +140,7 @@ package unreal;
 		Returns:
 		    GooglePADErrorCode:
 	**/
-	static public function request_info(asset_packs:Array<str>):unreal.GooglePADErrorCode;
+	static public function request_info(asset_packs:Array<String>):unreal.GooglePADErrorCode;
 	/**
 		X.request_removal(name) -> GooglePADErrorCode
 		Request removal of an asset pack

@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_keys_from_string_table(table_id:unreal.Name):Array<str>;
+	static public function get_keys_from_string_table(table_id:unreal.Name):Array<String>;
 	/**
 		X.get_meta_data_ids_from_string_table_entry(table_id, key) -> Array(Name)
 		Returns an array of all meta-data IDs within the given string table entry

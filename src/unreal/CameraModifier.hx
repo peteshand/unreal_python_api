@@ -90,5 +90,5 @@ package unreal;
 	/**
 		(uint8):  [Read-Only] Priority value that determines the order in which modifiers are applied. 0 = highest priority, 255 = lowest.
 	**/
-	public var priority : Dynamic;
+	public var priority : UInt;
 }

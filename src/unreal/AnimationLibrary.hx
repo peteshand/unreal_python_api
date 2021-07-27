@@ -106,7 +106,7 @@ package unreal;
 		    times (Array(float)): 
 		    values (Array(float)):
 	**/
-	static public function add_float_curve_keys(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, times:Array<float>, values:Array<float>):Void;
+	static public function add_float_curve_keys(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, times:Array<Float>, values:Array<Float>):Void;
 	/**
 		X.add_meta_data(animation_sequence, meta_data_class, meta_data_instance) -> None
 		Creates and Adds an instance of the specified MetaData Class to the given Animation Sequence
@@ -147,7 +147,7 @@ package unreal;
 		    times (Array(float)): 
 		    transforms (Array(Transform)):
 	**/
-	static public function add_transformation_curve_keys(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, times:Array<float>, transforms:Array<Transform>):Void;
+	static public function add_transformation_curve_keys(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, times:Array<Float>, transforms:Array<Transform>):Void;
 	/**
 		X.add_vector_curve_key(animation_sequence, curve_name, time, vector) -> None
 		Adds a Vector Key to the specified Animation Curve inside of the given Animation Sequence
@@ -169,7 +169,7 @@ package unreal;
 		    times (Array(float)): 
 		    vectors (Array(Vector)):
 	**/
-	static public function add_vector_curve_keys(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, times:Array<float>, vectors:Array<Vector>):Void;
+	static public function add_vector_curve_keys(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, times:Array<Float>, vectors:Array<Vector>):Void;
 	/**
 		X.add_virtual_bone(animation_sequence, source_bone_name, target_bone_name) -> Name
 		Adds a Virtual Bone between the Source and Target Bones to the given Animation Sequence

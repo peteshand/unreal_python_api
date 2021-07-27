@@ -131,7 +131,7 @@ package unreal;
 		Returns:
 		    bool: True if they exist and it is valid.
 	**/
-	static public function do_assets_exist(asset_paths:Array<str>):Bool;
+	static public function do_assets_exist(asset_paths:Array<String>):Bool;
 	/**
 		X.does_asset_exist(asset_path) -> bool
 		Check if the asset exists in the Content Browser.
@@ -229,7 +229,7 @@ package unreal;
 		Returns:
 		    Array(str): The package path of the referencers.
 	**/
-	static public function find_package_referencers_for_asset(asset_path:String, load_assets_to_confirm:Bool = false):Array<str>;
+	static public function find_package_referencers_for_asset(asset_path:String, load_assets_to_confirm:Bool = false):Array<String>;
 	/**
 		X.get_metadata_tag(object, tag) -> str
 		Get the value associated with the given tag of a loaded asset's metadata.
@@ -287,7 +287,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of asset found.
 	**/
-	static public function list_asset_by_tag_value(tag_name:unreal.Name, tag_value:String):Array<str>;
+	static public function list_asset_by_tag_value(tag_name:unreal.Name, tag_value:String):Array<String>;
 	/**
 		X.list_assets(directory_path, recursive=True, include_folder=False) -> Array(str)
 		Return the list of all the assets found in the DirectoryPath.
@@ -300,7 +300,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of asset found.
 	**/
-	static public function list_assets(directory_path:String, recursive:Bool = true, include_folder:Bool = false):Array<str>;
+	static public function list_assets(directory_path:String, recursive:Bool = true, include_folder:Bool = false):Array<String>;
 	/**
 		X.load_asset(asset_path) -> Object
 		Load an asset from the Content Browser. It will verify if the object is already loaded and only load it if it's necessary.
@@ -450,5 +450,5 @@ package unreal;
 		Args:
 		    asset_paths (Array(str)): The list of asset paths to sync to in the Content Browser
 	**/
-	static public function sync_browser_to_objects(asset_paths:Array<str>):Void;
+	static public function sync_browser_to_objects(asset_paths:Array<String>):Void;
 }

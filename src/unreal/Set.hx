@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Set") extern class Set extends Dynamic {
+@:pythonImport("unreal", "Set") extern class Set extends unreal._WrapperBase {
 	/**
 		Return self&value.
 	**/

@@ -4,17 +4,17 @@ package unreal;
 	/**
 		(uint8):  [Read-Write] A
 	**/
-	public var a : Dynamic;
+	public var a : UInt;
 	/**
 		(uint8):  [Read-Write] B
 	**/
-	public var b : Dynamic;
+	public var b : UInt;
 	/**
 		(uint8):  [Read-Write] G
 	**/
-	public var g : Dynamic;
+	public var g : UInt;
 	/**
 		(uint8):  [Read-Write] R
 	**/
-	public var r : Dynamic;
+	public var r : UInt;
 }

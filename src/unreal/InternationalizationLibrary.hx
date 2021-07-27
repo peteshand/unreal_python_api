@@ -81,7 +81,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of cultures as IETF language tags (eg, "zh-Hans-CN").
 	**/
-	static public function get_localized_cultures(include_game:Bool = true, include_engine:Bool = false, include_editor:Bool = false, include_additional:Bool = false):Array<str>;
+	static public function get_localized_cultures(include_game:Bool = true, include_engine:Bool = false, include_editor:Bool = false, include_additional:Bool = false):Array<String>;
 	/**
 		X.get_native_culture(text_category) -> str
 		Get the native culture for the given localization category.
@@ -107,7 +107,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	static public function get_suitable_culture(available_cultures:Array<str>, culture_to_match:String, fallback_culture:String = "\"en\""):String;
+	static public function get_suitable_culture(available_cultures:Array<String>, culture_to_match:String, fallback_culture:String = "\"en\""):String;
 	/**
 		X.set_current_asset_group_culture(asset_group, culture, save_to_config=False) -> bool
 		Set the given asset group category culture from an IETF language tag (eg, "zh-Hans-CN").

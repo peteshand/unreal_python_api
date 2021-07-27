@@ -191,7 +191,7 @@ package unreal;
 		    bool: True if the data was stored successfully, false otherwise.
 	**/
 	@:deprecated
-	static public function put_secure_byte(key:String, data_to_store:Dynamic):Bool;
+	static public function put_secure_byte(key:String, data_to_store:UInt):Bool;
 	/**
 		X.put_secure_float(key, data_to_store) -> bool
 		Stores the float under the specified key. An existing key would be overwritten.

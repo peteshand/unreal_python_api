@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Map") extern class Map extends Dynamic {
+@:pythonImport("unreal", "Map") extern class Map extends unreal._WrapperBase {
 	/**
 		Return key in self.
 	**/

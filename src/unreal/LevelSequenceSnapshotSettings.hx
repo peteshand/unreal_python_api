@@ -8,5 +8,5 @@ package unreal;
 	/**
 		(uint8):  [Read-Only] Zero pad frames
 	**/
-	public var zero_pad_amount : Dynamic;
+	public var zero_pad_amount : UInt;
 }

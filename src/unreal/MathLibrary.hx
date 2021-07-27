@@ -56,7 +56,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function add_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function add_byte_byte(a:UInt, b:UInt = 1):UInt;
 	/**
 		X.add_date_time_date_time(a, b) -> DateTime
 		Addition (A + B)
@@ -330,7 +330,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function b_max(a:Dynamic, b:Dynamic):Dynamic;
+	static public function b_max(a:UInt, b:UInt):UInt;
 	/**
 		X.b_min(a, b) -> uint8
 		Returns the minimum value of A and B
@@ -342,7 +342,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function b_min(a:Dynamic, b:Dynamic):Dynamic;
+	static public function b_min(a:UInt, b:UInt):UInt;
 	/**
 		X.boolean_and(a, b) -> bool
 		Returns the logical AND of two values (A AND B)
@@ -581,7 +581,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function conv_bool_to_byte(bool:Bool):Dynamic;
+	static public function conv_bool_to_byte(bool:Bool):UInt;
 	/**
 		X.conv_bool_to_float(bool) -> float
 		Converts a bool to a float (0.0f or 1.0f)
@@ -614,7 +614,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function conv_byte_to_float(byte:Dynamic):Float;
+	static public function conv_byte_to_float(byte:UInt):Float;
 	/**
 		X.conv_byte_to_int(byte) -> int32
 		Converts a byte to an integer
@@ -625,7 +625,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function conv_byte_to_int(byte:Dynamic):Int;
+	static public function conv_byte_to_int(byte:UInt):Int;
 	/**
 		X.conv_color_to_linear_color(color) -> LinearColor
 		Converts a color to LinearColor
@@ -669,7 +669,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function conv_int64_to_byte(int:Dynamic):Dynamic;
+	static public function conv_int64_to_byte(int:Dynamic):UInt;
 	/**
 		X.conv_int64_to_int(int) -> int32
 		Converts a 64 bit integer to a 32 bit integer (if the integer is too large, returns the low 32 bits)
@@ -713,7 +713,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function conv_int_to_byte(int:Int):Dynamic;
+	static public function conv_int_to_byte(int:Int):UInt;
 	/**
 		X.conv_int_to_float(int) -> float
 		Converts an integer to a float
@@ -1214,7 +1214,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function divide_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function divide_byte_byte(a:UInt, b:UInt = 1):UInt;
 	/**
 		X.divide_int64_int64(a, b=1) -> int64
 		Division (A / B)
@@ -1457,7 +1457,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_byte_byte(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_byte_byte(a:UInt, b:UInt):Bool;
 	/**
 		X.equal_equal_class_class(a, b) -> bool
 		Returns true if A and B are equal (A == B)
@@ -2555,7 +2555,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function greater_byte_byte(a:Dynamic, b:Dynamic):Bool;
+	static public function greater_byte_byte(a:UInt, b:UInt):Bool;
 	/**
 		X.greater_date_time_date_time(a, b) -> bool
 		Returns true if A is greater than B (A > B)
@@ -2579,7 +2579,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function greater_equal_byte_byte(a:Dynamic, b:Dynamic):Bool;
+	static public function greater_equal_byte_byte(a:UInt, b:UInt):Bool;
 	/**
 		X.greater_equal_date_time_date_time(a, b) -> bool
 		Returns true if A is greater than or equal to B (A >= B)
@@ -2984,7 +2984,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function less_byte_byte(a:Dynamic, b:Dynamic):Bool;
+	static public function less_byte_byte(a:UInt, b:UInt):Bool;
 	/**
 		X.less_date_time_date_time(a, b) -> bool
 		Returns true if A is less than B (A < B)
@@ -3008,7 +3008,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function less_equal_byte_byte(a:Dynamic, b:Dynamic):Bool;
+	static public function less_equal_byte_byte(a:UInt, b:UInt):Bool;
 	/**
 		X.less_equal_date_time_date_time(a, b) -> bool
 		Returns true if A is less than or equal to B (A <= B)
@@ -4153,7 +4153,7 @@ package unreal;
 		
 		    max_value (uint8):
 	**/
-	static public function max_of_byte_array(byte_array:Array<uint8>):python.Tuple<Dynamic>;
+	static public function max_of_byte_array(byte_array:Array<UInt>):python.Tuple<Dynamic>;
 	/**
 		X.max_of_float_array(float_array) -> (index_of_max_value=int32, max_value=float)
 		Returns max of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4168,7 +4168,7 @@ package unreal;
 		
 		    max_value (float):
 	**/
-	static public function max_of_float_array(float_array:Array<float>):python.Tuple<Dynamic>;
+	static public function max_of_float_array(float_array:Array<Float>):python.Tuple<Dynamic>;
 	/**
 		X.max_of_int_array(int_array) -> (index_of_max_value=int32, max_value=int32)
 		Returns max of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4183,7 +4183,7 @@ package unreal;
 		
 		    max_value (int32):
 	**/
-	static public function max_of_int_array(int_array:Array<int32>):python.Tuple<Dynamic>;
+	static public function max_of_int_array(int_array:Array<Int>):python.Tuple<Dynamic>;
 	/**
 		X.min(a, b) -> int32
 		Returns the minimum value of A and B
@@ -4222,7 +4222,7 @@ package unreal;
 		
 		    min_value (uint8):
 	**/
-	static public function min_of_byte_array(byte_array:Array<uint8>):python.Tuple<Dynamic>;
+	static public function min_of_byte_array(byte_array:Array<UInt>):python.Tuple<Dynamic>;
 	/**
 		X.min_of_float_array(float_array) -> (index_of_min_value=int32, min_value=float)
 		Returns min of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4237,7 +4237,7 @@ package unreal;
 		
 		    min_value (float):
 	**/
-	static public function min_of_float_array(float_array:Array<float>):python.Tuple<Dynamic>;
+	static public function min_of_float_array(float_array:Array<Float>):python.Tuple<Dynamic>;
 	/**
 		X.min_of_int_array(int_array) -> (index_of_min_value=int32, min_value=int32)
 		Returns min of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4252,7 +4252,7 @@ package unreal;
 		
 		    min_value (int32):
 	**/
-	static public function min_of_int_array(int_array:Array<int32>):python.Tuple<Dynamic>;
+	static public function min_of_int_array(int_array:Array<Int>):python.Tuple<Dynamic>;
 	/**
 		X.minimum_area_rectangle(world_context_object, verts, sample_surface_normal, debug_draw=False) -> (out_rect_center=Vector, out_rect_rotation=Rotator, out_side_length_x=float, out_side_length_y=float)
 		Finds the minimum area rectangle that encloses all of the points in InVerts
@@ -4314,7 +4314,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function multiply_byte_byte(a:Dynamic, b:Dynamic):Dynamic;
+	static public function multiply_byte_byte(a:UInt, b:UInt):UInt;
 	/**
 		X.multiply_float_float(a, b) -> float
 		Multiplication (A * B)
@@ -4753,7 +4753,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_byte_byte(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_byte_byte(a:UInt, b:UInt):Bool;
 	/**
 		X.not_equal_class_class(a, b) -> bool
 		Returns true if A and B are not equal (A != B)
@@ -5064,7 +5064,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function percent_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function percent_byte_byte(a:UInt, b:UInt = 1):UInt;
 	/**
 		X.percent_int_int(a, b=1) -> int32
 		Modulo (A % B)
@@ -6285,7 +6285,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function subtract_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function subtract_byte_byte(a:UInt, b:UInt = 1):UInt;
 	/**
 		X.subtract_date_time_date_time(a, b) -> Timespan
 		Subtraction (A - B)

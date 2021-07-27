@@ -73,7 +73,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function get_blackboard_value_as_enum(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector):Dynamic;
+	static public function get_blackboard_value_as_enum(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector):UInt;
 	/**
 		X.get_blackboard_value_as_float(node_owner, key) -> float
 		Get Blackboard Value as Float
@@ -209,7 +209,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (uint8):
 	**/
-	static public function set_blackboard_value_as_enum(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector, value:Dynamic):Void;
+	static public function set_blackboard_value_as_enum(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector, value:UInt):Void;
 	/**
 		X.set_blackboard_value_as_float(node_owner, key, value) -> None
 		Set Blackboard Value as Float

@@ -158,7 +158,7 @@ package unreal;
 		
 		    out_sound_wave_spectral_data (Array(SoundWaveSpectralData)):
 	**/
-	public function get_cooked_fft_data(frequencies_to_get:Array<float>):Array<SoundWaveSpectralData>;
+	public function get_cooked_fft_data(frequencies_to_get:Array<Float>):Array<SoundWaveSpectralData>;
 	/**
 		x.get_cooked_fft_data_for_all_playing_sounds() -> Array(SoundWaveSpectralDataPerSound) or None
 		Retrieves the current-time cooked spectral data of the sounds playing audio component.

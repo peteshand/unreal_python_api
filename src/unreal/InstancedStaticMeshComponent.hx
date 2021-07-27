@@ -34,7 +34,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function add_instances(instance_transforms:Array<Transform>, should_return_indices:Bool):Array<int32>;
+	public function add_instances(instance_transforms:Array<Transform>, should_return_indices:Bool):Array<Int>;
 	/**
 		x.batch_update_instances_transform(start_instance_index, num_instances, new_instances_transform, world_space=False, mark_render_state_dirty=False, teleport=False) -> bool
 		Update the transform for a number of instances.
@@ -104,7 +104,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function get_instances_overlapping_box(box:unreal.Box, box_in_world_space:Bool = true):Array<int32>;
+	public function get_instances_overlapping_box(box:unreal.Box, box_in_world_space:Bool = true):Array<Int>;
 	/**
 		x.get_instances_overlapping_sphere(center, radius, sphere_in_world_space=True) -> Array(int32)
 		Returns the instances with instance bounds overlapping the specified sphere. The return value is an array of instance indices.
@@ -117,7 +117,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function get_instances_overlapping_sphere(center:unreal.Vector, radius:Float, sphere_in_world_space:Bool = true):Array<int32>;
+	public function get_instances_overlapping_sphere(center:unreal.Vector, radius:Float, sphere_in_world_space:Bool = true):Array<Int>;
 	/**
 		(int32):  [Read-Only] Distance from camera at which each instance completely fades out.
 	**/

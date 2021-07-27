@@ -8,5 +8,5 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	public function get_ambient_intensity_nits():Array<float>;
+	public function get_ambient_intensity_nits():Array<Float>;
 }

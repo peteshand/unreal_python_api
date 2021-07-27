@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "MulticastDelegateBase") extern class MulticastDelegateBase extends Dynamic {
+@:pythonImport("unreal", "MulticastDelegateBase") extern class MulticastDelegateBase extends unreal._WrapperBase {
 	/**
 		self != 0
 	**/

@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "EnumBase") extern class EnumBase extends Dynamic {
+@:pythonImport("unreal", "EnumBase") extern class EnumBase extends unreal._WrapperBase {
 	static public var _wrapper_meta_data : Dynamic;
 	/**
 		X.cast(object) -> enum -- cast the given object to this Unreal enum type

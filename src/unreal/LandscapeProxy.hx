@@ -180,7 +180,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Only] Maximum geometry LOD at which to render unique hole meshes.
 	**/
-	public var mesh_holes_max_lod : Dynamic;
+	public var mesh_holes_max_lod : UInt;
 	/**
 		(bool):  [Read-Only] If true, the Landscape will be rendered in the CustomDepth pass (usually used for outlines)
 	**/

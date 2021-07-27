@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "StructBase") extern class StructBase extends Dynamic {
+@:pythonImport("unreal", "StructBase") extern class StructBase extends unreal._WrapperBase {
 	/**
 		Return self+value.
 	**/

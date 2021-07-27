@@ -188,7 +188,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_byte_to_string(byte:Dynamic):String;
+	static public function conv_byte_to_string(byte:UInt):String;
 	/**
 		X.conv_color_to_string(color) -> str
 		Converts a linear color value to a string, in the form '(R=,G=,B=,A=)'
@@ -426,7 +426,7 @@ package unreal;
 		
 		    array (Array(str)): The array to cull
 	**/
-	static public function cull_array(source_string:String):Array<str>;
+	static public function cull_array(source_string:String):Array<String>;
 	/**
 		X.ends_with(source_string, suffix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string ends with given string.
@@ -489,7 +489,7 @@ package unreal;
 		Returns:
 		    Array(str): An array containing one entry for each character in SourceString
 	**/
-	static public function get_character_array_from_string(source_string:String):Array<str>;
+	static public function get_character_array_from_string(source_string:String):Array<String>;
 	/**
 		X.get_character_as_number(source_string, index=0) -> int32
 		Gets a single character from the string (as an integer)
@@ -549,7 +549,7 @@ package unreal;
 		Returns:
 		    str: The final, joined, separated string.
 	**/
-	static public function join_string_array(source_array:Array<str>, separator:String = "\" \""):String;
+	static public function join_string_array(source_array:Array<String>, separator:String = "\" \""):String;
 	/**
 		X.left(source_string, count) -> str
 		Returns the left most given number of characters
@@ -661,7 +661,7 @@ package unreal;
 		Returns:
 		    Array(str): The array of string that have been separated
 	**/
-	static public function parse_into_array(source_string:String, delimiter:String = "\" \"", cull_empty_strings:Bool = true):Array<str>;
+	static public function parse_into_array(source_string:String, delimiter:String = "\" \"", cull_empty_strings:Bool = true):Array<String>;
 	/**
 		X.replace(source_string, from_, to, search_case=SearchCase.IGNORE_CASE) -> str
 		Replace all occurrences of a substring in this string

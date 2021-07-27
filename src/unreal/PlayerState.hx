@@ -24,7 +24,7 @@ package unreal;
 	/**
 		(uint8):  [Read-Only] Ping
 	**/
-	public var ping : Dynamic;
+	public var ping : UInt;
 	/**
 		(int32):  [Read-Only] Player Id
 	**/
