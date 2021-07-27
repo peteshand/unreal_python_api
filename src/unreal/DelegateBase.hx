@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "DelegateBase") extern class DelegateBase extends Dynamic {
+@:pythonImport("unreal", "DelegateBase") extern class DelegateBase extends unreal._WrapperBase {
 	/**
 		self != 0
 	**/
