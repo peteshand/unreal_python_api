@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraClipboardEditorScriptingUtilities") extern class NiagaraClipboardEditorScriptingUtilities extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.create_bool_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, bool_value) -> NiagaraClipboardFunctionInput
 		Create Bool Local Value Input
 		
@@ -24,7 +15,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_bool_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, bool_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_bool_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, bool_value:Bool):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_data_value_input(outer, input_name, has_edit_condition, edit_condition_value, data_value) -> NiagaraClipboardFunctionInput
 		Create Data Value Input
@@ -39,7 +30,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_data_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, data_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_data_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, data_value:unreal.NiagaraDataInterface):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_dynamic_value_input(outer, input_name, input_type_name, has_edit_condition, edit_condition_value, dynamic_value_name, dynamic_value) -> NiagaraClipboardFunctionInput
 		Create Dynamic Value Input
@@ -56,7 +47,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_dynamic_value_input(outer:Dynamic, input_name:Dynamic, input_type_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, dynamic_value_name:Dynamic, dynamic_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_dynamic_value_input(outer:unreal.Object, input_name:unreal.Name, input_type_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, dynamic_value_name:String, dynamic_value:unreal.NiagaraScript):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_enum_local_value_input(outer, input_name, has_edit_condition, edit_codition_value, enum_type, enum_value) -> NiagaraClipboardFunctionInput
 		Create Enum Local Value Input
@@ -72,7 +63,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_enum_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_codition_value:Dynamic, enum_type:Dynamic, enum_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_enum_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_codition_value:Bool, enum_type:unreal.UserDefinedEnum, enum_value:Int):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_expression_value_input(outer, input_name, input_type_name, has_edit_condition, edit_condition_value, expression_value) -> NiagaraClipboardFunctionInput
 		Create Expression Value Input
@@ -88,7 +79,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_expression_value_input(outer:Dynamic, input_name:Dynamic, input_type_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, expression_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_expression_value_input(outer:unreal.Object, input_name:unreal.Name, input_type_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, expression_value:String):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_float_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, local_value) -> NiagaraClipboardFunctionInput
 		Create Float Local Value Input
@@ -103,7 +94,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_float_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, local_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_float_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, local_value:Float):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_int_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, local_value) -> NiagaraClipboardFunctionInput
 		Create Int Local Value Input
@@ -118,7 +109,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_int_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, local_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_int_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, local_value:Int):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_linked_value_input(outer, input_name, input_type_name, has_edit_condition, edit_condition_value, linked_value) -> NiagaraClipboardFunctionInput
 		Create Linked Value Input
@@ -134,7 +125,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_linked_value_input(outer:Dynamic, input_name:Dynamic, input_type_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, linked_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_linked_value_input(outer:unreal.Object, input_name:unreal.Name, input_type_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, linked_value:unreal.Name):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_struct_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, struct_value) -> NiagaraClipboardFunctionInput
 		Create Struct Local Value Input
@@ -149,7 +140,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_struct_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, struct_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_struct_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, struct_value:unreal.UserDefinedStruct):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_vec2_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, vec2_value) -> NiagaraClipboardFunctionInput
 		Create Vec 2Local Value Input
@@ -164,7 +155,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_vec2_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, vec2_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_vec2_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, vec2_value:unreal.Vector2D):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.create_vec3_local_value_input(outer, input_name, has_edit_condition, edit_condition_value, vec3_value) -> NiagaraClipboardFunctionInput
 		Create Vec 3Local Value Input
@@ -179,7 +170,7 @@ package unreal;
 		Returns:
 		    NiagaraClipboardFunctionInput:
 	**/
-	static public function create_vec3_local_value_input(outer:Dynamic, input_name:Dynamic, has_edit_condition:Dynamic, edit_condition_value:Dynamic, vec3_value:Dynamic):unreal.NiagaraClipboardFunctionInput;
+	static public function create_vec3_local_value_input(outer:unreal.Object, input_name:unreal.Name, has_edit_condition:Bool, edit_condition_value:Bool, vec3_value:unreal.Vector):unreal.NiagaraClipboardFunctionInput;
 	/**
 		X.get_type_name(input) -> Name
 		Get Type Name
@@ -190,7 +181,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	static public function get_type_name(input:Dynamic):unreal.Name;
+	static public function get_type_name(input:unreal.NiagaraClipboardFunctionInput):unreal.Name;
 	/**
 		X.try_get_input_by_name(inputs, input_name) -> (out_succeeded=bool, out_input=NiagaraClipboardFunctionInput)
 		Try Get Input by Name
@@ -206,7 +197,7 @@ package unreal;
 		
 		    out_input (NiagaraClipboardFunctionInput):
 	**/
-	static public function try_get_input_by_name(inputs:Dynamic, input_name:Dynamic):python.Tuple<Dynamic>;
+	static public function try_get_input_by_name(inputs:unreal.Array, input_name:unreal.Name):python.Tuple<Dynamic>;
 	/**
 		X.try_get_local_value_as_float(input) -> (out_succeeded=bool, out_value=float)
 		Try Get Local Value as Float
@@ -221,7 +212,7 @@ package unreal;
 		
 		    out_value (float):
 	**/
-	static public function try_get_local_value_as_float(input:Dynamic):python.Tuple<Dynamic>;
+	static public function try_get_local_value_as_float(input:unreal.NiagaraClipboardFunctionInput):python.Tuple<Dynamic>;
 	/**
 		X.try_get_local_value_as_int(input) -> (out_succeeded=bool, out_value=int32)
 		Try Get Local Value as Int
@@ -236,7 +227,7 @@ package unreal;
 		
 		    out_value (int32):
 	**/
-	static public function try_get_local_value_as_int(input:Dynamic):python.Tuple<Dynamic>;
+	static public function try_get_local_value_as_int(input:unreal.NiagaraClipboardFunctionInput):python.Tuple<Dynamic>;
 	/**
 		X.try_set_local_value_as_int(input, value, loose_typing=True) -> bool
 		Try Set Local Value as Int
@@ -251,5 +242,5 @@ package unreal;
 		
 		    out_succeeded (bool):
 	**/
-	static public function try_set_local_value_as_int(input:Dynamic, value:Dynamic, loose_typing:Dynamic):Bool;
+	static public function try_set_local_value_as_int(input:unreal.NiagaraClipboardFunctionInput, value:Int, loose_typing:Bool):Bool;
 }

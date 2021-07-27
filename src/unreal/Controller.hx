@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Controller") extern class Controller extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.cast_to_player_controller() -> PlayerController
 		Cast to Player Controller
 		deprecated: Use standard Cast To node instead.
@@ -18,6 +9,7 @@ package unreal;
 		Returns:
 		    PlayerController:
 	**/
+	@:deprecated
 	public function cast_to_player_controller():unreal.PlayerController;
 	/**
 		x.get_control_rotation() -> Rotator
@@ -104,7 +96,7 @@ package unreal;
 		Returns:
 		    bool: true if controller's pawn can see Other actor.
 	**/
-	public function line_of_sight_to(other:Dynamic, view_point:Dynamic, alternate_checks:Dynamic):Bool;
+	public function line_of_sight_to(other:unreal.Actor, view_point:unreal.Vector, alternate_checks:Bool):Bool;
 	/**
 		(InstigatedAnyDamageSignature):  [Read-Write] Called when the controller has instigated damage in any way
 	**/
@@ -112,14 +104,17 @@ package unreal;
 	/**
 		deprecated: 'on_possess' was renamed to 'receive_possess'.
 	**/
+	@:deprecated
 	public function on_possess():Void;
 	/**
 		deprecated: 'on_un_possess' was renamed to 'receive_un_possess'.
 	**/
+	@:deprecated
 	public function on_un_possess():Void;
 	/**
 		deprecated: 'player_replication_info' was renamed to 'player_state'.
 	**/
+	@:deprecated
 	public var player_replication_info : Dynamic;
 	/**
 		(PlayerState):  [Read-Only] PlayerState containing replicated information about the player using this controller (only exists for players, not NPCs).
@@ -137,7 +132,7 @@ package unreal;
 		Args:
 		    pawn (Pawn): The Pawn to be possessed.
 	**/
-	public function possess(pawn:Dynamic):Void;
+	public function possess(pawn:unreal.Pawn):Void;
 	/**
 		x.receive_instigated_any_damage(damage, damage_type, damaged_actor, damage_causer) -> None
 		Event when this controller instigates ANY damage
@@ -148,7 +143,7 @@ package unreal;
 		    damaged_actor (Actor): 
 		    damage_causer (Actor):
 	**/
-	public function receive_instigated_any_damage(damage:Dynamic, damage_type:Dynamic, damaged_actor:Dynamic, damage_causer:Dynamic):Void;
+	public function receive_instigated_any_damage(damage:Float, damage_type:unreal.DamageType, damaged_actor:unreal.Actor, damage_causer:unreal.Actor):Void;
 	/**
 		x.receive_possess(possessed_pawn) -> None
 		Blueprint implementable event to react to the controller possessing a pawn
@@ -156,7 +151,7 @@ package unreal;
 		Args:
 		    possessed_pawn (Pawn):
 	**/
-	public function receive_possess(possessed_pawn:Dynamic):Void;
+	public function receive_possess(possessed_pawn:unreal.Pawn):Void;
 	/**
 		x.receive_un_possess(unpossessed_pawn) -> None
 		Blueprint implementable event to react to the controller unpossessing a pawn
@@ -164,7 +159,7 @@ package unreal;
 		Args:
 		    unpossessed_pawn (Pawn):
 	**/
-	public function receive_un_possess(unpossessed_pawn:Dynamic):Void;
+	public function receive_un_possess(unpossessed_pawn:unreal.Pawn):Void;
 	/**
 		x.reset_ignore_input_flags() -> None
 		Reset move and look input ignore flags.
@@ -187,7 +182,7 @@ package unreal;
 		Args:
 		    new_rotation (Rotator):
 	**/
-	public function set_control_rotation(new_rotation:Dynamic):Void;
+	public function set_control_rotation(new_rotation:unreal.Rotator):Void;
 	/**
 		x.set_ignore_look_input(new_look_input) -> None
 		Locks or unlocks look input, consecutive calls stack up and require the same amount of calls to undo, or can all be undone using ResetIgnoreLookInput.
@@ -195,7 +190,7 @@ package unreal;
 		Args:
 		    new_look_input (bool): If true, look input is ignored. If false, input is not ignored.
 	**/
-	public function set_ignore_look_input(new_look_input:Dynamic):Void;
+	public function set_ignore_look_input(new_look_input:Bool):Void;
 	/**
 		x.set_ignore_move_input(new_move_input) -> None
 		Locks or unlocks movement input, consecutive calls stack up and require the same amount of calls to undo, or can all be undone using ResetIgnoreMoveInput.
@@ -203,7 +198,7 @@ package unreal;
 		Args:
 		    new_move_input (bool): If true, move input is ignored. If false, input is not ignored.
 	**/
-	public function set_ignore_move_input(new_move_input:Dynamic):Void;
+	public function set_ignore_move_input(new_move_input:Bool):Void;
 	/**
 		x.set_initial_location_and_rotation(new_location, new_rotation) -> None
 		Set the initial location and rotation of the controller, as well as the control rotation. Typically used when the controller is first created.
@@ -212,7 +207,7 @@ package unreal;
 		    new_location (Vector): 
 		    new_rotation (Rotator):
 	**/
-	public function set_initial_location_and_rotation(new_location:Dynamic, new_rotation:Dynamic):Void;
+	public function set_initial_location_and_rotation(new_location:unreal.Vector, new_rotation:unreal.Rotator):Void;
 	/**
 		x.stop_movement() -> None
 		Aborts the move the controller is currently performing

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MRMeshComponent") extern class MRMeshComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.clear() -> None
 		Clear
 	**/
@@ -59,7 +50,7 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	public function set_enable_mesh_occlusion(enable:Dynamic):Void;
+	public function set_enable_mesh_occlusion(enable:Bool):Void;
 	/**
 		x.set_use_wireframe(use_wireframe) -> None
 		Set Use Wireframe
@@ -67,7 +58,7 @@ package unreal;
 		Args:
 		    use_wireframe (bool):
 	**/
-	public function set_use_wireframe(use_wireframe:Dynamic):Void;
+	public function set_use_wireframe(use_wireframe:Bool):Void;
 	/**
 		x.set_wireframe_color(color) -> None
 		Set Wireframe Color
@@ -75,7 +66,7 @@ package unreal;
 		Args:
 		    color (LinearColor):
 	**/
-	public function set_wireframe_color(color:Dynamic):Void;
+	public function set_wireframe_color(color:unreal.LinearColor):Void;
 	/**
 		x.set_wireframe_material(material) -> None
 		Set the wireframe material.
@@ -83,5 +74,5 @@ package unreal;
 		Args:
 		    material (MaterialInterface):
 	**/
-	public function set_wireframe_material(material:Dynamic):Void;
+	public function set_wireframe_material(material:unreal.MaterialInterface):Void;
 }

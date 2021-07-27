@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuSectionExtensions") extern class ToolMenuSectionExtensions extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_entry(section, args) -> ToolMenuSection
 		Add Entry
 		
@@ -23,7 +14,7 @@ package unreal;
 		
 		    section (ToolMenuSection):
 	**/
-	static public function add_entry(section:Dynamic, args:Dynamic):unreal.ToolMenuSection;
+	static public function add_entry(section:unreal.ToolMenuSection, args:unreal.ToolMenuEntry):unreal.ToolMenuSection;
 	/**
 		X.add_entry_object(section, object) -> ToolMenuSection
 		Add Entry Object
@@ -37,7 +28,7 @@ package unreal;
 		
 		    section (ToolMenuSection):
 	**/
-	static public function add_entry_object(section:Dynamic, object:Dynamic):unreal.ToolMenuSection;
+	static public function add_entry_object(section:unreal.ToolMenuSection, object:unreal.ToolMenuEntryScript):unreal.ToolMenuSection;
 	/**
 		X.get_label(section) -> Text
 		Get Label
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function get_label(section:Dynamic):unreal.Text;
+	static public function get_label(section:unreal.ToolMenuSection):unreal.Text;
 	/**
 		X.set_label(section, label) -> ToolMenuSection
 		Set Label
@@ -62,5 +53,5 @@ package unreal;
 		
 		    section (ToolMenuSection):
 	**/
-	static public function set_label(section:Dynamic, label:Dynamic):unreal.ToolMenuSection;
+	static public function set_label(section:unreal.ToolMenuSection, label:unreal.Text):unreal.ToolMenuSection;
 }

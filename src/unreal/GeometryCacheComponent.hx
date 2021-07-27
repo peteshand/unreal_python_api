@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GeometryCacheComponent") extern class GeometryCacheComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] Duration of the animation (maximum time)
 	**/
 	public var duration : Float;
@@ -137,7 +128,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_geometry_cache(new_geom_cache:Dynamic):Bool;
+	public function set_geometry_cache(new_geom_cache:unreal.GeometryCache):Bool;
 	/**
 		x.set_looping(new_looping) -> None
 		Set whether this GeometryCache is looping or not.
@@ -145,7 +136,7 @@ package unreal;
 		Args:
 		    new_looping (bool):
 	**/
-	public function set_looping(new_looping:Dynamic):Void;
+	public function set_looping(new_looping:Bool):Void;
 	/**
 		x.set_playback_speed(new_playback_speed) -> None
 		Set new playback speed for GeometryCache.
@@ -153,7 +144,7 @@ package unreal;
 		Args:
 		    new_playback_speed (float):
 	**/
-	public function set_playback_speed(new_playback_speed:Dynamic):Void;
+	public function set_playback_speed(new_playback_speed:Float):Void;
 	/**
 		x.set_start_time_offset(new_start_time_offset) -> None
 		Set current start time offset for GeometryCache.
@@ -161,7 +152,7 @@ package unreal;
 		Args:
 		    new_start_time_offset (float):
 	**/
-	public function set_start_time_offset(new_start_time_offset:Dynamic):Void;
+	public function set_start_time_offset(new_start_time_offset:Float):Void;
 	/**
 		(float):  [Read-Write] Start Time Offset
 	**/
@@ -181,5 +172,5 @@ package unreal;
 		    backwards (bool): 
 		    is_looping (bool):
 	**/
-	public function tick_at_this_time(time:Dynamic, is_running:Dynamic, backwards:Dynamic, is_looping:Dynamic):Void;
+	public function tick_at_this_time(time:Float, is_running:Bool, backwards:Bool, is_looping:Bool):Void;
 }

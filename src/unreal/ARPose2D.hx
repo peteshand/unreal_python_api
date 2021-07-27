@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARPose2D") extern class ARPose2D extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Array(bool)):  [Read-Only] Flags indicating if each joint is tracked
 	**/
 	public var is_joint_tracked : Array<Dynamic>;

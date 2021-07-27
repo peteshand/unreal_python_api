@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LandscapeComponent") extern class LandscapeComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.editor_get_paint_layer_weight_at_location(location, paint_layer) -> float
 		Gets the landscape paint layer weight value at the given position using LandscapeLayerInfo . Returns 0 in case it fails.
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function editor_get_paint_layer_weight_at_location(location:Dynamic, paint_layer:Dynamic):Float;
+	public function editor_get_paint_layer_weight_at_location(location:unreal.Vector, paint_layer:unreal.LandscapeLayerInfoObject):Float;
 	/**
 		x.editor_get_paint_layer_weight_by_name_at_location(location, paint_layer_name) -> float
 		Gets the landscape paint layer weight value at the given position using layer name. Returns 0 in case it fails.
@@ -33,7 +24,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function editor_get_paint_layer_weight_by_name_at_location(location:Dynamic, paint_layer_name:Dynamic):Float;
+	public function editor_get_paint_layer_weight_by_name_at_location(location:unreal.Vector, paint_layer_name:unreal.Name):Float;
 	/**
 		(int32):  [Read-Only] Forced LOD level to use when rendering
 	**/
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function get_material_instance_dynamic(index:Dynamic):unreal.MaterialInstanceDynamic;
+	public function get_material_instance_dynamic(index:Int):unreal.MaterialInstanceDynamic;
 	/**
 		(Texture2D):  [Read-Only] Pre-baked Base Color texture for use by distance field GI
 	**/

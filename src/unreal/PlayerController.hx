@@ -2,25 +2,17 @@
 package unreal;
 @:pythonImport("unreal", "PlayerController") extern class PlayerController extends unreal.Controller {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.activate_touch_interface(new_touch_interface) -> None
 		Activates a new touch interface for this player controller
 		
 		Args:
 		    new_touch_interface (TouchInterface):
 	**/
-	public function activate_touch_interface(new_touch_interface:Dynamic):Void;
+	public function activate_touch_interface(new_touch_interface:unreal.TouchInterface):Void;
 	/**
 		deprecated: 'add_look_up_input' was renamed to 'add_pitch_input'.
 	**/
+	@:deprecated
 	public function add_look_up_input():Void;
 	/**
 		x.add_pitch_input(val) -> None
@@ -29,7 +21,7 @@ package unreal;
 		Args:
 		    val (float): Amount to add to Pitch. This value is multiplied by InputPitchScale.
 	**/
-	public function add_pitch_input(val:Dynamic):Void;
+	public function add_pitch_input(val:Float):Void;
 	/**
 		x.add_roll_input(val) -> None
 		Add Roll input. This value is multiplied by InputRollScale.
@@ -37,10 +29,11 @@ package unreal;
 		Args:
 		    val (float): Amount to add to Roll. This value is multiplied by InputRollScale.
 	**/
-	public function add_roll_input(val:Dynamic):Void;
+	public function add_roll_input(val:Float):Void;
 	/**
 		deprecated: 'add_turn_input' was renamed to 'add_yaw_input'.
 	**/
+	@:deprecated
 	public function add_turn_input():Void;
 	/**
 		x.add_yaw_input(val) -> None
@@ -49,7 +42,7 @@ package unreal;
 		Args:
 		    val (float): Amount to add to Yaw. This value is multiplied by InputYawScale.
 	**/
-	public function add_yaw_input(val:Dynamic):Void;
+	public function add_yaw_input(val:Float):Void;
 	/**
 		x.can_restart_player() -> bool
 		Returns true if this controller thinks it's able to restart. Called from GameModeBase::PlayerCanRestart
@@ -106,18 +99,21 @@ package unreal;
 		    space (CameraShakePlaySpace): Animation play area
 		    custom_play_space (Rotator): Matrix used when Space = CAPS_UserDefined
 	**/
-	public function client_play_camera_anim(anim_to_play:Dynamic, scale:Dynamic, rate:Dynamic, blend_in_time:Dynamic, blend_out_time:Dynamic, loop:Dynamic, random_start_time:Dynamic, space:Dynamic, custom_play_space:Dynamic):Void;
+	public function client_play_camera_anim(anim_to_play:unreal.CameraAnim, scale:Float, rate:Float, blend_in_time:Float, blend_out_time:Float, loop:Bool, random_start_time:Bool, space:unreal.CameraShakePlaySpace, custom_play_space:unreal.Rotator):Void;
 	/**
 		deprecated: 'client_play_camera_shake' was renamed to 'client_start_camera_shake'.
 	**/
+	@:deprecated
 	public function client_play_camera_shake():Void;
 	/**
 		deprecated: 'client_play_camera_shake_from_source' was renamed to 'client_start_camera_shake_from_source'.
 	**/
+	@:deprecated
 	public function client_play_camera_shake_from_source():Void;
 	/**
 		deprecated: 'client_play_force_feedback' was renamed to 'k2_client_play_force_feedback'.
 	**/
+	@:deprecated
 	public function client_play_force_feedback():Void;
 	/**
 		x.client_set_hud(new_hud_class) -> None
@@ -145,7 +141,7 @@ package unreal;
 		    play_space (CameraShakePlaySpace): Which coordinate system to play the shake in (used for CameraAnims within the shake).
 		    user_play_space_rot (Rotator): Matrix used when PlaySpace = CAPS_UserDefined
 	**/
-	public function client_start_camera_shake(shake:Dynamic, scale:Dynamic, play_space:Dynamic, user_play_space_rot:Dynamic):Void;
+	public function client_start_camera_shake(shake:Dynamic, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):Void;
 	/**
 		x.client_start_camera_shake_from_source(shake, source_component) -> None
 		Play Camera Shake localized to a given source
@@ -154,7 +150,7 @@ package unreal;
 		    shake (type(Class)): Camera shake animation to play
 		    source_component (CameraShakeSourceComponent): The source from which the camera shakes originates
 	**/
-	public function client_start_camera_shake_from_source(shake:Dynamic, source_component:Dynamic):Void;
+	public function client_start_camera_shake_from_source(shake:Dynamic, source_component:unreal.CameraShakeSourceComponent):Void;
 	/**
 		x.client_stop_camera_shake(shake, immediately=True) -> None
 		Stop camera shake on client.
@@ -163,7 +159,7 @@ package unreal;
 		    shake (type(Class)): 
 		    immediately (bool):
 	**/
-	public function client_stop_camera_shake(shake:Dynamic, immediately:Dynamic):Void;
+	public function client_stop_camera_shake(shake:Dynamic, immediately:Bool):Void;
 	/**
 		x.client_stop_camera_shakes_from_source(source_component, immediately=True) -> None
 		Stop camera shake on client.
@@ -172,7 +168,7 @@ package unreal;
 		    source_component (CameraShakeSourceComponent): 
 		    immediately (bool):
 	**/
-	public function client_stop_camera_shakes_from_source(source_component:Dynamic, immediately:Dynamic):Void;
+	public function client_stop_camera_shakes_from_source(source_component:unreal.CameraShakeSourceComponent, immediately:Bool):Void;
 	/**
 		x.client_stop_force_feedback(force_feedback_effect, tag) -> None
 		Stops a playing force feedback pattern
@@ -181,7 +177,7 @@ package unreal;
 		    force_feedback_effect (ForceFeedbackEffect): If set only patterns from that effect will be stopped
 		    tag (Name): If not none only the pattern with this tag will be stopped
 	**/
-	public function client_stop_force_feedback(force_feedback_effect:Dynamic, tag:Dynamic):Void;
+	public function client_stop_force_feedback(force_feedback_effect:unreal.ForceFeedbackEffect, tag:unreal.Name):Void;
 	/**
 		(CollisionChannel):  [Read-Write] Trace channel currently being used for determining what world object was clicked on.
 	**/
@@ -225,7 +221,7 @@ package unreal;
 		
 		    world_direction (Vector):
 	**/
-	public function deproject_screen_position_to_world(screen_x:Dynamic, screen_y:Dynamic):Dynamic;
+	public function deproject_screen_position_to_world(screen_x:Float, screen_y:Float):Dynamic;
 	/**
 		(bool):  [Read-Write] Whether actor/component click events should be generated.
 	**/
@@ -271,7 +267,8 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_cursor(trace_channel:Dynamic, trace_complex:Dynamic):Dynamic;
+	@:deprecated
+	public function get_hit_result_under_cursor(trace_channel:unreal.CollisionChannel, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hit_result_under_cursor_by_channel(trace_channel, trace_complex) -> HitResult or None
 		Performs a collision query under the mouse cursor, looking on a trace channel
@@ -285,7 +282,7 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_cursor_by_channel(trace_channel:Dynamic, trace_complex:Dynamic):Dynamic;
+	public function get_hit_result_under_cursor_by_channel(trace_channel:unreal.TraceTypeQuery, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hit_result_under_cursor_for_objects(object_types, trace_complex) -> HitResult or None
 		Performs a collision query under the mouse cursor, looking for object types
@@ -299,7 +296,7 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_cursor_for_objects(object_types:Dynamic, trace_complex:Dynamic):Dynamic;
+	public function get_hit_result_under_cursor_for_objects(object_types:unreal.Array, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hit_result_under_finger(finger_index, trace_channel, trace_complex) -> HitResult or None
 		Get Hit Result Under Finger
@@ -315,7 +312,8 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_finger(finger_index:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic):Dynamic;
+	@:deprecated
+	public function get_hit_result_under_finger(finger_index:unreal.TouchIndex, trace_channel:unreal.CollisionChannel, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hit_result_under_finger_by_channel(finger_index, trace_channel, trace_complex) -> HitResult or None
 		Performs a collision query under the finger, looking on a trace channel
@@ -330,7 +328,7 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_finger_by_channel(finger_index:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic):Dynamic;
+	public function get_hit_result_under_finger_by_channel(finger_index:unreal.TouchIndex, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hit_result_under_finger_for_objects(finger_index, object_types, trace_complex) -> HitResult or None
 		Performs a collision query under the finger, looking for object types
@@ -345,7 +343,7 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_finger_for_objects(finger_index:Dynamic, object_types:Dynamic, trace_complex:Dynamic):Dynamic;
+	public function get_hit_result_under_finger_for_objects(finger_index:unreal.TouchIndex, object_types:unreal.Array, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hud() -> HUD
 		Gets the HUD currently being used by this player controller
@@ -364,7 +362,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_input_analog_key_state(key:Dynamic):Float;
+	public function get_input_analog_key_state(key:unreal.Key):Float;
 	/**
 		x.get_input_analog_stick_state(which_stick) -> (stick_x=float, stick_y=float)
 		Retrieves the X and Y displacement of the given analog stick.
@@ -379,7 +377,7 @@ package unreal;
 		
 		    stick_y (float):
 	**/
-	public function get_input_analog_stick_state(which_stick:Dynamic):python.Tuple<Dynamic>;
+	public function get_input_analog_stick_state(which_stick:unreal.ControllerAnalogStick):python.Tuple<Dynamic>;
 	/**
 		x.get_input_key_time_down(key) -> float
 		Returns how long the given key/button has been down.  Returns 0 if it's up or it just went down this frame.
@@ -390,7 +388,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_input_key_time_down(key:Dynamic):Float;
+	public function get_input_key_time_down(key:unreal.Key):Float;
 	/**
 		x.get_input_motion_state() -> (tilt=Vector, rotation_rate=Vector, gravity=Vector, acceleration=Vector)
 		Retrieves the current motion state of the player's input device
@@ -435,7 +433,7 @@ package unreal;
 		
 		    is_currently_pressed (bool):
 	**/
-	public function get_input_touch_state(finger_index:Dynamic):python.Tuple<Dynamic>;
+	public function get_input_touch_state(finger_index:unreal.TouchIndex):python.Tuple<Dynamic>;
 	/**
 		x.get_input_vector_key_state(key) -> Vector
 		Returns the vector value for the given key/button.
@@ -446,7 +444,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_input_vector_key_state(key:Dynamic):unreal.Vector;
+	public function get_input_vector_key_state(key:unreal.Key):unreal.Vector;
 	/**
 		x.get_mouse_position() -> (location_x=float, location_y=float) or None
 		Retrieves the X and Y screen coordinates of the mouse cursor. Returns false if there is no associated mouse device
@@ -505,7 +503,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_input_key_down(key:Dynamic):Bool;
+	public function is_input_key_down(key:unreal.Key):Bool;
 	/**
 		x.k2_client_play_force_feedback(force_feedback_effect, tag, looping, ignore_time_dilation, play_while_paused) -> None
 		Play a force feedback pattern on the player's controller
@@ -517,14 +515,16 @@ package unreal;
 		    ignore_time_dilation (bool): Whether the pattern should ignore time dilation
 		    play_while_paused (bool): Whether the pattern should continue to play while the game is paused
 	**/
-	public function k2_client_play_force_feedback(force_feedback_effect:Dynamic, tag:Dynamic, looping:Dynamic, ignore_time_dilation:Dynamic, play_while_paused:Dynamic):Void;
+	public function k2_client_play_force_feedback(force_feedback_effect:unreal.ForceFeedbackEffect, tag:unreal.Name, looping:Bool, ignore_time_dilation:Bool, play_while_paused:Bool):Void;
 	/**
 		deprecated: 'look_right_scale' was renamed to 'input_yaw_scale'.
 	**/
+	@:deprecated
 	public var look_right_scale : Dynamic;
 	/**
 		deprecated: 'look_up_scale' was renamed to 'input_pitch_scale'.
 	**/
+	@:deprecated
 	public var look_up_scale : Dynamic;
 	/**
 		x.play_dynamic_force_feedback(intensity, duration, affects_left_large, affects_left_small, affects_right_large, affects_right_small, action, latent_info) -> None
@@ -543,7 +543,7 @@ package unreal;
 		    action (DynamicForceFeedbackAction): 
 		    latent_info (LatentActionInfo):
 	**/
-	public function play_dynamic_force_feedback(intensity:Dynamic, duration:Dynamic, affects_left_large:Dynamic, affects_left_small:Dynamic, affects_right_large:Dynamic, affects_right_small:Dynamic, action:Dynamic, latent_info:Dynamic):Void;
+	public function play_dynamic_force_feedback(intensity:Float, duration:Float, affects_left_large:Bool, affects_left_small:Bool, affects_right_large:Bool, affects_right_small:Bool, action:unreal.DynamicForceFeedbackAction, latent_info:unreal.LatentActionInfo):Void;
 	/**
 		x.play_haptic_effect(haptic_effect, hand, scale=1.000000, loop=False) -> None
 		Play a haptic feedback curve on the player's controller
@@ -554,14 +554,16 @@ package unreal;
 		    scale (float): Scale between 0.0 and 1.0 on the intensity of playback
 		    loop (bool):
 	**/
-	public function play_haptic_effect(haptic_effect:Dynamic, hand:Dynamic, scale:Dynamic, loop:Dynamic):Void;
+	public function play_haptic_effect(haptic_effect:unreal.HapticFeedbackEffect_Base, hand:unreal.ControllerHand, scale:Float, loop:Bool):Void;
 	/**
 		deprecated: 'player_camera' was renamed to 'player_camera_manager'.
 	**/
+	@:deprecated
 	public var player_camera : Dynamic;
 	/**
 		deprecated: 'player_camera_class' was renamed to 'player_camera_manager_class'.
 	**/
+	@:deprecated
 	public var player_camera_class : Dynamic;
 	/**
 		(PlayerCameraManager):  [Read-Only] Camera manager associated with this Player Controller.
@@ -588,7 +590,7 @@ package unreal;
 		
 		    screen_location (Vector2D):
 	**/
-	public function project_world_location_to_screen(world_location:Dynamic, player_viewport_relative:Dynamic):Dynamic;
+	public function project_world_location_to_screen(world_location:unreal.Vector, player_viewport_relative:Bool):Dynamic;
 	/**
 		x.reset_controller_light_color() -> None
 		Resets the light color of the player's controller to default
@@ -602,7 +604,7 @@ package unreal;
 		    attach_to_component (SceneComponent): 
 		    attenuation_location_o_verride (Vector):
 	**/
-	public function set_audio_listener_attenuation_override(attach_to_component:Dynamic, attenuation_location_o_verride:Dynamic):Void;
+	public function set_audio_listener_attenuation_override(attach_to_component:unreal.SceneComponent, attenuation_location_o_verride:unreal.Vector):Void;
 	/**
 		x.set_audio_listener_override(attach_to_component, location, rotation) -> None
 		Used to override the default positioning of the audio listener
@@ -612,7 +614,7 @@ package unreal;
 		    location (Vector): Depending on whether Component is attached this is either an offset from its location or an absolute position
 		    rotation (Rotator): Depending on whether Component is attached this is either an offset from its rotation or an absolute rotation
 	**/
-	public function set_audio_listener_override(attach_to_component:Dynamic, location:Dynamic, rotation:Dynamic):Void;
+	public function set_audio_listener_override(attach_to_component:unreal.SceneComponent, location:unreal.Vector, rotation:unreal.Rotator):Void;
 	/**
 		x.set_cinematic_mode(cinematic_mode, hide_player, affects_hud, affects_movement, affects_turning) -> None
 		Server/SP only function for changing whether the player is in cinematic mode.  Updates values of various state variables, then replicates the call to the client
@@ -625,7 +627,7 @@ package unreal;
 		    affects_movement (bool): specify true to disable movement in cinematic mode, enable it when leaving
 		    affects_turning (bool): specify true to disable turning in cinematic mode or enable it when leaving
 	**/
-	public function set_cinematic_mode(cinematic_mode:Dynamic, hide_player:Dynamic, affects_hud:Dynamic, affects_movement:Dynamic, affects_turning:Dynamic):Void;
+	public function set_cinematic_mode(cinematic_mode:Bool, hide_player:Bool, affects_hud:Bool, affects_movement:Bool, affects_turning:Bool):Void;
 	/**
 		x.set_controller_light_color(color) -> None
 		Sets the light color of the player's controller
@@ -633,7 +635,7 @@ package unreal;
 		Args:
 		    color (Color): The color for the light to be
 	**/
-	public function set_controller_light_color(color:Dynamic):Void;
+	public function set_controller_light_color(color:unreal.Color):Void;
 	/**
 		x.set_disable_haptics(new_disabled) -> None
 		Allows the player controller to disable all haptic requests from being fired, e.g. in the case of a level loading
@@ -641,7 +643,7 @@ package unreal;
 		Args:
 		    new_disabled (bool): If TRUE, the haptics will stop and prevented from being enabled again until set to FALSE
 	**/
-	public function set_disable_haptics(new_disabled:Dynamic):Void;
+	public function set_disable_haptics(new_disabled:Bool):Void;
 	/**
 		x.set_haptics_by_value(frequency, amplitude, hand) -> None
 		Sets the value of the haptics for the specified hand directly, using frequency and amplitude.  NOTE:  If a curve is already
@@ -652,7 +654,7 @@ package unreal;
 		    amplitude (float): The normalized amplitude [0.0, 1.0] to set the haptic feedback to
 		    hand (ControllerHand): Which hand to play the effect on
 	**/
-	public function set_haptics_by_value(frequency:Dynamic, amplitude:Dynamic, hand:Dynamic):Void;
+	public function set_haptics_by_value(frequency:Float, amplitude:Float, hand:unreal.ControllerHand):Void;
 	/**
 		x.set_mouse_cursor_widget(cursor, cursor_widget) -> None
 		Sets the Widget for the Mouse Cursor to display
@@ -661,7 +663,7 @@ package unreal;
 		    cursor (MouseCursor): the cursor to set the widget for
 		    cursor_widget (UserWidget): the widget to set the cursor to
 	**/
-	public function set_mouse_cursor_widget(cursor:Dynamic, cursor_widget:Dynamic):Void;
+	public function set_mouse_cursor_widget(cursor:unreal.MouseCursor, cursor_widget:unreal.UserWidget):Void;
 	/**
 		x.set_mouse_location(x, y) -> None
 		Positions the mouse cursor in screen space, in pixels.
@@ -670,7 +672,7 @@ package unreal;
 		    x (int32): 
 		    y (int32):
 	**/
-	public function set_mouse_location(x:Dynamic, y:Dynamic):Void;
+	public function set_mouse_location(x:Int, y:Int):Void;
 	/**
 		x.set_view_target_with_blend(new_view_target, blend_time=0.000000, blend_func=ViewTargetBlendFunction.VT_BLEND_LINEAR, blend_exp=0.000000, lock_outgoing=False) -> None
 		Set the view target blending with variable control
@@ -682,7 +684,7 @@ package unreal;
 		    blend_exp (float): Exponent, used by certain blend functions to control the shape of the curve.
 		    lock_outgoing (bool): If true, lock outgoing viewtarget to last frame's camera position for the remainder of the blend.
 	**/
-	public function set_view_target_with_blend(new_view_target:Dynamic, blend_time:Dynamic, blend_func:Dynamic, blend_exp:Dynamic, lock_outgoing:Dynamic):Void;
+	public function set_view_target_with_blend(new_view_target:unreal.Actor, blend_time:Float, blend_func:unreal.ViewTargetBlendFunction, blend_exp:Float, lock_outgoing:Bool):Void;
 	/**
 		x.set_virtual_joystick_visibility(visible) -> None
 		Set the virtual joystick visibility.
@@ -690,7 +692,7 @@ package unreal;
 		Args:
 		    visible (bool):
 	**/
-	public function set_virtual_joystick_visibility(visible:Dynamic):Void;
+	public function set_virtual_joystick_visibility(visible:Bool):Void;
 	/**
 		(bool):  [Read-Write] Whether we fully tick when the game is paused, if our tick function is allowed to do so. If false, we do a minimal update during the tick.
 	**/
@@ -710,7 +712,7 @@ package unreal;
 		Args:
 		    hand (ControllerHand): Which hand to stop the effect for
 	**/
-	public function stop_haptic_effect(hand:Dynamic):Void;
+	public function stop_haptic_effect(hand:unreal.ControllerHand):Void;
 	/**
 		x.was_input_key_just_pressed(key) -> bool
 		Returns true if the given key/button was up last frame and down this frame.
@@ -721,7 +723,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function was_input_key_just_pressed(key:Dynamic):Bool;
+	public function was_input_key_just_pressed(key:unreal.Key):Bool;
 	/**
 		x.was_input_key_just_released(key) -> bool
 		Returns true if the given key/button was down last frame and up this frame.
@@ -732,5 +734,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function was_input_key_just_released(key:Dynamic):Bool;
+	public function was_input_key_just_released(key:unreal.Key):Bool;
 }

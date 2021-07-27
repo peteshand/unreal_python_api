@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneLevelVisibilitySection") extern class MovieSceneLevelVisibilitySection extends unreal.MovieSceneSection {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_level_names() -> Array(Name)
 		Get Level Names
 		
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    level_names (Array(Name)):
 	**/
-	public function set_level_names(level_names:Dynamic):Void;
+	public function set_level_names(level_names:unreal.Array):Void;
 	/**
 		x.set_visibility(visibility) -> None
 		Set Visibility
@@ -41,5 +32,5 @@ package unreal;
 		Args:
 		    visibility (LevelVisibility):
 	**/
-	public function set_visibility(visibility:Dynamic):Void;
+	public function set_visibility(visibility:unreal.LevelVisibility):Void;
 }

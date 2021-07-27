@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PaperFlipbookComponent") extern class PaperFlipbookComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_flipbook() -> PaperFlipbook
 		Gets the flipbook used by this instance.
 		
@@ -132,7 +123,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_flipbook(new_flipbook:Dynamic):Bool;
+	public function set_flipbook(new_flipbook:unreal.PaperFlipbook):Bool;
 	/**
 		x.set_looping(new_looping) -> None
 		true means we should loop, false means we should not.
@@ -140,7 +131,7 @@ package unreal;
 		Args:
 		    new_looping (bool):
 	**/
-	public function set_looping(new_looping:Dynamic):Void;
+	public function set_looping(new_looping:Bool):Void;
 	/**
 		x.set_new_time(new_time) -> None
 		Set the new playback position time to use
@@ -148,7 +139,7 @@ package unreal;
 		Args:
 		    new_time (float):
 	**/
-	public function set_new_time(new_time:Dynamic):Void;
+	public function set_new_time(new_time:Float):Void;
 	/**
 		x.set_play_rate(new_rate) -> None
 		Sets the new play rate for this flipbook
@@ -156,7 +147,7 @@ package unreal;
 		Args:
 		    new_rate (float):
 	**/
-	public function set_play_rate(new_rate:Dynamic):Void;
+	public function set_play_rate(new_rate:Float):Void;
 	/**
 		x.set_playback_position(new_position, fire_events) -> None
 		Jump to a position in the flipbook (expressed in seconds). If bFireEvents is true, event functions will fire, otherwise they will not.
@@ -165,7 +156,7 @@ package unreal;
 		    new_position (float): 
 		    fire_events (bool):
 	**/
-	public function set_playback_position(new_position:Dynamic, fire_events:Dynamic):Void;
+	public function set_playback_position(new_position:Float, fire_events:Bool):Void;
 	/**
 		x.set_playback_position_in_frames(new_frame_position, fire_events) -> None
 		Jump to a position in the flipbook (expressed in frames). If bFireEvents is true, event functions will fire, otherwise they will not.
@@ -174,7 +165,7 @@ package unreal;
 		    new_frame_position (int32): 
 		    fire_events (bool):
 	**/
-	public function set_playback_position_in_frames(new_frame_position:Dynamic, fire_events:Dynamic):Void;
+	public function set_playback_position_in_frames(new_frame_position:Int, fire_events:Bool):Void;
 	/**
 		x.set_sprite_color(new_color) -> None
 		Set color of the sprite
@@ -182,7 +173,7 @@ package unreal;
 		Args:
 		    new_color (LinearColor):
 	**/
-	public function set_sprite_color(new_color:Dynamic):Void;
+	public function set_sprite_color(new_color:unreal.LinearColor):Void;
 	/**
 		(LinearColor):  [Read-Only] Vertex color to apply to the frames
 	**/

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CameraFocusSettings") extern class CameraFocusSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(CameraFocusMethod):  [Read-Write] Which method to use to handle camera focus
 	**/
 	public var focus_method : unreal.CameraFocusMethod;

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "OperatorField") extern class OperatorField extends unreal.FieldNodeBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(FieldNodeBase):  [Read-Write] Left Field
 	**/
 	public var left_field : unreal.FieldNodeBase;
@@ -39,5 +30,5 @@ package unreal;
 		Returns:
 		    OperatorField:
 	**/
-	public function set_operator_field(magnitude:Dynamic, right_field:Dynamic, left_field:Dynamic, operation:Dynamic):unreal.OperatorField;
+	public function set_operator_field(magnitude:Float, right_field:unreal.FieldNodeBase, left_field:unreal.FieldNodeBase, operation:unreal.FieldOperationType):unreal.OperatorField;
 }

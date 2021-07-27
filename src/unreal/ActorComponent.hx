@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ActorComponent") extern class ActorComponent extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.activate(reset=False) -> None
 		Activates the SceneComponent, should be overridden by native child classes.
 		
 		Args:
 		    reset (bool): Whether the activation should happen even if ShouldActivate returns false.
 	**/
-	public function activate(reset:Dynamic):Void;
+	public function activate(reset:Bool):Void;
 	/**
 		x.add_tick_prerequisite_actor(prerequisite_actor) -> None
 		Make this component tick after PrerequisiteActor
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    prerequisite_actor (Actor):
 	**/
-	public function add_tick_prerequisite_actor(prerequisite_actor:Dynamic):Void;
+	public function add_tick_prerequisite_actor(prerequisite_actor:unreal.Actor):Void;
 	/**
 		x.add_tick_prerequisite_component(prerequisite_component) -> None
 		Make this component tick after PrerequisiteComponent.
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    prerequisite_component (ActorComponent):
 	**/
-	public function add_tick_prerequisite_component(prerequisite_component:Dynamic):Void;
+	public function add_tick_prerequisite_component(prerequisite_component:unreal.ActorComponent):Void;
 	/**
 		(bool):  [Read-Only] Whether the component is activated at creation or must be explicitly activated.
 	**/
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function component_has_tag(tag:Dynamic):Bool;
+	public function component_has_tag(tag:unreal.Name):Bool;
 	/**
 		(Array(Name)):  [Read-Write] Array of tags that can be used for grouping and categorizing. Can also be accessed from scripting.
 	**/
@@ -65,7 +56,7 @@ package unreal;
 		Args:
 		    object (Object):
 	**/
-	public function destroy_component(object:Dynamic):Void;
+	public function destroy_component(object:unreal.Object):Void;
 	/**
 		x.get_component_tick_interval() -> float
 		Returns the tick interval for this component's primary tick function, which is the frequency in seconds at which it will be executed
@@ -131,10 +122,11 @@ package unreal;
 		Args:
 		    end_play_reason (EndPlayReason):
 	**/
-	public function receive_end_play(end_play_reason:Dynamic):Void;
+	public function receive_end_play(end_play_reason:unreal.EndPlayReason):Void;
 	/**
 		deprecated: 'receive_initialize_component' was renamed to 'receive_begin_play'.
 	**/
+	@:deprecated
 	public function receive_initialize_component():Void;
 	/**
 		x.receive_tick(delta_seconds) -> None
@@ -143,10 +135,11 @@ package unreal;
 		Args:
 		    delta_seconds (float):
 	**/
-	public function receive_tick(delta_seconds:Dynamic):Void;
+	public function receive_tick(delta_seconds:Float):Void;
 	/**
 		deprecated: 'receive_uninitialize_component' was renamed to 'receive_end_play'.
 	**/
+	@:deprecated
 	public function receive_uninitialize_component():Void;
 	/**
 		x.remove_tick_prerequisite_actor(prerequisite_actor) -> None
@@ -155,7 +148,7 @@ package unreal;
 		Args:
 		    prerequisite_actor (Actor):
 	**/
-	public function remove_tick_prerequisite_actor(prerequisite_actor:Dynamic):Void;
+	public function remove_tick_prerequisite_actor(prerequisite_actor:unreal.Actor):Void;
 	/**
 		x.remove_tick_prerequisite_component(prerequisite_component) -> None
 		Remove tick dependency on PrerequisiteComponent.
@@ -163,7 +156,7 @@ package unreal;
 		Args:
 		    prerequisite_component (ActorComponent):
 	**/
-	public function remove_tick_prerequisite_component(prerequisite_component:Dynamic):Void;
+	public function remove_tick_prerequisite_component(prerequisite_component:unreal.ActorComponent):Void;
 	/**
 		(bool):  [Read-Only] Is this component currently replicating? Should the network code consider it for replication? Owning Actor must be replicating first!
 	**/
@@ -176,7 +169,7 @@ package unreal;
 		    new_active (bool): The new active state of the component
 		    reset (bool): Whether the activation should happen even if ShouldActivate returns false.
 	**/
-	public function set_active(new_active:Dynamic, reset:Dynamic):Void;
+	public function set_active(new_active:Bool, reset:Bool):Void;
 	/**
 		x.set_auto_activate(new_auto_activate) -> None
 		Sets whether the component should be auto activate or not. Only safe during construction scripts.
@@ -184,7 +177,7 @@ package unreal;
 		Args:
 		    new_auto_activate (bool): The new auto activate state of the component
 	**/
-	public function set_auto_activate(new_auto_activate:Dynamic):Void;
+	public function set_auto_activate(new_auto_activate:Bool):Void;
 	/**
 		x.set_component_tick_enabled(enabled) -> None
 		Set this component's tick functions to be enabled or disabled. Only has an effect if the function is registered
@@ -192,7 +185,7 @@ package unreal;
 		Args:
 		    enabled (bool): Whether it should be enabled or not
 	**/
-	public function set_component_tick_enabled(enabled:Dynamic):Void;
+	public function set_component_tick_enabled(enabled:Bool):Void;
 	/**
 		x.set_component_tick_interval(tick_interval) -> None
 		Sets the tick interval for this component's primary tick function. Does not enable the tick interval. Takes effect on next tick.
@@ -200,7 +193,7 @@ package unreal;
 		Args:
 		    tick_interval (float): The duration between ticks for this component's primary tick function
 	**/
-	public function set_component_tick_interval(tick_interval:Dynamic):Void;
+	public function set_component_tick_interval(tick_interval:Float):Void;
 	/**
 		x.set_component_tick_interval_and_cooldown(tick_interval) -> None
 		Sets the tick interval for this component's primary tick function. Does not enable the tick interval. Takes effect imediately.
@@ -208,7 +201,7 @@ package unreal;
 		Args:
 		    tick_interval (float): The duration between ticks for this component's primary tick function
 	**/
-	public function set_component_tick_interval_and_cooldown(tick_interval:Dynamic):Void;
+	public function set_component_tick_interval_and_cooldown(tick_interval:Float):Void;
 	/**
 		x.set_is_replicated(should_replicate) -> None
 		Enable or disable replication. This is the equivalent of RemoteRole for actors (only a bool is required for components)
@@ -216,7 +209,7 @@ package unreal;
 		Args:
 		    should_replicate (bool):
 	**/
-	public function set_is_replicated(should_replicate:Dynamic):Void;
+	public function set_is_replicated(should_replicate:Bool):Void;
 	/**
 		x.set_tick_group(new_tick_group) -> None
 		Changes the ticking group for this component
@@ -224,7 +217,7 @@ package unreal;
 		Args:
 		    new_tick_group (TickingGroup):
 	**/
-	public function set_tick_group(new_tick_group:Dynamic):Void;
+	public function set_tick_group(new_tick_group:unreal.TickingGroup):Void;
 	/**
 		x.set_tickable_when_paused(tickable_when_paused) -> None
 		Sets whether this component can tick when paused.
@@ -232,7 +225,7 @@ package unreal;
 		Args:
 		    tickable_when_paused (bool):
 	**/
-	public function set_tickable_when_paused(tickable_when_paused:Dynamic):Void;
+	public function set_tickable_when_paused(tickable_when_paused:Bool):Void;
 	/**
 		x.toggle_active() -> None
 		Toggles the active state of the component

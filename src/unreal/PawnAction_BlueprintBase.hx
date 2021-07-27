@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PawnAction_BlueprintBase") extern class PawnAction_BlueprintBase extends unreal.PawnAction {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.action_finished(controlled_pawn, with_result) -> None
 		Action Finished
 		
@@ -18,7 +9,7 @@ package unreal;
 		    controlled_pawn (Pawn): 
 		    with_result (PawnActionResult):
 	**/
-	public function action_finished(controlled_pawn:Dynamic, with_result:Dynamic):Void;
+	public function action_finished(controlled_pawn:unreal.Pawn, with_result:unreal.PawnActionResult):Void;
 	/**
 		x.action_pause(controlled_pawn) -> None
 		Action Pause
@@ -26,7 +17,7 @@ package unreal;
 		Args:
 		    controlled_pawn (Pawn):
 	**/
-	public function action_pause(controlled_pawn:Dynamic):Void;
+	public function action_pause(controlled_pawn:unreal.Pawn):Void;
 	/**
 		x.action_resume(controlled_pawn) -> None
 		Action Resume
@@ -34,7 +25,7 @@ package unreal;
 		Args:
 		    controlled_pawn (Pawn):
 	**/
-	public function action_resume(controlled_pawn:Dynamic):Void;
+	public function action_resume(controlled_pawn:unreal.Pawn):Void;
 	/**
 		x.action_start(controlled_pawn) -> None
 		Blueprint interface
@@ -42,7 +33,7 @@ package unreal;
 		Args:
 		    controlled_pawn (Pawn):
 	**/
-	public function action_start(controlled_pawn:Dynamic):Void;
+	public function action_start(controlled_pawn:unreal.Pawn):Void;
 	/**
 		x.action_tick(controlled_pawn, delta_seconds) -> None
 		Action Tick
@@ -51,5 +42,5 @@ package unreal;
 		    controlled_pawn (Pawn): 
 		    delta_seconds (float):
 	**/
-	public function action_tick(controlled_pawn:Dynamic, delta_seconds:Dynamic):Void;
+	public function action_tick(controlled_pawn:unreal.Pawn, delta_seconds:Float):Void;
 }

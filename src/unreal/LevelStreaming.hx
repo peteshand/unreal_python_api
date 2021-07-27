@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelStreaming") extern class LevelStreaming extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.create_instance(unique_instance_name) -> LevelStreaming
 		Creates a new instance of this streaming level with a provided unique instance name
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    LevelStreaming:
 	**/
-	public function create_instance(unique_instance_name:Dynamic):unreal.LevelStreaming;
+	public function create_instance(unique_instance_name:String):unreal.LevelStreaming;
 	/**
 		(bool):  [Read-Write] Whether this level streaming object should be ignored by world composition distance streaming,
 		so streaming state can be controlled by other systems (ex: in blueprints)
@@ -105,7 +96,7 @@ package unreal;
 		Args:
 		    is_requesting_unload_and_removal (bool):
 	**/
-	public function set_is_requesting_unload_and_removal(is_requesting_unload_and_removal:Dynamic):Void;
+	public function set_is_requesting_unload_and_removal(is_requesting_unload_and_removal:Bool):Void;
 	/**
 		(bool):  [Read-Write] Whether the level should be loaded
 	**/

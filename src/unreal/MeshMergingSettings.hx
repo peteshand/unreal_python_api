@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MeshMergingSettings") extern class MeshMergingSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Whether or not vertex data such as vertex colours should be baked into the resulting mesh
 	**/
 	public var bake_vertex_data_to_mesh : Bool;

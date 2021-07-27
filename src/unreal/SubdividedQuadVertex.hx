@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SubdividedQuadVertex") extern class SubdividedQuadVertex extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Vector2D):  [Read-Write] Texture coordinates for this vertex.  We only support up to two, for now. (Just to avoid TArrays/allocations)
 	**/
 	public var texture_coordinate0 : unreal.Vector2D;

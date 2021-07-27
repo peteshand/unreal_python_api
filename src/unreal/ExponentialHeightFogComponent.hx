@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ExponentialHeightFogComponent") extern class ExponentialHeightFogComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(LinearColor):  [Read-Only] Controls the color of the directional inscattering, which is used to approximate inscattering from a directional light.
 		Note: there must be a directional light with bUsedAsAtmosphereSunLight enabled for DirectionalInscattering to be used.
 	**/
@@ -92,7 +83,7 @@ package unreal;
 		Args:
 		    value (LinearColor):
 	**/
-	public function set_directional_inscattering_color(value:Dynamic):Void;
+	public function set_directional_inscattering_color(value:unreal.LinearColor):Void;
 	/**
 		x.set_directional_inscattering_exponent(value) -> None
 		Set Directional Inscattering Exponent
@@ -100,7 +91,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_directional_inscattering_exponent(value:Dynamic):Void;
+	public function set_directional_inscattering_exponent(value:Float):Void;
 	/**
 		x.set_directional_inscattering_start_distance(value) -> None
 		Set Directional Inscattering Start Distance
@@ -108,7 +99,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_directional_inscattering_start_distance(value:Dynamic):Void;
+	public function set_directional_inscattering_start_distance(value:Float):Void;
 	/**
 		x.set_fog_cutoff_distance(value) -> None
 		Set Fog Cutoff Distance
@@ -116,7 +107,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_fog_cutoff_distance(value:Dynamic):Void;
+	public function set_fog_cutoff_distance(value:Float):Void;
 	/**
 		x.set_fog_density(value) -> None
 		Set Fog Density
@@ -124,7 +115,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_fog_density(value:Dynamic):Void;
+	public function set_fog_density(value:Float):Void;
 	/**
 		x.set_fog_height_falloff(value) -> None
 		Set Fog Height Falloff
@@ -132,7 +123,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_fog_height_falloff(value:Dynamic):Void;
+	public function set_fog_height_falloff(value:Float):Void;
 	/**
 		x.set_fog_inscattering_color(value) -> None
 		Set Fog Inscattering Color
@@ -140,7 +131,7 @@ package unreal;
 		Args:
 		    value (LinearColor):
 	**/
-	public function set_fog_inscattering_color(value:Dynamic):Void;
+	public function set_fog_inscattering_color(value:unreal.LinearColor):Void;
 	/**
 		x.set_fog_max_opacity(value) -> None
 		Set Fog Max Opacity
@@ -148,7 +139,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_fog_max_opacity(value:Dynamic):Void;
+	public function set_fog_max_opacity(value:Float):Void;
 	/**
 		x.set_fully_directional_inscattering_color_distance(value) -> None
 		Set Fully Directional Inscattering Color Distance
@@ -156,7 +147,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_fully_directional_inscattering_color_distance(value:Dynamic):Void;
+	public function set_fully_directional_inscattering_color_distance(value:Float):Void;
 	/**
 		x.set_inscattering_color_cubemap(value) -> None
 		Set Inscattering Color Cubemap
@@ -164,7 +155,7 @@ package unreal;
 		Args:
 		    value (TextureCube):
 	**/
-	public function set_inscattering_color_cubemap(value:Dynamic):Void;
+	public function set_inscattering_color_cubemap(value:unreal.TextureCube):Void;
 	/**
 		x.set_inscattering_color_cubemap_angle(value) -> None
 		Set Inscattering Color Cubemap Angle
@@ -172,7 +163,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_inscattering_color_cubemap_angle(value:Dynamic):Void;
+	public function set_inscattering_color_cubemap_angle(value:Float):Void;
 	/**
 		x.set_inscattering_texture_tint(value) -> None
 		Set Inscattering Texture Tint
@@ -180,7 +171,7 @@ package unreal;
 		Args:
 		    value (LinearColor):
 	**/
-	public function set_inscattering_texture_tint(value:Dynamic):Void;
+	public function set_inscattering_texture_tint(value:unreal.LinearColor):Void;
 	/**
 		x.set_non_directional_inscattering_color_distance(value) -> None
 		Set Non Directional Inscattering Color Distance
@@ -188,7 +179,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_non_directional_inscattering_color_distance(value:Dynamic):Void;
+	public function set_non_directional_inscattering_color_distance(value:Float):Void;
 	/**
 		x.set_start_distance(value) -> None
 		Set Start Distance
@@ -196,7 +187,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_start_distance(value:Dynamic):Void;
+	public function set_start_distance(value:Float):Void;
 	/**
 		x.set_volumetric_fog(new_value) -> None
 		Set Volumetric Fog
@@ -204,7 +195,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_volumetric_fog(new_value:Dynamic):Void;
+	public function set_volumetric_fog(new_value:Bool):Void;
 	/**
 		x.set_volumetric_fog_albedo(new_value) -> None
 		Set Volumetric Fog Albedo
@@ -212,7 +203,7 @@ package unreal;
 		Args:
 		    new_value (Color):
 	**/
-	public function set_volumetric_fog_albedo(new_value:Dynamic):Void;
+	public function set_volumetric_fog_albedo(new_value:unreal.Color):Void;
 	/**
 		x.set_volumetric_fog_distance(new_value) -> None
 		Set Volumetric Fog Distance
@@ -220,7 +211,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_volumetric_fog_distance(new_value:Dynamic):Void;
+	public function set_volumetric_fog_distance(new_value:Float):Void;
 	/**
 		x.set_volumetric_fog_emissive(new_value) -> None
 		Set Volumetric Fog Emissive
@@ -228,7 +219,7 @@ package unreal;
 		Args:
 		    new_value (LinearColor):
 	**/
-	public function set_volumetric_fog_emissive(new_value:Dynamic):Void;
+	public function set_volumetric_fog_emissive(new_value:unreal.LinearColor):Void;
 	/**
 		x.set_volumetric_fog_extinction_scale(new_value) -> None
 		Set Volumetric Fog Extinction Scale
@@ -236,7 +227,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_volumetric_fog_extinction_scale(new_value:Dynamic):Void;
+	public function set_volumetric_fog_extinction_scale(new_value:Float):Void;
 	/**
 		x.set_volumetric_fog_scattering_distribution(new_value) -> None
 		Set Volumetric Fog Scattering Distribution
@@ -244,7 +235,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_volumetric_fog_scattering_distribution(new_value:Dynamic):Void;
+	public function set_volumetric_fog_scattering_distribution(new_value:Float):Void;
 	/**
 		(float):  [Read-Only] Distance from the camera that the fog will start, in world units.
 	**/

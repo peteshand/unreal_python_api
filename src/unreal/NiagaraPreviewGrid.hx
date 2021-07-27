@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraPreviewGrid") extern class NiagaraPreviewGrid extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.activate_previews(reset) -> None
 		AActor Interface End
 		
 		Args:
 		    reset (bool):
 	**/
-	public function activate_previews(reset:Dynamic):Void;
+	public function activate_previews(reset:Bool):Void;
 	/**
 		x.deactivate_previews() -> None
 		Deactivate Previews
@@ -40,5 +31,5 @@ package unreal;
 		Args:
 		    paused (bool):
 	**/
-	public function set_paused(paused:Dynamic):Void;
+	public function set_paused(paused:Bool):Void;
 }

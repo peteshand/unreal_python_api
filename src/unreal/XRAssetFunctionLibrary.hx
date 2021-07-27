@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "XRAssetFunctionLibrary") extern class XRAssetFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_device_visualization_component_blocking(target, xr_device_id, manual_attachment, relative_transform) -> PrimitiveComponent
 		Spawns a render component for the specified XR device.
 		
@@ -27,7 +18,7 @@ package unreal;
 		Returns:
 		    PrimitiveComponent: A new component representing the specified device (invalid/null if a model for the device doesn't exist).
 	**/
-	static public function add_device_visualization_component_blocking(target:Dynamic, xr_device_id:Dynamic, manual_attachment:Dynamic, relative_transform:Dynamic):unreal.PrimitiveComponent;
+	static public function add_device_visualization_component_blocking(target:unreal.Actor, xr_device_id:unreal.XRDeviceId, manual_attachment:Bool, relative_transform:unreal.Transform):unreal.PrimitiveComponent;
 	/**
 		X.add_named_device_visualization_component_blocking(target, system_name, device_name, manual_attachment, relative_transform) -> (PrimitiveComponent, xr_device_id=XRDeviceId)
 		Spawns a render component for the specified XR device.
@@ -48,5 +39,5 @@ package unreal;
 		
 		    xr_device_id (XRDeviceId):
 	**/
-	static public function add_named_device_visualization_component_blocking(target:Dynamic, system_name:Dynamic, device_name:Dynamic, manual_attachment:Dynamic, relative_transform:Dynamic):unreal.XRDeviceId;
+	static public function add_named_device_visualization_component_blocking(target:unreal.Actor, system_name:unreal.Name, device_name:unreal.Name, manual_attachment:Bool, relative_transform:unreal.Transform):unreal.XRDeviceId;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimNode_AimOffsetLookAt") extern class AnimNode_AimOffsetLookAt extends unreal.AnimNode_BlendSpacePlayer {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Amount of this node to blend into the output pose
 	**/
 	public var alpha : Float;

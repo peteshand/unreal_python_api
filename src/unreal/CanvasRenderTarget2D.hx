@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CanvasRenderTarget2D") extern class CanvasRenderTarget2D extends unreal.TextureRenderTarget2D {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.create_canvas_render_target2d(world_context_object, canvas_render_target2d_class, width=1024, height=1024) -> CanvasRenderTarget2D
 		Creates a new canvas render target and initializes it to the specified dimensions
 		
@@ -23,7 +14,7 @@ package unreal;
 		Returns:
 		    CanvasRenderTarget2D: Returns the instanced render target.
 	**/
-	static public function create_canvas_render_target2d(world_context_object:Dynamic, canvas_render_target2d_class:Dynamic, width:Dynamic, height:Dynamic):unreal.CanvasRenderTarget2D;
+	static public function create_canvas_render_target2d(world_context_object:unreal.Object, canvas_render_target2d_class:Dynamic, width:Int, height:Int):unreal.CanvasRenderTarget2D;
 	/**
 		x.get_size() -> (width=int32, height=int32)
 		Gets a specific render target's size from the global map of canvas render targets.
@@ -49,7 +40,7 @@ package unreal;
 		    width (int32): Width of the render target.
 		    height (int32): Height of the render target.
 	**/
-	public function receive_update(canvas:Dynamic, width:Dynamic, height:Dynamic):Void;
+	public function receive_update(canvas:unreal.Canvas, width:Int, height:Int):Void;
 	/**
 		x.update_resource() -> None
 		Updates the the canvas render target texture's resource. This is where the render target will create or

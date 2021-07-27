@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SoundClassProperties") extern class SoundClassProperties extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Whether to inflate referencing sound's priority to always play.
 	**/
 	public var always_play : Bool;
@@ -89,6 +80,7 @@ package unreal;
 		(float):  [Read-Only] Stereo Bleed
 		deprecated: Stereo Bleed no longer supported.
 	**/
+	@:deprecated
 	public var stereo_bleed : Float;
 	/**
 		(float):  [Read-Only] Voice center channel volume - Not a multiplier (does not propagate to child classes)

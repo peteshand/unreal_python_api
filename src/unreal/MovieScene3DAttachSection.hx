@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MovieScene3DAttachSection") extern class MovieScene3DAttachSection extends unreal.MovieScene3DConstraintSection {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Name):  [Read-Write] Attach Component Name
 	**/
 	public var attach_component_name : unreal.Name;

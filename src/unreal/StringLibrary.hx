@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "StringLibrary") extern class StringLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.build_string_bool(append_to, prefix, bool, suffix) -> str
 		Converts a boolean->string, creating a new string in the form AppendTo+Prefix+InBool+Suffix
 		
@@ -23,7 +14,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_bool(append_to:Dynamic, prefix:Dynamic, bool:Dynamic, suffix:Dynamic):String;
+	static public function build_string_bool(append_to:String, prefix:String, bool:Bool, suffix:String):String;
 	/**
 		X.build_string_color(append_to, prefix, color, suffix) -> str
 		Converts a color->string, creating a new string in the form AppendTo+Prefix+InColor+Suffix
@@ -37,7 +28,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_color(append_to:Dynamic, prefix:Dynamic, color:Dynamic, suffix:Dynamic):String;
+	static public function build_string_color(append_to:String, prefix:String, color:unreal.LinearColor, suffix:String):String;
 	/**
 		X.build_string_float(append_to, prefix, float, suffix) -> str
 		Converts a float->string, create a new string in the form AppendTo+Prefix+InFloat+Suffix
@@ -51,7 +42,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_float(append_to:Dynamic, prefix:Dynamic, float:Dynamic, suffix:Dynamic):String;
+	static public function build_string_float(append_to:String, prefix:String, float:Float, suffix:String):String;
 	/**
 		X.build_string_int(append_to, prefix, int, suffix) -> str
 		Converts a int->string, creating a new string in the form AppendTo+Prefix+InInt+Suffix
@@ -65,7 +56,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_int(append_to:Dynamic, prefix:Dynamic, int:Dynamic, suffix:Dynamic):String;
+	static public function build_string_int(append_to:String, prefix:String, int:Int, suffix:String):String;
 	/**
 		X.build_string_int_vector(append_to, prefix, int_vector, suffix) -> str
 		Converts an IntVector->string, creating a new string in the form AppendTo+Prefix+InIntVector+Suffix
@@ -79,7 +70,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_int_vector(append_to:Dynamic, prefix:Dynamic, int_vector:Dynamic, suffix:Dynamic):String;
+	static public function build_string_int_vector(append_to:String, prefix:String, int_vector:unreal.IntVector, suffix:String):String;
 	/**
 		X.build_string_name(append_to, prefix, name, suffix) -> str
 		Converts a color->string, creating a new string in the form AppendTo+Prefix+InName+Suffix
@@ -93,7 +84,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_name(append_to:Dynamic, prefix:Dynamic, name:Dynamic, suffix:Dynamic):String;
+	static public function build_string_name(append_to:String, prefix:String, name:unreal.Name, suffix:String):String;
 	/**
 		X.build_string_object(append_to, prefix, obj, suffix) -> str
 		Converts a object->string, creating a new string in the form AppendTo+Prefix+object name+Suffix
@@ -107,7 +98,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_object(append_to:Dynamic, prefix:Dynamic, obj:Dynamic, suffix:Dynamic):String;
+	static public function build_string_object(append_to:String, prefix:String, obj:unreal.Object, suffix:String):String;
 	/**
 		X.build_string_rotator(append_to, prefix, rot, suffix) -> str
 		Converts a rotator->string, creating a new string in the form AppendTo+Prefix+InRot+Suffix
@@ -121,7 +112,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_rotator(append_to:Dynamic, prefix:Dynamic, rot:Dynamic, suffix:Dynamic):String;
+	static public function build_string_rotator(append_to:String, prefix:String, rot:unreal.Rotator, suffix:String):String;
 	/**
 		X.build_string_vector(append_to, prefix, vector, suffix) -> str
 		Converts a vector->string, creating a new string in the form AppendTo+Prefix+InVector+Suffix
@@ -135,7 +126,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_vector(append_to:Dynamic, prefix:Dynamic, vector:Dynamic, suffix:Dynamic):String;
+	static public function build_string_vector(append_to:String, prefix:String, vector:unreal.Vector, suffix:String):String;
 	/**
 		X.build_string_vector2d(append_to, prefix, vector2d, suffix) -> str
 		Converts a vector2d->string, creating a new string in the form AppendTo+Prefix+InVector2d+Suffix
@@ -149,7 +140,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the passed parameters
 	**/
-	static public function build_string_vector2d(append_to:Dynamic, prefix:Dynamic, vector2d:Dynamic, suffix:Dynamic):String;
+	static public function build_string_vector2d(append_to:String, prefix:String, vector2d:unreal.Vector2D, suffix:String):String;
 	/**
 		X.concat_str_str(a, b) -> str
 		Concatenates two strings together to make a new string
@@ -161,7 +152,7 @@ package unreal;
 		Returns:
 		    str: A new string which is the concatenation of A+B
 	**/
-	static public function concat_str_str(a:Dynamic, b:Dynamic):String;
+	static public function concat_str_str(a:String, b:String):String;
 	/**
 		X.contains(search_in, substring, use_case=False, search_from_end=False) -> bool
 		Returns whether this string contains the specified substring.
@@ -175,7 +166,7 @@ package unreal;
 		Returns:
 		    bool: Returns whether the string contains the substring
 	**/
-	static public function contains(search_in:Dynamic, substring:Dynamic, use_case:Dynamic, search_from_end:Dynamic):Bool;
+	static public function contains(search_in:String, substring:String, use_case:Bool, search_from_end:Bool):Bool;
 	/**
 		X.conv_bool_to_string(bool) -> str
 		Converts a boolean value to a string, either 'true' or 'false'
@@ -186,7 +177,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_bool_to_string(bool:Dynamic):String;
+	static public function conv_bool_to_string(bool:Bool):String;
 	/**
 		X.conv_byte_to_string(byte) -> str
 		Converts a byte value to a string
@@ -208,7 +199,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_color_to_string(color:Dynamic):String;
+	static public function conv_color_to_string(color:unreal.LinearColor):String;
 	/**
 		X.conv_float_to_string(float) -> str
 		Converts a float value to a string
@@ -219,7 +210,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_float_to_string(float:Dynamic):String;
+	static public function conv_float_to_string(float:Float):String;
 	/**
 		X.conv_int_point_to_string(int_point) -> str
 		Converts an IntPoint value to a string, in the form 'X= Y='
@@ -230,7 +221,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_int_point_to_string(int_point:Dynamic):String;
+	static public function conv_int_point_to_string(int_point:unreal.IntPoint):String;
 	/**
 		X.conv_int_to_string(int) -> str
 		Converts an integer value to a string
@@ -241,7 +232,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_int_to_string(int:Dynamic):String;
+	static public function conv_int_to_string(int:Int):String;
 	/**
 		X.conv_int_vector_to_string(int_vec) -> str
 		Converts an IntVector value to a string, in the form 'X= Y= Z='
@@ -252,7 +243,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_int_vector_to_string(int_vec:Dynamic):String;
+	static public function conv_int_vector_to_string(int_vec:unreal.IntVector):String;
 	/**
 		X.conv_matrix_to_string(matrix) -> str
 		Converts a name value to a string
@@ -263,7 +254,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_matrix_to_string(matrix:Dynamic):String;
+	static public function conv_matrix_to_string(matrix:unreal.Matrix):String;
 	/**
 		X.conv_name_to_string(name) -> str
 		Converts a name value to a string
@@ -274,7 +265,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_name_to_string(name:Dynamic):String;
+	static public function conv_name_to_string(name:unreal.Name):String;
 	/**
 		X.conv_object_to_string(obj) -> str
 		Converts a UObject value to a string by calling the object's GetName method
@@ -285,7 +276,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_object_to_string(obj:Dynamic):String;
+	static public function conv_object_to_string(obj:unreal.Object):String;
 	/**
 		X.conv_rotator_to_string(rot) -> str
 		Converts a rotator value to a string, in the form 'P= Y= R='
@@ -296,7 +287,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_rotator_to_string(rot:Dynamic):String;
+	static public function conv_rotator_to_string(rot:unreal.Rotator):String;
 	/**
 		X.conv_string_to_color(string) -> (out_converted_color=LinearColor, out_is_valid=bool)
 		Convert String Back To Color. IsValid indicates whether or not the string could be successfully converted.
@@ -311,7 +302,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_color(string:Dynamic):python.Tuple<Dynamic>;
+	static public function conv_string_to_color(string:String):python.Tuple<Dynamic>;
 	/**
 		X.conv_string_to_float(string) -> float
 		Converts a string to a float value
@@ -322,7 +313,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function conv_string_to_float(string:Dynamic):Float;
+	static public function conv_string_to_float(string:String):Float;
 	/**
 		X.conv_string_to_int(string) -> int32
 		Converts a string to a int value
@@ -333,7 +324,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function conv_string_to_int(string:Dynamic):Int;
+	static public function conv_string_to_int(string:String):Int;
 	/**
 		X.conv_string_to_name(string) -> Name
 		Converts a string to a name value
@@ -344,7 +335,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	static public function conv_string_to_name(string:Dynamic):unreal.Name;
+	static public function conv_string_to_name(string:String):unreal.Name;
 	/**
 		X.conv_string_to_rotator(string) -> (out_converted_rotator=Rotator, out_is_valid=bool)
 		Convert String Back To Rotator. IsValid indicates whether or not the string could be successfully converted.
@@ -359,7 +350,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_rotator(string:Dynamic):python.Tuple<Dynamic>;
+	static public function conv_string_to_rotator(string:String):python.Tuple<Dynamic>;
 	/**
 		X.conv_string_to_vector(string) -> (out_converted_vector=Vector, out_is_valid=bool)
 		Convert String Back To Vector. IsValid indicates whether or not the string could be successfully converted.
@@ -374,7 +365,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_vector(string:Dynamic):python.Tuple<Dynamic>;
+	static public function conv_string_to_vector(string:String):python.Tuple<Dynamic>;
 	/**
 		X.conv_string_to_vector2d(string) -> (out_converted_vector2d=Vector2D, out_is_valid=bool)
 		Convert String Back To Vector2D. IsValid indicates whether or not the string could be successfully converted.
@@ -389,7 +380,7 @@ package unreal;
 		
 		    out_is_valid (bool):
 	**/
-	static public function conv_string_to_vector2d(string:Dynamic):python.Tuple<Dynamic>;
+	static public function conv_string_to_vector2d(string:String):python.Tuple<Dynamic>;
 	/**
 		X.conv_transform_to_string(trans) -> str
 		Converts a transform value to a string, in the form 'Translation: X= Y= Z= Rotation: P= Y= R= Scale: X= Y= Z='
@@ -400,7 +391,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_transform_to_string(trans:Dynamic):String;
+	static public function conv_transform_to_string(trans:unreal.Transform):String;
 	/**
 		X.conv_vector2d_to_string(vec) -> str
 		Converts a vector2d value to a string, in the form 'X= Y='
@@ -411,7 +402,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_vector2d_to_string(vec:Dynamic):String;
+	static public function conv_vector2d_to_string(vec:unreal.Vector2D):String;
 	/**
 		X.conv_vector_to_string(vec) -> str
 		Converts a vector value to a string, in the form 'X= Y= Z='
@@ -422,7 +413,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_vector_to_string(vec:Dynamic):String;
+	static public function conv_vector_to_string(vec:unreal.Vector):String;
 	/**
 		X.cull_array(source_string) -> (int32, array=Array(str))
 		Takes an array of strings and removes any zero length entries.
@@ -435,7 +426,7 @@ package unreal;
 		
 		    array (Array(str)): The array to cull
 	**/
-	static public function cull_array(source_string:Dynamic):Dynamic;
+	static public function cull_array(source_string:String):Dynamic;
 	/**
 		X.ends_with(source_string, suffix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string ends with given string.
@@ -448,7 +439,7 @@ package unreal;
 		Returns:
 		    bool: true if this string ends with specified text, false otherwise
 	**/
-	static public function ends_with(source_string:Dynamic, suffix:Dynamic, search_case:Dynamic):Bool;
+	static public function ends_with(source_string:String, suffix:String, search_case:unreal.SearchCase):Bool;
 	/**
 		X.equal_equal_str_str(a, b) -> bool
 		Test if the input strings are equal (A == B)
@@ -460,7 +451,7 @@ package unreal;
 		Returns:
 		    bool: True if the strings are equal, false otherwise
 	**/
-	static public function equal_equal_str_str(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_str_str(a:String, b:String):Bool;
 	/**
 		X.equal_equal_stri_stri(a, b) -> bool
 		Test if the input strings are equal (A == B), ignoring case
@@ -472,7 +463,7 @@ package unreal;
 		Returns:
 		    bool: True if the strings are equal, false otherwise
 	**/
-	static public function equal_equal_stri_stri(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_stri_stri(a:String, b:String):Bool;
 	/**
 		X.find_substring(search_in, substring, use_case=False, search_from_end=False, start_position=-1) -> int32
 		Finds the starting index of a substring in the a specified string
@@ -487,7 +478,7 @@ package unreal;
 		Returns:
 		    int32: The index (starting from 0 if bSearchFromEnd is false) of the first occurence of the substring
 	**/
-	static public function find_substring(search_in:Dynamic, substring:Dynamic, use_case:Dynamic, search_from_end:Dynamic, start_position:Dynamic):Int;
+	static public function find_substring(search_in:String, substring:String, use_case:Bool, search_from_end:Bool, start_position:Int):Int;
 	/**
 		X.get_character_array_from_string(source_string) -> Array(str)
 		Returns an array that contains one entry for each character in SourceString
@@ -498,7 +489,7 @@ package unreal;
 		Returns:
 		    Array(str): An array containing one entry for each character in SourceString
 	**/
-	static public function get_character_array_from_string(source_string:Dynamic):Dynamic;
+	static public function get_character_array_from_string(source_string:String):Dynamic;
 	/**
 		X.get_character_as_number(source_string, index=0) -> int32
 		Gets a single character from the string (as an integer)
@@ -510,7 +501,7 @@ package unreal;
 		Returns:
 		    int32: The integer value of the character or 0 if index is out of range
 	**/
-	static public function get_character_as_number(source_string:Dynamic, index:Dynamic):Int;
+	static public function get_character_as_number(source_string:String, index:Int):Int;
 	/**
 		X.get_substring(source_string, start_index=0, length=1) -> str
 		Returns a substring from the string starting at the specified position
@@ -523,7 +514,7 @@ package unreal;
 		Returns:
 		    str: The requested substring
 	**/
-	static public function get_substring(source_string:Dynamic, start_index:Dynamic, length:Dynamic):String;
+	static public function get_substring(source_string:String, start_index:Int, length:Int):String;
 	/**
 		X.is_empty(string) -> bool
 		Returns true if the string is empty
@@ -534,7 +525,7 @@ package unreal;
 		Returns:
 		    bool: Whether or not the string is empty
 	**/
-	static public function is_empty(string:Dynamic):Bool;
+	static public function is_empty(string:String):Bool;
 	/**
 		X.is_numeric(source_string) -> bool
 		* Checks if a string contains only numeric characters
@@ -546,7 +537,7 @@ package unreal;
 		Returns:
 		    bool: true if the string only contains numeric characters
 	**/
-	static public function is_numeric(source_string:Dynamic):Bool;
+	static public function is_numeric(source_string:String):Bool;
 	/**
 		X.join_string_array(source_array, separator=" ") -> str
 		Concatenates an array of strings into a single string.
@@ -558,7 +549,7 @@ package unreal;
 		Returns:
 		    str: The final, joined, separated string.
 	**/
-	static public function join_string_array(source_array:Dynamic, separator:Dynamic):String;
+	static public function join_string_array(source_array:unreal.Array, separator:String):String;
 	/**
 		X.left(source_string, count) -> str
 		Returns the left most given number of characters
@@ -570,7 +561,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function left(source_string:Dynamic, count:Dynamic):String;
+	static public function left(source_string:String, count:Int):String;
 	/**
 		X.left_chop(source_string, count) -> str
 		Returns the left most characters from the string chopping the given number of characters from the end
@@ -582,7 +573,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function left_chop(source_string:Dynamic, count:Dynamic):String;
+	static public function left_chop(source_string:String, count:Int):String;
 	/**
 		X.left_pad(source_string, ch_count) -> str
 		* Pad the left of this string for a specified number of characters
@@ -595,7 +586,7 @@ package unreal;
 		Returns:
 		    str: The padded string
 	**/
-	static public function left_pad(source_string:Dynamic, ch_count:Dynamic):String;
+	static public function left_pad(source_string:String, ch_count:Int):String;
 	/**
 		X.len(s) -> int32
 		Returns the number of characters in the string
@@ -606,7 +597,7 @@ package unreal;
 		Returns:
 		    int32: The number of chars in the string
 	**/
-	static public function len(s:Dynamic):Int;
+	static public function len(s:String):Int;
 	/**
 		X.matches_wildcard(source_string, wildcard, search_case=SearchCase.IGNORE_CASE) -> bool
 		Searches this string for a given wild card
@@ -620,7 +611,7 @@ package unreal;
 		Returns:
 		    bool: true if this string matches the *?-type wildcard given.
 	**/
-	static public function matches_wildcard(source_string:Dynamic, wildcard:Dynamic, search_case:Dynamic):Bool;
+	static public function matches_wildcard(source_string:String, wildcard:String, search_case:unreal.SearchCase):Bool;
 	/**
 		X.mid(source_string, start, count) -> str
 		Returns the substring from Start position for Count characters.
@@ -633,7 +624,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function mid(source_string:Dynamic, start:Dynamic, count:Dynamic):String;
+	static public function mid(source_string:String, start:Int, count:Int):String;
 	/**
 		X.not_equal_str_str(a, b) -> bool
 		Test if the input string are not equal (A != B)
@@ -645,7 +636,7 @@ package unreal;
 		Returns:
 		    bool: Returns true if the input strings are not equal, false if they are equal
 	**/
-	static public function not_equal_str_str(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_str_str(a:String, b:String):Bool;
 	/**
 		X.not_equal_stri_stri(a, b) -> bool
 		Test if the input string are not equal (A != B), ignoring case differences
@@ -657,7 +648,7 @@ package unreal;
 		Returns:
 		    bool: Returns true if the input strings are not equal, false if they are equal
 	**/
-	static public function not_equal_stri_stri(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_stri_stri(a:String, b:String):Bool;
 	/**
 		X.parse_into_array(source_string, delimiter=" ", cull_empty_strings=True) -> Array(str)
 		Gets an array of strings from a source string divided up by a separator and empty strings can optionally be culled.
@@ -670,7 +661,7 @@ package unreal;
 		Returns:
 		    Array(str): The array of string that have been separated
 	**/
-	static public function parse_into_array(source_string:Dynamic, delimiter:Dynamic, cull_empty_strings:Dynamic):Dynamic;
+	static public function parse_into_array(source_string:String, delimiter:String, cull_empty_strings:Bool):Dynamic;
 	/**
 		X.replace(source_string, from_, to, search_case=SearchCase.IGNORE_CASE) -> str
 		Replace all occurrences of a substring in this string
@@ -684,7 +675,7 @@ package unreal;
 		Returns:
 		    str: a copy of this string with the replacement made
 	**/
-	static public function replace(source_string:Dynamic, from_:Dynamic, to:Dynamic, search_case:Dynamic):String;
+	static public function replace(source_string:String, from_:String, to:String, search_case:unreal.SearchCase):String;
 	/**
 		X.replace_inline(source_string, search_text, replacement_text, search_case=SearchCase.IGNORE_CASE) -> (int32, source_string=str)
 		Replace all occurrences of SearchText with ReplacementText in this string.
@@ -700,7 +691,7 @@ package unreal;
 		
 		    source_string (str):
 	**/
-	static public function replace_inline(source_string:Dynamic, search_text:Dynamic, replacement_text:Dynamic, search_case:Dynamic):String;
+	static public function replace_inline(source_string:String, search_text:String, replacement_text:String, search_case:unreal.SearchCase):String;
 	/**
 		X.reverse(source_string) -> str
 		Returns a copy of this string, with the characters in reverse order
@@ -711,7 +702,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function reverse(source_string:Dynamic):String;
+	static public function reverse(source_string:String):String;
 	/**
 		X.right(source_string, count) -> str
 		Returns the string to the right of the specified location, counting back from the right (end of the word).
@@ -723,7 +714,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function right(source_string:Dynamic, count:Dynamic):String;
+	static public function right(source_string:String, count:Int):String;
 	/**
 		X.right_chop(source_string, count) -> str
 		Returns the string to the right of the specified location, counting forward from the left (from the beginning of the word).
@@ -735,7 +726,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function right_chop(source_string:Dynamic, count:Dynamic):String;
+	static public function right_chop(source_string:String, count:Int):String;
 	/**
 		X.right_pad(source_string, ch_count) -> str
 		* Pad the right of this string for a specified number of characters
@@ -748,7 +739,7 @@ package unreal;
 		Returns:
 		    str: The padded string
 	**/
-	static public function right_pad(source_string:Dynamic, ch_count:Dynamic):String;
+	static public function right_pad(source_string:String, ch_count:Int):String;
 	/**
 		X.split(source_string, str, search_case=SearchCase.IGNORE_CASE, search_dir=SearchDir.FROM_START) -> (left_s=str, right_s=str) or None
 		Splits this string at given string position case sensitive.
@@ -766,7 +757,7 @@ package unreal;
 		
 		    right_s (str): out the string to the right of InStr, not updated if return is false
 	**/
-	static public function split(source_string:Dynamic, str:Dynamic, search_case:Dynamic, search_dir:Dynamic):Dynamic;
+	static public function split(source_string:String, str:String, search_case:unreal.SearchCase, search_dir:unreal.SearchDir):Dynamic;
 	/**
 		X.starts_with(source_string, prefix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string starts with given string.
@@ -779,7 +770,7 @@ package unreal;
 		Returns:
 		    bool: true if this string begins with specified text, false otherwise
 	**/
-	static public function starts_with(source_string:Dynamic, prefix:Dynamic, search_case:Dynamic):Bool;
+	static public function starts_with(source_string:String, prefix:String, search_case:unreal.SearchCase):Bool;
 	/**
 		X.time_seconds_to_string(seconds) -> str
 		Convert a number of seconds into minutes:seconds.milliseconds format string (including leading zeroes)
@@ -790,7 +781,7 @@ package unreal;
 		Returns:
 		    str: A new string built from the seconds parameter
 	**/
-	static public function time_seconds_to_string(seconds:Dynamic):String;
+	static public function time_seconds_to_string(seconds:Float):String;
 	/**
 		X.to_lower(source_string) -> str
 		Returns a string converted to Lower case
@@ -801,7 +792,7 @@ package unreal;
 		Returns:
 		    str: The string in lower case
 	**/
-	static public function to_lower(source_string:Dynamic):String;
+	static public function to_lower(source_string:String):String;
 	/**
 		X.to_upper(source_string) -> str
 		Returns a string converted to Upper case
@@ -812,7 +803,7 @@ package unreal;
 		Returns:
 		    str: The string in upper case
 	**/
-	static public function to_upper(source_string:Dynamic):String;
+	static public function to_upper(source_string:String):String;
 	/**
 		X.trim(source_string) -> str
 		Removes whitespace characters from the front of this string.
@@ -823,7 +814,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function trim(source_string:Dynamic):String;
+	static public function trim(source_string:String):String;
 	/**
 		X.trim_trailing(source_string) -> str
 		Removes trailing whitespace characters
@@ -834,5 +825,5 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function trim_trailing(source_string:Dynamic):String;
+	static public function trim_trailing(source_string:String):String;
 }

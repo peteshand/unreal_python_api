@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuEntryExtensions") extern class ToolMenuEntryExtensions extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_label(target) -> Text
 		Get Label
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function get_label(target:Dynamic):unreal.Text;
+	static public function get_label(target:unreal.ToolMenuEntry):unreal.Text;
 	/**
 		X.get_tool_tip(target) -> Text
 		Get Tool Tip
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function get_tool_tip(target:Dynamic):unreal.Text;
+	static public function get_tool_tip(target:unreal.ToolMenuEntry):unreal.Text;
 	/**
 		X.init_menu_entry(owner, name, label, tool_tip, command_type, custom_command_type, command_string) -> ToolMenuEntry
 		Init Menu Entry
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    ToolMenuEntry:
 	**/
-	static public function init_menu_entry(owner:Dynamic, name:Dynamic, label:Dynamic, tool_tip:Dynamic, command_type:Dynamic, custom_command_type:Dynamic, command_string:Dynamic):unreal.ToolMenuEntry;
+	static public function init_menu_entry(owner:unreal.Name, name:unreal.Name, label:unreal.Text, tool_tip:unreal.Text, command_type:unreal.ToolMenuStringCommandType, custom_command_type:unreal.Name, command_string:String):unreal.ToolMenuEntry;
 	/**
 		X.set_icon(target, style_set_name, style_name="None", small_style_name="None") -> ToolMenuEntry
 		Set Icon
@@ -64,7 +55,7 @@ package unreal;
 		
 		    target (ToolMenuEntry):
 	**/
-	static public function set_icon(target:Dynamic, style_set_name:Dynamic, style_name:Dynamic, small_style_name:Dynamic):unreal.ToolMenuEntry;
+	static public function set_icon(target:unreal.ToolMenuEntry, style_set_name:unreal.Name, style_name:unreal.Name, small_style_name:unreal.Name):unreal.ToolMenuEntry;
 	/**
 		X.set_label(target, label) -> ToolMenuEntry
 		Set Label
@@ -78,7 +69,7 @@ package unreal;
 		
 		    target (ToolMenuEntry):
 	**/
-	static public function set_label(target:Dynamic, label:Dynamic):unreal.ToolMenuEntry;
+	static public function set_label(target:unreal.ToolMenuEntry, label:unreal.Text):unreal.ToolMenuEntry;
 	/**
 		X.set_string_command(target, type, custom_type, string) -> ToolMenuEntry
 		Set String Command
@@ -94,7 +85,7 @@ package unreal;
 		
 		    target (ToolMenuEntry):
 	**/
-	static public function set_string_command(target:Dynamic, type:Dynamic, custom_type:Dynamic, string:Dynamic):unreal.ToolMenuEntry;
+	static public function set_string_command(target:unreal.ToolMenuEntry, type:unreal.ToolMenuStringCommandType, custom_type:unreal.Name, string:String):unreal.ToolMenuEntry;
 	/**
 		X.set_tool_tip(target, tool_tip) -> ToolMenuEntry
 		Set Tool Tip
@@ -108,5 +99,5 @@ package unreal;
 		
 		    target (ToolMenuEntry):
 	**/
-	static public function set_tool_tip(target:Dynamic, tool_tip:Dynamic):unreal.ToolMenuEntry;
+	static public function set_tool_tip(target:unreal.ToolMenuEntry, tool_tip:unreal.Text):unreal.ToolMenuEntry;
 }

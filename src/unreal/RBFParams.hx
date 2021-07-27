@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "RBFParams") extern class RBFParams extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Automatically pick the radius based on the average distance between targets
 	**/
 	public var automatic_radius : Bool;

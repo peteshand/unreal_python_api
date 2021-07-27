@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "VREditorTeleporter") extern class VREditorTeleporter extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.do_teleport() -> None
 		Do and finalize teleport.
 	**/
@@ -35,7 +26,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_slide_delta(interactor:Dynamic, axis:Dynamic):Float;
+	public function get_slide_delta(interactor:unreal.VREditorInteractor, axis:Bool):Float;
 	/**
 		x.get_vr_mode() -> VREditorMode
 		Get VRMode
@@ -51,7 +42,7 @@ package unreal;
 		Args:
 		    mode (VREditorMode):
 	**/
-	public function init(mode:Dynamic):Void;
+	public function init(mode:unreal.VREditorMode):Void;
 	/**
 		x.is_aiming() -> bool
 		Whether we are currently aiming to teleport.
@@ -75,7 +66,7 @@ package unreal;
 		Args:
 		    color (LinearColor):
 	**/
-	public function set_color(color:Dynamic):Void;
+	public function set_color(color:unreal.LinearColor):Void;
 	/**
 		x.set_visibility(visible) -> None
 		Hide or show the teleporter visuals
@@ -83,7 +74,7 @@ package unreal;
 		Args:
 		    visible (bool):
 	**/
-	public function set_visibility(visible:Dynamic):Void;
+	public function set_visibility(visible:Bool):Void;
 	/**
 		x.shutdown() -> None
 		Shuts down the teleporter
@@ -96,7 +87,7 @@ package unreal;
 		Args:
 		    interactor (ViewportInteractor):
 	**/
-	public function start_aiming(interactor:Dynamic):Void;
+	public function start_aiming(interactor:unreal.ViewportInteractor):Void;
 	/**
 		x.start_teleport() -> None
 		Start teleporting, does a ray trace with the hand passed and calculates the locations for lerp movement in Teleport

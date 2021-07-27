@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DatasmithContentLibrary") extern class DatasmithContentLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_all_datasmith_user_data(object_class) -> Array(DatasmithUserData)
 		Find all Datasmith User Data of loaded objects of the given type.
 		This is a slow operation, so editor only.
@@ -40,7 +31,7 @@ package unreal;
 		
 		    out_values (Array(str)): Output array of values associated with each object in OutObjects.
 	**/
-	static public function get_all_objects_and_values_for_key(key:Dynamic, object_class:Dynamic):python.Tuple<Dynamic>;
+	static public function get_all_objects_and_values_for_key(key:unreal.Name, object_class:Dynamic):python.Tuple<Dynamic>;
 	/**
 		X.get_datasmith_user_data(object) -> DatasmithUserData
 		Get the Datasmith User Data of a given object
@@ -51,7 +42,7 @@ package unreal;
 		Returns:
 		    DatasmithUserData: The Datasmith User Data if it exists; nullptr, otherwise
 	**/
-	static public function get_datasmith_user_data(object:Dynamic):unreal.DatasmithUserData;
+	static public function get_datasmith_user_data(object:unreal.Object):unreal.DatasmithUserData;
 	/**
 		X.get_datasmith_user_data_keys_and_values_for_value(object, string_to_match) -> (out_keys=Array(Name), out_values=Array(str))
 		Get the keys and values for which the associated value contains the string to match for the Datasmith User Data of the given object.
@@ -67,7 +58,7 @@ package unreal;
 		
 		    out_values (Array(str)): Output array of values associated to the keys.
 	**/
-	static public function get_datasmith_user_data_keys_and_values_for_value(object:Dynamic, string_to_match:Dynamic):python.Tuple<Dynamic>;
+	static public function get_datasmith_user_data_keys_and_values_for_value(object:unreal.Object, string_to_match:String):python.Tuple<Dynamic>;
 	/**
 		X.get_datasmith_user_data_value_for_key(object, key) -> str
 		Get the value of the given key for the Datasmith User Data of the given object.
@@ -79,5 +70,5 @@ package unreal;
 		Returns:
 		    str: The string value associated with the given key
 	**/
-	static public function get_datasmith_user_data_value_for_key(object:Dynamic, key:Dynamic):String;
+	static public function get_datasmith_user_data_value_for_key(object:unreal.Object, key:unreal.Name):String;
 }

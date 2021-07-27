@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MediaPlaylist") extern class MediaPlaylist extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add(media_source) -> bool
 		Add a media source to the play list.
 		AddFile, AddUrl, Insert, RemoveAll, Remove, Replace: 
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    bool: true if the media source was added, false otherwise.
 	**/
-	public function add(media_source:Dynamic):Bool;
+	public function add(media_source:unreal.MediaSource):Bool;
 	/**
 		x.add_file(file_path) -> bool
 		Add a media file path to the play list.
@@ -33,7 +24,7 @@ package unreal;
 		Returns:
 		    bool: true if the file was added, false otherwise.
 	**/
-	public function add_file(file_path:Dynamic):Bool;
+	public function add_file(file_path:String):Bool;
 	/**
 		x.add_url(url) -> bool
 		Add a media URL to the play list.
@@ -45,7 +36,7 @@ package unreal;
 		Returns:
 		    bool: true if the URL was added, false otherwise.
 	**/
-	public function add_url(url:Dynamic):Bool;
+	public function add_url(url:String):Bool;
 	/**
 		x.get(index) -> MediaSource
 		Get the media source at the specified index.
@@ -57,7 +48,7 @@ package unreal;
 		Returns:
 		    MediaSource: The media source, or nullptr if the index doesn't exist.
 	**/
-	public function get(index:Dynamic):unreal.MediaSource;
+	public function get(index:Int):unreal.MediaSource;
 	/**
 		x.get_next() -> (MediaSource, out_index=int32)
 		Get the next media source in the play list.
@@ -100,7 +91,7 @@ package unreal;
 		    media_source (MediaSource): The media source to insert.
 		    index (int32): The index to insert into.
 	**/
-	public function insert(media_source:Dynamic, index:Dynamic):Void;
+	public function insert(media_source:unreal.MediaSource, index:Int):Void;
 	/**
 		x.num() -> int32
 		Get the number of media sources in the play list.
@@ -120,7 +111,7 @@ package unreal;
 		Returns:
 		    bool: true if the media source was removed, false otherwise.
 	**/
-	public function remove(media_source:Dynamic):Bool;
+	public function remove(media_source:unreal.MediaSource):Bool;
 	/**
 		x.remove_at(index) -> bool
 		Remove the media source at the specified position.
@@ -132,7 +123,7 @@ package unreal;
 		Returns:
 		    bool: true if the media source was removed, false otherwise.
 	**/
-	public function remove_at(index:Dynamic):Bool;
+	public function remove_at(index:Int):Bool;
 	/**
 		x.replace(index, replacement) -> bool
 		Replace the media source at the specified position.
@@ -145,5 +136,5 @@ package unreal;
 		Returns:
 		    bool: true if the media source was replaced, false otherwise.
 	**/
-	public function replace(index:Dynamic, replacement:Dynamic):Bool;
+	public function replace(index:Int, replacement:unreal.MediaSource):Bool;
 }

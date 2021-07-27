@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AutomationPerformaceHelper") extern class AutomationPerformaceHelper extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.begin_recording(record_name, gpu_budget, render_thread_budget, game_thread_budget) -> None
 		Begins recording a new named performance stats record. We start by recording the baseline.
 		
@@ -20,7 +11,7 @@ package unreal;
 		    render_thread_budget (float): 
 		    game_thread_budget (float):
 	**/
-	public function begin_recording(record_name:Dynamic, gpu_budget:Dynamic, render_thread_budget:Dynamic, game_thread_budget:Dynamic):Void;
+	public function begin_recording(record_name:String, gpu_budget:Float, render_thread_budget:Float, game_thread_budget:Float):Void;
 	/**
 		x.begin_recording_baseline(record_name) -> None
 		Begins recording a new named performance stats record. We start by recording the baseline
@@ -28,7 +19,7 @@ package unreal;
 		Args:
 		    record_name (str):
 	**/
-	public function begin_recording_baseline(record_name:Dynamic):Void;
+	public function begin_recording_baseline(record_name:String):Void;
 	/**
 		x.begin_stats_file(record_name) -> None
 		Begins recording stats to a file.
@@ -36,7 +27,7 @@ package unreal;
 		Args:
 		    record_name (str):
 	**/
-	public function begin_stats_file(record_name:Dynamic):Void;
+	public function begin_stats_file(record_name:String):Void;
 	/**
 		x.end_recording() -> None
 		Stops recording performance stats.
@@ -101,7 +92,7 @@ package unreal;
 		Args:
 		    delta_seconds (float):
 	**/
-	public function sample(delta_seconds:Dynamic):Void;
+	public function sample(delta_seconds:Float):Void;
 	/**
 		x.start_cpu_profiling() -> None
 		Communicates with external profiler to being a CPU capture.
@@ -119,7 +110,7 @@ package unreal;
 		Args:
 		    delta_seconds (float):
 	**/
-	public function tick(delta_seconds:Dynamic):Void;
+	public function tick(delta_seconds:Float):Void;
 	/**
 		x.trigger_gpu_trace_if_record_falls_below_budget() -> None
 		Will trigger a GPU trace next time the current test falls below GPU budget.
@@ -133,5 +124,5 @@ package unreal;
 		    capture_dir (str): 
 		    capture_extension (str):
 	**/
-	public function write_log_file(capture_dir:Dynamic, capture_extension:Dynamic):Void;
+	public function write_log_file(capture_dir:String, capture_extension:String):Void;
 }

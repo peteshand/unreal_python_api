@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelScriptActor") extern class LevelScriptActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.level_reset() -> None
 		
 		document:
@@ -26,7 +17,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function remote_event(event_name:Dynamic):Bool;
+	public function remote_event(event_name:unreal.Name):Bool;
 	/**
 		x.set_cinematic_mode(cinematic_mode, hide_player=True, affects_hud=True, affects_movement=False, affects_turning=False) -> None
 		Sets the cinematic mode on all PlayerControllers
@@ -38,7 +29,7 @@ package unreal;
 		    affects_movement (bool): specify true to disable movement in cinematic mode, enable it when leaving
 		    affects_turning (bool): specify true to disable turning in cinematic mode or enable it when leaving
 	**/
-	public function set_cinematic_mode(cinematic_mode:Dynamic, hide_player:Dynamic, affects_hud:Dynamic, affects_movement:Dynamic, affects_turning:Dynamic):Void;
+	public function set_cinematic_mode(cinematic_mode:Bool, hide_player:Bool, affects_hud:Bool, affects_movement:Bool, affects_turning:Bool):Void;
 	/**
 		x.world_origin_location_changed(old_origin_location, new_origin_location) -> None
 		Event called on world origin location changes
@@ -47,5 +38,5 @@ package unreal;
 		    old_origin_location (IntVector): Previous world origin location
 		    new_origin_location (IntVector): New world origin location
 	**/
-	public function world_origin_location_changed(old_origin_location:Dynamic, new_origin_location:Dynamic):Void;
+	public function world_origin_location_changed(old_origin_location:unreal.IntVector, new_origin_location:unreal.IntVector):Void;
 }

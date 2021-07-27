@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NavLinkProxy") extern class NavLinkProxy extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.has_moving_agents() -> bool
 		check if any agent is moving through smart link right now
 		
@@ -29,6 +20,7 @@ package unreal;
 	/**
 		deprecated: 'nav_links' was renamed to 'point_links'.
 	**/
+	@:deprecated
 	public var nav_links : Dynamic;
 	/**
 		(SmartLinkReachedSignature):  [Read-Write] On Smart Link Reached
@@ -46,7 +38,7 @@ package unreal;
 		    agent (Actor): 
 		    destination (Vector):
 	**/
-	public function receive_smart_link_reached(agent:Dynamic, destination:Dynamic):Void;
+	public function receive_smart_link_reached(agent:unreal.Actor, destination:unreal.Vector):Void;
 	/**
 		x.resume_path_following(agent) -> None
 		resume normal path following
@@ -54,7 +46,7 @@ package unreal;
 		Args:
 		    agent (Actor):
 	**/
-	public function resume_path_following(agent:Dynamic):Void;
+	public function resume_path_following(agent:unreal.Actor):Void;
 	/**
 		x.set_smart_link_enabled(enabled) -> None
 		change state of smart link
@@ -62,5 +54,5 @@ package unreal;
 		Args:
 		    enabled (bool):
 	**/
-	public function set_smart_link_enabled(enabled:Dynamic):Void;
+	public function set_smart_link_enabled(enabled:Bool):Void;
 }

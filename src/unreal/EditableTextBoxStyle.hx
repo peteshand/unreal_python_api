@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditableTextBoxStyle") extern class EditableTextBoxStyle extends unreal.SlateWidgetStyle {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SlateColor):  [Read-Write] The background color applied to the active background image
 	**/
 	public var background_color : unreal.SlateColor;

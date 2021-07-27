@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SourceControl") extern class SourceControl extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.check_in_file(file, description, silent=False) -> bool
 		Use currently set source control provider to check in a file.
 		Blocks until action is complete.: 
@@ -23,7 +14,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_in_file(file:Dynamic, description:Dynamic, silent:Dynamic):Bool;
+	static public function check_in_file(file:String, description:String, silent:Bool):Bool;
 	/**
 		X.check_in_files(files, description, silent=False) -> bool
 		Use currently set source control provider to check in specified files.
@@ -37,7 +28,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_in_files(files:Dynamic, description:Dynamic, silent:Dynamic):Bool;
+	static public function check_in_files(files:unreal.Array, description:String, silent:Bool):Bool;
 	/**
 		X.check_out_file(file, silent=False) -> bool
 		Use currently set source control provider to check out a file.
@@ -50,7 +41,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_out_file(file:Dynamic, silent:Dynamic):Bool;
+	static public function check_out_file(file:String, silent:Bool):Bool;
 	/**
 		X.check_out_files(files, silent=False) -> bool
 		Use currently set source control provider to check out specified files.
@@ -63,7 +54,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_out_files(files:Dynamic, silent:Dynamic):Bool;
+	static public function check_out_files(files:unreal.Array, silent:Bool):Bool;
 	/**
 		X.check_out_or_add_file(file, silent=False) -> bool
 		Use currently set source control provider to check out file or mark it for add.
@@ -76,7 +67,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function check_out_or_add_file(file:Dynamic, silent:Dynamic):Bool;
+	static public function check_out_or_add_file(file:String, silent:Bool):Bool;
 	/**
 		X.copy_file(source_file, dest_file, silent=False) -> bool
 		Use currently set source control provider to copy a file.
@@ -90,7 +81,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function copy_file(source_file:Dynamic, dest_file:Dynamic, silent:Dynamic):Bool;
+	static public function copy_file(source_file:String, dest_file:String, silent:Bool):Bool;
 	/**
 		X.current_provider() -> str
 		Determine the name of the current source control provider.
@@ -137,7 +128,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function mark_file_for_add(file:Dynamic, silent:Dynamic):Bool;
+	static public function mark_file_for_add(file:String, silent:Bool):Bool;
 	/**
 		X.mark_file_for_delete(file, silent=False) -> bool
 		Use currently set source control provider to remove file from source control and
@@ -151,7 +142,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function mark_file_for_delete(file:Dynamic, silent:Dynamic):Bool;
+	static public function mark_file_for_delete(file:String, silent:Bool):Bool;
 	/**
 		X.mark_files_for_add(files, silent=False) -> bool
 		Use currently set source control provider to mark files for add. Does nothing (and returns true) for any file that is already under SC
@@ -164,7 +155,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function mark_files_for_add(files:Dynamic, silent:Dynamic):Bool;
+	static public function mark_files_for_add(files:unreal.Array, silent:Bool):Bool;
 	/**
 		X.query_file_state(file, silent=False) -> SourceControlState
 		Use currently set source control provider to query a file's source control state.
@@ -177,7 +168,7 @@ package unreal;
 		Returns:
 		    SourceControlState: Source control state - see USourceControlState. It will have bIsValid set to false if it could not have its values set.
 	**/
-	static public function query_file_state(file:Dynamic, silent:Dynamic):unreal.SourceControlState;
+	static public function query_file_state(file:String, silent:Bool):unreal.SourceControlState;
 	/**
 		X.revert_file(file, silent=False) -> bool
 		Use currently set source control provider to revert a file regardless whether any changes will be lost or not.
@@ -190,7 +181,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function revert_file(file:Dynamic, silent:Dynamic):Bool;
+	static public function revert_file(file:String, silent:Bool):Bool;
 	/**
 		X.revert_files(files, silent=False) -> bool
 		Use currently set source control provider to revert files regardless whether any changes will be lost or not.
@@ -203,7 +194,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function revert_files(files:Dynamic, silent:Dynamic):Bool;
+	static public function revert_files(files:unreal.Array, silent:Bool):Bool;
 	/**
 		X.revert_unchanged_file(file, silent=False) -> bool
 		Use currently set source control provider to revert a file provided no changes have been made.
@@ -216,7 +207,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function revert_unchanged_file(file:Dynamic, silent:Dynamic):Bool;
+	static public function revert_unchanged_file(file:String, silent:Bool):Bool;
 	/**
 		X.revert_unchanged_files(files, silent=False) -> bool
 		Use currently set source control provider to revert files provided no changes have been made.
@@ -229,7 +220,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function revert_unchanged_files(files:Dynamic, silent:Dynamic):Bool;
+	static public function revert_unchanged_files(files:unreal.Array, silent:Bool):Bool;
 	/**
 		X.sync_file(file, silent=False) -> bool
 		Use currently set source control provider to sync a file or directory to the head revision.
@@ -242,7 +233,7 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function sync_file(file:Dynamic, silent:Dynamic):Bool;
+	static public function sync_file(file:String, silent:Bool):Bool;
 	/**
 		X.sync_files(files, silent=False) -> bool
 		Use currently set source control provider to sync files or directories to the head revision.
@@ -255,5 +246,5 @@ package unreal;
 		Returns:
 		    bool: true if succeeded, false if failed and can call LastErrorMsg() for more info.
 	**/
-	static public function sync_files(files:Dynamic, silent:Dynamic):Bool;
+	static public function sync_files(files:unreal.Array, silent:Bool):Bool;
 }

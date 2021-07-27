@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelVariantSetsActor") extern class LevelVariantSetsActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_level_variant_sets(load=False) -> LevelVariantSets
 		Returns the LevelVariantSets asset, optionally loading it if necessary
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    LevelVariantSets:
 	**/
-	public function get_level_variant_sets(load:Dynamic):unreal.LevelVariantSets;
+	public function get_level_variant_sets(load:Bool):unreal.LevelVariantSets;
 	/**
 		(SoftObjectPath):  [Read-Only] Level Variant Sets
 	**/
@@ -32,7 +23,7 @@ package unreal;
 		Args:
 		    variant_sets (LevelVariantSets):
 	**/
-	public function set_level_variant_sets(variant_sets:Dynamic):Void;
+	public function set_level_variant_sets(variant_sets:unreal.LevelVariantSets):Void;
 	/**
 		x.switch_on_variant_by_index(variant_set_index, variant_index) -> bool
 		Switch on Variant by Index
@@ -44,7 +35,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function switch_on_variant_by_index(variant_set_index:Dynamic, variant_index:Dynamic):Bool;
+	public function switch_on_variant_by_index(variant_set_index:Int, variant_index:Int):Bool;
 	/**
 		x.switch_on_variant_by_name(variant_set_name, variant_name) -> bool
 		Switch on Variant by Name
@@ -56,5 +47,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function switch_on_variant_by_name(variant_set_name:Dynamic, variant_name:Dynamic):Bool;
+	public function switch_on_variant_by_name(variant_set_name:String, variant_name:String):Bool;
 }

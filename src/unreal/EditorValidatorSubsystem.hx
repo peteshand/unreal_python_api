@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "EditorValidatorSubsystem") extern class EditorValidatorSubsystem extends unreal.EditorSubsystem {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_validator(validator) -> None
 		* Adds a validator to the list, making sure it is a unique instance
 		
 		Args:
 		    validator (EditorValidatorBase):
 	**/
-	public function add_validator(validator:Dynamic):Void;
+	public function add_validator(validator:unreal.EditorValidatorBase):Void;
 	/**
 		x.is_asset_valid() -> (DataValidationResult, asset_data=AssetData, validation_errors=Array(Text), validation_warnings=Array(Text))
 		
@@ -46,7 +37,7 @@ package unreal;
 		
 		    validation_warnings (Array(Text)):
 	**/
-	public function is_object_valid(object:Dynamic):python.Tuple<Dynamic>;
+	public function is_object_valid(object:unreal.Object):python.Tuple<Dynamic>;
 	/**
 		x.validate_assets(asset_data_list, skip_excluded_directories=True, show_if_no_failures=True) -> int32
 		Called to validate assets from either the UI or a commandlet
@@ -59,10 +50,11 @@ package unreal;
 		Returns:
 		    int32: Number of assets with validation failures or warnings
 	**/
-	public function validate_assets(asset_data_list:Dynamic, skip_excluded_directories:Dynamic, show_if_no_failures:Dynamic):Int;
+	public function validate_assets(asset_data_list:unreal.Array, skip_excluded_directories:Bool, show_if_no_failures:Bool):Int;
 	/**
 		(bool):  [Read-Write] Whether it should validate assets on save inside the editor
 		deprecated: Use bValidateOnSave on UDataValidationSettings instead.
 	**/
+	@:deprecated
 	public var validate_on_save : Bool;
 }

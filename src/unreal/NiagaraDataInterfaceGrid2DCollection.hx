@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraDataInterfaceGrid2DCollection") extern class NiagaraDataInterfaceGrid2DCollection extends unreal.NiagaraDataInterfaceGrid2D {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.fill_raw_texture2d(component, dest) -> (tiles_x=int32, tiles_y=int32) or None
 		Fill Raw Texture 2D
 		deprecated: This function has been replaced by object user variables on the emitter to specify render targets to fill with data.
@@ -26,7 +17,8 @@ package unreal;
 		
 		    tiles_y (int32):
 	**/
-	public function fill_raw_texture2d(component:Dynamic, dest:Dynamic):Dynamic;
+	@:deprecated
+	public function fill_raw_texture2d(component:unreal.NiagaraComponent, dest:unreal.TextureRenderTarget2D):Dynamic;
 	/**
 		x.fill_texture2d(component, dest, attribute_index) -> bool
 		Fills a texture render target 2d with the current data from the simulation
@@ -41,7 +33,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function fill_texture2d(component:Dynamic, dest:Dynamic, attribute_index:Dynamic):Bool;
+	@:deprecated
+	public function fill_texture2d(component:unreal.NiagaraComponent, dest:unreal.TextureRenderTarget2D, attribute_index:Int):Bool;
 	/**
 		x.get_raw_texture_size(component) -> (size_x=int32, size_y=int32)
 		Get Raw Texture Size
@@ -57,7 +50,8 @@ package unreal;
 		
 		    size_y (int32):
 	**/
-	public function get_raw_texture_size(component:Dynamic):python.Tuple<Dynamic>;
+	@:deprecated
+	public function get_raw_texture_size(component:unreal.NiagaraComponent):python.Tuple<Dynamic>;
 	/**
 		x.get_texture_size(component) -> (size_x=int32, size_y=int32)
 		Get Texture Size
@@ -72,5 +66,5 @@ package unreal;
 		
 		    size_y (int32):
 	**/
-	public function get_texture_size(component:Dynamic):python.Tuple<Dynamic>;
+	public function get_texture_size(component:unreal.NiagaraComponent):python.Tuple<Dynamic>;
 }

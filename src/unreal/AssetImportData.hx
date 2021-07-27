@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AssetImportData") extern class AssetImportData extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.extract_filenames() -> Array(str)
 		K2 Extract Filenames
 		
@@ -36,5 +27,5 @@ package unreal;
 		    index (int32): 
 		    source_file_label (str):
 	**/
-	public function scripted_add_filename(path:Dynamic, index:Dynamic, source_file_label:Dynamic):Void;
+	public function scripted_add_filename(path:String, index:Int, source_file_label:String):Void;
 }

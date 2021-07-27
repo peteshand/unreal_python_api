@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimSeqExportOption") extern class AnimSeqExportOption extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] If enabled, export the curves from the animation
 	**/
 	public var export_curves : Bool;

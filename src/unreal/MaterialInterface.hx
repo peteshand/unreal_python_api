@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MaterialInterface") extern class MaterialInterface extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_base_material() -> Material
 		Walks up parent chain and finds the base Material that this is an instance of. Just calls the virtual GetMaterial()
 		
@@ -30,7 +21,7 @@ package unreal;
 		Returns:
 		    MaterialParameterInfo:
 	**/
-	public function get_parameter_info(association:Dynamic, parameter_name:Dynamic, layer_function:Dynamic):unreal.MaterialParameterInfo;
+	public function get_parameter_info(association:unreal.MaterialParameterAssociation, parameter_name:unreal.Name, layer_function:unreal.MaterialFunctionInterface):unreal.MaterialParameterInfo;
 	/**
 		x.get_physical_material() -> PhysicalMaterial
 		Return a pointer to the physical material used by this material instance.
@@ -49,7 +40,7 @@ package unreal;
 		Returns:
 		    PhysicalMaterial: The physical material.
 	**/
-	public function get_physical_material_from_map(index:Dynamic):unreal.PhysicalMaterial;
+	public function get_physical_material_from_map(index:Int):unreal.PhysicalMaterial;
 	/**
 		x.get_physical_material_mask() -> PhysicalMaterialMask
 		Return a pointer to the physical material mask used by this material instance.
@@ -70,7 +61,7 @@ package unreal;
 		    cinematic_texture_groups (int32): Bitfield indicating texture groups that should use extra high-resolution mips
 		    fast_response (bool): USE WITH EXTREME CAUTION! Fast response textures incur sizable GT overhead and disturb streaming metric calculation. Avoid whenever possible.
 	**/
-	public function set_force_mip_levels_to_be_resident(override_force_miplevels_to_be_resident:Dynamic, force_miplevels_to_be_resident_value:Dynamic, force_duration:Dynamic, cinematic_texture_groups:Dynamic, fast_response:Dynamic):Void;
+	public function set_force_mip_levels_to_be_resident(override_force_miplevels_to_be_resident:Bool, force_miplevels_to_be_resident_value:Bool, force_duration:Float, cinematic_texture_groups:Int, fast_response:Bool):Void;
 	/**
 		(SubsurfaceProfile):  [Read-Only] SubsurfaceProfile, for Screen Space Subsurface Scattering
 	**/

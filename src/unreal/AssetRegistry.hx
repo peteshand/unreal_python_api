@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AssetRegistry") extern class AssetRegistry extends unreal.Interface {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_all_assets(include_only_on_disk_assets=False) -> Array(AssetData) or None
 		Gets asset data for all assets in the registry.
 		This method may be slow, use a filter if possible to avoid iterating over the entire registry.
@@ -23,7 +14,7 @@ package unreal;
 		
 		    out_asset_data (Array(AssetData)): the list of assets in this path
 	**/
-	public function get_all_assets(include_only_on_disk_assets:Dynamic):Dynamic;
+	public function get_all_assets(include_only_on_disk_assets:Bool):Dynamic;
 	/**
 		x.get_all_cached_paths() -> Array(str)
 		Gets a list of all paths that are currently cached
@@ -45,7 +36,7 @@ package unreal;
 		Returns:
 		    AssetData: the assets data;Will be invalid if object could not be found
 	**/
-	public function get_asset_by_object_path(object_path:Dynamic, include_only_on_disk_assets:Dynamic):unreal.AssetData;
+	public function get_asset_by_object_path(object_path:unreal.Name, include_only_on_disk_assets:Bool):unreal.AssetData;
 	/**
 		x.get_assets(filter) -> Array(AssetData) or None
 		Gets asset data for all assets that match the filter.
@@ -60,7 +51,7 @@ package unreal;
 		
 		    out_asset_data (Array(AssetData)): the list of assets in this path
 	**/
-	public function get_assets(filter:Dynamic):Dynamic;
+	public function get_assets(filter:unreal.ARFilter):Dynamic;
 	/**
 		x.get_assets_by_class(class_name, search_sub_classes=False) -> Array(AssetData) or None
 		Gets asset data for all assets with the supplied class
@@ -74,7 +65,7 @@ package unreal;
 		
 		    out_asset_data (Array(AssetData)): the list of assets in this path
 	**/
-	public function get_assets_by_class(class_name:Dynamic, search_sub_classes:Dynamic):Dynamic;
+	public function get_assets_by_class(class_name:unreal.Name, search_sub_classes:Bool):Dynamic;
 	/**
 		x.get_assets_by_package_name(package_name, include_only_on_disk_assets=False) -> Array(AssetData) or None
 		Gets asset data for the assets in the package with the specified package name
@@ -88,7 +79,7 @@ package unreal;
 		
 		    out_asset_data (Array(AssetData)): the list of assets in this path
 	**/
-	public function get_assets_by_package_name(package_name:Dynamic, include_only_on_disk_assets:Dynamic):Dynamic;
+	public function get_assets_by_package_name(package_name:unreal.Name, include_only_on_disk_assets:Bool):Dynamic;
 	/**
 		x.get_assets_by_path(package_path, recursive=False, include_only_on_disk_assets=False) -> Array(AssetData) or None
 		Gets asset data for all assets in the supplied folder path
@@ -103,7 +94,7 @@ package unreal;
 		
 		    out_asset_data (Array(AssetData)): the list of assets in this path
 	**/
-	public function get_assets_by_path(package_path:Dynamic, recursive:Dynamic, include_only_on_disk_assets:Dynamic):Dynamic;
+	public function get_assets_by_path(package_path:unreal.Name, recursive:Bool, include_only_on_disk_assets:Bool):Dynamic;
 	/**
 		x.get_dependencies(package_name, dependency_options) -> Array(Name) or None
 		Gets a list of paths to objects that are referenced by the supplied package. (On disk references ONLY)
@@ -117,7 +108,7 @@ package unreal;
 		
 		    out_dependencies (Array(Name)): a list of packages that are referenced by the package whose path is PackageName
 	**/
-	public function get_dependencies(package_name:Dynamic, dependency_options:Dynamic):Dynamic;
+	public function get_dependencies(package_name:unreal.Name, dependency_options:unreal.AssetRegistryDependencyOptions):Dynamic;
 	/**
 		x.get_referencers(package_name, reference_options) -> Array(Name) or None
 		Gets a list of packages that reference the supplied package. (On disk references ONLY)
@@ -131,7 +122,7 @@ package unreal;
 		
 		    out_referencers (Array(Name)): a list of packages that reference the package whose path is PackageName
 	**/
-	public function get_referencers(package_name:Dynamic, reference_options:Dynamic):Dynamic;
+	public function get_referencers(package_name:unreal.Name, reference_options:unreal.AssetRegistryDependencyOptions):Dynamic;
 	/**
 		x.get_sub_paths(base_path, recurse) -> Array(str)
 		Gets a list of all paths that are currently cached below the passed-in base path
@@ -145,7 +136,7 @@ package unreal;
 		
 		    out_path_list (Array(str)):
 	**/
-	public function get_sub_paths(base_path:Dynamic, recurse:Dynamic):Dynamic;
+	public function get_sub_paths(base_path:String, recurse:Bool):Dynamic;
 	/**
 		x.has_assets(package_path, recursive=False) -> bool
 		Does the given path contain assets, optionally also testing sub-paths?
@@ -157,7 +148,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_assets(package_path:Dynamic, recursive:Dynamic):Bool;
+	public function has_assets(package_path:unreal.Name, recursive:Bool):Bool;
 	/**
 		x.is_loading_assets() -> bool
 		Returns true if the asset registry is currently loading files and does not yet know about all assets
@@ -173,7 +164,7 @@ package unreal;
 		Args:
 		    path_to_prioritize (str):
 	**/
-	public function prioritize_search_path(path_to_prioritize:Dynamic):Void;
+	public function prioritize_search_path(path_to_prioritize:String):Void;
 	/**
 		x.run_assets_through_filter(asset_data_list, filter) -> Array(AssetData)
 		Trims items out of the asset data list that do not pass the supplied filter
@@ -187,7 +178,7 @@ package unreal;
 		
 		    asset_data_list (Array(AssetData)):
 	**/
-	public function run_assets_through_filter(asset_data_list:Dynamic, filter:Dynamic):Dynamic;
+	public function run_assets_through_filter(asset_data_list:unreal.Array, filter:unreal.ARFilter):Dynamic;
 	/**
 		x.scan_files_synchronous(file_paths, force_rescan=False) -> None
 		Scan the specified individual files right now and populate the asset registry. If bForceRescan is true, the paths will be scanned again, even if they were previously scanned
@@ -196,7 +187,7 @@ package unreal;
 		    file_paths (Array(str)): 
 		    force_rescan (bool):
 	**/
-	public function scan_files_synchronous(file_paths:Dynamic, force_rescan:Dynamic):Void;
+	public function scan_files_synchronous(file_paths:unreal.Array, force_rescan:Bool):Void;
 	/**
 		x.scan_modified_asset_files(file_paths) -> None
 		Forces a rescan of specific filenames, call this when you need to refresh from disk
@@ -204,7 +195,7 @@ package unreal;
 		Args:
 		    file_paths (Array(str)):
 	**/
-	public function scan_modified_asset_files(file_paths:Dynamic):Void;
+	public function scan_modified_asset_files(file_paths:unreal.Array):Void;
 	/**
 		x.scan_paths_synchronous(paths, force_rescan=False) -> None
 		Scan the supplied paths recursively right now and populate the asset registry. If bForceRescan is true, the paths will be scanned again, even if they were previously scanned
@@ -213,7 +204,7 @@ package unreal;
 		    paths (Array(str)): 
 		    force_rescan (bool):
 	**/
-	public function scan_paths_synchronous(paths:Dynamic, force_rescan:Dynamic):Void;
+	public function scan_paths_synchronous(paths:unreal.Array, force_rescan:Bool):Void;
 	/**
 		x.search_all_assets(synchronous_search) -> None
 		Look for all assets on disk (can be async or synchronous)
@@ -221,7 +212,7 @@ package unreal;
 		Args:
 		    synchronous_search (bool):
 	**/
-	public function search_all_assets(synchronous_search:Dynamic):Void;
+	public function search_all_assets(synchronous_search:Bool):Void;
 	/**
 		x.use_filter_to_exclude_assets(asset_data_list, filter) -> Array(AssetData)
 		Trims items out of the asset data list that pass the supplied filter
@@ -235,7 +226,7 @@ package unreal;
 		
 		    asset_data_list (Array(AssetData)):
 	**/
-	public function use_filter_to_exclude_assets(asset_data_list:Dynamic, filter:Dynamic):Dynamic;
+	public function use_filter_to_exclude_assets(asset_data_list:unreal.Array, filter:unreal.ARFilter):Dynamic;
 	/**
 		x.wait_for_completion() -> None
 		Wait for scan to be complete

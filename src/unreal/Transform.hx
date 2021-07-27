@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Transform") extern class Transform extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.determinant() -> float
 		Calculates the determinant of the transform (converts to FMatrix internally)
 		
@@ -28,7 +19,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equals(b:Dynamic):Bool;
+	public function equals(b:unreal.Transform):Bool;
 	/**
 		x.interp_to(target, delta_time, interp_speed) -> Transform
 		Tries to reach Target transform based on distance from Current position, giving a nice smooth feeling when tracking a position.
@@ -41,7 +32,7 @@ package unreal;
 		Returns:
 		    Transform: New interpolated transform
 	**/
-	public function interp_to(target:Dynamic, delta_time:Dynamic, interp_speed:Dynamic):unreal.Transform;
+	public function interp_to(target:unreal.Transform, delta_time:Float, interp_speed:Float):unreal.Transform;
 	/**
 		x.inverse() -> Transform
 		Returns the inverse of the given transform T.
@@ -63,7 +54,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function inverse_transform_direction(direction:Dynamic):unreal.Vector;
+	public function inverse_transform_direction(direction:unreal.Vector):unreal.Vector;
 	/**
 		x.inverse_transform_location(location) -> Vector
 		Transform a position by the inverse of the supplied transform.
@@ -75,7 +66,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function inverse_transform_location(location:Dynamic):unreal.Vector;
+	public function inverse_transform_location(location:unreal.Vector):unreal.Vector;
 	/**
 		x.inverse_transform_rotation(rotation) -> Rotator
 		Transform a rotator by the inverse of the supplied transform.
@@ -87,7 +78,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function inverse_transform_rotation(rotation:Dynamic):unreal.Rotator;
+	public function inverse_transform_rotation(rotation:unreal.Rotator):unreal.Rotator;
 	/**
 		x.is_near_equal(b, location_tolerance=0.000100, rotation_tolerance=0.000100, scale3d_tolerance=0.000100) -> bool
 		Returns true if transform A is nearly equal to B
@@ -101,7 +92,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:Dynamic, location_tolerance:Dynamic, rotation_tolerance:Dynamic, scale3d_tolerance:Dynamic):Bool;
+	public function is_near_equal(b:unreal.Transform, location_tolerance:Float, rotation_tolerance:Float, scale3d_tolerance:Float):Bool;
 	/**
 		x.lerp(b, alpha, interp_mode=LerpInterpolationMode.QUAT_INTERP) -> Transform
 		Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1).
@@ -114,7 +105,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function lerp(b:Dynamic, alpha:Dynamic, interp_mode:Dynamic):unreal.Transform;
+	public function lerp(b:unreal.Transform, alpha:Float, interp_mode:unreal.LerpInterpolationMode):unreal.Transform;
 	/**
 		x.make_relative(relative_to) -> Transform
 		Computes a relative transform of one transform compared to another.
@@ -128,7 +119,7 @@ package unreal;
 		Returns:
 		    Transform: The new relative transform
 	**/
-	public function make_relative(relative_to:Dynamic):unreal.Transform;
+	public function make_relative(relative_to:unreal.Transform):unreal.Transform;
 	/**
 		x.multiply(b) -> Transform
 		Compose two transforms in order: A * B.
@@ -145,7 +136,7 @@ package unreal;
 		Returns:
 		    Transform: New transform: A * B
 	**/
-	public function multiply(b:Dynamic):unreal.Transform;
+	public function multiply(b:unreal.Transform):unreal.Transform;
 	/**
 		(Quat):  [Read-Write] Rotation of this transformation, as a quaternion.
 	**/
@@ -173,7 +164,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function transform_direction(direction:Dynamic):unreal.Vector;
+	public function transform_direction(direction:unreal.Vector):unreal.Vector;
 	/**
 		x.transform_location(location) -> Vector
 		Transform a position by the supplied transform.
@@ -185,7 +176,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function transform_location(location:Dynamic):unreal.Vector;
+	public function transform_location(location:unreal.Vector):unreal.Vector;
 	/**
 		x.transform_rotation(rotation) -> Rotator
 		Transform a rotator by the supplied transform.
@@ -197,7 +188,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function transform_rotation(rotation:Dynamic):unreal.Rotator;
+	public function transform_rotation(rotation:unreal.Rotator):unreal.Rotator;
 	/**
 		(Vector):  [Read-Write] Translation of this transformation, as a vector.
 	**/

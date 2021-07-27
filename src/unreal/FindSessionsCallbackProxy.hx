@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FindSessionsCallbackProxy") extern class FindSessionsCallbackProxy extends unreal.OnlineBlueprintCallProxyBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_current_players(result) -> int32
 		Get Current Players
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_current_players(result:Dynamic):Int;
+	static public function get_current_players(result:unreal.BlueprintSessionResult):Int;
 	/**
 		X.get_max_players(result) -> int32
 		Get Max Players
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_max_players(result:Dynamic):Int;
+	static public function get_max_players(result:unreal.BlueprintSessionResult):Int;
 	/**
 		X.get_ping_in_ms(result) -> int32
 		Get Ping in Ms
@@ -42,7 +33,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_ping_in_ms(result:Dynamic):Int;
+	static public function get_ping_in_ms(result:unreal.BlueprintSessionResult):Int;
 	/**
 		X.get_server_name(result) -> str
 		Get Server Name
@@ -53,7 +44,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_server_name(result:Dynamic):String;
+	static public function get_server_name(result:unreal.BlueprintSessionResult):String;
 	/**
 		(BlueprintFindSessionsResultDelegate):  [Read-Write] Called when there is an unsuccessful query
 	**/

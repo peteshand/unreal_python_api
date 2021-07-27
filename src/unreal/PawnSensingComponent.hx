@@ -2,17 +2,9 @@
 package unreal;
 @:pythonImport("unreal", "PawnSensingComponent") extern class PawnSensingComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		deprecated: 'b_wants_see_player_notify' was renamed to 'see_pawns'.
 	**/
+	@:deprecated
 	public var b_wants_see_player_notify : Dynamic;
 	/**
 		(bool):  [Read-Only] If true, component will perform sensing updates. At runtime change this using SetSensingUpdatesEnabled().
@@ -82,7 +74,7 @@ package unreal;
 		Args:
 		    new_peripheral_vision_angle (float):
 	**/
-	public function set_peripheral_vision_angle(new_peripheral_vision_angle:Dynamic):Void;
+	public function set_peripheral_vision_angle(new_peripheral_vision_angle:Float):Void;
 	/**
 		x.set_sensing_interval(new_sensing_interval) -> None
 		Changes the SensingInterval.
@@ -92,7 +84,7 @@ package unreal;
 		Args:
 		    new_sensing_interval (float):
 	**/
-	public function set_sensing_interval(new_sensing_interval:Dynamic):Void;
+	public function set_sensing_interval(new_sensing_interval:Float):Void;
 	/**
 		x.set_sensing_updates_enabled(enabled) -> None
 		Enables or disables sensing updates. The timer is reset in either case.
@@ -100,10 +92,11 @@ package unreal;
 		Args:
 		    enabled (bool):
 	**/
-	public function set_sensing_updates_enabled(enabled:Dynamic):Void;
+	public function set_sensing_updates_enabled(enabled:Bool):Void;
 	/**
 		deprecated: 'sight_counter_interval' was renamed to 'sensing_interval'.
 	**/
+	@:deprecated
 	public var sight_counter_interval : Dynamic;
 	/**
 		(float):  [Read-Write] Maximum sight distance.

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LiveLinkCameraStaticData") extern class LiveLinkCameraStaticData extends unreal.LiveLinkTransformStaticData {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Used with CinematicCamera. Values greater than 0 will be applied
 	**/
 	public var film_back_height : Float;

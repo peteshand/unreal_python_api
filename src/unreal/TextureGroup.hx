@@ -50,13 +50,4 @@ package unreal;
 	static public var TEXTUREGROUP_WORLD : Dynamic;
 	static public var TEXTUREGROUP_WORLD_NORMAL_MAP : Dynamic;
 	static public var TEXTUREGROUP_WORLD_SPECULAR : Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

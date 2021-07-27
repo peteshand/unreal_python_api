@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Widget") extern class Widget extends unreal.Visual {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(MouseCursor):  [Read-Only] The cursor to show when the mouse is over the widget
 	**/
 	public var cursor : unreal.MouseCursor;
@@ -28,7 +19,7 @@ package unreal;
 		Args:
 		    force (bool):
 	**/
-	public function force_volatile(force:Dynamic):Void;
+	public function force_volatile(force:Bool):Void;
 	/**
 		x.get_accessible_summary_text() -> Text
 		Gets the accessible summary text from the underlying Slate accessible widget.
@@ -96,6 +87,7 @@ package unreal;
 	/**
 		deprecated: 'get_opacity' was renamed to 'get_render_opacity'.
 	**/
+	@:deprecated
 	public function get_opacity():Void;
 	/**
 		x.get_owning_local_player() -> LocalPlayer
@@ -204,7 +196,7 @@ package unreal;
 		Returns:
 		    bool: True if this widget has captured the mouse with given user and pointer
 	**/
-	public function has_mouse_capture_by_user(user_index:Dynamic, pointer_index:Dynamic):Bool;
+	public function has_mouse_capture_by_user(user_index:Int, pointer_index:Int):Bool;
 	/**
 		x.has_user_focus(player_controller) -> bool
 		Returns true if this widget is focused by a specific user.
@@ -215,7 +207,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_user_focus(player_controller:Dynamic):Bool;
+	public function has_user_focus(player_controller:unreal.PlayerController):Bool;
 	/**
 		x.has_user_focused_descendants(player_controller) -> bool
 		Returns true if any descendant widget is focused by a specific user.
@@ -226,7 +218,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_user_focused_descendants(player_controller:Dynamic):Bool;
+	public function has_user_focused_descendants(player_controller:unreal.PlayerController):Bool;
 	/**
 		x.invalidate_layout_and_volatility() -> None
 		Invalidates the widget from the view of a layout caching widget that may own this widget.
@@ -294,7 +286,7 @@ package unreal;
 		    rule (UINavigationRule): The rule to use when navigation is taking place
 		    widget_to_focus (Name): When using the Explicit rule, focus on this widget
 	**/
-	public function set_all_navigation_rules(rule:Dynamic, widget_to_focus:Dynamic):Void;
+	public function set_all_navigation_rules(rule:unreal.UINavigationRule, widget_to_focus:unreal.Name):Void;
 	/**
 		x.set_clipping(clipping) -> None
 		Sets the clipping state of this widget.
@@ -302,7 +294,7 @@ package unreal;
 		Args:
 		    clipping (WidgetClipping):
 	**/
-	public function set_clipping(clipping:Dynamic):Void;
+	public function set_clipping(clipping:unreal.WidgetClipping):Void;
 	/**
 		x.set_cursor(cursor) -> None
 		Sets the cursor to show over the widget.
@@ -310,7 +302,7 @@ package unreal;
 		Args:
 		    cursor (MouseCursor):
 	**/
-	public function set_cursor(cursor:Dynamic):Void;
+	public function set_cursor(cursor:unreal.MouseCursor):Void;
 	/**
 		x.set_focus() -> None
 		Sets the focus to this widget for the owning user
@@ -323,7 +315,7 @@ package unreal;
 		Args:
 		    is_enabled (bool):
 	**/
-	public function set_is_enabled(is_enabled:Dynamic):Void;
+	public function set_is_enabled(is_enabled:Bool):Void;
 	/**
 		x.set_keyboard_focus() -> None
 		Sets the focus to this widget.
@@ -338,7 +330,7 @@ package unreal;
 		    rule (UINavigationRule): 
 		    widget_to_focus (Name):
 	**/
-	public function set_navigation_rule(direction:Dynamic, rule:Dynamic, widget_to_focus:Dynamic):Void;
+	public function set_navigation_rule(direction:unreal.UINavigation, rule:unreal.UINavigationRule, widget_to_focus:unreal.Name):Void;
 	/**
 		x.set_navigation_rule_base(direction, rule) -> None
 		Sets the widget navigation rules for a specific direction. This can only be called on widgets that are in a widget tree. This works only for non Explicit, non Custom and non CustomBoundary Rules.
@@ -347,7 +339,7 @@ package unreal;
 		    direction (UINavigation): 
 		    rule (UINavigationRule): The rule to use when navigation is taking place
 	**/
-	public function set_navigation_rule_base(direction:Dynamic, rule:Dynamic):Void;
+	public function set_navigation_rule_base(direction:unreal.UINavigation, rule:unreal.UINavigationRule):Void;
 	/**
 		x.set_navigation_rule_custom(direction, custom_delegate) -> None
 		Sets the widget navigation rules for a specific direction. This can only be called on widgets that are in a widget tree. This works only for Custom Rule.
@@ -356,7 +348,7 @@ package unreal;
 		    direction (UINavigation): 
 		    custom_delegate (CustomWidgetNavigationDelegate): Custom Delegate that will be called
 	**/
-	public function set_navigation_rule_custom(direction:Dynamic, custom_delegate:Dynamic):Void;
+	public function set_navigation_rule_custom(direction:unreal.UINavigation, custom_delegate:unreal.CustomWidgetNavigationDelegate):Void;
 	/**
 		x.set_navigation_rule_custom_boundary(direction, custom_delegate) -> None
 		Sets the widget navigation rules for a specific direction. This can only be called on widgets that are in a widget tree. This works only for CustomBoundary Rule.
@@ -365,7 +357,7 @@ package unreal;
 		    direction (UINavigation): 
 		    custom_delegate (CustomWidgetNavigationDelegate): Custom Delegate that will be called
 	**/
-	public function set_navigation_rule_custom_boundary(direction:Dynamic, custom_delegate:Dynamic):Void;
+	public function set_navigation_rule_custom_boundary(direction:unreal.UINavigation, custom_delegate:unreal.CustomWidgetNavigationDelegate):Void;
 	/**
 		x.set_navigation_rule_explicit(direction, widget) -> None
 		Sets the widget navigation rules for a specific direction. This can only be called on widgets that are in a widget tree. This works only for Explicit Rule.
@@ -374,14 +366,16 @@ package unreal;
 		    direction (UINavigation): 
 		    widget (Widget): Focus on this widget instance
 	**/
-	public function set_navigation_rule_explicit(direction:Dynamic, widget:Dynamic):Void;
+	public function set_navigation_rule_explicit(direction:unreal.UINavigation, widget:unreal.Widget):Void;
 	/**
 		deprecated: 'set_opacity' was renamed to 'set_render_opacity'.
 	**/
+	@:deprecated
 	public function set_opacity():Void;
 	/**
 		deprecated: 'set_render_angle' was renamed to 'set_render_transform_angle'.
 	**/
+	@:deprecated
 	public function set_render_angle():Void;
 	/**
 		x.set_render_opacity(opacity) -> None
@@ -390,7 +384,7 @@ package unreal;
 		Args:
 		    opacity (float):
 	**/
-	public function set_render_opacity(opacity:Dynamic):Void;
+	public function set_render_opacity(opacity:Float):Void;
 	/**
 		x.set_render_scale(scale) -> None
 		Set Render Scale
@@ -398,7 +392,7 @@ package unreal;
 		Args:
 		    scale (Vector2D):
 	**/
-	public function set_render_scale(scale:Dynamic):Void;
+	public function set_render_scale(scale:unreal.Vector2D):Void;
 	/**
 		x.set_render_shear(shear) -> None
 		Set Render Shear
@@ -406,7 +400,7 @@ package unreal;
 		Args:
 		    shear (Vector2D):
 	**/
-	public function set_render_shear(shear:Dynamic):Void;
+	public function set_render_shear(shear:unreal.Vector2D):Void;
 	/**
 		x.set_render_transform(transform) -> None
 		Set Render Transform
@@ -414,7 +408,7 @@ package unreal;
 		Args:
 		    transform (WidgetTransform):
 	**/
-	public function set_render_transform(transform:Dynamic):Void;
+	public function set_render_transform(transform:unreal.WidgetTransform):Void;
 	/**
 		x.set_render_transform_angle(angle) -> None
 		Set Render Transform Angle
@@ -422,7 +416,7 @@ package unreal;
 		Args:
 		    angle (float):
 	**/
-	public function set_render_transform_angle(angle:Dynamic):Void;
+	public function set_render_transform_angle(angle:Float):Void;
 	/**
 		x.set_render_transform_pivot(pivot) -> None
 		Set Render Transform Pivot
@@ -430,7 +424,7 @@ package unreal;
 		Args:
 		    pivot (Vector2D):
 	**/
-	public function set_render_transform_pivot(pivot:Dynamic):Void;
+	public function set_render_transform_pivot(pivot:unreal.Vector2D):Void;
 	/**
 		x.set_render_translation(translation) -> None
 		Set Render Translation
@@ -438,7 +432,7 @@ package unreal;
 		Args:
 		    translation (Vector2D):
 	**/
-	public function set_render_translation(translation:Dynamic):Void;
+	public function set_render_translation(translation:unreal.Vector2D):Void;
 	/**
 		x.set_tool_tip(widget) -> None
 		Sets a custom widget as the tooltip of the widget.
@@ -446,7 +440,7 @@ package unreal;
 		Args:
 		    widget (Widget):
 	**/
-	public function set_tool_tip(widget:Dynamic):Void;
+	public function set_tool_tip(widget:unreal.Widget):Void;
 	/**
 		x.set_tool_tip_text(tool_tip_text) -> None
 		Sets the tooltip text for the widget.
@@ -454,7 +448,7 @@ package unreal;
 		Args:
 		    tool_tip_text (Text):
 	**/
-	public function set_tool_tip_text(tool_tip_text:Dynamic):Void;
+	public function set_tool_tip_text(tool_tip_text:unreal.Text):Void;
 	/**
 		x.set_user_focus(player_controller) -> None
 		Sets the focus to this widget for a specific user (if setting focus for the owning user, prefer SetFocus())
@@ -462,7 +456,7 @@ package unreal;
 		Args:
 		    player_controller (PlayerController):
 	**/
-	public function set_user_focus(player_controller:Dynamic):Void;
+	public function set_user_focus(player_controller:unreal.PlayerController):Void;
 	/**
 		x.set_visibility(visibility) -> None
 		Sets the visibility of the widget.
@@ -470,7 +464,7 @@ package unreal;
 		Args:
 		    visibility (SlateVisibility):
 	**/
-	public function set_visibility(visibility:Dynamic):Void;
+	public function set_visibility(visibility:unreal.SlateVisibility):Void;
 	/**
 		(PanelSlot):  [Read-Only] The parent slot of the UWidget.  Allows us to easily inline edit the layout controlling this widget.
 	**/

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BoxFalloff") extern class BoxFalloff extends unreal.FieldNodeFloat {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Default
 	**/
 	@:native("default")
@@ -46,7 +37,7 @@ package unreal;
 		Returns:
 		    BoxFalloff:
 	**/
-	public function set_box_falloff(magnitude:Dynamic, min_range:Dynamic, max_range:Dynamic, default:Dynamic, transform:Dynamic, falloff:Dynamic):unreal.BoxFalloff;
+	public function set_box_falloff(magnitude:Float, min_range:Float, max_range:Float, default:Float, transform:unreal.Transform, falloff:unreal.FieldFalloffType):unreal.BoxFalloff;
 	/**
 		(Transform):  [Read-Write] Transform
 	**/

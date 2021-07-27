@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PlacedEditorUtilityBase") extern class PlacedEditorUtilityBase extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.clear_actor_selection_set() -> None
 		Remove all actors from the selection set
 	**/
@@ -25,7 +16,7 @@ package unreal;
 		Returns:
 		    Actor: A reference to the actor, or none if it wasn't found
 	**/
-	public function get_actor_reference(path_to_actor:Dynamic):unreal.Actor;
+	public function get_actor_reference(path_to_actor:String):unreal.Actor;
 	/**
 		x.get_level_viewport_camera_info() -> (camera_location=Vector, camera_rotation=Rotator) or None
 		Gets information about the camera position for the primary level editor viewport.  In non-editor builds, these will be zeroed
@@ -63,7 +54,7 @@ package unreal;
 		    actor (Actor): 
 		    should_be_selected (bool):
 	**/
-	public function set_actor_selection_state(actor:Dynamic, should_be_selected:Dynamic):Void;
+	public function set_actor_selection_state(actor:unreal.Actor, should_be_selected:Bool):Void;
 	/**
 		x.set_level_viewport_camera_info(camera_location, camera_rotation) -> None
 		Sets information about the camera position for the primary level editor viewport.
@@ -72,5 +63,5 @@ package unreal;
 		    camera_location (Vector): Location the camera will be moved to.
 		    camera_rotation (Rotator): Rotation the camera will be set to.
 	**/
-	public function set_level_viewport_camera_info(camera_location:Dynamic, camera_rotation:Dynamic):Void;
+	public function set_level_viewport_camera_info(camera_location:unreal.Vector, camera_rotation:unreal.Rotator):Void;
 }

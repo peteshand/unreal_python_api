@@ -3,15 +3,6 @@ package unreal;
 @:pythonImport("unreal", "Vector4") extern class Vector4 extends unreal.StructBase {
 	static public var ZERO : Dynamic;
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add(b) -> Vector4
 		Returns addition of Vector A and Vector B (A + B)
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function add(b:Dynamic):unreal.Vector4;
+	public function add(b:unreal.Vector4):unreal.Vector4;
 	/**
 		x.cross3(b) -> Vector4
 		Returns the cross product of two vectors - see  http://mathworld.wolfram.com/CrossProduct.html
@@ -32,7 +23,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function cross3(b:Dynamic):unreal.Vector4;
+	public function cross3(b:unreal.Vector4):unreal.Vector4;
 	/**
 		x.divide(b) -> Vector4
 		Element-wise Vector divide (Result = {A.x/B.x, A.y/B.y, A.z/B.z, A.w/B.w})
@@ -43,7 +34,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function divide(b:Dynamic):unreal.Vector4;
+	public function divide(b:unreal.Vector4):unreal.Vector4;
 	/**
 		x.dot(b) -> float
 		Returns the dot product of two vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -54,7 +45,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function dot(b:Dynamic):Float;
+	public function dot(b:unreal.Vector4):Float;
 	/**
 		x.dot3(b) -> float
 		Returns the dot product of two vectors - see http://mathworld.wolfram.com/DotProduct.html The W element is ignored.
@@ -65,7 +56,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function dot3(b:Dynamic):Float;
+	public function dot3(b:unreal.Vector4):Float;
 	/**
 		x.equals(b) -> bool
 		Returns true if vector A is equal to vector B (A == B)
@@ -76,7 +67,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equals(b:Dynamic):Bool;
+	public function equals(b:unreal.Vector4):Bool;
 	/**
 		x.is_nan() -> bool
 		Determines if any component is not a number (NAN)
@@ -96,7 +87,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
+	public function is_near_equal(b:unreal.Vector4, error_tolerance:Float):Bool;
 	/**
 		x.is_nearly_zero3(tolerance=0.000100) -> bool
 		Checks whether vector is near to zero within a specified tolerance. The W element is ignored.
@@ -107,7 +98,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	public function is_nearly_zero3(tolerance:Dynamic):Bool;
+	public function is_nearly_zero3(tolerance:Float):Bool;
 	/**
 		x.is_normal3() -> bool
 		Determines if vector is normalized / unit (length 1). The W element is ignored.
@@ -127,7 +118,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
+	public function is_not_near_equal(b:unreal.Vector4, error_tolerance:Float):Bool;
 	/**
 		x.is_unit3(squared_lenth_tolerance=0.000100) -> bool
 		Determines if vector is normalized / unit (length 1) within specified squared tolerance. The W element is ignored.
@@ -138,7 +129,7 @@ package unreal;
 		Returns:
 		    bool: true if unit, false otherwise.
 	**/
-	public function is_unit3(squared_lenth_tolerance:Dynamic):Bool;
+	public function is_unit3(squared_lenth_tolerance:Float):Bool;
 	/**
 		x.is_zero() -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -191,7 +182,7 @@ package unreal;
 		Returns:
 		    Vector4: Reflected vector.
 	**/
-	public function mirror_by_vector3(surface_normal:Dynamic):unreal.Vector4;
+	public function mirror_by_vector3(surface_normal:unreal.Vector4):unreal.Vector4;
 	/**
 		x.multiply(b) -> Vector4
 		Element-wise Vector multiplication (Result = {A.x*B.x, A.y*B.y, A.z*B.z, A.w*B.w})
@@ -202,7 +193,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function multiply(b:Dynamic):unreal.Vector4;
+	public function multiply(b:unreal.Vector4):unreal.Vector4;
 	/**
 		x.negated() -> Vector4
 		Gets a negated copy of the vector. Equivalent to -Vector for scripts.
@@ -222,7 +213,7 @@ package unreal;
 		Returns:
 		    Vector4: A normalized copy if safe, (0,0,0) otherwise.
 	**/
-	public function normal3(tolerance:Dynamic):unreal.Vector4;
+	public function normal3(tolerance:Float):unreal.Vector4;
 	/**
 		x.normal_unsafe3() -> Vector4
 		Calculates normalized unit version of vector without checking for zero length. The W element is ignored and the returned vector has W=0.
@@ -238,7 +229,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of vector for normalization.
 	**/
-	public function normalize3(tolerance:Dynamic):Void;
+	public function normalize3(tolerance:Float):Void;
 	/**
 		x.not_equal(b) -> bool
 		Returns true if vector A is not equal to vector B (A != B) within a specified error tolerance
@@ -249,7 +240,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal(b:Dynamic):Bool;
+	public function not_equal(b:unreal.Vector4):Bool;
 	/**
 		x.quaternion() -> Quat
 		Return the Quaternion orientation corresponding to the direction in which the vector points.
@@ -279,7 +270,7 @@ package unreal;
 		    z (float): 
 		    w (float):
 	**/
-	public function set(x:Dynamic, y:Dynamic, z:Dynamic, w:Dynamic):Void;
+	public function set(x:Float, y:Float, z:Float, w:Float):Void;
 	/**
 		x.subtract(b) -> Vector4
 		Returns subtraction of Vector B from Vector A (A - B)
@@ -290,7 +281,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function subtract(b:Dynamic):unreal.Vector4;
+	public function subtract(b:unreal.Vector4):unreal.Vector4;
 	/**
 		x.vector() -> Vector
 		Convert a Vector4 to a Vector (dropping the W element)

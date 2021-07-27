@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ProjectileMovementComponent") extern class ProjectileMovementComponent extends unreal.MovementComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(int32):  [Read-Write] On the first few bounces (up to this amount), allow extra iterations over MaxSimulationIterations if necessary.
 	**/
 	public var bounce_additional_iterations : Int;
@@ -134,7 +125,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function limit_velocity(new_velocity:Dynamic):unreal.Vector;
+	public function limit_velocity(new_velocity:unreal.Vector):unreal.Vector;
 	/**
 		(int32):  [Read-Write] Max number of iterations used for each discrete simulation step.
 		Increasing this value can address precision issues with fast-moving objects or complex collision scenarios, at the cost of performance.
@@ -169,7 +160,7 @@ package unreal;
 		    new_location (Vector): 
 		    new_rotation (Rotator):
 	**/
-	public function move_interpolation_target(new_location:Dynamic, new_rotation:Dynamic):Void;
+	public function move_interpolation_target(new_location:unreal.Vector, new_rotation:unreal.Rotator):Void;
 	/**
 		(OnProjectileBounceDelegate):  [Read-Write] Called when projectile impacts something and bounces are enabled.
 	**/
@@ -213,7 +204,7 @@ package unreal;
 		Args:
 		    component (SceneComponent):
 	**/
-	public function set_interpolated_component(component:Dynamic):Void;
+	public function set_interpolated_component(component:unreal.SceneComponent):Void;
 	/**
 		x.set_velocity_in_local_space(new_velocity) -> None
 		Sets the velocity to the new value, rotated into Actor space.
@@ -221,7 +212,7 @@ package unreal;
 		Args:
 		    new_velocity (Vector):
 	**/
-	public function set_velocity_in_local_space(new_velocity:Dynamic):Void;
+	public function set_velocity_in_local_space(new_velocity:unreal.Vector):Void;
 	/**
 		(bool):  [Read-Write] If true, simple bounces will be simulated. Set this to false to stop simulating on contact.
 	**/
@@ -233,10 +224,12 @@ package unreal;
 	/**
 		deprecated: 'speed' was renamed to 'initial_speed'.
 	**/
+	@:deprecated
 	public var speed : Dynamic;
 	/**
 		deprecated: 'stop_movement' was renamed to 'stop_simulating'.
 	**/
+	@:deprecated
 	public function stop_movement():Void;
 	/**
 		x.stop_simulating(hit_result) -> None
@@ -245,7 +238,7 @@ package unreal;
 		Args:
 		    hit_result (HitResult):
 	**/
-	public function stop_simulating(hit_result:Dynamic):Void;
+	public function stop_simulating(hit_result:unreal.HitResult):Void;
 	/**
 		(bool):  [Read-Write] If true, movement uses swept collision checks.
 		If false, collision effectively teleports to the destination. Note that when this is disabled, movement will never generate blocking collision hits (though overlaps will be updated).

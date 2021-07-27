@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PackageTools") extern class PackageTools extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.sanitize_package_name(package_name) -> str
 		Replaces all invalid package name characters with _
 		
@@ -20,5 +11,5 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function sanitize_package_name(package_name:Dynamic):String;
+	static public function sanitize_package_name(package_name:String):String;
 }

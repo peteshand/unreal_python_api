@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CameraShakeSourceComponent") extern class CameraShakeSourceComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(CameraShakeAttenuation):  [Read-Write] The attenuation profile for how camera shakes' intensity falls off with distance
 	**/
 	public var attenuation : unreal.CameraShakeAttenuation;
@@ -21,6 +12,7 @@ package unreal;
 	/**
 		deprecated: 'b_auto_play' was renamed to 'auto_start'.
 	**/
+	@:deprecated
 	public var b_auto_play : Dynamic;
 	/**
 		(type(Class)):  [Read-Write] Camera Shake
@@ -36,7 +28,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_attenuation_factor(location:Dynamic):Float;
+	public function get_attenuation_factor(location:unreal.Vector):Float;
 	/**
 		(float):  [Read-Write] Under this distance from the source, the camera shakes are at full intensity
 	**/
@@ -48,10 +40,12 @@ package unreal;
 	/**
 		deprecated: 'play' was renamed to 'start'.
 	**/
+	@:deprecated
 	public function play():Void;
 	/**
 		deprecated: 'play_camera_shake' was renamed to 'start_camera_shake'.
 	**/
+	@:deprecated
 	public function play_camera_shake():Void;
 	/**
 		x.start() -> None
@@ -68,7 +62,7 @@ package unreal;
 		    play_space (CameraShakePlaySpace): 
 		    user_play_space_rot (Rotator):
 	**/
-	public function start_camera_shake(camera_shake:Dynamic, scale:Dynamic, play_space:Dynamic, user_play_space_rot:Dynamic):Void;
+	public function start_camera_shake(camera_shake:Dynamic, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):Void;
 	/**
 		x.stop_all_camera_shakes(immediately=True) -> None
 		Stops all currently active camera shakes that are originating from this source from all player controllers
@@ -76,7 +70,7 @@ package unreal;
 		Args:
 		    immediately (bool):
 	**/
-	public function stop_all_camera_shakes(immediately:Dynamic):Void;
+	public function stop_all_camera_shakes(immediately:Bool):Void;
 	/**
 		x.stop_all_camera_shakes_of_type(camera_shake, immediately=True) -> None
 		Stops a camera shake originating from this source
@@ -85,5 +79,5 @@ package unreal;
 		    camera_shake (type(Class)): 
 		    immediately (bool):
 	**/
-	public function stop_all_camera_shakes_of_type(camera_shake:Dynamic, immediately:Dynamic):Void;
+	public function stop_all_camera_shakes_of_type(camera_shake:Dynamic, immediately:Bool):Void;
 }

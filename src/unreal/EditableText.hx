@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditableText") extern class EditableText extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_text() -> Text
 		Gets the widget text
 		
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    hint_text (Text):
 	**/
-	public function set_hint_text(hint_text:Dynamic):Void;
+	public function set_hint_text(hint_text:unreal.Text):Void;
 	/**
 		x.set_is_password(inb_is_password) -> None
 		Set Is Password
@@ -49,7 +40,7 @@ package unreal;
 		Args:
 		    inb_is_password (bool):
 	**/
-	public function set_is_password(inb_is_password:Dynamic):Void;
+	public function set_is_password(inb_is_password:Bool):Void;
 	/**
 		x.set_is_read_only(inb_is_ready_only) -> None
 		Set Is Read Only
@@ -57,7 +48,7 @@ package unreal;
 		Args:
 		    inb_is_ready_only (bool):
 	**/
-	public function set_is_read_only(inb_is_ready_only:Dynamic):Void;
+	public function set_is_read_only(inb_is_ready_only:Bool):Void;
 	/**
 		x.set_text(text) -> None
 		Directly sets the widget text.
@@ -66,7 +57,7 @@ package unreal;
 		Args:
 		    text (Text): The text to assign to the widget
 	**/
-	public function set_text(text:Dynamic):Void;
+	public function set_text(text:unreal.Text):Void;
 	/**
 		(ShapedTextOptions):  [Read-Only] Controls how the text within this widget should be shaped.
 	**/

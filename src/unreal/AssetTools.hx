@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AssetTools") extern class AssetTools extends unreal.Interface {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.create_asset(asset_name, package_path, asset_class, factory, calling_context="None") -> Object
 		Creates an asset with the specified name, path, and factory
 		
@@ -24,7 +15,7 @@ package unreal;
 		Returns:
 		    Object: the new asset or NULL if it fails
 	**/
-	public function create_asset(asset_name:Dynamic, package_path:Dynamic, asset_class:Dynamic, factory:Dynamic, calling_context:Dynamic):unreal.Object;
+	public function create_asset(asset_name:String, package_path:String, asset_class:Dynamic, factory:unreal.Factory, calling_context:unreal.Name):unreal.Object;
 	/**
 		x.create_asset_with_dialog(asset_name, package_path, asset_class, factory, calling_context="None") -> Object
 		Opens an asset picker dialog and creates an asset with the specified name and path
@@ -39,7 +30,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function create_asset_with_dialog(asset_name:Dynamic, package_path:Dynamic, asset_class:Dynamic, factory:Dynamic, calling_context:Dynamic):unreal.Object;
+	public function create_asset_with_dialog(asset_name:String, package_path:String, asset_class:Dynamic, factory:unreal.Factory, calling_context:unreal.Name):unreal.Object;
 	/**
 		x.create_unique_asset_name(base_package_name, suffix) -> (out_package_name=str, out_asset_name=str)
 		Creates a unique package and asset name taking the form InBasePackageName+InSuffix
@@ -55,7 +46,7 @@ package unreal;
 		
 		    out_asset_name (str):
 	**/
-	public function create_unique_asset_name(base_package_name:Dynamic, suffix:Dynamic):python.Tuple<Dynamic>;
+	public function create_unique_asset_name(base_package_name:String, suffix:String):python.Tuple<Dynamic>;
 	/**
 		x.duplicate_asset(asset_name, package_path, original_object) -> Object
 		Creates an asset with the specified name and path. Uses OriginalObject as the duplication source.
@@ -68,7 +59,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function duplicate_asset(asset_name:Dynamic, package_path:Dynamic, original_object:Dynamic):unreal.Object;
+	public function duplicate_asset(asset_name:String, package_path:String, original_object:unreal.Object):unreal.Object;
 	/**
 		x.duplicate_asset_with_dialog(asset_name, package_path, original_object) -> Object
 		Opens an asset picker dialog and creates an asset with the specified name and path. Uses OriginalObject as the duplication source.
@@ -81,7 +72,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function duplicate_asset_with_dialog(asset_name:Dynamic, package_path:Dynamic, original_object:Dynamic):unreal.Object;
+	public function duplicate_asset_with_dialog(asset_name:String, package_path:String, original_object:unreal.Object):unreal.Object;
 	/**
 		x.duplicate_asset_with_dialog_and_title(asset_name, package_path, original_object, dialog_title) -> Object
 		Opens an asset picker dialog and creates an asset with the specified name and path.
@@ -97,7 +88,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function duplicate_asset_with_dialog_and_title(asset_name:Dynamic, package_path:Dynamic, original_object:Dynamic, dialog_title:Dynamic):unreal.Object;
+	public function duplicate_asset_with_dialog_and_title(asset_name:String, package_path:String, original_object:unreal.Object, dialog_title:unreal.Text):unreal.Object;
 	/**
 		x.export_assets(assets_to_export, export_path) -> None
 		Exports the specified objects to file.
@@ -106,7 +97,7 @@ package unreal;
 		    assets_to_export (Array(str)): List of full asset names (e.g /Game/Path/Asset) to export
 		    export_path (str): The directory path to export to.
 	**/
-	public function export_assets(assets_to_export:Dynamic, export_path:Dynamic):Void;
+	public function export_assets(assets_to_export:unreal.Array, export_path:String):Void;
 	/**
 		x.export_assets_with_dialog(assets_to_export, prompt_for_individual_filenames) -> None
 		Exports the specified objects to file. First prompting the user to pick an export directory and optionally prompting the user to pick a unique directory per file
@@ -115,7 +106,7 @@ package unreal;
 		    assets_to_export (Array(str)): List of assets to export
 		    prompt_for_individual_filenames (bool):
 	**/
-	public function export_assets_with_dialog(assets_to_export:Dynamic, prompt_for_individual_filenames:Dynamic):Void;
+	public function export_assets_with_dialog(assets_to_export:unreal.Array, prompt_for_individual_filenames:Bool):Void;
 	/**
 		x.find_soft_references_to_object(target_object) -> Array(Object)
 		Returns list of objects that soft reference the given soft object path. This will load assets into memory to verify
@@ -128,7 +119,7 @@ package unreal;
 		
 		    referencing_objects (Array(Object)):
 	**/
-	public function find_soft_references_to_object(target_object:Dynamic):Dynamic;
+	public function find_soft_references_to_object(target_object:unreal.SoftObjectPath):Dynamic;
 	/**
 		x.import_asset_tasks(import_tasks) -> None
 		Imports assets using tasks specified.
@@ -136,7 +127,7 @@ package unreal;
 		Args:
 		    import_tasks (Array(AssetImportTask)): Tasks that specify how to import each file
 	**/
-	public function import_asset_tasks(import_tasks:Dynamic):Void;
+	public function import_asset_tasks(import_tasks:unreal.Array):Void;
 	/**
 		x.import_assets_automated(import_data) -> Array(Object)
 		Imports assets using data specified completely up front.  Does not ever ask any questions of the user or show any modal error messages
@@ -147,7 +138,7 @@ package unreal;
 		Returns:
 		    Array(Object): list of successfully imported assets
 	**/
-	public function import_assets_automated(import_data:Dynamic):Dynamic;
+	public function import_assets_automated(import_data:unreal.AutomatedAssetImportData):Dynamic;
 	/**
 		x.import_assets_with_dialog(destination_path) -> Array(Object)
 		Opens a file open dialog to choose files to import to the destination path.
@@ -158,7 +149,7 @@ package unreal;
 		Returns:
 		    Array(Object): list of successfully imported assets
 	**/
-	public function import_assets_with_dialog(destination_path:Dynamic):Dynamic;
+	public function import_assets_with_dialog(destination_path:String):Dynamic;
 	/**
 		x.open_editor_for_assets(assets) -> None
 		Opens editor for assets
@@ -167,7 +158,8 @@ package unreal;
 		Args:
 		    assets (Array(Object)):
 	**/
-	public function open_editor_for_assets(assets:Dynamic):Void;
+	@:deprecated
+	public function open_editor_for_assets(assets:unreal.Array):Void;
 	/**
 		x.rename_assets(assets_and_names) -> bool
 		Renames assets using the specified names.
@@ -178,7 +170,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function rename_assets(assets_and_names:Dynamic):Bool;
+	public function rename_assets(assets_and_names:unreal.Array):Bool;
 	/**
 		x.rename_assets_with_dialog(assets_and_names, auto_checkout=False) -> AssetRenameResult
 		Renames assets using the specified names.
@@ -190,7 +182,7 @@ package unreal;
 		Returns:
 		    AssetRenameResult:
 	**/
-	public function rename_assets_with_dialog(assets_and_names:Dynamic, auto_checkout:Dynamic):unreal.AssetRenameResult;
+	public function rename_assets_with_dialog(assets_and_names:unreal.Array, auto_checkout:Bool):unreal.AssetRenameResult;
 	/**
 		x.rename_referencing_soft_object_paths(packages_to_check, asset_redirector_map) -> None
 		Function that renames all FSoftObjectPath object with the old asset path to the new one.
@@ -199,5 +191,5 @@ package unreal;
 		    packages_to_check (Array(Package)): Packages to check for referencing FSoftObjectPath.
 		    asset_redirector_map (Map(SoftObjectPath, SoftObjectPath)): Map from old asset path to new asset path
 	**/
-	public function rename_referencing_soft_object_paths(packages_to_check:Dynamic, asset_redirector_map:Dynamic):Void;
+	public function rename_referencing_soft_object_paths(packages_to_check:unreal.Array, asset_redirector_map:unreal.Map):Void;
 }

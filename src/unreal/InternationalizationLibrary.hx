@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InternationalizationLibrary") extern class InternationalizationLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.clear_current_asset_group_culture(asset_group, save_to_config=False) -> None
 		Clear the given asset group category culture.
 		
@@ -18,7 +9,7 @@ package unreal;
 		    asset_group (Name): The asset group to clear the culture for.
 		    save_to_config (bool): If true, save the new setting to the users' "GameUserSettings" config so that it persists after a reload.
 	**/
-	static public function clear_current_asset_group_culture(asset_group:Dynamic, save_to_config:Dynamic):Void;
+	static public function clear_current_asset_group_culture(asset_group:unreal.Name, save_to_config:Bool):Void;
 	/**
 		X.get_culture_display_name(culture, localized=True) -> str
 		Get the display name of the given culture.
@@ -30,7 +21,7 @@ package unreal;
 		Returns:
 		    str: The display name of the culture, or the given culture code on failure.
 	**/
-	static public function get_culture_display_name(culture:Dynamic, localized:Dynamic):String;
+	static public function get_culture_display_name(culture:String, localized:Bool):String;
 	/**
 		X.get_current_asset_group_culture(asset_group) -> str
 		Get the given asset group category culture.
@@ -42,7 +33,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	static public function get_current_asset_group_culture(asset_group:Dynamic):String;
+	static public function get_current_asset_group_culture(asset_group:unreal.Name):String;
 	/**
 		X.get_current_culture() -> str
 		Get the current culture as an IETF language tag:
@@ -90,7 +81,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of cultures as IETF language tags (eg, "zh-Hans-CN").
 	**/
-	static public function get_localized_cultures(include_game:Dynamic, include_engine:Dynamic, include_editor:Dynamic, include_additional:Dynamic):Dynamic;
+	static public function get_localized_cultures(include_game:Bool, include_engine:Bool, include_editor:Bool, include_additional:Bool):Dynamic;
 	/**
 		X.get_native_culture(text_category) -> str
 		Get the native culture for the given localization category.
@@ -101,7 +92,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	static public function get_native_culture(text_category:Dynamic):String;
+	static public function get_native_culture(text_category:unreal.LocalizedTextSourceCategory):String;
 	/**
 		X.get_suitable_culture(available_cultures, culture_to_match, fallback_culture="en") -> str
 		Given a list of available cultures, try and find the most suitable culture from the list based on culture prioritization.
@@ -116,7 +107,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	static public function get_suitable_culture(available_cultures:Dynamic, culture_to_match:Dynamic, fallback_culture:Dynamic):String;
+	static public function get_suitable_culture(available_cultures:unreal.Array, culture_to_match:String, fallback_culture:String):String;
 	/**
 		X.set_current_asset_group_culture(asset_group, culture, save_to_config=False) -> bool
 		Set the given asset group category culture from an IETF language tag (eg, "zh-Hans-CN").
@@ -129,7 +120,7 @@ package unreal;
 		Returns:
 		    bool: True if the culture was set, false otherwise.
 	**/
-	static public function set_current_asset_group_culture(asset_group:Dynamic, culture:Dynamic, save_to_config:Dynamic):Bool;
+	static public function set_current_asset_group_culture(asset_group:unreal.Name, culture:String, save_to_config:Bool):Bool;
 	/**
 		X.set_current_culture(culture, save_to_config=False) -> bool
 		Set the current culture.
@@ -142,7 +133,7 @@ package unreal;
 		Returns:
 		    bool: True if the culture was set, false otherwise.
 	**/
-	static public function set_current_culture(culture:Dynamic, save_to_config:Dynamic):Bool;
+	static public function set_current_culture(culture:String, save_to_config:Bool):Bool;
 	/**
 		X.set_current_language(culture, save_to_config=False) -> bool
 		Set *only* the current language (for localization).
@@ -155,7 +146,7 @@ package unreal;
 		Returns:
 		    bool: True if the language was set, false otherwise.
 	**/
-	static public function set_current_language(culture:Dynamic, save_to_config:Dynamic):Bool;
+	static public function set_current_language(culture:String, save_to_config:Bool):Bool;
 	/**
 		X.set_current_language_and_locale(culture, save_to_config=False) -> bool
 		Set the current language (for localization) and locale (for internationalization).
@@ -167,7 +158,7 @@ package unreal;
 		Returns:
 		    bool: True if the language and locale were set, false otherwise.
 	**/
-	static public function set_current_language_and_locale(culture:Dynamic, save_to_config:Dynamic):Bool;
+	static public function set_current_language_and_locale(culture:String, save_to_config:Bool):Bool;
 	/**
 		X.set_current_locale(culture, save_to_config=False) -> bool
 		Set *only* the current locale (for internationalization).
@@ -180,5 +171,5 @@ package unreal;
 		Returns:
 		    bool: True if the locale was set, false otherwise.
 	**/
-	static public function set_current_locale(culture:Dynamic, save_to_config:Dynamic):Bool;
+	static public function set_current_locale(culture:String, save_to_config:Bool):Bool;
 }

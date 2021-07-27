@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ViewportWorldInteraction") extern class ViewportWorldInteraction extends unreal.EditorWorldExtension {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_actor_to_exclude_from_hit_tests(actor_to_exclude_from_hit_tests) -> None
 		Adds an actor to the list of actors to never allow an interactor to hit in the scene.  No selection.  No hover.
 		There's no need to remove actors from this list.  They'll expire from it automatically when destroyed.
@@ -18,7 +9,7 @@ package unreal;
 		Args:
 		    actor_to_exclude_from_hit_tests (Actor): The actor that should be forever excluded from hit tests
 	**/
-	public function add_actor_to_exclude_from_hit_tests(actor_to_exclude_from_hit_tests:Dynamic):Void;
+	public function add_actor_to_exclude_from_hit_tests(actor_to_exclude_from_hit_tests:unreal.Actor):Void;
 	/**
 		x.add_interactor(interactor) -> None
 		Adds interactor to the worldinteraction
@@ -26,7 +17,7 @@ package unreal;
 		Args:
 		    interactor (ViewportInteractor):
 	**/
-	public function add_interactor(interactor:Dynamic):Void;
+	public function add_interactor(interactor:unreal.ViewportInteractor):Void;
 	/**
 		x.get_head_transform() -> Transform
 		Gets the transform of the viewport / user's HMD in world space
@@ -83,7 +74,7 @@ package unreal;
 		Args:
 		    interactor (ViewportInteractor):
 	**/
-	public function remove_interactor(interactor:Dynamic):Void;
+	public function remove_interactor(interactor:unreal.ViewportInteractor):Void;
 	/**
 		x.set_head_transform(new_head_transform) -> None
 		Sets a new transform for the room so that the HMD is aligned to the new transform.
@@ -92,7 +83,7 @@ package unreal;
 		Args:
 		    new_head_transform (Transform):
 	**/
-	public function set_head_transform(new_head_transform:Dynamic):Void;
+	public function set_head_transform(new_head_transform:unreal.Transform):Void;
 	/**
 		x.set_room_transform_for_next_frame(new_room_transform) -> None
 		Set Room Transform for Next Frame
@@ -100,7 +91,7 @@ package unreal;
 		Args:
 		    new_room_transform (Transform):
 	**/
-	public function set_room_transform_for_next_frame(new_room_transform:Dynamic):Void;
+	public function set_room_transform_for_next_frame(new_room_transform:unreal.Transform):Void;
 	/**
 		x.set_world_to_meters_scale(new_world_to_meters_scale, compensate_room_world_scale=False) -> None
 		Sets GNewWorldToMetersScale
@@ -109,5 +100,5 @@ package unreal;
 		    new_world_to_meters_scale (float): 
 		    compensate_room_world_scale (bool):
 	**/
-	public function set_world_to_meters_scale(new_world_to_meters_scale:Dynamic, compensate_room_world_scale:Dynamic):Void;
+	public function set_world_to_meters_scale(new_world_to_meters_scale:Float, compensate_room_world_scale:Bool):Void;
 }

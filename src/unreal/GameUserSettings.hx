@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GameUserSettings") extern class GameUserSettings extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.apply_hardware_benchmark_results() -> None
 		Applies the settings stored in ScalabilityQuality and saves settings
 	**/
@@ -27,7 +18,7 @@ package unreal;
 		Args:
 		    check_for_command_line_overrides (bool):
 	**/
-	public function apply_resolution_settings(check_for_command_line_overrides:Dynamic):Void;
+	public function apply_resolution_settings(check_for_command_line_overrides:Bool):Void;
 	/**
 		x.apply_settings(check_for_command_line_overrides) -> None
 		Applies all current user settings to the game and saves to permanent storage (e.g. file), optionally checking for command line overrides.
@@ -35,7 +26,7 @@ package unreal;
 		Args:
 		    check_for_command_line_overrides (bool):
 	**/
-	public function apply_settings(check_for_command_line_overrides:Dynamic):Void;
+	public function apply_settings(check_for_command_line_overrides:Bool):Void;
 	/**
 		x.confirm_video_mode() -> None
 		Mark current video mode settings (fullscreenmode/resolution) as being confirmed by the user
@@ -49,7 +40,7 @@ package unreal;
 		    enable (bool): 
 		    display_nits (int32):
 	**/
-	public function enable_hdr_display_output(enable:Dynamic, display_nits:Dynamic):Void;
+	public function enable_hdr_display_output(enable:Bool, display_nits:Int):Void;
 	/**
 		x.get_anti_aliasing_quality() -> int32
 		Returns the anti-aliasing quality (0..4, higher is better)
@@ -218,6 +209,7 @@ package unreal;
 		
 		    max_scale_value (int32):
 	**/
+	@:deprecated
 	public function get_resolution_scale_information():python.Tuple<Dynamic>;
 	/**
 		x.get_resolution_scale_information_ex() -> (current_scale_normalized=float, current_scale_value=float, min_scale_value=float, max_scale_value=float)
@@ -370,7 +362,7 @@ package unreal;
 		Args:
 		    force_reload (bool):
 	**/
-	public function load_settings(force_reload:Dynamic):Void;
+	public function load_settings(force_reload:Bool):Void;
 	/**
 		(OnGameUserSettingsUINeedsUpdate):  [Read-Write] On Game User Settings UINeeds Update
 	**/
@@ -394,7 +386,7 @@ package unreal;
 		    cpu_multiplier (float): 
 		    gpu_multiplier (float):
 	**/
-	public function run_hardware_benchmark(work_scale:Dynamic, cpu_multiplier:Dynamic, gpu_multiplier:Dynamic):Void;
+	public function run_hardware_benchmark(work_scale:Int, cpu_multiplier:Float, gpu_multiplier:Float):Void;
 	/**
 		x.save_settings() -> None
 		Save the user settings to persistent storage (automatically happens as part of ApplySettings)
@@ -407,7 +399,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_anti_aliasing_quality(value:Dynamic):Void;
+	public function set_anti_aliasing_quality(value:Int):Void;
 	/**
 		x.set_audio_quality_level(quality_level) -> None
 		Sets the user's audio quality level setting
@@ -415,7 +407,7 @@ package unreal;
 		Args:
 		    quality_level (int32):
 	**/
-	public function set_audio_quality_level(quality_level:Dynamic):Void;
+	public function set_audio_quality_level(quality_level:Int):Void;
 	/**
 		x.set_benchmark_fallback_values() -> None
 		Set scalability settings to sensible fallback values, for use when the benchmark fails or potentially causes a crash
@@ -428,7 +420,7 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	public function set_dynamic_resolution_enabled(enable:Dynamic):Void;
+	public function set_dynamic_resolution_enabled(enable:Bool):Void;
 	/**
 		x.set_foliage_quality(value) -> None
 		Sets the foliage quality (0..4, higher is better)
@@ -436,7 +428,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_foliage_quality(value:Dynamic):Void;
+	public function set_foliage_quality(value:Int):Void;
 	/**
 		x.set_frame_rate_limit(new_limit) -> None
 		Sets the user's frame rate limit (0 will disable frame rate limiting)
@@ -444,7 +436,7 @@ package unreal;
 		Args:
 		    new_limit (float):
 	**/
-	public function set_frame_rate_limit(new_limit:Dynamic):Void;
+	public function set_frame_rate_limit(new_limit:Float):Void;
 	/**
 		x.set_fullscreen_mode(fullscreen_mode) -> None
 		Sets the user setting for the game window fullscreen mode. See UGameUserSettings::FullscreenMode.
@@ -452,7 +444,7 @@ package unreal;
 		Args:
 		    fullscreen_mode (WindowMode):
 	**/
-	public function set_fullscreen_mode(fullscreen_mode:Dynamic):Void;
+	public function set_fullscreen_mode(fullscreen_mode:unreal.WindowMode):Void;
 	/**
 		x.set_overall_scalability_level(value) -> None
 		Changes all scalability settings at once based on a single overall quality level
@@ -460,7 +452,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic
 	**/
-	public function set_overall_scalability_level(value:Dynamic):Void;
+	public function set_overall_scalability_level(value:Int):Void;
 	/**
 		x.set_post_processing_quality(value) -> None
 		Sets the post-processing quality (0..4, higher is better)
@@ -468,7 +460,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_post_processing_quality(value:Dynamic):Void;
+	public function set_post_processing_quality(value:Int):Void;
 	/**
 		x.set_resolution_scale_normalized(new_scale_normalized) -> None
 		Sets the current resolution scale as a normalized 0..1 value between MinScaleValue and MaxScaleValue
@@ -476,7 +468,7 @@ package unreal;
 		Args:
 		    new_scale_normalized (float):
 	**/
-	public function set_resolution_scale_normalized(new_scale_normalized:Dynamic):Void;
+	public function set_resolution_scale_normalized(new_scale_normalized:Float):Void;
 	/**
 		x.set_resolution_scale_value(new_scale_value) -> None
 		Set Resolution Scale Value
@@ -485,7 +477,8 @@ package unreal;
 		Args:
 		    new_scale_value (int32):
 	**/
-	public function set_resolution_scale_value(new_scale_value:Dynamic):Void;
+	@:deprecated
+	public function set_resolution_scale_value(new_scale_value:Int):Void;
 	/**
 		x.set_resolution_scale_value_ex(new_scale_value) -> None
 		Sets the current resolution scale
@@ -493,7 +486,7 @@ package unreal;
 		Args:
 		    new_scale_value (float):
 	**/
-	public function set_resolution_scale_value_ex(new_scale_value:Dynamic):Void;
+	public function set_resolution_scale_value_ex(new_scale_value:Float):Void;
 	/**
 		x.set_screen_resolution(resolution) -> None
 		Sets the user setting for game screen resolution, in pixels.
@@ -501,7 +494,7 @@ package unreal;
 		Args:
 		    resolution (IntPoint):
 	**/
-	public function set_screen_resolution(resolution:Dynamic):Void;
+	public function set_screen_resolution(resolution:unreal.IntPoint):Void;
 	/**
 		x.set_shading_quality(value) -> None
 		Sets the shading quality (0..4, higher is better)
@@ -509,7 +502,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_shading_quality(value:Dynamic):Void;
+	public function set_shading_quality(value:Int):Void;
 	/**
 		x.set_shadow_quality(value) -> None
 		Sets the shadow quality (0..4, higher is better)
@@ -517,7 +510,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_shadow_quality(value:Dynamic):Void;
+	public function set_shadow_quality(value:Int):Void;
 	/**
 		x.set_texture_quality(value) -> None
 		Sets the texture quality (0..4, higher is better)
@@ -525,7 +518,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic  (gets clamped if needed)
 	**/
-	public function set_texture_quality(value:Dynamic):Void;
+	public function set_texture_quality(value:Int):Void;
 	/**
 		x.set_to_defaults() -> None
 		Set to Defaults
@@ -538,7 +531,7 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	public function set_v_sync_enabled(enable:Dynamic):Void;
+	public function set_v_sync_enabled(enable:Bool):Void;
 	/**
 		x.set_view_distance_quality(value) -> None
 		Sets the view distance quality (0..4, higher is better)
@@ -546,7 +539,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_view_distance_quality(value:Dynamic):Void;
+	public function set_view_distance_quality(value:Int):Void;
 	/**
 		x.set_visual_effect_quality(value) -> None
 		Sets the visual effects quality (0..4, higher is better)
@@ -554,7 +547,7 @@ package unreal;
 		Args:
 		    value (int32): 0:low, 1:medium, 2:high, 3:epic, 4:cinematic (gets clamped if needed)
 	**/
-	public function set_visual_effect_quality(value:Dynamic):Void;
+	public function set_visual_effect_quality(value:Int):Void;
 	/**
 		x.supports_hdr_display_output() -> bool
 		Whether the curently running system supports HDR display output

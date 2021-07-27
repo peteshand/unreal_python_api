@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimNotifyState_Trail") extern class AnimNotifyState_Trail extends unreal.AnimNotifyState {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Name):  [Read-Only] Name of the first socket defining this trail.
 	**/
 	public var first_socket_name : unreal.Name;
@@ -25,7 +16,7 @@ package unreal;
 		Returns:
 		    ParticleSystem:
 	**/
-	public function override_ps_template(mesh_comp:Dynamic, animation:Dynamic):unreal.ParticleSystem;
+	public function override_ps_template(mesh_comp:unreal.SkeletalMeshComponent, animation:unreal.AnimSequenceBase):unreal.ParticleSystem;
 	/**
 		(ParticleSystem):  [Read-Only] The particle system to use for this trail.
 	**/

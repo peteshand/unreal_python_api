@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InstancedStaticMeshComponent") extern class InstancedStaticMeshComponent extends unreal.StaticMeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_instance(instance_transform) -> int32
 		Add an instance to this component. Transform is given in local space of this component.
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_instance(instance_transform:Dynamic):Int;
+	public function add_instance(instance_transform:unreal.Transform):Int;
 	/**
 		x.add_instance_world_space(world_transform) -> int32
 		Add an instance to this component. Transform is given in world space.
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_instance_world_space(world_transform:Dynamic):Int;
+	public function add_instance_world_space(world_transform:unreal.Transform):Int;
 	/**
 		x.add_instances(instance_transforms, should_return_indices) -> Array(int32)
 		Add multiple instances to this component. Transform is given in local space of this component.
@@ -43,7 +34,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function add_instances(instance_transforms:Dynamic, should_return_indices:Dynamic):Dynamic;
+	public function add_instances(instance_transforms:unreal.Array, should_return_indices:Bool):Dynamic;
 	/**
 		x.batch_update_instances_transform(start_instance_index, num_instances, new_instances_transform, world_space=False, mark_render_state_dirty=False, teleport=False) -> bool
 		Update the transform for a number of instances.
@@ -59,7 +50,7 @@ package unreal;
 		Returns:
 		    bool: True on success.
 	**/
-	public function batch_update_instances_transform(start_instance_index:Dynamic, num_instances:Dynamic, new_instances_transform:Dynamic, world_space:Dynamic, mark_render_state_dirty:Dynamic, teleport:Dynamic):Bool;
+	public function batch_update_instances_transform(start_instance_index:Int, num_instances:Int, new_instances_transform:unreal.Transform, world_space:Bool, mark_render_state_dirty:Bool, teleport:Bool):Bool;
 	/**
 		x.batch_update_instances_transforms(start_instance_index, new_instances_transforms, world_space=False, mark_render_state_dirty=False, teleport=False) -> bool
 		Update the transform for an array of instances.
@@ -74,7 +65,7 @@ package unreal;
 		Returns:
 		    bool: True on success.
 	**/
-	public function batch_update_instances_transforms(start_instance_index:Dynamic, new_instances_transforms:Dynamic, world_space:Dynamic, mark_render_state_dirty:Dynamic, teleport:Dynamic):Bool;
+	public function batch_update_instances_transforms(start_instance_index:Int, new_instances_transforms:unreal.Array, world_space:Bool, mark_render_state_dirty:Bool, teleport:Bool):Bool;
 	/**
 		x.clear_instances() -> None
 		Clear all instances being rendered by this component.
@@ -101,7 +92,7 @@ package unreal;
 		
 		    out_instance_transform (Transform):
 	**/
-	public function get_instance_transform(instance_index:Dynamic, world_space:Dynamic):Dynamic;
+	public function get_instance_transform(instance_index:Int, world_space:Bool):Dynamic;
 	/**
 		x.get_instances_overlapping_box(box, box_in_world_space=True) -> Array(int32)
 		Returns the instances with instance bounds overlapping the specified box. The return value is an array of instance indices.
@@ -113,7 +104,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function get_instances_overlapping_box(box:Dynamic, box_in_world_space:Dynamic):Dynamic;
+	public function get_instances_overlapping_box(box:unreal.Box, box_in_world_space:Bool):Dynamic;
 	/**
 		x.get_instances_overlapping_sphere(center, radius, sphere_in_world_space=True) -> Array(int32)
 		Returns the instances with instance bounds overlapping the specified sphere. The return value is an array of instance indices.
@@ -126,7 +117,7 @@ package unreal;
 		Returns:
 		    Array(int32):
 	**/
-	public function get_instances_overlapping_sphere(center:Dynamic, radius:Dynamic, sphere_in_world_space:Dynamic):Dynamic;
+	public function get_instances_overlapping_sphere(center:unreal.Vector, radius:Float, sphere_in_world_space:Bool):Dynamic;
 	/**
 		(int32):  [Read-Only] Distance from camera at which each instance completely fades out.
 	**/
@@ -151,7 +142,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function remove_instance(instance_index:Dynamic):Bool;
+	public function remove_instance(instance_index:Int):Bool;
 	/**
 		x.set_cull_distances(start_cull_distance, end_cull_distance) -> None
 		Sets the fading start and culling end distances for this component.
@@ -160,7 +151,7 @@ package unreal;
 		    start_cull_distance (int32): 
 		    end_cull_distance (int32):
 	**/
-	public function set_cull_distances(start_cull_distance:Dynamic, end_cull_distance:Dynamic):Void;
+	public function set_cull_distances(start_cull_distance:Int, end_cull_distance:Int):Void;
 	/**
 		x.set_custom_data_value(instance_index, custom_data_index, custom_data_value, mark_render_state_dirty=False) -> bool
 		Update custom data for specific instance
@@ -174,7 +165,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_custom_data_value(instance_index:Dynamic, custom_data_index:Dynamic, custom_data_value:Dynamic, mark_render_state_dirty:Dynamic):Bool;
+	public function set_custom_data_value(instance_index:Int, custom_data_index:Int, custom_data_value:Float, mark_render_state_dirty:Bool):Bool;
 	/**
 		x.update_instance_transform(instance_index, new_instance_transform, world_space=False, mark_render_state_dirty=False, teleport=False) -> bool
 		Update the transform for the instance specified.
@@ -189,5 +180,5 @@ package unreal;
 		Returns:
 		    bool: True on success.
 	**/
-	public function update_instance_transform(instance_index:Dynamic, new_instance_transform:Dynamic, world_space:Dynamic, mark_render_state_dirty:Dynamic, teleport:Dynamic):Bool;
+	public function update_instance_transform(instance_index:Int, new_instance_transform:unreal.Transform, world_space:Bool, mark_render_state_dirty:Bool, teleport:Bool):Bool;
 }

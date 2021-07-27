@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "XRGestureConfig") extern class XRGestureConfig extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SpatialInputGestureAxis):  [Read-Write] Axis Gesture
 	**/
 	public var axis_gesture : unreal.SpatialInputGestureAxis;

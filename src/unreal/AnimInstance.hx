@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimInstance") extern class AnimInstance extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.blueprint_begin_play() -> None
 		Executed when begin play is called on the owning component
 	**/
@@ -37,7 +28,7 @@ package unreal;
 		Args:
 		    delta_time_x (float):
 	**/
-	public function blueprint_update_animation(delta_time_x:Dynamic):Void;
+	public function blueprint_update_animation(delta_time_x:Float):Void;
 	/**
 		x.calculate_direction(velocity, base_rotation) -> float
 		Returns degree of the angle betwee velocity and Rotation forward vector
@@ -50,10 +41,11 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function calculate_direction(velocity:Dynamic, base_rotation:Dynamic):Float;
+	public function calculate_direction(velocity:unreal.Vector, base_rotation:unreal.Rotator):Float;
 	/**
 		deprecated: 'clear_layer_overlay' was renamed to 'unlink_anim_class_layers'.
 	**/
+	@:deprecated
 	public function clear_layer_overlay():Void;
 	/**
 		x.clear_morph_targets() -> None
@@ -72,7 +64,7 @@ package unreal;
 		
 		    out_names (Array(Name)):
 	**/
-	public function get_active_curve_names(curve_type:Dynamic):Dynamic;
+	public function get_active_curve_names(curve_type:unreal.AnimCurveType):Dynamic;
 	/**
 		x.get_all_curve_names() -> Array(Name)
 		This returns all curve names
@@ -102,14 +94,16 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_curve_value(curve_name:Dynamic):Float;
+	public function get_curve_value(curve_name:unreal.Name):Float;
 	/**
 		deprecated: 'get_layer_sub_instance_by_class' was renamed to 'get_linked_anim_layer_instance_by_class'.
 	**/
+	@:deprecated
 	public function get_layer_sub_instance_by_class():Void;
 	/**
 		deprecated: 'get_layer_sub_instance_by_group' was renamed to 'get_linked_anim_layer_instance_by_group'.
 	**/
+	@:deprecated
 	public function get_layer_sub_instance_by_group():Void;
 	/**
 		x.get_linked_anim_graph_instance_by_tag(tag) -> AnimInstance
@@ -121,7 +115,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_graph_instance_by_tag(tag:Dynamic):unreal.AnimInstance;
+	public function get_linked_anim_graph_instance_by_tag(tag:unreal.Name):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_graph_instances_by_tag(tag) -> Array(AnimInstance)
 		Runs through all nodes, attempting to find all linked instances that match the name/tag
@@ -134,7 +128,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_graph_instances_by_tag(tag:Dynamic):Dynamic;
+	public function get_linked_anim_graph_instances_by_tag(tag:unreal.Name):Dynamic;
 	/**
 		x.get_linked_anim_layer_instance_by_class(class_) -> AnimInstance
 		Gets the first layer linked instance corresponding to the specified class
@@ -156,7 +150,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_group(group:Dynamic):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_group(group:unreal.Name):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group_and_class(group, class_) -> AnimInstance
 		Gets layer linked instance that matches group and class
@@ -168,7 +162,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_group_and_class(group:Dynamic, class_:Dynamic):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_group_and_class(group:unreal.Name, class_:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instances_by_group(group) -> Array(AnimInstance)
 		Runs through all nodes, attempting to find all distinct layer linked instances in the group
@@ -181,7 +175,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_layer_instances_by_group(group:Dynamic):Dynamic;
+	public function get_linked_anim_layer_instances_by_group(group:unreal.Name):Dynamic;
 	/**
 		x.get_owning_actor() -> Actor
 		Returns the owning actor of this AnimInstance
@@ -217,10 +211,12 @@ package unreal;
 	/**
 		deprecated: 'get_sub_instance_by_tag' was renamed to 'get_linked_anim_graph_instance_by_tag'.
 	**/
+	@:deprecated
 	public function get_sub_instance_by_tag():Void;
 	/**
 		deprecated: 'get_sub_instances_by_tag' was renamed to 'get_linked_anim_graph_instances_by_tag'.
 	**/
+	@:deprecated
 	public function get_sub_instances_by_tag():Void;
 	/**
 		x.get_sync_group_position(sync_group_name) -> MarkerSyncAnimPosition
@@ -232,7 +228,7 @@ package unreal;
 		Returns:
 		    MarkerSyncAnimPosition:
 	**/
-	public function get_sync_group_position(sync_group_name:Dynamic):unreal.MarkerSyncAnimPosition;
+	public function get_sync_group_position(sync_group_name:unreal.Name):unreal.MarkerSyncAnimPosition;
 	/**
 		x.get_time_to_closest_marker(sync_group, marker_name) -> float or None
 		--- AI communication end ---
@@ -246,7 +242,7 @@ package unreal;
 		
 		    out_marker_time (float):
 	**/
-	public function get_time_to_closest_marker(sync_group:Dynamic, marker_name:Dynamic):Dynamic;
+	public function get_time_to_closest_marker(sync_group:unreal.Name, marker_name:unreal.Name):Dynamic;
 	/**
 		x.has_marker_been_hit_this_frame(sync_group, marker_name) -> bool
 		Has Marker Been Hit This Frame
@@ -258,7 +254,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function has_marker_been_hit_this_frame(sync_group:Dynamic, marker_name:Dynamic):Bool;
+	public function has_marker_been_hit_this_frame(sync_group:unreal.Name, marker_name:unreal.Name):Bool;
 	/**
 		x.is_any_montage_playing() -> bool
 		Returns true if any montage is playing currently. Doesn't mean it's active though, it could be blending out.
@@ -278,7 +274,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_playing_slot_animation(asset:Dynamic, slot_node_name:Dynamic):Bool;
+	public function is_playing_slot_animation(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name):Bool;
 	/**
 		x.is_sync_group_between_markers(sync_group_name, previous_marker, next_marker, respect_marker_order=True) -> bool
 		Is Sync Group Between Markers
@@ -292,14 +288,16 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_sync_group_between_markers(sync_group_name:Dynamic, previous_marker:Dynamic, next_marker:Dynamic, respect_marker_order:Dynamic):Bool;
+	public function is_sync_group_between_markers(sync_group_name:unreal.Name, previous_marker:unreal.Name, next_marker:unreal.Name, respect_marker_order:Bool):Bool;
 	/**
 		deprecated: 'kismet_initialize_animation' was renamed to 'blueprint_initialize_animation'.
 	**/
+	@:deprecated
 	public function kismet_initialize_animation():Void;
 	/**
 		deprecated: 'kismet_update_animation' was renamed to 'blueprint_update_animation'.
 	**/
+	@:deprecated
 	public function kismet_update_animation():Void;
 	/**
 		x.link_anim_class_layers(class_) -> None
@@ -320,7 +318,7 @@ package unreal;
 		    tag (Name): 
 		    class_ (type(Class)):
 	**/
-	public function link_anim_graph_by_tag(tag:Dynamic, class_:Dynamic):Void;
+	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Dynamic):Void;
 	/**
 		x.lock_ai_resources(lock_movement, lock_ai_logic) -> None
 		locks indicated AI resources of animated pawn
@@ -331,7 +329,8 @@ package unreal;
 		    lock_movement (bool): 
 		    lock_ai_logic (bool):
 	**/
-	public function lock_ai_resources(lock_movement:Dynamic, lock_ai_logic:Dynamic):Void;
+	@:deprecated
+	public function lock_ai_resources(lock_movement:Bool, lock_ai_logic:Bool):Void;
 	/**
 		x.montage_get_blend_time(montage) -> float
 		Get the current blend time of the Montage.
@@ -343,7 +342,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_get_blend_time(montage:Dynamic):Float;
+	public function montage_get_blend_time(montage:unreal.AnimMontage):Float;
 	/**
 		x.montage_get_current_section(montage=None) -> Name
 		Returns the name of the current animation montage section.
@@ -354,7 +353,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function montage_get_current_section(montage:Dynamic):unreal.Name;
+	public function montage_get_current_section(montage:unreal.AnimMontage):unreal.Name;
 	/**
 		x.montage_get_is_stopped(montage) -> bool
 		return true if Montage is not currently active. (not valid or blending out)
@@ -365,7 +364,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function montage_get_is_stopped(montage:Dynamic):Bool;
+	public function montage_get_is_stopped(montage:unreal.AnimMontage):Bool;
 	/**
 		x.montage_get_play_rate(montage) -> float
 		Get PlayRate for Montage.
@@ -378,7 +377,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_get_play_rate(montage:Dynamic):Float;
+	public function montage_get_play_rate(montage:unreal.AnimMontage):Float;
 	/**
 		x.montage_get_position(montage) -> float
 		Get Current Montage Position
@@ -389,7 +388,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_get_position(montage:Dynamic):Float;
+	public function montage_get_position(montage:unreal.AnimMontage):Float;
 	/**
 		x.montage_is_active(montage) -> bool
 		Returns true if the animation montage is active. If the Montage reference is NULL, it will return true if any Montage is active.
@@ -400,7 +399,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function montage_is_active(montage:Dynamic):Bool;
+	public function montage_is_active(montage:unreal.AnimMontage):Bool;
 	/**
 		x.montage_is_playing(montage) -> bool
 		Returns true if the animation montage is currently active and playing.
@@ -412,7 +411,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function montage_is_playing(montage:Dynamic):Bool;
+	public function montage_is_playing(montage:unreal.AnimMontage):Bool;
 	/**
 		x.montage_jump_to_section(section_name, montage=None) -> None
 		Makes a montage jump to a named section. If Montage reference is NULL, it will do that to all active montages.
@@ -421,7 +420,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_section(section_name:Dynamic, montage:Dynamic):Void;
+	public function montage_jump_to_section(section_name:unreal.Name, montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_jump_to_sections_end(section_name, montage=None) -> None
 		Makes a montage jump to the end of a named section. If Montage reference is NULL, it will do that to all active montages.
@@ -430,7 +429,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_sections_end(section_name:Dynamic, montage:Dynamic):Void;
+	public function montage_jump_to_sections_end(section_name:unreal.Name, montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_pause(montage=None) -> None
 		Pauses the animation montage. If reference is NULL, it will pause ALL active montages.
@@ -438,7 +437,7 @@ package unreal;
 		Args:
 		    montage (AnimMontage):
 	**/
-	public function montage_pause(montage:Dynamic):Void;
+	public function montage_pause(montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_play(montage_to_play, play_rate=1.000000, return_value_type=MontagePlayReturnType.MONTAGE_LENGTH, time_to_start_montage_at=0.000000, stop_all_montages=True) -> float
 		Plays an animation montage. Returns the length of the animation montage in seconds. Returns 0.f if failed to play.
@@ -453,7 +452,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_play(montage_to_play:Dynamic, play_rate:Dynamic, return_value_type:Dynamic, time_to_start_montage_at:Dynamic, stop_all_montages:Dynamic):Float;
+	public function montage_play(montage_to_play:unreal.AnimMontage, play_rate:Float, return_value_type:unreal.MontagePlayReturnType, time_to_start_montage_at:Float, stop_all_montages:Bool):Float;
 	/**
 		x.montage_resume(montage) -> None
 		Resumes a paused animation montage. If reference is NULL, it will resume ALL active montages.
@@ -461,7 +460,7 @@ package unreal;
 		Args:
 		    montage (AnimMontage):
 	**/
-	public function montage_resume(montage:Dynamic):Void;
+	public function montage_resume(montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_set_next_section(section_name_to_change, next_section, montage=None) -> None
 		Relink new next section AFTER SectionNameToChange in run-time
@@ -475,7 +474,7 @@ package unreal;
 		    next_section (Name): : new next section
 		    montage (AnimMontage):
 	**/
-	public function montage_set_next_section(section_name_to_change:Dynamic, next_section:Dynamic, montage:Dynamic):Void;
+	public function montage_set_next_section(section_name_to_change:unreal.Name, next_section:unreal.Name, montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_set_play_rate(montage, new_play_rate=1.000000) -> None
 		Change AnimMontage play rate. NewPlayRate = 1.0 is the default playback rate.
@@ -484,7 +483,7 @@ package unreal;
 		    montage (AnimMontage): 
 		    new_play_rate (float):
 	**/
-	public function montage_set_play_rate(montage:Dynamic, new_play_rate:Dynamic):Void;
+	public function montage_set_play_rate(montage:unreal.AnimMontage, new_play_rate:Float):Void;
 	/**
 		x.montage_set_position(montage, new_position) -> None
 		Set position.
@@ -493,7 +492,7 @@ package unreal;
 		    montage (AnimMontage): 
 		    new_position (float):
 	**/
-	public function montage_set_position(montage:Dynamic, new_position:Dynamic):Void;
+	public function montage_set_position(montage:unreal.AnimMontage, new_position:Float):Void;
 	/**
 		x.montage_stop(blend_out_time, montage=None) -> None
 		Stops the animation montage. If reference is NULL, it will stop ALL active montages.
@@ -502,7 +501,7 @@ package unreal;
 		    blend_out_time (float): 
 		    montage (AnimMontage):
 	**/
-	public function montage_stop(blend_out_time:Dynamic, montage:Dynamic):Void;
+	public function montage_stop(blend_out_time:Float, montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_stop_group_by_name(blend_out_time, group_name) -> None
 		Stops all active montages belonging to a group.
@@ -511,7 +510,7 @@ package unreal;
 		    blend_out_time (float): 
 		    group_name (Name):
 	**/
-	public function montage_stop_group_by_name(blend_out_time:Dynamic, group_name:Dynamic):Void;
+	public function montage_stop_group_by_name(blend_out_time:Float, group_name:unreal.Name):Void;
 	/**
 		(OnAllMontageInstancesEndedMCDelegate):  [Read-Write] Called when all Montage instances have ended.
 	**/
@@ -543,7 +542,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function play_slot_animation(asset:Dynamic, slot_node_name:Dynamic, blend_in_time:Dynamic, blend_out_time:Dynamic, play_rate:Dynamic, loop_count:Dynamic):Float;
+	public function play_slot_animation(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name, blend_in_time:Float, blend_out_time:Float, play_rate:Float, loop_count:Int):Float;
 	/**
 		x.play_slot_animation_as_dynamic_montage(asset, slot_node_name, blend_in_time=0.250000, blend_out_time=0.250000, play_rate=1.000000, loop_count=1, blend_out_trigger_time=-1.000000, time_to_start_montage_at=0.000000) -> AnimMontage
 		Play normal animation asset on the slot node by creating a dynamic UAnimMontage. You can only play one asset (whether montage or animsequence) at a time per SlotGroup.
@@ -561,7 +560,7 @@ package unreal;
 		Returns:
 		    AnimMontage:
 	**/
-	public function play_slot_animation_as_dynamic_montage(asset:Dynamic, slot_node_name:Dynamic, blend_in_time:Dynamic, blend_out_time:Dynamic, play_rate:Dynamic, loop_count:Dynamic, blend_out_trigger_time:Dynamic, time_to_start_montage_at:Dynamic):unreal.AnimMontage;
+	public function play_slot_animation_as_dynamic_montage(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name, blend_in_time:Float, blend_out_time:Float, play_rate:Float, loop_count:Int, blend_out_trigger_time:Float, time_to_start_montage_at:Float):unreal.AnimMontage;
 	/**
 		x.reset_dynamics(teleport_type) -> None
 		Reset any dynamics running simulation-style updates (e.g. on teleport, time skip etc.)
@@ -569,7 +568,7 @@ package unreal;
 		Args:
 		    teleport_type (TeleportType):
 	**/
-	public function reset_dynamics(teleport_type:Dynamic):Void;
+	public function reset_dynamics(teleport_type:unreal.TeleportType):Void;
 	/**
 		x.save_pose_snapshot(snapshot_name) -> None
 		Takes a snapshot of the current skeletal mesh component pose & saves it internally.
@@ -579,10 +578,11 @@ package unreal;
 		Args:
 		    snapshot_name (Name):
 	**/
-	public function save_pose_snapshot(snapshot_name:Dynamic):Void;
+	public function save_pose_snapshot(snapshot_name:unreal.Name):Void;
 	/**
 		deprecated: 'set_layer_overlay' was renamed to 'link_anim_class_layers'.
 	**/
+	@:deprecated
 	public function set_layer_overlay():Void;
 	/**
 		x.set_morph_target(morph_target_name, value) -> None
@@ -592,7 +592,7 @@ package unreal;
 		    morph_target_name (Name): 
 		    value (float):
 	**/
-	public function set_morph_target(morph_target_name:Dynamic, value:Dynamic):Void;
+	public function set_morph_target(morph_target_name:unreal.Name, value:Float):Void;
 	/**
 		x.set_propagate_notifies_to_linked_instances(set) -> None
 		Set whether to propagate notifies to any linked anim instances
@@ -600,7 +600,7 @@ package unreal;
 		Args:
 		    set (bool):
 	**/
-	public function set_propagate_notifies_to_linked_instances(set:Dynamic):Void;
+	public function set_propagate_notifies_to_linked_instances(set:Bool):Void;
 	/**
 		x.set_receive_notifies_from_linked_instances(set) -> None
 		Set whether to process notifies from any linked anim instances
@@ -608,7 +608,7 @@ package unreal;
 		Args:
 		    set (bool):
 	**/
-	public function set_receive_notifies_from_linked_instances(set:Dynamic):Void;
+	public function set_receive_notifies_from_linked_instances(set:Bool):Void;
 	/**
 		x.set_root_motion_mode(value) -> None
 		Set RootMotionMode
@@ -616,10 +616,11 @@ package unreal;
 		Args:
 		    value (RootMotionMode):
 	**/
-	public function set_root_motion_mode(value:Dynamic):Void;
+	public function set_root_motion_mode(value:unreal.RootMotionMode):Void;
 	/**
 		deprecated: 'set_sub_instance_class_by_tag' was renamed to 'link_anim_graph_by_tag'.
 	**/
+	@:deprecated
 	public function set_sub_instance_class_by_tag():Void;
 	/**
 		x.snapshot_pose(snapshot) -> PoseSnapshot
@@ -635,7 +636,7 @@ package unreal;
 		
 		    snapshot (PoseSnapshot):
 	**/
-	public function snapshot_pose(snapshot:Dynamic):unreal.PoseSnapshot;
+	public function snapshot_pose(snapshot:unreal.PoseSnapshot):unreal.PoseSnapshot;
 	/**
 		x.stop_slot_animation(blend_out_time=0.250000, slot_node_name="None") -> None
 		Stops currently playing slot animation slot or all
@@ -644,7 +645,7 @@ package unreal;
 		    blend_out_time (float): 
 		    slot_node_name (Name):
 	**/
-	public function stop_slot_animation(blend_out_time:Dynamic, slot_node_name:Dynamic):Void;
+	public function stop_slot_animation(blend_out_time:Float, slot_node_name:unreal.Name):Void;
 	/**
 		x.try_get_pawn_owner() -> Pawn
 		kismet event functions
@@ -673,5 +674,6 @@ package unreal;
 		    unlock_movement (bool): 
 		    unlock_ai_logic (bool):
 	**/
-	public function unlock_ai_resources(unlock_movement:Dynamic, unlock_ai_logic:Dynamic):Void;
+	@:deprecated
+	public function unlock_ai_resources(unlock_movement:Bool, unlock_ai_logic:Bool):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GameStateBase") extern class GameStateBase extends unreal.Info {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(GameModeBase):  [Read-Only] Instance of the current game mode, exists only on the server. For non-authority clients, this will be NULL.
 	**/
 	public var authority_game_mode : unreal.GameModeBase;
@@ -28,7 +19,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_player_respawn_delay(controller:Dynamic):Float;
+	public function get_player_respawn_delay(controller:unreal.Controller):Float;
 	/**
 		x.get_player_start_time(controller) -> float
 		Returns the time that should be used as when a player started
@@ -39,7 +30,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_player_start_time(controller:Dynamic):Float;
+	public function get_player_start_time(controller:unreal.Controller):Float;
 	/**
 		x.get_server_world_time_seconds() -> float
 		Returns the simulated TimeSeconds on the server, will be synchronized on client and server

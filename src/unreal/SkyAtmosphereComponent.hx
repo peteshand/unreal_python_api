@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SkyAtmosphereComponent") extern class SkyAtmosphereComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] The distance (kiloneters) at which we start evaluating the aerial pespective.
 		Keeping this value a little away from the camera can help with performance: pixels not affected by the aerial perspective will have their computation skipped using early depth test.
 	**/
@@ -83,7 +74,7 @@ package unreal;
 		    atmosphere_light_index (int32): 
 		    light_direction (Vector):
 	**/
-	public function override_atmosphere_light_direction(atmosphere_light_index:Dynamic, light_direction:Dynamic):Void;
+	public function override_atmosphere_light_direction(atmosphere_light_index:Int, light_direction:unreal.Vector):Void;
 	/**
 		(float):  [Read-Only] The altitude in kilometer at which Rayleigh scattering effect is reduced to 40%.
 	**/
@@ -103,7 +94,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_aerial_pespective_view_distance_scale(new_value:Dynamic):Void;
+	public function set_aerial_pespective_view_distance_scale(new_value:Float):Void;
 	/**
 		x.set_height_fog_contribution(new_value) -> None
 		Set Height Fog Contribution
@@ -111,7 +102,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_height_fog_contribution(new_value:Dynamic):Void;
+	public function set_height_fog_contribution(new_value:Float):Void;
 	/**
 		x.set_mie_absorption(new_value) -> None
 		Set Mie Absorption
@@ -119,7 +110,7 @@ package unreal;
 		Args:
 		    new_value (LinearColor):
 	**/
-	public function set_mie_absorption(new_value:Dynamic):Void;
+	public function set_mie_absorption(new_value:unreal.LinearColor):Void;
 	/**
 		x.set_mie_absorption_scale(new_value) -> None
 		Set Mie Absorption Scale
@@ -127,7 +118,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_mie_absorption_scale(new_value:Dynamic):Void;
+	public function set_mie_absorption_scale(new_value:Float):Void;
 	/**
 		x.set_mie_anisotropy(new_value) -> None
 		Set Mie Anisotropy
@@ -135,7 +126,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_mie_anisotropy(new_value:Dynamic):Void;
+	public function set_mie_anisotropy(new_value:Float):Void;
 	/**
 		x.set_mie_exponential_distribution(new_value) -> None
 		Set Mie Exponential Distribution
@@ -143,7 +134,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_mie_exponential_distribution(new_value:Dynamic):Void;
+	public function set_mie_exponential_distribution(new_value:Float):Void;
 	/**
 		x.set_mie_scattering(new_value) -> None
 		Set Mie Scattering
@@ -151,7 +142,7 @@ package unreal;
 		Args:
 		    new_value (LinearColor):
 	**/
-	public function set_mie_scattering(new_value:Dynamic):Void;
+	public function set_mie_scattering(new_value:unreal.LinearColor):Void;
 	/**
 		x.set_mie_scattering_scale(new_value) -> None
 		Set Mie Scattering Scale
@@ -159,7 +150,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_mie_scattering_scale(new_value:Dynamic):Void;
+	public function set_mie_scattering_scale(new_value:Float):Void;
 	/**
 		x.set_other_absorption(new_value) -> None
 		Set Other Absorption
@@ -167,7 +158,7 @@ package unreal;
 		Args:
 		    new_value (LinearColor):
 	**/
-	public function set_other_absorption(new_value:Dynamic):Void;
+	public function set_other_absorption(new_value:unreal.LinearColor):Void;
 	/**
 		x.set_other_absorption_scale(new_value) -> None
 		Set Other Absorption Scale
@@ -175,7 +166,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_other_absorption_scale(new_value:Dynamic):Void;
+	public function set_other_absorption_scale(new_value:Float):Void;
 	/**
 		x.set_rayleigh_exponential_distribution(new_value) -> None
 		Set Rayleigh Exponential Distribution
@@ -183,7 +174,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_rayleigh_exponential_distribution(new_value:Dynamic):Void;
+	public function set_rayleigh_exponential_distribution(new_value:Float):Void;
 	/**
 		x.set_rayleigh_scattering(new_value) -> None
 		Set Rayleigh Scattering
@@ -191,7 +182,7 @@ package unreal;
 		Args:
 		    new_value (LinearColor):
 	**/
-	public function set_rayleigh_scattering(new_value:Dynamic):Void;
+	public function set_rayleigh_scattering(new_value:unreal.LinearColor):Void;
 	/**
 		x.set_rayleigh_scattering_scale(new_value) -> None
 		Set Rayleigh Scattering Scale
@@ -199,7 +190,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_rayleigh_scattering_scale(new_value:Dynamic):Void;
+	public function set_rayleigh_scattering_scale(new_value:Float):Void;
 	/**
 		x.set_sky_luminance_factor(new_value) -> None
 		Set Sky Luminance Factor
@@ -207,7 +198,7 @@ package unreal;
 		Args:
 		    new_value (LinearColor):
 	**/
-	public function set_sky_luminance_factor(new_value:Dynamic):Void;
+	public function set_sky_luminance_factor(new_value:unreal.LinearColor):Void;
 	/**
 		(LinearColor):  [Read-Only] Scales the luminance of pixels representing the sky, i.e. not belonging to any surface.
 	**/

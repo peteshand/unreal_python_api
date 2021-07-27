@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimSequence") extern class AnimSequence extends unreal.AnimSequenceBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_bone_float_custom_attribute(bone_name, attribute_name, time_keys, value_keys) -> None
 		Add Bone Float Custom Attribute
 		
@@ -20,7 +11,7 @@ package unreal;
 		    time_keys (Array(float)): 
 		    value_keys (Array(float)):
 	**/
-	public function add_bone_float_custom_attribute(bone_name:Dynamic, attribute_name:Dynamic, time_keys:Dynamic, value_keys:Dynamic):Void;
+	public function add_bone_float_custom_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, time_keys:unreal.Array, value_keys:unreal.Array):Void;
 	/**
 		x.add_bone_integer_custom_attribute(bone_name, attribute_name, time_keys, value_keys) -> None
 		Add Bone Integer Custom Attribute
@@ -31,7 +22,7 @@ package unreal;
 		    time_keys (Array(float)): 
 		    value_keys (Array(int32)):
 	**/
-	public function add_bone_integer_custom_attribute(bone_name:Dynamic, attribute_name:Dynamic, time_keys:Dynamic, value_keys:Dynamic):Void;
+	public function add_bone_integer_custom_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, time_keys:unreal.Array, value_keys:unreal.Array):Void;
 	/**
 		x.add_bone_string_custom_attribute(bone_name, attribute_name, time_keys, value_keys) -> None
 		Add Bone String Custom Attribute
@@ -42,7 +33,7 @@ package unreal;
 		    time_keys (Array(float)): 
 		    value_keys (Array(str)):
 	**/
-	public function add_bone_string_custom_attribute(bone_name:Dynamic, attribute_name:Dynamic, time_keys:Dynamic, value_keys:Dynamic):Void;
+	public function add_bone_string_custom_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, time_keys:unreal.Array, value_keys:unreal.Array):Void;
 	/**
 		x.remove_all_custom_attributes() -> None
 		Remove All Custom Attributes
@@ -55,7 +46,7 @@ package unreal;
 		Args:
 		    bone_name (Name):
 	**/
-	public function remove_all_custom_attributes_for_bone(bone_name:Dynamic):Void;
+	public function remove_all_custom_attributes_for_bone(bone_name:unreal.Name):Void;
 	/**
 		x.remove_custom_attribute(bone_name, attribute_name) -> None
 		Remove Custom Attribute
@@ -64,5 +55,5 @@ package unreal;
 		    bone_name (Name): 
 		    attribute_name (Name):
 	**/
-	public function remove_custom_attribute(bone_name:Dynamic, attribute_name:Dynamic):Void;
+	public function remove_custom_attribute(bone_name:unreal.Name, attribute_name:unreal.Name):Void;
 }

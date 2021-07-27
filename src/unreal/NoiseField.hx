@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NoiseField") extern class NoiseField extends unreal.FieldNodeFloat {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Max Range
 	**/
 	public var max_range : Float;
@@ -30,7 +21,7 @@ package unreal;
 		Returns:
 		    NoiseField:
 	**/
-	public function set_noise_field(min_range:Dynamic, max_range:Dynamic, transform:Dynamic):unreal.NoiseField;
+	public function set_noise_field(min_range:Float, max_range:Float, transform:unreal.Transform):unreal.NoiseField;
 	/**
 		(Transform):  [Read-Write] Transform
 	**/

@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "CheatManager") extern class CheatManager extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.change_size(f) -> None
 		Scale the player's size to be F * default size.
 		
 		Args:
 		    f (float):
 	**/
-	public function change_size(f:Dynamic):Void;
+	public function change_size(f:Float):Void;
 	/**
 		x.damage_target(damage_amount) -> None
 		Damage the actor you're looking at (sourced from the player).
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    damage_amount (float):
 	**/
-	public function damage_target(damage_amount:Dynamic):Void;
+	public function damage_target(damage_amount:Float):Void;
 	/**
 		(type(Class)):  [Read-Only] Debug camera - used to have independent camera without stopping gameplay
 	**/
@@ -57,7 +48,7 @@ package unreal;
 		Args:
 		    delay (float):
 	**/
-	public function freeze_frame(delay:Dynamic):Void;
+	public function freeze_frame(delay:Float):Void;
 	/**
 		x.ghost() -> None
 		Pawn no longer collides with the world, and can fly
@@ -90,7 +81,7 @@ package unreal;
 		Args:
 		    new_time_dilation (float):
 	**/
-	public function slomo(new_time_dilation:Dynamic):Void;
+	public function slomo(new_time_dilation:Float):Void;
 	/**
 		x.teleport() -> None
 		Teleport to surface player is looking at.

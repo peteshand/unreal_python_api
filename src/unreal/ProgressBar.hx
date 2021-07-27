@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ProgressBar") extern class ProgressBar extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(ProgressBarFillType):  [Read-Only] Defines if this progress bar fills Left to right or right to left
 	**/
 	public var bar_fill_type : unreal.ProgressBarFillType;
@@ -37,7 +28,7 @@ package unreal;
 		Args:
 		    color (LinearColor):
 	**/
-	public function set_fill_color_and_opacity(color:Dynamic):Void;
+	public function set_fill_color_and_opacity(color:unreal.LinearColor):Void;
 	/**
 		x.set_is_marquee(inb_is_marquee) -> None
 		Sets the progress bar to show as a marquee.
@@ -45,7 +36,7 @@ package unreal;
 		Args:
 		    inb_is_marquee (bool):
 	**/
-	public function set_is_marquee(inb_is_marquee:Dynamic):Void;
+	public function set_is_marquee(inb_is_marquee:Bool):Void;
 	/**
 		x.set_percent(percent) -> None
 		Sets the current value of the ProgressBar.
@@ -53,7 +44,7 @@ package unreal;
 		Args:
 		    percent (float):
 	**/
-	public function set_percent(percent:Dynamic):Void;
+	public function set_percent(percent:Float):Void;
 	/**
 		(ProgressBarStyle):  [Read-Write] The progress bar style
 	**/

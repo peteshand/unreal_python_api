@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FormatArgumentData") extern class FormatArgumentData extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(str):  [Read-Write] Argument Name
 	**/
 	public var argument_name : String;
@@ -37,5 +28,6 @@ package unreal;
 	/**
 		deprecated: 'text_value' was renamed to 'argument_value'.
 	**/
+	@:deprecated
 	public var text_value : Dynamic;
 }

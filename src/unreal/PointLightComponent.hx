@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PointLightComponent") extern class PointLightComponent extends unreal.LocalLightComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] Controls the radial falloff of the light when UseInverseSquaredFalloff is disabled.
 		2 is almost linear and very unrealistic and around 8 it looks reasonable.
 		With large exponents, the light has contribution to only a small area of its influence radius but still costs the same as low exponents.
@@ -23,7 +14,7 @@ package unreal;
 		Args:
 		    new_light_falloff_exponent (float):
 	**/
-	public function set_light_falloff_exponent(new_light_falloff_exponent:Dynamic):Void;
+	public function set_light_falloff_exponent(new_light_falloff_exponent:Float):Void;
 	/**
 		x.set_soft_source_radius(new_value) -> None
 		Set Soft Source Radius
@@ -31,7 +22,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_soft_source_radius(new_value:Dynamic):Void;
+	public function set_soft_source_radius(new_value:Float):Void;
 	/**
 		x.set_source_length(new_value) -> None
 		Set Source Length
@@ -39,7 +30,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_source_length(new_value:Dynamic):Void;
+	public function set_source_length(new_value:Float):Void;
 	/**
 		x.set_source_radius(new_value) -> None
 		Set Source Radius
@@ -47,7 +38,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_source_radius(new_value:Dynamic):Void;
+	public function set_source_radius(new_value:Float):Void;
 	/**
 		(float):  [Read-Only] Soft radius of light source shape.
 		Note that light sources shapes which intersect shadow casting geometry can cause shadowing artifacts.

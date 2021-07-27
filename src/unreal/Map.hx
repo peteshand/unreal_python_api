@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Map") extern class Map extends unreal._WrapperBase {
+@:pythonImport("unreal", "Map") extern class Map extends Dynamic {
 	/**
 		Return key in self.
 	**/
@@ -17,15 +17,6 @@ package unreal;
 		Return self[key].
 	**/
 	public function __getitem__(key:Dynamic):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
 		Implement iter(self).
 	**/
@@ -55,11 +46,11 @@ package unreal;
 	/**
 		X.fromkeys(sequence, value=None) -> Map -- returns a new Unreal map of keys from the sequence using the given value (types are inferred)
 	**/
-	static public function fromkeys(sequence:Dynamic, value:Dynamic):unreal.Map;
+	static public function fromkeys(sequence:Dynamic, value:Dynamic = null):unreal.Map;
 	/**
 		x.get(key, default=None) -> value -- x[key] if key in x, otherwise default
 	**/
-	public function get(key:Dynamic, default:Dynamic):Dynamic;
+	public function get(key:Dynamic, default:Dynamic = null):Dynamic;
 	/**
 		x.items() -> view -- a set-like view of the key->value pairs of this Unreal map
 	**/
@@ -71,7 +62,7 @@ package unreal;
 	/**
 		x.pop(key, default=None) -> value -- remove key and return its value, or default if key not present, or raise KeyError if no default
 	**/
-	public function pop(key:Dynamic, default:Dynamic):Dynamic;
+	public function pop(key:Dynamic, default:Dynamic = null):Dynamic;
 	/**
 		x.popitem() -> pair -- remove and return an arbitrary pair from this Unreal map, or raise KeyError if the map is empty
 	**/
@@ -79,7 +70,7 @@ package unreal;
 	/**
 		x.setdefault(key, default=None) -> value -- set key to default if key not in x and return the new value of key
 	**/
-	public function setdefault(key:Dynamic, default:Dynamic):Dynamic;
+	public function setdefault(key:Dynamic, default:Dynamic = null):Dynamic;
 	/**
 		x.update(...) -> None -- update this Unreal map from the given mapping or sequence pairs type or key->value arguments
 	**/

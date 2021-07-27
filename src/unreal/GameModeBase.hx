@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GameModeBase") extern class GameModeBase extends unreal.Info {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.can_spectate(viewer, view_target) -> bool
 		Return whether Viewer is allowed to spectate from the point of view of ViewTarget.
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function can_spectate(viewer:Dynamic, view_target:Dynamic):Bool;
+	public function can_spectate(viewer:unreal.PlayerController, view_target:unreal.PlayerState):Bool;
 	/**
 		x.change_name(controller, new_name, name_change) -> None
 		Sets the name for a controller
@@ -31,7 +22,7 @@ package unreal;
 		    new_name (str): The name to set the player to
 		    name_change (bool): Whether the name is changing or if this is the first time it has been set
 	**/
-	public function change_name(controller:Dynamic, new_name:Dynamic, name_change:Dynamic):Void;
+	public function change_name(controller:unreal.Controller, new_name:String, name_change:Bool):Void;
 	/**
 		x.choose_player_start(player) -> Actor
 		Return the 'best' player start for this player to spawn from
@@ -43,7 +34,7 @@ package unreal;
 		Returns:
 		    Actor: AActor chosen as player start (usually a PlayerStart)
 	**/
-	public function choose_player_start(player:Dynamic):unreal.Actor;
+	public function choose_player_start(player:unreal.Controller):unreal.Actor;
 	/**
 		(type(Class)):  [Read-Write] The default pawn class used by players.
 	**/
@@ -60,7 +51,7 @@ package unreal;
 		Returns:
 		    Actor: Actor chosen as player start (usually a PlayerStart)
 	**/
-	public function find_player_start(player:Dynamic, incoming_name:Dynamic):unreal.Actor;
+	public function find_player_start(player:unreal.Controller, incoming_name:String):unreal.Actor;
 	/**
 		(type(Class)):  [Read-Write] Class of GameSession, which handles login approval and online game interface
 	**/
@@ -79,7 +70,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_default_pawn_class_for_controller(controller:Dynamic):Dynamic;
+	public function get_default_pawn_class_for_controller(controller:unreal.Controller):Dynamic;
 	/**
 		x.get_num_players() -> int32
 		Returns number of active human players, excluding spectators
@@ -103,7 +94,7 @@ package unreal;
 		Args:
 		    new_player (PlayerController):
 	**/
-	public function handle_starting_new_player(new_player:Dynamic):Void;
+	public function handle_starting_new_player(new_player:unreal.PlayerController):Void;
 	/**
 		x.has_match_ended() -> bool
 		Returns true if the match can be considered ended
@@ -132,7 +123,7 @@ package unreal;
 		    start_spot (Actor): 
 		    new_player (Controller):
 	**/
-	public function init_start_spot(start_spot:Dynamic, new_player:Dynamic):Void;
+	public function init_start_spot(start_spot:unreal.Actor, new_player:unreal.Controller):Void;
 	/**
 		x.initialize_hud_for_player(new_player) -> None
 		Initialize the AHUD object for a player. Games can override this to do something different
@@ -140,7 +131,7 @@ package unreal;
 		Args:
 		    new_player (PlayerController):
 	**/
-	public function initialize_hud_for_player(new_player:Dynamic):Void;
+	public function initialize_hud_for_player(new_player:unreal.PlayerController):Void;
 	/**
 		x.k2_find_player_start(player, incoming_name="") -> Actor
 		Return the specific player start actor that should be used for the next spawn
@@ -153,7 +144,7 @@ package unreal;
 		Returns:
 		    Actor: Actor chosen as player start (usually a PlayerStart)
 	**/
-	public function k2_find_player_start(player:Dynamic, incoming_name:Dynamic):unreal.Actor;
+	public function k2_find_player_start(player:unreal.Controller, incoming_name:String):unreal.Actor;
 	/**
 		x.must_spectate(new_player_controller) -> bool
 		Returns true if NewPlayerController may only join the server as a spectator.
@@ -164,7 +155,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function must_spectate(new_player_controller:Dynamic):Bool;
+	public function must_spectate(new_player_controller:unreal.PlayerController):Bool;
 	/**
 		x.on_change_name(other, new_name, name_change) -> None
 		Overridable event for GameMode blueprint to respond to a change name call
@@ -174,7 +165,7 @@ package unreal;
 		    new_name (str): The name to set the player to
 		    name_change (bool): Whether the name is changing or if this is the first time it has been set
 	**/
-	public function on_change_name(other:Dynamic, new_name:Dynamic, name_change:Dynamic):Void;
+	public function on_change_name(other:unreal.Controller, new_name:String, name_change:Bool):Void;
 	/**
 		x.on_logout(exiting_controller) -> None
 		Implementable event when a Controller with a PlayerState leaves the game.
@@ -182,7 +173,7 @@ package unreal;
 		Args:
 		    exiting_controller (Controller):
 	**/
-	public function on_logout(exiting_controller:Dynamic):Void;
+	public function on_logout(exiting_controller:unreal.Controller):Void;
 	/**
 		x.on_post_login(new_player) -> None
 		Notification that a player has successfully logged in, and has been given a player controller
@@ -190,7 +181,7 @@ package unreal;
 		Args:
 		    new_player (PlayerController):
 	**/
-	public function on_post_login(new_player:Dynamic):Void;
+	public function on_post_login(new_player:unreal.PlayerController):Void;
 	/**
 		x.on_restart_player(new_player) -> None
 		Implementable event called at the end of RestartPlayer
@@ -198,7 +189,7 @@ package unreal;
 		Args:
 		    new_player (Controller):
 	**/
-	public function on_restart_player(new_player:Dynamic):Void;
+	public function on_restart_player(new_player:unreal.Controller):Void;
 	/**
 		x.on_swap_player_controllers(old_pc, new_pc) -> None
 		Called when a PlayerController is swapped to a new one during seamless travel
@@ -207,7 +198,7 @@ package unreal;
 		    old_pc (PlayerController): 
 		    new_pc (PlayerController):
 	**/
-	public function on_swap_player_controllers(old_pc:Dynamic, new_pc:Dynamic):Void;
+	public function on_swap_player_controllers(old_pc:unreal.PlayerController, new_pc:unreal.PlayerController):Void;
 	/**
 		(str):  [Read-Only] Save options string and parse it when needed
 	**/
@@ -226,7 +217,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function player_can_restart(player:Dynamic):Bool;
+	public function player_can_restart(player:unreal.PlayerController):Bool;
 	/**
 		(type(Class)):  [Read-Only] The class of PlayerController to spawn for players logging in.
 	**/
@@ -252,7 +243,7 @@ package unreal;
 		Args:
 		    new_player (Controller):
 	**/
-	public function restart_player(new_player:Dynamic):Void;
+	public function restart_player(new_player:unreal.Controller):Void;
 	/**
 		x.restart_player_at_player_start(new_player, start_spot) -> None
 		Tries to spawn the player's pawn at the specified actor's location
@@ -261,7 +252,7 @@ package unreal;
 		    new_player (Controller): 
 		    start_spot (Actor):
 	**/
-	public function restart_player_at_player_start(new_player:Dynamic, start_spot:Dynamic):Void;
+	public function restart_player_at_player_start(new_player:unreal.Controller, start_spot:unreal.Actor):Void;
 	/**
 		x.restart_player_at_transform(new_player, spawn_transform) -> None
 		Tries to spawn the player's pawn at a specific location
@@ -270,7 +261,7 @@ package unreal;
 		    new_player (Controller): 
 		    spawn_transform (Transform):
 	**/
-	public function restart_player_at_transform(new_player:Dynamic, spawn_transform:Dynamic):Void;
+	public function restart_player_at_transform(new_player:unreal.Controller, spawn_transform:unreal.Transform):Void;
 	/**
 		x.return_to_main_menu_host() -> None
 		Return to main menu, and disconnect any players
@@ -291,7 +282,7 @@ package unreal;
 		Returns:
 		    bool: true if ActorToReset should have Reset() called on it while restarting the game, false if the GameMode will manually reset it or if the actor does not need to be reset
 	**/
-	public function should_reset(actor_to_reset:Dynamic):Bool;
+	public function should_reset(actor_to_reset:unreal.Actor):Bool;
 	/**
 		x.spawn_default_pawn_at_transform(new_player, spawn_transform) -> Pawn
 		Called during RestartPlayer to actually spawn the player's pawn, when using a transform
@@ -303,7 +294,7 @@ package unreal;
 		Returns:
 		    Pawn: a pawn of the default pawn class
 	**/
-	public function spawn_default_pawn_at_transform(new_player:Dynamic, spawn_transform:Dynamic):unreal.Pawn;
+	public function spawn_default_pawn_at_transform(new_player:unreal.Controller, spawn_transform:unreal.Transform):unreal.Pawn;
 	/**
 		x.spawn_default_pawn_for(new_player, start_spot) -> Pawn
 		Called during RestartPlayer to actually spawn the player's pawn, when using a start spot
@@ -315,7 +306,7 @@ package unreal;
 		Returns:
 		    Pawn: a pawn of the default pawn class
 	**/
-	public function spawn_default_pawn_for(new_player:Dynamic, start_spot:Dynamic):unreal.Pawn;
+	public function spawn_default_pawn_for(new_player:unreal.Controller, start_spot:unreal.Actor):unreal.Pawn;
 	/**
 		(type(Class)):  [Read-Only] The pawn class used by the PlayerController for players when spectating.
 	**/

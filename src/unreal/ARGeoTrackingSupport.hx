@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARGeoTrackingSupport") extern class ARGeoTrackingSupport extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_geo_anchor_at_location(longitude, latitude, optional_anchor_name) -> bool
 		
 		
@@ -22,7 +13,7 @@ package unreal;
 		Returns:
 		    bool: add an Geo anchor at a specific location.
 	**/
-	public function add_geo_anchor_at_location(longitude:Dynamic, latitude:Dynamic, optional_anchor_name:Dynamic):Bool;
+	public function add_geo_anchor_at_location(longitude:Float, latitude:Float, optional_anchor_name:String):Bool;
 	/**
 		x.add_geo_anchor_at_location_with_altitude(longitude, latitude, altitude_meters, optional_anchor_name) -> bool
 		
@@ -36,7 +27,7 @@ package unreal;
 		Returns:
 		    bool: add an Geo anchor at a specific location with an altitude (in meters).
 	**/
-	public function add_geo_anchor_at_location_with_altitude(longitude:Dynamic, latitude:Dynamic, altitude_meters:Dynamic, optional_anchor_name:Dynamic):Bool;
+	public function add_geo_anchor_at_location_with_altitude(longitude:Float, latitude:Float, altitude_meters:Float, optional_anchor_name:String):Bool;
 	/**
 		x.get_geo_tracking_accuracy() -> ARGeoTrackingAccuracy
 		

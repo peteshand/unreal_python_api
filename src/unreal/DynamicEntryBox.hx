@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DynamicEntryBox") extern class DynamicEntryBox extends unreal.DynamicEntryBoxBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.bp_create_entry() -> UserWidget
 		Creates and establishes a new dynamic entry in the box
 		
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    entry_widget (UserWidget):
 	**/
-	public function remove_entry(entry_widget:Dynamic):Void;
+	public function remove_entry(entry_widget:unreal.UserWidget):Void;
 	/**
 		x.reset(delete_widgets=False) -> None
 		Clear out the box entries, optionally deleting the underlying Slate widgets entirely as well.
@@ -49,5 +40,5 @@ package unreal;
 		Args:
 		    delete_widgets (bool):
 	**/
-	public function reset(delete_widgets:Dynamic):Void;
+	public function reset(delete_widgets:Bool):Void;
 }

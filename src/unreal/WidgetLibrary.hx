@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "WidgetLibrary") extern class WidgetLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.cancel_drag_drop() -> None
 		Cancels any current drag drop operation.
 	**/
@@ -30,7 +21,8 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function capture_joystick(reply:Dynamic, capturing_widget:Dynamic, all_joysticks:Dynamic):unreal.EventReply;
+	@:deprecated
+	static public function capture_joystick(reply:unreal.EventReply, capturing_widget:unreal.Widget, all_joysticks:Bool):unreal.EventReply;
 	/**
 		X.capture_mouse(reply, capturing_widget) -> (EventReply, reply=EventReply)
 		Capture Mouse
@@ -44,7 +36,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function capture_mouse(reply:Dynamic, capturing_widget:Dynamic):unreal.EventReply;
+	static public function capture_mouse(reply:unreal.EventReply, capturing_widget:unreal.Widget):unreal.EventReply;
 	/**
 		X.clear_user_focus(reply, all_users=False) -> (EventReply, reply=EventReply)
 		Clear User Focus
@@ -58,7 +50,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function clear_user_focus(reply:Dynamic, all_users:Dynamic):unreal.EventReply;
+	static public function clear_user_focus(reply:unreal.EventReply, all_users:Bool):unreal.EventReply;
 	/**
 		X.detect_drag(reply, widget_detecting_drag, drag_key) -> (EventReply, reply=EventReply)
 		Ask Slate to detect if a user starts dragging in this widget later.  Slate internally tracks the movement
@@ -74,7 +66,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function detect_drag(reply:Dynamic, widget_detecting_drag:Dynamic, drag_key:Dynamic):unreal.EventReply;
+	static public function detect_drag(reply:unreal.EventReply, widget_detecting_drag:unreal.Widget, drag_key:unreal.Key):unreal.EventReply;
 	/**
 		X.detect_drag_if_pressed(pointer_event, widget_detecting_drag, drag_key) -> EventReply
 		Given the pointer event, emit the DetectDrag reply if the provided key was pressed.
@@ -88,7 +80,7 @@ package unreal;
 		Returns:
 		    EventReply:
 	**/
-	static public function detect_drag_if_pressed(pointer_event:Dynamic, widget_detecting_drag:Dynamic, drag_key:Dynamic):unreal.EventReply;
+	static public function detect_drag_if_pressed(pointer_event:unreal.PointerEvent, widget_detecting_drag:unreal.Widget, drag_key:unreal.Key):unreal.EventReply;
 	/**
 		X.dismiss_all_menus() -> None
 		Closes any popup menu
@@ -110,7 +102,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_box(context:Dynamic, position:Dynamic, size:Dynamic, brush:Dynamic, tint:Dynamic):unreal.PaintContext;
+	static public function draw_box(context:unreal.PaintContext, position:unreal.Vector2D, size:unreal.Vector2D, brush:unreal.SlateBrushAsset, tint:unreal.LinearColor):unreal.PaintContext;
 	/**
 		X.draw_line(context, position_a, position_b, tint=[0.000000, 0.000000, 0.000000, 0.000000], anti_alias=True, thickness=1.000000) -> PaintContext
 		Draws a line.
@@ -128,7 +120,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_line(context:Dynamic, position_a:Dynamic, position_b:Dynamic, tint:Dynamic, anti_alias:Dynamic, thickness:Dynamic):unreal.PaintContext;
+	static public function draw_line(context:unreal.PaintContext, position_a:unreal.Vector2D, position_b:unreal.Vector2D, tint:unreal.LinearColor, anti_alias:Bool, thickness:Float):unreal.PaintContext;
 	/**
 		X.draw_lines(context, points, tint=[0.000000, 0.000000, 0.000000, 0.000000], anti_alias=True, thickness=1.000000) -> PaintContext
 		Draws several line segments.
@@ -145,7 +137,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_lines(context:Dynamic, points:Dynamic, tint:Dynamic, anti_alias:Dynamic, thickness:Dynamic):unreal.PaintContext;
+	static public function draw_lines(context:unreal.PaintContext, points:unreal.Array, tint:unreal.LinearColor, anti_alias:Bool, thickness:Float):unreal.PaintContext;
 	/**
 		X.draw_text(context, string, position, tint=[0.000000, 0.000000, 0.000000, 0.000000]) -> PaintContext
 		Draws text.
@@ -162,7 +154,8 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_text(context:Dynamic, string:Dynamic, position:Dynamic, tint:Dynamic):unreal.PaintContext;
+	@:deprecated
+	static public function draw_text(context:unreal.PaintContext, string:String, position:unreal.Vector2D, tint:unreal.LinearColor):unreal.PaintContext;
 	/**
 		X.draw_text_formatted(context, text, position, font, font_size=16, font_type_face="Regular", tint=[0.000000, 0.000000, 0.000000, 0.000000]) -> PaintContext
 		Draws text.
@@ -181,7 +174,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_text_formatted(context:Dynamic, text:Dynamic, position:Dynamic, font:Dynamic, font_size:Dynamic, font_type_face:Dynamic, tint:Dynamic):unreal.PaintContext;
+	static public function draw_text_formatted(context:unreal.PaintContext, text:unreal.Text, position:unreal.Vector2D, font:unreal.Font, font_size:Int, font_type_face:unreal.Name, tint:unreal.LinearColor):unreal.PaintContext;
 	/**
 		X.end_drag_drop(reply) -> (EventReply, reply=EventReply)
 		An event should return FReply::Handled().EndDragDrop() to request that the current drag/drop operation be terminated.
@@ -194,7 +187,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function end_drag_drop(reply:Dynamic):unreal.EventReply;
+	static public function end_drag_drop(reply:unreal.EventReply):unreal.EventReply;
 	/**
 		X.get_all_widgets_of_class(world_context_object, widget_class, top_level_only=True) -> Array(UserWidget)
 		Find all widgets of a certain class.
@@ -209,7 +202,7 @@ package unreal;
 		
 		    found_widgets (Array(UserWidget)): The widgets that were found matching the filter.
 	**/
-	static public function get_all_widgets_of_class(world_context_object:Dynamic, widget_class:Dynamic, top_level_only:Dynamic):Dynamic;
+	static public function get_all_widgets_of_class(world_context_object:unreal.Object, widget_class:Dynamic, top_level_only:Bool):Dynamic;
 	/**
 		X.get_all_widgets_with_interface(world_context_object, interface, top_level_only) -> Array(UserWidget)
 		Find all widgets in the world with the specified interface.
@@ -225,7 +218,7 @@ package unreal;
 		
 		    found_widgets (Array(UserWidget)): Output array of widgets that implement the specified interface.
 	**/
-	static public function get_all_widgets_with_interface(world_context_object:Dynamic, _interface:Dynamic, top_level_only:Dynamic):Dynamic;
+	static public function get_all_widgets_with_interface(world_context_object:unreal.Object, _interface:Dynamic, top_level_only:Bool):Dynamic;
 	/**
 		X.get_brush_resource(brush) -> Object
 		Gets the resource object on a brush.  This could be a UTexture2D or a UMaterialInterface.
@@ -236,7 +229,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function get_brush_resource(brush:Dynamic):unreal.Object;
+	static public function get_brush_resource(brush:unreal.SlateBrush):unreal.Object;
 	/**
 		X.get_brush_resource_as_material(brush) -> MaterialInterface
 		Gets the brush resource as a material.
@@ -247,7 +240,7 @@ package unreal;
 		Returns:
 		    MaterialInterface:
 	**/
-	static public function get_brush_resource_as_material(brush:Dynamic):unreal.MaterialInterface;
+	static public function get_brush_resource_as_material(brush:unreal.SlateBrush):unreal.MaterialInterface;
 	/**
 		X.get_brush_resource_as_texture2d(brush) -> Texture2D
 		Gets the brush resource as a texture 2D.
@@ -258,7 +251,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	static public function get_brush_resource_as_texture2d(brush:Dynamic):unreal.Texture2D;
+	static public function get_brush_resource_as_texture2d(brush:unreal.SlateBrush):unreal.Texture2D;
 	/**
 		X.get_drag_dropping_content() -> DragDropOperation
 		Returns the drag and drop operation that is currently occurring if any, otherwise nothing.
@@ -280,7 +273,7 @@ package unreal;
 		
 		    brush (SlateBrush):
 	**/
-	static public function get_dynamic_material(brush:Dynamic):unreal.SlateBrush;
+	static public function get_dynamic_material(brush:unreal.SlateBrush):unreal.SlateBrush;
 	/**
 		X.get_input_event_from_character_event(event) -> InputEvent
 		Get Input Event from Character Event
@@ -291,7 +284,7 @@ package unreal;
 		Returns:
 		    InputEvent:
 	**/
-	static public function get_input_event_from_character_event(event:Dynamic):unreal.InputEvent;
+	static public function get_input_event_from_character_event(event:unreal.CharacterEvent):unreal.InputEvent;
 	/**
 		X.get_input_event_from_key_event(event) -> InputEvent
 		Get Input Event from Key Event
@@ -302,7 +295,7 @@ package unreal;
 		Returns:
 		    InputEvent:
 	**/
-	static public function get_input_event_from_key_event(event:Dynamic):unreal.InputEvent;
+	static public function get_input_event_from_key_event(event:unreal.KeyEvent):unreal.InputEvent;
 	/**
 		X.get_input_event_from_navigation_event(event) -> InputEvent
 		Get Input Event from Navigation Event
@@ -313,7 +306,7 @@ package unreal;
 		Returns:
 		    InputEvent:
 	**/
-	static public function get_input_event_from_navigation_event(event:Dynamic):unreal.InputEvent;
+	static public function get_input_event_from_navigation_event(event:unreal.NavigationEvent):unreal.InputEvent;
 	/**
 		X.get_input_event_from_pointer_event(event) -> InputEvent
 		Get Input Event from Pointer Event
@@ -324,7 +317,7 @@ package unreal;
 		Returns:
 		    InputEvent:
 	**/
-	static public function get_input_event_from_pointer_event(event:Dynamic):unreal.InputEvent;
+	static public function get_input_event_from_pointer_event(event:unreal.PointerEvent):unreal.InputEvent;
 	/**
 		X.get_key_event_from_analog_input_event(event) -> KeyEvent
 		Get Key Event from Analog Input Event
@@ -335,7 +328,7 @@ package unreal;
 		Returns:
 		    KeyEvent:
 	**/
-	static public function get_key_event_from_analog_input_event(event:Dynamic):unreal.KeyEvent;
+	static public function get_key_event_from_analog_input_event(event:unreal.AnalogInputEvent):unreal.KeyEvent;
 	/**
 		X.get_safe_zone_padding(world_context_object) -> (safe_padding=Vector4, safe_padding_scale=Vector2D, spill_over_padding=Vector4)
 		Gets the amount of padding that needs to be added when accounting for the safe zone on TVs.
@@ -352,7 +345,7 @@ package unreal;
 		
 		    spill_over_padding (Vector4):
 	**/
-	static public function get_safe_zone_padding(world_context_object:Dynamic):python.Tuple<Dynamic>;
+	static public function get_safe_zone_padding(world_context_object:unreal.Object):python.Tuple<Dynamic>;
 	/**
 		X.handled() -> EventReply
 		The event reply to use when you choose to handle an event.  This will prevent the event
@@ -383,7 +376,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function lock_mouse(reply:Dynamic, capturing_widget:Dynamic):unreal.EventReply;
+	static public function lock_mouse(reply:unreal.EventReply, capturing_widget:unreal.Widget):unreal.EventReply;
 	/**
 		X.make_brush_from_asset(brush_asset) -> SlateBrush
 		Creates a Slate Brush from a Slate Brush Asset
@@ -394,7 +387,7 @@ package unreal;
 		Returns:
 		    SlateBrush: A new slate brush using the asset's brush.
 	**/
-	static public function make_brush_from_asset(brush_asset:Dynamic):unreal.SlateBrush;
+	static public function make_brush_from_asset(brush_asset:unreal.SlateBrushAsset):unreal.SlateBrush;
 	/**
 		X.make_brush_from_material(material, width=32, height=32) -> SlateBrush
 		Creates a Slate Brush from a Material.  Materials don't have an implicit size, so providing a widget and height
@@ -408,7 +401,7 @@ package unreal;
 		Returns:
 		    SlateBrush: A new slate brush using the material.
 	**/
-	static public function make_brush_from_material(material:Dynamic, width:Dynamic, height:Dynamic):unreal.SlateBrush;
+	static public function make_brush_from_material(material:unreal.MaterialInterface, width:Int, height:Int):unreal.SlateBrush;
 	/**
 		X.make_brush_from_texture(texture, width=0, height=0) -> SlateBrush
 		Creates a Slate Brush from a Texture2D
@@ -421,7 +414,7 @@ package unreal;
 		Returns:
 		    SlateBrush: A new slate brush using the texture.
 	**/
-	static public function make_brush_from_texture(texture:Dynamic, width:Dynamic, height:Dynamic):unreal.SlateBrush;
+	static public function make_brush_from_texture(texture:unreal.Texture2D, width:Int, height:Int):unreal.SlateBrush;
 	/**
 		X.no_resource_brush() -> SlateBrush
 		Creates a Slate Brush that wont draw anything, the "Null Brush".
@@ -444,7 +437,8 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function release_joystick_capture(reply:Dynamic, all_joysticks:Dynamic):unreal.EventReply;
+	@:deprecated
+	static public function release_joystick_capture(reply:unreal.EventReply, all_joysticks:Bool):unreal.EventReply;
 	/**
 		X.release_mouse_capture(reply) -> (EventReply, reply=EventReply)
 		Release Mouse Capture
@@ -457,7 +451,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function release_mouse_capture(reply:Dynamic):unreal.EventReply;
+	static public function release_mouse_capture(reply:unreal.EventReply):unreal.EventReply;
 	/**
 		X.restore_previous_window_title_bar_state() -> None
 		Restore Previous Window Title Bar State
@@ -476,7 +470,7 @@ package unreal;
 		
 		    brush (SlateBrush):
 	**/
-	static public function set_brush_resource_to_material(brush:Dynamic, material:Dynamic):unreal.SlateBrush;
+	static public function set_brush_resource_to_material(brush:unreal.SlateBrush, material:unreal.MaterialInterface):unreal.SlateBrush;
 	/**
 		X.set_brush_resource_to_texture(brush, texture) -> SlateBrush
 		Sets the resource on a brush to be a UTexture2D.
@@ -490,7 +484,7 @@ package unreal;
 		
 		    brush (SlateBrush):
 	**/
-	static public function set_brush_resource_to_texture(brush:Dynamic, texture:Dynamic):unreal.SlateBrush;
+	static public function set_brush_resource_to_texture(brush:unreal.SlateBrush, texture:unreal.Texture2D):unreal.SlateBrush;
 	/**
 		X.set_color_vision_deficiency_type(type, severity, correct_deficiency, show_correction_with_deficiency) -> None
 		Apply color deficiency correction settings to the game window
@@ -501,7 +495,7 @@ package unreal;
 		    correct_deficiency (bool): Shifts the color spectrum to the visible range based on the current deficiency type.
 		    show_correction_with_deficiency (bool): If you're correcting the color deficiency, you can use this to visualize what the correction looks like with the deficiency.
 	**/
-	static public function set_color_vision_deficiency_type(type:Dynamic, severity:Dynamic, correct_deficiency:Dynamic, show_correction_with_deficiency:Dynamic):Void;
+	static public function set_color_vision_deficiency_type(type:unreal.ColorVisionDeficiency, severity:Float, correct_deficiency:Bool, show_correction_with_deficiency:Bool):Void;
 	/**
 		X.set_focus_to_game_viewport() -> None
 		Set Focus to Game Viewport
@@ -520,7 +514,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function set_hardware_cursor(world_context_object:Dynamic, cursor_shape:Dynamic, cursor_name:Dynamic, hot_spot:Dynamic):Bool;
+	static public function set_hardware_cursor(world_context_object:unreal.Object, cursor_shape:unreal.MouseCursor, cursor_name:unreal.Name, hot_spot:unreal.Vector2D):Bool;
 	/**
 		X.set_input_mode_game_and_ui(target, widget_to_focus=None, lock_mouse_to_viewport=False, hide_cursor_during_capture=True) -> None
 		Set Input Mode Game and UI
@@ -532,7 +526,8 @@ package unreal;
 		    lock_mouse_to_viewport (bool): 
 		    hide_cursor_during_capture (bool):
 	**/
-	static public function set_input_mode_game_and_ui(target:Dynamic, widget_to_focus:Dynamic, lock_mouse_to_viewport:Dynamic, hide_cursor_during_capture:Dynamic):Void;
+	@:deprecated
+	static public function set_input_mode_game_and_ui(target:unreal.PlayerController, widget_to_focus:unreal.Widget, lock_mouse_to_viewport:Bool, hide_cursor_during_capture:Bool):Void;
 	/**
 		X.set_input_mode_game_and_ui_ex(player_controller, widget_to_focus=None, mouse_lock_mode=MouseLockMode.DO_NOT_LOCK, hide_cursor_during_capture=True) -> None
 		Setup an input mode that allows only the UI to respond to user input, and if the UI doesn't handle it player input / player controller gets a chance.
@@ -543,7 +538,7 @@ package unreal;
 		    mouse_lock_mode (MouseLockMode): 
 		    hide_cursor_during_capture (bool):
 	**/
-	static public function set_input_mode_game_and_ui_ex(player_controller:Dynamic, widget_to_focus:Dynamic, mouse_lock_mode:Dynamic, hide_cursor_during_capture:Dynamic):Void;
+	static public function set_input_mode_game_and_ui_ex(player_controller:unreal.PlayerController, widget_to_focus:unreal.Widget, mouse_lock_mode:unreal.MouseLockMode, hide_cursor_during_capture:Bool):Void;
 	/**
 		X.set_input_mode_game_only(player_controller) -> None
 		Setup an input mode that allows only player input / player controller to respond to user input.
@@ -551,7 +546,7 @@ package unreal;
 		Args:
 		    player_controller (PlayerController):
 	**/
-	static public function set_input_mode_game_only(player_controller:Dynamic):Void;
+	static public function set_input_mode_game_only(player_controller:unreal.PlayerController):Void;
 	/**
 		X.set_input_mode_ui_only(target, widget_to_focus=None, lock_mouse_to_viewport=False) -> None
 		Set Input Mode UIOnly
@@ -562,7 +557,8 @@ package unreal;
 		    widget_to_focus (Widget): 
 		    lock_mouse_to_viewport (bool):
 	**/
-	static public function set_input_mode_ui_only(target:Dynamic, widget_to_focus:Dynamic, lock_mouse_to_viewport:Dynamic):Void;
+	@:deprecated
+	static public function set_input_mode_ui_only(target:unreal.PlayerController, widget_to_focus:unreal.Widget, lock_mouse_to_viewport:Bool):Void;
 	/**
 		X.set_input_mode_ui_only_ex(player_controller, widget_to_focus=None, mouse_lock_mode=MouseLockMode.DO_NOT_LOCK) -> None
 		Setup an input mode that allows only the UI to respond to user input.
@@ -572,7 +568,7 @@ package unreal;
 		    widget_to_focus (Widget): 
 		    mouse_lock_mode (MouseLockMode):
 	**/
-	static public function set_input_mode_ui_only_ex(player_controller:Dynamic, widget_to_focus:Dynamic, mouse_lock_mode:Dynamic):Void;
+	static public function set_input_mode_ui_only_ex(player_controller:unreal.PlayerController, widget_to_focus:unreal.Widget, mouse_lock_mode:unreal.MouseLockMode):Void;
 	/**
 		X.set_mouse_position(reply, new_mouse_position) -> (EventReply, reply=EventReply)
 		Set Mouse Position
@@ -586,7 +582,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function set_mouse_position(reply:Dynamic, new_mouse_position:Dynamic):unreal.EventReply;
+	static public function set_mouse_position(reply:unreal.EventReply, new_mouse_position:unreal.Vector2D):unreal.EventReply;
 	/**
 		X.set_user_focus(reply, focus_widget, all_users=False) -> (EventReply, reply=EventReply)
 		Set User Focus
@@ -601,7 +597,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function set_user_focus(reply:Dynamic, focus_widget:Dynamic, all_users:Dynamic):unreal.EventReply;
+	static public function set_user_focus(reply:unreal.EventReply, focus_widget:unreal.Widget, all_users:Bool):unreal.EventReply;
 	/**
 		X.set_window_title_bar_close_button_active(active) -> None
 		Set Window Title Bar Close Button Active
@@ -609,7 +605,7 @@ package unreal;
 		Args:
 		    active (bool):
 	**/
-	static public function set_window_title_bar_close_button_active(active:Dynamic):Void;
+	static public function set_window_title_bar_close_button_active(active:Bool):Void;
 	/**
 		X.set_window_title_bar_on_close_clicked_delegate(delegate) -> None
 		Set Window Title Bar on Close Clicked Delegate
@@ -617,7 +613,7 @@ package unreal;
 		Args:
 		    delegate (OnGameWindowCloseButtonClickedDelegate):
 	**/
-	static public function set_window_title_bar_on_close_clicked_delegate(delegate:Dynamic):Void;
+	static public function set_window_title_bar_on_close_clicked_delegate(delegate:unreal.OnGameWindowCloseButtonClickedDelegate):Void;
 	/**
 		X.set_window_title_bar_state(title_bar_content, mode, title_bar_drag_enabled, window_buttons_visible, title_bar_visible) -> None
 		Set Window Title Bar State
@@ -629,7 +625,7 @@ package unreal;
 		    window_buttons_visible (bool): 
 		    title_bar_visible (bool):
 	**/
-	static public function set_window_title_bar_state(title_bar_content:Dynamic, mode:Dynamic, title_bar_drag_enabled:Dynamic, window_buttons_visible:Dynamic, title_bar_visible:Dynamic):Void;
+	static public function set_window_title_bar_state(title_bar_content:unreal.Widget, mode:unreal.WindowTitleBarMode, title_bar_drag_enabled:Bool, window_buttons_visible:Bool, title_bar_visible:Bool):Void;
 	/**
 		X.unhandled() -> EventReply
 		The event reply to use when you choose not to handle an event.
@@ -650,5 +646,5 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function unlock_mouse(reply:Dynamic):unreal.EventReply;
+	static public function unlock_mouse(reply:unreal.EventReply):unreal.EventReply;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SynthComponent") extern class SynthComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Is this audio component allowed to be spatialized?
 	**/
 	public var allow_spatialization : Bool;
@@ -73,7 +64,7 @@ package unreal;
 		Args:
 		    low_pass_filter_enabled (bool):
 	**/
-	public function set_low_pass_filter_enabled(low_pass_filter_enabled:Dynamic):Void;
+	public function set_low_pass_filter_enabled(low_pass_filter_enabled:Bool):Void;
 	/**
 		x.set_low_pass_filter_frequency(low_pass_filter_frequency) -> None
 		Sets lowpass filter frequency of the audio component.
@@ -81,7 +72,7 @@ package unreal;
 		Args:
 		    low_pass_filter_frequency (float):
 	**/
-	public function set_low_pass_filter_frequency(low_pass_filter_frequency:Dynamic):Void;
+	public function set_low_pass_filter_frequency(low_pass_filter_frequency:Float):Void;
 	/**
 		x.set_submix_send(submix, send_level) -> None
 		Sets how much audio the sound should send to the given submix.
@@ -90,7 +81,7 @@ package unreal;
 		    submix (SoundSubmixBase): 
 		    send_level (float):
 	**/
-	public function set_submix_send(submix:Dynamic, send_level:Dynamic):Void;
+	public function set_submix_send(submix:unreal.SoundSubmixBase, send_level:Float):Void;
 	/**
 		x.set_volume_multiplier(volume_multiplier) -> None
 		Sets how much audio the sound should send to the given submix.
@@ -98,7 +89,7 @@ package unreal;
 		Args:
 		    volume_multiplier (float):
 	**/
-	public function set_volume_multiplier(volume_multiplier:Dynamic):Void;
+	public function set_volume_multiplier(volume_multiplier:Float):Void;
 	/**
 		(Array(SoundSubmixSendInfo)):  [Read-Write] An array of submix sends. Audio from this sound will send a portion of its audio to these effects.
 	**/

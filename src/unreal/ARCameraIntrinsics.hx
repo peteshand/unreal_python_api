@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARCameraIntrinsics") extern class ARCameraIntrinsics extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Vector2D):  [Read-Only] Camera focal length in pixels
 	**/
 	public var focal_length : unreal.Vector2D;

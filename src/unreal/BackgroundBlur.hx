@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BackgroundBlur") extern class BackgroundBlur extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] True to modulate the strength of the blur based on the widget alpha.
 	**/
 	public var apply_alpha_to_blur : Bool;
@@ -44,7 +35,7 @@ package unreal;
 		Args:
 		    apply_alpha_to_blur (bool):
 	**/
-	public function set_apply_alpha_to_blur(apply_alpha_to_blur:Dynamic):Void;
+	public function set_apply_alpha_to_blur(apply_alpha_to_blur:Bool):Void;
 	/**
 		x.set_blur_radius(blur_radius) -> None
 		Set Blur Radius
@@ -52,7 +43,7 @@ package unreal;
 		Args:
 		    blur_radius (int32):
 	**/
-	public function set_blur_radius(blur_radius:Dynamic):Void;
+	public function set_blur_radius(blur_radius:Int):Void;
 	/**
 		x.set_blur_strength(strength) -> None
 		Set Blur Strength
@@ -60,7 +51,7 @@ package unreal;
 		Args:
 		    strength (float):
 	**/
-	public function set_blur_strength(strength:Dynamic):Void;
+	public function set_blur_strength(strength:Float):Void;
 	/**
 		x.set_horizontal_alignment(horizontal_alignment) -> None
 		Set Horizontal Alignment
@@ -68,7 +59,7 @@ package unreal;
 		Args:
 		    horizontal_alignment (HorizontalAlignment):
 	**/
-	public function set_horizontal_alignment(horizontal_alignment:Dynamic):Void;
+	public function set_horizontal_alignment(horizontal_alignment:unreal.HorizontalAlignment):Void;
 	/**
 		x.set_low_quality_fallback_brush(brush) -> None
 		Set Low Quality Fallback Brush
@@ -76,7 +67,7 @@ package unreal;
 		Args:
 		    brush (SlateBrush):
 	**/
-	public function set_low_quality_fallback_brush(brush:Dynamic):Void;
+	public function set_low_quality_fallback_brush(brush:unreal.SlateBrush):Void;
 	/**
 		x.set_padding(padding) -> None
 		Set Padding
@@ -84,7 +75,7 @@ package unreal;
 		Args:
 		    padding (Margin):
 	**/
-	public function set_padding(padding:Dynamic):Void;
+	public function set_padding(padding:unreal.Margin):Void;
 	/**
 		x.set_vertical_alignment(vertical_alignment) -> None
 		Set Vertical Alignment
@@ -92,7 +83,7 @@ package unreal;
 		Args:
 		    vertical_alignment (VerticalAlignment):
 	**/
-	public function set_vertical_alignment(vertical_alignment:Dynamic):Void;
+	public function set_vertical_alignment(vertical_alignment:unreal.VerticalAlignment):Void;
 	/**
 		(VerticalAlignment):  [Read-Only] The alignment of the content vertically.
 	**/

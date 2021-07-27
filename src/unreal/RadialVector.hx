@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "RadialVector") extern class RadialVector extends unreal.FieldNodeVector {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Magnitude
 	**/
 	public var magnitude : Float;
@@ -29,5 +20,5 @@ package unreal;
 		Returns:
 		    RadialVector:
 	**/
-	public function set_radial_vector(magnitude:Dynamic, position:Dynamic):unreal.RadialVector;
+	public function set_radial_vector(magnitude:Float, position:unreal.Vector):unreal.RadialVector;
 }

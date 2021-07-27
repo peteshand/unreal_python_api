@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CollisionResponseContainer") extern class CollisionResponseContainer extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(CollisionResponseType):  [Read-Only] 3
 	**/
 	public var camera : unreal.CollisionResponseType;
@@ -21,6 +12,7 @@ package unreal;
 	/**
 		deprecated: 'dynamic' was renamed to 'world_dynamic'.
 	**/
+	@:deprecated
 	@:native("dynamic")
 	public var _dynamic : Dynamic;
 	/**
@@ -142,10 +134,12 @@ package unreal;
 	/**
 		deprecated: 'rigid_body' was renamed to 'physics_body'.
 	**/
+	@:deprecated
 	public var rigid_body : Dynamic;
 	/**
 		deprecated: 'static' was renamed to 'world_static'.
 	**/
+	@:deprecated
 	@:native("static")
 	public var _static : Dynamic;
 	/**

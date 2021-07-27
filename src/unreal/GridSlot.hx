@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GridSlot") extern class GridSlot extends unreal.PanelSlot {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(int32):  [Read-Only] The column index of the cell this slot is in
 	**/
 	public var column : Int;
@@ -49,7 +40,7 @@ package unreal;
 		Args:
 		    column (int32):
 	**/
-	public function set_column(column:Dynamic):Void;
+	public function set_column(column:Int):Void;
 	/**
 		x.set_column_span(column_span) -> None
 		How many columns this slot spans over
@@ -57,7 +48,7 @@ package unreal;
 		Args:
 		    column_span (int32):
 	**/
-	public function set_column_span(column_span:Dynamic):Void;
+	public function set_column_span(column_span:Int):Void;
 	/**
 		x.set_horizontal_alignment(horizontal_alignment) -> None
 		Set Horizontal Alignment
@@ -65,7 +56,7 @@ package unreal;
 		Args:
 		    horizontal_alignment (HorizontalAlignment):
 	**/
-	public function set_horizontal_alignment(horizontal_alignment:Dynamic):Void;
+	public function set_horizontal_alignment(horizontal_alignment:unreal.HorizontalAlignment):Void;
 	/**
 		x.set_layer(layer) -> None
 		Sets positive values offset this cell to be hit-tested and drawn on top of others.
@@ -73,7 +64,7 @@ package unreal;
 		Args:
 		    layer (int32):
 	**/
-	public function set_layer(layer:Dynamic):Void;
+	public function set_layer(layer:Int):Void;
 	/**
 		x.set_nudge(nudge) -> None
 		Sets the offset for this slot's content by some amount; positive values offset to lower right
@@ -81,7 +72,7 @@ package unreal;
 		Args:
 		    nudge (Vector2D):
 	**/
-	public function set_nudge(nudge:Dynamic):Void;
+	public function set_nudge(nudge:unreal.Vector2D):Void;
 	/**
 		x.set_padding(padding) -> None
 		Set Padding
@@ -89,7 +80,7 @@ package unreal;
 		Args:
 		    padding (Margin):
 	**/
-	public function set_padding(padding:Dynamic):Void;
+	public function set_padding(padding:unreal.Margin):Void;
 	/**
 		x.set_row(row) -> None
 		Sets the row index of the slot, this determines what cell the slot is in the panel
@@ -97,7 +88,7 @@ package unreal;
 		Args:
 		    row (int32):
 	**/
-	public function set_row(row:Dynamic):Void;
+	public function set_row(row:Int):Void;
 	/**
 		x.set_row_span(row_span) -> None
 		How many rows this this slot spans over
@@ -105,7 +96,7 @@ package unreal;
 		Args:
 		    row_span (int32):
 	**/
-	public function set_row_span(row_span:Dynamic):Void;
+	public function set_row_span(row_span:Int):Void;
 	/**
 		x.set_vertical_alignment(vertical_alignment) -> None
 		Set Vertical Alignment
@@ -113,7 +104,7 @@ package unreal;
 		Args:
 		    vertical_alignment (VerticalAlignment):
 	**/
-	public function set_vertical_alignment(vertical_alignment:Dynamic):Void;
+	public function set_vertical_alignment(vertical_alignment:unreal.VerticalAlignment):Void;
 	/**
 		(VerticalAlignment):  [Read-Only] The alignment of the object vertically.
 	**/

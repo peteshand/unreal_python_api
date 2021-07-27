@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ScrollBox") extern class ScrollBox extends unreal.PanelWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Disable to stop scrollbars from activating inertial overscrolling
 	**/
 	public var allow_overscroll : Bool;
@@ -108,7 +99,7 @@ package unreal;
 		    scroll_destination (DescendantScrollDestination): 
 		    padding (float):
 	**/
-	public function scroll_widget_into_view(widget_to_find:Dynamic, animate_scroll:Dynamic, scroll_destination:Dynamic, padding:Dynamic):Void;
+	public function scroll_widget_into_view(widget_to_find:unreal.Widget, animate_scroll:Bool, scroll_destination:unreal.DescendantScrollDestination, padding:Float):Void;
 	/**
 		(Margin):  [Read-Only] The margin around the scrollbar
 	**/
@@ -124,7 +115,7 @@ package unreal;
 		Args:
 		    new_allow_overscroll (bool):
 	**/
-	public function set_allow_overscroll(new_allow_overscroll:Dynamic):Void;
+	public function set_allow_overscroll(new_allow_overscroll:Bool):Void;
 	/**
 		x.set_always_show_scrollbar(new_always_show_scrollbar) -> None
 		Set Always Show Scrollbar
@@ -132,7 +123,7 @@ package unreal;
 		Args:
 		    new_always_show_scrollbar (bool):
 	**/
-	public function set_always_show_scrollbar(new_always_show_scrollbar:Dynamic):Void;
+	public function set_always_show_scrollbar(new_always_show_scrollbar:Bool):Void;
 	/**
 		x.set_animate_wheel_scrolling(should_animate_wheel_scrolling) -> None
 		Set Animate Wheel Scrolling
@@ -140,7 +131,7 @@ package unreal;
 		Args:
 		    should_animate_wheel_scrolling (bool):
 	**/
-	public function set_animate_wheel_scrolling(should_animate_wheel_scrolling:Dynamic):Void;
+	public function set_animate_wheel_scrolling(should_animate_wheel_scrolling:Bool):Void;
 	/**
 		x.set_consume_mouse_wheel(new_consume_mouse_wheel) -> None
 		Set Consume Mouse Wheel
@@ -148,7 +139,7 @@ package unreal;
 		Args:
 		    new_consume_mouse_wheel (ConsumeMouseWheel):
 	**/
-	public function set_consume_mouse_wheel(new_consume_mouse_wheel:Dynamic):Void;
+	public function set_consume_mouse_wheel(new_consume_mouse_wheel:unreal.ConsumeMouseWheel):Void;
 	/**
 		x.set_orientation(new_orientation) -> None
 		Set Orientation
@@ -156,7 +147,7 @@ package unreal;
 		Args:
 		    new_orientation (Orientation):
 	**/
-	public function set_orientation(new_orientation:Dynamic):Void;
+	public function set_orientation(new_orientation:unreal.Orientation):Void;
 	/**
 		x.set_scroll_bar_visibility(new_scroll_bar_visibility) -> None
 		Set Scroll Bar Visibility
@@ -164,7 +155,7 @@ package unreal;
 		Args:
 		    new_scroll_bar_visibility (SlateVisibility):
 	**/
-	public function set_scroll_bar_visibility(new_scroll_bar_visibility:Dynamic):Void;
+	public function set_scroll_bar_visibility(new_scroll_bar_visibility:unreal.SlateVisibility):Void;
 	/**
 		x.set_scroll_offset(new_scroll_offset) -> None
 		Updates the scroll offset of the scrollbox.
@@ -172,7 +163,7 @@ package unreal;
 		Args:
 		    new_scroll_offset (float): is in Slate Units.
 	**/
-	public function set_scroll_offset(new_scroll_offset:Dynamic):Void;
+	public function set_scroll_offset(new_scroll_offset:Float):Void;
 	/**
 		x.set_scrollbar_padding(new_scrollbar_padding) -> None
 		Set Scrollbar Padding
@@ -180,7 +171,7 @@ package unreal;
 		Args:
 		    new_scrollbar_padding (Margin):
 	**/
-	public function set_scrollbar_padding(new_scrollbar_padding:Dynamic):Void;
+	public function set_scrollbar_padding(new_scrollbar_padding:unreal.Margin):Void;
 	/**
 		x.set_scrollbar_thickness(new_scrollbar_thickness) -> None
 		Set Scrollbar Thickness
@@ -188,7 +179,7 @@ package unreal;
 		Args:
 		    new_scrollbar_thickness (Vector2D):
 	**/
-	public function set_scrollbar_thickness(new_scrollbar_thickness:Dynamic):Void;
+	public function set_scrollbar_thickness(new_scrollbar_thickness:unreal.Vector2D):Void;
 	/**
 		x.set_wheel_scroll_multiplier(new_wheel_scroll_multiplier) -> None
 		Set Wheel Scroll Multiplier
@@ -196,7 +187,7 @@ package unreal;
 		Args:
 		    new_wheel_scroll_multiplier (float):
 	**/
-	public function set_wheel_scroll_multiplier(new_wheel_scroll_multiplier:Dynamic):Void;
+	public function set_wheel_scroll_multiplier(new_wheel_scroll_multiplier:Float):Void;
 	/**
 		(float):  [Read-Only] The multiplier to apply when wheel scrolling
 	**/

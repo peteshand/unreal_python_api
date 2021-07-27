@@ -2,17 +2,9 @@
 package unreal;
 @:pythonImport("unreal", "AnimNode_SequenceEvaluator") extern class AnimNode_SequenceEvaluator extends unreal.AnimNode_AssetPlayerBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		deprecated: 'b_should_loop_when_in_sync_group' was renamed to 'should_loop'.
 	**/
+	@:deprecated
 	public var b_should_loop_when_in_sync_group : Dynamic;
 	/**
 		(float):  [Read-Write] The time at which to evaluate the associated sequence

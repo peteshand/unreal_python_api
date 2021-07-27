@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelStreamingDynamic") extern class LevelStreamingDynamic extends unreal.LevelStreaming {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.load_level_instance(world_context_object, level_name, location, rotation, optional_level_name_override="") -> (LevelStreamingDynamic, out_success=bool)
 		Stream in a level with a specific location and rotation. You can create multiple instances of the same level!
 		
@@ -31,7 +22,7 @@ package unreal;
 		
 		    out_success (bool): Whether operation was successful (map was found and added to the sub-levels list)
 	**/
-	static public function load_level_instance(world_context_object:Dynamic, level_name:Dynamic, location:Dynamic, rotation:Dynamic, optional_level_name_override:Dynamic):Bool;
+	static public function load_level_instance(world_context_object:unreal.Object, level_name:String, location:unreal.Vector, rotation:unreal.Rotator, optional_level_name_override:String):Bool;
 	/**
 		X.load_level_instance_by_soft_object_ptr(world_context_object, level, location, rotation, optional_level_name_override="") -> (LevelStreamingDynamic, out_success=bool)
 		Load Level Instance by Soft Object Ptr
@@ -48,5 +39,5 @@ package unreal;
 		
 		    out_success (bool):
 	**/
-	static public function load_level_instance_by_soft_object_ptr(world_context_object:Dynamic, level:Dynamic, location:Dynamic, rotation:Dynamic, optional_level_name_override:Dynamic):Bool;
+	static public function load_level_instance_by_soft_object_ptr(world_context_object:unreal.Object, level:unreal.World, location:unreal.Vector, rotation:unreal.Rotator, optional_level_name_override:String):Bool;
 }

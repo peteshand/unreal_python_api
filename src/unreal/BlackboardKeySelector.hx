@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BlackboardKeySelector") extern class BlackboardKeySelector extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Array(BlackboardKeyType)):  [Read-Write] array of allowed types with additional properties (e.g. uobject's base class)
 		EditAnywhere is required for FBlackboardSelectorDetails::CacheBlackboardData()
 	**/

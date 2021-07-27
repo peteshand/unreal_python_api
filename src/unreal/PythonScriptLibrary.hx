@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PythonScriptLibrary") extern class PythonScriptLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.execute_python_command(python_command) -> bool
 		Execute the given Python command.
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    bool: true if the command ran successfully, false if there were errors (the output log will show the errors).
 	**/
-	static public function execute_python_command(python_command:Dynamic):Bool;
+	static public function execute_python_command(python_command:String):Bool;
 	/**
 		X.execute_python_command_ex(python_command, execution_mode=PythonCommandExecutionMode.EXECUTE_FILE, file_execution_scope=PythonFileExecutionScope.PRIVATE) -> (command_result=str, log_output=Array(PythonLogOutputEntry)) or None
 		Execute the given Python command.
@@ -37,7 +28,7 @@ package unreal;
 		
 		    log_output (Array(PythonLogOutputEntry)): The log output captured while running the command.
 	**/
-	static public function execute_python_command_ex(python_command:Dynamic, execution_mode:Dynamic, file_execution_scope:Dynamic):Dynamic;
+	static public function execute_python_command_ex(python_command:String, execution_mode:unreal.PythonCommandExecutionMode, file_execution_scope:unreal.PythonFileExecutionScope):Dynamic;
 	/**
 		X.is_python_available() -> bool
 		Check to see whether Python support is available in the current build.

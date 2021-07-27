@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARPlaneComponent") extern class ARPlaneComponent extends unreal.ARComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_object_classification_debug_colors() -> Map(ARObjectClassification, LinearColor)
 		Get Object Classification Debug Colors
 		
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    payload (ARPlaneUpdatePayload):
 	**/
-	public function receive_add(payload:Dynamic):Void;
+	public function receive_add(payload:unreal.ARPlaneUpdatePayload):Void;
 	/**
 		x.receive_update(payload) -> None
 		Event when native representation is updated, called on server and clients.
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    payload (ARPlaneUpdatePayload):
 	**/
-	public function receive_update(payload:Dynamic):Void;
+	public function receive_update(payload:unreal.ARPlaneUpdatePayload):Void;
 	/**
 		(ARPlaneUpdatePayload):  [Read-Only] Replicated Payload
 	**/
@@ -45,7 +36,7 @@ package unreal;
 		Args:
 		    colors (Map(ARObjectClassification, LinearColor)):
 	**/
-	static public function set_object_classification_debug_colors(colors:Dynamic):Void;
+	static public function set_object_classification_debug_colors(colors:unreal.Map):Void;
 	/**
 		X.set_plane_component_debug_mode(new_debug_mode) -> None
 		Set Plane Component Debug Mode
@@ -53,5 +44,5 @@ package unreal;
 		Args:
 		    new_debug_mode (PlaneComponentDebugMode):
 	**/
-	static public function set_plane_component_debug_mode(new_debug_mode:Dynamic):Void;
+	static public function set_plane_component_debug_mode(new_debug_mode:unreal.PlaneComponentDebugMode):Void;
 }

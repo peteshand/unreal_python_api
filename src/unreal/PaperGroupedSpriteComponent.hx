@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PaperGroupedSpriteComponent") extern class PaperGroupedSpriteComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_instance(transform, sprite, world_space=False, color=[0.000000, 0.000000, 0.000000, 0.000000]) -> int32
 		Add an instance to this component. Transform can be given either in the local space of this component or world space.
 		
@@ -23,7 +14,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_instance(transform:Dynamic, sprite:Dynamic, world_space:Dynamic, color:Dynamic):Int;
+	public function add_instance(transform:unreal.Transform, sprite:unreal.PaperSprite, world_space:Bool, color:unreal.LinearColor):Int;
 	/**
 		x.clear_instances() -> None
 		Clear all instances being rendered by this component
@@ -50,7 +41,7 @@ package unreal;
 		
 		    out_instance_transform (Transform):
 	**/
-	public function get_instance_transform(instance_index:Dynamic, world_space:Dynamic):Dynamic;
+	public function get_instance_transform(instance_index:Int, world_space:Bool):Dynamic;
 	/**
 		x.remove_instance(instance_index) -> bool
 		Remove the instance specified. Returns True on success.
@@ -61,7 +52,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function remove_instance(instance_index:Dynamic):Bool;
+	public function remove_instance(instance_index:Int):Bool;
 	/**
 		x.sort_instances_along_axis(world_space_sort_axis) -> None
 		Sort all instances by their world space position along the specified axis
@@ -69,7 +60,7 @@ package unreal;
 		Args:
 		    world_space_sort_axis (Vector):
 	**/
-	public function sort_instances_along_axis(world_space_sort_axis:Dynamic):Void;
+	public function sort_instances_along_axis(world_space_sort_axis:unreal.Vector):Void;
 	/**
 		x.update_instance_color(instance_index, new_instance_color, mark_render_state_dirty=True) -> bool
 		Update the color for the instance specified. Returns True on success.
@@ -82,7 +73,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function update_instance_color(instance_index:Dynamic, new_instance_color:Dynamic, mark_render_state_dirty:Dynamic):Bool;
+	public function update_instance_color(instance_index:Int, new_instance_color:unreal.LinearColor, mark_render_state_dirty:Bool):Bool;
 	/**
 		x.update_instance_transform(instance_index, new_instance_transform, world_space=False, mark_render_state_dirty=True, teleport=False) -> bool
 		Update the transform for the instance specified. Instance is given in local space of this component unless bWorldSpace is set.  Returns True on success.
@@ -97,5 +88,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function update_instance_transform(instance_index:Dynamic, new_instance_transform:Dynamic, world_space:Dynamic, mark_render_state_dirty:Dynamic, teleport:Dynamic):Bool;
+	public function update_instance_transform(instance_index:Int, new_instance_transform:unreal.Transform, world_space:Bool, mark_render_state_dirty:Bool, teleport:Bool):Bool;
 }

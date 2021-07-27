@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LandscapeBlueprintBrushBase") extern class LandscapeBlueprintBrushBase extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Affect Heightmap
 	**/
 	public var affect_heightmap : Bool;
@@ -41,7 +32,7 @@ package unreal;
 		    landscape_size (IntPoint): 
 		    landscape_render_target_size (IntPoint):
 	**/
-	public function initialize(landscape_transform:Dynamic, landscape_size:Dynamic, landscape_render_target_size:Dynamic):Void;
+	public function initialize(landscape_transform:unreal.Transform, landscape_size:unreal.IntPoint, landscape_render_target_size:unreal.IntPoint):Void;
 	/**
 		x.render(is_heightmap, combined_result, weightmap_layer_name) -> TextureRenderTarget2D
 		Render
@@ -54,7 +45,7 @@ package unreal;
 		Returns:
 		    TextureRenderTarget2D:
 	**/
-	public function render(is_heightmap:Dynamic, combined_result:Dynamic, weightmap_layer_name:Dynamic):unreal.TextureRenderTarget2D;
+	public function render(is_heightmap:Bool, combined_result:unreal.TextureRenderTarget2D, weightmap_layer_name:unreal.Name):unreal.TextureRenderTarget2D;
 	/**
 		x.request_landscape_update() -> None
 		Request Landscape Update

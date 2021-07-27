@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraParameterCollectionInstance") extern class NiagaraParameterCollectionInstance extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_bool_parameter(variable_name) -> bool
 		Accessors from Blueprint. For now just exposing common types but ideally we can expose any somehow in future.
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function get_bool_parameter(variable_name:Dynamic):Bool;
+	public function get_bool_parameter(variable_name:String):Bool;
 	/**
 		x.get_color_parameter(variable_name) -> LinearColor
 		Get Color Parameter
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function get_color_parameter(variable_name:Dynamic):unreal.LinearColor;
+	public function get_color_parameter(variable_name:String):unreal.LinearColor;
 	/**
 		x.get_float_parameter(variable_name) -> float
 		Get Float Parameter
@@ -42,7 +33,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_float_parameter(variable_name:Dynamic):Float;
+	public function get_float_parameter(variable_name:String):Float;
 	/**
 		x.get_int_parameter(variable_name) -> int32
 		Get Int Parameter
@@ -53,7 +44,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_int_parameter(variable_name:Dynamic):Int;
+	public function get_int_parameter(variable_name:String):Int;
 	/**
 		x.get_quat_parameter(variable_name) -> Quat
 		Get Quat Parameter
@@ -64,7 +55,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	public function get_quat_parameter(variable_name:Dynamic):unreal.Quat;
+	public function get_quat_parameter(variable_name:String):unreal.Quat;
 	/**
 		x.get_vector2d_parameter(variable_name) -> Vector2D
 		Get Vector 2DParameter
@@ -75,7 +66,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_vector2d_parameter(variable_name:Dynamic):unreal.Vector2D;
+	public function get_vector2d_parameter(variable_name:String):unreal.Vector2D;
 	/**
 		x.get_vector4_parameter(variable_name) -> Vector4
 		Get Vector 4Parameter
@@ -86,7 +77,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function get_vector4_parameter(variable_name:Dynamic):unreal.Vector4;
+	public function get_vector4_parameter(variable_name:String):unreal.Vector4;
 	/**
 		x.get_vector_parameter(variable_name) -> Vector
 		Get Vector Parameter
@@ -97,7 +88,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_vector_parameter(variable_name:Dynamic):unreal.Vector;
+	public function get_vector_parameter(variable_name:String):unreal.Vector;
 	/**
 		x.set_bool_parameter(variable_name, value) -> None
 		Set Bool Parameter
@@ -106,7 +97,7 @@ package unreal;
 		    variable_name (str): 
 		    value (bool):
 	**/
-	public function set_bool_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_bool_parameter(variable_name:String, value:Bool):Void;
 	/**
 		x.set_color_parameter(variable_name, value) -> None
 		Set Color Parameter
@@ -115,7 +106,7 @@ package unreal;
 		    variable_name (str): 
 		    value (LinearColor):
 	**/
-	public function set_color_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_color_parameter(variable_name:String, value:unreal.LinearColor):Void;
 	/**
 		x.set_float_parameter(variable_name, value) -> None
 		Set Float Parameter
@@ -124,7 +115,7 @@ package unreal;
 		    variable_name (str): 
 		    value (float):
 	**/
-	public function set_float_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_float_parameter(variable_name:String, value:Float):Void;
 	/**
 		x.set_int_parameter(variable_name, value) -> None
 		Set Int Parameter
@@ -133,7 +124,7 @@ package unreal;
 		    variable_name (str): 
 		    value (int32):
 	**/
-	public function set_int_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_int_parameter(variable_name:String, value:Int):Void;
 	/**
 		x.set_quat_parameter(variable_name, value) -> None
 		Set Quat Parameter
@@ -142,7 +133,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Quat):
 	**/
-	public function set_quat_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_quat_parameter(variable_name:String, value:unreal.Quat):Void;
 	/**
 		x.set_vector2d_parameter(variable_name, value) -> None
 		Set Vector 2DParameter
@@ -151,7 +142,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Vector2D):
 	**/
-	public function set_vector2d_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_vector2d_parameter(variable_name:String, value:unreal.Vector2D):Void;
 	/**
 		x.set_vector4_parameter(variable_name, value) -> None
 		Set Vector 4Parameter
@@ -160,7 +151,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Vector4):
 	**/
-	public function set_vector4_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_vector4_parameter(variable_name:String, value:unreal.Vector4):Void;
 	/**
 		x.set_vector_parameter(variable_name, value) -> None
 		Set Vector Parameter
@@ -169,5 +160,5 @@ package unreal;
 		    variable_name (str): 
 		    value (Vector):
 	**/
-	public function set_vector_parameter(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_vector_parameter(variable_name:String, value:unreal.Vector):Void;
 }

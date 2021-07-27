@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GameMode") extern class GameMode extends unreal.GameModeBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.abort_match() -> None
 		Report that a match has failed due to unrecoverable error
 	**/
@@ -67,7 +58,7 @@ package unreal;
 		Args:
 		    new_state (Name):
 	**/
-	public function on_set_match_state(new_state:Dynamic):Void;
+	public function on_set_match_state(new_state:unreal.Name):Void;
 	/**
 		x.ready_to_end_match() -> bool
 		Returns true if ready to End Match. Games should override this
@@ -96,7 +87,7 @@ package unreal;
 		Args:
 		    msg (str):
 	**/
-	public function say(msg:Dynamic):Void;
+	public function say(msg:String):Void;
 	/**
 		x.start_match() -> None
 		Transition from WaitingToStart to InProgress. You can call this manually, will also get called if ReadyToStartMatch returns true

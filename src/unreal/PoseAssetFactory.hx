@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PoseAssetFactory") extern class PoseAssetFactory extends unreal.Factory {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Array(str)):  [Read-Write] Optional. If specified the poses will be named according to this array.
 		If you don't specify, or you don't specify enough names for all poses, then default names will be generated.
 	**/

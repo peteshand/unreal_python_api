@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InterpToMovementComponent") extern class InterpToMovementComponent extends unreal.MovementComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(InterpToBehaviourType):  [Read-Write] Movement behaviour of the component
 	**/
 	public var behaviour_type : unreal.InterpToBehaviourType;
@@ -85,7 +76,7 @@ package unreal;
 		Args:
 		    initial_direction (float):
 	**/
-	public function restart_movement(initial_direction:Dynamic):Void;
+	public function restart_movement(initial_direction:Float):Void;
 	/**
 		x.stop_simulating(hit_result) -> None
 		Clears the reference to UpdatedComponent, fires stop event, and stops ticking.
@@ -93,7 +84,7 @@ package unreal;
 		Args:
 		    hit_result (HitResult):
 	**/
-	public function stop_simulating(hit_result:Dynamic):Void;
+	public function stop_simulating(hit_result:unreal.HitResult):Void;
 	/**
 		(bool):  [Read-Write] If true, will sweep for blocking collision during movement. If false, it will simply teleport to the next position and ignore collision.
 	**/

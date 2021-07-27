@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditableTextBox") extern class EditableTextBox extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.clear_error() -> None
 		Clear Error
 	**/
@@ -86,7 +77,7 @@ package unreal;
 		Args:
 		    error (Text):
 	**/
-	public function set_error(error:Dynamic):Void;
+	public function set_error(error:unreal.Text):Void;
 	/**
 		x.set_hint_text(text) -> None
 		Set Hint Text
@@ -94,7 +85,7 @@ package unreal;
 		Args:
 		    text (Text):
 	**/
-	public function set_hint_text(text:Dynamic):Void;
+	public function set_hint_text(text:unreal.Text):Void;
 	/**
 		x.set_is_password(is_password) -> None
 		Set Is Password
@@ -102,7 +93,7 @@ package unreal;
 		Args:
 		    is_password (bool):
 	**/
-	public function set_is_password(is_password:Dynamic):Void;
+	public function set_is_password(is_password:Bool):Void;
 	/**
 		x.set_is_read_only(read_only) -> None
 		Set Is Read Only
@@ -110,7 +101,7 @@ package unreal;
 		Args:
 		    read_only (bool):
 	**/
-	public function set_is_read_only(read_only:Dynamic):Void;
+	public function set_is_read_only(read_only:Bool):Void;
 	/**
 		x.set_text(text) -> None
 		Set Text
@@ -118,7 +109,7 @@ package unreal;
 		Args:
 		    text (Text):
 	**/
-	public function set_text(text:Dynamic):Void;
+	public function set_text(text:unreal.Text):Void;
 	/**
 		(ShapedTextOptions):  [Read-Only] Controls how the text within this widget should be shaped.
 	**/

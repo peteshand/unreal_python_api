@@ -2,11 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AbcSamplingSettings") extern class AbcSamplingSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("new")
-	public function _new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
 		(int32):  [Read-Write] Ending index to stop sampling the animation at
 	**/
 	public var frame_end : Int;

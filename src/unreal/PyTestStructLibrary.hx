@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PyTestStructLibrary") extern class PyTestStructLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_float(struct, value) -> PyTestStruct
 		Add Float
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    PyTestStruct:
 	**/
-	static public function add_float(struct:Dynamic, value:Dynamic):unreal.PyTestStruct;
+	static public function add_float(struct:unreal.PyTestStruct, value:Float):unreal.PyTestStruct;
 	/**
 		X.add_int(struct, value) -> PyTestStruct
 		Add Int
@@ -33,7 +24,7 @@ package unreal;
 		Returns:
 		    PyTestStruct:
 	**/
-	static public function add_int(struct:Dynamic, value:Dynamic):unreal.PyTestStruct;
+	static public function add_int(struct:unreal.PyTestStruct, value:Int):unreal.PyTestStruct;
 	/**
 		X.add_str(struct, value) -> PyTestStruct
 		Add Str
@@ -45,7 +36,7 @@ package unreal;
 		Returns:
 		    PyTestStruct:
 	**/
-	static public function add_str(struct:Dynamic, value:Dynamic):unreal.PyTestStruct;
+	static public function add_str(struct:unreal.PyTestStruct, value:String):unreal.PyTestStruct;
 	/**
 		X.is_bool_set(struct) -> bool
 		Is Bool Set
@@ -56,7 +47,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_bool_set(struct:Dynamic):Bool;
+	static public function is_bool_set(struct:unreal.PyTestStruct):Bool;
 	/**
 		X.legacy_is_bool_set(struct) -> bool
 		Legacy Is Bool Set
@@ -68,5 +59,6 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function legacy_is_bool_set(struct:Dynamic):Bool;
+	@:deprecated
+	static public function legacy_is_bool_set(struct:unreal.PyTestStruct):Bool;
 }

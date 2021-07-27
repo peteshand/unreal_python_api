@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AssetData") extern class AssetData extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Name):  [Read-Only] The name of the asset's class
 	**/
 	public var asset_class : unreal.Name;
@@ -62,7 +53,7 @@ package unreal;
 		
 		    out_tag_value (str):
 	**/
-	public function get_tag_value(tag_name:Dynamic):Dynamic;
+	public function get_tag_value(tag_name:unreal.Name):Dynamic;
 	/**
 		x.is_asset_loaded() -> bool
 		Returns true if the asset is loaded

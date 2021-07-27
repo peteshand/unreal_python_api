@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "HealthSnapshotBlueprintLibrary") extern class HealthSnapshotBlueprintLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.log_performance_snapshot(snapshot_title, reset_stats=True) -> None
 		Writes a snapshot to the log. Captures memory stats by default. Also captures performance stats if called after StartHealthSnapshotChart and before SopHealthSnapshotChart.
 		
@@ -18,7 +9,7 @@ package unreal;
 		    snapshot_title (str): The name to be given to the new HealthSnapshot.
 		    reset_stats (bool):
 	**/
-	static public function log_performance_snapshot(snapshot_title:Dynamic, reset_stats:Dynamic):Void;
+	static public function log_performance_snapshot(snapshot_title:String, reset_stats:Bool):Void;
 	/**
 		X.start_performance_snapshots() -> None
 		Begins capturing FPS charts that can be used to include performance data in a HealthSnapshot. If snapshots are already running clears all accumulated performance data

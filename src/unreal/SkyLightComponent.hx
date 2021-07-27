@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SkyLightComponent") extern class SkyLightComponent extends unreal.LightComponentBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Only capture emissive materials. Skips all lighting making the capture cheaper. Recomended when using CaptureEveryFrame
 	**/
 	public var capture_emissive_only : Bool;
@@ -92,6 +83,7 @@ package unreal;
 	/**
 		deprecated: 'set_brightness' was renamed to 'set_intensity'.
 	**/
+	@:deprecated
 	public function set_brightness():Void;
 	/**
 		x.set_cubemap(new_cubemap) -> None
@@ -100,7 +92,7 @@ package unreal;
 		Args:
 		    new_cubemap (TextureCube):
 	**/
-	public function set_cubemap(new_cubemap:Dynamic):Void;
+	public function set_cubemap(new_cubemap:unreal.TextureCube):Void;
 	/**
 		x.set_cubemap_blend(source_cubemap, destination_cubemap, blend_fraction) -> None
 		Creates sky lighting from a blend between two cubemaps, which is only valid when SourceType is set to SpecifiedCubemap.
@@ -113,7 +105,7 @@ package unreal;
 		    destination_cubemap (TextureCube): 
 		    blend_fraction (float):
 	**/
-	public function set_cubemap_blend(source_cubemap:Dynamic, destination_cubemap:Dynamic, blend_fraction:Dynamic):Void;
+	public function set_cubemap_blend(source_cubemap:unreal.TextureCube, destination_cubemap:unreal.TextureCube, blend_fraction:Float):Void;
 	/**
 		x.set_indirect_lighting_intensity(new_intensity) -> None
 		Set Indirect Lighting Intensity
@@ -121,7 +113,7 @@ package unreal;
 		Args:
 		    new_intensity (float):
 	**/
-	public function set_indirect_lighting_intensity(new_intensity:Dynamic):Void;
+	public function set_indirect_lighting_intensity(new_intensity:Float):Void;
 	/**
 		x.set_intensity(new_intensity) -> None
 		Set Intensity
@@ -129,7 +121,7 @@ package unreal;
 		Args:
 		    new_intensity (float):
 	**/
-	public function set_intensity(new_intensity:Dynamic):Void;
+	public function set_intensity(new_intensity:Float):Void;
 	/**
 		x.set_light_color(new_light_color) -> None
 		Set color of the light
@@ -137,7 +129,7 @@ package unreal;
 		Args:
 		    new_light_color (LinearColor):
 	**/
-	public function set_light_color(new_light_color:Dynamic):Void;
+	public function set_light_color(new_light_color:unreal.LinearColor):Void;
 	/**
 		x.set_lower_hemisphere_color(lower_hemisphere_color) -> None
 		Set Lower Hemisphere Color
@@ -145,7 +137,7 @@ package unreal;
 		Args:
 		    lower_hemisphere_color (LinearColor):
 	**/
-	public function set_lower_hemisphere_color(lower_hemisphere_color:Dynamic):Void;
+	public function set_lower_hemisphere_color(lower_hemisphere_color:unreal.LinearColor):Void;
 	/**
 		x.set_min_occlusion(min_occlusion) -> None
 		Set Min Occlusion
@@ -153,7 +145,7 @@ package unreal;
 		Args:
 		    min_occlusion (float):
 	**/
-	public function set_min_occlusion(min_occlusion:Dynamic):Void;
+	public function set_min_occlusion(min_occlusion:Float):Void;
 	/**
 		x.set_occlusion_contrast(occlusion_contrast) -> None
 		Set Occlusion Contrast
@@ -161,7 +153,7 @@ package unreal;
 		Args:
 		    occlusion_contrast (float):
 	**/
-	public function set_occlusion_contrast(occlusion_contrast:Dynamic):Void;
+	public function set_occlusion_contrast(occlusion_contrast:Float):Void;
 	/**
 		x.set_occlusion_exponent(occlusion_exponent) -> None
 		Set Occlusion Exponent
@@ -169,7 +161,7 @@ package unreal;
 		Args:
 		    occlusion_exponent (float):
 	**/
-	public function set_occlusion_exponent(occlusion_exponent:Dynamic):Void;
+	public function set_occlusion_exponent(occlusion_exponent:Float):Void;
 	/**
 		x.set_occlusion_tint(tint) -> None
 		Set Occlusion Tint
@@ -177,7 +169,7 @@ package unreal;
 		Args:
 		    tint (Color):
 	**/
-	public function set_occlusion_tint(tint:Dynamic):Void;
+	public function set_occlusion_tint(tint:unreal.Color):Void;
 	/**
 		x.set_volumetric_scattering_intensity(new_intensity) -> None
 		Set Volumetric Scattering Intensity
@@ -185,7 +177,7 @@ package unreal;
 		Args:
 		    new_intensity (float):
 	**/
-	public function set_volumetric_scattering_intensity(new_intensity:Dynamic):Void;
+	public function set_volumetric_scattering_intensity(new_intensity:Float):Void;
 	/**
 		(float):  [Read-Only] Distance from the sky light at which any geometry should be treated as part of the sky.
 		This is also used by reflection captures, so update reflection captures to see the impact.

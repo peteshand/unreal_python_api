@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AchievementLibrary") extern class AchievementLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_cached_achievement_description(world_context_object, player_controller, achievement_id) -> (found_id=bool, title=Text, locked_description=Text, unlocked_description=Text, hidden=bool)
 		out
 		
@@ -32,7 +23,7 @@ package unreal;
 		
 		    hidden (bool):
 	**/
-	static public function get_cached_achievement_description(world_context_object:Dynamic, player_controller:Dynamic, achievement_id:Dynamic):python.Tuple<Dynamic>;
+	static public function get_cached_achievement_description(world_context_object:unreal.Object, player_controller:unreal.PlayerController, achievement_id:unreal.Name):python.Tuple<Dynamic>;
 	/**
 		X.get_cached_achievement_progress(world_context_object, player_controller, achievement_id) -> (found_id=bool, progress=float)
 		out
@@ -49,5 +40,5 @@ package unreal;
 		
 		    progress (float):
 	**/
-	static public function get_cached_achievement_progress(world_context_object:Dynamic, player_controller:Dynamic, achievement_id:Dynamic):python.Tuple<Dynamic>;
+	static public function get_cached_achievement_progress(world_context_object:unreal.Object, player_controller:unreal.PlayerController, achievement_id:unreal.Name):python.Tuple<Dynamic>;
 }

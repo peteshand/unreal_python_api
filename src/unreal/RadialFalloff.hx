@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "RadialFalloff") extern class RadialFalloff extends unreal.FieldNodeFloat {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Default
 	**/
 	@:native("default")
@@ -55,5 +46,5 @@ package unreal;
 		Returns:
 		    RadialFalloff:
 	**/
-	public function set_radial_falloff(magnitude:Dynamic, min_range:Dynamic, max_range:Dynamic, default:Dynamic, radius:Dynamic, position:Dynamic, falloff:Dynamic):unreal.RadialFalloff;
+	public function set_radial_falloff(magnitude:Float, min_range:Float, max_range:Float, default:Float, radius:Float, position:unreal.Vector, falloff:unreal.FieldFalloffType):unreal.RadialFalloff;
 }

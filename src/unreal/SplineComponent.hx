@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SplineComponent") extern class SplineComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_point(point, update_spline=True) -> None
 		Adds an FSplinePoint to the spline. This contains its input key, position, tangent, rotation and scale.
 		
@@ -18,7 +9,7 @@ package unreal;
 		    point (SplinePoint): 
 		    update_spline (bool):
 	**/
-	public function add_point(point:Dynamic, update_spline:Dynamic):Void;
+	public function add_point(point:unreal.SplinePoint, update_spline:Bool):Void;
 	/**
 		x.add_points(points, update_spline=True) -> None
 		Adds an array of FSplinePoints to the spline.
@@ -27,7 +18,7 @@ package unreal;
 		    points (Array(SplinePoint)): 
 		    update_spline (bool):
 	**/
-	public function add_points(points:Dynamic, update_spline:Dynamic):Void;
+	public function add_points(points:unreal.Array, update_spline:Bool):Void;
 	/**
 		x.add_spline_local_point(position) -> None
 		Adds a local space point to the spline
@@ -36,7 +27,8 @@ package unreal;
 		Args:
 		    position (Vector):
 	**/
-	public function add_spline_local_point(position:Dynamic):Void;
+	@:deprecated
+	public function add_spline_local_point(position:unreal.Vector):Void;
 	/**
 		x.add_spline_point(position, coordinate_space, update_spline=True) -> None
 		Adds a point to the spline
@@ -46,7 +38,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function add_spline_point(position:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function add_spline_point(position:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.add_spline_point_at_index(position, index, coordinate_space, update_spline=True) -> None
 		Adds a point to the spline at the specified index
@@ -57,7 +49,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function add_spline_point_at_index(position:Dynamic, index:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function add_spline_point_at_index(position:unreal.Vector, index:Int, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.add_spline_world_point(position) -> None
 		Adds a world space point to the spline
@@ -66,10 +58,12 @@ package unreal;
 		Args:
 		    position (Vector):
 	**/
-	public function add_spline_world_point(position:Dynamic):Void;
+	@:deprecated
+	public function add_spline_world_point(position:unreal.Vector):Void;
 	/**
 		deprecated: 'b_always_render_in_editor' was renamed to 'draw_debug'.
 	**/
+	@:deprecated
 	public var b_always_render_in_editor : Dynamic;
 	/**
 		x.clear_spline_points(update_spline=True) -> None
@@ -78,7 +72,7 @@ package unreal;
 		Args:
 		    update_spline (bool):
 	**/
-	public function clear_spline_points(update_spline:Dynamic):Void;
+	public function clear_spline_points(update_spline:Bool):Void;
 	/**
 		(Vector):  [Read-Write] Default up vector in local space to be used when calculating transforms along the spline
 	**/
@@ -102,7 +96,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function find_direction_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function find_direction_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.find_input_key_closest_to_world_location(world_location) -> float
 		Given a location, in world space, return the input key closest to that location.
@@ -113,7 +107,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function find_input_key_closest_to_world_location(world_location:Dynamic):Float;
+	public function find_input_key_closest_to_world_location(world_location:unreal.Vector):Float;
 	/**
 		x.find_location_closest_to_world_location(world_location, coordinate_space) -> Vector
 		Given a location, in world space, return the point on the curve that is closest to the location.
@@ -125,7 +119,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function find_location_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function find_location_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.find_right_vector_closest_to_world_location(world_location, coordinate_space) -> Vector
 		Given a location, in world space, return a unit direction vector corresponding to the spline's right vector closest to the location.
@@ -137,7 +131,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function find_right_vector_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function find_right_vector_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.find_roll_closest_to_world_location(world_location, coordinate_space) -> float
 		Given a location, in world space, return the spline's roll closest to the location, in degrees.
@@ -149,7 +143,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function find_roll_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):Float;
+	public function find_roll_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):Float;
 	/**
 		x.find_rotation_closest_to_world_location(world_location, coordinate_space) -> Rotator
 		Given a location, in world space, return rotation corresponding to the spline's rotation closest to the location.
@@ -161,7 +155,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function find_rotation_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):unreal.Rotator;
+	public function find_rotation_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):unreal.Rotator;
 	/**
 		x.find_scale_closest_to_world_location(world_location) -> Vector
 		Given a location, in world space, return the spline's scale closest to the location.
@@ -172,7 +166,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function find_scale_closest_to_world_location(world_location:Dynamic):unreal.Vector;
+	public function find_scale_closest_to_world_location(world_location:unreal.Vector):unreal.Vector;
 	/**
 		x.find_tangent_closest_to_world_location(world_location, coordinate_space) -> Vector
 		Given a location, in world space, return the tangent vector of the spline closest to the location.
@@ -184,7 +178,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function find_tangent_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function find_tangent_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.find_transform_closest_to_world_location(world_location, coordinate_space, use_scale=False) -> Transform
 		Given a location, in world space, return an FTransform closest to that location.
@@ -197,7 +191,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function find_transform_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic, use_scale:Dynamic):unreal.Transform;
+	public function find_transform_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
 	/**
 		x.find_up_vector_closest_to_world_location(world_location, coordinate_space) -> Vector
 		Given a location, in world space, return a unit direction vector corresponding to the spline's up vector closest to the location.
@@ -209,7 +203,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function find_up_vector_closest_to_world_location(world_location:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function find_up_vector_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_arrive_tangent_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the arrive tangent at spline point
@@ -221,7 +215,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_arrive_tangent_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_arrive_tangent_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_default_up_vector(coordinate_space) -> Vector
 		Gets the default up vector used by this spline
@@ -232,7 +226,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_default_up_vector(coordinate_space:Dynamic):unreal.Vector;
+	public function get_default_up_vector(coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_direction_at_distance_along_spline(distance, coordinate_space) -> Vector
 		Given a distance along the length of this spline, return a unit direction vector of the spline tangent there.
@@ -244,7 +238,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_direction_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_direction_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_direction_at_spline_input_key(key, coordinate_space) -> Vector
 		Get unit direction along spline at the provided input key value
@@ -256,7 +250,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_direction_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_direction_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_direction_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the direction at spline point
@@ -268,7 +262,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_direction_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_direction_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_direction_at_time(time, coordinate_space, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return a unit direction vector of the spline tangent there.
@@ -281,7 +275,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_direction_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	public function get_direction_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_distance_along_spline_at_spline_input_key(key) -> float
 		Get distance along the spline at the provided input key value
@@ -292,7 +286,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_distance_along_spline_at_spline_input_key(key:Dynamic):Float;
+	public function get_distance_along_spline_at_spline_input_key(key:Float):Float;
 	/**
 		x.get_distance_along_spline_at_spline_point(point_index) -> float
 		Get the distance along the spline at the spline point
@@ -303,7 +297,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_distance_along_spline_at_spline_point(point_index:Dynamic):Float;
+	public function get_distance_along_spline_at_spline_point(point_index:Int):Float;
 	/**
 		x.get_float_property_at_spline_input_key(key, property_name) -> float
 		Get a metadata property float value along the spline at spline input key
@@ -315,7 +309,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_float_property_at_spline_input_key(key:Dynamic, property_name:Dynamic):Float;
+	public function get_float_property_at_spline_input_key(key:Float, property_name:unreal.Name):Float;
 	/**
 		x.get_float_property_at_spline_point(index, property_name) -> float
 		Get a metadata property float value along the spline at spline point
@@ -327,7 +321,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_float_property_at_spline_point(index:Dynamic, property_name:Dynamic):Float;
+	public function get_float_property_at_spline_point(index:Int, property_name:unreal.Name):Float;
 	/**
 		x.get_input_key_at_distance_along_spline(distance) -> float
 		Given a distance along the length of this spline, return the corresponding input key at that point
@@ -338,7 +332,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_input_key_at_distance_along_spline(distance:Dynamic):Float;
+	public function get_input_key_at_distance_along_spline(distance:Float):Float;
 	/**
 		x.get_leave_tangent_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the leave tangent at spline point
@@ -350,7 +344,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_leave_tangent_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_leave_tangent_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_local_location_and_tangent_at_spline_point(point_index) -> (local_location=Vector, local_tangent=Vector)
 		Get local location and tangent at a spline point
@@ -366,7 +360,8 @@ package unreal;
 		
 		    local_tangent (Vector):
 	**/
-	public function get_local_location_and_tangent_at_spline_point(point_index:Dynamic):python.Tuple<Dynamic>;
+	@:deprecated
+	public function get_local_location_and_tangent_at_spline_point(point_index:Int):python.Tuple<Dynamic>;
 	/**
 		x.get_location_and_tangent_at_spline_point(point_index, coordinate_space) -> (location=Vector, tangent=Vector)
 		Get location and tangent at a spline point
@@ -382,7 +377,7 @@ package unreal;
 		
 		    tangent (Vector):
 	**/
-	public function get_location_and_tangent_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):python.Tuple<Dynamic>;
+	public function get_location_and_tangent_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):python.Tuple<Dynamic>;
 	/**
 		x.get_location_at_distance_along_spline(distance, coordinate_space) -> Vector
 		Given a distance along the length of this spline, return the point in space where this puts you
@@ -394,7 +389,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_location_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_location_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_location_at_spline_input_key(key, coordinate_space) -> Vector
 		Get location along spline at the provided input key value
@@ -406,7 +401,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_location_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_location_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_location_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the location at spline point
@@ -418,7 +413,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_location_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_location_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_location_at_time(time, coordinate_space, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return the point in space where this puts you
@@ -431,10 +426,11 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_location_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	public function get_location_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		deprecated: 'get_num_spline_points' was renamed to 'get_number_of_spline_points'.
 	**/
+	@:deprecated
 	public function get_num_spline_points():Void;
 	/**
 		x.get_number_of_spline_points() -> int32
@@ -463,7 +459,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_right_vector_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_right_vector_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_right_vector_at_spline_input_key(key, coordinate_space) -> Vector
 		Get right vector at the provided input key value
@@ -475,7 +471,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_right_vector_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_right_vector_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_right_vector_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the right vector at spline point
@@ -487,7 +483,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_right_vector_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_right_vector_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_right_vector_at_time(time, coordinate_space, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return the spline's right vector there.
@@ -500,7 +496,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_right_vector_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	public function get_right_vector_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_roll_at_distance_along_spline(distance, coordinate_space) -> float
 		Given a distance along the length of this spline, return the spline's roll there, in degrees.
@@ -512,7 +508,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_roll_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):Float;
+	public function get_roll_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):Float;
 	/**
 		x.get_roll_at_spline_input_key(key, coordinate_space) -> float
 		Get roll in degrees at the provided input key value
@@ -524,7 +520,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_roll_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):Float;
+	public function get_roll_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):Float;
 	/**
 		x.get_roll_at_spline_point(point_index, coordinate_space) -> float
 		Get the amount of roll at spline point, in degrees
@@ -536,7 +532,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_roll_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):Float;
+	public function get_roll_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):Float;
 	/**
 		x.get_roll_at_time(time, coordinate_space, use_constant_velocity=False) -> float
 		Given a time from 0 to the spline duration, return the spline's roll there, in degrees.
@@ -549,7 +545,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_roll_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):Float;
+	public function get_roll_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):Float;
 	/**
 		x.get_rotation_at_distance_along_spline(distance, coordinate_space) -> Rotator
 		Given a distance along the length of this spline, return a rotation corresponding to the spline's rotation there.
@@ -561,7 +557,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_rotation_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):unreal.Rotator;
+	public function get_rotation_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Rotator;
 	/**
 		x.get_rotation_at_spline_input_key(key, coordinate_space) -> Rotator
 		Get rotator corresponding to rotation along spline at the provided input key value
@@ -573,7 +569,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_rotation_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):unreal.Rotator;
+	public function get_rotation_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Rotator;
 	/**
 		x.get_rotation_at_spline_point(point_index, coordinate_space) -> Rotator
 		Get the rotation at spline point as a rotator
@@ -585,7 +581,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_rotation_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Rotator;
+	public function get_rotation_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Rotator;
 	/**
 		x.get_rotation_at_time(time, coordinate_space, use_constant_velocity=False) -> Rotator
 		Given a time from 0 to the spline duration, return a rotation corresponding to the spline's position and direction there.
@@ -598,7 +594,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_rotation_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):unreal.Rotator;
+	public function get_rotation_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Rotator;
 	/**
 		x.get_scale_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return the spline's scale there.
@@ -609,7 +605,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_at_distance_along_spline(distance:Dynamic):unreal.Vector;
+	public function get_scale_at_distance_along_spline(distance:Float):unreal.Vector;
 	/**
 		x.get_scale_at_spline_input_key(key) -> Vector
 		Get scale at the provided input key value
@@ -620,7 +616,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_at_spline_input_key(key:Dynamic):unreal.Vector;
+	public function get_scale_at_spline_input_key(key:Float):unreal.Vector;
 	/**
 		x.get_scale_at_spline_point(point_index) -> Vector
 		Get the scale at spline point
@@ -631,7 +627,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_at_spline_point(point_index:Dynamic):unreal.Vector;
+	public function get_scale_at_spline_point(point_index:Int):unreal.Vector;
 	/**
 		x.get_scale_at_time(time, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return the spline's scale there.
@@ -643,7 +639,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_at_time(time:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	public function get_scale_at_time(time:Float, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_spline_length() -> float
 		Returns total length along this spline
@@ -662,7 +658,7 @@ package unreal;
 		Returns:
 		    SplinePointType:
 	**/
-	public function get_spline_point_type(point_index:Dynamic):unreal.SplinePointType;
+	public function get_spline_point_type(point_index:Int):unreal.SplinePointType;
 	/**
 		x.get_tangent_at_distance_along_spline(distance, coordinate_space) -> Vector
 		Given a distance along the length of this spline, return the tangent vector of the spline there.
@@ -674,7 +670,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tangent_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_tangent_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_tangent_at_spline_input_key(key, coordinate_space) -> Vector
 		Get tangent along spline at the provided input key value
@@ -686,7 +682,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tangent_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_tangent_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_tangent_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the tangent at spline point. This fetches the Leave tangent of the point.
@@ -698,7 +694,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tangent_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_tangent_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_tangent_at_time(time, coordinate_space, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return the spline's tangent there.
@@ -711,7 +707,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tangent_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	public function get_tangent_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_transform_at_distance_along_spline(distance, coordinate_space, use_scale=False) -> Transform
 		Given a distance along the length of this spline, return an FTransform corresponding to that point on the spline.
@@ -724,7 +720,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic, use_scale:Dynamic):unreal.Transform;
+	public function get_transform_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
 	/**
 		x.get_transform_at_spline_input_key(key, coordinate_space, use_scale=False) -> Transform
 		Get transform at the provided input key value
@@ -737,7 +733,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic, use_scale:Dynamic):unreal.Transform;
+	public function get_transform_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
 	/**
 		x.get_transform_at_spline_point(point_index, coordinate_space, use_scale=False) -> Transform
 		Get the transform at spline point
@@ -750,7 +746,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic, use_scale:Dynamic):unreal.Transform;
+	public function get_transform_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
 	/**
 		x.get_transform_at_time(time, coordinate_space, use_constant_velocity=False, use_scale=False) -> Transform
 		Given a time from 0 to the spline duration, return the spline's transform at the corresponding position.
@@ -764,7 +760,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic, use_scale:Dynamic):unreal.Transform;
+	public function get_transform_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool, use_scale:Bool):unreal.Transform;
 	/**
 		x.get_up_vector_at_distance_along_spline(distance, coordinate_space) -> Vector
 		Given a distance along the length of this spline, return a unit direction vector corresponding to the spline's up vector there.
@@ -776,7 +772,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_up_vector_at_distance_along_spline(distance:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_up_vector_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_up_vector_at_spline_input_key(key, coordinate_space) -> Vector
 		Get up vector at the provided input key value
@@ -788,7 +784,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_up_vector_at_spline_input_key(key:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_up_vector_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_up_vector_at_spline_point(point_index, coordinate_space) -> Vector
 		Get the up vector at spline point
@@ -800,7 +796,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_up_vector_at_spline_point(point_index:Dynamic, coordinate_space:Dynamic):unreal.Vector;
+	public function get_up_vector_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace):unreal.Vector;
 	/**
 		x.get_up_vector_at_time(time, coordinate_space, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return the spline's up vector there.
@@ -813,7 +809,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_up_vector_at_time(time:Dynamic, coordinate_space:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	public function get_up_vector_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_vector_property_at_spline_input_key(key, property_name) -> Vector
 		Get a metadata property vector value along the spline at spline input key
@@ -825,7 +821,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_vector_property_at_spline_input_key(key:Dynamic, property_name:Dynamic):unreal.Vector;
+	public function get_vector_property_at_spline_input_key(key:Float, property_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_vector_property_at_spline_point(index, property_name) -> Vector
 		Get a metadata property vector value along the spline at spline point
@@ -837,7 +833,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_vector_property_at_spline_point(index:Dynamic, property_name:Dynamic):unreal.Vector;
+	public function get_vector_property_at_spline_point(index:Int, property_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_world_direction_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return a unit direction vector of the spline tangent there, in world space.
@@ -849,7 +845,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_world_direction_at_distance_along_spline(distance:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_world_direction_at_distance_along_spline(distance:Float):unreal.Vector;
 	/**
 		x.get_world_direction_at_time(time, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return a unit direction vector of the spline tangent there.
@@ -862,7 +859,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_world_direction_at_time(time:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_world_direction_at_time(time:Float, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_world_location_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return the point in world space where this puts you
@@ -874,7 +872,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_world_location_at_distance_along_spline(distance:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_world_location_at_distance_along_spline(distance:Float):unreal.Vector;
 	/**
 		x.get_world_location_at_spline_point(point_index) -> Vector
 		Get the world location at spline point
@@ -886,7 +885,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_world_location_at_spline_point(point_index:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_world_location_at_spline_point(point_index:Int):unreal.Vector;
 	/**
 		x.get_world_location_at_time(time, use_constant_velocity=False) -> Vector
 		Given a time from 0 to the spline duration, return the point in space where this puts you
@@ -899,7 +899,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_world_location_at_time(time:Dynamic, use_constant_velocity:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_world_location_at_time(time:Float, use_constant_velocity:Bool):unreal.Vector;
 	/**
 		x.get_world_rotation_at_distance_along_spline(distance) -> Rotator
 		Given a distance along the length of this spline, return a rotation corresponding to the spline's rotation there, in world space.
@@ -911,7 +912,8 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_world_rotation_at_distance_along_spline(distance:Dynamic):unreal.Rotator;
+	@:deprecated
+	public function get_world_rotation_at_distance_along_spline(distance:Float):unreal.Rotator;
 	/**
 		x.get_world_rotation_at_time(time, use_constant_velocity=False) -> Rotator
 		Given a time from 0 to the spline duration, return a rotation corresponding to the spline's position and direction there, in world space.
@@ -924,7 +926,8 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_world_rotation_at_time(time:Dynamic, use_constant_velocity:Dynamic):unreal.Rotator;
+	@:deprecated
+	public function get_world_rotation_at_time(time:Float, use_constant_velocity:Bool):unreal.Rotator;
 	/**
 		x.get_world_tangent_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return the tangent vector of the spline there, in world space.
@@ -936,7 +939,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_world_tangent_at_distance_along_spline(distance:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_world_tangent_at_distance_along_spline(distance:Float):unreal.Vector;
 	/**
 		(bool):  [Read-Write] Whether the spline points should be passed to the User Construction Script so they can be further manipulated by it.
 		If false, they will not be visible to it, and it will not be able to influence the per-instance positions set in the editor.
@@ -958,7 +962,7 @@ package unreal;
 		    index (int32): 
 		    update_spline (bool):
 	**/
-	public function remove_spline_point(index:Dynamic, update_spline:Dynamic):Void;
+	public function remove_spline_point(index:Int, update_spline:Bool):Void;
 	/**
 		x.set_closed_loop(closed_loop, update_spline=True) -> None
 		Specify whether the spline is a closed loop or not. The loop position will be at 1.0 after the last point's input key
@@ -967,7 +971,7 @@ package unreal;
 		    closed_loop (bool): 
 		    update_spline (bool):
 	**/
-	public function set_closed_loop(closed_loop:Dynamic, update_spline:Dynamic):Void;
+	public function set_closed_loop(closed_loop:Bool, update_spline:Bool):Void;
 	/**
 		x.set_closed_loop_at_position(closed_loop, key, update_spline=True) -> None
 		Specify whether the spline is a closed loop or not, and if so, the input key corresponding to the loop point
@@ -977,7 +981,7 @@ package unreal;
 		    key (float): 
 		    update_spline (bool):
 	**/
-	public function set_closed_loop_at_position(closed_loop:Dynamic, key:Dynamic, update_spline:Dynamic):Void;
+	public function set_closed_loop_at_position(closed_loop:Bool, key:Float, update_spline:Bool):Void;
 	/**
 		x.set_default_up_vector(up_vector, coordinate_space) -> None
 		Sets the default up vector used by this spline
@@ -986,7 +990,7 @@ package unreal;
 		    up_vector (Vector): 
 		    coordinate_space (SplineCoordinateSpace):
 	**/
-	public function set_default_up_vector(up_vector:Dynamic, coordinate_space:Dynamic):Void;
+	public function set_default_up_vector(up_vector:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace):Void;
 	/**
 		x.set_draw_debug(show) -> None
 		Specify whether this spline should be rendered when the Editor/Game spline show flag is set
@@ -994,7 +998,7 @@ package unreal;
 		Args:
 		    show (bool):
 	**/
-	public function set_draw_debug(show:Dynamic):Void;
+	public function set_draw_debug(show:Bool):Void;
 	/**
 		x.set_location_at_spline_point(point_index, location, coordinate_space, update_spline=True) -> None
 		Move an existing point to a new location
@@ -1005,7 +1009,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_location_at_spline_point(point_index:Dynamic, location:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function set_location_at_spline_point(point_index:Int, location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.set_rotation_at_spline_point(point_index, rotation, coordinate_space, update_spline=True) -> None
 		Set the rotation of an existing spline point
@@ -1016,7 +1020,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_rotation_at_spline_point(point_index:Dynamic, rotation:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function set_rotation_at_spline_point(point_index:Int, rotation:unreal.Rotator, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.set_scale_at_spline_point(point_index, scale_vector, update_spline=True) -> None
 		Set the scale at a given spline point
@@ -1026,7 +1030,7 @@ package unreal;
 		    scale_vector (Vector): 
 		    update_spline (bool):
 	**/
-	public function set_scale_at_spline_point(point_index:Dynamic, scale_vector:Dynamic, update_spline:Dynamic):Void;
+	public function set_scale_at_spline_point(point_index:Int, scale_vector:unreal.Vector, update_spline:Bool):Void;
 	/**
 		x.set_selected_spline_segment_color(segment_color) -> None
 		Specify selected spline component segment color in the editor
@@ -1034,7 +1038,7 @@ package unreal;
 		Args:
 		    segment_color (LinearColor):
 	**/
-	public function set_selected_spline_segment_color(segment_color:Dynamic):Void;
+	public function set_selected_spline_segment_color(segment_color:unreal.LinearColor):Void;
 	/**
 		x.set_spline_local_points(points) -> None
 		Sets the spline to an array of local space points
@@ -1043,7 +1047,8 @@ package unreal;
 		Args:
 		    points (Array(Vector)):
 	**/
-	public function set_spline_local_points(points:Dynamic):Void;
+	@:deprecated
+	public function set_spline_local_points(points:unreal.Array):Void;
 	/**
 		x.set_spline_point_type(point_index, type, update_spline=True) -> None
 		Specify the type of a spline point
@@ -1053,7 +1058,7 @@ package unreal;
 		    type (SplinePointType): 
 		    update_spline (bool):
 	**/
-	public function set_spline_point_type(point_index:Dynamic, type:Dynamic, update_spline:Dynamic):Void;
+	public function set_spline_point_type(point_index:Int, type:unreal.SplinePointType, update_spline:Bool):Void;
 	/**
 		x.set_spline_points(points, coordinate_space, update_spline=True) -> None
 		Sets the spline to an array of points
@@ -1063,7 +1068,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_spline_points(points:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function set_spline_points(points:unreal.Array, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.set_spline_world_points(points) -> None
 		Sets the spline to an array of world space points
@@ -1072,7 +1077,8 @@ package unreal;
 		Args:
 		    points (Array(Vector)):
 	**/
-	public function set_spline_world_points(points:Dynamic):Void;
+	@:deprecated
+	public function set_spline_world_points(points:unreal.Array):Void;
 	/**
 		x.set_tangent_at_spline_point(point_index, tangent, coordinate_space, update_spline=True) -> None
 		Specify the tangent at a given spline point
@@ -1083,7 +1089,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_tangent_at_spline_point(point_index:Dynamic, tangent:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function set_tangent_at_spline_point(point_index:Int, tangent:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.set_tangent_color(tangent_color) -> None
 		Specify selected spline component segment color in the editor
@@ -1091,7 +1097,7 @@ package unreal;
 		Args:
 		    tangent_color (LinearColor):
 	**/
-	public function set_tangent_color(tangent_color:Dynamic):Void;
+	public function set_tangent_color(tangent_color:unreal.LinearColor):Void;
 	/**
 		x.set_tangents_at_spline_point(point_index, arrive_tangent, leave_tangent, coordinate_space, update_spline=True) -> None
 		Specify the tangents at a given spline point
@@ -1103,7 +1109,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_tangents_at_spline_point(point_index:Dynamic, arrive_tangent:Dynamic, leave_tangent:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function set_tangents_at_spline_point(point_index:Int, arrive_tangent:unreal.Vector, leave_tangent:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.set_unselected_spline_segment_color(segment_color) -> None
 		Specify unselected spline component segment color in the editor
@@ -1111,7 +1117,7 @@ package unreal;
 		Args:
 		    segment_color (LinearColor):
 	**/
-	public function set_unselected_spline_segment_color(segment_color:Dynamic):Void;
+	public function set_unselected_spline_segment_color(segment_color:unreal.LinearColor):Void;
 	/**
 		x.set_up_vector_at_spline_point(point_index, up_vector, coordinate_space, update_spline=True) -> None
 		Specify the up vector at a given spline point
@@ -1122,7 +1128,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_up_vector_at_spline_point(point_index:Dynamic, up_vector:Dynamic, coordinate_space:Dynamic, update_spline:Dynamic):Void;
+	public function set_up_vector_at_spline_point(point_index:Int, up_vector:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
 	/**
 		x.set_world_location_at_spline_point(point_index, location) -> None
 		Move an existing point to a new world location
@@ -1132,7 +1138,8 @@ package unreal;
 		    point_index (int32): 
 		    location (Vector):
 	**/
-	public function set_world_location_at_spline_point(point_index:Dynamic, location:Dynamic):Void;
+	@:deprecated
+	public function set_world_location_at_spline_point(point_index:Int, location:unreal.Vector):Void;
 	/**
 		(bool):  [Read-Write] Whether the endpoints of the spline are considered stationary when traversing the spline at non-constant velocity.  Essentially this sets the endpoints' tangents to zero vectors.
 	**/

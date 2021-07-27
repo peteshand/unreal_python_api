@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DecalComponent") extern class DecalComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.create_dynamic_material_instance() -> MaterialInstanceDynamic
 		Utility to allocate a new Dynamic Material Instance, set its parent to the currently applied material, and assign it
 		
@@ -21,6 +12,7 @@ package unreal;
 	/**
 		deprecated: 'create_mid_for_decal' was renamed to 'create_dynamic_material_instance'.
 	**/
+	@:deprecated
 	public function create_mid_for_decal():Void;
 	/**
 		(MaterialInterface):  [Read-Only] Decal material.
@@ -101,7 +93,7 @@ package unreal;
 		Args:
 		    new_decal_material (MaterialInterface):
 	**/
-	public function set_decal_material(new_decal_material:Dynamic):Void;
+	public function set_decal_material(new_decal_material:unreal.MaterialInterface):Void;
 	/**
 		x.set_fade_in(start_delay, duaration) -> None
 		Set Fade In
@@ -110,7 +102,7 @@ package unreal;
 		    start_delay (float): 
 		    duaration (float):
 	**/
-	public function set_fade_in(start_delay:Dynamic, duaration:Dynamic):Void;
+	public function set_fade_in(start_delay:Float, duaration:Float):Void;
 	/**
 		x.set_fade_out(start_delay, duration, destroy_owner_after_fade=True) -> None
 		Sets the decal's fade start time, duration and if the owning actor should be destroyed after the decal is fully faded out.
@@ -122,7 +114,7 @@ package unreal;
 		    duration (float): Time in second for the decal to fade out.
 		    destroy_owner_after_fade (bool): Should the owning actor automatically be destroyed after it is completely faded out.
 	**/
-	public function set_fade_out(start_delay:Dynamic, duration:Dynamic, destroy_owner_after_fade:Dynamic):Void;
+	public function set_fade_out(start_delay:Float, duration:Float, destroy_owner_after_fade:Bool):Void;
 	/**
 		x.set_fade_screen_size(new_fade_screen_size) -> None
 		Set the FadeScreenSize for this decal component
@@ -130,7 +122,7 @@ package unreal;
 		Args:
 		    new_fade_screen_size (float):
 	**/
-	public function set_fade_screen_size(new_fade_screen_size:Dynamic):Void;
+	public function set_fade_screen_size(new_fade_screen_size:Float):Void;
 	/**
 		x.set_sort_order(value) -> None
 		Sets the sort order for the decal component. Higher values draw later (on top). This will force the decal to reattach
@@ -138,7 +130,7 @@ package unreal;
 		Args:
 		    value (int32):
 	**/
-	public function set_sort_order(value:Dynamic):Void;
+	public function set_sort_order(value:Int):Void;
 	/**
 		(int32):  [Read-Only] Controls the order in which decal elements are rendered.  Higher values draw later (on top).
 		Setting many different sort orders on many different decals prevents sorting by state and can reduce performance.

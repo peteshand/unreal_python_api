@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DirectionalLightComponent") extern class DirectionalLightComponent extends unreal.LightComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(LinearColor):  [Read-Only] A color multiplied with the sun disk luminance.
 	**/
 	public var atmosphere_sun_disk_color_scale : unreal.LinearColor;
@@ -134,6 +125,7 @@ package unreal;
 	/**
 		deprecated: 'movable_whole_scene_dynamic_shadow_radius' was renamed to 'dynamic_shadow_distance_movable_light'.
 	**/
+	@:deprecated
 	public var movable_whole_scene_dynamic_shadow_radius : Dynamic;
 	/**
 		(float):  [Read-Only] Everything closer to the camera than this distance will occlude light shafts.
@@ -154,7 +146,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_atmosphere_sun_light(new_value:Dynamic):Void;
+	public function set_atmosphere_sun_light(new_value:Bool):Void;
 	/**
 		x.set_atmosphere_sun_light_index(new_value) -> None
 		Set Atmosphere Sun Light Index
@@ -162,7 +154,7 @@ package unreal;
 		Args:
 		    new_value (int32):
 	**/
-	public function set_atmosphere_sun_light_index(new_value:Dynamic):Void;
+	public function set_atmosphere_sun_light_index(new_value:Int):Void;
 	/**
 		x.set_cascade_distribution_exponent(new_value) -> None
 		Set Cascade Distribution Exponent
@@ -170,7 +162,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_cascade_distribution_exponent(new_value:Dynamic):Void;
+	public function set_cascade_distribution_exponent(new_value:Float):Void;
 	/**
 		x.set_cascade_transition_fraction(new_value) -> None
 		Set Cascade Transition Fraction
@@ -178,7 +170,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_cascade_transition_fraction(new_value:Dynamic):Void;
+	public function set_cascade_transition_fraction(new_value:Float):Void;
 	/**
 		x.set_dynamic_shadow_cascades(new_value) -> None
 		Set Dynamic Shadow Cascades
@@ -186,7 +178,7 @@ package unreal;
 		Args:
 		    new_value (int32):
 	**/
-	public function set_dynamic_shadow_cascades(new_value:Dynamic):Void;
+	public function set_dynamic_shadow_cascades(new_value:Int):Void;
 	/**
 		x.set_dynamic_shadow_distance_movable_light(new_value) -> None
 		Set Dynamic Shadow Distance Movable Light
@@ -194,7 +186,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_dynamic_shadow_distance_movable_light(new_value:Dynamic):Void;
+	public function set_dynamic_shadow_distance_movable_light(new_value:Float):Void;
 	/**
 		x.set_dynamic_shadow_distance_stationary_light(new_value) -> None
 		Set Dynamic Shadow Distance Stationary Light
@@ -202,7 +194,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_dynamic_shadow_distance_stationary_light(new_value:Dynamic):Void;
+	public function set_dynamic_shadow_distance_stationary_light(new_value:Float):Void;
 	/**
 		x.set_enable_light_shaft_occlusion(new_value) -> None
 		Set Enable Light Shaft Occlusion
@@ -210,7 +202,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_enable_light_shaft_occlusion(new_value:Dynamic):Void;
+	public function set_enable_light_shaft_occlusion(new_value:Bool):Void;
 	/**
 		x.set_light_shaft_override_direction(new_value) -> None
 		Set Light Shaft Override Direction
@@ -218,7 +210,7 @@ package unreal;
 		Args:
 		    new_value (Vector):
 	**/
-	public function set_light_shaft_override_direction(new_value:Dynamic):Void;
+	public function set_light_shaft_override_direction(new_value:unreal.Vector):Void;
 	/**
 		x.set_occlusion_mask_darkness(new_value) -> None
 		Set Occlusion Mask Darkness
@@ -226,7 +218,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_occlusion_mask_darkness(new_value:Dynamic):Void;
+	public function set_occlusion_mask_darkness(new_value:Float):Void;
 	/**
 		x.set_shadow_amount(new_value) -> None
 		Set Shadow Amount
@@ -234,7 +226,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_amount(new_value:Dynamic):Void;
+	public function set_shadow_amount(new_value:Float):Void;
 	/**
 		x.set_shadow_distance_fadeout_fraction(new_value) -> None
 		Set Shadow Distance Fadeout Fraction
@@ -242,7 +234,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_distance_fadeout_fraction(new_value:Dynamic):Void;
+	public function set_shadow_distance_fadeout_fraction(new_value:Float):Void;
 	/**
 		(float):  [Read-Only] Control the amount of shadow occlusion. A value of 0 means no occlusion, thus no shadow.
 	**/
@@ -266,6 +258,7 @@ package unreal;
 	/**
 		deprecated: 'stationary_whole_scene_dynamic_shadow_radius' was renamed to 'dynamic_shadow_distance_stationary_light'.
 	**/
+	@:deprecated
 	public var stationary_whole_scene_dynamic_shadow_radius : Dynamic;
 	/**
 		(float):  [Read-Only] Determines how far shadows can be cast, in world units.  Larger values increase the shadowing cost.

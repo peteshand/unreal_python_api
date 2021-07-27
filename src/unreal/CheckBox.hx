@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CheckBox") extern class CheckBox extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(ButtonClickMethod):  [Read-Only] The type of mouse action required by the user to trigger the buttons 'Click'
 	**/
 	public var click_method : unreal.ButtonClickMethod;
@@ -61,7 +52,7 @@ package unreal;
 		Args:
 		    checked_state (CheckBoxState):
 	**/
-	public function set_checked_state(checked_state:Dynamic):Void;
+	public function set_checked_state(checked_state:unreal.CheckBoxState):Void;
 	/**
 		x.set_click_method(click_method) -> None
 		Set Click Method
@@ -69,7 +60,7 @@ package unreal;
 		Args:
 		    click_method (ButtonClickMethod):
 	**/
-	public function set_click_method(click_method:Dynamic):Void;
+	public function set_click_method(click_method:unreal.ButtonClickMethod):Void;
 	/**
 		x.set_is_checked(is_checked) -> None
 		Sets the checked state.
@@ -77,7 +68,7 @@ package unreal;
 		Args:
 		    is_checked (bool):
 	**/
-	public function set_is_checked(is_checked:Dynamic):Void;
+	public function set_is_checked(is_checked:Bool):Void;
 	/**
 		x.set_press_method(press_method) -> None
 		Set Press Method
@@ -85,7 +76,7 @@ package unreal;
 		Args:
 		    press_method (ButtonPressMethod):
 	**/
-	public function set_press_method(press_method:Dynamic):Void;
+	public function set_press_method(press_method:unreal.ButtonPressMethod):Void;
 	/**
 		x.set_touch_method(touch_method) -> None
 		Set Touch Method
@@ -93,7 +84,7 @@ package unreal;
 		Args:
 		    touch_method (ButtonTouchMethod):
 	**/
-	public function set_touch_method(touch_method:Dynamic):Void;
+	public function set_touch_method(touch_method:unreal.ButtonTouchMethod):Void;
 	/**
 		(ButtonTouchMethod):  [Read-Only] The type of touch action required by the user to trigger the buttons 'Click'
 	**/

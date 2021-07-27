@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PaperTileLayer") extern class PaperTileLayer extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] The override offset of the collision for this layer (when bOverrideCollisionOffset is set)
 		Note: This is measured in Unreal Units (cm) from the center of the tile map component, not from the previous layer.
 	**/

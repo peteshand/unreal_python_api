@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PainCausingVolume") extern class PainCausingVolume extends unreal.PhysicsVolume {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Damage done per second to actors in this volume when bPainCausing=true
 	**/
 	public var damage_per_sec : Float;

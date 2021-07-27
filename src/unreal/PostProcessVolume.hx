@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PostProcessVolume") extern class PostProcessVolume extends unreal.Volume {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_or_update_blendable(blendable_object, weight=1.000000) -> None
 		Adds an Blendable (implements IBlendableInterface) to the array of Blendables (if it doesn't exist) and update the weight
 		
@@ -18,7 +9,7 @@ package unreal;
 		    blendable_object (BlendableInterface): 
 		    weight (float):
 	**/
-	public function add_or_update_blendable(blendable_object:Dynamic, weight:Dynamic):Void;
+	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float):Void;
 	/**
 		(float):  [Read-Write] World space radius around the volume that is used for blending (only if not unbound).
 	**/

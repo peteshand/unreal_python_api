@@ -2,11 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AbcNormalGenerationSettings") extern class AbcNormalGenerationSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("new")
-	public function _new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
 		(bool):  [Read-Write] Whether or not to force smooth normals for each individual object rather than calculating smoothing groups
 	**/
 	public var force_one_smoothing_group_per_object : Bool;

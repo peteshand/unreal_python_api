@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Canvas") extern class Canvas extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.clipped_text_size(render_font, render_text, scale=[1.000000, 1.000000]) -> Vector2D
 		Returns the clipped text size in screen space coordinates.
 		
@@ -22,7 +13,7 @@ package unreal;
 		Returns:
 		    Vector2D: Returns the screen space size of the text.
 	**/
-	public function clipped_text_size(render_font:Dynamic, render_text:Dynamic, scale:Dynamic):unreal.Vector2D;
+	public function clipped_text_size(render_font:unreal.Font, render_text:String, scale:unreal.Vector2D):unreal.Vector2D;
 	/**
 		x.deproject(screen_position) -> (world_origin=Vector, world_direction=Vector)
 		Performs a deprojection of a screen space coordinate using the projection matrix set up for the Canvas.
@@ -37,7 +28,7 @@ package unreal;
 		
 		    world_direction (Vector): Vector which can be used in a trace to determine what is "behind" the screen space position. Useful for object picking.
 	**/
-	public function deproject(screen_position:Dynamic):python.Tuple<Dynamic>;
+	public function deproject(screen_position:unreal.Vector2D):python.Tuple<Dynamic>;
 	/**
 		x.draw_border(border_texture, background_texture, left_border_texture, right_border_texture, top_border_texture, bottom_border_texture, screen_position, screen_size, coordinate_position, coordinate_size=[1.000000, 1.000000], render_color=[0.000000, 0.000000, 0.000000, 0.000000], border_scale=[0.100000, 0.100000], background_scale=[0.100000, 0.100000], rotation=0.000000, pivot_point=[0.500000, 0.500000], corner_size=[0.000000, 0.000000]) -> None
 		Draws a 3x3 grid border with tiled frame and tiled interior on the Canvas.
@@ -60,7 +51,7 @@ package unreal;
 		    pivot_point (Vector2D): Normalized pivot point to use when rotating the texture.
 		    corner_size (Vector2D): Frame corner size in percent of frame texture (should be < 0.5f).
 	**/
-	public function draw_border(border_texture:Dynamic, background_texture:Dynamic, left_border_texture:Dynamic, right_border_texture:Dynamic, top_border_texture:Dynamic, bottom_border_texture:Dynamic, screen_position:Dynamic, screen_size:Dynamic, coordinate_position:Dynamic, coordinate_size:Dynamic, render_color:Dynamic, border_scale:Dynamic, background_scale:Dynamic, rotation:Dynamic, pivot_point:Dynamic, corner_size:Dynamic):Void;
+	public function draw_border(border_texture:unreal.Texture, background_texture:unreal.Texture, left_border_texture:unreal.Texture, right_border_texture:unreal.Texture, top_border_texture:unreal.Texture, bottom_border_texture:unreal.Texture, screen_position:unreal.Vector2D, screen_size:unreal.Vector2D, coordinate_position:unreal.Vector2D, coordinate_size:unreal.Vector2D, render_color:unreal.LinearColor, border_scale:unreal.Vector2D, background_scale:unreal.Vector2D, rotation:Float, pivot_point:unreal.Vector2D, corner_size:unreal.Vector2D):Void;
 	/**
 		x.draw_box(screen_position, screen_size, thickness=1.000000, render_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Draws an unfilled box on the Canvas.
@@ -71,7 +62,7 @@ package unreal;
 		    thickness (float): How many pixels thick the box lines should be.
 		    render_color (LinearColor):
 	**/
-	public function draw_box(screen_position:Dynamic, screen_size:Dynamic, thickness:Dynamic, render_color:Dynamic):Void;
+	public function draw_box(screen_position:unreal.Vector2D, screen_size:unreal.Vector2D, thickness:Float, render_color:unreal.LinearColor):Void;
 	/**
 		x.draw_line(screen_position_a=[0.000000, 0.000000], screen_position_b=[0.000000, 0.000000], thickness=1.000000, render_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Draws a line on the Canvas.
@@ -82,7 +73,7 @@ package unreal;
 		    thickness (float): How many pixels thick this line should be.
 		    render_color (LinearColor): Color to render the line.
 	**/
-	public function draw_line(screen_position_a:Dynamic, screen_position_b:Dynamic, thickness:Dynamic, render_color:Dynamic):Void;
+	public function draw_line(screen_position_a:unreal.Vector2D, screen_position_b:unreal.Vector2D, thickness:Float, render_color:unreal.LinearColor):Void;
 	/**
 		x.draw_material(render_material, screen_position, screen_size, coordinate_position, coordinate_size=[1.000000, 1.000000], rotation=0.000000, pivot_point=[0.500000, 0.500000]) -> None
 		Draws a material on the Canvas.
@@ -96,7 +87,7 @@ package unreal;
 		    rotation (float): Rotation, in degrees, to render the texture.
 		    pivot_point (Vector2D): Normalized pivot point to use when rotating the texture.
 	**/
-	public function draw_material(render_material:Dynamic, screen_position:Dynamic, screen_size:Dynamic, coordinate_position:Dynamic, coordinate_size:Dynamic, rotation:Dynamic, pivot_point:Dynamic):Void;
+	public function draw_material(render_material:unreal.MaterialInterface, screen_position:unreal.Vector2D, screen_size:unreal.Vector2D, coordinate_position:unreal.Vector2D, coordinate_size:unreal.Vector2D, rotation:Float, pivot_point:unreal.Vector2D):Void;
 	/**
 		x.draw_material_triangles(render_material, triangles) -> None
 		Draws a set of triangles on the Canvas.
@@ -105,7 +96,7 @@ package unreal;
 		    render_material (MaterialInterface): Material to use when rendering. Remember that only the emissive channel is able to be rendered as no lighting is performed when rendering to the Canvas.
 		    triangles (Array(CanvasUVTri)): Triangles to render.
 	**/
-	public function draw_material_triangles(render_material:Dynamic, triangles:Dynamic):Void;
+	public function draw_material_triangles(render_material:unreal.MaterialInterface, triangles:unreal.Array):Void;
 	/**
 		x.draw_polygon(render_texture, screen_position, radius=[1.000000, 1.000000], number_of_sides=3, render_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Draws a polygon on the Canvas.
@@ -117,7 +108,7 @@ package unreal;
 		    number_of_sides (int32): How many sides this polygon should have. This should be above or equal to three.
 		    render_color (LinearColor): Color to tint the polygon.
 	**/
-	public function draw_polygon(render_texture:Dynamic, screen_position:Dynamic, radius:Dynamic, number_of_sides:Dynamic, render_color:Dynamic):Void;
+	public function draw_polygon(render_texture:unreal.Texture, screen_position:unreal.Vector2D, radius:unreal.Vector2D, number_of_sides:Int, render_color:unreal.LinearColor):Void;
 	/**
 		x.draw_text(render_font, render_text, screen_position, scale=[1.000000, 1.000000], render_color=[0.000000, 0.000000, 0.000000, 0.000000], kerning=0.000000, shadow_color=[0.000000, 0.000000, 0.000000, 0.000000], shadow_offset=[1.000000, 1.000000], centre_x=False, centre_y=False, outlined=False, outline_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Draws text on the Canvas.
@@ -136,7 +127,7 @@ package unreal;
 		    outlined (bool): If true, then the text should be rendered with an outline.
 		    outline_color (LinearColor): Color to render the outline for the text.
 	**/
-	public function draw_text(render_font:Dynamic, render_text:Dynamic, screen_position:Dynamic, scale:Dynamic, render_color:Dynamic, kerning:Dynamic, shadow_color:Dynamic, shadow_offset:Dynamic, centre_x:Dynamic, centre_y:Dynamic, outlined:Dynamic, outline_color:Dynamic):Void;
+	public function draw_text(render_font:unreal.Font, render_text:String, screen_position:unreal.Vector2D, scale:unreal.Vector2D, render_color:unreal.LinearColor, kerning:Float, shadow_color:unreal.LinearColor, shadow_offset:unreal.Vector2D, centre_x:Bool, centre_y:Bool, outlined:Bool, outline_color:unreal.LinearColor):Void;
 	/**
 		x.draw_texture(render_texture, screen_position, screen_size, coordinate_position, coordinate_size=[1.000000, 1.000000], render_color=[0.000000, 0.000000, 0.000000, 0.000000], blend_mode=BlendMode.BLEND_TRANSLUCENT, rotation=0.000000, pivot_point=[0.500000, 0.500000]) -> None
 		Draws a texture on the Canvas.
@@ -152,7 +143,7 @@ package unreal;
 		    rotation (float): Rotation, in degrees, to render the texture.
 		    pivot_point (Vector2D): Normalized pivot point to use when rotating the texture.
 	**/
-	public function draw_texture(render_texture:Dynamic, screen_position:Dynamic, screen_size:Dynamic, coordinate_position:Dynamic, coordinate_size:Dynamic, render_color:Dynamic, blend_mode:Dynamic, rotation:Dynamic, pivot_point:Dynamic):Void;
+	public function draw_texture(render_texture:unreal.Texture, screen_position:unreal.Vector2D, screen_size:unreal.Vector2D, coordinate_position:unreal.Vector2D, coordinate_size:unreal.Vector2D, render_color:unreal.LinearColor, blend_mode:unreal.BlendMode, rotation:Float, pivot_point:unreal.Vector2D):Void;
 	/**
 		x.draw_triangles(render_texture, triangles) -> None
 		Draws a set of triangles on the Canvas.
@@ -161,7 +152,7 @@ package unreal;
 		    render_texture (Texture): Texture to use when rendering the triangles. If no texture is set, then the default white texture is used.
 		    triangles (Array(CanvasUVTri)): Triangles to render.
 	**/
-	public function draw_triangles(render_texture:Dynamic, triangles:Dynamic):Void;
+	public function draw_triangles(render_texture:unreal.Texture, triangles:unreal.Array):Void;
 	/**
 		x.project(world_location) -> Vector
 		Performs a projection of a world space coordinates using the projection matrix set up for the Canvas.
@@ -172,7 +163,7 @@ package unreal;
 		Returns:
 		    Vector: Returns a vector where X, Y defines a screen space position representing the world space location.
 	**/
-	public function project(world_location:Dynamic):unreal.Vector;
+	public function project(world_location:unreal.Vector):unreal.Vector;
 	/**
 		x.wrapped_text_size(render_font, render_text) -> Vector2D
 		Returns the wrapped text size in screen space coordinates.
@@ -184,5 +175,5 @@ package unreal;
 		Returns:
 		    Vector2D: Returns the screen space size of the text.
 	**/
-	public function wrapped_text_size(render_font:Dynamic, render_text:Dynamic):unreal.Vector2D;
+	public function wrapped_text_size(render_font:unreal.Font, render_text:String):unreal.Vector2D;
 }

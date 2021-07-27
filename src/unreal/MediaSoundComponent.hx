@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MediaSoundComponent") extern class MediaSoundComponent extends unreal.SynthComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_attenuation_settings_to_apply() -> SoundAttenuationSettings or None
 		Get the attenuation settings based on the current component settings.
 		
@@ -60,7 +51,7 @@ package unreal;
 		Args:
 		    envelope_following (bool):
 	**/
-	public function set_enable_envelope_following(envelope_following:Dynamic):Void;
+	public function set_enable_envelope_following(envelope_following:Bool):Void;
 	/**
 		x.set_enable_spectral_analysis(spectral_analysis_enabled) -> None
 		Turns on spectral analysis of the audio generated in the media sound component.
@@ -68,7 +59,7 @@ package unreal;
 		Args:
 		    spectral_analysis_enabled (bool):
 	**/
-	public function set_enable_spectral_analysis(spectral_analysis_enabled:Dynamic):Void;
+	public function set_enable_spectral_analysis(spectral_analysis_enabled:Bool):Void;
 	/**
 		x.set_envelope_followingsettings(attack_time_msec, release_time_msec) -> None
 		Sets the envelope attack and release times (in ms).
@@ -77,7 +68,7 @@ package unreal;
 		    attack_time_msec (int32): 
 		    release_time_msec (int32):
 	**/
-	public function set_envelope_followingsettings(attack_time_msec:Dynamic, release_time_msec:Dynamic):Void;
+	public function set_envelope_followingsettings(attack_time_msec:Int, release_time_msec:Int):Void;
 	/**
 		x.set_media_player(new_media_player) -> None
 		Set the media player that provides the audio samples.
@@ -86,7 +77,7 @@ package unreal;
 		Args:
 		    new_media_player (MediaPlayer): The player to set.
 	**/
-	public function set_media_player(new_media_player:Dynamic):Void;
+	public function set_media_player(new_media_player:unreal.MediaPlayer):Void;
 	/**
 		x.set_spectral_analysis_settings(frequencies_to_analyze, fft_size=MediaSoundComponentFFTSize.MEDIUM_512) -> None
 		Sets the settings to use for spectral analysis.
@@ -95,5 +86,5 @@ package unreal;
 		    frequencies_to_analyze (Array(float)): 
 		    fft_size (MediaSoundComponentFFTSize):
 	**/
-	public function set_spectral_analysis_settings(frequencies_to_analyze:Dynamic, fft_size:Dynamic):Void;
+	public function set_spectral_analysis_settings(frequencies_to_analyze:unreal.Array, fft_size:unreal.MediaSoundComponentFFTSize):Void;
 }

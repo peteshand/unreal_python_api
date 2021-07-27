@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARGeoAnchor") extern class ARGeoAnchor extends unreal.ARTrackedGeometry {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_altitude_meters() -> float
 		Get Altitude Meters
 		

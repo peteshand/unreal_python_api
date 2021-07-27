@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MatineeActor") extern class MatineeActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.change_playback_direction() -> None
 		Changes the direction of playback (go in reverse if it was going forward, or vice versa)
 	**/
@@ -42,7 +33,7 @@ package unreal;
 		    group_name (str): 
 		    enable (bool):
 	**/
-	public function enable_group_by_name(group_name:Dynamic, enable:Dynamic):Void;
+	public function enable_group_by_name(group_name:String, enable:Bool):Void;
 	/**
 		(bool):  [Read-Write] Lets you force the sequence to always start at ForceStartPosition
 	**/
@@ -142,7 +133,7 @@ package unreal;
 		Args:
 		    new_looping (bool):
 	**/
-	public function set_looping_state(new_looping:Dynamic):Void;
+	public function set_looping_state(new_looping:Bool):Void;
 	/**
 		x.set_position(new_position, jump=False) -> None
 		Set the position of the interpolation.
@@ -152,7 +143,7 @@ package unreal;
 		    new_position (float): the new position to set the interpolation to
 		    jump (bool): if true, teleport to the new position (don't trigger any events between the old and new positions, etc)
 	**/
-	public function set_position(new_position:Dynamic, jump:Dynamic):Void;
+	public function set_position(new_position:Float, jump:Bool):Void;
 	/**
 		(bool):  [Read-Write] if bClientSideOnly is true, whether this matinee should be completely skipped if none of the affected Actors are visible
 	**/

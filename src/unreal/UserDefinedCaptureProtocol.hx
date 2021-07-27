@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "UserDefinedCaptureProtocol") extern class UserDefinedCaptureProtocol extends unreal.MovieSceneImageCaptureProtocolBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.generate_filename(frame_metrics) -> str
 		Generate a filename for the current frame
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function generate_filename(frame_metrics:Dynamic):String;
+	public function generate_filename(frame_metrics:unreal.FrameMetrics):String;
 	/**
 		x.get_current_frame_metrics() -> FrameMetrics
 		Access this protocol's current frame metrics
@@ -66,7 +57,7 @@ package unreal;
 		    id (CapturedPixelsID): 
 		    frame_metrics (FrameMetrics):
 	**/
-	public function on_pixels_received(pixels:Dynamic, id:Dynamic, frame_metrics:Dynamic):Void;
+	public function on_pixels_received(pixels:unreal.CapturedPixels, id:unreal.CapturedPixelsID, frame_metrics:unreal.FrameMetrics):Void;
 	/**
 		x.on_pre_tick() -> None
 		Called before the capture process itself is ticked, before each frame is set up for capture
@@ -106,7 +97,7 @@ package unreal;
 		    buffer (Texture): The desired buffer to save *
 		    buffer_id (CapturedPixelsID): The ID of this buffer that is passed to the pixel handler (e.g. a composition pass name).
 	**/
-	public function resolve_buffer(buffer:Dynamic, buffer_id:Dynamic):Void;
+	public function resolve_buffer(buffer:unreal.Texture, buffer_id:unreal.CapturedPixelsID):Void;
 	/**
 		x.start_capturing_final_pixels(stream_id) -> None
 		Instruct this protocol to start capturing LDR final pixels (including slate widgets and burn-ins)
@@ -114,7 +105,7 @@ package unreal;
 		Args:
 		    stream_id (CapturedPixelsID): The identifier to use for the final pixels buffer
 	**/
-	public function start_capturing_final_pixels(stream_id:Dynamic):Void;
+	public function start_capturing_final_pixels(stream_id:unreal.CapturedPixelsID):Void;
 	/**
 		x.stop_capturing_final_pixels() -> None
 		Instruct this protocol to stop capturing LDR final pixels

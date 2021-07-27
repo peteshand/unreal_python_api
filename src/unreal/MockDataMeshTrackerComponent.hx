@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MockDataMeshTrackerComponent") extern class MockDataMeshTrackerComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Array(Color)):  [Read-Write] Colors through which we cycle when setting vertex color by block.
 	**/
 	public var block_vertex_colors : Array<Dynamic>;
@@ -21,7 +12,7 @@ package unreal;
 		Args:
 		    mr_mesh_ptr (MRMeshComponent): The procedural mesh component to store the query result in.
 	**/
-	public function connect_mr_mesh(mr_mesh_ptr:Dynamic):Void;
+	public function connect_mr_mesh(mr_mesh_ptr:unreal.MRMeshComponent):Void;
 	/**
 		x.disconnect_mr_mesh(mr_mesh_ptr) -> None
 		Unlinks the current procedural mesh component from the mesh tracking system.
@@ -29,7 +20,7 @@ package unreal;
 		Args:
 		    mr_mesh_ptr (MRMeshComponent): The procedural mesh component to unlink from the mesh tracking system.
 	**/
-	public function disconnect_mr_mesh(mr_mesh_ptr:Dynamic):Void;
+	public function disconnect_mr_mesh(mr_mesh_ptr:unreal.MRMeshComponent):Void;
 	/**
 		(OnMockDataMeshTrackerUpdated):  [Read-Write] Activated whenever new information about this mesh tracker is detected.
 	**/

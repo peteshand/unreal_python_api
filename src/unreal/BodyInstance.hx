@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BodyInstance") extern class BodyInstance extends unreal.BodyInstanceCore {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] 'Drag' force added to reduce angular movement
 	**/
 	public var angular_damping : Float;
@@ -37,6 +28,7 @@ package unreal;
 	/**
 		deprecated: 'mass_in_kg' was renamed to 'mass_in_kg_override'.
 	**/
+	@:deprecated
 	public var mass_in_kg : Dynamic;
 	/**
 		(float):  [Read-Only] Mass of the body in KG. By default we compute this based on physical material and mass scale.

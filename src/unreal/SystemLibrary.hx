@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SystemLibrary") extern class SystemLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_float_history_sample(value, float_history) -> DebugFloatHistory
 		Add Float History Sample
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    DebugFloatHistory:
 	**/
-	static public function add_float_history_sample(value:Dynamic, float_history:Dynamic):unreal.DebugFloatHistory;
+	static public function add_float_history_sample(value:Float, float_history:unreal.DebugFloatHistory):unreal.DebugFloatHistory;
 	/**
 		X.begin_transaction(context, description, primary_object) -> int32
 		Begin a new undo transaction. An undo transaction is defined as all actions which take place when the user selects "undo" a single time.
@@ -37,7 +28,7 @@ package unreal;
 		Returns:
 		    int32: The number of active actions when BeginTransaction was called (values greater than 0 indicate that there was already an existing undo transaction in progress), or -1 on failure.
 	**/
-	static public function begin_transaction(context:Dynamic, description:Dynamic, primary_object:Dynamic):Int;
+	static public function begin_transaction(context:String, description:unreal.Text, primary_object:unreal.Object):Int;
 	/**
 		X.box_overlap_actors(world_context_object, box_pos, box_extent, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given axis-aligned box.
@@ -55,10 +46,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function box_overlap_actors(world_context_object:Dynamic, box_pos:Dynamic, box_extent:Dynamic, object_types:Dynamic, actor_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function box_overlap_actors(world_context_object:unreal.Object, box_pos:unreal.Vector, box_extent:unreal.Vector, object_types:unreal.Array, actor_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'box_overlap_actors_new' was renamed to 'box_overlap_actors'.
 	**/
+	@:deprecated
 	static public function box_overlap_actors_new():Void;
 	/**
 		X.box_overlap_components(world_context_object, box_pos, extent, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
@@ -77,10 +69,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function box_overlap_components(world_context_object:Dynamic, box_pos:Dynamic, extent:Dynamic, object_types:Dynamic, component_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function box_overlap_components(world_context_object:unreal.Object, box_pos:unreal.Vector, extent:unreal.Vector, object_types:unreal.Array, component_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'box_overlap_components_new' was renamed to 'box_overlap_components'.
 	**/
+	@:deprecated
 	static public function box_overlap_components_new():Void;
 	/**
 		X.box_trace_multi(world_context_object, start, end, half_size, orientation, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
@@ -107,7 +100,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish. The blocking hit will be the last hit, if there was one.
 	**/
-	static public function box_trace_multi(world_context_object:Dynamic, start:Dynamic, end:Dynamic, half_size:Dynamic, orientation:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function box_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.box_trace_multi_by_profile(world_context_object, start, end, half_size, orientation, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a box against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -134,7 +127,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish. The blocking hit will be the last hit, if there was one.
 	**/
-	static public function box_trace_multi_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, half_size:Dynamic, orientation:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function box_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.box_trace_multi_for_objects(world_context_object, start, end, half_size, orientation, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a box along the given line and returns all hits encountered.
@@ -160,7 +153,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function box_trace_multi_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, half_size:Dynamic, orientation:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function box_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.box_trace_single(world_context_object, start, end, half_size, orientation, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a box along the given line and returns the first blocking hit encountered.
@@ -186,7 +179,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function box_trace_single(world_context_object:Dynamic, start:Dynamic, end:Dynamic, half_size:Dynamic, orientation:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function box_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.box_trace_single_by_profile(world_context_object, start, end, half_size, orientation, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a box against the world and return the first blocking hit using a specific profile
@@ -211,7 +204,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function box_trace_single_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, half_size:Dynamic, orientation:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function box_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.box_trace_single_for_objects(world_context_object, start, end, half_size, orientation, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a box along the given line and returns the first hit encountered.
@@ -237,7 +230,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function box_trace_single_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, half_size:Dynamic, orientation:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function box_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.can_launch_url(url) -> bool
 		Can Launch URL
@@ -248,7 +241,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function can_launch_url(url:Dynamic):Bool;
+	static public function can_launch_url(url:String):Bool;
 	/**
 		X.cancel_transaction(index) -> None
 		Cancel the current transaction, and no longer capture actions to be placed in the undo buffer.
@@ -257,7 +250,7 @@ package unreal;
 		Args:
 		    index (int32): The action counter to cancel transactions from (as returned by a call to BeginTransaction).
 	**/
-	static public function cancel_transaction(index:Dynamic):Void;
+	static public function cancel_transaction(index:Int):Void;
 	/**
 		X.capsule_overlap_actors(world_context_object, capsule_pos, radius, half_height, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given capsule.
@@ -276,10 +269,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function capsule_overlap_actors(world_context_object:Dynamic, capsule_pos:Dynamic, radius:Dynamic, half_height:Dynamic, object_types:Dynamic, actor_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function capsule_overlap_actors(world_context_object:unreal.Object, capsule_pos:unreal.Vector, radius:Float, half_height:Float, object_types:unreal.Array, actor_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'capsule_overlap_actors_new' was renamed to 'capsule_overlap_actors'.
 	**/
+	@:deprecated
 	static public function capsule_overlap_actors_new():Void;
 	/**
 		X.capsule_overlap_components(world_context_object, capsule_pos, radius, half_height, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
@@ -299,10 +293,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function capsule_overlap_components(world_context_object:Dynamic, capsule_pos:Dynamic, radius:Dynamic, half_height:Dynamic, object_types:Dynamic, component_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function capsule_overlap_components(world_context_object:unreal.Object, capsule_pos:unreal.Vector, radius:Float, half_height:Float, object_types:unreal.Array, component_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'capsule_overlap_components_new' was renamed to 'capsule_overlap_components'.
 	**/
+	@:deprecated
 	static public function capsule_overlap_components_new():Void;
 	/**
 		X.capsule_trace_multi(world_context_object, start, end, radius, half_height, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
@@ -329,7 +324,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function capsule_trace_multi(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, half_height:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function capsule_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.capsule_trace_multi_by_profile(world_context_object, start, end, radius, half_height, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a capsule against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -356,7 +351,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function capsule_trace_multi_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, half_height:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function capsule_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.capsule_trace_multi_for_objects(world_context_object, start, end, radius, half_height, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a capsule along the given line and returns all hits encountered.
@@ -382,10 +377,11 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function capsule_trace_multi_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, half_height:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function capsule_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		deprecated: 'capsule_trace_multi_new' was renamed to 'capsule_trace_multi'.
 	**/
+	@:deprecated
 	static public function capsule_trace_multi_new():Void;
 	/**
 		X.capsule_trace_single(world_context_object, start, end, radius, half_height, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
@@ -412,7 +408,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function capsule_trace_single(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, half_height:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function capsule_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.capsule_trace_single_by_profile(world_context_object, start, end, radius, half_height, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a capsule against the world and return the first blocking hit using a specific profile
@@ -437,7 +433,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function capsule_trace_single_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, half_height:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function capsule_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.capsule_trace_single_for_objects(world_context_object, start, end, radius, half_height, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a capsule along the given line and returns the first hit encountered.
@@ -463,10 +459,11 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function capsule_trace_single_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, half_height:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function capsule_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		deprecated: 'capsule_trace_single_new' was renamed to 'capsule_trace_single'.
 	**/
+	@:deprecated
 	static public function capsule_trace_single_new():Void;
 	/**
 		X.clear_and_invalidate_timer_handle(world_context_object, handle) -> TimerHandle
@@ -481,7 +478,7 @@ package unreal;
 		
 		    handle (TimerHandle):
 	**/
-	static public function clear_and_invalidate_timer_handle(world_context_object:Dynamic, handle:Dynamic):unreal.TimerHandle;
+	static public function clear_and_invalidate_timer_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):unreal.TimerHandle;
 	/**
 		X.clear_timer(object, function_name) -> None
 		Clears a set timer.
@@ -490,7 +487,7 @@ package unreal;
 		    object (Object): Object that implements the delegate function. Defaults to self (this blueprint)
 		    function_name (str): Delegate function name. Can be a K2 function or a Custom Event.
 	**/
-	static public function clear_timer(object:Dynamic, function_name:Dynamic):Void;
+	static public function clear_timer(object:unreal.Object, function_name:String):Void;
 	/**
 		X.clear_timer_delegate(delegate) -> None
 		Clears a set timer.
@@ -499,7 +496,8 @@ package unreal;
 		Args:
 		    delegate (TimerDynamicDelegate):
 	**/
-	static public function clear_timer_delegate(delegate:Dynamic):Void;
+	@:deprecated
+	static public function clear_timer_delegate(delegate:unreal.TimerDynamicDelegate):Void;
 	/**
 		X.clear_timer_handle(world_context_object, handle) -> None
 		Clears a set timer.
@@ -509,7 +507,8 @@ package unreal;
 		    world_context_object (Object): 
 		    handle (TimerHandle): The handle of the timer to clear.
 	**/
-	static public function clear_timer_handle(world_context_object:Dynamic, handle:Dynamic):Void;
+	@:deprecated
+	static public function clear_timer_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Void;
 	/**
 		X.collect_garbage() -> None
 		Deletes all unreferenced objects, keeping only referenced objects (this command will be queued and happen at the end of the frame)
@@ -532,10 +531,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function component_overlap_actors(component:Dynamic, component_transform:Dynamic, object_types:Dynamic, actor_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function component_overlap_actors(component:unreal.PrimitiveComponent, component_transform:unreal.Transform, object_types:unreal.Array, actor_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'component_overlap_actors_new' was renamed to 'component_overlap_actors'.
 	**/
+	@:deprecated
 	static public function component_overlap_actors_new():Void;
 	/**
 		X.component_overlap_components(component, component_transform, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
@@ -553,10 +553,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function component_overlap_components(component:Dynamic, component_transform:Dynamic, object_types:Dynamic, component_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function component_overlap_components(component:unreal.PrimitiveComponent, component_transform:unreal.Transform, object_types:unreal.Array, component_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'component_overlap_components_new' was renamed to 'component_overlap_components'.
 	**/
+	@:deprecated
 	static public function component_overlap_components_new():Void;
 	/**
 		X.control_screensaver(allow_screen_saver) -> None
@@ -565,7 +566,7 @@ package unreal;
 		Args:
 		    allow_screen_saver (bool): If false, don't allow screensaver if possible, otherwise allow default behavior
 	**/
-	static public function control_screensaver(allow_screen_saver:Dynamic):Void;
+	static public function control_screensaver(allow_screen_saver:Bool):Void;
 	/**
 		X.conv_interface_to_object(interface) -> Object
 		Converts an interfance into an object
@@ -576,7 +577,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function conv_interface_to_object(_interface:Dynamic):unreal.Object;
+	static public function conv_interface_to_object(_interface:unreal.Interface):unreal.Object;
 	/**
 		X.conv_primary_asset_id_to_string(primary_asset_id) -> str
 		Converts a Primary Asset Id to a string. The other direction is not provided because it cannot be validated
@@ -587,7 +588,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_primary_asset_id_to_string(primary_asset_id:Dynamic):String;
+	static public function conv_primary_asset_id_to_string(primary_asset_id:unreal.PrimaryAssetId):String;
 	/**
 		X.conv_primary_asset_type_to_string(primary_asset_type) -> str
 		Converts a Primary Asset Type to a string. The other direction is not provided because it cannot be validated
@@ -598,7 +599,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_primary_asset_type_to_string(primary_asset_type:Dynamic):String;
+	static public function conv_primary_asset_type_to_string(primary_asset_type:unreal.PrimaryAssetType):String;
 	/**
 		X.conv_soft_class_path_to_soft_class_ref(soft_class_path) -> Class
 		Converts a Soft Class Path into a base Soft Class Reference, this is not guaranteed to be resolvable
@@ -609,7 +610,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	static public function conv_soft_class_path_to_soft_class_ref(soft_class_path:Dynamic):Class<Dynamic>;
+	static public function conv_soft_class_path_to_soft_class_ref(soft_class_path:unreal.SoftClassPath):Class<Dynamic>;
 	/**
 		X.conv_soft_class_reference_to_string(soft_class_reference) -> str
 		Converts a Soft Class Reference to a string. The other direction is not provided because it cannot be validated
@@ -620,7 +621,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_soft_class_reference_to_string(soft_class_reference:Dynamic):String;
+	static public function conv_soft_class_reference_to_string(soft_class_reference:Class<Dynamic>):String;
 	/**
 		X.conv_soft_obj_path_to_soft_obj_ref(soft_object_path) -> Object
 		Converts a Soft Object Path into a base Soft Object Reference, this is not guaranteed to be resolvable
@@ -631,7 +632,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function conv_soft_obj_path_to_soft_obj_ref(soft_object_path:Dynamic):unreal.Object;
+	static public function conv_soft_obj_path_to_soft_obj_ref(soft_object_path:unreal.SoftObjectPath):unreal.Object;
 	/**
 		X.conv_soft_object_reference_to_string(soft_object_reference) -> str
 		Converts a Soft Object Reference to a string. The other direction is not provided because it cannot be validated
@@ -642,7 +643,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_soft_object_reference_to_string(soft_object_reference:Dynamic):String;
+	static public function conv_soft_object_reference_to_string(soft_object_reference:unreal.Object):String;
 	/**
 		X.convert_to_absolute_path(filename) -> str
 		Converts passed in filename to use a absolute path
@@ -653,7 +654,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function convert_to_absolute_path(filename:Dynamic):String;
+	static public function convert_to_absolute_path(filename:String):String;
 	/**
 		X.convert_to_relative_path(filename) -> str
 		Converts passed in filename to use a relative path
@@ -664,7 +665,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function convert_to_relative_path(filename:Dynamic):String;
+	static public function convert_to_relative_path(filename:String):String;
 	/**
 		X.create_copy_for_undo_buffer(object_to_modify) -> None
 		Mark as modified.
@@ -672,7 +673,7 @@ package unreal;
 		Args:
 		    object_to_modify (Object):
 	**/
-	static public function create_copy_for_undo_buffer(object_to_modify:Dynamic):Void;
+	static public function create_copy_for_undo_buffer(object_to_modify:unreal.Object):Void;
 	/**
 		X.delay(world_context_object, duration, latent_info) -> None
 		Perform a latent action with a delay (specified in seconds).  Calling again while it is counting down will be ignored.
@@ -682,7 +683,7 @@ package unreal;
 		    duration (float): length of delay (in seconds).
 		    latent_info (LatentActionInfo): The latent action.
 	**/
-	static public function delay(world_context_object:Dynamic, duration:Dynamic, latent_info:Dynamic):Void;
+	static public function delay(world_context_object:unreal.Object, duration:Float, latent_info:unreal.LatentActionInfo):Void;
 	/**
 		X.does_implement_interface(test_object, interface) -> bool
 		Does Implement Interface
@@ -694,7 +695,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function does_implement_interface(test_object:Dynamic, _interface:Dynamic):Bool;
+	static public function does_implement_interface(test_object:unreal.Object, _interface:Dynamic):Bool;
 	/**
 		X.draw_debug_arrow(world_context_object, line_start, line_end, arrow_size, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw directional arrow, pointing from LineStart to LineEnd.
@@ -708,7 +709,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_arrow(world_context_object:Dynamic, line_start:Dynamic, line_end:Dynamic, arrow_size:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_arrow(world_context_object:unreal.Object, line_start:unreal.Vector, line_end:unreal.Vector, arrow_size:Float, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_box(world_context_object, center, extent, line_color, rotation=[0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug box
@@ -722,7 +723,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_box(world_context_object:Dynamic, center:Dynamic, extent:Dynamic, line_color:Dynamic, rotation:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_box(world_context_object:unreal.Object, center:unreal.Vector, extent:unreal.Vector, line_color:unreal.LinearColor, rotation:unreal.Rotator, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_camera(camera_actor, camera_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draw a debug camera shape.
@@ -732,7 +733,7 @@ package unreal;
 		    camera_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_camera(camera_actor:Dynamic, camera_color:Dynamic, duration:Dynamic):Void;
+	static public function draw_debug_camera(camera_actor:unreal.CameraActor, camera_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.draw_debug_capsule(world_context_object, center, half_height, radius, rotation, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug capsule
@@ -747,7 +748,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_capsule(world_context_object:Dynamic, center:Dynamic, half_height:Dynamic, radius:Dynamic, rotation:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_capsule(world_context_object:unreal.Object, center:unreal.Vector, half_height:Float, radius:Float, rotation:unreal.Rotator, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_circle(world_context_object, center, radius, num_segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000, y_axis=[0.000000, 1.000000, 0.000000], z_axis=[0.000000, 0.000000, 1.000000], draw_axis=False) -> None
 		Draw a debug circle!
@@ -764,7 +765,7 @@ package unreal;
 		    z_axis (Vector): 
 		    draw_axis (bool):
 	**/
-	static public function draw_debug_circle(world_context_object:Dynamic, center:Dynamic, radius:Dynamic, num_segments:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic, y_axis:Dynamic, z_axis:Dynamic, draw_axis:Dynamic):Void;
+	static public function draw_debug_circle(world_context_object:unreal.Object, center:unreal.Vector, radius:Float, num_segments:Int, line_color:unreal.LinearColor, duration:Float, thickness:Float, y_axis:unreal.Vector, z_axis:unreal.Vector, draw_axis:Bool):Void;
 	/**
 		X.draw_debug_cone(world_context_object, origin, direction, length, angle_width, angle_height, num_sides, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cone
@@ -782,7 +783,8 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_cone(world_context_object:Dynamic, origin:Dynamic, direction:Dynamic, length:Dynamic, angle_width:Dynamic, angle_height:Dynamic, num_sides:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	@:deprecated
+	static public function draw_debug_cone(world_context_object:unreal.Object, origin:unreal.Vector, direction:unreal.Vector, length:Float, angle_width:Float, angle_height:Float, num_sides:Int, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_cone_in_degrees(world_context_object, origin, direction, length=100.000000, angle_width=45.000000, angle_height=45.000000, num_sides=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cone
@@ -800,7 +802,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_cone_in_degrees(world_context_object:Dynamic, origin:Dynamic, direction:Dynamic, length:Dynamic, angle_width:Dynamic, angle_height:Dynamic, num_sides:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_cone_in_degrees(world_context_object:unreal.Object, origin:unreal.Vector, direction:unreal.Vector, length:Float, angle_width:Float, angle_height:Float, num_sides:Int, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_coordinate_system(world_context_object, axis_loc, axis_rot, scale=1.000000, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug coordinate system.
@@ -813,7 +815,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_coordinate_system(world_context_object:Dynamic, axis_loc:Dynamic, axis_rot:Dynamic, scale:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_coordinate_system(world_context_object:unreal.Object, axis_loc:unreal.Vector, axis_rot:unreal.Rotator, scale:Float, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_cylinder(world_context_object, start, end, radius=100.000000, segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cylinder
@@ -828,7 +830,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_cylinder(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, segments:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_cylinder(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, segments:Int, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_float_history_location(world_context_object, float_history, draw_location, draw_size, draw_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a 2D Histogram of size 'DrawSize' based FDebugFloatHistory struct, using DrawLocation for the location in the world, rotation will face camera of first player.
@@ -841,7 +843,7 @@ package unreal;
 		    draw_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_float_history_location(world_context_object:Dynamic, float_history:Dynamic, draw_location:Dynamic, draw_size:Dynamic, draw_color:Dynamic, duration:Dynamic):Void;
+	static public function draw_debug_float_history_location(world_context_object:unreal.Object, float_history:unreal.DebugFloatHistory, draw_location:unreal.Vector, draw_size:unreal.Vector2D, draw_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.draw_debug_float_history_transform(world_context_object, float_history, draw_transform, draw_size, draw_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a 2D Histogram of size 'DrawSize' based FDebugFloatHistory struct, using DrawTransform for the position in the world.
@@ -854,7 +856,7 @@ package unreal;
 		    draw_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_float_history_transform(world_context_object:Dynamic, float_history:Dynamic, draw_transform:Dynamic, draw_size:Dynamic, draw_color:Dynamic, duration:Dynamic):Void;
+	static public function draw_debug_float_history_transform(world_context_object:unreal.Object, float_history:unreal.DebugFloatHistory, draw_transform:unreal.Transform, draw_size:unreal.Vector2D, draw_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.draw_debug_frustum(world_context_object, frustum_transform, frustum_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draws a debug frustum.
@@ -866,7 +868,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_frustum(world_context_object:Dynamic, frustum_transform:Dynamic, frustum_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_frustum(world_context_object:unreal.Object, frustum_transform:unreal.Transform, frustum_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_line(world_context_object, line_start, line_end, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug line
@@ -879,7 +881,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_line(world_context_object:Dynamic, line_start:Dynamic, line_end:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_line(world_context_object:unreal.Object, line_start:unreal.Vector, line_end:unreal.Vector, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_plane(world_context_object, plane_coordinates, location, size, plane_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a debug plane.
@@ -892,7 +894,7 @@ package unreal;
 		    plane_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_plane(world_context_object:Dynamic, plane_coordinates:Dynamic, location:Dynamic, size:Dynamic, plane_color:Dynamic, duration:Dynamic):Void;
+	static public function draw_debug_plane(world_context_object:unreal.Object, plane_coordinates:unreal.Plane, location:unreal.Vector, size:Float, plane_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.draw_debug_point(world_context_object, position, size, point_color, duration=0.000000) -> None
 		Draw a debug point
@@ -904,7 +906,7 @@ package unreal;
 		    point_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_point(world_context_object:Dynamic, position:Dynamic, size:Dynamic, point_color:Dynamic, duration:Dynamic):Void;
+	static public function draw_debug_point(world_context_object:unreal.Object, position:unreal.Vector, size:Float, point_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.draw_debug_sphere(world_context_object, center, radius=100.000000, segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug sphere
@@ -918,7 +920,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_sphere(world_context_object:Dynamic, center:Dynamic, radius:Dynamic, segments:Dynamic, line_color:Dynamic, duration:Dynamic, thickness:Dynamic):Void;
+	static public function draw_debug_sphere(world_context_object:unreal.Object, center:unreal.Vector, radius:Float, segments:Int, line_color:unreal.LinearColor, duration:Float, thickness:Float):Void;
 	/**
 		X.draw_debug_string(world_context_object, text_location, text, test_base_actor=None, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draw a debug string at a 3d world location.
@@ -931,7 +933,7 @@ package unreal;
 		    text_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_string(world_context_object:Dynamic, text_location:Dynamic, text:Dynamic, test_base_actor:Dynamic, text_color:Dynamic, duration:Dynamic):Void;
+	static public function draw_debug_string(world_context_object:unreal.Object, text_location:unreal.Vector, text:String, test_base_actor:unreal.Actor, text_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.end_transaction() -> int32
 		Attempt to end the current undo transaction. Only successful if the transaction's action counter is 1.
@@ -952,7 +954,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_primary_asset_id(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_primary_asset_id(a:unreal.PrimaryAssetId, b:unreal.PrimaryAssetId):Bool;
 	/**
 		X.equal_equal_primary_asset_type(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -964,7 +966,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_primary_asset_type(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_primary_asset_type(a:unreal.PrimaryAssetType, b:unreal.PrimaryAssetType):Bool;
 	/**
 		X.equal_equal_soft_class_reference(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -976,7 +978,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_soft_class_reference(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_soft_class_reference(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
 	/**
 		X.equal_equal_soft_object_reference(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -988,7 +990,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_soft_object_reference(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_soft_object_reference(a:unreal.Object, b:unreal.Object):Bool;
 	/**
 		X.execute_console_command(world_context_object, command, specific_player=None) -> None
 		Executes a console command, optionally on a specific controller
@@ -998,22 +1000,26 @@ package unreal;
 		    command (str): Command to send to the console
 		    specific_player (PlayerController): If specified, the console command will be routed through the specified player
 	**/
-	static public function execute_console_command(world_context_object:Dynamic, command:Dynamic, specific_player:Dynamic):Void;
+	static public function execute_console_command(world_context_object:unreal.Object, command:String, specific_player:unreal.PlayerController):Void;
 	/**
 		deprecated: 'experimental_close_ad_banner' was renamed to 'force_close_ad_banner'.
 	**/
+	@:deprecated
 	static public function experimental_close_ad_banner():Void;
 	/**
 		deprecated: 'experimental_hide_ad_banner' was renamed to 'hide_ad_banner'.
 	**/
+	@:deprecated
 	static public function experimental_hide_ad_banner():Void;
 	/**
 		deprecated: 'experimental_show_ad_banner' was renamed to 'show_ad_banner'.
 	**/
+	@:deprecated
 	static public function experimental_show_ad_banner():Void;
 	/**
 		deprecated: 'experimental_show_game_center_leaderboard' was renamed to 'show_platform_specific_leaderboard_screen'.
 	**/
+	@:deprecated
 	static public function experimental_show_game_center_leaderboard():Void;
 	/**
 		X.flush_debug_strings(world_context_object) -> None
@@ -1022,7 +1028,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	static public function flush_debug_strings(world_context_object:Dynamic):Void;
+	static public function flush_debug_strings(world_context_object:unreal.Object):Void;
 	/**
 		X.flush_persistent_debug_lines(world_context_object) -> None
 		Flush all persistent debug lines and shapes.
@@ -1030,7 +1036,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	static public function flush_persistent_debug_lines(world_context_object:Dynamic):Void;
+	static public function flush_persistent_debug_lines(world_context_object:unreal.Object):Void;
 	/**
 		X.force_close_ad_banner() -> None
 		Forces closed any displayed ad. Can lead to loss of revenue
@@ -1052,7 +1058,8 @@ package unreal;
 		
 		    box_extent (Vector):
 	**/
-	static public function get_actor_bounds(actor:Dynamic):python.Tuple<Dynamic>;
+	@:deprecated
+	static public function get_actor_bounds(actor:unreal.Actor):python.Tuple<Dynamic>;
 	/**
 		X.get_actor_list_from_component_list(component_list, actor_class_filter) -> Array(Actor)
 		Returns an array of unique actors represented by the given list of components.
@@ -1066,7 +1073,7 @@ package unreal;
 		
 		    out_actor_list (Array(Actor)): Start of line segment.
 	**/
-	static public function get_actor_list_from_component_list(component_list:Dynamic, actor_class_filter:Dynamic):Dynamic;
+	static public function get_actor_list_from_component_list(component_list:unreal.Array, actor_class_filter:Dynamic):Dynamic;
 	/**
 		X.get_ad_id_count() -> int32
 		Retrieves the total number of Ad IDs that can be selected between
@@ -1096,7 +1103,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function get_class_from_primary_asset_id(primary_asset_id:Dynamic):Dynamic;
+	static public function get_class_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):Dynamic;
 	/**
 		X.get_command_line() -> str
 		Returns the command line that the process was launched with.
@@ -1121,7 +1128,7 @@ package unreal;
 		
 		    sphere_radius (float):
 	**/
-	static public function get_component_bounds(component:Dynamic):python.Tuple<Dynamic>;
+	static public function get_component_bounds(component:unreal.SceneComponent):python.Tuple<Dynamic>;
 	/**
 		X.get_console_variable_bool_value(variable_name) -> bool
 		Evaluates, if it exists, whether the specified integer console variable has a non-zero value (true) or not (false).
@@ -1132,7 +1139,7 @@ package unreal;
 		Returns:
 		    bool: True if found and has a non-zero value, false otherwise.
 	**/
-	static public function get_console_variable_bool_value(variable_name:Dynamic):Bool;
+	static public function get_console_variable_bool_value(variable_name:String):Bool;
 	/**
 		X.get_console_variable_float_value(variable_name) -> float
 		Attempts to retrieve the value of the specified float console variable, if it exists.
@@ -1143,7 +1150,7 @@ package unreal;
 		Returns:
 		    float: The value if found, 0 otherwise.
 	**/
-	static public function get_console_variable_float_value(variable_name:Dynamic):Float;
+	static public function get_console_variable_float_value(variable_name:String):Float;
 	/**
 		X.get_console_variable_int_value(variable_name) -> int32
 		Attempts to retrieve the value of the specified integer console variable, if it exists.
@@ -1154,7 +1161,7 @@ package unreal;
 		Returns:
 		    int32: The value if found, 0 otherwise.
 	**/
-	static public function get_console_variable_int_value(variable_name:Dynamic):Int;
+	static public function get_console_variable_int_value(variable_name:String):Int;
 	/**
 		X.get_convenient_windowed_resolutions() -> Array(IntPoint) or None
 		Gets the list of windowed resolutions which are convenient for the current primary display size.
@@ -1179,7 +1186,7 @@ package unreal;
 		
 		    out_bundles (Array(Name)):
 	**/
-	static public function get_current_bundle_state(primary_asset_id:Dynamic, force_current_state:Dynamic):Dynamic;
+	static public function get_current_bundle_state(primary_asset_id:unreal.PrimaryAssetId, force_current_state:Bool):Dynamic;
 	/**
 		X.get_default_language() -> str
 		Get the default language (for localization) used by this platform
@@ -1219,7 +1226,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_display_name(object:Dynamic):String;
+	static public function get_display_name(object:unreal.Object):String;
 	/**
 		X.get_engine_version() -> str
 		Engine build number, for displaying to end users.
@@ -1262,7 +1269,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_game_time_in_seconds(world_context_object:Dynamic):Float;
+	static public function get_game_time_in_seconds(world_context_object:unreal.Object):Float;
 	/**
 		X.get_gamepad_button_glyph(button_key, controller_index) -> Texture2D
 		Returns glyph assigned to a gamepad button (or a null ptr if not assigned) (iOS and tvOS only)
@@ -1274,7 +1281,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	static public function get_gamepad_button_glyph(button_key:Dynamic, controller_index:Dynamic):unreal.Texture2D;
+	static public function get_gamepad_button_glyph(button_key:String, controller_index:Int):unreal.Texture2D;
 	/**
 		X.get_gamepad_controller_name(controller_id) -> str
 		Returns name of controller if assigned to a gamepad (or None if not assigned) (Android and iOS only)
@@ -1285,7 +1292,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_gamepad_controller_name(controller_id:Dynamic):String;
+	static public function get_gamepad_controller_name(controller_id:Int):String;
 	/**
 		X.get_local_currency_code() -> str
 		Returns the currency code associated with the device's locale
@@ -1328,7 +1335,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function get_object_from_primary_asset_id(primary_asset_id:Dynamic):unreal.Object;
+	static public function get_object_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):unreal.Object;
 	/**
 		X.get_object_name(object) -> str
 		Returns the actual object name.
@@ -1339,7 +1346,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_object_name(object:Dynamic):String;
+	static public function get_object_name(object:unreal.Object):String;
 	/**
 		X.get_outer_object(object) -> Object
 		Returns the outer object of an object.
@@ -1350,7 +1357,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function get_outer_object(object:Dynamic):unreal.Object;
+	static public function get_outer_object(object:unreal.Object):unreal.Object;
 	/**
 		X.get_platform_user_dir() -> str
 		Get the current user dir from the OS
@@ -1396,7 +1403,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	static public function get_primary_asset_id_from_object(object:Dynamic):unreal.PrimaryAssetId;
+	static public function get_primary_asset_id_from_object(object:unreal.Object):unreal.PrimaryAssetId;
 	/**
 		X.get_primary_asset_id_from_soft_class_reference(soft_class_reference) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Soft Class Reference, this can return an invalid one if not registered
@@ -1407,7 +1414,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	static public function get_primary_asset_id_from_soft_class_reference(soft_class_reference:Dynamic):unreal.PrimaryAssetId;
+	static public function get_primary_asset_id_from_soft_class_reference(soft_class_reference:Class<Dynamic>):unreal.PrimaryAssetId;
 	/**
 		X.get_primary_asset_id_from_soft_object_reference(soft_object_reference) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Soft Object Reference, this can return an invalid one if not registered
@@ -1418,7 +1425,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	static public function get_primary_asset_id_from_soft_object_reference(soft_object_reference:Dynamic):unreal.PrimaryAssetId;
+	static public function get_primary_asset_id_from_soft_object_reference(soft_object_reference:unreal.Object):unreal.PrimaryAssetId;
 	/**
 		X.get_primary_asset_id_list(primary_asset_type) -> Array(PrimaryAssetId)
 		Returns list of PrimaryAssetIds for a PrimaryAssetType
@@ -1431,7 +1438,7 @@ package unreal;
 		
 		    out_primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	static public function get_primary_asset_id_list(primary_asset_type:Dynamic):Dynamic;
+	static public function get_primary_asset_id_list(primary_asset_type:unreal.PrimaryAssetType):Dynamic;
 	/**
 		X.get_primary_assets_with_bundle_state(required_bundles, excluded_bundles, valid_types, force_current_state) -> Array(PrimaryAssetId)
 		Returns the list of assets that are in a given bundle state. Required Bundles must be specified
@@ -1450,7 +1457,7 @@ package unreal;
 		
 		    out_primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	static public function get_primary_assets_with_bundle_state(required_bundles:Dynamic, excluded_bundles:Dynamic, valid_types:Dynamic, force_current_state:Dynamic):Dynamic;
+	static public function get_primary_assets_with_bundle_state(required_bundles:unreal.Array, excluded_bundles:unreal.Array, valid_types:unreal.Array, force_current_state:Bool):Dynamic;
 	/**
 		X.get_project_content_directory() -> str
 		Get the content directory of the current project
@@ -1507,7 +1514,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	static public function get_soft_class_reference_from_primary_asset_id(primary_asset_id:Dynamic):Class<Dynamic>;
+	static public function get_soft_class_reference_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):Class<Dynamic>;
 	/**
 		X.get_soft_object_reference_from_primary_asset_id(primary_asset_id) -> Object
 		Returns the Object Id associated with a Primary Asset Id, this works even if the asset is not loaded
@@ -1518,7 +1525,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function get_soft_object_reference_from_primary_asset_id(primary_asset_id:Dynamic):unreal.Object;
+	static public function get_soft_object_reference_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):unreal.Object;
 	/**
 		X.get_supported_fullscreen_resolutions() -> Array(IntPoint) or None
 		Gets the list of support fullscreen resolutions.
@@ -1540,7 +1547,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_system_path(object:Dynamic):String;
+	static public function get_system_path(object:unreal.Object):String;
 	/**
 		X.get_timer_elapsed_time(object, function_name) -> float
 		Returns elapsed time for the given delegate (time since current countdown iteration began).
@@ -1552,7 +1559,7 @@ package unreal;
 		Returns:
 		    float: How long has elapsed since the current iteration of the timer began.
 	**/
-	static public function get_timer_elapsed_time(object:Dynamic, function_name:Dynamic):Float;
+	static public function get_timer_elapsed_time(object:unreal.Object, function_name:String):Float;
 	/**
 		X.get_timer_elapsed_time_delegate(delegate) -> float
 		Returns elapsed time for the given delegate (time since current countdown iteration began).
@@ -1564,7 +1571,8 @@ package unreal;
 		Returns:
 		    float: How long has elapsed since the current iteration of the timer began.
 	**/
-	static public function get_timer_elapsed_time_delegate(delegate:Dynamic):Float;
+	@:deprecated
+	static public function get_timer_elapsed_time_delegate(delegate:unreal.TimerDynamicDelegate):Float;
 	/**
 		X.get_timer_elapsed_time_handle(world_context_object, handle) -> float
 		Returns elapsed time for the given handle (time since current countdown iteration began).
@@ -1576,7 +1584,7 @@ package unreal;
 		Returns:
 		    float: How long has elapsed since the current iteration of the timer began.
 	**/
-	static public function get_timer_elapsed_time_handle(world_context_object:Dynamic, handle:Dynamic):Float;
+	static public function get_timer_elapsed_time_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Float;
 	/**
 		X.get_timer_remaining_time(object, function_name) -> float
 		Returns time until the timer will next execute its delegate.
@@ -1588,7 +1596,7 @@ package unreal;
 		Returns:
 		    float: How long is remaining in the current iteration of the timer.
 	**/
-	static public function get_timer_remaining_time(object:Dynamic, function_name:Dynamic):Float;
+	static public function get_timer_remaining_time(object:unreal.Object, function_name:String):Float;
 	/**
 		X.get_timer_remaining_time_delegate(delegate) -> float
 		Returns time until the timer will next execute its delegate.
@@ -1600,7 +1608,8 @@ package unreal;
 		Returns:
 		    float: How long is remaining in the current iteration of the timer.
 	**/
-	static public function get_timer_remaining_time_delegate(delegate:Dynamic):Float;
+	@:deprecated
+	static public function get_timer_remaining_time_delegate(delegate:unreal.TimerDynamicDelegate):Float;
 	/**
 		X.get_timer_remaining_time_handle(world_context_object, handle) -> float
 		Returns time until the timer will next execute its handle.
@@ -1612,7 +1621,7 @@ package unreal;
 		Returns:
 		    float: How long is remaining in the current iteration of the timer.
 	**/
-	static public function get_timer_remaining_time_handle(world_context_object:Dynamic, handle:Dynamic):Float;
+	static public function get_timer_remaining_time_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Float;
 	/**
 		X.get_unique_device_id() -> str
 		Returns the platform specific unique device id
@@ -1621,6 +1630,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
+	@:deprecated
 	static public function get_unique_device_id():String;
 	/**
 		X.get_volume_buttons_handled_by_system() -> bool
@@ -1648,7 +1658,7 @@ package unreal;
 		
 		    handle (TimerHandle):
 	**/
-	static public function invalidate_timer_handle(handle:Dynamic):unreal.TimerHandle;
+	static public function invalidate_timer_handle(handle:unreal.TimerHandle):unreal.TimerHandle;
 	/**
 		X.is_controller_assigned_to_gamepad(controller_id) -> bool
 		Returns true if controller id assigned to a gamepad (Android and iOS only)
@@ -1659,7 +1669,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_controller_assigned_to_gamepad(controller_id:Dynamic):Bool;
+	static public function is_controller_assigned_to_gamepad(controller_id:Int):Bool;
 	/**
 		X.is_dedicated_server(world_context_object) -> bool
 		Returns whether this is running on a dedicated server
@@ -1670,7 +1680,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_dedicated_server(world_context_object:Dynamic):Bool;
+	static public function is_dedicated_server(world_context_object:unreal.Object):Bool;
 	/**
 		X.is_interstitial_ad_available() -> bool
 		Returns true if the requested interstitial ad is loaded and ready
@@ -1699,7 +1709,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_logged_in(specific_player:Dynamic):Bool;
+	static public function is_logged_in(specific_player:unreal.PlayerController):Bool;
 	/**
 		X.is_packaged_for_distribution() -> bool
 		Returns whether this is a build that is packaged for distribution
@@ -1726,7 +1736,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_server(world_context_object:Dynamic):Bool;
+	static public function is_server(world_context_object:unreal.Object):Bool;
 	/**
 		X.is_split_screen(world_context_object) -> bool
 		Returns whether we're currently running in split screen (more than one local player).
@@ -1737,7 +1747,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_split_screen(world_context_object:Dynamic):Bool;
+	static public function is_split_screen(world_context_object:unreal.Object):Bool;
 	/**
 		X.is_standalone(world_context_object) -> bool
 		Returns whether this game instance is stand alone (no networking).
@@ -1748,7 +1758,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_standalone(world_context_object:Dynamic):Bool;
+	static public function is_standalone(world_context_object:unreal.Object):Bool;
 	/**
 		X.is_timer_active(object, function_name) -> bool
 		Returns true if a timer exists and is active for the given delegate, false otherwise.
@@ -1760,7 +1770,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is active.
 	**/
-	static public function is_timer_active(object:Dynamic, function_name:Dynamic):Bool;
+	static public function is_timer_active(object:unreal.Object, function_name:String):Bool;
 	/**
 		X.is_timer_active_delegate(delegate) -> bool
 		Returns true if a timer exists and is active for the given delegate, false otherwise.
@@ -1772,7 +1782,8 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is active.
 	**/
-	static public function is_timer_active_delegate(delegate:Dynamic):Bool;
+	@:deprecated
+	static public function is_timer_active_delegate(delegate:unreal.TimerDynamicDelegate):Bool;
 	/**
 		X.is_timer_active_handle(world_context_object, handle) -> bool
 		Returns true if a timer exists and is active for the given handle, false otherwise.
@@ -1784,7 +1795,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is active.
 	**/
-	static public function is_timer_active_handle(world_context_object:Dynamic, handle:Dynamic):Bool;
+	static public function is_timer_active_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Bool;
 	/**
 		X.is_timer_paused(object, function_name) -> bool
 		Returns true if a timer exists and is paused for the given delegate, false otherwise.
@@ -1796,7 +1807,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is paused.
 	**/
-	static public function is_timer_paused(object:Dynamic, function_name:Dynamic):Bool;
+	static public function is_timer_paused(object:unreal.Object, function_name:String):Bool;
 	/**
 		X.is_timer_paused_delegate(delegate) -> bool
 		Returns true if a timer exists and is paused for the given delegate, false otherwise.
@@ -1808,7 +1819,8 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is paused.
 	**/
-	static public function is_timer_paused_delegate(delegate:Dynamic):Bool;
+	@:deprecated
+	static public function is_timer_paused_delegate(delegate:unreal.TimerDynamicDelegate):Bool;
 	/**
 		X.is_timer_paused_handle(world_context_object, handle) -> bool
 		Returns true if a timer exists and is paused for the given handle, false otherwise.
@@ -1820,7 +1832,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists and is paused.
 	**/
-	static public function is_timer_paused_handle(world_context_object:Dynamic, handle:Dynamic):Bool;
+	static public function is_timer_paused_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Bool;
 	/**
 		X.is_unattended() -> bool
 		Returns true if running unattended (-unattended is on the command line)
@@ -1839,7 +1851,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid(object:Dynamic):Bool;
+	static public function is_valid(object:unreal.Object):Bool;
 	/**
 		X.is_valid_class(class_) -> bool
 		Return true if the class is usable : non-null and not pending kill
@@ -1861,7 +1873,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_primary_asset_id(primary_asset_id:Dynamic):Bool;
+	static public function is_valid_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):Bool;
 	/**
 		X.is_valid_primary_asset_type(primary_asset_type) -> bool
 		Returns list of Primary Asset Ids for a PrimaryAssetType
@@ -1872,7 +1884,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_primary_asset_type(primary_asset_type:Dynamic):Bool;
+	static public function is_valid_primary_asset_type(primary_asset_type:unreal.PrimaryAssetType):Bool;
 	/**
 		X.is_valid_soft_class_reference(soft_class_reference) -> bool
 		Returns true if the Soft Class Reference is not null
@@ -1883,7 +1895,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_soft_class_reference(soft_class_reference:Dynamic):Bool;
+	static public function is_valid_soft_class_reference(soft_class_reference:Class<Dynamic>):Bool;
 	/**
 		X.is_valid_soft_object_reference(soft_object_reference) -> bool
 		Returns true if the Soft Object Reference is not null
@@ -1894,7 +1906,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_soft_object_reference(soft_object_reference:Dynamic):Bool;
+	static public function is_valid_soft_object_reference(soft_object_reference:unreal.Object):Bool;
 	/**
 		X.is_valid_timer_handle(handle) -> bool
 		Returns whether the timer handle is valid. This does not indicate that there is an active timer that this handle references, but rather that it once referenced a valid timer.
@@ -1905,7 +1917,7 @@ package unreal;
 		Returns:
 		    bool: Whether the timer handle is valid.
 	**/
-	static public function is_valid_timer_handle(handle:Dynamic):Bool;
+	static public function is_valid_timer_handle(handle:unreal.TimerHandle):Bool;
 	/**
 		X.launch_url(url) -> None
 		Opens the specified URL in the platform's web browser of choice
@@ -1913,7 +1925,7 @@ package unreal;
 		Args:
 		    url (str):
 	**/
-	static public function launch_url(url:Dynamic):Void;
+	static public function launch_url(url:String):Void;
 	/**
 		X.line_trace_multi(world_context_object, start, end, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Does a collision trace along the given line and returns all hits encountered up to and including the first blocking hit.
@@ -1937,7 +1949,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	static public function line_trace_multi(world_context_object:Dynamic, start:Dynamic, end:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function line_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.line_trace_multi_by_profile(world_context_object, start, end, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Trace a ray against the world using a specific profile and return overlapping hits and then first blocking hit
@@ -1962,7 +1974,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	static public function line_trace_multi_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function line_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.line_trace_multi_for_objects(world_context_object, start, end, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Does a collision trace along the given line and returns all hits encountered.
@@ -1986,10 +1998,11 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	static public function line_trace_multi_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function line_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		deprecated: 'line_trace_multi_new' was renamed to 'line_trace_multi'.
 	**/
+	@:deprecated
 	static public function line_trace_multi_new():Void;
 	/**
 		X.line_trace_single(world_context_object, start, end, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
@@ -2014,7 +2027,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function line_trace_single(world_context_object:Dynamic, start:Dynamic, end:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function line_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.line_trace_single_by_profile(world_context_object, start, end, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Trace a ray against the world using a specific profile and return the first blocking hit
@@ -2037,7 +2050,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function line_trace_single_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function line_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.line_trace_single_for_objects(world_context_object, start, end, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Does a collision trace along the given line and returns the first hit encountered.
@@ -2061,10 +2074,11 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function line_trace_single_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function line_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		deprecated: 'line_trace_single_new' was renamed to 'line_trace_single'.
 	**/
+	@:deprecated
 	static public function line_trace_single_new():Void;
 	/**
 		X.load_asset_blocking(asset) -> Object
@@ -2076,7 +2090,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function load_asset_blocking(asset:Dynamic):unreal.Object;
+	static public function load_asset_blocking(asset:unreal.Object):unreal.Object;
 	/**
 		X.load_class_asset_blocking(asset_class) -> type(Class)
 		Resolves or loads a Soft Class Reference immediately, this will cause hitches and Async Load Class Asset should be used if possible
@@ -2087,7 +2101,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function load_class_asset_blocking(asset_class:Dynamic):Dynamic;
+	static public function load_class_asset_blocking(asset_class:Class<Dynamic>):Dynamic;
 	/**
 		X.load_interstitial_ad(ad_id_index) -> None
 		Will load a fullscreen interstitial AdMob ad. Call this before using ShowInterstitialAd
@@ -2096,7 +2110,7 @@ package unreal;
 		Args:
 		    ad_id_index (int32): The index of the ID to select for the ad to show
 	**/
-	static public function load_interstitial_ad(ad_id_index:Dynamic):Void;
+	static public function load_interstitial_ad(ad_id_index:Int):Void;
 	/**
 		X.make_literal_bool(value) -> bool
 		Creates a literal bool
@@ -2107,7 +2121,7 @@ package unreal;
 		Returns:
 		    bool: The literal bool
 	**/
-	static public function make_literal_bool(value:Dynamic):Bool;
+	static public function make_literal_bool(value:Bool):Bool;
 	/**
 		X.make_literal_byte(value) -> uint8
 		Creates a literal byte
@@ -2129,7 +2143,7 @@ package unreal;
 		Returns:
 		    float: The literal float
 	**/
-	static public function make_literal_float(value:Dynamic):Float;
+	static public function make_literal_float(value:Float):Float;
 	/**
 		X.make_literal_int(value) -> int32
 		Creates a literal integer
@@ -2140,7 +2154,7 @@ package unreal;
 		Returns:
 		    int32: The literal integer
 	**/
-	static public function make_literal_int(value:Dynamic):Int;
+	static public function make_literal_int(value:Int):Int;
 	/**
 		X.make_literal_name(value) -> Name
 		Creates a literal name
@@ -2151,7 +2165,7 @@ package unreal;
 		Returns:
 		    Name: The literal name
 	**/
-	static public function make_literal_name(value:Dynamic):unreal.Name;
+	static public function make_literal_name(value:unreal.Name):unreal.Name;
 	/**
 		X.make_literal_string(value) -> str
 		Creates a literal string
@@ -2162,7 +2176,7 @@ package unreal;
 		Returns:
 		    str: The literal string
 	**/
-	static public function make_literal_string(value:Dynamic):String;
+	static public function make_literal_string(value:String):String;
 	/**
 		X.make_literal_text(value) -> Text
 		Creates a literal FText
@@ -2173,7 +2187,7 @@ package unreal;
 		Returns:
 		    Text: The literal FText
 	**/
-	static public function make_literal_text(value:Dynamic):unreal.Text;
+	static public function make_literal_text(value:unreal.Text):unreal.Text;
 	/**
 		X.move_component_to(component, target_relative_location, target_relative_rotation, ease_out, ease_in, over_time, force_shortest_rotation_path, move_action, latent_info) -> None
 		* Interpolate a component to the specified relative location and rotation over the course of OverTime seconds.
@@ -2191,7 +2205,7 @@ package unreal;
 		    move_action (MoveComponentAction): required movement behavior
 		    latent_info (LatentActionInfo): The latent action
 	**/
-	static public function move_component_to(component:Dynamic, target_relative_location:Dynamic, target_relative_rotation:Dynamic, ease_out:Dynamic, ease_in:Dynamic, over_time:Dynamic, force_shortest_rotation_path:Dynamic, move_action:Dynamic, latent_info:Dynamic):Void;
+	static public function move_component_to(component:unreal.SceneComponent, target_relative_location:unreal.Vector, target_relative_rotation:unreal.Rotator, ease_out:Bool, ease_in:Bool, over_time:Float, force_shortest_rotation_path:Bool, move_action:unreal.MoveComponentAction, latent_info:unreal.LatentActionInfo):Void;
 	/**
 		X.normalize_filename(filename) -> str
 		Convert all / and \ to TEXT("/")
@@ -2202,7 +2216,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function normalize_filename(filename:Dynamic):String;
+	static public function normalize_filename(filename:String):String;
 	/**
 		X.not_equal_primary_asset_id(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2214,7 +2228,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_primary_asset_id(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_primary_asset_id(a:unreal.PrimaryAssetId, b:unreal.PrimaryAssetId):Bool;
 	/**
 		X.not_equal_primary_asset_type(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2226,7 +2240,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_primary_asset_type(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_primary_asset_type(a:unreal.PrimaryAssetType, b:unreal.PrimaryAssetType):Bool;
 	/**
 		X.not_equal_soft_class_reference(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2238,7 +2252,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_soft_class_reference(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_soft_class_reference(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
 	/**
 		X.not_equal_soft_object_reference(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2250,7 +2264,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_soft_object_reference(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_soft_object_reference(a:unreal.Object, b:unreal.Object):Bool;
 	/**
 		X.parse_command_line(cmd_line) -> (out_tokens=Array(str), out_switches=Array(str), out_params=Map(str, str))
 		* Parses the given string into loose tokens, switches (arguments that begin with - or /) and parameters (-mySwitch=myVar)
@@ -2269,7 +2283,7 @@ package unreal;
 		
 		    out_params (Map(str, str)):
 	**/
-	static public function parse_command_line(cmd_line:Dynamic):python.Tuple<Dynamic>;
+	static public function parse_command_line(cmd_line:String):python.Tuple<Dynamic>;
 	/**
 		X.parse_param(string, param) -> bool
 		Returns true if the string has -param in it (do not specify the leading -)
@@ -2281,7 +2295,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function parse_param(string:Dynamic, param:Dynamic):Bool;
+	static public function parse_param(string:String, param:String):Bool;
 	/**
 		X.parse_param_value(string, param) -> str or None
 		Returns 'value' if -option=value is in the string
@@ -2295,7 +2309,7 @@ package unreal;
 		
 		    out_value (str):
 	**/
-	static public function parse_param_value(string:Dynamic, param:Dynamic):Dynamic;
+	static public function parse_param_value(string:String, param:String):Dynamic;
 	/**
 		X.pause_timer(object, function_name) -> None
 		Pauses a set timer at its current elapsed time.
@@ -2304,7 +2318,7 @@ package unreal;
 		    object (Object): Object that implements the delegate function. Defaults to self (this blueprint)
 		    function_name (str): Delegate function name. Can be a K2 function or a Custom Event.
 	**/
-	static public function pause_timer(object:Dynamic, function_name:Dynamic):Void;
+	static public function pause_timer(object:unreal.Object, function_name:String):Void;
 	/**
 		X.pause_timer_delegate(delegate) -> None
 		Pauses a set timer at its current elapsed time.
@@ -2313,7 +2327,8 @@ package unreal;
 		Args:
 		    delegate (TimerDynamicDelegate):
 	**/
-	static public function pause_timer_delegate(delegate:Dynamic):Void;
+	@:deprecated
+	static public function pause_timer_delegate(delegate:unreal.TimerDynamicDelegate):Void;
 	/**
 		X.pause_timer_handle(world_context_object, handle) -> None
 		Pauses a set timer at its current elapsed time.
@@ -2322,7 +2337,7 @@ package unreal;
 		    world_context_object (Object): 
 		    handle (TimerHandle): The handle of the timer to pause.
 	**/
-	static public function pause_timer_handle(world_context_object:Dynamic, handle:Dynamic):Void;
+	static public function pause_timer_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Void;
 	/**
 		X.print_string(world_context_object, string="Hello", print_to_screen=True, print_to_log=True, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=2.000000) -> None
 		Prints a string to the log, and optionally, to the screen
@@ -2336,7 +2351,7 @@ package unreal;
 		    text_color (LinearColor): Whether or not to print the output to the console
 		    duration (float): The display duration (if Print to Screen is True). Using negative number will result in loading the duration time from the config.
 	**/
-	static public function print_string(world_context_object:Dynamic, string:Dynamic, print_to_screen:Dynamic, print_to_log:Dynamic, text_color:Dynamic, duration:Dynamic):Void;
+	static public function print_string(world_context_object:unreal.Object, string:String, print_to_screen:Bool, print_to_log:Bool, text_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.print_text(world_context_object, text="Hello", print_to_screen=True, print_to_log=True, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=2.000000) -> None
 		Prints text to the log, and optionally, to the screen
@@ -2350,7 +2365,7 @@ package unreal;
 		    text_color (LinearColor): Whether or not to print the output to the console
 		    duration (float): The display duration (if Print to Screen is True). Using negative number will result in loading the duration time from the config.
 	**/
-	static public function print_text(world_context_object:Dynamic, text:Dynamic, print_to_screen:Dynamic, print_to_log:Dynamic, text_color:Dynamic, duration:Dynamic):Void;
+	static public function print_text(world_context_object:unreal.Object, text:unreal.Text, print_to_screen:Bool, print_to_log:Bool, text_color:unreal.LinearColor, duration:Float):Void;
 	/**
 		X.quit_editor() -> None
 		Exit the editor
@@ -2366,7 +2381,7 @@ package unreal;
 		    quit_preference (QuitPreference): Form of quitting.
 		    ignore_platform_restrictions (bool): Ignores and best-practices based on platform (e.g PS4 games should never quit). Non-shipping only
 	**/
-	static public function quit_game(world_context_object:Dynamic, specific_player:Dynamic, quit_preference:Dynamic, ignore_platform_restrictions:Dynamic):Void;
+	static public function quit_game(world_context_object:unreal.Object, specific_player:unreal.PlayerController, quit_preference:unreal.QuitPreference, ignore_platform_restrictions:Bool):Void;
 	/**
 		X.register_for_remote_notifications() -> None
 		Requests permission to send remote notifications to the user's device.
@@ -2380,7 +2395,7 @@ package unreal;
 		Args:
 		    controller_id (int32):
 	**/
-	static public function reset_gamepad_assignment_to_controller(controller_id:Dynamic):Void;
+	static public function reset_gamepad_assignment_to_controller(controller_id:Int):Void;
 	/**
 		X.reset_gamepad_assignments() -> None
 		Resets the gamepad to player controller id assignments (Android and iOS only)
@@ -2395,7 +2410,7 @@ package unreal;
 		    duration (float): length of delay (in seconds).
 		    latent_info (LatentActionInfo): The latent action.
 	**/
-	static public function retriggerable_delay(world_context_object:Dynamic, duration:Dynamic, latent_info:Dynamic):Void;
+	static public function retriggerable_delay(world_context_object:unreal.Object, duration:Float, latent_info:unreal.LatentActionInfo):Void;
 	/**
 		X.set_gamepads_block_device_feedback(block) -> None
 		Sets whether attached gamepads will block feedback from the device itself (Mobile only).
@@ -2403,7 +2418,7 @@ package unreal;
 		Args:
 		    block (bool):
 	**/
-	static public function set_gamepads_block_device_feedback(block:Dynamic):Void;
+	static public function set_gamepads_block_device_feedback(block:Bool):Void;
 	/**
 		X.set_suppress_viewport_transition_message(world_context_object, state) -> None
 		Sets the state of the transition message rendered by the viewport. (The blue text displayed when the game is paused and so forth.)
@@ -2412,10 +2427,11 @@ package unreal;
 		    world_context_object (Object): World context
 		    state (bool):
 	**/
-	static public function set_suppress_viewport_transition_message(world_context_object:Dynamic, state:Dynamic):Void;
+	static public function set_suppress_viewport_transition_message(world_context_object:unreal.Object, state:Bool):Void;
 	/**
 		deprecated: 'set_supress_viewport_transition_message' was renamed to 'set_suppress_viewport_transition_message'.
 	**/
+	@:deprecated
 	static public function set_supress_viewport_transition_message():Void;
 	/**
 		X.set_timer(object, function_name, time, looping, initial_start_delay=0.000000, initial_start_delay_variance=0.000000) -> TimerHandle
@@ -2432,7 +2448,7 @@ package unreal;
 		Returns:
 		    TimerHandle: The timer handle to pass to other timer functions to manipulate this timer.
 	**/
-	static public function set_timer(object:Dynamic, function_name:Dynamic, time:Dynamic, looping:Dynamic, initial_start_delay:Dynamic, initial_start_delay_variance:Dynamic):unreal.TimerHandle;
+	static public function set_timer(object:unreal.Object, function_name:String, time:Float, looping:Bool, initial_start_delay:Float, initial_start_delay_variance:Float):unreal.TimerHandle;
 	/**
 		X.set_timer_delegate(delegate, time, looping, initial_start_delay=0.000000, initial_start_delay_variance=0.000000) -> TimerHandle
 		Set a timer to execute delegate. Setting an existing timer will reset that timer with updated parameters.
@@ -2447,7 +2463,7 @@ package unreal;
 		Returns:
 		    TimerHandle: The timer handle to pass to other timer functions to manipulate this timer.
 	**/
-	static public function set_timer_delegate(delegate:Dynamic, time:Dynamic, looping:Dynamic, initial_start_delay:Dynamic, initial_start_delay_variance:Dynamic):unreal.TimerHandle;
+	static public function set_timer_delegate(delegate:unreal.TimerDynamicDelegate, time:Float, looping:Bool, initial_start_delay:Float, initial_start_delay_variance:Float):unreal.TimerHandle;
 	/**
 		X.set_user_activity(user_activity) -> None
 		Tells the engine what the user is doing for debug, analytics, etc.
@@ -2455,7 +2471,7 @@ package unreal;
 		Args:
 		    user_activity (UserActivity):
 	**/
-	static public function set_user_activity(user_activity:Dynamic):Void;
+	static public function set_user_activity(user_activity:unreal.UserActivity):Void;
 	/**
 		X.set_volume_buttons_handled_by_system(enabled) -> None
 		Allows or inhibits system default handling of volume up and volume down buttons (Android only)
@@ -2463,7 +2479,7 @@ package unreal;
 		Args:
 		    enabled (bool): If true, allow Android to handle volume up and down events
 	**/
-	static public function set_volume_buttons_handled_by_system(enabled:Dynamic):Void;
+	static public function set_volume_buttons_handled_by_system(enabled:Bool):Void;
 	/**
 		X.set_window_title(title) -> None
 		Sets the game window title
@@ -2471,7 +2487,7 @@ package unreal;
 		Args:
 		    title (Text):
 	**/
-	static public function set_window_title(title:Dynamic):Void;
+	static public function set_window_title(title:unreal.Text):Void;
 	/**
 		X.show_ad_banner(ad_id_index, show_on_bottom_of_screen) -> None
 		Will show an ad banner (iAd on iOS, or AdMob on Android) on the top or bottom of screen, on top of the GL view (doesn't resize the view)
@@ -2481,7 +2497,7 @@ package unreal;
 		    ad_id_index (int32): The index of the ID to select for the ad to show
 		    show_on_bottom_of_screen (bool): If true, the iAd will be shown at the bottom of the screen, top otherwise
 	**/
-	static public function show_ad_banner(ad_id_index:Dynamic, show_on_bottom_of_screen:Dynamic):Void;
+	static public function show_ad_banner(ad_id_index:Int, show_on_bottom_of_screen:Bool):Void;
 	/**
 		X.show_interstitial_ad() -> None
 		Shows the loaded interstitial ad (loaded with LoadInterstitialAd)
@@ -2495,7 +2511,7 @@ package unreal;
 		Args:
 		    specific_player (PlayerController): Specific player's achievements to show. May not be supported on all platforms. If null, defaults to the player with ControllerId 0
 	**/
-	static public function show_platform_specific_achievements_screen(specific_player:Dynamic):Void;
+	static public function show_platform_specific_achievements_screen(specific_player:unreal.PlayerController):Void;
 	/**
 		X.show_platform_specific_leaderboard_screen(category_name) -> None
 		Displays the built-in leaderboard GUI (iOS and Android only; this function may be renamed or moved in a future release)
@@ -2503,7 +2519,7 @@ package unreal;
 		Args:
 		    category_name (str):
 	**/
-	static public function show_platform_specific_leaderboard_screen(category_name:Dynamic):Void;
+	static public function show_platform_specific_leaderboard_screen(category_name:String):Void;
 	/**
 		X.snapshot_object(object) -> None
 		Notify the current transaction (if any) that this object is about to be modified and should be snapshot for intermediate update.
@@ -2513,7 +2529,7 @@ package unreal;
 		Args:
 		    object (Object): The object that is about to be modified.
 	**/
-	static public function snapshot_object(object:Dynamic):Void;
+	static public function snapshot_object(object:unreal.Object):Void;
 	/**
 		X.sphere_overlap_actors(world_context_object, sphere_pos, sphere_radius, object_types, actor_class_filter, actors_to_ignore) -> Array(Actor) or None
 		Returns an array of actors that overlap the given sphere.
@@ -2531,10 +2547,11 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function sphere_overlap_actors(world_context_object:Dynamic, sphere_pos:Dynamic, sphere_radius:Dynamic, object_types:Dynamic, actor_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function sphere_overlap_actors(world_context_object:unreal.Object, sphere_pos:unreal.Vector, sphere_radius:Float, object_types:unreal.Array, actor_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'sphere_overlap_actors_new' was renamed to 'sphere_overlap_actors'.
 	**/
+	@:deprecated
 	static public function sphere_overlap_actors_new():Void;
 	/**
 		X.sphere_overlap_components(world_context_object, sphere_pos, sphere_radius, object_types, component_class_filter, actors_to_ignore) -> Array(PrimitiveComponent) or None
@@ -2553,10 +2570,11 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function sphere_overlap_components(world_context_object:Dynamic, sphere_pos:Dynamic, sphere_radius:Dynamic, object_types:Dynamic, component_class_filter:Dynamic, actors_to_ignore:Dynamic):Dynamic;
+	static public function sphere_overlap_components(world_context_object:unreal.Object, sphere_pos:unreal.Vector, sphere_radius:Float, object_types:unreal.Array, component_class_filter:Dynamic, actors_to_ignore:unreal.Array):Dynamic;
 	/**
 		deprecated: 'sphere_overlap_components_new' was renamed to 'sphere_overlap_components'.
 	**/
+	@:deprecated
 	static public function sphere_overlap_components_new():Void;
 	/**
 		X.sphere_trace_multi(world_context_object, start, end, radius, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
@@ -2582,7 +2600,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function sphere_trace_multi(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function sphere_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.sphere_trace_multi_by_profile(world_context_object, start, end, radius, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a sphere against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -2608,7 +2626,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function sphere_trace_multi_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function sphere_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.sphere_trace_multi_for_objects(world_context_object, start, end, radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a sphere along the given line and returns all hits encountered.
@@ -2633,10 +2651,11 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function sphere_trace_multi_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function sphere_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		deprecated: 'sphere_trace_multi_new' was renamed to 'sphere_trace_multi'.
 	**/
+	@:deprecated
 	static public function sphere_trace_multi_new():Void;
 	/**
 		X.sphere_trace_single(world_context_object, start, end, radius, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
@@ -2662,7 +2681,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function sphere_trace_single(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function sphere_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.sphere_trace_single_by_profile(world_context_object, start, end, radius, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a sphere against the world and return the first blocking hit using a specific profile
@@ -2686,7 +2705,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function sphere_trace_single_by_profile(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function sphere_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		X.sphere_trace_single_for_objects(world_context_object, start, end, radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a sphere along the given line and returns the first hit encountered.
@@ -2711,10 +2730,11 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function sphere_trace_single_for_objects(world_context_object:Dynamic, start:Dynamic, end:Dynamic, radius:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, ignore_self:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):Dynamic;
+	static public function sphere_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):Dynamic;
 	/**
 		deprecated: 'sphere_trace_single_new' was renamed to 'sphere_trace_single'.
 	**/
+	@:deprecated
 	static public function sphere_trace_single_new():Void;
 	/**
 		X.timer_exists(object, function_name) -> bool
@@ -2727,7 +2747,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists.
 	**/
-	static public function timer_exists(object:Dynamic, function_name:Dynamic):Bool;
+	static public function timer_exists(object:unreal.Object, function_name:String):Bool;
 	/**
 		X.timer_exists_delegate(delegate) -> bool
 		Returns true is a timer for the given delegate exists, false otherwise.
@@ -2739,7 +2759,8 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists.
 	**/
-	static public function timer_exists_delegate(delegate:Dynamic):Bool;
+	@:deprecated
+	static public function timer_exists_delegate(delegate:unreal.TimerDynamicDelegate):Bool;
 	/**
 		X.timer_exists_handle(world_context_object, handle) -> bool
 		Returns true is a timer for the given handle exists, false otherwise.
@@ -2751,7 +2772,7 @@ package unreal;
 		Returns:
 		    bool: True if the timer exists.
 	**/
-	static public function timer_exists_handle(world_context_object:Dynamic, handle:Dynamic):Bool;
+	static public function timer_exists_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Bool;
 	/**
 		X.transact_object(object) -> None
 		Notify the current transaction (if any) that this object is about to be modified and should be placed into the undo buffer.
@@ -2761,7 +2782,7 @@ package unreal;
 		Args:
 		    object (Object): The object that is about to be modified.
 	**/
-	static public function transact_object(object:Dynamic):Void;
+	static public function transact_object(object:unreal.Object):Void;
 	/**
 		X.un_pause_timer(object, function_name) -> None
 		Resumes a paused timer from its current elapsed time.
@@ -2770,7 +2791,7 @@ package unreal;
 		    object (Object): Object that implements the delegate function. Defaults to self (this blueprint)
 		    function_name (str): Delegate function name. Can be a K2 function or a Custom Event.
 	**/
-	static public function un_pause_timer(object:Dynamic, function_name:Dynamic):Void;
+	static public function un_pause_timer(object:unreal.Object, function_name:String):Void;
 	/**
 		X.un_pause_timer_delegate(delegate) -> None
 		Resumes a paused timer from its current elapsed time.
@@ -2779,7 +2800,8 @@ package unreal;
 		Args:
 		    delegate (TimerDynamicDelegate):
 	**/
-	static public function un_pause_timer_delegate(delegate:Dynamic):Void;
+	@:deprecated
+	static public function un_pause_timer_delegate(delegate:unreal.TimerDynamicDelegate):Void;
 	/**
 		X.un_pause_timer_handle(world_context_object, handle) -> None
 		Resumes a paused timer from its current elapsed time.
@@ -2788,7 +2810,7 @@ package unreal;
 		    world_context_object (Object): 
 		    handle (TimerHandle): The handle of the timer to unpause.
 	**/
-	static public function un_pause_timer_handle(world_context_object:Dynamic, handle:Dynamic):Void;
+	static public function un_pause_timer_handle(world_context_object:unreal.Object, handle:unreal.TimerHandle):Void;
 	/**
 		X.unload_primary_asset(primary_asset_id) -> None
 		Unloads a primary asset, which allows it to be garbage collected if nothing else is referencing it
@@ -2796,7 +2818,7 @@ package unreal;
 		Args:
 		    primary_asset_id (PrimaryAssetId):
 	**/
-	static public function unload_primary_asset(primary_asset_id:Dynamic):Void;
+	static public function unload_primary_asset(primary_asset_id:unreal.PrimaryAssetId):Void;
 	/**
 		X.unload_primary_asset_list(primary_asset_id_list) -> None
 		Unloads a primary asset, which allows it to be garbage collected if nothing else is referencing it
@@ -2804,7 +2826,7 @@ package unreal;
 		Args:
 		    primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	static public function unload_primary_asset_list(primary_asset_id_list:Dynamic):Void;
+	static public function unload_primary_asset_list(primary_asset_id_list:unreal.Array):Void;
 	/**
 		X.unregister_for_remote_notifications() -> None
 		Requests Requests unregistering from receiving remote notifications to the user's device.

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FontFace") extern class FontFace extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(FontHinting):  [Read-Write] The hinting algorithm to use with the font face.
 	**/
 	public var hinting : unreal.FontHinting;

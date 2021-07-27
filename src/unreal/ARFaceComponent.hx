@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARFaceComponent") extern class ARFaceComponent extends unreal.ARComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Whether the mesh should be rotated so that it's facing out of the screen.
 	**/
 	public var face_out_of_screen : Bool;
@@ -21,7 +12,7 @@ package unreal;
 		Args:
 		    payload (ARFaceUpdatePayload):
 	**/
-	public function receive_add(payload:Dynamic):Void;
+	public function receive_add(payload:unreal.ARFaceUpdatePayload):Void;
 	/**
 		x.receive_update(payload) -> None
 		Event when native representation is updated, called on server and clients.
@@ -29,7 +20,7 @@ package unreal;
 		Args:
 		    payload (ARFaceUpdatePayload):
 	**/
-	public function receive_update(payload:Dynamic):Void;
+	public function receive_update(payload:unreal.ARFaceUpdatePayload):Void;
 	/**
 		(ARFaceUpdatePayload):  [Read-Only] Replicated Payload
 	**/
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    new_debug_mode (FaceComponentDebugMode):
 	**/
-	static public function set_face_component_debug_mode(new_debug_mode:Dynamic):Void;
+	static public function set_face_component_debug_mode(new_debug_mode:unreal.FaceComponentDebugMode):Void;
 	/**
 		(ARFaceTransformMixing):  [Read-Only] Determines how the transform from tracking data and the component's transform are mixed together.
 	**/

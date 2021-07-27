@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimSingleNodeInstance") extern class AnimSingleNodeInstance extends unreal.AnimInstance {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_animation_asset() -> AnimationAsset
 		Get the currently used asset
 		
@@ -35,7 +26,7 @@ package unreal;
 		    play_rate (float): 
 		    start_position (float):
 	**/
-	public function play_anim(is_looping:Dynamic, play_rate:Dynamic, start_position:Dynamic):Void;
+	public function play_anim(is_looping:Bool, play_rate:Float, start_position:Float):Void;
 	/**
 		x.set_animation_asset(new_asset, is_looping=True, play_rate=1.000000) -> None
 		Set New Asset - calls InitializeAnimation, for now we need MeshComponent *
@@ -45,7 +36,7 @@ package unreal;
 		    is_looping (bool): 
 		    play_rate (float):
 	**/
-	public function set_animation_asset(new_asset:Dynamic, is_looping:Dynamic, play_rate:Dynamic):Void;
+	public function set_animation_asset(new_asset:unreal.AnimationAsset, is_looping:Bool, play_rate:Float):Void;
 	/**
 		x.set_blend_space_input(blend_input) -> None
 		Set Blend Space Input
@@ -53,7 +44,7 @@ package unreal;
 		Args:
 		    blend_input (Vector):
 	**/
-	public function set_blend_space_input(blend_input:Dynamic):Void;
+	public function set_blend_space_input(blend_input:unreal.Vector):Void;
 	/**
 		x.set_looping(is_looping) -> None
 		Set Looping
@@ -61,7 +52,7 @@ package unreal;
 		Args:
 		    is_looping (bool):
 	**/
-	public function set_looping(is_looping:Dynamic):Void;
+	public function set_looping(is_looping:Bool):Void;
 	/**
 		x.set_play_rate(play_rate) -> None
 		Set Play Rate
@@ -69,7 +60,7 @@ package unreal;
 		Args:
 		    play_rate (float):
 	**/
-	public function set_play_rate(play_rate:Dynamic):Void;
+	public function set_play_rate(play_rate:Float):Void;
 	/**
 		x.set_playing(is_playing) -> None
 		Set Playing
@@ -77,7 +68,7 @@ package unreal;
 		Args:
 		    is_playing (bool):
 	**/
-	public function set_playing(is_playing:Dynamic):Void;
+	public function set_playing(is_playing:Bool):Void;
 	/**
 		x.set_position(position, fire_notifies=True) -> None
 		Set Position
@@ -86,7 +77,7 @@ package unreal;
 		    position (float): 
 		    fire_notifies (bool):
 	**/
-	public function set_position(position:Dynamic, fire_notifies:Dynamic):Void;
+	public function set_position(position:Float, fire_notifies:Bool):Void;
 	/**
 		x.set_position_with_previous_time(position, previous_time, fire_notifies=True) -> None
 		Set Position with Previous Time
@@ -96,7 +87,7 @@ package unreal;
 		    previous_time (float): 
 		    fire_notifies (bool):
 	**/
-	public function set_position_with_previous_time(position:Dynamic, previous_time:Dynamic, fire_notifies:Dynamic):Void;
+	public function set_position_with_previous_time(position:Float, previous_time:Float, fire_notifies:Bool):Void;
 	/**
 		x.set_preview_curve_override(pose_name, value, remove_if_zero) -> None
 		Set pose value
@@ -106,7 +97,7 @@ package unreal;
 		    value (float): 
 		    remove_if_zero (bool):
 	**/
-	public function set_preview_curve_override(pose_name:Dynamic, value:Dynamic, remove_if_zero:Dynamic):Void;
+	public function set_preview_curve_override(pose_name:unreal.Name, value:Float, remove_if_zero:Bool):Void;
 	/**
 		x.set_reverse(reverse) -> None
 		Set Reverse
@@ -114,7 +105,7 @@ package unreal;
 		Args:
 		    reverse (bool):
 	**/
-	public function set_reverse(reverse:Dynamic):Void;
+	public function set_reverse(reverse:Bool):Void;
 	/**
 		x.stop_anim() -> None
 		Stop Anim

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Texture") extern class Texture extends unreal.StreamableRenderAsset {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Static texture brightness adjustment (scales HSV value.)  (Non-destructive; Requires texture source art to be available.)
 	**/
 	public var adjust_brightness : Float;
@@ -101,7 +92,7 @@ package unreal;
 		    filename (str): The filename on disk to save as
 		    options (ImageWriteOptions): Parameters defining the various export options
 	**/
-	public function export_to_disk(filename:Dynamic, options:Dynamic):Void;
+	public function export_to_disk(filename:String, options:unreal.ImageWriteOptions):Void;
 	/**
 		(TextureFilter):  [Read-Write] The texture filtering mode to use when sampling this texture.
 	**/

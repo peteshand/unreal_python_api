@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LightComponent") extern class LightComponent extends unreal.LightComponentBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Whether the light should be injected into the Light Propagation Volume
 	**/
 	public var affect_dynamic_indirect_lighting : Bool;
@@ -102,7 +93,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_affect_dynamic_indirect_lighting(new_value:Dynamic):Void;
+	public function set_affect_dynamic_indirect_lighting(new_value:Bool):Void;
 	/**
 		x.set_affect_translucent_lighting(new_value) -> None
 		Set Affect Translucent Lighting
@@ -110,7 +101,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_affect_translucent_lighting(new_value:Dynamic):Void;
+	public function set_affect_translucent_lighting(new_value:Bool):Void;
 	/**
 		x.set_bloom_max_brightness(new_value) -> None
 		Set Bloom Max Brightness
@@ -118,7 +109,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_bloom_max_brightness(new_value:Dynamic):Void;
+	public function set_bloom_max_brightness(new_value:Float):Void;
 	/**
 		x.set_bloom_scale(new_value) -> None
 		Set Bloom Scale
@@ -126,7 +117,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_bloom_scale(new_value:Dynamic):Void;
+	public function set_bloom_scale(new_value:Float):Void;
 	/**
 		x.set_bloom_threshold(new_value) -> None
 		Set Bloom Threshold
@@ -134,7 +125,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_bloom_threshold(new_value:Dynamic):Void;
+	public function set_bloom_threshold(new_value:Float):Void;
 	/**
 		x.set_bloom_tint(new_value) -> None
 		Set Bloom Tint
@@ -142,10 +133,11 @@ package unreal;
 		Args:
 		    new_value (Color):
 	**/
-	public function set_bloom_tint(new_value:Dynamic):Void;
+	public function set_bloom_tint(new_value:unreal.Color):Void;
 	/**
 		deprecated: 'set_brightness' was renamed to 'set_intensity'.
 	**/
+	@:deprecated
 	public function set_brightness():Void;
 	/**
 		x.set_enable_light_shaft_bloom(new_value) -> None
@@ -154,7 +146,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_enable_light_shaft_bloom(new_value:Dynamic):Void;
+	public function set_enable_light_shaft_bloom(new_value:Bool):Void;
 	/**
 		x.set_force_cached_shadows_for_movable_primitives(new_value) -> None
 		Set Force Cached Shadows for Movable Primitives
@@ -162,7 +154,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_force_cached_shadows_for_movable_primitives(new_value:Dynamic):Void;
+	public function set_force_cached_shadows_for_movable_primitives(new_value:Bool):Void;
 	/**
 		x.set_ies_brightness_scale(new_value) -> None
 		Set IESBrightness Scale
@@ -170,7 +162,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_ies_brightness_scale(new_value:Dynamic):Void;
+	public function set_ies_brightness_scale(new_value:Float):Void;
 	/**
 		x.set_ies_texture(new_value) -> None
 		Set IESTexture
@@ -178,7 +170,7 @@ package unreal;
 		Args:
 		    new_value (TextureLightProfile):
 	**/
-	public function set_ies_texture(new_value:Dynamic):Void;
+	public function set_ies_texture(new_value:unreal.TextureLightProfile):Void;
 	/**
 		x.set_indirect_lighting_intensity(new_intensity) -> None
 		Set Indirect Lighting Intensity
@@ -186,7 +178,7 @@ package unreal;
 		Args:
 		    new_intensity (float):
 	**/
-	public function set_indirect_lighting_intensity(new_intensity:Dynamic):Void;
+	public function set_indirect_lighting_intensity(new_intensity:Float):Void;
 	/**
 		x.set_intensity(new_intensity) -> None
 		Set intensity of the light
@@ -194,7 +186,7 @@ package unreal;
 		Args:
 		    new_intensity (float):
 	**/
-	public function set_intensity(new_intensity:Dynamic):Void;
+	public function set_intensity(new_intensity:Float):Void;
 	/**
 		x.set_light_color(new_light_color, srgb=True) -> None
 		Set color of the light
@@ -203,7 +195,7 @@ package unreal;
 		    new_light_color (LinearColor): 
 		    srgb (bool):
 	**/
-	public function set_light_color(new_light_color:Dynamic, srgb:Dynamic):Void;
+	public function set_light_color(new_light_color:unreal.LinearColor, srgb:Bool):Void;
 	/**
 		x.set_light_function_disabled_brightness(new_value) -> None
 		Set Light Function Disabled Brightness
@@ -211,7 +203,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_light_function_disabled_brightness(new_value:Dynamic):Void;
+	public function set_light_function_disabled_brightness(new_value:Float):Void;
 	/**
 		x.set_light_function_fade_distance(new_light_function_fade_distance) -> None
 		Set Light Function Fade Distance
@@ -219,7 +211,7 @@ package unreal;
 		Args:
 		    new_light_function_fade_distance (float):
 	**/
-	public function set_light_function_fade_distance(new_light_function_fade_distance:Dynamic):Void;
+	public function set_light_function_fade_distance(new_light_function_fade_distance:Float):Void;
 	/**
 		x.set_light_function_material(new_light_function_material) -> None
 		Set Light Function Material
@@ -227,7 +219,7 @@ package unreal;
 		Args:
 		    new_light_function_material (MaterialInterface):
 	**/
-	public function set_light_function_material(new_light_function_material:Dynamic):Void;
+	public function set_light_function_material(new_light_function_material:unreal.MaterialInterface):Void;
 	/**
 		x.set_light_function_scale(new_light_function_scale) -> None
 		Set Light Function Scale
@@ -235,7 +227,7 @@ package unreal;
 		Args:
 		    new_light_function_scale (Vector):
 	**/
-	public function set_light_function_scale(new_light_function_scale:Dynamic):Void;
+	public function set_light_function_scale(new_light_function_scale:unreal.Vector):Void;
 	/**
 		x.set_lighting_channels(channel0, channel1, channel2) -> None
 		Set Lighting Channels
@@ -245,7 +237,7 @@ package unreal;
 		    channel1 (bool): 
 		    channel2 (bool):
 	**/
-	public function set_lighting_channels(channel0:Dynamic, channel1:Dynamic, channel2:Dynamic):Void;
+	public function set_lighting_channels(channel0:Bool, channel1:Bool, channel2:Bool):Void;
 	/**
 		x.set_shadow_bias(new_value) -> None
 		Set Shadow Bias
@@ -253,7 +245,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_bias(new_value:Dynamic):Void;
+	public function set_shadow_bias(new_value:Float):Void;
 	/**
 		x.set_shadow_slope_bias(new_value) -> None
 		Set Shadow Slope Bias
@@ -261,7 +253,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_slope_bias(new_value:Dynamic):Void;
+	public function set_shadow_slope_bias(new_value:Float):Void;
 	/**
 		x.set_specular_scale(new_value) -> None
 		Set Specular Scale
@@ -269,7 +261,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_specular_scale(new_value:Dynamic):Void;
+	public function set_specular_scale(new_value:Float):Void;
 	/**
 		x.set_temperature(new_temperature) -> None
 		Set Temperature
@@ -277,7 +269,7 @@ package unreal;
 		Args:
 		    new_temperature (float):
 	**/
-	public function set_temperature(new_temperature:Dynamic):Void;
+	public function set_temperature(new_temperature:Float):Void;
 	/**
 		x.set_transmission(new_value) -> None
 		Set Transmission
@@ -285,7 +277,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_transmission(new_value:Dynamic):Void;
+	public function set_transmission(new_value:Bool):Void;
 	/**
 		x.set_use_ies_brightness(new_value) -> None
 		Set Use IESBrightness
@@ -293,7 +285,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_use_ies_brightness(new_value:Dynamic):Void;
+	public function set_use_ies_brightness(new_value:Bool):Void;
 	/**
 		x.set_volumetric_scattering_intensity(new_intensity) -> None
 		Set Volumetric Scattering Intensity
@@ -301,7 +293,7 @@ package unreal;
 		Args:
 		    new_intensity (float):
 	**/
-	public function set_volumetric_scattering_intensity(new_intensity:Dynamic):Void;
+	public function set_volumetric_scattering_intensity(new_intensity:Float):Void;
 	/**
 		(float):  [Read-Only] Controls how accurate self shadowing of whole scene shadows from this light are.
 		At 0, shadows will start at the their caster surface, but there will be many self shadowing artifacts.

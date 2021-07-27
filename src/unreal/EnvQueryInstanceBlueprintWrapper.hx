@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EnvQueryInstanceBlueprintWrapper") extern class EnvQueryInstanceBlueprintWrapper extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_item_score(item_index) -> float
 		Get Item Score
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_item_score(item_index:Dynamic):Float;
+	public function get_item_score(item_index:Int):Float;
 	/**
 		x.get_query_results_as_actors() -> Array(Actor) or None
 		Outputs an array filled with resulting actors.  Note that it makes sense only if ItemType is a EnvQueryItemType_ActorBase-derived type.  Returns false if there is no valid result.
@@ -49,6 +40,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
+	@:deprecated
 	public function get_results_as_actors():Dynamic;
 	/**
 		x.get_results_as_locations() -> Array(Vector)
@@ -58,6 +50,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
+	@:deprecated
 	public function get_results_as_locations():Dynamic;
 	/**
 		(type(Class)):  [Read-Only] Item Type
@@ -83,5 +76,5 @@ package unreal;
 		    param_name (Name): 
 		    value (float):
 	**/
-	public function set_named_param(param_name:Dynamic, value:Dynamic):Void;
+	public function set_named_param(param_name:unreal.Name, value:Float):Void;
 }

@@ -2,11 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AbcCompressionSettings") extern class AbcCompressionSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("new")
-	public function _new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
 		(bool):  [Read-Write] Whether or not Matrix-only animation should be baked out as vertex animation (or skipped?)
 	**/
 	public var bake_matrix_animation : Bool;

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PlatformGameInstance") extern class PlatformGameInstance extends unreal.GameInstance {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(PlatformFailedToRegisterForRemoteNotificationsDelegate):  [Read-Write] called when the application fails to register for remote notifications
 	**/
 	public var application_failed_to_register_for_remote_notifications_delegate : unreal.PlatformFailedToRegisterForRemoteNotificationsDelegate;

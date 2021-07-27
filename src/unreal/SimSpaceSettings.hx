@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SimSpaceSettings") extern class SimSpaceSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Vector):  [Read-Write] Additional angular velocity that is added to the component angular velocity. This can be used to make the simulation act as if the actor is rotating
 		even when it is not. E.g., to apply physics to a character on a podium as the camera rotates around it, to emulate the podium itself rotating.
 		Vector is in world space. Units are rad/s.
@@ -20,6 +11,7 @@ package unreal;
 		(float):  [Read-Write] External Linear Drag
 		deprecated: ExternalLinearDrag is deprecated. Please use ExternalLinearDragV instead.
 	**/
+	@:deprecated
 	public var external_linear_drag : Float;
 	/**
 		(Vector):  [Read-Write] Additional linear drag applied to every body in addition to linear drag specified on them in the physics asset.

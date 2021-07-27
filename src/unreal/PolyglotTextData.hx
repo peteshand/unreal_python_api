@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PolyglotTextData") extern class PolyglotTextData extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(LocalizedTextSourceCategory):  [Read-Write] The category of this polyglot data.
 		This affects when and how the data is loaded into the text localization manager.:
 	**/

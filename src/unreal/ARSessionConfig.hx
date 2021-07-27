@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ARSessionConfig") extern class ARSessionConfig extends unreal.DataAsset {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_candidate_image(new_candidate_image) -> None
 		Add a new CandidateImage to the ARSessionConfig.
 		
 		Args:
 		    new_candidate_image (ARCandidateImage):
 	**/
-	public function add_candidate_image(new_candidate_image:Dynamic):Void;
+	public function add_candidate_image(new_candidate_image:unreal.ARCandidateImage):Void;
 	/**
 		x.add_candidate_object(candidate_object) -> None
 		
@@ -26,7 +17,7 @@ package unreal;
 		Args:
 		    candidate_object (ARCandidateObject):
 	**/
-	public function add_candidate_object(candidate_object:Dynamic):Void;
+	public function add_candidate_object(candidate_object:unreal.ARCandidateObject):Void;
 	/**
 		x.get_candidate_image_list() -> Array(ARCandidateImage)
 		
@@ -170,7 +161,7 @@ package unreal;
 		Args:
 		    candidate_objects (Array(ARCandidateObject)):
 	**/
-	public function set_candidate_object_list(candidate_objects:Dynamic):Void;
+	public function set_candidate_object_list(candidate_objects:unreal.Array):Void;
 	/**
 		x.set_desired_video_format(new_format) -> None
 		
@@ -179,7 +170,7 @@ package unreal;
 		Args:
 		    new_format (ARVideoFormat):
 	**/
-	public function set_desired_video_format(new_format:Dynamic):Void;
+	public function set_desired_video_format(new_format:unreal.ARVideoFormat):Void;
 	/**
 		x.set_enable_auto_focus(new_value) -> None
 		
@@ -188,7 +179,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_enable_auto_focus(new_value:Dynamic):Void;
+	public function set_enable_auto_focus(new_value:Bool):Void;
 	/**
 		x.set_face_tracking_direction(direction) -> None
 		
@@ -197,7 +188,7 @@ package unreal;
 		Args:
 		    direction (ARFaceTrackingDirection):
 	**/
-	public function set_face_tracking_direction(direction:Dynamic):Void;
+	public function set_face_tracking_direction(direction:unreal.ARFaceTrackingDirection):Void;
 	/**
 		x.set_face_tracking_update(update) -> None
 		
@@ -206,7 +197,7 @@ package unreal;
 		Args:
 		    update (ARFaceTrackingUpdate):
 	**/
-	public function set_face_tracking_update(update:Dynamic):Void;
+	public function set_face_tracking_update(update:unreal.ARFaceTrackingUpdate):Void;
 	/**
 		x.set_reset_camera_tracking(new_value) -> None
 		
@@ -215,7 +206,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_reset_camera_tracking(new_value:Dynamic):Void;
+	public function set_reset_camera_tracking(new_value:Bool):Void;
 	/**
 		x.set_reset_tracked_objects(new_value) -> None
 		
@@ -224,7 +215,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_reset_tracked_objects(new_value:Dynamic):Void;
+	public function set_reset_tracked_objects(new_value:Bool):Void;
 	/**
 		x.set_scene_reconstruction_method(scene_reconstruction_method) -> None
 		
@@ -233,7 +224,7 @@ package unreal;
 		Args:
 		    scene_reconstruction_method (ARSceneReconstruction):
 	**/
-	public function set_scene_reconstruction_method(scene_reconstruction_method:Dynamic):Void;
+	public function set_scene_reconstruction_method(scene_reconstruction_method:unreal.ARSceneReconstruction):Void;
 	/**
 		x.set_session_tracking_feature_to_enable(session_tracking_feature) -> None
 		
@@ -242,7 +233,7 @@ package unreal;
 		Args:
 		    session_tracking_feature (ARSessionTrackingFeature):
 	**/
-	public function set_session_tracking_feature_to_enable(session_tracking_feature:Dynamic):Void;
+	public function set_session_tracking_feature_to_enable(session_tracking_feature:unreal.ARSessionTrackingFeature):Void;
 	/**
 		x.set_world_map_data(world_map_data) -> None
 		
@@ -251,7 +242,7 @@ package unreal;
 		Args:
 		    world_map_data (Array(uint8)):
 	**/
-	public function set_world_map_data(world_map_data:Dynamic):Void;
+	public function set_world_map_data(world_map_data:unreal.Array):Void;
 	/**
 		x.should_enable_auto_focus() -> bool
 		

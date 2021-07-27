@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PhysicsHandleComponent") extern class PhysicsHandleComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] Angular damping of the handle spring
 	**/
 	public var angular_damping : Float;
@@ -49,7 +40,8 @@ package unreal;
 		    grab_location (Vector): 
 		    constrain_rotation (bool):
 	**/
-	public function grab_component(component:Dynamic, bone_name:Dynamic, grab_location:Dynamic, constrain_rotation:Dynamic):Void;
+	@:deprecated
+	public function grab_component(component:unreal.PrimitiveComponent, bone_name:unreal.Name, grab_location:unreal.Vector, constrain_rotation:Bool):Void;
 	/**
 		x.grab_component_at_location(component, bone_name, grab_location) -> None
 		Grab the specified component at a given location. Does NOT constraint rotation which means the handle will pivot about GrabLocation.
@@ -59,7 +51,7 @@ package unreal;
 		    bone_name (Name): 
 		    grab_location (Vector):
 	**/
-	public function grab_component_at_location(component:Dynamic, bone_name:Dynamic, grab_location:Dynamic):Void;
+	public function grab_component_at_location(component:unreal.PrimitiveComponent, bone_name:unreal.Name, grab_location:unreal.Vector):Void;
 	/**
 		x.grab_component_at_location_with_rotation(component, bone_name, location, rotation) -> None
 		Grab the specified component at a given location and rotation. Constrains rotation.
@@ -70,7 +62,7 @@ package unreal;
 		    location (Vector): 
 		    rotation (Rotator):
 	**/
-	public function grab_component_at_location_with_rotation(component:Dynamic, bone_name:Dynamic, location:Dynamic, rotation:Dynamic):Void;
+	public function grab_component_at_location_with_rotation(component:unreal.PrimitiveComponent, bone_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator):Void;
 	/**
 		(bool):  [Read-Write] Interpolate Target
 	**/
@@ -99,7 +91,7 @@ package unreal;
 		Args:
 		    new_angular_damping (float):
 	**/
-	public function set_angular_damping(new_angular_damping:Dynamic):Void;
+	public function set_angular_damping(new_angular_damping:Float):Void;
 	/**
 		x.set_angular_stiffness(new_angular_stiffness) -> None
 		Set angular stiffness
@@ -107,7 +99,7 @@ package unreal;
 		Args:
 		    new_angular_stiffness (float):
 	**/
-	public function set_angular_stiffness(new_angular_stiffness:Dynamic):Void;
+	public function set_angular_stiffness(new_angular_stiffness:Float):Void;
 	/**
 		x.set_interpolation_speed(new_interpolation_speed) -> None
 		Set interpolation speed
@@ -115,7 +107,7 @@ package unreal;
 		Args:
 		    new_interpolation_speed (float):
 	**/
-	public function set_interpolation_speed(new_interpolation_speed:Dynamic):Void;
+	public function set_interpolation_speed(new_interpolation_speed:Float):Void;
 	/**
 		x.set_linear_damping(new_linear_damping) -> None
 		Set linear damping
@@ -123,7 +115,7 @@ package unreal;
 		Args:
 		    new_linear_damping (float):
 	**/
-	public function set_linear_damping(new_linear_damping:Dynamic):Void;
+	public function set_linear_damping(new_linear_damping:Float):Void;
 	/**
 		x.set_linear_stiffness(new_linear_stiffness) -> None
 		Set linear stiffness
@@ -131,7 +123,7 @@ package unreal;
 		Args:
 		    new_linear_stiffness (float):
 	**/
-	public function set_linear_stiffness(new_linear_stiffness:Dynamic):Void;
+	public function set_linear_stiffness(new_linear_stiffness:Float):Void;
 	/**
 		x.set_target_location(new_location) -> None
 		Set the target location
@@ -139,7 +131,7 @@ package unreal;
 		Args:
 		    new_location (Vector):
 	**/
-	public function set_target_location(new_location:Dynamic):Void;
+	public function set_target_location(new_location:unreal.Vector):Void;
 	/**
 		x.set_target_location_and_rotation(new_location, new_rotation) -> None
 		Set target location and rotation
@@ -148,7 +140,7 @@ package unreal;
 		    new_location (Vector): 
 		    new_rotation (Rotator):
 	**/
-	public function set_target_location_and_rotation(new_location:Dynamic, new_rotation:Dynamic):Void;
+	public function set_target_location_and_rotation(new_location:unreal.Vector, new_rotation:unreal.Rotator):Void;
 	/**
 		x.set_target_rotation(new_rotation) -> None
 		Set the target rotation
@@ -156,7 +148,7 @@ package unreal;
 		Args:
 		    new_rotation (Rotator):
 	**/
-	public function set_target_rotation(new_rotation:Dynamic):Void;
+	public function set_target_rotation(new_rotation:unreal.Rotator):Void;
 	/**
 		(bool):  [Read-Only] Soft Angular Constraint
 	**/

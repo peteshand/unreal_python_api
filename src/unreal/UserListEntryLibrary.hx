@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "UserListEntryLibrary") extern class UserListEntryLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_owning_list_view(user_list_entry) -> ListViewBase
 		Returns the list view that contains this entry.
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    ListViewBase:
 	**/
-	static public function get_owning_list_view(user_list_entry:Dynamic):unreal.ListViewBase;
+	static public function get_owning_list_view(user_list_entry:unreal.UserListEntry):unreal.ListViewBase;
 	/**
 		X.is_list_item_expanded(user_list_entry) -> bool
 		Returns true if the item represented by this entry is currently expanded and showing its children. Tree view entries only.
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_list_item_expanded(user_list_entry:Dynamic):Bool;
+	static public function is_list_item_expanded(user_list_entry:unreal.UserListEntry):Bool;
 	/**
 		X.is_list_item_selected(user_list_entry) -> bool
 		Returns true if the item represented by this entry is currently selected in the owning list view.
@@ -42,5 +33,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_list_item_selected(user_list_entry:Dynamic):Bool;
+	static public function is_list_item_selected(user_list_entry:unreal.UserListEntry):Bool;
 }

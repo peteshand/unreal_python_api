@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARTraceResultLibrary") extern class ARTraceResultLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_distance_from_camera(trace_result) -> float
 		
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    float: the distance from the camera to the traced location in Unreal Units.
 	**/
-	static public function get_distance_from_camera(trace_result:Dynamic):Float;
+	static public function get_distance_from_camera(trace_result:unreal.ARTraceResult):Float;
 	/**
 		X.get_local_to_tracking_transform(trace_result) -> Transform
 		
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    Transform: The transform of the trace result in tracking space (after it is modified by the \c AlignmentTransform). \see SetAlignmentTransform()
 	**/
-	static public function get_local_to_tracking_transform(trace_result:Dynamic):unreal.Transform;
+	static public function get_local_to_tracking_transform(trace_result:unreal.ARTraceResult):unreal.Transform;
 	/**
 		X.get_local_to_world_transform(trace_result) -> Transform
 		
@@ -42,7 +33,7 @@ package unreal;
 		Returns:
 		    Transform: Get the transform of the trace result in Unreal World Space.
 	**/
-	static public function get_local_to_world_transform(trace_result:Dynamic):unreal.Transform;
+	static public function get_local_to_world_transform(trace_result:unreal.ARTraceResult):unreal.Transform;
 	/**
 		X.get_local_transform(trace_result) -> Transform
 		
@@ -53,7 +44,7 @@ package unreal;
 		Returns:
 		    Transform: Get the transform of the trace result in the AR system's local space.
 	**/
-	static public function get_local_transform(trace_result:Dynamic):unreal.Transform;
+	static public function get_local_transform(trace_result:unreal.ARTraceResult):unreal.Transform;
 	/**
 		X.get_trace_channel(trace_result) -> ARLineTraceChannels
 		
@@ -64,7 +55,7 @@ package unreal;
 		Returns:
 		    ARLineTraceChannels: Get the type of the tracked object (if any) that effected this trace result.
 	**/
-	static public function get_trace_channel(trace_result:Dynamic):unreal.ARLineTraceChannels;
+	static public function get_trace_channel(trace_result:unreal.ARTraceResult):unreal.ARLineTraceChannels;
 	/**
 		X.get_tracked_geometry(trace_result) -> ARTrackedGeometry
 		
@@ -75,5 +66,5 @@ package unreal;
 		Returns:
 		    ARTrackedGeometry: Get the real-world object (as observed by the Augmented Reality system) that was intersected by the line trace.
 	**/
-	static public function get_tracked_geometry(trace_result:Dynamic):unreal.ARTrackedGeometry;
+	static public function get_tracked_geometry(trace_result:unreal.ARTraceResult):unreal.ARTrackedGeometry;
 }

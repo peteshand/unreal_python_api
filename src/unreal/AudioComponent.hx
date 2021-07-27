@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "AudioComponent") extern class AudioComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.adjust_attenuation(attenuation_settings) -> None
 		Modify the attenuation settings of the audio component
 		
 		Args:
 		    attenuation_settings (SoundAttenuationSettings):
 	**/
-	public function adjust_attenuation(attenuation_settings:Dynamic):Void;
+	public function adjust_attenuation(attenuation_settings:unreal.SoundAttenuationSettings):Void;
 	/**
 		x.adjust_volume(adjust_volume_duration, adjust_volume_level, fade_curve=AudioFaderCurve.LINEAR) -> None
 		This will allow one to adjust the volume of an AudioComponent on the fly
@@ -27,7 +18,7 @@ package unreal;
 		    adjust_volume_level (float): 
 		    fade_curve (AudioFaderCurve):
 	**/
-	public function adjust_volume(adjust_volume_duration:Dynamic, adjust_volume_level:Dynamic, fade_curve:Dynamic):Void;
+	public function adjust_volume(adjust_volume_duration:Float, adjust_volume_level:Float, fade_curve:unreal.AudioFaderCurve):Void;
 	/**
 		(bool):  [Read-Write] Overrides spatialization enablement in either the attenuation asset or on this audio component's attenuation settings override.
 	**/
@@ -104,7 +95,7 @@ package unreal;
 		    start_time (float): 
 		    fade_curve (AudioFaderCurve):
 	**/
-	public function fade_in(fade_in_duration:Dynamic, fade_volume_level:Dynamic, start_time:Dynamic, fade_curve:Dynamic):Void;
+	public function fade_in(fade_in_duration:Float, fade_volume_level:Float, start_time:Float, fade_curve:unreal.AudioFaderCurve):Void;
 	/**
 		x.fade_out(fade_out_duration, fade_volume_level, fade_curve=AudioFaderCurve.LINEAR) -> None
 		This is used in place of "stop" when it is desired to fade the volume of the sound before stopping.
@@ -118,7 +109,7 @@ package unreal;
 		    fade_volume_level (float): the percentage of the AudioComponents's calculated volume in which to fade to
 		    fade_curve (AudioFaderCurve):
 	**/
-	public function fade_out(fade_out_duration:Dynamic, fade_volume_level:Dynamic, fade_curve:Dynamic):Void;
+	public function fade_out(fade_out_duration:Float, fade_volume_level:Float, fade_curve:unreal.AudioFaderCurve):Void;
 	/**
 		x.get_attenuation_settings_to_apply() -> SoundAttenuationSettings or None
 		BP Get Attenuation Settings to Apply
@@ -167,7 +158,7 @@ package unreal;
 		
 		    out_sound_wave_spectral_data (Array(SoundWaveSpectralData)):
 	**/
-	public function get_cooked_fft_data(frequencies_to_get:Dynamic):Dynamic;
+	public function get_cooked_fft_data(frequencies_to_get:unreal.Array):Dynamic;
 	/**
 		x.get_cooked_fft_data_for_all_playing_sounds() -> Array(SoundWaveSpectralDataPerSound) or None
 		Retrieves the current-time cooked spectral data of the sounds playing audio component.
@@ -289,10 +280,12 @@ package unreal;
 	/**
 		deprecated: 'pitch_multiplier_max' was renamed to 'pitch_modulation_max'.
 	**/
+	@:deprecated
 	public var pitch_multiplier_max : Dynamic;
 	/**
 		deprecated: 'pitch_multiplier_min' was renamed to 'pitch_modulation_min'.
 	**/
+	@:deprecated
 	public var pitch_multiplier_min : Dynamic;
 	/**
 		x.play(start_time=0.000000) -> None
@@ -301,7 +294,7 @@ package unreal;
 		Args:
 		    start_time (float):
 	**/
-	public function play(start_time:Dynamic):Void;
+	public function play(start_time:Float):Void;
 	/**
 		x.play_quantized(world_context_object, clock_handle, quantization_boundary, delegate, start_time=0.000000, fade_in_duration=0.000000, fade_volume_level=1.000000, fade_curve=AudioFaderCurve.LINEAR) -> (clock_handle=QuartzClockHandle, quantization_boundary=QuartzQuantizationBoundary)
 		Start a sound playing on an audio component on a given quantization boundary with the handle to an existing clock
@@ -323,7 +316,7 @@ package unreal;
 		
 		    quantization_boundary (QuartzQuantizationBoundary):
 	**/
-	public function play_quantized(world_context_object:Dynamic, clock_handle:Dynamic, quantization_boundary:Dynamic, delegate:Dynamic, start_time:Dynamic, fade_in_duration:Dynamic, fade_volume_level:Dynamic, fade_curve:Dynamic):python.Tuple<Dynamic>;
+	public function play_quantized(world_context_object:unreal.Object, clock_handle:unreal.QuartzClockHandle, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, start_time:Float, fade_in_duration:Float, fade_volume_level:Float, fade_curve:unreal.AudioFaderCurve):python.Tuple<Dynamic>;
 	/**
 		(float):  [Read-Write] A priority value that is used for sounds that play on this component that scales against final output volume.
 	**/
@@ -337,7 +330,7 @@ package unreal;
 		    audio_bus (AudioBus): 
 		    source_bus_send_level (float):
 	**/
-	public function set_audio_bus_send_post_effect(audio_bus:Dynamic, source_bus_send_level:Dynamic):Void;
+	public function set_audio_bus_send_post_effect(audio_bus:unreal.AudioBus, source_bus_send_level:Float):Void;
 	/**
 		x.set_audio_bus_send_pre_effect(audio_bus, audio_bus_send_level) -> None
 		Sets how much audio the sound should send to the given Audio Bus (PRE Source Effects).
@@ -347,7 +340,7 @@ package unreal;
 		    audio_bus (AudioBus): 
 		    audio_bus_send_level (float):
 	**/
-	public function set_audio_bus_send_pre_effect(audio_bus:Dynamic, audio_bus_send_level:Dynamic):Void;
+	public function set_audio_bus_send_pre_effect(audio_bus:unreal.AudioBus, audio_bus_send_level:Float):Void;
 	/**
 		x.set_bool_parameter(name, bool) -> None
 		Set a boolean instance parameter for use in sound cues played by this audio component
@@ -356,7 +349,7 @@ package unreal;
 		    name (Name): 
 		    bool (bool):
 	**/
-	public function set_bool_parameter(name:Dynamic, bool:Dynamic):Void;
+	public function set_bool_parameter(name:unreal.Name, bool:Bool):Void;
 	/**
 		x.set_float_parameter(name, float) -> None
 		Set a float instance parameter for use in sound cues played by this audio component
@@ -365,7 +358,7 @@ package unreal;
 		    name (Name): 
 		    float (float):
 	**/
-	public function set_float_parameter(name:Dynamic, float:Dynamic):Void;
+	public function set_float_parameter(name:unreal.Name, float:Float):Void;
 	/**
 		x.set_int_parameter(name, int) -> None
 		Set an integer instance parameter for use in sound cues played by this audio component
@@ -374,7 +367,7 @@ package unreal;
 		    name (Name): 
 		    int (int32):
 	**/
-	public function set_int_parameter(name:Dynamic, int:Dynamic):Void;
+	public function set_int_parameter(name:unreal.Name, int:Int):Void;
 	/**
 		x.set_low_pass_filter_enabled(low_pass_filter_enabled) -> None
 		Sets whether or not the low pass filter is enabled on the audio component.
@@ -382,7 +375,7 @@ package unreal;
 		Args:
 		    low_pass_filter_enabled (bool):
 	**/
-	public function set_low_pass_filter_enabled(low_pass_filter_enabled:Dynamic):Void;
+	public function set_low_pass_filter_enabled(low_pass_filter_enabled:Bool):Void;
 	/**
 		x.set_low_pass_filter_frequency(low_pass_filter_frequency) -> None
 		Sets lowpass filter frequency of the audio component.
@@ -390,7 +383,7 @@ package unreal;
 		Args:
 		    low_pass_filter_frequency (float):
 	**/
-	public function set_low_pass_filter_frequency(low_pass_filter_frequency:Dynamic):Void;
+	public function set_low_pass_filter_frequency(low_pass_filter_frequency:Float):Void;
 	/**
 		x.set_paused(pause) -> None
 		Pause an audio component playing its sound cue, issue any delegates if needed
@@ -398,7 +391,7 @@ package unreal;
 		Args:
 		    pause (bool):
 	**/
-	public function set_paused(pause:Dynamic):Void;
+	public function set_paused(pause:Bool):Void;
 	/**
 		x.set_pitch_multiplier(new_pitch_multiplier) -> None
 		Set a new pitch multiplier
@@ -406,7 +399,7 @@ package unreal;
 		Args:
 		    new_pitch_multiplier (float):
 	**/
-	public function set_pitch_multiplier(new_pitch_multiplier:Dynamic):Void;
+	public function set_pitch_multiplier(new_pitch_multiplier:Float):Void;
 	/**
 		x.set_sound(new_sound) -> None
 		Set what sound is played by this component
@@ -414,7 +407,7 @@ package unreal;
 		Args:
 		    new_sound (SoundBase):
 	**/
-	public function set_sound(new_sound:Dynamic):Void;
+	public function set_sound(new_sound:unreal.SoundBase):Void;
 	/**
 		x.set_source_bus_send_post_effect(sound_source_bus, source_bus_send_level) -> None
 		Sets how much audio the sound should send to the given Source Bus (POST Source Effects).
@@ -424,7 +417,7 @@ package unreal;
 		    sound_source_bus (SoundSourceBus): 
 		    source_bus_send_level (float):
 	**/
-	public function set_source_bus_send_post_effect(sound_source_bus:Dynamic, source_bus_send_level:Dynamic):Void;
+	public function set_source_bus_send_post_effect(sound_source_bus:unreal.SoundSourceBus, source_bus_send_level:Float):Void;
 	/**
 		x.set_source_bus_send_pre_effect(sound_source_bus, source_bus_send_level) -> None
 		Sets how much audio the sound should send to the given Source Bus (PRE Source Effects).
@@ -434,7 +427,7 @@ package unreal;
 		    sound_source_bus (SoundSourceBus): 
 		    source_bus_send_level (float):
 	**/
-	public function set_source_bus_send_pre_effect(sound_source_bus:Dynamic, source_bus_send_level:Dynamic):Void;
+	public function set_source_bus_send_pre_effect(sound_source_bus:unreal.SoundSourceBus, source_bus_send_level:Float):Void;
 	/**
 		x.set_submix_send(submix, send_level) -> None
 		Sets how much audio the sound should send to the given submix.
@@ -443,7 +436,7 @@ package unreal;
 		    submix (SoundSubmixBase): 
 		    send_level (float):
 	**/
-	public function set_submix_send(submix:Dynamic, send_level:Dynamic):Void;
+	public function set_submix_send(submix:unreal.SoundSubmixBase, send_level:Float):Void;
 	/**
 		x.set_ui_sound(ui_sound) -> None
 		Set whether sounds generated by this audio component should be considered UI sounds
@@ -451,7 +444,7 @@ package unreal;
 		Args:
 		    ui_sound (bool):
 	**/
-	public function set_ui_sound(ui_sound:Dynamic):Void;
+	public function set_ui_sound(ui_sound:Bool):Void;
 	/**
 		x.set_volume_multiplier(new_volume_multiplier) -> None
 		Set a new volume multiplier
@@ -459,7 +452,7 @@ package unreal;
 		Args:
 		    new_volume_multiplier (float):
 	**/
-	public function set_volume_multiplier(new_volume_multiplier:Dynamic):Void;
+	public function set_volume_multiplier(new_volume_multiplier:Float):Void;
 	/**
 		x.set_wave_parameter(name, wave) -> None
 		Set a sound wave instance parameter for use in sound cues played by this audio component
@@ -468,7 +461,7 @@ package unreal;
 		    name (Name): 
 		    wave (SoundWave):
 	**/
-	public function set_wave_parameter(name:Dynamic, wave:Dynamic):Void;
+	public function set_wave_parameter(name:unreal.Name, wave:unreal.SoundWave):Void;
 	/**
 		(SoundBase):  [Read-Write] The sound to be played
 	**/
@@ -489,7 +482,7 @@ package unreal;
 		Args:
 		    delay_time (float):
 	**/
-	public function stop_delayed(delay_time:Dynamic):Void;
+	public function stop_delayed(delay_time:Float):Void;
 	/**
 		(float):  [Read-Write] Used by the subtitle manager to prioritize subtitles wave instances spawned by this component.
 	**/
@@ -513,9 +506,11 @@ package unreal;
 	/**
 		deprecated: 'volume_multiplier_max' was renamed to 'volume_modulation_max'.
 	**/
+	@:deprecated
 	public var volume_multiplier_max : Dynamic;
 	/**
 		deprecated: 'volume_multiplier_min' was renamed to 'volume_modulation_min'.
 	**/
+	@:deprecated
 	public var volume_multiplier_min : Dynamic;
 }

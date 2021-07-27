@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "UserDefinedImageCaptureProtocol") extern class UserDefinedImageCaptureProtocol extends unreal.UserDefinedCaptureProtocol {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(int32):  [Read-Write] The compression quality for the image type. For EXRs, 0 = Default ZIP compression, 1 = No compression, PNGs and JPEGs expect a value between 0 and 100
 	**/
 	public var compression_quality : Int;
@@ -35,7 +26,7 @@ package unreal;
 		Returns:
 		    str: A fully qualified file name
 	**/
-	public function generate_filename_for_buffer(buffer:Dynamic, stream_id:Dynamic):String;
+	public function generate_filename_for_buffer(buffer:unreal.Texture, stream_id:unreal.CapturedPixelsID):String;
 	/**
 		x.generate_filename_for_current_frame() -> str
 		* Generate a filename for the current frame using this protocol's file name formatter
@@ -61,5 +52,5 @@ package unreal;
 		Returns:
 		    A fully qualified file name for the current frame number
 	**/
-	public function write_image_to_disk(pixel_data:Dynamic, stream_id:Dynamic, frame_metrics:Dynamic, copy_image_data:Dynamic):Dynamic;
+	public function write_image_to_disk(pixel_data:unreal.CapturedPixels, stream_id:unreal.CapturedPixelsID, frame_metrics:unreal.FrameMetrics, copy_image_data:Bool):Dynamic;
 }

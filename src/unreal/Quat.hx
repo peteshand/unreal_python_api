@@ -3,15 +3,6 @@ package unreal;
 @:pythonImport("unreal", "Quat") extern class Quat extends unreal.StructBase {
 	static public var IDENTITY : Dynamic;
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add(b) -> Quat
 		Returns addition of Vector A and Vector B (A + B)
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	public function add(b:Dynamic):unreal.Quat;
+	public function add(b:unreal.Quat):unreal.Quat;
 	/**
 		x.angular_distance(b) -> float
 		Find the angular distance/difference between two rotation quaternions.
@@ -32,7 +23,7 @@ package unreal;
 		Returns:
 		    float: angular distance in radians
 	**/
-	public function angular_distance(b:Dynamic):Float;
+	public function angular_distance(b:unreal.Quat):Float;
 	/**
 		x.ensure_shortest_arc_to(b) -> None
 		Modify the quaternion to ensure that the delta between it and B represents the shortest possible rotation angle.
@@ -40,7 +31,7 @@ package unreal;
 		Args:
 		    b (Quat):
 	**/
-	public function ensure_shortest_arc_to(b:Dynamic):Void;
+	public function ensure_shortest_arc_to(b:unreal.Quat):Void;
 	/**
 		x.equals(b, tolerance=0.000100) -> bool
 		Returns true if Quaternion A is equal to Quaternion B (A == B) within a specified error tolerance
@@ -52,7 +43,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equals(b:Dynamic, tolerance:Dynamic):Bool;
+	public function equals(b:unreal.Quat, tolerance:Float):Bool;
 	/**
 		x.euler() -> Vector
 		Convert a Quaternion into floating-point Euler angles (in degrees).
@@ -140,7 +131,7 @@ package unreal;
 		Returns:
 		    bool: true if Quaternion is a normalized Identity Quaternion.
 	**/
-	public function is_identity(tolerance:Dynamic):Bool;
+	public function is_identity(tolerance:Float):Bool;
 	/**
 		x.is_non_finite() -> bool
 		Determine if there are any non-finite values (NaN or Inf) in this Quat.
@@ -178,7 +169,7 @@ package unreal;
 		Returns:
 		    Quat: The result of multiplication (A * B).
 	**/
-	public function multiply(b:Dynamic):unreal.Quat;
+	public function multiply(b:unreal.Quat):unreal.Quat;
 	/**
 		x.normalize(tolerance=0.000100) -> None
 		Normalize this quaternion if it is large enough as compared to the supplied tolerance.
@@ -187,7 +178,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of quaternion for normalization.
 	**/
-	public function normalize(tolerance:Dynamic):Void;
+	public function normalize(tolerance:Float):Void;
 	/**
 		x.normalized(tolerance=0.000100) -> Quat
 		Get a normalized copy of this quaternion.
@@ -199,7 +190,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	public function normalized(tolerance:Dynamic):unreal.Quat;
+	public function normalized(tolerance:Float):unreal.Quat;
 	/**
 		x.not_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if Quat A is not equal to Quat B (A != B) within a specified error tolerance
@@ -211,7 +202,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
+	public function not_equal(b:unreal.Quat, error_tolerance:Float):Bool;
 	/**
 		x.rotate_vector(v) -> Vector
 		Rotate a vector by this quaternion.
@@ -222,7 +213,7 @@ package unreal;
 		Returns:
 		    Vector: vector after rotation
 	**/
-	public function rotate_vector(v:Dynamic):unreal.Vector;
+	public function rotate_vector(v:unreal.Vector):unreal.Vector;
 	/**
 		x.rotator() -> Rotator
 		Convert to Rotator representation of this Quaternion.
@@ -241,7 +232,7 @@ package unreal;
 		    z (float): 
 		    w (float):
 	**/
-	public function set_components(x:Dynamic, y:Dynamic, z:Dynamic, w:Dynamic):Void;
+	public function set_components(x:Float, y:Float, z:Float, w:Float):Void;
 	/**
 		x.set_from_euler(euler) -> None
 		Convert a vector of floating-point Euler angles (in degrees) into a Quaternion.
@@ -249,7 +240,7 @@ package unreal;
 		Args:
 		    euler (Vector): the Euler angles
 	**/
-	public function set_from_euler(euler:Dynamic):Void;
+	public function set_from_euler(euler:unreal.Vector):Void;
 	/**
 		x.size() -> float
 		Get the length of the quaternion.
@@ -276,7 +267,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	public function subtract(b:Dynamic):unreal.Quat;
+	public function subtract(b:unreal.Quat):unreal.Quat;
 	/**
 		x.unrotate_vector(v) -> Vector
 		Rotate a vector by the inverse of this quaternion.
@@ -287,7 +278,7 @@ package unreal;
 		Returns:
 		    Vector: vector after rotation by the inverse of this quaternion.
 	**/
-	public function unrotate_vector(v:Dynamic):unreal.Vector;
+	public function unrotate_vector(v:unreal.Vector):unreal.Vector;
 	/**
 		x.vector_forward() -> Vector
 		Get the forward direction (X axis) after it has been rotated by this Quaternion.

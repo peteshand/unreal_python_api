@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Border") extern class Border extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SlateBrush):  [Read-Only] Brush to drag as the background
 	**/
 	public var background : unreal.SlateBrush;
@@ -52,7 +43,7 @@ package unreal;
 		Args:
 		    brush (SlateBrush):
 	**/
-	public function set_brush(brush:Dynamic):Void;
+	public function set_brush(brush:unreal.SlateBrush):Void;
 	/**
 		x.set_brush_color(brush_color) -> None
 		Set Brush Color
@@ -60,7 +51,7 @@ package unreal;
 		Args:
 		    brush_color (LinearColor):
 	**/
-	public function set_brush_color(brush_color:Dynamic):Void;
+	public function set_brush_color(brush_color:unreal.LinearColor):Void;
 	/**
 		x.set_brush_from_asset(asset) -> None
 		Set Brush from Asset
@@ -68,7 +59,7 @@ package unreal;
 		Args:
 		    asset (SlateBrushAsset):
 	**/
-	public function set_brush_from_asset(asset:Dynamic):Void;
+	public function set_brush_from_asset(asset:unreal.SlateBrushAsset):Void;
 	/**
 		x.set_brush_from_material(material) -> None
 		Set Brush from Material
@@ -76,7 +67,7 @@ package unreal;
 		Args:
 		    material (MaterialInterface):
 	**/
-	public function set_brush_from_material(material:Dynamic):Void;
+	public function set_brush_from_material(material:unreal.MaterialInterface):Void;
 	/**
 		x.set_brush_from_texture(texture) -> None
 		Set Brush from Texture
@@ -84,7 +75,7 @@ package unreal;
 		Args:
 		    texture (Texture2D):
 	**/
-	public function set_brush_from_texture(texture:Dynamic):Void;
+	public function set_brush_from_texture(texture:unreal.Texture2D):Void;
 	/**
 		x.set_content_color_and_opacity(content_color_and_opacity) -> None
 		Set Content Color and Opacity
@@ -92,7 +83,7 @@ package unreal;
 		Args:
 		    content_color_and_opacity (LinearColor):
 	**/
-	public function set_content_color_and_opacity(content_color_and_opacity:Dynamic):Void;
+	public function set_content_color_and_opacity(content_color_and_opacity:unreal.LinearColor):Void;
 	/**
 		x.set_desired_size_scale(scale) -> None
 		Sets the DesireSizeScale of this border.
@@ -100,7 +91,7 @@ package unreal;
 		Args:
 		    scale (Vector2D): The X and Y multipliers for the desired size
 	**/
-	public function set_desired_size_scale(scale:Dynamic):Void;
+	public function set_desired_size_scale(scale:unreal.Vector2D):Void;
 	/**
 		x.set_horizontal_alignment(horizontal_alignment) -> None
 		Set Horizontal Alignment
@@ -108,7 +99,7 @@ package unreal;
 		Args:
 		    horizontal_alignment (HorizontalAlignment):
 	**/
-	public function set_horizontal_alignment(horizontal_alignment:Dynamic):Void;
+	public function set_horizontal_alignment(horizontal_alignment:unreal.HorizontalAlignment):Void;
 	/**
 		x.set_padding(padding) -> None
 		Set Padding
@@ -116,7 +107,7 @@ package unreal;
 		Args:
 		    padding (Margin):
 	**/
-	public function set_padding(padding:Dynamic):Void;
+	public function set_padding(padding:unreal.Margin):Void;
 	/**
 		x.set_vertical_alignment(vertical_alignment) -> None
 		Set Vertical Alignment
@@ -124,7 +115,7 @@ package unreal;
 		Args:
 		    vertical_alignment (VerticalAlignment):
 	**/
-	public function set_vertical_alignment(vertical_alignment:Dynamic):Void;
+	public function set_vertical_alignment(vertical_alignment:unreal.VerticalAlignment):Void;
 	/**
 		(bool):  [Read-Only] Whether or not to show the disabled effect when this border is disabled
 	**/

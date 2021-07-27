@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Actor") extern class Actor extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.actor_has_tag(tag) -> bool
 		See if this actor's Tags array contains the supplied name tag
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function actor_has_tag(tag:Dynamic):Bool;
+	public function actor_has_tag(tag:unreal.Name):Bool;
 	/**
 		x.add_actor_local_offset(delta_location, sweep, teleport) -> HitResult
 		Adds a delta to the location of this component in its local reference frame.
@@ -35,7 +26,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function add_actor_local_offset(delta_location:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_local_offset(delta_location:unreal.Vector, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_actor_local_rotation(delta_rotation, sweep, teleport) -> HitResult
 		Adds a delta to the rotation of this component in its local reference frame
@@ -50,7 +41,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function add_actor_local_rotation(delta_rotation:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_local_rotation(delta_rotation:unreal.Rotator, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_actor_local_transform(new_transform, sweep, teleport) -> HitResult
 		Adds a delta to the transform of this component in its local reference frame
@@ -65,7 +56,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function add_actor_local_transform(new_transform:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_local_transform(new_transform:unreal.Transform, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_actor_world_offset(delta_location, sweep, teleport) -> HitResult
 		Adds a delta to the location of this actor in world space.
@@ -80,7 +71,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult): The hit result from the move if swept.
 	**/
-	public function add_actor_world_offset(delta_location:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_world_offset(delta_location:unreal.Vector, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_actor_world_rotation(delta_rotation, sweep, teleport) -> HitResult
 		Adds a delta to the rotation of this actor in world space.
@@ -95,7 +86,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult): The hit result from the move if swept.
 	**/
-	public function add_actor_world_rotation(delta_rotation:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_world_rotation(delta_rotation:unreal.Rotator, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_actor_world_transform(delta_transform, sweep, teleport) -> HitResult
 		Adds a delta to the transform of this actor in world space. Ignores scale and sets it to (1,1,1).
@@ -110,7 +101,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function add_actor_world_transform(delta_transform:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_world_transform(delta_transform:unreal.Transform, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_actor_world_transform_keep_scale(delta_transform, sweep, teleport) -> HitResult
 		Adds a delta to the transform of this actor in world space. Scale is unchanged.
@@ -125,7 +116,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function add_actor_world_transform_keep_scale(delta_transform:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function add_actor_world_transform_keep_scale(delta_transform:unreal.Transform, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.add_tick_prerequisite_actor(prerequisite_actor) -> None
 		Make this actor tick after PrerequisiteActor. This only applies to this actor's tick function; dependencies for owned components must be set up separately if desired.
@@ -133,7 +124,7 @@ package unreal;
 		Args:
 		    prerequisite_actor (Actor):
 	**/
-	public function add_tick_prerequisite_actor(prerequisite_actor:Dynamic):Void;
+	public function add_tick_prerequisite_actor(prerequisite_actor:unreal.Actor):Void;
 	/**
 		x.add_tick_prerequisite_component(prerequisite_component) -> None
 		Make this actor tick after PrerequisiteComponent. This only applies to this actor's tick function; dependencies for owned components must be set up separately if desired.
@@ -141,7 +132,7 @@ package unreal;
 		Args:
 		    prerequisite_component (ActorComponent):
 	**/
-	public function add_tick_prerequisite_component(prerequisite_component:Dynamic):Void;
+	public function add_tick_prerequisite_component(prerequisite_component:unreal.ActorComponent):Void;
 	/**
 		(bool):  [Read-Write] Always relevant for network (overrides bOnlyRelevantToOwner).
 	**/
@@ -158,7 +149,7 @@ package unreal;
 		    scale_rule (AttachmentRule): How to handle scale when attaching.
 		    weld_simulated_bodies (bool): Whether to weld together simulated physics bodies.
 	**/
-	public function attach_to_actor(parent_actor:Dynamic, socket_name:Dynamic, location_rule:Dynamic, rotation_rule:Dynamic, scale_rule:Dynamic, weld_simulated_bodies:Dynamic):Void;
+	public function attach_to_actor(parent_actor:unreal.Actor, socket_name:unreal.Name, location_rule:unreal.AttachmentRule, rotation_rule:unreal.AttachmentRule, scale_rule:unreal.AttachmentRule, weld_simulated_bodies:Bool):Void;
 	/**
 		x.attach_to_component(parent, socket_name, location_rule, rotation_rule, scale_rule, weld_simulated_bodies) -> None
 		Attaches the RootComponent of this Actor to the supplied component, optionally at a named socket. It is not valid to call this on components that are not Registered.
@@ -171,7 +162,7 @@ package unreal;
 		    scale_rule (AttachmentRule): How to handle scale when attaching.
 		    weld_simulated_bodies (bool): Whether to weld together simulated physics bodies.
 	**/
-	public function attach_to_component(parent:Dynamic, socket_name:Dynamic, location_rule:Dynamic, rotation_rule:Dynamic, scale_rule:Dynamic, weld_simulated_bodies:Dynamic):Void;
+	public function attach_to_component(parent:unreal.SceneComponent, socket_name:unreal.Name, location_rule:unreal.AttachmentRule, rotation_rule:unreal.AttachmentRule, scale_rule:unreal.AttachmentRule, weld_simulated_bodies:Bool):Void;
 	/**
 		(bool):  [Read-Write] If true then destroy self when "finished", meaning all relevant components report that they are done and no timelines or timers are in flight.
 	**/
@@ -199,7 +190,8 @@ package unreal;
 		Args:
 		    component (ActorComponent):
 	**/
-	public function destroy_component(component:Dynamic):Void;
+	@:deprecated
+	public function destroy_component(component:unreal.ActorComponent):Void;
 	/**
 		x.detach_from_actor(location_rule=DetachmentRule.KEEP_RELATIVE, rotation_rule=DetachmentRule.KEEP_RELATIVE, scale_rule=DetachmentRule.KEEP_RELATIVE) -> None
 		Detaches the RootComponent of this Actor from any SceneComponent it is currently attached to.
@@ -209,7 +201,7 @@ package unreal;
 		    rotation_rule (DetachmentRule): How to handle rotation when detaching.
 		    scale_rule (DetachmentRule): How to handle scale when detaching.
 	**/
-	public function detach_from_actor(location_rule:Dynamic, rotation_rule:Dynamic, scale_rule:Dynamic):Void;
+	public function detach_from_actor(location_rule:unreal.DetachmentRule, rotation_rule:unreal.DetachmentRule, scale_rule:unreal.DetachmentRule):Void;
 	/**
 		x.disable_input(player_controller) -> None
 		Removes this actor from the stack of input being handled by a PlayerController.
@@ -217,7 +209,7 @@ package unreal;
 		Args:
 		    player_controller (PlayerController): The PlayerController whose input events we no longer want to receive. If null, this actor will stop receiving input from all PlayerControllers.
 	**/
-	public function disable_input(player_controller:Dynamic):Void;
+	public function disable_input(player_controller:unreal.PlayerController):Void;
 	/**
 		(bool):  [Read-Write] If true, and if World setting has bEnableHierarchicalLOD equal to true, then it will generate LODActor from groups of clustered Actor
 	**/
@@ -229,7 +221,7 @@ package unreal;
 		Args:
 		    player_controller (PlayerController): The PlayerController whose input events we want to receive.
 	**/
-	public function enable_input(player_controller:Dynamic):Void;
+	public function enable_input(player_controller:unreal.PlayerController):Void;
 	/**
 		(bool):  [Read-Write] If true, this actor should search for an owned camera component to view through when used as a view target.
 	**/
@@ -265,7 +257,7 @@ package unreal;
 		
 		    box_extent (Vector): Set to half the actor's size in 3d space
 	**/
-	public function get_actor_bounds(only_colliding_components:Dynamic, include_from_child_actors:Dynamic):python.Tuple<Dynamic>;
+	public function get_actor_bounds(only_colliding_components:Bool, include_from_child_actors:Bool):python.Tuple<Dynamic>;
 	/**
 		x.get_actor_enable_collision() -> bool
 		Get current state of collision for the whole actor
@@ -392,7 +384,7 @@ package unreal;
 		
 		    child_actors (Array(Actor)):
 	**/
-	public function get_all_child_actors(include_descendants:Dynamic):Dynamic;
+	public function get_all_child_actors(include_descendants:Bool):Dynamic;
 	/**
 		x.get_attach_parent_actor() -> Actor
 		Walk up the attachment chain from RootComponent until we encounter a different actor, and return it. If we are not attached to a component in a different actor, returns nullptr
@@ -421,7 +413,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_attached_actors(reset_array:Dynamic):Dynamic;
+	public function get_attached_actors(reset_array:Bool):Dynamic;
 	/**
 		x.get_component_by_class(component_class) -> ActorComponent
 		Searches components array and returns first encountered component of the specified class
@@ -468,7 +460,7 @@ package unreal;
 		Returns:
 		    Array(ActorComponent):
 	**/
-	public function get_components_by_tag(component_class:Dynamic, tag:Dynamic):Dynamic;
+	public function get_components_by_tag(component_class:Dynamic, tag:unreal.Name):Dynamic;
 	/**
 		x.get_distance_to(other_actor) -> float
 		Returns the distance from this Actor to OtherActor.
@@ -479,7 +471,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_distance_to(other_actor:Dynamic):Float;
+	public function get_distance_to(other_actor:unreal.Actor):Float;
 	/**
 		x.get_dot_product_to(other_actor) -> float
 		Returns the dot product from this Actor to OtherActor. Returns -2.0 on failure. Returns 0.0 for coincidental actors.
@@ -490,7 +482,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_dot_product_to(other_actor:Dynamic):Float;
+	public function get_dot_product_to(other_actor:unreal.Actor):Float;
 	/**
 		x.get_folder_path() -> Name
 		Returns this actor's folder path. Actor folder paths are only available in development builds.
@@ -517,7 +509,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_horizontal_distance_to(other_actor:Dynamic):Float;
+	public function get_horizontal_distance_to(other_actor:unreal.Actor):Float;
 	/**
 		x.get_horizontal_dot_product_to(other_actor) -> float
 		Returns the dot product from this Actor to OtherActor, ignoring Z. Returns -2.0 on failure. Returns 0.0 for coincidental actors.
@@ -528,7 +520,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_horizontal_dot_product_to(other_actor:Dynamic):Float;
+	public function get_horizontal_dot_product_to(other_actor:unreal.Actor):Float;
 	/**
 		x.get_instigator() -> Pawn
 		Returns the instigator for this actor, or nullptr if there is none.
@@ -626,7 +618,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_squared_distance_to(other_actor:Dynamic):Float;
+	public function get_squared_distance_to(other_actor:unreal.Actor):Float;
 	/**
 		x.get_tickable_when_paused() -> bool
 		Gets whether this actor can tick when paused.
@@ -638,10 +630,12 @@ package unreal;
 	/**
 		deprecated: 'get_touching_actors' was renamed to 'get_overlapping_actors'.
 	**/
+	@:deprecated
 	public function get_touching_actors():Void;
 	/**
 		deprecated: 'get_touching_components' was renamed to 'get_overlapping_components'.
 	**/
+	@:deprecated
 	public function get_touching_components():Void;
 	/**
 		x.get_velocity() -> Vector
@@ -661,7 +655,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_vertical_distance_to(other_actor:Dynamic):Float;
+	public function get_vertical_distance_to(other_actor:unreal.Actor):Float;
 	/**
 		x.has_authority() -> bool
 		Returns whether this actor has network authority
@@ -673,6 +667,7 @@ package unreal;
 	/**
 		deprecated: 'has_tag' was renamed to 'actor_has_tag'.
 	**/
+	@:deprecated
 	public function has_tag():Void;
 	/**
 		(bool):  [Read-Only] Allows us to only see this Actor in the Editor, and not in the actual game.
@@ -745,7 +740,7 @@ package unreal;
 		Returns:
 		    bool: Whether any component of this Actor is overlapping any component of another Actor.
 	**/
-	public function is_overlapping_actor(other:Dynamic):Bool;
+	public function is_overlapping_actor(other:unreal.Actor):Bool;
 	/**
 		x.is_selectable() -> bool
 		Returns true if this actor can EVER be selected in a level in the editor.  Can be overridden by specific actors to make them unselectable.
@@ -764,10 +759,11 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_temporarily_hidden_in_editor(include_parent:Dynamic):Bool;
+	public function is_temporarily_hidden_in_editor(include_parent:Bool):Bool;
 	/**
 		deprecated: 'life_span' was renamed to 'initial_life_span'.
 	**/
+	@:deprecated
 	public var life_span : Dynamic;
 	/**
 		x.make_mid_for_material(parent) -> MaterialInstanceDynamic
@@ -780,7 +776,8 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function make_mid_for_material(parent:Dynamic):unreal.MaterialInstanceDynamic;
+	@:deprecated
+	public function make_mid_for_material(parent:unreal.MaterialInterface):unreal.MaterialInstanceDynamic;
 	/**
 		x.make_noise(loudness=1.000000, noise_instigator=None, noise_location=[0.000000, 0.000000, 0.000000], max_range=0.000000, tag="None") -> None
 		Trigger a noise caused by a given Pawn, at a given location.
@@ -794,7 +791,7 @@ package unreal;
 		    max_range (float): Max range at which the sound may be heard. A value of 0 indicates no max range (though perception may have its own range). Loudness scales the range. (Note: not supported for legacy PawnSensingComponent, only for AIPerception)
 		    tag (Name): Identifier for the noise.
 	**/
-	public function make_noise(loudness:Dynamic, noise_instigator:Dynamic, noise_location:Dynamic, max_range:Dynamic, tag:Dynamic):Void;
+	public function make_noise(loudness:Float, noise_instigator:unreal.Pawn, noise_location:unreal.Vector, max_range:Float, tag:unreal.Name):Void;
 	/**
 		(float):  [Read-Write] Used to determine what rate to throttle down to when replicated properties are changing infrequently
 	**/
@@ -839,10 +836,12 @@ package unreal;
 	/**
 		deprecated: 'on_actor_touch' was renamed to 'on_actor_begin_overlap'.
 	**/
+	@:deprecated
 	public var on_actor_touch : Dynamic;
 	/**
 		deprecated: 'on_actor_un_touch' was renamed to 'on_actor_end_overlap'.
 	**/
+	@:deprecated
 	public var on_actor_un_touch : Dynamic;
 	/**
 		x.on_become_view_target(pc) -> None
@@ -851,7 +850,7 @@ package unreal;
 		Args:
 		    pc (PlayerController):
 	**/
-	public function on_become_view_target(pc:Dynamic):Void;
+	public function on_become_view_target(pc:unreal.PlayerController):Void;
 	/**
 		(ActorBeginCursorOverSignature):  [Read-Write] Called when the mouse cursor is moved over this actor if mouse over events are enabled in the player controller.
 	**/
@@ -879,7 +878,7 @@ package unreal;
 		Args:
 		    pc (PlayerController):
 	**/
-	public function on_end_view_target(pc:Dynamic):Void;
+	public function on_end_view_target(pc:unreal.PlayerController):Void;
 	/**
 		(ActorOnInputTouchBeginSignature):  [Read-Write] Called when a touch input is received over this actor when touch events are enabled in the player controller.
 	**/
@@ -934,7 +933,7 @@ package unreal;
 		    enable_streaming (bool): Whether to start (true) or stop (false) streaming
 		    cinematic_texture_groups (int32): Bitfield indicating which texture groups that use extra high-resolution mips
 	**/
-	public function prestream_textures(seconds:Dynamic, enable_streaming:Dynamic, cinematic_texture_groups:Dynamic):Void;
+	public function prestream_textures(seconds:Float, enable_streaming:Bool, cinematic_texture_groups:Int):Void;
 	/**
 		x.receive_actor_begin_cursor_over() -> None
 		Event when this actor has the mouse moved over it with the clickable interface.
@@ -949,7 +948,7 @@ package unreal;
 		Args:
 		    other_actor (Actor):
 	**/
-	public function receive_actor_begin_overlap(other_actor:Dynamic):Void;
+	public function receive_actor_begin_overlap(other_actor:unreal.Actor):Void;
 	/**
 		x.receive_actor_end_cursor_over() -> None
 		Event when this actor has the mouse moved off of it with the clickable interface.
@@ -963,7 +962,7 @@ package unreal;
 		Args:
 		    other_actor (Actor):
 	**/
-	public function receive_actor_end_overlap(other_actor:Dynamic):Void;
+	public function receive_actor_end_overlap(other_actor:unreal.Actor):Void;
 	/**
 		x.receive_actor_on_clicked(button_pressed) -> None
 		Event when this actor is clicked by the mouse when using the clickable interface.
@@ -971,7 +970,7 @@ package unreal;
 		Args:
 		    button_pressed (Key):
 	**/
-	public function receive_actor_on_clicked(button_pressed:Dynamic):Void;
+	public function receive_actor_on_clicked(button_pressed:unreal.Key):Void;
 	/**
 		x.receive_actor_on_input_touch_begin(finger_index) -> None
 		Event when this actor is touched when click events are enabled.
@@ -979,7 +978,7 @@ package unreal;
 		Args:
 		    finger_index (TouchIndex):
 	**/
-	public function receive_actor_on_input_touch_begin(finger_index:Dynamic):Void;
+	public function receive_actor_on_input_touch_begin(finger_index:unreal.TouchIndex):Void;
 	/**
 		x.receive_actor_on_input_touch_end(finger_index) -> None
 		Event when this actor is under the finger when untouched when click events are enabled.
@@ -987,7 +986,7 @@ package unreal;
 		Args:
 		    finger_index (TouchIndex):
 	**/
-	public function receive_actor_on_input_touch_end(finger_index:Dynamic):Void;
+	public function receive_actor_on_input_touch_end(finger_index:unreal.TouchIndex):Void;
 	/**
 		x.receive_actor_on_input_touch_enter(finger_index) -> None
 		Event when this actor has a finger moved over it with the clickable interface.
@@ -995,7 +994,7 @@ package unreal;
 		Args:
 		    finger_index (TouchIndex):
 	**/
-	public function receive_actor_on_input_touch_enter(finger_index:Dynamic):Void;
+	public function receive_actor_on_input_touch_enter(finger_index:unreal.TouchIndex):Void;
 	/**
 		x.receive_actor_on_input_touch_leave(finger_index) -> None
 		Event when this actor has a finger moved off of it with the clickable interface.
@@ -1003,7 +1002,7 @@ package unreal;
 		Args:
 		    finger_index (TouchIndex):
 	**/
-	public function receive_actor_on_input_touch_leave(finger_index:Dynamic):Void;
+	public function receive_actor_on_input_touch_leave(finger_index:unreal.TouchIndex):Void;
 	/**
 		x.receive_actor_on_released(button_released) -> None
 		Event when this actor is under the mouse when left mouse button is released while using the clickable interface.
@@ -1011,14 +1010,16 @@ package unreal;
 		Args:
 		    button_released (Key):
 	**/
-	public function receive_actor_on_released(button_released:Dynamic):Void;
+	public function receive_actor_on_released(button_released:unreal.Key):Void;
 	/**
 		deprecated: 'receive_actor_touch' was renamed to 'receive_actor_begin_overlap'.
 	**/
+	@:deprecated
 	public function receive_actor_touch():Void;
 	/**
 		deprecated: 'receive_actor_untouch' was renamed to 'receive_actor_end_overlap'.
 	**/
+	@:deprecated
 	public function receive_actor_untouch():Void;
 	/**
 		x.receive_any_damage(damage, damage_type, instigated_by, damage_causer) -> None
@@ -1030,7 +1031,7 @@ package unreal;
 		    instigated_by (Controller): 
 		    damage_causer (Actor):
 	**/
-	public function receive_any_damage(damage:Dynamic, damage_type:Dynamic, instigated_by:Dynamic, damage_causer:Dynamic):Void;
+	public function receive_any_damage(damage:Float, damage_type:unreal.DamageType, instigated_by:unreal.Controller, damage_causer:unreal.Actor):Void;
 	/**
 		x.receive_begin_play() -> None
 		Event when play begins for this actor.
@@ -1048,7 +1049,7 @@ package unreal;
 		Args:
 		    end_play_reason (EndPlayReason):
 	**/
-	public function receive_end_play(end_play_reason:Dynamic):Void;
+	public function receive_end_play(end_play_reason:unreal.EndPlayReason):Void;
 	/**
 		x.receive_hit(my_comp, other, other_comp, self_moved, hit_location, hit_normal, normal_impulse, hit) -> None
 		Event when this actor bumps into a blocking object, or blocks another actor that bumps into it.
@@ -1068,7 +1069,7 @@ package unreal;
 		    normal_impulse (Vector): 
 		    hit (HitResult):
 	**/
-	public function receive_hit(my_comp:Dynamic, other:Dynamic, other_comp:Dynamic, self_moved:Dynamic, hit_location:Dynamic, hit_normal:Dynamic, normal_impulse:Dynamic, hit:Dynamic):Void;
+	public function receive_hit(my_comp:unreal.PrimitiveComponent, other:unreal.Actor, other_comp:unreal.PrimitiveComponent, self_moved:Bool, hit_location:unreal.Vector, hit_normal:unreal.Vector, normal_impulse:unreal.Vector, hit:unreal.HitResult):Void;
 	/**
 		x.receive_point_damage(damage, damage_type, hit_location, hit_normal, hit_component, bone_name, shot_from_direction, instigated_by, damage_causer, hit_info) -> None
 		Event when this actor takes POINT damage
@@ -1085,7 +1086,7 @@ package unreal;
 		    damage_causer (Actor): 
 		    hit_info (HitResult):
 	**/
-	public function receive_point_damage(damage:Dynamic, damage_type:Dynamic, hit_location:Dynamic, hit_normal:Dynamic, hit_component:Dynamic, bone_name:Dynamic, shot_from_direction:Dynamic, instigated_by:Dynamic, damage_causer:Dynamic, hit_info:Dynamic):Void;
+	public function receive_point_damage(damage:Float, damage_type:unreal.DamageType, hit_location:unreal.Vector, hit_normal:unreal.Vector, hit_component:unreal.PrimitiveComponent, bone_name:unreal.Name, shot_from_direction:unreal.Vector, instigated_by:unreal.Controller, damage_causer:unreal.Actor, hit_info:unreal.HitResult):Void;
 	/**
 		x.receive_radial_damage(damage_received, damage_type, origin, hit_info, instigated_by, damage_causer) -> None
 		Event when this actor takes RADIAL damage
@@ -1098,7 +1099,7 @@ package unreal;
 		    instigated_by (Controller): 
 		    damage_causer (Actor):
 	**/
-	public function receive_radial_damage(damage_received:Dynamic, damage_type:Dynamic, origin:Dynamic, hit_info:Dynamic, instigated_by:Dynamic, damage_causer:Dynamic):Void;
+	public function receive_radial_damage(damage_received:Float, damage_type:unreal.DamageType, origin:unreal.Vector, hit_info:unreal.HitResult, instigated_by:unreal.Controller, damage_causer:unreal.Actor):Void;
 	/**
 		x.receive_tick(delta_seconds) -> None
 		Event called every frame, if ticking is enabled
@@ -1106,7 +1107,7 @@ package unreal;
 		Args:
 		    delta_seconds (float):
 	**/
-	public function receive_tick(delta_seconds:Dynamic):Void;
+	public function receive_tick(delta_seconds:Float):Void;
 	/**
 		x.remove_tick_prerequisite_actor(prerequisite_actor) -> None
 		Remove tick dependency on PrerequisiteActor.
@@ -1114,7 +1115,7 @@ package unreal;
 		Args:
 		    prerequisite_actor (Actor):
 	**/
-	public function remove_tick_prerequisite_actor(prerequisite_actor:Dynamic):Void;
+	public function remove_tick_prerequisite_actor(prerequisite_actor:unreal.Actor):Void;
 	/**
 		x.remove_tick_prerequisite_component(prerequisite_component) -> None
 		Remove tick dependency on PrerequisiteComponent.
@@ -1122,7 +1123,7 @@ package unreal;
 		Args:
 		    prerequisite_component (ActorComponent):
 	**/
-	public function remove_tick_prerequisite_component(prerequisite_component:Dynamic):Void;
+	public function remove_tick_prerequisite_component(prerequisite_component:unreal.ActorComponent):Void;
 	/**
 		(bool):  [Read-Only] If true, this actor will replicate to remote machines
 		SetReplicates():
@@ -1139,10 +1140,11 @@ package unreal;
 		Args:
 		    new_actor_enable_collision (bool):
 	**/
-	public function set_actor_enable_collision(new_actor_enable_collision:Dynamic):Void;
+	public function set_actor_enable_collision(new_actor_enable_collision:Bool):Void;
 	/**
 		deprecated: 'set_actor_hidden' was renamed to 'set_actor_hidden_in_game'.
 	**/
+	@:deprecated
 	public function set_actor_hidden():Void;
 	/**
 		x.set_actor_hidden_in_game(new_hidden) -> None
@@ -1151,7 +1153,7 @@ package unreal;
 		Args:
 		    new_hidden (bool): Whether or not to hide the actor and all its components
 	**/
-	public function set_actor_hidden_in_game(new_hidden:Dynamic):Void;
+	public function set_actor_hidden_in_game(new_hidden:Bool):Void;
 	/**
 		x.set_actor_label(new_actor_label, mark_dirty=True) -> None
 		Assigns a new label to this actor.  Actor labels are only available in development builds.
@@ -1160,7 +1162,7 @@ package unreal;
 		    new_actor_label (str): The new label string to assign to the actor.  If empty, the actor will have a default label.
 		    mark_dirty (bool): If true the actor's package will be marked dirty for saving.  Otherwise it will not be.  You should pass false for this parameter if dirtying is not allowed (like during loads)
 	**/
-	public function set_actor_label(new_actor_label:Dynamic, mark_dirty:Dynamic):Void;
+	public function set_actor_label(new_actor_label:String, mark_dirty:Bool):Void;
 	/**
 		x.set_actor_location(new_location, sweep, teleport) -> HitResult or None
 		Move the Actor to the specified location.
@@ -1175,7 +1177,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult): The hit result from the move if swept.
 	**/
-	public function set_actor_location(new_location:Dynamic, sweep:Dynamic, teleport:Dynamic):Dynamic;
+	public function set_actor_location(new_location:unreal.Vector, sweep:Bool, teleport:Bool):Dynamic;
 	/**
 		x.set_actor_location_and_rotation(new_location, new_rotation, sweep, teleport) -> HitResult or None
 		Move the actor instantly to the specified location and rotation.
@@ -1191,7 +1193,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult): The hit result from the move if swept.
 	**/
-	public function set_actor_location_and_rotation(new_location:Dynamic, new_rotation:Dynamic, sweep:Dynamic, teleport:Dynamic):Dynamic;
+	public function set_actor_location_and_rotation(new_location:unreal.Vector, new_rotation:unreal.Rotator, sweep:Bool, teleport:Bool):Dynamic;
 	/**
 		x.set_actor_relative_location(new_relative_location, sweep, teleport) -> HitResult
 		Set the actor's RootComponent to the specified relative location.
@@ -1206,7 +1208,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function set_actor_relative_location(new_relative_location:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function set_actor_relative_location(new_relative_location:unreal.Vector, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.set_actor_relative_rotation(new_relative_rotation, sweep, teleport) -> HitResult
 		Set the actor's RootComponent to the specified relative rotation
@@ -1221,7 +1223,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function set_actor_relative_rotation(new_relative_rotation:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function set_actor_relative_rotation(new_relative_rotation:unreal.Rotator, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.set_actor_relative_scale3d(new_relative_scale) -> None
 		Set the actor's RootComponent to the specified relative scale 3d
@@ -1229,7 +1231,7 @@ package unreal;
 		Args:
 		    new_relative_scale (Vector): New scale to set the actor's RootComponent to
 	**/
-	public function set_actor_relative_scale3d(new_relative_scale:Dynamic):Void;
+	public function set_actor_relative_scale3d(new_relative_scale:unreal.Vector):Void;
 	/**
 		x.set_actor_relative_transform(new_relative_transform, sweep, teleport) -> HitResult
 		Set the actor's RootComponent to the specified relative transform
@@ -1244,7 +1246,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function set_actor_relative_transform(new_relative_transform:Dynamic, sweep:Dynamic, teleport:Dynamic):unreal.HitResult;
+	public function set_actor_relative_transform(new_relative_transform:unreal.Transform, sweep:Bool, teleport:Bool):unreal.HitResult;
 	/**
 		x.set_actor_rotation(new_rotation, teleport_physics) -> bool
 		Set the Actor's rotation instantly to the specified rotation.
@@ -1256,7 +1258,7 @@ package unreal;
 		Returns:
 		    bool: Whether the rotation was successfully set.
 	**/
-	public function set_actor_rotation(new_rotation:Dynamic, teleport_physics:Dynamic):Bool;
+	public function set_actor_rotation(new_rotation:unreal.Rotator, teleport_physics:Bool):Bool;
 	/**
 		x.set_actor_scale3d(new_scale3d) -> None
 		Set the Actor's world-space scale.
@@ -1264,7 +1266,7 @@ package unreal;
 		Args:
 		    new_scale3d (Vector):
 	**/
-	public function set_actor_scale3d(new_scale3d:Dynamic):Void;
+	public function set_actor_scale3d(new_scale3d:unreal.Vector):Void;
 	/**
 		x.set_actor_tick_enabled(enabled) -> None
 		Set this actor's tick functions to be enabled or disabled. Only has an effect if the function is registered
@@ -1273,7 +1275,7 @@ package unreal;
 		Args:
 		    enabled (bool): Whether it should be enabled or not
 	**/
-	public function set_actor_tick_enabled(enabled:Dynamic):Void;
+	public function set_actor_tick_enabled(enabled:Bool):Void;
 	/**
 		x.set_actor_tick_interval(tick_interval) -> None
 		Sets the tick interval of this actor's primary tick function. Will not enable a disabled tick function. Takes effect on next tick.
@@ -1281,7 +1283,7 @@ package unreal;
 		Args:
 		    tick_interval (float): The rate at which this actor should be ticking
 	**/
-	public function set_actor_tick_interval(tick_interval:Dynamic):Void;
+	public function set_actor_tick_interval(tick_interval:Float):Void;
 	/**
 		x.set_actor_transform(new_transform, sweep, teleport) -> HitResult or None
 		Set the Actors transform to the specified one.
@@ -1296,7 +1298,7 @@ package unreal;
 		
 		    sweep_hit_result (HitResult):
 	**/
-	public function set_actor_transform(new_transform:Dynamic, sweep:Dynamic, teleport:Dynamic):Dynamic;
+	public function set_actor_transform(new_transform:unreal.Transform, sweep:Bool, teleport:Bool):Dynamic;
 	/**
 		x.set_folder_path(new_folder_path) -> None
 		Assigns a new folder to this actor. Actor folder paths are only available in development builds.
@@ -1304,7 +1306,7 @@ package unreal;
 		Args:
 		    new_folder_path (Name): The new folder to assign to the actor.
 	**/
-	public function set_folder_path(new_folder_path:Dynamic):Void;
+	public function set_folder_path(new_folder_path:unreal.Name):Void;
 	/**
 		x.set_is_temporarily_hidden_in_editor(is_hidden) -> None
 		Explicitly sets whether or not this actor is hidden in the editor for the duration of the current editor session
@@ -1312,7 +1314,7 @@ package unreal;
 		Args:
 		    is_hidden (bool): True if the actor is hidden
 	**/
-	public function set_is_temporarily_hidden_in_editor(is_hidden:Dynamic):Void;
+	public function set_is_temporarily_hidden_in_editor(is_hidden:Bool):Void;
 	/**
 		x.set_life_span(lifespan) -> None
 		Set the lifespan of this actor. When it expires the object will be destroyed. If requested lifespan is 0, the timer is cleared and the actor will not be destroyed.
@@ -1320,7 +1322,7 @@ package unreal;
 		Args:
 		    lifespan (float):
 	**/
-	public function set_life_span(lifespan:Dynamic):Void;
+	public function set_life_span(lifespan:Float):Void;
 	/**
 		x.set_net_dormancy(new_dormancy) -> None
 		Puts actor in dormant networking state
@@ -1328,7 +1330,7 @@ package unreal;
 		Args:
 		    new_dormancy (NetDormancy):
 	**/
-	public function set_net_dormancy(new_dormancy:Dynamic):Void;
+	public function set_net_dormancy(new_dormancy:unreal.NetDormancy):Void;
 	/**
 		x.set_owner(new_owner) -> None
 		Set the owner of this Actor, used primarily for network replication.
@@ -1336,7 +1338,7 @@ package unreal;
 		Args:
 		    new_owner (Actor): The Actor who takes over ownership of this Actor
 	**/
-	public function set_owner(new_owner:Dynamic):Void;
+	public function set_owner(new_owner:unreal.Actor):Void;
 	/**
 		x.set_replicate_movement(replicate_movement) -> None
 		Set whether this actor's movement replicates to network clients.
@@ -1344,7 +1346,7 @@ package unreal;
 		Args:
 		    replicate_movement (bool): Whether this Actor's movement replicates to clients.
 	**/
-	public function set_replicate_movement(replicate_movement:Dynamic):Void;
+	public function set_replicate_movement(replicate_movement:Bool):Void;
 	/**
 		x.set_replicates(replicates) -> None
 		Set whether this actor replicates to network clients. When this actor is spawned on the server it will be sent to clients as well.
@@ -1355,10 +1357,11 @@ package unreal;
 		Args:
 		    replicates (bool): Whether this Actor replicates to network clients.
 	**/
-	public function set_replicates(replicates:Dynamic):Void;
+	public function set_replicates(replicates:Bool):Void;
 	/**
 		deprecated: 'set_tick_enabled' was renamed to 'set_actor_tick_enabled'.
 	**/
+	@:deprecated
 	public function set_tick_enabled():Void;
 	/**
 		x.set_tick_group(new_tick_group) -> None
@@ -1367,10 +1370,11 @@ package unreal;
 		Args:
 		    new_tick_group (TickingGroup): the new value to assign
 	**/
-	public function set_tick_group(new_tick_group:Dynamic):Void;
+	public function set_tick_group(new_tick_group:unreal.TickingGroup):Void;
 	/**
 		deprecated: 'set_tick_prerequisite' was renamed to 'add_tick_prerequisite_actor'.
 	**/
+	@:deprecated
 	public function set_tick_prerequisite():Void;
 	/**
 		x.set_tickable_when_paused(tickable_when_paused) -> None
@@ -1379,7 +1383,7 @@ package unreal;
 		Args:
 		    tickable_when_paused (bool):
 	**/
-	public function set_tickable_when_paused(tickable_when_paused:Dynamic):Void;
+	public function set_tickable_when_paused(tickable_when_paused:Bool):Void;
 	/**
 		(SpawnActorCollisionHandlingMethod):  [Read-Write] Controls how to handle spawning this actor in a situation where it's colliding with something else. "Default" means AlwaysSpawn here.
 	**/
@@ -1408,7 +1412,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor has been successfully moved, or false if it couldn't fit.
 	**/
-	public function teleport(dest_location:Dynamic, dest_rotation:Dynamic):Bool;
+	public function teleport(dest_location:unreal.Vector, dest_rotation:unreal.Rotator):Bool;
 	/**
 		x.was_recently_rendered(tolerance=0.200000) -> bool
 		Returns true if this actor has been rendered "recently", with a tolerance in seconds to define what "recent" means.
@@ -1420,5 +1424,5 @@ package unreal;
 		Returns:
 		    bool: Whether this actor was recently rendered.
 	**/
-	public function was_recently_rendered(tolerance:Dynamic):Bool;
+	public function was_recently_rendered(tolerance:Float):Bool;
 }

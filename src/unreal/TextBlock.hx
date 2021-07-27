@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TextBlock") extern class TextBlock extends unreal.TextLayoutWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SlateColor):  [Read-Only] The color of the text
 	**/
 	public var color_and_opacity : unreal.SlateColor;
@@ -53,7 +44,7 @@ package unreal;
 		Args:
 		    auto_text_wrap (bool): to turn wrap on or off.
 	**/
-	public function set_auto_wrap_text(auto_text_wrap:Dynamic):Void;
+	public function set_auto_wrap_text(auto_text_wrap:Bool):Void;
 	/**
 		x.set_color_and_opacity(color_and_opacity) -> None
 		Sets the color and opacity of the text in this text block
@@ -61,7 +52,7 @@ package unreal;
 		Args:
 		    color_and_opacity (SlateColor): The new text color and opacity
 	**/
-	public function set_color_and_opacity(color_and_opacity:Dynamic):Void;
+	public function set_color_and_opacity(color_and_opacity:unreal.SlateColor):Void;
 	/**
 		x.set_font(font_info) -> None
 		Dynamically set the font info for this text block
@@ -69,7 +60,7 @@ package unreal;
 		Args:
 		    font_info (SlateFontInfo): The new font info
 	**/
-	public function set_font(font_info:Dynamic):Void;
+	public function set_font(font_info:unreal.SlateFontInfo):Void;
 	/**
 		x.set_min_desired_width(min_desired_width) -> None
 		Set the minimum desired width for this text block
@@ -77,7 +68,7 @@ package unreal;
 		Args:
 		    min_desired_width (float): new minimum desired width
 	**/
-	public function set_min_desired_width(min_desired_width:Dynamic):Void;
+	public function set_min_desired_width(min_desired_width:Float):Void;
 	/**
 		x.set_shadow_color_and_opacity(shadow_color_and_opacity) -> None
 		Sets the color and opacity of the text drop shadow
@@ -86,7 +77,7 @@ package unreal;
 		Args:
 		    shadow_color_and_opacity (LinearColor): The new drop shadow color and opacity
 	**/
-	public function set_shadow_color_and_opacity(shadow_color_and_opacity:Dynamic):Void;
+	public function set_shadow_color_and_opacity(shadow_color_and_opacity:unreal.LinearColor):Void;
 	/**
 		x.set_shadow_offset(shadow_offset) -> None
 		Sets the offset that the text drop shadow should be drawn at
@@ -94,7 +85,7 @@ package unreal;
 		Args:
 		    shadow_offset (Vector2D): The new offset
 	**/
-	public function set_shadow_offset(shadow_offset:Dynamic):Void;
+	public function set_shadow_offset(shadow_offset:unreal.Vector2D):Void;
 	/**
 		x.set_strike_brush(strike_brush) -> None
 		Dynamically set the strike brush for this text block
@@ -102,7 +93,7 @@ package unreal;
 		Args:
 		    strike_brush (SlateBrush): The new brush to use to strike through text
 	**/
-	public function set_strike_brush(strike_brush:Dynamic):Void;
+	public function set_strike_brush(strike_brush:unreal.SlateBrush):Void;
 	/**
 		x.set_text(text) -> None
 		Directly sets the widget text.
@@ -111,7 +102,7 @@ package unreal;
 		Args:
 		    text (Text): The text to assign to the widget
 	**/
-	public function set_text(text:Dynamic):Void;
+	public function set_text(text:unreal.Text):Void;
 	/**
 		x.set_text_transform_policy(transform_policy) -> None
 		Set the text transformation policy for this text block.
@@ -119,7 +110,7 @@ package unreal;
 		Args:
 		    transform_policy (TextTransformPolicy): the new text transformation policy.
 	**/
-	public function set_text_transform_policy(transform_policy:Dynamic):Void;
+	public function set_text_transform_policy(transform_policy:unreal.TextTransformPolicy):Void;
 	/**
 		(LinearColor):  [Read-Only] The color of the shadow
 	**/

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SkinnedMeshComponent") extern class SkinnedMeshComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.bone_is_child_of(bone_name, parent_bone_name) -> bool
 		Tests if BoneName is child of (or equal to) ParentBoneName.
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    bool: true if child (strictly, not same). false otherwise Note - will return false if ChildBoneIndex is the same as ParentBoneIndex ie. must be strictly a child.
 	**/
-	public function bone_is_child_of(bone_name:Dynamic, parent_bone_name:Dynamic):Bool;
+	public function bone_is_child_of(bone_name:unreal.Name, parent_bone_name:unreal.Name):Bool;
 	/**
 		(float):  [Read-Only] Controls how dark the capsule indirect shadow can be.
 	**/
@@ -43,7 +34,7 @@ package unreal;
 		Args:
 		    lod_index (int32):
 	**/
-	public function clear_skin_weight_override(lod_index:Dynamic):Void;
+	public function clear_skin_weight_override(lod_index:Int):Void;
 	/**
 		x.clear_skin_weight_profile() -> None
 		Clear the Skin Weight Profile from this component, in case it is set
@@ -56,7 +47,7 @@ package unreal;
 		Args:
 		    lod_index (int32):
 	**/
-	public function clear_vertex_color_override(lod_index:Dynamic):Void;
+	public function clear_vertex_color_override(lod_index:Int):Void;
 	/**
 		(bool):  [Read-Write] When true, skip using the physics asset etc. and always use the fixed bounds defined in the SkeletalMesh.
 	**/
@@ -94,7 +85,7 @@ package unreal;
 		
 		    bone_location (Vector): (optional, out) if specified, set to the world space location of the bone that was found, or (0,0,0) if no bone was found
 	**/
-	public function find_closest_bone_k2(test_location:Dynamic, ignore_scale:Dynamic, require_physics_asset:Dynamic):unreal.Vector;
+	public function find_closest_bone_k2(test_location:unreal.Vector, ignore_scale:Float, require_physics_asset:Bool):unreal.Vector;
 	/**
 		(int32):  [Read-Only] Forced Lod Model
 	**/
@@ -110,7 +101,7 @@ package unreal;
 		Returns:
 		    int32: Index of the named bone in the current SkeletalMesh. Will return INDEX_NONE if bone not found.
 	**/
-	public function get_bone_index(bone_name:Dynamic):Int;
+	public function get_bone_index(bone_name:unreal.Name):Int;
 	/**
 		x.get_bone_name(bone_index) -> Name
 		Get Bone Name from index
@@ -121,7 +112,7 @@ package unreal;
 		Returns:
 		    Name: the name of the bone at the specified index
 	**/
-	public function get_bone_name(bone_index:Dynamic):unreal.Name;
+	public function get_bone_name(bone_index:Int):unreal.Name;
 	/**
 		x.get_current_skin_weight_profile_name() -> Name
 		Return the name of the Skin Weight Profile that is currently set otherwise returns 'None'
@@ -142,7 +133,7 @@ package unreal;
 		Returns:
 		    Transform: the delta transform from refpose in that given space (BaseName)
 	**/
-	public function get_delta_transform_from_ref_pose(bone_name:Dynamic, base_name:Dynamic):unreal.Transform;
+	public function get_delta_transform_from_ref_pose(bone_name:unreal.Name, base_name:unreal.Name):unreal.Transform;
 	/**
 		x.get_forced_lod() -> int32
 		Get ForcedLodModel of the mesh component. Note that the actual forced LOD level is the return value minus one and zero means no forced LOD
@@ -177,7 +168,7 @@ package unreal;
 		Returns:
 		    Name: the name of the parent bone for the specified bone. Returns 'None' if the bone does not exist or it is the root bone
 	**/
-	public function get_parent_bone(bone_name:Dynamic):unreal.Name;
+	public function get_parent_bone(bone_name:unreal.Name):unreal.Name;
 	/**
 		x.get_ref_pose_position(bone_index) -> Vector
 		Gets the local-space position of a bone in the reference pose.
@@ -188,7 +179,7 @@ package unreal;
 		Returns:
 		    Vector: Local space reference position
 	**/
-	public function get_ref_pose_position(bone_index:Dynamic):unreal.Vector;
+	public function get_ref_pose_position(bone_index:Int):unreal.Vector;
 	/**
 		x.get_socket_bone_name(socket_name) -> Name
 		Returns bone name linked to a given named socket on the skeletal mesh component.
@@ -200,7 +191,7 @@ package unreal;
 		Returns:
 		    Name: bone name
 	**/
-	public function get_socket_bone_name(socket_name:Dynamic):unreal.Name;
+	public function get_socket_bone_name(socket_name:unreal.Name):unreal.Name;
 	/**
 		x.get_twist_and_swing_angle_of_delta_rotation_from_ref_pose(bone_name) -> (out_twist_angle=float, out_swing_angle=float) or None
 		Get Twist and Swing Angle in Degree of Delta Rotation from Reference Pose in Local space
@@ -218,7 +209,7 @@ package unreal;
 		
 		    out_swing_angle (float): SwingAngle in degree
 	**/
-	public function get_twist_and_swing_angle_of_delta_rotation_from_ref_pose(bone_name:Dynamic):Dynamic;
+	public function get_twist_and_swing_angle_of_delta_rotation_from_ref_pose(bone_name:unreal.Name):Dynamic;
 	/**
 		x.get_vertex_offset_usage(lod_index) -> int32
 		Get Vertex Offset Usage
@@ -229,7 +220,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_vertex_offset_usage(lod_index:Dynamic):Int;
+	public function get_vertex_offset_usage(lod_index:Int):Int;
 	/**
 		x.hide_bone_by_name(bone_name, phys_body_option) -> None
 		Hides the specified bone with name.  Currently this just enforces a scale of 0 for the hidden bones.
@@ -239,7 +230,7 @@ package unreal;
 		    bone_name (Name): Name of bone to hide
 		    phys_body_option (PhysBodyOp): Option for physics bodies that attach to the bones to be hidden
 	**/
-	public function hide_bone_by_name(bone_name:Dynamic, phys_body_option:Dynamic):Void;
+	public function hide_bone_by_name(bone_name:unreal.Name, phys_body_option:unreal.PhysBodyOp):Void;
 	/**
 		(bool):  [Read-Only] Flag that when set will ensure UpdateLODStatus will not take the MasterPoseComponent's current LOD in consideration when determining the correct LOD level (this requires MasterPoseComponent's LOD to always be >= determined LOD otherwise bone transforms could be missing
 	**/
@@ -254,7 +245,7 @@ package unreal;
 		Returns:
 		    bool: true if hidden
 	**/
-	public function is_bone_hidden_by_name(bone_name:Dynamic):Bool;
+	public function is_bone_hidden_by_name(bone_name:unreal.Name):Bool;
 	/**
 		x.is_material_section_shown(material_id, lod_index) -> bool
 		Returns whether a specific material section is currently hidden on this component (by using ShowMaterialSection)
@@ -266,7 +257,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_material_section_shown(material_id:Dynamic, lod_index:Dynamic):Bool;
+	public function is_material_section_shown(material_id:Int, lod_index:Int):Bool;
 	/**
 		x.is_using_skin_weight_profile() -> bool
 		Check whether or not a Skin Weight Profile is currently set
@@ -284,10 +275,12 @@ package unreal;
 	/**
 		deprecated: 'match_ref_bone' was renamed to 'get_bone_index'.
 	**/
+	@:deprecated
 	public function match_ref_bone():Void;
 	/**
 		deprecated: 'mesh_component_update_flag' was renamed to 'visibility_based_anim_tick_option'.
 	**/
+	@:deprecated
 	public var mesh_component_update_flag : Dynamic;
 	/**
 		(int32):  [Read-Only] This is the min LOD that this component will use.  (e.g. if set to 2 then only 2+ LOD Models will be used.) This is useful to set on
@@ -317,7 +310,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_capsule_indirect_shadow_min_visibility(new_value:Dynamic):Void;
+	public function set_capsule_indirect_shadow_min_visibility(new_value:Float):Void;
 	/**
 		x.set_cast_capsule_direct_shadow(new_value) -> None
 		Set Cast Capsule Direct Shadow
@@ -325,7 +318,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_capsule_direct_shadow(new_value:Dynamic):Void;
+	public function set_cast_capsule_direct_shadow(new_value:Bool):Void;
 	/**
 		x.set_cast_capsule_indirect_shadow(new_value) -> None
 		Set Cast Capsule Indirect Shadow
@@ -333,7 +326,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_capsule_indirect_shadow(new_value:Dynamic):Void;
+	public function set_cast_capsule_indirect_shadow(new_value:Bool):Void;
 	/**
 		x.set_forced_lod(new_forced_lod) -> None
 		Set ForcedLodModel of the mesh component
@@ -341,7 +334,7 @@ package unreal;
 		Args:
 		    new_forced_lod (int32): Set new ForcedLODModel that forces to set the incoming LOD. Range from [1, Max Number of LOD]. This will affect in the next tick update.
 	**/
-	public function set_forced_lod(new_forced_lod:Dynamic):Void;
+	public function set_forced_lod(new_forced_lod:Int):Void;
 	/**
 		x.set_master_pose_component(new_master_bone_component, force_update=False) -> None
 		Set MasterPoseComponent for this component
@@ -350,7 +343,7 @@ package unreal;
 		    new_master_bone_component (SkinnedMeshComponent): New MasterPoseComponent
 		    force_update (bool):
 	**/
-	public function set_master_pose_component(new_master_bone_component:Dynamic, force_update:Dynamic):Void;
+	public function set_master_pose_component(new_master_bone_component:unreal.SkinnedMeshComponent, force_update:Bool):Void;
 	/**
 		x.set_min_lod(new_min_lod) -> None
 		Set MinLodModel of the mesh component
@@ -358,7 +351,7 @@ package unreal;
 		Args:
 		    new_min_lod (int32): Set new MinLodModel that make sure the LOD does not go below of this value. Range from [0, Max Number of LOD - 1]. This will affect in the next tick update.
 	**/
-	public function set_min_lod(new_min_lod:Dynamic):Void;
+	public function set_min_lod(new_min_lod:Int):Void;
 	/**
 		x.set_physics_asset(new_physics_asset, force_re_init=False) -> None
 		Override the Physics Asset of the mesh. It uses SkeletalMesh.PhysicsAsset, but if you'd like to override use this function
@@ -367,7 +360,7 @@ package unreal;
 		    new_physics_asset (PhysicsAsset): New PhysicsAsset
 		    force_re_init (bool): Force reinitialize
 	**/
-	public function set_physics_asset(new_physics_asset:Dynamic, force_re_init:Dynamic):Void;
+	public function set_physics_asset(new_physics_asset:unreal.PhysicsAsset, force_re_init:Bool):Void;
 	/**
 		x.set_post_skinning_offsets(lod_index, offsets) -> None
 		Set Post Skinning Offsets
@@ -376,7 +369,7 @@ package unreal;
 		    lod_index (int32): 
 		    offsets (Array(Vector)):
 	**/
-	public function set_post_skinning_offsets(lod_index:Dynamic, offsets:Dynamic):Void;
+	public function set_post_skinning_offsets(lod_index:Int, offsets:unreal.Array):Void;
 	/**
 		x.set_pre_skinning_offsets(lod_index, offsets) -> None
 		Set Pre Skinning Offsets
@@ -385,7 +378,7 @@ package unreal;
 		    lod_index (int32): 
 		    offsets (Array(Vector)):
 	**/
-	public function set_pre_skinning_offsets(lod_index:Dynamic, offsets:Dynamic):Void;
+	public function set_pre_skinning_offsets(lod_index:Int, offsets:unreal.Array):Void;
 	/**
 		x.set_render_static(new_value) -> None
 		Set whether this skinned mesh should be rendered as static mesh in a reference pose
@@ -393,7 +386,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_render_static(new_value:Dynamic):Void;
+	public function set_render_static(new_value:Bool):Void;
 	/**
 		x.set_skeletal_mesh(new_mesh, reinit_pose=True) -> None
 		Change the SkeletalMesh that is rendered for this Component. Will re-initialize the animation tree etc.
@@ -402,7 +395,7 @@ package unreal;
 		    new_mesh (SkeletalMesh): New mesh to set for this component
 		    reinit_pose (bool): Whether we should keep current pose or reinitialize.
 	**/
-	public function set_skeletal_mesh(new_mesh:Dynamic, reinit_pose:Dynamic):Void;
+	public function set_skeletal_mesh(new_mesh:unreal.SkeletalMesh, reinit_pose:Bool):Void;
 	/**
 		x.set_skin_weight_override(lod_index, skin_weights) -> None
 		Allow override of skin weights on a per-component basis.
@@ -411,7 +404,7 @@ package unreal;
 		    lod_index (int32): 
 		    skin_weights (Array(SkelMeshSkinWeightInfo)):
 	**/
-	public function set_skin_weight_override(lod_index:Dynamic, skin_weights:Dynamic):Void;
+	public function set_skin_weight_override(lod_index:Int, skin_weights:unreal.Array):Void;
 	/**
 		x.set_skin_weight_profile(profile_name) -> bool
 		Setup an override Skin Weight Profile for this component
@@ -422,7 +415,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_skin_weight_profile(profile_name:Dynamic):Bool;
+	public function set_skin_weight_profile(profile_name:unreal.Name):Bool;
 	/**
 		x.set_vertex_color_override_linear_color(lod_index, vertex_colors) -> None
 		Allow override of vertex colors on a per-component basis, taking array of Blueprint-friendly LinearColors.
@@ -431,7 +424,7 @@ package unreal;
 		    lod_index (int32): 
 		    vertex_colors (Array(LinearColor)):
 	**/
-	public function set_vertex_color_override_linear_color(lod_index:Dynamic, vertex_colors:Dynamic):Void;
+	public function set_vertex_color_override_linear_color(lod_index:Int, vertex_colors:unreal.Array):Void;
 	/**
 		x.set_vertex_offset_usage(lod_index, usage) -> None
 		Set Vertex Offset Usage
@@ -440,7 +433,7 @@ package unreal;
 		    lod_index (int32): 
 		    usage (int32):
 	**/
-	public function set_vertex_offset_usage(lod_index:Dynamic, usage:Dynamic):Void;
+	public function set_vertex_offset_usage(lod_index:Int, usage:Int):Void;
 	/**
 		x.show_all_material_sections(lod_index) -> None
 		Clear any material visibility modifications made by ShowMaterialSection
@@ -448,7 +441,7 @@ package unreal;
 		Args:
 		    lod_index (int32):
 	**/
-	public function show_all_material_sections(lod_index:Dynamic):Void;
+	public function show_all_material_sections(lod_index:Int):Void;
 	/**
 		x.show_material_section(material_id, section_index, show, lod_index) -> None
 		Allows hiding of a particular material (by ID) on this instance of a SkeletalMesh.
@@ -459,7 +452,7 @@ package unreal;
 		    show (bool): True to show the material, false to hide it
 		    lod_index (int32): Index of the LOD to modify material visibility within
 	**/
-	public function show_material_section(material_id:Dynamic, section_index:Dynamic, show:Dynamic, lod_index:Dynamic):Void;
+	public function show_material_section(material_id:Int, section_index:Int, show:Bool, lod_index:Int):Void;
 	/**
 		(SkeletalMesh):  [Read-Only] The skeletal mesh used by this component.
 	**/
@@ -496,7 +489,7 @@ package unreal;
 		
 		    out_rotation (Rotator): (out) Transformed rotation
 	**/
-	public function transform_from_bone_space(bone_name:Dynamic, position:Dynamic, rotation:Dynamic):python.Tuple<Dynamic>;
+	public function transform_from_bone_space(bone_name:unreal.Name, position:unreal.Vector, rotation:unreal.Rotator):python.Tuple<Dynamic>;
 	/**
 		x.transform_to_bone_space(bone_name, position, rotation) -> (out_position=Vector, out_rotation=Rotator)
 		Transform a location/rotation from world space to bone relative space.
@@ -514,7 +507,7 @@ package unreal;
 		
 		    out_rotation (Rotator): (out) Transformed rotation
 	**/
-	public function transform_to_bone_space(bone_name:Dynamic, position:Dynamic, rotation:Dynamic):python.Tuple<Dynamic>;
+	public function transform_to_bone_space(bone_name:unreal.Name, position:unreal.Vector, rotation:unreal.Rotator):python.Tuple<Dynamic>;
 	/**
 		x.un_hide_bone_by_name(bone_name) -> None
 		UnHide the specified bone with name.  Currently this just enforces a scale of 0 for the hidden bones.
@@ -523,7 +516,7 @@ package unreal;
 		Args:
 		    bone_name (Name): Name of bone to unhide
 	**/
-	public function un_hide_bone_by_name(bone_name:Dynamic):Void;
+	public function un_hide_bone_by_name(bone_name:unreal.Name):Void;
 	/**
 		x.unload_skin_weight_profile(profile_name) -> None
 		Unload a Skin Weight Profile's skin weight buffer (if created)
@@ -531,7 +524,7 @@ package unreal;
 		Args:
 		    profile_name (Name):
 	**/
-	public function unload_skin_weight_profile(profile_name:Dynamic):Void;
+	public function unload_skin_weight_profile(profile_name:unreal.Name):Void;
 	/**
 		(bool):  [Read-Write] When true, we will just using the bounds from our MasterPoseComponent.  This is useful for when we have a Mesh Parented
 		to the main SkelMesh (e.g. outline mesh or a full body overdraw effect that is toggled) that is always going to be the same

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TreeView") extern class TreeView extends unreal.ListView {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(OnItemExpansionChangedDynamic):  [Read-Write] BP on Item Expansion Changed
 	**/
 	public var bp_on_item_expansion_changed : unreal.OnItemExpansionChangedDynamic;
@@ -32,5 +23,5 @@ package unreal;
 		    item (Object): 
 		    expand_item (bool):
 	**/
-	public function set_item_expansion(item:Dynamic, expand_item:Dynamic):Void;
+	public function set_item_expansion(item:unreal.Object, expand_item:Bool):Void;
 }

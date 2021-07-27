@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FileMediaSource") extern class FileMediaSource extends unreal.BaseMediaSource {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(str):  [Read-Write] The path to the media file to be played.
 		SetFilePath:
 	**/
@@ -30,5 +21,5 @@ package unreal;
 		Args:
 		    path (str): The path to set.
 	**/
-	public function set_file_path(path:Dynamic):Void;
+	public function set_file_path(path:String):Void;
 }

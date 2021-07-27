@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FXSystemComponent") extern class FXSystemComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_fx_system_asset() -> FXSystemAsset
 		Get the referenced FXSystem asset.
 		
@@ -34,7 +25,7 @@ package unreal;
 		    parameter_name (Name): 
 		    param (Actor):
 	**/
-	public function set_actor_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_actor_parameter(parameter_name:unreal.Name, param:unreal.Actor):Void;
 	/**
 		x.set_auto_attachment_parameters(parent, socket_name, location_rule, rotation_rule, scale_rule) -> None
 		Set AutoAttachParent, AutoAttachSocketName, AutoAttachLocationRule, AutoAttachRotationRule, AutoAttachScaleRule to the specified parameters. Does not change bAutoManageAttachment; that must be set separately.
@@ -47,7 +38,7 @@ package unreal;
 		    rotation_rule (AttachmentRule): Option for how we handle our rotation when we attach to Parent.
 		    scale_rule (AttachmentRule): Option for how we handle our scale when we attach to Parent.
 	**/
-	public function set_auto_attachment_parameters(parent:Dynamic, socket_name:Dynamic, location_rule:Dynamic, rotation_rule:Dynamic, scale_rule:Dynamic):Void;
+	public function set_auto_attachment_parameters(parent:unreal.SceneComponent, socket_name:unreal.Name, location_rule:unreal.AttachmentRule, rotation_rule:unreal.AttachmentRule, scale_rule:unreal.AttachmentRule):Void;
 	/**
 		x.set_bool_parameter(parameter_name, param) -> None
 		Change a named boolean parameter, ParticleSystemComponent converts to float.
@@ -56,7 +47,7 @@ package unreal;
 		    parameter_name (Name): 
 		    param (bool):
 	**/
-	public function set_bool_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_bool_parameter(parameter_name:unreal.Name, param:Bool):Void;
 	/**
 		x.set_color_parameter(parameter_name, param) -> None
 		Set a named color instance parameter on this ParticleSystemComponent.
@@ -66,7 +57,7 @@ package unreal;
 		    parameter_name (Name): 
 		    param (LinearColor):
 	**/
-	public function set_color_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_color_parameter(parameter_name:unreal.Name, param:unreal.LinearColor):Void;
 	/**
 		x.set_emitter_enable(emitter_name, new_enable_state) -> None
 		Enables/Disables a sub-emitter
@@ -75,7 +66,7 @@ package unreal;
 		    emitter_name (Name): The name of the sub-emitter to set it on
 		    new_enable_state (bool): The value to set it to
 	**/
-	public function set_emitter_enable(emitter_name:Dynamic, new_enable_state:Dynamic):Void;
+	public function set_emitter_enable(emitter_name:unreal.Name, new_enable_state:Bool):Void;
 	/**
 		x.set_float_parameter(parameter_name, param) -> None
 		Change a named float parameter
@@ -84,7 +75,7 @@ package unreal;
 		    parameter_name (Name): 
 		    param (float):
 	**/
-	public function set_float_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_float_parameter(parameter_name:unreal.Name, param:Float):Void;
 	/**
 		x.set_int_parameter(parameter_name, param) -> None
 		Change a named int parameter
@@ -93,7 +84,7 @@ package unreal;
 		    parameter_name (Name): 
 		    param (int32):
 	**/
-	public function set_int_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_int_parameter(parameter_name:unreal.Name, param:Int):Void;
 	/**
 		x.set_use_auto_manage_attachment(auto_manage) -> None
 		Sets whether we should automatically attach to AutoAttachParent when activated, and detach from our parent when completed.
@@ -105,7 +96,7 @@ package unreal;
 		Args:
 		    auto_manage (bool):
 	**/
-	public function set_use_auto_manage_attachment(auto_manage:Dynamic):Void;
+	public function set_use_auto_manage_attachment(auto_manage:Bool):Void;
 	/**
 		x.set_vector_parameter(parameter_name, param) -> None
 		Set a named vector instance parameter on this ParticleSystemComponent.
@@ -115,5 +106,5 @@ package unreal;
 		    parameter_name (Name): 
 		    param (Vector):
 	**/
-	public function set_vector_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_vector_parameter(parameter_name:unreal.Name, param:unreal.Vector):Void;
 }

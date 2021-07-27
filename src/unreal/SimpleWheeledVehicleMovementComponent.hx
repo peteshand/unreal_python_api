@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SimpleWheeledVehicleMovementComponent") extern class SimpleWheeledVehicleMovementComponent extends unreal.WheeledVehicleMovementComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.set_brake_torque(brake_torque, wheel_index) -> None
 		Set the brake torque to be applied to a specific wheel
 		
@@ -18,7 +9,7 @@ package unreal;
 		    brake_torque (float): 
 		    wheel_index (int32):
 	**/
-	public function set_brake_torque(brake_torque:Dynamic, wheel_index:Dynamic):Void;
+	public function set_brake_torque(brake_torque:Float, wheel_index:Int):Void;
 	/**
 		x.set_drive_torque(drive_torque, wheel_index) -> None
 		Set the drive torque to be applied to a specific wheel
@@ -27,7 +18,7 @@ package unreal;
 		    drive_torque (float): 
 		    wheel_index (int32):
 	**/
-	public function set_drive_torque(drive_torque:Dynamic, wheel_index:Dynamic):Void;
+	public function set_drive_torque(drive_torque:Float, wheel_index:Int):Void;
 	/**
 		x.set_steer_angle(steer_angle, wheel_index) -> None
 		Set the steer angle (in degrees) to be applied to a specific wheel
@@ -36,5 +27,5 @@ package unreal;
 		    steer_angle (float): 
 		    wheel_index (int32):
 	**/
-	public function set_steer_angle(steer_angle:Dynamic, wheel_index:Dynamic):Void;
+	public function set_steer_angle(steer_angle:Float, wheel_index:Int):Void;
 }

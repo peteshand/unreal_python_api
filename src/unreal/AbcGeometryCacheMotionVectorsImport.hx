@@ -4,9 +4,4 @@ package unreal;
 	static public var CALCULATE_MOTION_VECTORS_DURING_IMPORT : Dynamic;
 	static public var IMPORT_ABC_VELOCITIES_AS_MOTION_VECTORS : Dynamic;
 	static public var NO_MOTION_VECTORS : Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("new")
-	public function _new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
 }

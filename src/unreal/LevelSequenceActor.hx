@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelSequenceActor") extern class LevelSequenceActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_binding(binding, actor, allow_bindings_from_asset=False) -> None
 		Adds the specified actor to the overridden bindings for the specified binding ID, optionally still allowing the bindings defined in the Level Sequence asset
 		
@@ -19,7 +10,7 @@ package unreal;
 		    actor (Actor): Actor to bind
 		    allow_bindings_from_asset (bool): Allow bindings from the level sequence asset
 	**/
-	public function add_binding(binding:Dynamic, actor:Dynamic, allow_bindings_from_asset:Dynamic):Void;
+	public function add_binding(binding:unreal.MovieSceneObjectBindingID, actor:unreal.Actor, allow_bindings_from_asset:Bool):Void;
 	/**
 		x.add_binding_by_tag(binding_tag, actor, allow_bindings_from_asset=False) -> None
 		Binds an actor to all the bindings tagged with the specified name in this sequence. Does not remove any exising bindings that have been set up through this API. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
@@ -29,7 +20,7 @@ package unreal;
 		    actor (Actor): The actor to assign to all the tagged bindings
 		    allow_bindings_from_asset (bool): Whether to continue to allow bindings from the level sequence asset (true) or not (false)
 	**/
-	public function add_binding_by_tag(binding_tag:Dynamic, actor:Dynamic, allow_bindings_from_asset:Dynamic):Void;
+	public function add_binding_by_tag(binding_tag:unreal.Name, actor:unreal.Actor, allow_bindings_from_asset:Bool):Void;
 	/**
 		(MovieSceneBindingOverrides):  [Read-Only] Mapping of actors to override the sequence bindings with
 	**/
@@ -56,7 +47,7 @@ package unreal;
 		Returns:
 		    MovieSceneObjectBindingID:
 	**/
-	public function find_named_binding(tag:Dynamic):unreal.MovieSceneObjectBindingID;
+	public function find_named_binding(tag:unreal.Name):unreal.MovieSceneObjectBindingID;
 	/**
 		x.find_named_bindings(tag) -> Array(MovieSceneObjectBindingID)
 		Retrieve all the bindings that have been tagged with the specified name
@@ -67,7 +58,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneObjectBindingID): An array containing all the bindings that are tagged with this name, potentially empty.
 	**/
-	public function find_named_bindings(tag:Dynamic):Dynamic;
+	public function find_named_bindings(tag:unreal.Name):Dynamic;
 	/**
 		x.get_sequence() -> LevelSequence
 		Get the level sequence being played by this actor.
@@ -111,7 +102,7 @@ package unreal;
 		    binding (MovieSceneObjectBindingID): 
 		    actor (Actor):
 	**/
-	public function remove_binding(binding:Dynamic, actor:Dynamic):Void;
+	public function remove_binding(binding:unreal.MovieSceneObjectBindingID, actor:unreal.Actor):Void;
 	/**
 		x.remove_binding_by_tag(tag, actor) -> None
 		Removes the specified actor from the specified binding's actor array
@@ -120,7 +111,7 @@ package unreal;
 		    tag (Name): 
 		    actor (Actor):
 	**/
-	public function remove_binding_by_tag(tag:Dynamic, actor:Dynamic):Void;
+	public function remove_binding_by_tag(tag:unreal.Name, actor:unreal.Actor):Void;
 	/**
 		(bool):  [Read-Write] If true, playback of this level sequence on the server will be synchronized across other clients
 	**/
@@ -132,7 +123,7 @@ package unreal;
 		Args:
 		    binding (MovieSceneObjectBindingID):
 	**/
-	public function reset_binding(binding:Dynamic):Void;
+	public function reset_binding(binding:unreal.MovieSceneObjectBindingID):Void;
 	/**
 		x.reset_bindings() -> None
 		Resets all overridden bindings back to the defaults defined by the Level Sequence asset
@@ -151,7 +142,7 @@ package unreal;
 		    actors (Array(Actor)): Actors to bind
 		    allow_bindings_from_asset (bool): Allow bindings from the level sequence asset
 	**/
-	public function set_binding(binding:Dynamic, actors:Dynamic, allow_bindings_from_asset:Dynamic):Void;
+	public function set_binding(binding:unreal.MovieSceneObjectBindingID, actors:unreal.Array, allow_bindings_from_asset:Bool):Void;
 	/**
 		x.set_binding_by_tag(binding_tag, actors, allow_bindings_from_asset=False) -> None
 		Assigns an set of actors to all the bindings tagged with the specified name in this sequence. Object Bindings can be tagged within the sequence UI by RMB -> Tags... on the object binding in the tree.
@@ -161,7 +152,7 @@ package unreal;
 		    actors (Array(Actor)): The actors to assign to all the tagged bindings
 		    allow_bindings_from_asset (bool): Whether to continue to allow bindings from the level sequence asset (true) or not (false)
 	**/
-	public function set_binding_by_tag(binding_tag:Dynamic, actors:Dynamic, allow_bindings_from_asset:Dynamic):Void;
+	public function set_binding_by_tag(binding_tag:unreal.Name, actors:unreal.Array, allow_bindings_from_asset:Bool):Void;
 	/**
 		x.set_sequence(sequence) -> None
 		Set the level sequence being played by this actor.
@@ -170,7 +161,7 @@ package unreal;
 		Args:
 		    sequence (LevelSequence): The sequence object to set.
 	**/
-	public function set_sequence(sequence:Dynamic):Void;
+	public function set_sequence(sequence:unreal.LevelSequence):Void;
 	/**
 		x.show_burnin() -> None
 		Show burnin

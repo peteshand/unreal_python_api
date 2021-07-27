@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SizeBox") extern class SizeBox extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.clear_height_override() -> None
 		Clear Height Override
 	**/
@@ -85,7 +76,7 @@ package unreal;
 		Args:
 		    height_override (float):
 	**/
-	public function set_height_override(height_override:Dynamic):Void;
+	public function set_height_override(height_override:Float):Void;
 	/**
 		x.set_max_aspect_ratio(max_aspect_ratio) -> None
 		Set Max Aspect Ratio
@@ -93,7 +84,7 @@ package unreal;
 		Args:
 		    max_aspect_ratio (float):
 	**/
-	public function set_max_aspect_ratio(max_aspect_ratio:Dynamic):Void;
+	public function set_max_aspect_ratio(max_aspect_ratio:Float):Void;
 	/**
 		x.set_max_desired_height(max_desired_height) -> None
 		When specified, will report the MaxDesiredHeight if smaller than the content's desired height.
@@ -101,7 +92,7 @@ package unreal;
 		Args:
 		    max_desired_height (float):
 	**/
-	public function set_max_desired_height(max_desired_height:Dynamic):Void;
+	public function set_max_desired_height(max_desired_height:Float):Void;
 	/**
 		x.set_max_desired_width(max_desired_width) -> None
 		When specified, will report the MaxDesiredWidth if smaller than the content's desired width.
@@ -109,7 +100,7 @@ package unreal;
 		Args:
 		    max_desired_width (float):
 	**/
-	public function set_max_desired_width(max_desired_width:Dynamic):Void;
+	public function set_max_desired_width(max_desired_width:Float):Void;
 	/**
 		x.set_min_aspect_ratio(min_aspect_ratio) -> None
 		Set Min Aspect Ratio
@@ -117,7 +108,7 @@ package unreal;
 		Args:
 		    min_aspect_ratio (float):
 	**/
-	public function set_min_aspect_ratio(min_aspect_ratio:Dynamic):Void;
+	public function set_min_aspect_ratio(min_aspect_ratio:Float):Void;
 	/**
 		x.set_min_desired_height(min_desired_height) -> None
 		When specified, will report the MinDesiredHeight if larger than the content's desired height.
@@ -125,7 +116,7 @@ package unreal;
 		Args:
 		    min_desired_height (float):
 	**/
-	public function set_min_desired_height(min_desired_height:Dynamic):Void;
+	public function set_min_desired_height(min_desired_height:Float):Void;
 	/**
 		x.set_min_desired_width(min_desired_width) -> None
 		When specified, will report the MinDesiredWidth if larger than the content's desired width.
@@ -133,7 +124,7 @@ package unreal;
 		Args:
 		    min_desired_width (float):
 	**/
-	public function set_min_desired_width(min_desired_width:Dynamic):Void;
+	public function set_min_desired_width(min_desired_width:Float):Void;
 	/**
 		x.set_width_override(width_override) -> None
 		When specified, ignore the content's desired size and report the WidthOverride as the Box's desired width.
@@ -141,7 +132,7 @@ package unreal;
 		Args:
 		    width_override (float):
 	**/
-	public function set_width_override(width_override:Dynamic):Void;
+	public function set_width_override(width_override:Float):Void;
 	/**
 		(float):  [Read-Only] When specified, ignore the content's desired size and report the WidthOverride as the Box's desired width.
 	**/

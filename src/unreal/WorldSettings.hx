@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "WorldSettings") extern class WorldSettings extends unreal.Info {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Vector):  [Read-Only] Default color scale for the level
 	**/
 	public var default_color_scale : unreal.Vector;
@@ -21,6 +12,7 @@ package unreal;
 	/**
 		deprecated: 'default_game_type' was renamed to 'default_game_mode'.
 	**/
+	@:deprecated
 	public var default_game_type : Dynamic;
 	/**
 		(type(Class)):  [Read-Only] level specific default physics volume

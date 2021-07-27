@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TimecodeProvider") extern class TimecodeProvider extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.fetch_and_update() -> None
 		Update the state of the provider. Call it to ensure timecode and state are updated.
 		It is suggested to fetch timecode from its source and cache it for the getters.

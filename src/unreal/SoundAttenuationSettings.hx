@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SoundAttenuationSettings") extern class SoundAttenuationSettings extends unreal.BaseAttenuationSettings {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(AirAbsorptionMethod):  [Read-Write] What method to use to map distance values to frequency absorption values.
 	**/
 	public var absorption_method : unreal.AirAbsorptionMethod;

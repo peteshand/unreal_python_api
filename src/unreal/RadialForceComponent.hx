@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "RadialForceComponent") extern class RadialForceComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_object_type_to_affect(object_type) -> None
 		Add an object type for this radial force to affect
 		
 		Args:
 		    object_type (ObjectTypeQuery):
 	**/
-	public function add_object_type_to_affect(object_type:Dynamic):Void;
+	public function add_object_type_to_affect(object_type:unreal.ObjectTypeQuery):Void;
 	/**
 		(float):  [Read-Write] If > 0.f, will cause damage to destructible meshes as well
 	**/
@@ -58,5 +49,5 @@ package unreal;
 		Args:
 		    object_type (ObjectTypeQuery):
 	**/
-	public function remove_object_type_to_affect(object_type:Dynamic):Void;
+	public function remove_object_type_to_affect(object_type:unreal.ObjectTypeQuery):Void;
 }

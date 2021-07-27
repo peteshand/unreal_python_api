@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DataTableFunctionLibrary") extern class DataTableFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.does_data_table_row_exist(table, row_name) -> bool
 		Returns whether or not Table contains a row named RowName
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function does_data_table_row_exist(table:Dynamic, row_name:Dynamic):Bool;
+	static public function does_data_table_row_exist(table:unreal.DataTable, row_name:unreal.Name):Bool;
 	/**
 		X.evaluate_curve_table_row(curve_table, row_name, xy, context_string) -> (out_result=EvaluateCurveTableResult, out_xy=float)
 		Evaluate Curve Table Row
@@ -39,7 +30,7 @@ package unreal;
 		
 		    out_xy (float):
 	**/
-	static public function evaluate_curve_table_row(curve_table:Dynamic, row_name:Dynamic, xy:Dynamic, context_string:Dynamic):python.Tuple<Dynamic>;
+	static public function evaluate_curve_table_row(curve_table:unreal.CurveTable, row_name:unreal.Name, xy:Float, context_string:String):python.Tuple<Dynamic>;
 	/**
 		X.fill_data_table_from_csv_file(data_table, csv_file_path) -> bool
 		Empty and fill a Data Table from CSV file.
@@ -51,7 +42,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	static public function fill_data_table_from_csv_file(data_table:Dynamic, csv_file_path:Dynamic):Bool;
+	static public function fill_data_table_from_csv_file(data_table:unreal.DataTable, csv_file_path:String):Bool;
 	/**
 		X.fill_data_table_from_csv_string(data_table, csv_string) -> bool
 		Empty and fill a Data Table from CSV string.
@@ -63,7 +54,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	static public function fill_data_table_from_csv_string(data_table:Dynamic, csv_string:Dynamic):Bool;
+	static public function fill_data_table_from_csv_string(data_table:unreal.DataTable, csv_string:String):Bool;
 	/**
 		X.fill_data_table_from_json_file(data_table, json_file_path, import_row_struct=None) -> bool
 		Empty and fill a Data Table from JSON file.
@@ -76,7 +67,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	static public function fill_data_table_from_json_file(data_table:Dynamic, json_file_path:Dynamic, import_row_struct:Dynamic):Bool;
+	static public function fill_data_table_from_json_file(data_table:unreal.DataTable, json_file_path:String, import_row_struct:unreal.ScriptStruct):Bool;
 	/**
 		X.fill_data_table_from_json_string(data_table, json_string) -> bool
 		Empty and fill a Data Table from JSON string.
@@ -88,7 +79,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	static public function fill_data_table_from_json_string(data_table:Dynamic, json_string:Dynamic):Bool;
+	static public function fill_data_table_from_json_string(data_table:unreal.DataTable, json_string:String):Bool;
 	/**
 		X.get_data_table_column_as_string(data_table, property_name) -> Array(str)
 		Export from the DataTable all the row for one column. Export it as string. The row name is not included.
@@ -100,7 +91,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_data_table_column_as_string(data_table:Dynamic, property_name:Dynamic):Dynamic;
+	static public function get_data_table_column_as_string(data_table:unreal.DataTable, property_name:unreal.Name):Dynamic;
 	/**
 		X.get_data_table_row_names(table) -> Array(Name)
 		Get Data Table Row Names
@@ -113,5 +104,5 @@ package unreal;
 		
 		    out_row_names (Array(Name)):
 	**/
-	static public function get_data_table_row_names(table:Dynamic):Dynamic;
+	static public function get_data_table_row_names(table:unreal.DataTable):Dynamic;
 }

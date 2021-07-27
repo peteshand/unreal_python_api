@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LightComponentBase") extern class LightComponentBase extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Whether the light affects global illumination, when ray-traced global illumination is enabled.
 	**/
 	public var affect_global_illumination : Bool;
@@ -31,6 +22,7 @@ package unreal;
 	/**
 		deprecated: 'brightness' was renamed to 'intensity'.
 	**/
+	@:deprecated
 	public var brightness : Dynamic;
 	/**
 		(bool):  [Read-Only] Whether the light should cast high quality hair-strands self-shadowing. When this option is enabled, an extra GPU cost for this light.
@@ -93,7 +85,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_affect_global_illumination(new_value:Dynamic):Void;
+	public function set_affect_global_illumination(new_value:Bool):Void;
 	/**
 		x.set_affect_reflection(new_value) -> None
 		Set Affect Reflection
@@ -101,7 +93,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_affect_reflection(new_value:Dynamic):Void;
+	public function set_affect_reflection(new_value:Bool):Void;
 	/**
 		x.set_cast_deep_shadow(new_value) -> None
 		Set Cast Deep Shadow
@@ -109,7 +101,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_deep_shadow(new_value:Dynamic):Void;
+	public function set_cast_deep_shadow(new_value:Bool):Void;
 	/**
 		x.set_cast_raytraced_shadow(new_value) -> None
 		Set Cast Raytraced Shadow
@@ -117,7 +109,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_raytraced_shadow(new_value:Dynamic):Void;
+	public function set_cast_raytraced_shadow(new_value:Bool):Void;
 	/**
 		x.set_cast_shadows(new_value) -> None
 		Sets whether this light casts shadows
@@ -125,7 +117,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_shadows(new_value:Dynamic):Void;
+	public function set_cast_shadows(new_value:Bool):Void;
 	/**
 		x.set_cast_volumetric_shadow(new_value) -> None
 		Set Cast Volumetric Shadow
@@ -133,7 +125,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_volumetric_shadow(new_value:Dynamic):Void;
+	public function set_cast_volumetric_shadow(new_value:Bool):Void;
 	/**
 		x.set_samples_per_pixel(new_value) -> None
 		Set Samples Per Pixel
@@ -141,7 +133,7 @@ package unreal;
 		Args:
 		    new_value (int32):
 	**/
-	public function set_samples_per_pixel(new_value:Dynamic):Void;
+	public function set_samples_per_pixel(new_value:Int):Void;
 	/**
 		(bool):  [Read-Only] Whether light from this light transmits through surfaces with subsurface scattering profiles. Requires light to be movable.
 	**/

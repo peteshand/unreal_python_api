@@ -2,17 +2,9 @@
 package unreal;
 @:pythonImport("unreal", "FloatingPawnMovement") extern class FloatingPawnMovement extends unreal.PawnMovementComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		deprecated: 'accel_rate' was renamed to 'acceleration'.
 	**/
+	@:deprecated
 	public var accel_rate : Dynamic;
 	/**
 		(float):  [Read-Write] Acceleration applied by input (rate of change of velocity)
@@ -21,6 +13,7 @@ package unreal;
 	/**
 		deprecated: 'decel_rate' was renamed to 'deceleration'.
 	**/
+	@:deprecated
 	public var decel_rate : Dynamic;
 	/**
 		(float):  [Read-Write] Deceleration applied when there is no input (rate of change of velocity)

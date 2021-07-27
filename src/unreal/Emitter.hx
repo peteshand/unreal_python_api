@@ -2,25 +2,18 @@
 package unreal;
 @:pythonImport("unreal", "Emitter") extern class Emitter extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.activate() -> None
 		BEGIN DEPRECATED (use component functions now in level script)
 		deprecated: Function 'Activate' is deprecated.
 	**/
+	@:deprecated
 	public function activate():Void;
 	/**
 		x.deactivate() -> None
 		Deactivate
 		deprecated: Function 'Deactivate' is deprecated.
 	**/
+	@:deprecated
 	public function deactivate():Void;
 	/**
 		x.is_active() -> bool
@@ -30,6 +23,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
+	@:deprecated
 	public function is_active():Bool;
 	/**
 		(ParticleBurstSignature):  [Read-Write] On Particle Burst
@@ -64,7 +58,8 @@ package unreal;
 		    parameter_name (Name): 
 		    param (Actor):
 	**/
-	public function set_actor_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	@:deprecated
+	public function set_actor_parameter(parameter_name:unreal.Name, param:unreal.Actor):Void;
 	/**
 		x.set_color_parameter(parameter_name, param) -> None
 		Set Color Parameter
@@ -74,7 +69,8 @@ package unreal;
 		    parameter_name (Name): 
 		    param (LinearColor):
 	**/
-	public function set_color_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	@:deprecated
+	public function set_color_parameter(parameter_name:unreal.Name, param:unreal.LinearColor):Void;
 	/**
 		x.set_float_parameter(parameter_name, param) -> None
 		Set Float Parameter
@@ -84,7 +80,8 @@ package unreal;
 		    parameter_name (Name): 
 		    param (float):
 	**/
-	public function set_float_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	@:deprecated
+	public function set_float_parameter(parameter_name:unreal.Name, param:Float):Void;
 	/**
 		x.set_material_parameter(parameter_name, param) -> None
 		Set Material Parameter
@@ -94,7 +91,8 @@ package unreal;
 		    parameter_name (Name): 
 		    param (MaterialInterface):
 	**/
-	public function set_material_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	@:deprecated
+	public function set_material_parameter(parameter_name:unreal.Name, param:unreal.MaterialInterface):Void;
 	/**
 		x.set_template(new_template) -> None
 		Set Template
@@ -103,7 +101,8 @@ package unreal;
 		Args:
 		    new_template (ParticleSystem):
 	**/
-	public function set_template(new_template:Dynamic):Void;
+	@:deprecated
+	public function set_template(new_template:unreal.ParticleSystem):Void;
 	/**
 		x.set_vector_parameter(parameter_name, param) -> None
 		Set Vector Parameter
@@ -113,11 +112,13 @@ package unreal;
 		    parameter_name (Name): 
 		    param (Vector):
 	**/
-	public function set_vector_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	@:deprecated
+	public function set_vector_parameter(parameter_name:unreal.Name, param:unreal.Vector):Void;
 	/**
 		x.toggle_active() -> None
 		Toggle Active
 		deprecated: Function 'ToggleActive' is deprecated.
 	**/
+	@:deprecated
 	public function toggle_active():Void;
 }

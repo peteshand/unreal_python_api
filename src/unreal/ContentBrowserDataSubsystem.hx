@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ContentBrowserDataSubsystem") extern class ContentBrowserDataSubsystem extends unreal.EditorSubsystem {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.activate_all_data_sources() -> None
 		Activate all available data sources.
 	**/
@@ -25,7 +16,7 @@ package unreal;
 		Returns:
 		    bool: True if the data source was available and not already active, false otherwise.
 	**/
-	public function activate_data_source(name:Dynamic):Bool;
+	public function activate_data_source(name:unreal.Name):Bool;
 	/**
 		x.deactivate_all_data_sources() -> None
 		Deactivate all active data sources.
@@ -41,7 +32,7 @@ package unreal;
 		Returns:
 		    bool: True if the data source was available and active, false otherwise.
 	**/
-	public function deactivate_data_source(name:Dynamic):Bool;
+	public function deactivate_data_source(name:unreal.Name):Bool;
 	/**
 		x.get_active_data_sources() -> Array(Name)
 		Get the list of current active data sources.
@@ -69,7 +60,7 @@ package unreal;
 		Returns:
 		    ContentBrowserItem:
 	**/
-	public function get_item_at_path(path:Dynamic, item_type_filter:Dynamic):unreal.ContentBrowserItem;
+	public function get_item_at_path(path:unreal.Name, item_type_filter:unreal.ContentBrowserItemTypeFilter):unreal.ContentBrowserItem;
 	/**
 		x.get_items_at_path(path, item_type_filter) -> Array(ContentBrowserItem)
 		Get the items (folders and/or files) that exist at the given virtual path.
@@ -82,7 +73,7 @@ package unreal;
 		Returns:
 		    Array(ContentBrowserItem):
 	**/
-	public function get_items_at_path(path:Dynamic, item_type_filter:Dynamic):Dynamic;
+	public function get_items_at_path(path:unreal.Name, item_type_filter:unreal.ContentBrowserItemTypeFilter):Dynamic;
 	/**
 		x.get_items_under_path(path, filter) -> Array(ContentBrowserItem)
 		Get the items (folders and/or files) that exist under the given virtual path.
@@ -94,5 +85,5 @@ package unreal;
 		Returns:
 		    Array(ContentBrowserItem):
 	**/
-	public function get_items_under_path(path:Dynamic, filter:Dynamic):Dynamic;
+	public function get_items_under_path(path:unreal.Name, filter:unreal.ContentBrowserDataFilter):Dynamic;
 }

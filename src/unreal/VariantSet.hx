@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "VariantSet") extern class VariantSet extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_display_text() -> Text
 		Get Display Text
 		
@@ -52,7 +43,7 @@ package unreal;
 		Returns:
 		    Variant:
 	**/
-	public function get_variant(variant_index:Dynamic):unreal.Variant;
+	public function get_variant(variant_index:Int):unreal.Variant;
 	/**
 		x.get_variant_by_name(variant_name) -> Variant
 		Get Variant by Name
@@ -63,7 +54,7 @@ package unreal;
 		Returns:
 		    Variant:
 	**/
-	public function get_variant_by_name(variant_name:Dynamic):unreal.Variant;
+	public function get_variant_by_name(variant_name:String):unreal.Variant;
 	/**
 		x.set_display_text(new_display_text) -> None
 		Set Display Text
@@ -71,7 +62,7 @@ package unreal;
 		Args:
 		    new_display_text (Text):
 	**/
-	public function set_display_text(new_display_text:Dynamic):Void;
+	public function set_display_text(new_display_text:unreal.Text):Void;
 	/**
 		x.set_thumbnail_from_camera(world_context_object, camera_transform, fov_degrees=50.000000, min_z=50.000000, gamma=2.200000) -> None
 		Set Thumbnail from Camera
@@ -83,7 +74,7 @@ package unreal;
 		    min_z (float): 
 		    gamma (float):
 	**/
-	public function set_thumbnail_from_camera(world_context_object:Dynamic, camera_transform:Dynamic, fov_degrees:Dynamic, min_z:Dynamic, gamma:Dynamic):Void;
+	public function set_thumbnail_from_camera(world_context_object:unreal.Object, camera_transform:unreal.Transform, fov_degrees:Float, min_z:Float, gamma:Float):Void;
 	/**
 		x.set_thumbnail_from_editor_viewport() -> None
 		Sets the thumbnail from the active editor viewport. Doesn't do anything if the Editor is not available
@@ -96,7 +87,7 @@ package unreal;
 		Args:
 		    file_path (str):
 	**/
-	public function set_thumbnail_from_file(file_path:Dynamic):Void;
+	public function set_thumbnail_from_file(file_path:String):Void;
 	/**
 		x.set_thumbnail_from_texture(new_thumbnail) -> None
 		Sets the thumbnail to use for this variant set. Can receive nullptr to clear it
@@ -104,5 +95,5 @@ package unreal;
 		Args:
 		    new_thumbnail (Texture2D):
 	**/
-	public function set_thumbnail_from_texture(new_thumbnail:Dynamic):Void;
+	public function set_thumbnail_from_texture(new_thumbnail:unreal.Texture2D):Void;
 }

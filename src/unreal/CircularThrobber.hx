@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CircularThrobber") extern class CircularThrobber extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SlateBrush):  [Read-Only] Image
 	**/
 	public var image : unreal.SlateBrush;
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    number_of_pieces (int32):
 	**/
-	public function set_number_of_pieces(number_of_pieces:Dynamic):Void;
+	public function set_number_of_pieces(number_of_pieces:Int):Void;
 	/**
 		x.set_period(period) -> None
 		Sets the amount of time for a full circle (in seconds).
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    period (float):
 	**/
-	public function set_period(period:Dynamic):Void;
+	public function set_period(period:Float):Void;
 	/**
 		x.set_radius(radius) -> None
 		Sets the radius of the circle.
@@ -49,5 +40,5 @@ package unreal;
 		Args:
 		    radius (float):
 	**/
-	public function set_radius(radius:Dynamic):Void;
+	public function set_radius(radius:Float):Void;
 }

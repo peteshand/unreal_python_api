@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Paths") extern class Paths extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.automation_dir() -> str
 		Returns the directory for automation save files
 		
@@ -53,7 +44,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function change_extension(path:Dynamic, new_extension:Dynamic):String;
+	static public function change_extension(path:String, new_extension:String):String;
 	/**
 		X.cloud_dir() -> str
 		Returns the directory for local files used in cloud emulation or support
@@ -79,7 +70,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function collapse_relative_directories(path:Dynamic):Dynamic;
+	static public function collapse_relative_directories(path:String):Dynamic;
 	/**
 		X.combine(paths) -> str
 		Combine two or more Paths into one single Path
@@ -90,7 +81,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function combine(paths:Dynamic):String;
+	static public function combine(paths:unreal.Array):String;
 	/**
 		X.convert_from_sandbox_path(path, sandbox_name) -> str
 		Converts a sandbox (in Saved/Sandboxes) path to a normal path.
@@ -102,7 +93,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function convert_from_sandbox_path(path:Dynamic, sandbox_name:Dynamic):String;
+	static public function convert_from_sandbox_path(path:String, sandbox_name:String):String;
 	/**
 		X.convert_relative_path_to_full(path, base_path="") -> str
 		Converts a relative path name to a fully qualified name relative to the specified BasePath.
@@ -115,7 +106,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function convert_relative_path_to_full(path:Dynamic, base_path:Dynamic):String;
+	static public function convert_relative_path_to_full(path:String, base_path:String):String;
 	/**
 		X.convert_to_sandbox_path(path, sandbox_name) -> str
 		Converts a normal path to a sandbox path (in Saved/Sandboxes).
@@ -127,7 +118,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function convert_to_sandbox_path(path:Dynamic, sandbox_name:Dynamic):String;
+	static public function convert_to_sandbox_path(path:String, sandbox_name:String):String;
 	/**
 		X.create_temp_filename(path, prefix="", extension=".tmp") -> str
 		Creates a temporary filename with the specified prefix.
@@ -140,7 +131,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function create_temp_filename(path:Dynamic, prefix:Dynamic, extension:Dynamic):String;
+	static public function create_temp_filename(path:String, prefix:String, extension:String):String;
 	/**
 		X.diff_dir() -> str
 		Returns the directory for temp files used for diffing
@@ -159,7 +150,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function directory_exists(path:Dynamic):Bool;
+	static public function directory_exists(path:String):Bool;
 	/**
 		X.engine_config_dir() -> str
 		Returns the directory the root configuration files are located.
@@ -277,7 +268,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function file_exists(path:Dynamic):Bool;
+	static public function file_exists(path:String):Bool;
 	/**
 		X.game_agnostic_saved_dir() -> str
 		Returns the saved directory that is not game specific. This is usually the same as
@@ -330,7 +321,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_base_filename(path:Dynamic, remove_path:Dynamic):String;
+	static public function get_base_filename(path:String, remove_path:Bool):String;
 	/**
 		X.get_clean_filename(path) -> str
 		Returns the filename (with extension), minus any path information.
@@ -341,7 +332,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_clean_filename(path:Dynamic):String;
+	static public function get_clean_filename(path:String):String;
 	/**
 		X.get_editor_localization_paths() -> Array(str)
 		Returns a list of editor-specific localization paths
@@ -369,7 +360,7 @@ package unreal;
 		Returns:
 		    str: the extension of this filename, or an empty string if the filename doesn't have an extension.
 	**/
-	static public function get_extension(path:Dynamic, include_dot:Dynamic):String;
+	static public function get_extension(path:String, include_dot:Bool):String;
 	/**
 		X.get_game_localization_paths() -> Array(str)
 		Returns a list of game-specific localization paths
@@ -396,7 +387,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_path(path:Dynamic):String;
+	static public function get_path(path:String):String;
 	/**
 		X.get_project_file_path() -> str
 		Gets the path to the project file.
@@ -455,7 +446,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_drive(path:Dynamic):Bool;
+	static public function is_drive(path:String):Bool;
 	/**
 		X.is_project_file_path_set() -> bool
 		Checks whether the path to the project file, if any, is set.
@@ -474,7 +465,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_relative(path:Dynamic):Bool;
+	static public function is_relative(path:String):Bool;
 	/**
 		X.is_restricted_path(path) -> bool
 		Determines if supplied path uses a restricted/internal subdirectory.  Note that slashes are normalized and character case is ignored for the comparison.
@@ -485,7 +476,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_restricted_path(path:Dynamic):Bool;
+	static public function is_restricted_path(path:String):Bool;
 	/**
 		X.is_same_path(path_a, path_b) -> bool
 		Checks if two paths are the same.
@@ -497,7 +488,7 @@ package unreal;
 		Returns:
 		    bool: True if both paths are the same. False otherwise.
 	**/
-	static public function is_same_path(path_a:Dynamic, path_b:Dynamic):Bool;
+	static public function is_same_path(path_a:String, path_b:String):Bool;
 	/**
 		X.launch_dir() -> str
 		Returns the directory the application was launched from (useful for commandline utilities)
@@ -519,7 +510,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function make_path_relative_to(path:Dynamic, relative_to:Dynamic):Dynamic;
+	static public function make_path_relative_to(path:String, relative_to:String):Dynamic;
 	/**
 		X.make_platform_filename(path) -> str
 		Takes an "Unreal" pathname and converts it to a platform filename.
@@ -532,7 +523,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function make_platform_filename(path:Dynamic):String;
+	static public function make_platform_filename(path:String):String;
 	/**
 		X.make_standard_filename(path) -> str
 		Make fully standard "Unreal" pathname:
@@ -549,7 +540,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function make_standard_filename(path:Dynamic):String;
+	static public function make_standard_filename(path:String):String;
 	/**
 		X.make_valid_file_name(string, replacement_char="") -> str
 		Returns a string that is safe to use as a filename because all items in
@@ -564,7 +555,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function make_valid_file_name(string:Dynamic, replacement_char:Dynamic):String;
+	static public function make_valid_file_name(string:String, replacement_char:String):String;
 	/**
 		X.normalize_directory_name(path) -> str
 		Normalize all / and \ to TEXT("/") and remove any trailing TEXT("/") if the character before that is not a TEXT("/") or a colon
@@ -577,7 +568,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function normalize_directory_name(path:Dynamic):String;
+	static public function normalize_directory_name(path:String):String;
 	/**
 		X.normalize_filename(path) -> str
 		Convert all / and \ to TEXT("/")
@@ -590,7 +581,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function normalize_filename(path:Dynamic):String;
+	static public function normalize_filename(path:String):String;
 	/**
 		X.profiling_dir() -> str
 		Returns the directory the engine uses to output profiling files.
@@ -701,7 +692,7 @@ package unreal;
 		
 		    out_path (str):
 	**/
-	static public function remove_duplicate_slashes(path:Dynamic):String;
+	static public function remove_duplicate_slashes(path:String):String;
 	/**
 		X.root_dir() -> str
 		Returns the root directory of the engine directory tree
@@ -737,7 +728,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function set_extension(path:Dynamic, new_extension:Dynamic):String;
+	static public function set_extension(path:String, new_extension:String):String;
 	/**
 		X.set_project_file_path(new_game_project_file_path) -> None
 		Sets the path to the project file.
@@ -745,7 +736,7 @@ package unreal;
 		Args:
 		    new_game_project_file_path (str): The project file path to set.
 	**/
-	static public function set_project_file_path(new_game_project_file_path:Dynamic):Void;
+	static public function set_project_file_path(new_game_project_file_path:String):Void;
 	/**
 		X.shader_working_dir() -> str
 		Returns the Shader Working Directory
@@ -787,7 +778,7 @@ package unreal;
 		
 		    extension_part (str):
 	**/
-	static public function split(path:Dynamic):python.Tuple<Dynamic>;
+	static public function split(path:String):python.Tuple<Dynamic>;
 	/**
 		X.validate_path(path) -> (did_succeed=bool, out_reason=Text)
 		Validates that the parts that make up the path contain no invalid characters as dictated by the operating system
@@ -803,7 +794,7 @@ package unreal;
 		
 		    out_reason (Text): If validation fails, this is filled with the failure reason
 	**/
-	static public function validate_path(path:Dynamic):python.Tuple<Dynamic>;
+	static public function validate_path(path:String):python.Tuple<Dynamic>;
 	/**
 		X.video_capture_dir() -> str
 		Returns the directory the engine uses to output user requested video capture files.

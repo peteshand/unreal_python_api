@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelSequenceBurnIn") extern class LevelSequenceBurnIn extends unreal.UserWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(LevelSequencePlayerSnapshot):  [Read-Only] Snapshot of frame information.
 	**/
 	public var frame_information : unreal.LevelSequencePlayerSnapshot;
@@ -33,5 +24,5 @@ package unreal;
 		Args:
 		    settings (Object):
 	**/
-	public function set_settings(settings:Dynamic):Void;
+	public function set_settings(settings:unreal.Object):Void;
 }

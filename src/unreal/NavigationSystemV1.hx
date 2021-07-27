@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NavigationSystemV1") extern class NavigationSystemV1 extends unreal.NavigationSystemBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Class):  [Read-Only] Crowd Manager Class
 	**/
 	public var crowd_manager_class : Class<Dynamic>;
@@ -37,7 +28,7 @@ package unreal;
 		Returns:
 		    NavigationPath:
 	**/
-	static public function find_path_to_actor_synchronously(world_context_object:Dynamic, path_start:Dynamic, goal_actor:Dynamic, tether_distance:Dynamic, pathfinding_context:Dynamic, filter_class:Dynamic):unreal.NavigationPath;
+	static public function find_path_to_actor_synchronously(world_context_object:unreal.Object, path_start:unreal.Vector, goal_actor:unreal.Actor, tether_distance:Float, pathfinding_context:unreal.Actor, filter_class:Dynamic):unreal.NavigationPath;
 	/**
 		X.find_path_to_location_synchronously(world_context_object, path_start, path_end, pathfinding_context=None, filter_class=None) -> NavigationPath
 		Finds path instantly, in a FindPath Synchronously.
@@ -52,7 +43,7 @@ package unreal;
 		Returns:
 		    NavigationPath:
 	**/
-	static public function find_path_to_location_synchronously(world_context_object:Dynamic, path_start:Dynamic, path_end:Dynamic, pathfinding_context:Dynamic, filter_class:Dynamic):unreal.NavigationPath;
+	static public function find_path_to_location_synchronously(world_context_object:unreal.Object, path_start:unreal.Vector, path_end:unreal.Vector, pathfinding_context:unreal.Actor, filter_class:Dynamic):unreal.NavigationPath;
 	/**
 		X.get_navigation_system(world_context_object) -> NavigationSystemV1
 		Blueprint functions
@@ -63,7 +54,7 @@ package unreal;
 		Returns:
 		    NavigationSystemV1:
 	**/
-	static public function get_navigation_system(world_context_object:Dynamic):unreal.NavigationSystemV1;
+	static public function get_navigation_system(world_context_object:unreal.Object):unreal.NavigationSystemV1;
 	/**
 		X.get_path_cost(world_context_object, path_start, path_end, nav_data=None, filter_class=None) -> (NavigationQueryResult, path_cost=float)
 		Potentially expensive. Use with caution. Consider using UPathFollowingComponent::GetRemainingPathCost instead
@@ -80,7 +71,7 @@ package unreal;
 		
 		    path_cost (float):
 	**/
-	static public function get_path_cost(world_context_object:Dynamic, path_start:Dynamic, path_end:Dynamic, nav_data:Dynamic, filter_class:Dynamic):Float;
+	static public function get_path_cost(world_context_object:unreal.Object, path_start:unreal.Vector, path_end:unreal.Vector, nav_data:unreal.NavigationData, filter_class:Dynamic):Float;
 	/**
 		X.get_path_length(world_context_object, path_start, path_end, nav_data=None, filter_class=None) -> (NavigationQueryResult, path_length=float)
 		Potentially expensive. Use with caution
@@ -97,7 +88,7 @@ package unreal;
 		
 		    path_length (float):
 	**/
-	static public function get_path_length(world_context_object:Dynamic, path_start:Dynamic, path_end:Dynamic, nav_data:Dynamic, filter_class:Dynamic):Float;
+	static public function get_path_length(world_context_object:unreal.Object, path_start:unreal.Vector, path_end:unreal.Vector, nav_data:unreal.NavigationData, filter_class:Dynamic):Float;
 	/**
 		X.get_random_location_in_navigable_radius(world_context_object, origin, radius, nav_data=None, filter_class=None) -> Vector or None
 		Generates a random location in navigable space within given radius of Origin.
@@ -114,7 +105,7 @@ package unreal;
 		
 		    random_location (Vector):
 	**/
-	static public function get_random_location_in_navigable_radius(world_context_object:Dynamic, origin:Dynamic, radius:Dynamic, nav_data:Dynamic, filter_class:Dynamic):Dynamic;
+	static public function get_random_location_in_navigable_radius(world_context_object:unreal.Object, origin:unreal.Vector, radius:Float, nav_data:unreal.NavigationData, filter_class:Dynamic):Dynamic;
 	/**
 		X.get_random_point_in_navigable_radius(world_context_object, origin, radius, nav_data=None, filter_class=None) -> Vector or None
 		K2 Get Random Point in Navigable Radius
@@ -131,7 +122,7 @@ package unreal;
 		
 		    random_location (Vector):
 	**/
-	static public function get_random_point_in_navigable_radius(world_context_object:Dynamic, origin:Dynamic, radius:Dynamic, nav_data:Dynamic, filter_class:Dynamic):Dynamic;
+	static public function get_random_point_in_navigable_radius(world_context_object:unreal.Object, origin:unreal.Vector, radius:Float, nav_data:unreal.NavigationData, filter_class:Dynamic):Dynamic;
 	/**
 		X.get_random_reachable_point_in_radius(world_context_object, origin, radius, nav_data=None, filter_class=None) -> Vector or None
 		Generates a random location reachable from given Origin location.
@@ -148,7 +139,7 @@ package unreal;
 		
 		    random_location (Vector):
 	**/
-	static public function get_random_reachable_point_in_radius(world_context_object:Dynamic, origin:Dynamic, radius:Dynamic, nav_data:Dynamic, filter_class:Dynamic):Dynamic;
+	static public function get_random_reachable_point_in_radius(world_context_object:unreal.Object, origin:unreal.Vector, radius:Float, nav_data:unreal.NavigationData, filter_class:Dynamic):Dynamic;
 	/**
 		X.is_navigation_being_built(world_context_object) -> bool
 		Is Navigation Being Built
@@ -159,7 +150,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_navigation_being_built(world_context_object:Dynamic):Bool;
+	static public function is_navigation_being_built(world_context_object:unreal.Object):Bool;
 	/**
 		X.is_navigation_being_built_or_locked(world_context_object) -> bool
 		Is Navigation Being Built or Locked
@@ -170,7 +161,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_navigation_being_built_or_locked(world_context_object:Dynamic):Bool;
+	static public function is_navigation_being_built_or_locked(world_context_object:unreal.Object):Bool;
 	/**
 		x.k2_replace_area_in_octree_data(object, old_area, new_area) -> bool
 		K2 Replace Area in Octree Data
@@ -183,7 +174,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function k2_replace_area_in_octree_data(object:Dynamic, old_area:Dynamic, new_area:Dynamic):Bool;
+	public function k2_replace_area_in_octree_data(object:unreal.Object, old_area:Dynamic, new_area:Dynamic):Bool;
 	/**
 		X.navigation_raycast(world_context_object, ray_start, ray_end, filter_class=None, querier=None) -> Vector or None
 		Performs navigation raycast on NavigationData appropriate for given Querier.
@@ -200,7 +191,7 @@ package unreal;
 		
 		    hit_location (Vector): if line was obstructed this will be set to hit location. Otherwise it contains SegmentEnd
 	**/
-	static public function navigation_raycast(world_context_object:Dynamic, ray_start:Dynamic, ray_end:Dynamic, filter_class:Dynamic, querier:Dynamic):Dynamic;
+	static public function navigation_raycast(world_context_object:unreal.Object, ray_start:unreal.Vector, ray_end:unreal.Vector, filter_class:Dynamic, querier:unreal.Controller):Dynamic;
 	/**
 		x.on_navigation_bounds_updated(nav_volume) -> None
 		
@@ -209,7 +200,7 @@ package unreal;
 		Args:
 		    nav_volume (NavMeshBoundsVolume):
 	**/
-	public function on_navigation_bounds_updated(nav_volume:Dynamic):Void;
+	public function on_navigation_bounds_updated(nav_volume:unreal.NavMeshBoundsVolume):Void;
 	/**
 		(OnNavDataGenericEvent):  [Read-Write] On Navigation Generation Finished Delegate
 	**/
@@ -230,7 +221,7 @@ package unreal;
 		
 		    projected_location (Vector):
 	**/
-	static public function project_point_to_navigation(world_context_object:Dynamic, point:Dynamic, nav_data:Dynamic, filter_class:Dynamic, query_extent:Dynamic):Dynamic;
+	static public function project_point_to_navigation(world_context_object:unreal.Object, point:unreal.Vector, nav_data:unreal.NavigationData, filter_class:Dynamic, query_extent:unreal.Vector):Dynamic;
 	/**
 		x.register_navigation_invoker(invoker, tile_generation_radius=3000.000000, tile_removal_radius=5000.000000) -> None
 		Registers given actor as a "navigation enforcer" which means navigation system will
@@ -242,7 +233,7 @@ package unreal;
 		    tile_generation_radius (float): 
 		    tile_removal_radius (float):
 	**/
-	public function register_navigation_invoker(invoker:Dynamic, tile_generation_radius:Dynamic, tile_removal_radius:Dynamic):Void;
+	public function register_navigation_invoker(invoker:unreal.Actor, tile_generation_radius:Float, tile_removal_radius:Float):Void;
 	/**
 		x.reset_max_simultaneous_tile_generation_jobs_count() -> None
 		Brings limit of simultaneous navmesh tile generation jobs back to Project Setting's default value
@@ -255,7 +246,7 @@ package unreal;
 		Args:
 		    new_mode (NavDataGatheringModeConfig):
 	**/
-	public function set_geometry_gathering_mode(new_mode:Dynamic):Void;
+	public function set_geometry_gathering_mode(new_mode:unreal.NavDataGatheringModeConfig):Void;
 	/**
 		x.set_max_simultaneous_tile_generation_jobs_count(max_number_of_jobs) -> None
 		will limit the number of simultaneously running navmesh tile generation jobs to specified number.
@@ -263,7 +254,7 @@ package unreal;
 		Args:
 		    max_number_of_jobs (int32): gets trimmed to be at least 1. You cannot use this function to pause navmesh generation
 	**/
-	public function set_max_simultaneous_tile_generation_jobs_count(max_number_of_jobs:Dynamic):Void;
+	public function set_max_simultaneous_tile_generation_jobs_count(max_number_of_jobs:Int):Void;
 	/**
 		x.unregister_navigation_invoker(invoker) -> None
 		Removes given actor from the list of active navigation enforcers.
@@ -272,5 +263,5 @@ package unreal;
 		Args:
 		    invoker (Actor):
 	**/
-	public function unregister_navigation_invoker(invoker:Dynamic):Void;
+	public function unregister_navigation_invoker(invoker:unreal.Actor):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SlateBrush") extern class SlateBrush extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SlateBrushDrawType):  [Read-Write] How to draw the image
 	**/
 	public var draw_as : unreal.SlateBrushDrawType;
@@ -35,6 +26,7 @@ package unreal;
 	/**
 		deprecated: 'texture_object' was renamed to 'resource_object'.
 	**/
+	@:deprecated
 	public var texture_object : Dynamic;
 	/**
 		(SlateBrushTileType):  [Read-Write] How to tile the image in Image mode

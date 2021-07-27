@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimNode_AnimDynamics") extern class AnimNode_AnimDynamics extends unreal.AnimNode_SkeletalControlBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Overridden angular bias value
 		Angular bias is essentially a twist reduction for chain forces and defaults to a value to keep chains stability
 		in check. When using single-body systems sometimes angular forces will look like they are "catching-up" with

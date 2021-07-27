@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DynamicEntryBoxBase") extern class DynamicEntryBoxBase extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(HorizontalAlignment):  [Read-Only] Horizontal alignment of generated entries. Horizontal/Vertical/Wrap boxes only.
 	**/
 	public var entry_horizontal_alignment : unreal.HorizontalAlignment;
@@ -59,7 +50,7 @@ package unreal;
 		Args:
 		    entry_spacing (Vector2D):
 	**/
-	public function set_entry_spacing(entry_spacing:Dynamic):Void;
+	public function set_entry_spacing(entry_spacing:unreal.Vector2D):Void;
 	/**
 		x.set_radial_settings(settings) -> None
 		Set Radial Settings
@@ -67,7 +58,7 @@ package unreal;
 		Args:
 		    settings (RadialBoxSettings):
 	**/
-	public function set_radial_settings(settings:Dynamic):Void;
+	public function set_radial_settings(settings:unreal.RadialBoxSettings):Void;
 	/**
 		(Array(Vector2D)):  [Read-Only] The looping sequence of entry paddings to apply as entries are created. Overlay boxes only. Ignores EntrySpacing if not empty.
 	**/

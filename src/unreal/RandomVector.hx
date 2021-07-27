@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "RandomVector") extern class RandomVector extends unreal.FieldNodeVector {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Magnitude
 	**/
 	public var magnitude : Float;
@@ -24,5 +15,5 @@ package unreal;
 		Returns:
 		    RandomVector:
 	**/
-	public function set_random_vector(magnitude:Dynamic):unreal.RandomVector;
+	public function set_random_vector(magnitude:Float):unreal.RandomVector;
 }

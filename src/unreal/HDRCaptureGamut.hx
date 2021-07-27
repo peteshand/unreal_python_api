@@ -7,13 +7,4 @@ package unreal;
 	static public var HCGM_P3DCI : Dynamic;
 	static public var HCGM_REC2020 : Dynamic;
 	static public var HCGM_REC709 : Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

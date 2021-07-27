@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "MeshDescriptionBase") extern class MeshDescriptionBase extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.compute_polygon_triangulation(polygon_id) -> None
 		Generates triangles and internal edges for the given polygon
 		
 		Args:
 		    polygon_id (PolygonID):
 	**/
-	public function compute_polygon_triangulation(polygon_id:Dynamic):Void;
+	public function compute_polygon_triangulation(polygon_id:unreal.PolygonID):Void;
 	/**
 		x.create_edge(vertex_id0, vertex_id1) -> EdgeID
 		Adds a new edge to the mesh and returns its ID
@@ -29,7 +20,7 @@ package unreal;
 		Returns:
 		    EdgeID:
 	**/
-	public function create_edge(vertex_id0:Dynamic, vertex_id1:Dynamic):unreal.EdgeID;
+	public function create_edge(vertex_id0:unreal.VertexID, vertex_id1:unreal.VertexID):unreal.EdgeID;
 	/**
 		x.create_edge_with_id(edge_id, vertex_id0, vertex_id1) -> None
 		Adds a new edge to the mesh with the given ID
@@ -39,7 +30,7 @@ package unreal;
 		    vertex_id0 (VertexID): 
 		    vertex_id1 (VertexID):
 	**/
-	public function create_edge_with_id(edge_id:Dynamic, vertex_id0:Dynamic, vertex_id1:Dynamic):Void;
+	public function create_edge_with_id(edge_id:unreal.EdgeID, vertex_id0:unreal.VertexID, vertex_id1:unreal.VertexID):Void;
 	/**
 		x.create_polygon(polygon_group_id) -> (PolygonID, vertex_instance_i_ds=Array(VertexInstanceID), new_edge_i_ds=Array(EdgeID))
 		Adds a new polygon to the mesh and returns its ID. This will also make any missing edges, and all constituent triangles.
@@ -54,7 +45,7 @@ package unreal;
 		
 		    new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_polygon(polygon_group_id:Dynamic):python.Tuple<Dynamic>;
+	public function create_polygon(polygon_group_id:unreal.PolygonGroupID):python.Tuple<Dynamic>;
 	/**
 		x.create_polygon_group() -> PolygonGroupID
 		Adds a new polygon group to the mesh and returns its ID
@@ -70,7 +61,7 @@ package unreal;
 		Args:
 		    polygon_group_id (PolygonGroupID):
 	**/
-	public function create_polygon_group_with_id(polygon_group_id:Dynamic):Void;
+	public function create_polygon_group_with_id(polygon_group_id:unreal.PolygonGroupID):Void;
 	/**
 		x.create_polygon_with_id(polygon_id, polygon_group_id) -> (vertex_instance_i_ds=Array(VertexInstanceID), new_edge_i_ds=Array(EdgeID))
 		Adds a new polygon to the mesh with the given ID. This will also make any missing edges, and all constituent triangles.
@@ -86,7 +77,7 @@ package unreal;
 		
 		    new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_polygon_with_id(polygon_id:Dynamic, polygon_group_id:Dynamic):python.Tuple<Dynamic>;
+	public function create_polygon_with_id(polygon_id:unreal.PolygonID, polygon_group_id:unreal.PolygonGroupID):python.Tuple<Dynamic>;
 	/**
 		x.create_triangle(polygon_group_id, vertex_instance_i_ds) -> (TriangleID, new_edge_i_ds=Array(EdgeID))
 		Adds a new triangle to the mesh and returns its ID. This will also make an encapsulating polygon, and any missing edges.
@@ -100,7 +91,7 @@ package unreal;
 		
 		    new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_triangle(polygon_group_id:Dynamic, vertex_instance_i_ds:Dynamic):Dynamic;
+	public function create_triangle(polygon_group_id:unreal.PolygonGroupID, vertex_instance_i_ds:unreal.Array):Dynamic;
 	/**
 		x.create_triangle_with_id(triangle_id, polygon_group_id, vertex_instance_i_ds) -> Array(EdgeID)
 		Adds a new triangle to the mesh with the given ID. This will also make an encapsulating polygon, and any missing edges.
@@ -115,7 +106,7 @@ package unreal;
 		
 		    new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_triangle_with_id(triangle_id:Dynamic, polygon_group_id:Dynamic, vertex_instance_i_ds:Dynamic):Dynamic;
+	public function create_triangle_with_id(triangle_id:unreal.TriangleID, polygon_group_id:unreal.PolygonGroupID, vertex_instance_i_ds:unreal.Array):Dynamic;
 	/**
 		x.create_vertex() -> VertexID
 		Adds a new vertex to the mesh and returns its ID
@@ -134,7 +125,7 @@ package unreal;
 		Returns:
 		    VertexInstanceID:
 	**/
-	public function create_vertex_instance(vertex_id:Dynamic):unreal.VertexInstanceID;
+	public function create_vertex_instance(vertex_id:unreal.VertexID):unreal.VertexInstanceID;
 	/**
 		x.create_vertex_instance_with_id(vertex_instance_id, vertex_id) -> None
 		Adds a new vertex instance to the mesh with the given ID
@@ -143,7 +134,7 @@ package unreal;
 		    vertex_instance_id (VertexInstanceID): 
 		    vertex_id (VertexID):
 	**/
-	public function create_vertex_instance_with_id(vertex_instance_id:Dynamic, vertex_id:Dynamic):Void;
+	public function create_vertex_instance_with_id(vertex_instance_id:unreal.VertexInstanceID, vertex_id:unreal.VertexID):Void;
 	/**
 		x.create_vertex_with_id(vertex_id) -> None
 		Adds a new vertex to the mesh with the given ID
@@ -151,7 +142,7 @@ package unreal;
 		Args:
 		    vertex_id (VertexID):
 	**/
-	public function create_vertex_with_id(vertex_id:Dynamic):Void;
+	public function create_vertex_with_id(vertex_id:unreal.VertexID):Void;
 	/**
 		x.delete_edge(edge_id) -> Array(VertexID)
 		Deletes an edge from a mesh
@@ -164,7 +155,7 @@ package unreal;
 		
 		    orphaned_vertices (Array(VertexID)):
 	**/
-	public function delete_edge(edge_id:Dynamic):Dynamic;
+	public function delete_edge(edge_id:unreal.EdgeID):Dynamic;
 	/**
 		x.delete_polygon(polygon_id) -> (orphaned_edges=Array(EdgeID), orphaned_vertex_instances=Array(VertexInstanceID), orphaned_polygon_groups=Array(PolygonGroupID))
 		Deletes a polygon from the mesh
@@ -181,7 +172,7 @@ package unreal;
 		
 		    orphaned_polygon_groups (Array(PolygonGroupID)):
 	**/
-	public function delete_polygon(polygon_id:Dynamic):python.Tuple<Dynamic>;
+	public function delete_polygon(polygon_id:unreal.PolygonID):python.Tuple<Dynamic>;
 	/**
 		x.delete_polygon_group(polygon_group_id) -> None
 		Deletes a polygon group from the mesh
@@ -189,7 +180,7 @@ package unreal;
 		Args:
 		    polygon_group_id (PolygonGroupID):
 	**/
-	public function delete_polygon_group(polygon_group_id:Dynamic):Void;
+	public function delete_polygon_group(polygon_group_id:unreal.PolygonGroupID):Void;
 	/**
 		x.delete_triangle(triangle_id) -> (orphaned_edges=Array(EdgeID), orphaned_vertex_instances=Array(VertexInstanceID), orphaned_polygon_groups_ptr=Array(PolygonGroupID))
 		Deletes a triangle from the mesh
@@ -206,7 +197,7 @@ package unreal;
 		
 		    orphaned_polygon_groups_ptr (Array(PolygonGroupID)):
 	**/
-	public function delete_triangle(triangle_id:Dynamic):python.Tuple<Dynamic>;
+	public function delete_triangle(triangle_id:unreal.TriangleID):python.Tuple<Dynamic>;
 	/**
 		x.delete_vertex(vertex_id) -> None
 		Deletes a vertex from the mesh
@@ -214,7 +205,7 @@ package unreal;
 		Args:
 		    vertex_id (VertexID):
 	**/
-	public function delete_vertex(vertex_id:Dynamic):Void;
+	public function delete_vertex(vertex_id:unreal.VertexID):Void;
 	/**
 		x.delete_vertex_instance(vertex_instance_id) -> Array(VertexID)
 		Deletes a vertex instance from a mesh
@@ -227,7 +218,7 @@ package unreal;
 		
 		    orphaned_vertices (Array(VertexID)):
 	**/
-	public function delete_vertex_instance(vertex_instance_id:Dynamic):Dynamic;
+	public function delete_vertex_instance(vertex_instance_id:unreal.VertexInstanceID):Dynamic;
 	/**
 		x.empty() -> None
 		Empty the mesh description
@@ -245,7 +236,7 @@ package unreal;
 		
 		    out_connected_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_edge_connected_polygons(edge_id:Dynamic):Dynamic;
+	public function get_edge_connected_polygons(edge_id:unreal.EdgeID):Dynamic;
 	/**
 		x.get_edge_connected_triangles(edge_id) -> Array(TriangleID)
 		Returns reference to an array of triangle IDs connected to this edge
@@ -258,7 +249,7 @@ package unreal;
 		
 		    out_connected_triangle_i_ds (Array(TriangleID)):
 	**/
-	public function get_edge_connected_triangles(edge_id:Dynamic):Dynamic;
+	public function get_edge_connected_triangles(edge_id:unreal.EdgeID):Dynamic;
 	/**
 		x.get_edge_vertex(edge_id, vertex_number) -> VertexID
 		Returns the vertex ID corresponding to one of the edge endpoints
@@ -270,7 +261,7 @@ package unreal;
 		Returns:
 		    VertexID:
 	**/
-	public function get_edge_vertex(edge_id:Dynamic, vertex_number:Dynamic):unreal.VertexID;
+	public function get_edge_vertex(edge_id:unreal.EdgeID, vertex_number:Int):unreal.VertexID;
 	/**
 		x.get_edge_vertices(edge_id) -> Array(VertexID)
 		Returns a pair of vertex IDs defining the edge
@@ -283,7 +274,7 @@ package unreal;
 		
 		    out_vertex_i_ds (Array(VertexID)):
 	**/
-	public function get_edge_vertices(edge_id:Dynamic):Dynamic;
+	public function get_edge_vertices(edge_id:unreal.EdgeID):Dynamic;
 	/**
 		x.get_num_edge_connected_polygons(edge_id) -> int32
 		Returns the number of polygons connected to this edge
@@ -294,7 +285,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_edge_connected_polygons(edge_id:Dynamic):Int;
+	public function get_num_edge_connected_polygons(edge_id:unreal.EdgeID):Int;
 	/**
 		x.get_num_edge_connected_triangles(edge_id) -> int32
 		Returns the number of triangles connected to this edge
@@ -305,7 +296,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_edge_connected_triangles(edge_id:Dynamic):Int;
+	public function get_num_edge_connected_triangles(edge_id:unreal.EdgeID):Int;
 	/**
 		x.get_num_polygon_group_polygons(polygon_group_id) -> int32
 		Returns the number of polygons in this polygon group
@@ -316,7 +307,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_polygon_group_polygons(polygon_group_id:Dynamic):Int;
+	public function get_num_polygon_group_polygons(polygon_group_id:unreal.PolygonGroupID):Int;
 	/**
 		x.get_num_polygon_internal_edges(polygon_id) -> int32
 		Return the number of internal edges in this polygon
@@ -327,7 +318,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_polygon_internal_edges(polygon_id:Dynamic):Int;
+	public function get_num_polygon_internal_edges(polygon_id:unreal.PolygonID):Int;
 	/**
 		x.get_num_polygon_triangles(polygon_id) -> int32
 		Return the number of triangles which comprise this polygon
@@ -338,7 +329,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_polygon_triangles(polygon_id:Dynamic):Int;
+	public function get_num_polygon_triangles(polygon_id:unreal.PolygonID):Int;
 	/**
 		x.get_num_polygon_vertices(polygon_id) -> int32
 		Returns the number of vertices this polygon has
@@ -349,7 +340,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_polygon_vertices(polygon_id:Dynamic):Int;
+	public function get_num_polygon_vertices(polygon_id:unreal.PolygonID):Int;
 	/**
 		x.get_num_vertex_connected_edges(vertex_id) -> int32
 		Returns number of edges connected to this vertex
@@ -360,7 +351,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_vertex_connected_edges(vertex_id:Dynamic):Int;
+	public function get_num_vertex_connected_edges(vertex_id:unreal.VertexID):Int;
 	/**
 		x.get_num_vertex_connected_polygons(vertex_id) -> int32
 		Returns the number of polygons connected to this vertex
@@ -371,7 +362,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_vertex_connected_polygons(vertex_id:Dynamic):Int;
+	public function get_num_vertex_connected_polygons(vertex_id:unreal.VertexID):Int;
 	/**
 		x.get_num_vertex_connected_triangles(vertex_id) -> int32
 		Returns number of triangles connected to this vertex
@@ -382,7 +373,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_vertex_connected_triangles(vertex_id:Dynamic):Int;
+	public function get_num_vertex_connected_triangles(vertex_id:unreal.VertexID):Int;
 	/**
 		x.get_num_vertex_instance_connected_polygons(vertex_instance_id) -> int32
 		Returns the number of polygons connected to this vertex instance.
@@ -393,7 +384,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_vertex_instance_connected_polygons(vertex_instance_id:Dynamic):Int;
+	public function get_num_vertex_instance_connected_polygons(vertex_instance_id:unreal.VertexInstanceID):Int;
 	/**
 		x.get_num_vertex_instance_connected_triangles(vertex_instance_id) -> int32
 		Returns the number of triangles connected to this vertex instance
@@ -404,7 +395,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_vertex_instance_connected_triangles(vertex_instance_id:Dynamic):Int;
+	public function get_num_vertex_instance_connected_triangles(vertex_instance_id:unreal.VertexInstanceID):Int;
 	/**
 		x.get_num_vertex_vertex_instances(vertex_id) -> int32
 		Returns number of vertex instances created from this vertex
@@ -415,7 +406,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_vertex_vertex_instances(vertex_id:Dynamic):Int;
+	public function get_num_vertex_vertex_instances(vertex_id:unreal.VertexID):Int;
 	/**
 		x.get_polygon_adjacent_polygons(polygon_id) -> Array(PolygonID)
 		Populates the passed array with adjacent polygons
@@ -428,7 +419,7 @@ package unreal;
 		
 		    out_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_polygon_adjacent_polygons(polygon_id:Dynamic):Dynamic;
+	public function get_polygon_adjacent_polygons(polygon_id:unreal.PolygonID):Dynamic;
 	/**
 		x.get_polygon_group_polygons(polygon_group_id) -> Array(PolygonID)
 		Returns the polygons associated with the given polygon group
@@ -441,7 +432,7 @@ package unreal;
 		
 		    out_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_polygon_group_polygons(polygon_group_id:Dynamic):Dynamic;
+	public function get_polygon_group_polygons(polygon_group_id:unreal.PolygonGroupID):Dynamic;
 	/**
 		x.get_polygon_internal_edges(polygon_id) -> Array(EdgeID)
 		Populate the provided array with a list of edges which are internal to the polygon, i.e. those which separate
@@ -455,7 +446,7 @@ package unreal;
 		
 		    out_edge_i_ds (Array(EdgeID)):
 	**/
-	public function get_polygon_internal_edges(polygon_id:Dynamic):Dynamic;
+	public function get_polygon_internal_edges(polygon_id:unreal.PolygonID):Dynamic;
 	/**
 		x.get_polygon_perimeter_edges(polygon_id) -> Array(EdgeID)
 		Returns the edges which form the polygon perimeter
@@ -468,7 +459,7 @@ package unreal;
 		
 		    out_edge_i_ds (Array(EdgeID)):
 	**/
-	public function get_polygon_perimeter_edges(polygon_id:Dynamic):Dynamic;
+	public function get_polygon_perimeter_edges(polygon_id:unreal.PolygonID):Dynamic;
 	/**
 		x.get_polygon_polygon_group(polygon_id) -> PolygonGroupID
 		Return the polygon group associated with a polygon
@@ -479,7 +470,7 @@ package unreal;
 		Returns:
 		    PolygonGroupID:
 	**/
-	public function get_polygon_polygon_group(polygon_id:Dynamic):unreal.PolygonGroupID;
+	public function get_polygon_polygon_group(polygon_id:unreal.PolygonID):unreal.PolygonGroupID;
 	/**
 		x.get_polygon_triangles(polygon_id) -> Array(TriangleID)
 		Return reference to an array of triangle IDs which comprise this polygon
@@ -492,7 +483,7 @@ package unreal;
 		
 		    out_triangle_i_ds (Array(TriangleID)):
 	**/
-	public function get_polygon_triangles(polygon_id:Dynamic):Dynamic;
+	public function get_polygon_triangles(polygon_id:unreal.PolygonID):Dynamic;
 	/**
 		x.get_polygon_vertex_instances(polygon_id) -> Array(VertexInstanceID)
 		Returns reference to an array of VertexInstance IDs forming the perimeter of this polygon
@@ -505,7 +496,7 @@ package unreal;
 		
 		    out_vertex_instance_i_ds (Array(VertexInstanceID)):
 	**/
-	public function get_polygon_vertex_instances(polygon_id:Dynamic):Dynamic;
+	public function get_polygon_vertex_instances(polygon_id:unreal.PolygonID):Dynamic;
 	/**
 		x.get_polygon_vertices(polygon_id) -> Array(VertexID)
 		Returns the vertices which form the polygon perimeter
@@ -518,7 +509,7 @@ package unreal;
 		
 		    out_vertex_i_ds (Array(VertexID)):
 	**/
-	public function get_polygon_vertices(polygon_id:Dynamic):Dynamic;
+	public function get_polygon_vertices(polygon_id:unreal.PolygonID):Dynamic;
 	/**
 		x.get_triangle_adjacent_triangles(triangle_id) -> Array(TriangleID)
 		Returns the adjacent triangles to this triangle
@@ -531,7 +522,7 @@ package unreal;
 		
 		    out_triangle_i_ds (Array(TriangleID)):
 	**/
-	public function get_triangle_adjacent_triangles(triangle_id:Dynamic):Dynamic;
+	public function get_triangle_adjacent_triangles(triangle_id:unreal.TriangleID):Dynamic;
 	/**
 		x.get_triangle_edges(triangle_id) -> Array(EdgeID)
 		Returns the edges which define this triangle
@@ -544,7 +535,7 @@ package unreal;
 		
 		    out_edge_i_ds (Array(EdgeID)):
 	**/
-	public function get_triangle_edges(triangle_id:Dynamic):Dynamic;
+	public function get_triangle_edges(triangle_id:unreal.TriangleID):Dynamic;
 	/**
 		x.get_triangle_polygon(triangle_id) -> PolygonID
 		Get the polygon which contains this triangle
@@ -555,7 +546,7 @@ package unreal;
 		Returns:
 		    PolygonID:
 	**/
-	public function get_triangle_polygon(triangle_id:Dynamic):unreal.PolygonID;
+	public function get_triangle_polygon(triangle_id:unreal.TriangleID):unreal.PolygonID;
 	/**
 		x.get_triangle_polygon_group(triangle_id) -> PolygonGroupID
 		Get the polygon group which contains this triangle
@@ -566,7 +557,7 @@ package unreal;
 		Returns:
 		    PolygonGroupID:
 	**/
-	public function get_triangle_polygon_group(triangle_id:Dynamic):unreal.PolygonGroupID;
+	public function get_triangle_polygon_group(triangle_id:unreal.TriangleID):unreal.PolygonGroupID;
 	/**
 		x.get_triangle_vertex_instance(triangle_id, index) -> VertexInstanceID
 		Get the specified vertex instance by index
@@ -578,7 +569,7 @@ package unreal;
 		Returns:
 		    VertexInstanceID:
 	**/
-	public function get_triangle_vertex_instance(triangle_id:Dynamic, index:Dynamic):unreal.VertexInstanceID;
+	public function get_triangle_vertex_instance(triangle_id:unreal.TriangleID, index:Int):unreal.VertexInstanceID;
 	/**
 		x.get_triangle_vertex_instances(triangle_id) -> Array(VertexInstanceID)
 		Get the vertex instances which define this triangle
@@ -591,7 +582,7 @@ package unreal;
 		
 		    out_vertex_instance_i_ds (Array(VertexInstanceID)):
 	**/
-	public function get_triangle_vertex_instances(triangle_id:Dynamic):Dynamic;
+	public function get_triangle_vertex_instances(triangle_id:unreal.TriangleID):Dynamic;
 	/**
 		x.get_triangle_vertices(triangle_id) -> Array(VertexID)
 		Returns the vertices which define this triangle
@@ -604,7 +595,7 @@ package unreal;
 		
 		    out_vertex_i_ds (Array(VertexID)):
 	**/
-	public function get_triangle_vertices(triangle_id:Dynamic):Dynamic;
+	public function get_triangle_vertices(triangle_id:unreal.TriangleID):Dynamic;
 	/**
 		x.get_vertex_adjacent_vertices(vertex_id) -> Array(VertexID)
 		Returns the vertices adjacent to this vertex
@@ -617,7 +608,7 @@ package unreal;
 		
 		    out_adjacent_vertex_i_ds (Array(VertexID)):
 	**/
-	public function get_vertex_adjacent_vertices(vertex_id:Dynamic):Dynamic;
+	public function get_vertex_adjacent_vertices(vertex_id:unreal.VertexID):Dynamic;
 	/**
 		x.get_vertex_connected_edges(vertex_id) -> Array(EdgeID)
 		Returns reference to an array of Edge IDs connected to this vertex
@@ -630,7 +621,7 @@ package unreal;
 		
 		    out_edge_i_ds (Array(EdgeID)):
 	**/
-	public function get_vertex_connected_edges(vertex_id:Dynamic):Dynamic;
+	public function get_vertex_connected_edges(vertex_id:unreal.VertexID):Dynamic;
 	/**
 		x.get_vertex_connected_polygons(vertex_id) -> Array(PolygonID)
 		Returns the polygons connected to this vertex
@@ -643,7 +634,7 @@ package unreal;
 		
 		    out_connected_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_vertex_connected_polygons(vertex_id:Dynamic):Dynamic;
+	public function get_vertex_connected_polygons(vertex_id:unreal.VertexID):Dynamic;
 	/**
 		x.get_vertex_connected_triangles(vertex_id) -> Array(TriangleID)
 		Returns the triangles connected to this vertex
@@ -656,7 +647,7 @@ package unreal;
 		
 		    out_connected_triangle_i_ds (Array(TriangleID)):
 	**/
-	public function get_vertex_connected_triangles(vertex_id:Dynamic):Dynamic;
+	public function get_vertex_connected_triangles(vertex_id:unreal.VertexID):Dynamic;
 	/**
 		x.get_vertex_instance_connected_polygons(vertex_instance_id) -> Array(PolygonID)
 		Returns the polygons connected to this vertex instance
@@ -669,7 +660,7 @@ package unreal;
 		
 		    out_connected_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_vertex_instance_connected_polygons(vertex_instance_id:Dynamic):Dynamic;
+	public function get_vertex_instance_connected_polygons(vertex_instance_id:unreal.VertexInstanceID):Dynamic;
 	/**
 		x.get_vertex_instance_connected_triangles(vertex_instance_id) -> Array(TriangleID)
 		Returns reference to an array of Triangle IDs connected to this vertex instance
@@ -682,7 +673,7 @@ package unreal;
 		
 		    out_connected_triangle_i_ds (Array(TriangleID)):
 	**/
-	public function get_vertex_instance_connected_triangles(vertex_instance_id:Dynamic):Dynamic;
+	public function get_vertex_instance_connected_triangles(vertex_instance_id:unreal.VertexInstanceID):Dynamic;
 	/**
 		x.get_vertex_instance_for_polygon_vertex(polygon_id, vertex_id) -> VertexInstanceID
 		Return the vertex instance which corresponds to the given vertex on the given polygon, or FVertexInstanceID::Invalid
@@ -694,7 +685,7 @@ package unreal;
 		Returns:
 		    VertexInstanceID:
 	**/
-	public function get_vertex_instance_for_polygon_vertex(polygon_id:Dynamic, vertex_id:Dynamic):unreal.VertexInstanceID;
+	public function get_vertex_instance_for_polygon_vertex(polygon_id:unreal.PolygonID, vertex_id:unreal.VertexID):unreal.VertexInstanceID;
 	/**
 		x.get_vertex_instance_for_triangle_vertex(triangle_id, vertex_id) -> VertexInstanceID
 		Return the vertex instance which corresponds to the given vertex on the given triangle, or FVertexInstanceID::Invalid
@@ -706,7 +697,7 @@ package unreal;
 		Returns:
 		    VertexInstanceID:
 	**/
-	public function get_vertex_instance_for_triangle_vertex(triangle_id:Dynamic, vertex_id:Dynamic):unreal.VertexInstanceID;
+	public function get_vertex_instance_for_triangle_vertex(triangle_id:unreal.TriangleID, vertex_id:unreal.VertexID):unreal.VertexInstanceID;
 	/**
 		x.get_vertex_instance_pair_edge(vertex_instance_id0, vertex_instance_id1) -> EdgeID
 		Returns the edge ID defined by the two given vertex instance IDs, if there is one; otherwise FEdgeID::Invalid
@@ -718,7 +709,7 @@ package unreal;
 		Returns:
 		    EdgeID:
 	**/
-	public function get_vertex_instance_pair_edge(vertex_instance_id0:Dynamic, vertex_instance_id1:Dynamic):unreal.EdgeID;
+	public function get_vertex_instance_pair_edge(vertex_instance_id0:unreal.VertexInstanceID, vertex_instance_id1:unreal.VertexInstanceID):unreal.EdgeID;
 	/**
 		x.get_vertex_instance_vertex(vertex_instance_id) -> VertexID
 		Returns the vertex ID associated with the given vertex instance
@@ -729,7 +720,7 @@ package unreal;
 		Returns:
 		    VertexID:
 	**/
-	public function get_vertex_instance_vertex(vertex_instance_id:Dynamic):unreal.VertexID;
+	public function get_vertex_instance_vertex(vertex_instance_id:unreal.VertexInstanceID):unreal.VertexID;
 	/**
 		x.get_vertex_pair_edge(vertex_id0, vertex_id1) -> EdgeID
 		Returns the edge ID defined by the two given vertex IDs, if there is one; otherwise FEdgeID::Invalid
@@ -741,7 +732,7 @@ package unreal;
 		Returns:
 		    EdgeID:
 	**/
-	public function get_vertex_pair_edge(vertex_id0:Dynamic, vertex_id1:Dynamic):unreal.EdgeID;
+	public function get_vertex_pair_edge(vertex_id0:unreal.VertexID, vertex_id1:unreal.VertexID):unreal.EdgeID;
 	/**
 		x.get_vertex_position(vertex_id) -> Vector
 		Gets a vertex position
@@ -752,7 +743,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_vertex_position(vertex_id:Dynamic):unreal.Vector;
+	public function get_vertex_position(vertex_id:unreal.VertexID):unreal.Vector;
 	/**
 		x.get_vertex_vertex_instances(vertex_id) -> Array(VertexInstanceID)
 		Returns reference to an array of VertexInstance IDs instanced from this vertex
@@ -765,7 +756,7 @@ package unreal;
 		
 		    out_vertex_instance_i_ds (Array(VertexInstanceID)):
 	**/
-	public function get_vertex_vertex_instances(vertex_id:Dynamic):Dynamic;
+	public function get_vertex_vertex_instances(vertex_id:unreal.VertexID):Dynamic;
 	/**
 		x.is_edge_internal(edge_id) -> bool
 		Determine whether a given edge is an internal edge between triangles of a polygon
@@ -776,7 +767,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_edge_internal(edge_id:Dynamic):Bool;
+	public function is_edge_internal(edge_id:unreal.EdgeID):Bool;
 	/**
 		x.is_edge_internal_to_polygon(edge_id, polygon_id) -> bool
 		Determine whether a given edge is an internal edge between triangles of a specific polygon
@@ -788,7 +779,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_edge_internal_to_polygon(edge_id:Dynamic, polygon_id:Dynamic):Bool;
+	public function is_edge_internal_to_polygon(edge_id:unreal.EdgeID, polygon_id:unreal.PolygonID):Bool;
 	/**
 		x.is_edge_valid(edge_id) -> bool
 		Returns whether the passed edge ID is valid
@@ -799,7 +790,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_edge_valid(edge_id:Dynamic):Bool;
+	public function is_edge_valid(edge_id:unreal.EdgeID):Bool;
 	/**
 		x.is_empty() -> bool
 		Return whether the mesh description is empty
@@ -818,7 +809,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_polygon_group_valid(polygon_group_id:Dynamic):Bool;
+	public function is_polygon_group_valid(polygon_group_id:unreal.PolygonGroupID):Bool;
 	/**
 		x.is_polygon_valid(polygon_id) -> bool
 		Returns whether the passed polygon ID is valid
@@ -829,7 +820,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_polygon_valid(polygon_id:Dynamic):Bool;
+	public function is_polygon_valid(polygon_id:unreal.PolygonID):Bool;
 	/**
 		x.is_triangle_part_of_ngon(triangle_id) -> bool
 		Determines if this triangle is part of an n-gon
@@ -840,7 +831,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_triangle_part_of_ngon(triangle_id:Dynamic):Bool;
+	public function is_triangle_part_of_ngon(triangle_id:unreal.TriangleID):Bool;
 	/**
 		x.is_triangle_valid(triangle_id) -> bool
 		Returns whether the passed triangle ID is valid
@@ -851,7 +842,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_triangle_valid(triangle_id:Dynamic):Bool;
+	public function is_triangle_valid(triangle_id:unreal.TriangleID):Bool;
 	/**
 		x.is_vertex_instance_valid(vertex_instance_id) -> bool
 		Returns whether the passed vertex instance ID is valid
@@ -862,7 +853,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_vertex_instance_valid(vertex_instance_id:Dynamic):Bool;
+	public function is_vertex_instance_valid(vertex_instance_id:unreal.VertexInstanceID):Bool;
 	/**
 		x.is_vertex_orphaned(vertex_id) -> bool
 		Returns whether a given vertex is orphaned, i.e. it doesn't form part of any polygon
@@ -873,7 +864,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_vertex_orphaned(vertex_id:Dynamic):Bool;
+	public function is_vertex_orphaned(vertex_id:unreal.VertexID):Bool;
 	/**
 		x.is_vertex_valid(vertex_id) -> bool
 		Returns whether the passed vertex ID is valid
@@ -884,7 +875,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_vertex_valid(vertex_id:Dynamic):Bool;
+	public function is_vertex_valid(vertex_id:unreal.VertexID):Bool;
 	/**
 		x.reserve_new_edges(number_of_new_edges) -> None
 		Reserves space for this number of new edges
@@ -892,7 +883,7 @@ package unreal;
 		Args:
 		    number_of_new_edges (int32):
 	**/
-	public function reserve_new_edges(number_of_new_edges:Dynamic):Void;
+	public function reserve_new_edges(number_of_new_edges:Int):Void;
 	/**
 		x.reserve_new_polygon_groups(number_of_new_polygon_groups) -> None
 		Reserves space for this number of new polygon groups
@@ -900,7 +891,7 @@ package unreal;
 		Args:
 		    number_of_new_polygon_groups (int32):
 	**/
-	public function reserve_new_polygon_groups(number_of_new_polygon_groups:Dynamic):Void;
+	public function reserve_new_polygon_groups(number_of_new_polygon_groups:Int):Void;
 	/**
 		x.reserve_new_polygons(number_of_new_polygons) -> None
 		Reserves space for this number of new polygons
@@ -908,7 +899,7 @@ package unreal;
 		Args:
 		    number_of_new_polygons (int32):
 	**/
-	public function reserve_new_polygons(number_of_new_polygons:Dynamic):Void;
+	public function reserve_new_polygons(number_of_new_polygons:Int):Void;
 	/**
 		x.reserve_new_triangles(number_of_new_triangles) -> None
 		Reserves space for this number of new triangles
@@ -916,7 +907,7 @@ package unreal;
 		Args:
 		    number_of_new_triangles (int32):
 	**/
-	public function reserve_new_triangles(number_of_new_triangles:Dynamic):Void;
+	public function reserve_new_triangles(number_of_new_triangles:Int):Void;
 	/**
 		x.reserve_new_vertex_instances(number_of_new_vertex_instances) -> None
 		Reserves space for this number of new vertex instances
@@ -924,7 +915,7 @@ package unreal;
 		Args:
 		    number_of_new_vertex_instances (int32):
 	**/
-	public function reserve_new_vertex_instances(number_of_new_vertex_instances:Dynamic):Void;
+	public function reserve_new_vertex_instances(number_of_new_vertex_instances:Int):Void;
 	/**
 		x.reserve_new_vertices(number_of_new_vertices) -> None
 		Reserves space for this number of new vertices
@@ -932,7 +923,7 @@ package unreal;
 		Args:
 		    number_of_new_vertices (int32):
 	**/
-	public function reserve_new_vertices(number_of_new_vertices:Dynamic):Void;
+	public function reserve_new_vertices(number_of_new_vertices:Int):Void;
 	/**
 		x.reverse_polygon_facing(polygon_id) -> None
 		Reverse the winding order of the vertices of this polygon
@@ -940,7 +931,7 @@ package unreal;
 		Args:
 		    polygon_id (PolygonID):
 	**/
-	public function reverse_polygon_facing(polygon_id:Dynamic):Void;
+	public function reverse_polygon_facing(polygon_id:unreal.PolygonID):Void;
 	/**
 		x.set_polygon_polygon_group(polygon_id, polygon_group_id) -> None
 		Sets the polygon group associated with a polygon
@@ -949,7 +940,7 @@ package unreal;
 		    polygon_id (PolygonID): 
 		    polygon_group_id (PolygonGroupID):
 	**/
-	public function set_polygon_polygon_group(polygon_id:Dynamic, polygon_group_id:Dynamic):Void;
+	public function set_polygon_polygon_group(polygon_id:unreal.PolygonID, polygon_group_id:unreal.PolygonGroupID):Void;
 	/**
 		x.set_polygon_vertex_instance(polygon_id, perimeter_index, vertex_instance_id) -> None
 		Set the vertex instance at the given index around the polygon to the new value
@@ -959,7 +950,7 @@ package unreal;
 		    perimeter_index (int32): 
 		    vertex_instance_id (VertexInstanceID):
 	**/
-	public function set_polygon_vertex_instance(polygon_id:Dynamic, perimeter_index:Dynamic, vertex_instance_id:Dynamic):Void;
+	public function set_polygon_vertex_instance(polygon_id:unreal.PolygonID, perimeter_index:Int, vertex_instance_id:unreal.VertexInstanceID):Void;
 	/**
 		x.set_vertex_position(vertex_id, position) -> None
 		Sets a vertex position
@@ -968,5 +959,5 @@ package unreal;
 		    vertex_id (VertexID): 
 		    position (Vector):
 	**/
-	public function set_vertex_position(vertex_id:Dynamic, position:Dynamic):Void;
+	public function set_vertex_position(vertex_id:unreal.VertexID, position:unreal.Vector):Void;
 }

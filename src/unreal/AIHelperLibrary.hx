@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AIHelperLibrary") extern class AIHelperLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_ai_controller(controlled_actor) -> AIController
 		The way it works exactly is if the actor passed in is a pawn, then the function retrieves
 		    pawn's controller cast to AIController. Otherwise the function returns actor cast to AIController.
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    AIController:
 	**/
-	static public function get_ai_controller(controlled_actor:Dynamic):unreal.AIController;
+	static public function get_ai_controller(controlled_actor:unreal.Actor):unreal.AIController;
 	/**
 		X.get_blackboard(target) -> BlackboardComponent
 		Get Blackboard
@@ -32,7 +23,7 @@ package unreal;
 		Returns:
 		    BlackboardComponent:
 	**/
-	static public function get_blackboard(target:Dynamic):unreal.BlackboardComponent;
+	static public function get_blackboard(target:unreal.Actor):unreal.BlackboardComponent;
 	/**
 		X.get_current_path(controller) -> NavigationPath
 		Returns a NEW UOBJECT that is a COPY of navigation path given controller is currently using.
@@ -46,7 +37,7 @@ package unreal;
 		Returns:
 		    NavigationPath:
 	**/
-	static public function get_current_path(controller:Dynamic):unreal.NavigationPath;
+	static public function get_current_path(controller:unreal.Controller):unreal.NavigationPath;
 	/**
 		X.get_current_path_index(controller) -> int32
 		Return the path index the given controller is currently at. Returns INDEX_NONE if no path.
@@ -57,7 +48,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_current_path_index(controller:Dynamic):Int;
+	static public function get_current_path_index(controller:unreal.Controller):Int;
 	/**
 		X.get_current_path_points(controller) -> Array(Vector)
 		Returns an array of navigation path points given controller is currently using.
@@ -68,7 +59,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	static public function get_current_path_points(controller:Dynamic):Dynamic;
+	static public function get_current_path_points(controller:unreal.Controller):Dynamic;
 	/**
 		X.get_next_nav_link_index(controller) -> int32
 		Return the path index of the next nav link for the current path of the given controller. Returns INDEX_NONE if no path or no incoming nav link.
@@ -79,7 +70,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_next_nav_link_index(controller:Dynamic):Int;
+	static public function get_next_nav_link_index(controller:unreal.Controller):Int;
 	/**
 		X.is_valid_ai_direction(direction_vector) -> bool
 		Is Valid AIDirection
@@ -90,7 +81,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_ai_direction(direction_vector:Dynamic):Bool;
+	static public function is_valid_ai_direction(direction_vector:unreal.Vector):Bool;
 	/**
 		X.is_valid_ai_location(location) -> bool
 		Is Valid AILocation
@@ -101,7 +92,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_ai_location(location:Dynamic):Bool;
+	static public function is_valid_ai_location(location:unreal.Vector):Bool;
 	/**
 		X.is_valid_ai_rotation(rotation) -> bool
 		Is Valid AIRotation
@@ -112,7 +103,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_ai_rotation(rotation:Dynamic):Bool;
+	static public function is_valid_ai_rotation(rotation:unreal.Rotator):Bool;
 	/**
 		X.lock_ai_resources_with_animation(anim_instance, lock_movement, lock_ai_logic) -> None
 		locks indicated AI resources of animated pawn
@@ -122,7 +113,7 @@ package unreal;
 		    lock_movement (bool): 
 		    lock_ai_logic (bool):
 	**/
-	static public function lock_ai_resources_with_animation(anim_instance:Dynamic, lock_movement:Dynamic, lock_ai_logic:Dynamic):Void;
+	static public function lock_ai_resources_with_animation(anim_instance:unreal.AnimInstance, lock_movement:Bool, lock_ai_logic:Bool):Void;
 	/**
 		X.send_ai_message(target, message, message_source, success=True) -> None
 		Send AIMessage
@@ -133,7 +124,7 @@ package unreal;
 		    message_source (Object): 
 		    success (bool):
 	**/
-	static public function send_ai_message(target:Dynamic, message:Dynamic, message_source:Dynamic, success:Dynamic):Void;
+	static public function send_ai_message(target:unreal.Pawn, message:unreal.Name, message_source:unreal.Object, success:Bool):Void;
 	/**
 		X.simple_move_to_actor(controller, goal) -> None
 		Simple Move to Actor
@@ -142,7 +133,7 @@ package unreal;
 		    controller (Controller): 
 		    goal (Actor):
 	**/
-	static public function simple_move_to_actor(controller:Dynamic, goal:Dynamic):Void;
+	static public function simple_move_to_actor(controller:unreal.Controller, goal:unreal.Actor):Void;
 	/**
 		X.simple_move_to_location(controller, goal) -> None
 		Simple Move to Location
@@ -151,7 +142,7 @@ package unreal;
 		    controller (Controller): 
 		    goal (Vector):
 	**/
-	static public function simple_move_to_location(controller:Dynamic, goal:Dynamic):Void;
+	static public function simple_move_to_location(controller:unreal.Controller, goal:unreal.Vector):Void;
 	/**
 		X.spawn_ai_from_class(world_context_object, pawn_class, behavior_tree, location, rotation=[0.000000, 0.000000, 0.000000], no_collision_fail=False, owner=None) -> Pawn
 		Spawns AI agent of a given class. The PawnClass needs to have AIController
@@ -169,7 +160,7 @@ package unreal;
 		Returns:
 		    Pawn:
 	**/
-	static public function spawn_ai_from_class(world_context_object:Dynamic, pawn_class:Dynamic, behavior_tree:Dynamic, location:Dynamic, rotation:Dynamic, no_collision_fail:Dynamic, owner:Dynamic):unreal.Pawn;
+	static public function spawn_ai_from_class(world_context_object:unreal.Object, pawn_class:Dynamic, behavior_tree:unreal.BehaviorTree, location:unreal.Vector, rotation:unreal.Rotator, no_collision_fail:Bool, owner:unreal.Actor):unreal.Pawn;
 	/**
 		X.unlock_ai_resources_with_animation(anim_instance, unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources
@@ -179,5 +170,5 @@ package unreal;
 		    unlock_movement (bool): 
 		    unlock_ai_logic (bool):
 	**/
-	static public function unlock_ai_resources_with_animation(anim_instance:Dynamic, unlock_movement:Dynamic, unlock_ai_logic:Dynamic):Void;
+	static public function unlock_ai_resources_with_animation(anim_instance:unreal.AnimInstance, unlock_movement:Bool, unlock_ai_logic:Bool):Void;
 }

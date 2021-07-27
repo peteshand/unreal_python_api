@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelSequenceEditorBlueprintLibrary") extern class LevelSequenceEditorBlueprintLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.close_level_sequence() -> None
 		* Close
 	**/
@@ -30,7 +21,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	static public function get_bound_objects(object_binding:Dynamic):Dynamic;
+	static public function get_bound_objects(object_binding:unreal.MovieSceneObjectBindingID):Dynamic;
 	/**
 		X.get_current_level_sequence() -> LevelSequence
 		* Get the currently opened level sequence asset
@@ -113,7 +104,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function open_level_sequence(level_sequence:Dynamic):Bool;
+	static public function open_level_sequence(level_sequence:unreal.LevelSequence):Bool;
 	/**
 		X.pause() -> None
 		Pause the current level sequence
@@ -136,7 +127,7 @@ package unreal;
 		Args:
 		    channels (Array(SequencerChannelProxy)):
 	**/
-	static public function select_channels(channels:Dynamic):Void;
+	static public function select_channels(channels:unreal.Array):Void;
 	/**
 		X.select_folders(folders) -> None
 		Select folders
@@ -144,7 +135,7 @@ package unreal;
 		Args:
 		    folders (Array(MovieSceneFolder)):
 	**/
-	static public function select_folders(folders:Dynamic):Void;
+	static public function select_folders(folders:unreal.Array):Void;
 	/**
 		X.select_objects(object_binding) -> None
 		Select objects by GUID
@@ -152,7 +143,7 @@ package unreal;
 		Args:
 		    object_binding (Array(Guid)):
 	**/
-	static public function select_objects(object_binding:Dynamic):Void;
+	static public function select_objects(object_binding:unreal.Array):Void;
 	/**
 		X.select_sections(sections) -> None
 		Select sections
@@ -160,7 +151,7 @@ package unreal;
 		Args:
 		    sections (Array(MovieSceneSection)):
 	**/
-	static public function select_sections(sections:Dynamic):Void;
+	static public function select_sections(sections:unreal.Array):Void;
 	/**
 		X.select_tracks(tracks) -> None
 		Select tracks
@@ -168,7 +159,7 @@ package unreal;
 		Args:
 		    tracks (Array(MovieSceneTrack)):
 	**/
-	static public function select_tracks(tracks:Dynamic):Void;
+	static public function select_tracks(tracks:unreal.Array):Void;
 	/**
 		X.set_current_time(new_frame) -> None
 		Set playback position for the current level sequence in frames
@@ -176,7 +167,7 @@ package unreal;
 		Args:
 		    new_frame (int32):
 	**/
-	static public function set_current_time(new_frame:Dynamic):Void;
+	static public function set_current_time(new_frame:Int):Void;
 	/**
 		X.set_lock_level_sequence(lock) -> None
 		Sets the lock for the current level sequence and its descendants for editing.
@@ -184,5 +175,5 @@ package unreal;
 		Args:
 		    lock (bool):
 	**/
-	static public function set_lock_level_sequence(lock:Dynamic):Void;
+	static public function set_lock_level_sequence(lock:Bool):Void;
 }

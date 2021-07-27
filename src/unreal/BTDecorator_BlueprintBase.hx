@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BTDecorator_BlueprintBase") extern class BTDecorator_BlueprintBase extends unreal.BTDecorator {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(str):  [Read-Write] Custom Description
 	**/
 	public var custom_description : String;
@@ -41,7 +32,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function perform_condition_check(owner_actor:Dynamic):Bool;
+	public function perform_condition_check(owner_actor:unreal.Actor):Bool;
 	/**
 		x.perform_condition_check_ai(owner_controller, controlled_pawn) -> bool
 		Alternative AI version of ReceiveConditionCheck
@@ -55,7 +46,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function perform_condition_check_ai(owner_controller:Dynamic, controlled_pawn:Dynamic):Bool;
+	public function perform_condition_check_ai(owner_controller:unreal.AIController, controlled_pawn:unreal.Pawn):Bool;
 	/**
 		x.receive_execution_finish(owner_actor, node_result) -> None
 		called when execution of underlying node is finished
@@ -65,7 +56,7 @@ package unreal;
 		    owner_actor (Actor): 
 		    node_result (BTNodeResult):
 	**/
-	public function receive_execution_finish(owner_actor:Dynamic, node_result:Dynamic):Void;
+	public function receive_execution_finish(owner_actor:unreal.Actor, node_result:unreal.BTNodeResult):Void;
 	/**
 		x.receive_execution_finish_ai(owner_controller, controlled_pawn, node_result) -> None
 		Alternative AI version of ReceiveExecutionFinish
@@ -77,7 +68,7 @@ package unreal;
 		    controlled_pawn (Pawn): 
 		    node_result (BTNodeResult):
 	**/
-	public function receive_execution_finish_ai(owner_controller:Dynamic, controlled_pawn:Dynamic, node_result:Dynamic):Void;
+	public function receive_execution_finish_ai(owner_controller:unreal.AIController, controlled_pawn:unreal.Pawn, node_result:unreal.BTNodeResult):Void;
 	/**
 		x.receive_execution_start(owner_actor) -> None
 		called on execution of underlying node
@@ -86,7 +77,7 @@ package unreal;
 		Args:
 		    owner_actor (Actor):
 	**/
-	public function receive_execution_start(owner_actor:Dynamic):Void;
+	public function receive_execution_start(owner_actor:unreal.Actor):Void;
 	/**
 		x.receive_execution_start_ai(owner_controller, controlled_pawn) -> None
 		Alternative AI version of ReceiveExecutionStart
@@ -97,7 +88,7 @@ package unreal;
 		    owner_controller (AIController): 
 		    controlled_pawn (Pawn):
 	**/
-	public function receive_execution_start_ai(owner_controller:Dynamic, controlled_pawn:Dynamic):Void;
+	public function receive_execution_start_ai(owner_controller:unreal.AIController, controlled_pawn:unreal.Pawn):Void;
 	/**
 		x.receive_observer_activated(owner_actor) -> None
 		called when observer is activated (flow controller)
@@ -106,7 +97,7 @@ package unreal;
 		Args:
 		    owner_actor (Actor):
 	**/
-	public function receive_observer_activated(owner_actor:Dynamic):Void;
+	public function receive_observer_activated(owner_actor:unreal.Actor):Void;
 	/**
 		x.receive_observer_activated_ai(owner_controller, controlled_pawn) -> None
 		Alternative AI version of ReceiveObserverActivated
@@ -117,7 +108,7 @@ package unreal;
 		    owner_controller (AIController): 
 		    controlled_pawn (Pawn):
 	**/
-	public function receive_observer_activated_ai(owner_controller:Dynamic, controlled_pawn:Dynamic):Void;
+	public function receive_observer_activated_ai(owner_controller:unreal.AIController, controlled_pawn:unreal.Pawn):Void;
 	/**
 		x.receive_observer_deactivated(owner_actor) -> None
 		called when observer is deactivated (flow controller)
@@ -126,7 +117,7 @@ package unreal;
 		Args:
 		    owner_actor (Actor):
 	**/
-	public function receive_observer_deactivated(owner_actor:Dynamic):Void;
+	public function receive_observer_deactivated(owner_actor:unreal.Actor):Void;
 	/**
 		x.receive_observer_deactivated_ai(owner_controller, controlled_pawn) -> None
 		Alternative AI version of ReceiveObserverDeactivated
@@ -137,7 +128,7 @@ package unreal;
 		    owner_controller (AIController): 
 		    controlled_pawn (Pawn):
 	**/
-	public function receive_observer_deactivated_ai(owner_controller:Dynamic, controlled_pawn:Dynamic):Void;
+	public function receive_observer_deactivated_ai(owner_controller:unreal.AIController, controlled_pawn:unreal.Pawn):Void;
 	/**
 		x.receive_tick(owner_actor, delta_seconds) -> None
 		tick function
@@ -147,7 +138,7 @@ package unreal;
 		    owner_actor (Actor): 
 		    delta_seconds (float):
 	**/
-	public function receive_tick(owner_actor:Dynamic, delta_seconds:Dynamic):Void;
+	public function receive_tick(owner_actor:unreal.Actor, delta_seconds:Float):Void;
 	/**
 		x.receive_tick_ai(owner_controller, controlled_pawn, delta_seconds) -> None
 		Alternative AI version of ReceiveTick
@@ -159,5 +150,5 @@ package unreal;
 		    controlled_pawn (Pawn): 
 		    delta_seconds (float):
 	**/
-	public function receive_tick_ai(owner_controller:Dynamic, controlled_pawn:Dynamic, delta_seconds:Dynamic):Void;
+	public function receive_tick_ai(owner_controller:unreal.AIController, controlled_pawn:unreal.Pawn, delta_seconds:Float):Void;
 }

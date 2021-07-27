@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "MotionTrackedDeviceFunctionLibrary") extern class MotionTrackedDeviceFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.disable_motion_tracking_for_component(motion_controller_component) -> None
 		Disable tracking of the specified controller, by player index and tracked device type.
 		
 		Args:
 		    motion_controller_component (MotionControllerComponent): (in) The motion controller component who's associated device is targeted.
 	**/
-	static public function disable_motion_tracking_for_component(motion_controller_component:Dynamic):Void;
+	static public function disable_motion_tracking_for_component(motion_controller_component:unreal.MotionControllerComponent):Void;
 	/**
 		X.disable_motion_tracking_of_all_controllers() -> None
 		Disable tracking for all controllers.
@@ -30,7 +21,7 @@ package unreal;
 		Args:
 		    player_index (int32): (in) The index of the player.
 	**/
-	static public function disable_motion_tracking_of_controllers_for_player(player_index:Dynamic):Void;
+	static public function disable_motion_tracking_of_controllers_for_player(player_index:Int):Void;
 	/**
 		X.disable_motion_tracking_of_device(player_index, hand) -> None
 		Disable tracking of the specified controller, by player index and tracked device type.
@@ -40,7 +31,8 @@ package unreal;
 		    player_index (int32): (in) The index of the player.
 		    hand (ControllerHand): (in) The tracked device type.
 	**/
-	static public function disable_motion_tracking_of_device(player_index:Dynamic, hand:Dynamic):Void;
+	@:deprecated
+	static public function disable_motion_tracking_of_device(player_index:Int, hand:unreal.ControllerHand):Void;
 	/**
 		X.disable_motion_tracking_of_source(player_index, source_name) -> None
 		Disable tracking of the specified controller, by player index and tracked device type.
@@ -49,7 +41,7 @@ package unreal;
 		    player_index (int32): (in) The index of the player.
 		    source_name (Name): (in) The tracked device id.
 	**/
-	static public function disable_motion_tracking_of_source(player_index:Dynamic, source_name:Dynamic):Void;
+	static public function disable_motion_tracking_of_source(player_index:Int, source_name:unreal.Name):Void;
 	/**
 		X.enable_motion_tracking_for_component(motion_controller_component) -> bool
 		Enable tracking of the specified controller, by player index and tracked device type.
@@ -60,7 +52,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean) true if the specified device is now set to be tracked.  This could fail due to tracking limits, or on invalid input.
 	**/
-	static public function enable_motion_tracking_for_component(motion_controller_component:Dynamic):Bool;
+	static public function enable_motion_tracking_for_component(motion_controller_component:unreal.MotionControllerComponent):Bool;
 	/**
 		X.enable_motion_tracking_of_device(player_index, hand) -> bool
 		Enable tracking of the specified controller, by player index and tracked device type.
@@ -73,7 +65,8 @@ package unreal;
 		Returns:
 		    bool: (Boolean) true if the specified device is now set to be tracked.  This could fail due to tracking limits, or on invalid input.
 	**/
-	static public function enable_motion_tracking_of_device(player_index:Dynamic, hand:Dynamic):Bool;
+	@:deprecated
+	static public function enable_motion_tracking_of_device(player_index:Int, hand:unreal.ControllerHand):Bool;
 	/**
 		X.enable_motion_tracking_of_source(player_index, source_name) -> bool
 		Enable tracking of the specified controller, by player index and tracked device type.
@@ -85,7 +78,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean) true if the specified device is now set to be tracked.  This could fail due to tracking limits, or on invalid input.
 	**/
-	static public function enable_motion_tracking_of_source(player_index:Dynamic, source_name:Dynamic):Bool;
+	static public function enable_motion_tracking_of_source(player_index:Int, source_name:unreal.Name):Bool;
 	/**
 		X.enumerate_motion_sources() -> Array(Name)
 		Returns a list of all available motion sources (FNames associated with
@@ -131,7 +124,7 @@ package unreal;
 		Returns:
 		    bool: Tracking status of the specified controller.
 	**/
-	static public function is_motion_source_tracking(player_index:Dynamic, source_name:Dynamic):Bool;
+	static public function is_motion_source_tracking(player_index:Int, source_name:unreal.Name):Bool;
 	/**
 		X.is_motion_tracked_device_count_management_necessary() -> bool
 		Returns true if it is necessary for the game to manage how many motion tracked devices it is asking to be tracked simultaneously.
@@ -151,7 +144,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean) true if the specified device is set to be tracked.
 	**/
-	static public function is_motion_tracking_enabled_for_component(motion_controller_component:Dynamic):Bool;
+	static public function is_motion_tracking_enabled_for_component(motion_controller_component:unreal.MotionControllerComponent):Bool;
 	/**
 		X.is_motion_tracking_enabled_for_device(player_index, hand) -> bool
 		Returns true if tracking is enabled for the specified device.
@@ -164,7 +157,8 @@ package unreal;
 		Returns:
 		    bool: (Boolean) true if the specified device is set to be tracked.
 	**/
-	static public function is_motion_tracking_enabled_for_device(player_index:Dynamic, hand:Dynamic):Bool;
+	@:deprecated
+	static public function is_motion_tracking_enabled_for_device(player_index:Int, hand:unreal.ControllerHand):Bool;
 	/**
 		X.is_motion_tracking_enabled_for_source(player_index, source_name) -> bool
 		Returns true if tracking is enabled for the specified device.
@@ -176,7 +170,7 @@ package unreal;
 		Returns:
 		    bool: (Boolean) true if the specified device is set to be tracked.
 	**/
-	static public function is_motion_tracking_enabled_for_source(player_index:Dynamic, source_name:Dynamic):Bool;
+	static public function is_motion_tracking_enabled_for_source(player_index:Int, source_name:unreal.Name):Bool;
 	/**
 		X.set_is_controller_motion_tracking_enabled_by_default(enable) -> None
 		Set whether motion tracked controllers activate on creation by default, or do not and must be explicitly activated.
@@ -184,5 +178,5 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	static public function set_is_controller_motion_tracking_enabled_by_default(enable:Dynamic):Void;
+	static public function set_is_controller_motion_tracking_enabled_by_default(enable:Bool):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LocationServices") extern class LocationServices extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.are_location_services_enabled() -> bool
 		Checks if the Location Services on the mobile device are enabled for this application
 		
@@ -49,7 +40,7 @@ package unreal;
 		Returns:
 		    bool: true if Initialization was succesful
 	**/
-	static public function init_location_services(accuracy:Dynamic, update_frequency:Dynamic, min_distance_filter:Dynamic):Bool;
+	static public function init_location_services(accuracy:unreal.LocationAccuracy, update_frequency:Float, min_distance_filter:Float):Bool;
 	/**
 		X.is_location_accuracy_available(accuracy) -> bool
 		Checks if the supplied Accuracy is available on the current device.
@@ -60,7 +51,7 @@ package unreal;
 		Returns:
 		    bool: true if the mobile device can support the Accuracy, false if it will use a different accuracy
 	**/
-	static public function is_location_accuracy_available(accuracy:Dynamic):Bool;
+	static public function is_location_accuracy_available(accuracy:unreal.LocationAccuracy):Bool;
 	/**
 		X.start_location_services() -> bool
 		Starts requesting location updates from the appropriate Location Service

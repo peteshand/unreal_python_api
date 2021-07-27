@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimationSharingStateProcessor") extern class AnimationSharingStateProcessor extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_animation_state_enum() -> Enum
 		Get Animation State Enum
 		
@@ -34,5 +25,5 @@ package unreal;
 		
 		    should_process (bool):
 	**/
-	public function process_actor_state(actor:Dynamic, current_state:Dynamic, on_demand_state:Dynamic):python.Tuple<Dynamic>;
+	public function process_actor_state(actor:unreal.Actor, current_state:Dynamic, on_demand_state:Dynamic):python.Tuple<Dynamic>;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelVariantSets") extern class LevelVariantSets extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_num_variant_sets() -> int32
 		Get Num Variant Sets
 		
@@ -28,7 +19,7 @@ package unreal;
 		Returns:
 		    VariantSet:
 	**/
-	public function get_variant_set(variant_set_index:Dynamic):unreal.VariantSet;
+	public function get_variant_set(variant_set_index:Int):unreal.VariantSet;
 	/**
 		x.get_variant_set_by_name(variant_set_name) -> VariantSet
 		Get Variant Set by Name
@@ -39,5 +30,5 @@ package unreal;
 		Returns:
 		    VariantSet:
 	**/
-	public function get_variant_set_by_name(variant_set_name:Dynamic):unreal.VariantSet;
+	public function get_variant_set_by_name(variant_set_name:String):unreal.VariantSet;
 }

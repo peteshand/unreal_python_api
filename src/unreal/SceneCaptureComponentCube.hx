@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SceneCaptureComponentCube") extern class SceneCaptureComponentCube extends unreal.SceneCaptureComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Preserve the rotation of the actor when updating the capture. The default behavior is to capture the cube aligned to the world axis system.
 	**/
 	public var capture_rotation : Bool;
@@ -50,5 +41,6 @@ package unreal;
 	/**
 		deprecated: 'update_content' was renamed to 'capture_scene'.
 	**/
+	@:deprecated
 	public function update_content():Void;
 }

@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "EditorLoadingAndSavingUtils") extern class EditorLoadingAndSavingUtils extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.export_scene(export_selected_actors_only) -> None
 		Exports the current scene
 		
 		Args:
 		    export_selected_actors_only (bool):
 	**/
-	static public function export_scene(export_selected_actors_only:Dynamic):Void;
+	static public function export_scene(export_selected_actors_only:Bool):Void;
 	/**
 		X.get_dirty_content_packages() -> Array(Package)
 		Appends array with all currently dirty content packages.
@@ -45,7 +36,7 @@ package unreal;
 		Args:
 		    filename (str):
 	**/
-	static public function import_scene(filename:Dynamic):Void;
+	static public function import_scene(filename:String):Void;
 	/**
 		X.load_map(filename) -> World
 		Loads the specified map.  Does not prompt the user to save the current map.
@@ -56,7 +47,7 @@ package unreal;
 		Returns:
 		    World: true if the map was loaded successfully.
 	**/
-	static public function load_map(filename:Dynamic):unreal.World;
+	static public function load_map(filename:String):unreal.World;
 	/**
 		X.load_map_with_dialog() -> World
 		Prompts the user to save the current map if necessary, the presents a load dialog and
@@ -76,7 +67,7 @@ package unreal;
 		Returns:
 		    World:
 	**/
-	static public function new_blank_map(save_existing_map:Dynamic):unreal.World;
+	static public function new_blank_map(save_existing_map:Bool):unreal.World;
 	/**
 		X.new_map_from_template(path_to_template_level, save_existing_map) -> World
 		New Map from Template
@@ -88,7 +79,7 @@ package unreal;
 		Returns:
 		    World:
 	**/
-	static public function new_map_from_template(path_to_template_level:Dynamic, save_existing_map:Dynamic):unreal.World;
+	static public function new_map_from_template(path_to_template_level:String, save_existing_map:Bool):unreal.World;
 	/**
 		X.reload_packages(packages_to_reload, interaction_mode=ReloadPackagesInteractionMode.INTERACTIVE) -> (out_any_packages_reloaded=bool, out_error_message=Text)
 		Helper function that attempts to reload the specified top-level packages.
@@ -104,7 +95,7 @@ package unreal;
 		
 		    out_error_message (Text): An error message specifying any problems with reloading packages
 	**/
-	static public function reload_packages(packages_to_reload:Dynamic, interaction_mode:Dynamic):python.Tuple<Dynamic>;
+	static public function reload_packages(packages_to_reload:unreal.Array, interaction_mode:unreal.ReloadPackagesInteractionMode):python.Tuple<Dynamic>;
 	/**
 		X.save_current_level() -> bool
 		Saves the active level, prompting the use for checkout if necessary.
@@ -125,7 +116,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	static public function save_dirty_packages(save_map_packages:Dynamic, save_content_packages:Dynamic):Bool;
+	static public function save_dirty_packages(save_map_packages:Bool, save_content_packages:Bool):Bool;
 	/**
 		X.save_dirty_packages_with_dialog(save_map_packages, save_content_packages) -> bool
 		Looks at all currently loaded packages and saves them if their "bDirty" flag is set.
@@ -138,7 +129,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	static public function save_dirty_packages_with_dialog(save_map_packages:Dynamic, save_content_packages:Dynamic):Bool;
+	static public function save_dirty_packages_with_dialog(save_map_packages:Bool, save_content_packages:Bool):Bool;
 	/**
 		X.save_map(world, asset_path) -> bool
 		Saves the specified map, returning true on success.
@@ -150,7 +141,7 @@ package unreal;
 		Returns:
 		    bool: true if the map was saved successfully.
 	**/
-	static public function save_map(world:Dynamic, asset_path:Dynamic):Bool;
+	static public function save_map(world:unreal.World, asset_path:String):Bool;
 	/**
 		X.save_packages(packages_to_save, only_dirty) -> bool
 		Save all packages.
@@ -163,7 +154,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	static public function save_packages(packages_to_save:Dynamic, only_dirty:Dynamic):Bool;
+	static public function save_packages(packages_to_save:unreal.Array, only_dirty:Bool):Bool;
 	/**
 		X.save_packages_with_dialog(packages_to_save, only_dirty) -> bool
 		Save all packages. Optionally prompting the user to select which packages to save.
@@ -176,7 +167,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	static public function save_packages_with_dialog(packages_to_save:Dynamic, only_dirty:Dynamic):Bool;
+	static public function save_packages_with_dialog(packages_to_save:unreal.Array, only_dirty:Bool):Bool;
 	/**
 		X.unload_packages(packages_to_unload) -> (out_any_packages_unloaded=bool, out_error_message=Text)
 		Unloads a list of packages
@@ -191,5 +182,5 @@ package unreal;
 		
 		    out_error_message (Text):
 	**/
-	static public function unload_packages(packages_to_unload:Dynamic):python.Tuple<Dynamic>;
+	static public function unload_packages(packages_to_unload:unreal.Array):python.Tuple<Dynamic>;
 }

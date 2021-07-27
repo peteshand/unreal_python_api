@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "PlatformLibrary") extern class PlatformLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.cancel_local_notification(activation_event) -> None
 		Cancel a local notification given the ActivationEvent
 		
 		Args:
 		    activation_event (str): The string passed into the Schedule call for the notification to be cancelled
 	**/
-	static public function cancel_local_notification(activation_event:Dynamic):Void;
+	static public function cancel_local_notification(activation_event:String):Void;
 	/**
 		X.cancel_local_notification_by_id(notification_id) -> None
 		Cancel a local notification given the ActivationEvent
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    notification_id (int32): The Id returned from one of the ScheduleLocalNotification* functions
 	**/
-	static public function cancel_local_notification_by_id(notification_id:Dynamic):Void;
+	static public function cancel_local_notification_by_id(notification_id:Int):Void;
 	/**
 		X.clear_all_local_notifications() -> None
 		Clear all pending local notifications. Typically this will be done before scheduling new notifications when going into the background
@@ -68,7 +59,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function schedule_local_notification_at_time(fire_date_time:Dynamic, local_time:Dynamic, title:Dynamic, body:Dynamic, action:Dynamic, activation_event:Dynamic):Int;
+	static public function schedule_local_notification_at_time(fire_date_time:unreal.DateTime, local_time:Bool, title:unreal.Text, body:unreal.Text, action:unreal.Text, activation_event:String):Int;
 	/**
 		X.schedule_local_notification_badge_at_time(fire_date_time, local_time, activation_event) -> int32
 		Schedule a local notification badge at a specific time, inLocalTime specifies the current local time or if UTC time should be used
@@ -81,7 +72,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function schedule_local_notification_badge_at_time(fire_date_time:Dynamic, local_time:Dynamic, activation_event:Dynamic):Int;
+	static public function schedule_local_notification_badge_at_time(fire_date_time:unreal.DateTime, local_time:Bool, activation_event:String):Int;
 	/**
 		X.schedule_local_notification_badge_from_now(in_seconds_from_now, activation_event) -> None
 		Schedule a local notification badge to fire inSecondsFromNow from now
@@ -90,7 +81,7 @@ package unreal;
 		    in_seconds_from_now (int32): The seconds until the notification should fire
 		    activation_event (str): A string that is passed in the delegate callback when the app is brought into the foreground from the user activating the notification
 	**/
-	static public function schedule_local_notification_badge_from_now(in_seconds_from_now:Dynamic, activation_event:Dynamic):Void;
+	static public function schedule_local_notification_badge_from_now(in_seconds_from_now:Int, activation_event:String):Void;
 	/**
 		X.schedule_local_notification_from_now(in_seconds_from_now, title, body, action, activation_event) -> int32
 		Schedule a local notification to fire inSecondsFromNow from now
@@ -105,5 +96,5 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function schedule_local_notification_from_now(in_seconds_from_now:Dynamic, title:Dynamic, body:Dynamic, action:Dynamic, activation_event:Dynamic):Int;
+	static public function schedule_local_notification_from_now(in_seconds_from_now:Int, title:unreal.Text, body:unreal.Text, action:unreal.Text, activation_event:String):Int;
 }

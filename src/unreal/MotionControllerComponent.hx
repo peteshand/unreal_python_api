@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MotionControllerComponent") extern class MotionControllerComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(TrackingStatus):  [Read-Only] The tracking status for the device (e.g. full tracking, inertial tracking only, no tracking)
 	**/
 	public var current_tracking_status : unreal.TrackingStatus;
@@ -50,7 +41,7 @@ package unreal;
 		
 		    value_found (bool):
 	**/
-	public function get_hand_joint_position(joint_index:Dynamic):Bool;
+	public function get_hand_joint_position(joint_index:Int):Bool;
 	/**
 		x.get_parameter_value(name) -> (float, value_found=bool)
 		Returns the value of a custom parameter on the current in use Motion Controller (see member InUseMotionController). Only valid for the duration of OnMotionControllerUpdated
@@ -63,7 +54,7 @@ package unreal;
 		
 		    value_found (bool):
 	**/
-	public function get_parameter_value(name:Dynamic):Bool;
+	public function get_parameter_value(name:unreal.Name):Bool;
 	/**
 		(ControllerHand):  [Read-Write] DEPRECATED (use MotionSource instead) Which hand this component should automatically follow
 	**/

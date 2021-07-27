@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FunctionalTestUtilityLibrary") extern class FunctionalTestUtilityLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.trace_channel_test_util(world_context_object, batch_options, start, end, sphere_capsule_radius, capsule_half_height, box_half_size, orientation, trace_channel, object_types, profile_name, trace_complex, actors_to_ignore, ignore_self, draw_debug_type, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> TraceQueryTestResults
 		Helper function to trace and permute many options at once
 		
@@ -37,5 +28,5 @@ package unreal;
 		Returns:
 		    TraceQueryTestResults:
 	**/
-	static public function trace_channel_test_util(world_context_object:Dynamic, batch_options:Dynamic, start:Dynamic, end:Dynamic, sphere_capsule_radius:Dynamic, capsule_half_height:Dynamic, box_half_size:Dynamic, orientation:Dynamic, trace_channel:Dynamic, object_types:Dynamic, profile_name:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, ignore_self:Dynamic, draw_debug_type:Dynamic, trace_color:Dynamic, trace_hit_color:Dynamic, draw_time:Dynamic):unreal.TraceQueryTestResults;
+	static public function trace_channel_test_util(world_context_object:unreal.Object, batch_options:unreal.TraceChannelTestBatchOptions, start:unreal.Vector, end:unreal.Vector, sphere_capsule_radius:Float, capsule_half_height:Float, box_half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, object_types:unreal.Array, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, ignore_self:Bool, draw_debug_type:unreal.DrawDebugTrace, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):unreal.TraceQueryTestResults;
 }

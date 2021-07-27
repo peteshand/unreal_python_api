@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BillboardComponent") extern class BillboardComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Is Screen Size Scaled
 	**/
 	public var is_screen_size_scaled : Bool;
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    new_sprite (Texture2D):
 	**/
-	public function set_sprite(new_sprite:Dynamic):Void;
+	public function set_sprite(new_sprite:unreal.Texture2D):Void;
 	/**
 		x.set_sprite_and_uv(new_sprite, new_u, new_ul, new_v, new_vl) -> None
 		Change the sprite texture and the UV's used by this component
@@ -37,7 +28,7 @@ package unreal;
 		    new_v (int32): 
 		    new_vl (int32):
 	**/
-	public function set_sprite_and_uv(new_sprite:Dynamic, new_u:Dynamic, new_ul:Dynamic, new_v:Dynamic, new_vl:Dynamic):Void;
+	public function set_sprite_and_uv(new_sprite:unreal.Texture2D, new_u:Int, new_ul:Int, new_v:Int, new_vl:Int):Void;
 	/**
 		x.set_uv(new_u, new_ul, new_v, new_vl) -> None
 		Change the sprite's UVs
@@ -48,7 +39,7 @@ package unreal;
 		    new_v (int32): 
 		    new_vl (int32):
 	**/
-	public function set_uv(new_u:Dynamic, new_ul:Dynamic, new_v:Dynamic, new_vl:Dynamic):Void;
+	public function set_uv(new_u:Int, new_ul:Int, new_v:Int, new_vl:Int):Void;
 	/**
 		(Texture2D):  [Read-Write] Sprite
 	**/

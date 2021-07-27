@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TileView") extern class TileView extends unreal.ListView {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_entry_height() -> float
 		Gets the height of tile entries
 		
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    new_height (float):
 	**/
-	public function set_entry_height(new_height:Dynamic):Void;
+	public function set_entry_height(new_height:Float):Void;
 	/**
 		x.set_entry_width(new_width) -> None
 		Sets the width of every tile entry
@@ -41,5 +32,5 @@ package unreal;
 		Args:
 		    new_width (float):
 	**/
-	public function set_entry_width(new_width:Dynamic):Void;
+	public function set_entry_width(new_width:Float):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PostProcessSettings") extern class PostProcessSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(TextureCube):  [Read-Write] The Ambient cubemap (Affects diffuse and specular shading), blends additively which if different from all other settings here
 	**/
 	public var ambient_cubemap : unreal.TextureCube;
@@ -138,30 +129,37 @@ package unreal;
 	/**
 		deprecated: 'b_override_exposure_offset' was renamed to 'override_auto_exposure_bias'.
 	**/
+	@:deprecated
 	public var b_override_exposure_offset : Dynamic;
 	/**
 		deprecated: 'b_override_eye_adaptation_high_percent' was renamed to 'override_auto_exposure_high_percent'.
 	**/
+	@:deprecated
 	public var b_override_eye_adaptation_high_percent : Dynamic;
 	/**
 		deprecated: 'b_override_eye_adaptation_low_percent' was renamed to 'override_auto_exposure_low_percent'.
 	**/
+	@:deprecated
 	public var b_override_eye_adaptation_low_percent : Dynamic;
 	/**
 		deprecated: 'b_override_eye_adaptation_max_brightness' was renamed to 'override_auto_exposure_max_brightness'.
 	**/
+	@:deprecated
 	public var b_override_eye_adaptation_max_brightness : Dynamic;
 	/**
 		deprecated: 'b_override_eye_adaptation_min_brightness' was renamed to 'override_auto_exposure_min_brightness'.
 	**/
+	@:deprecated
 	public var b_override_eye_adaptation_min_brightness : Dynamic;
 	/**
 		deprecated: 'b_override_eye_adaption_speed_down' was renamed to 'override_auto_exposure_speed_down'.
 	**/
+	@:deprecated
 	public var b_override_eye_adaption_speed_down : Dynamic;
 	/**
 		deprecated: 'b_override_eye_adaption_speed_up' was renamed to 'override_auto_exposure_speed_up'.
 	**/
+	@:deprecated
 	public var b_override_eye_adaption_speed_up : Dynamic;
 	/**
 		(float):  [Read-Write] Diameter size for the Bloom1 in percent of the screen width
@@ -464,30 +462,37 @@ package unreal;
 	/**
 		deprecated: 'exposure_offset' was renamed to 'auto_exposure_bias'.
 	**/
+	@:deprecated
 	public var exposure_offset : Dynamic;
 	/**
 		deprecated: 'eye_adaptation_high_percent' was renamed to 'auto_exposure_high_percent'.
 	**/
+	@:deprecated
 	public var eye_adaptation_high_percent : Dynamic;
 	/**
 		deprecated: 'eye_adaptation_low_percent' was renamed to 'auto_exposure_low_percent'.
 	**/
+	@:deprecated
 	public var eye_adaptation_low_percent : Dynamic;
 	/**
 		deprecated: 'eye_adaptation_max_brightness' was renamed to 'auto_exposure_max_brightness'.
 	**/
+	@:deprecated
 	public var eye_adaptation_max_brightness : Dynamic;
 	/**
 		deprecated: 'eye_adaptation_min_brightness' was renamed to 'auto_exposure_min_brightness'.
 	**/
+	@:deprecated
 	public var eye_adaptation_min_brightness : Dynamic;
 	/**
 		deprecated: 'eye_adaption_speed_down' was renamed to 'auto_exposure_speed_down'.
 	**/
+	@:deprecated
 	public var eye_adaption_speed_down : Dynamic;
 	/**
 		deprecated: 'eye_adaption_speed_up' was renamed to 'auto_exposure_speed_up'.
 	**/
+	@:deprecated
 	public var eye_adaption_speed_up : Dynamic;
 	/**
 		(float):  [Read-Write] Film Black Clip

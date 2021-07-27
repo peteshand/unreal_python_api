@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SpinBox") extern class SpinBox extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Whether this spin box should use the delta snapping logic for typed values - default false
 	**/
 	public var always_uses_delta_snap : Bool;
@@ -133,7 +124,7 @@ package unreal;
 		Args:
 		    foreground_color (SlateColor):
 	**/
-	public function set_foreground_color(foreground_color:Dynamic):Void;
+	public function set_foreground_color(foreground_color:unreal.SlateColor):Void;
 	/**
 		x.set_max_slider_value(new_value) -> None
 		Set the maximum value that can be specified using the slider.
@@ -141,7 +132,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_max_slider_value(new_value:Dynamic):Void;
+	public function set_max_slider_value(new_value:Float):Void;
 	/**
 		x.set_max_value(new_value) -> None
 		Set the maximum value that can be manually set in the spin box.
@@ -149,7 +140,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_max_value(new_value:Dynamic):Void;
+	public function set_max_value(new_value:Float):Void;
 	/**
 		x.set_min_slider_value(new_value) -> None
 		Set the minimum value that can be specified using the slider.
@@ -157,7 +148,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_min_slider_value(new_value:Dynamic):Void;
+	public function set_min_slider_value(new_value:Float):Void;
 	/**
 		x.set_min_value(new_value) -> None
 		Set the minimum value that can be manually set in the spin box.
@@ -165,7 +156,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_min_value(new_value:Dynamic):Void;
+	public function set_min_value(new_value:Float):Void;
 	/**
 		x.set_value(new_value) -> None
 		Set the value of the spin box.
@@ -173,7 +164,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_value(new_value:Dynamic):Void;
+	public function set_value(new_value:Float):Void;
 	/**
 		(float):  [Read-Only] The exponent by which to increase the delta as the mouse moves. 1 is constant (never increases the delta).
 	**/

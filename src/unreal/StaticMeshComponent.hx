@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "StaticMeshComponent") extern class StaticMeshComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Whether to use the mesh distance field representation (when present) for shadowing indirect lighting (from lightmaps or skylight) on Movable components.
 		This works like capsule shadows on skeletal meshes, except using the mesh distance field so no physics asset is required.
 		The StaticMesh must have 'Generate Mesh Distance Field' enabled, or the project must have 'Generate Mesh Distance Fields' enabled for this feature to work.
@@ -90,7 +81,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_distance_field_self_shadow_bias(new_value:Dynamic):Void;
+	public function set_distance_field_self_shadow_bias(new_value:Float):Void;
 	/**
 		x.set_evaluate_world_position_offset_in_ray_tracing(new_value) -> None
 		Set Evaluate World Position Offset in Ray Tracing
@@ -98,7 +89,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_evaluate_world_position_offset_in_ray_tracing(new_value:Dynamic):Void;
+	public function set_evaluate_world_position_offset_in_ray_tracing(new_value:Bool):Void;
 	/**
 		x.set_forced_lod_model(new_forced_lod_model) -> None
 		Set Forced Lod Model
@@ -106,7 +97,7 @@ package unreal;
 		Args:
 		    new_forced_lod_model (int32):
 	**/
-	public function set_forced_lod_model(new_forced_lod_model:Dynamic):Void;
+	public function set_forced_lod_model(new_forced_lod_model:Int):Void;
 	/**
 		x.set_reverse_culling(reverse_culling) -> None
 		Set forced reverse culling
@@ -114,7 +105,7 @@ package unreal;
 		Args:
 		    reverse_culling (bool):
 	**/
-	public function set_reverse_culling(reverse_culling:Dynamic):Void;
+	public function set_reverse_culling(reverse_culling:Bool):Void;
 	/**
 		x.set_static_mesh(new_mesh) -> bool
 		Change the StaticMesh used by this instance.
@@ -125,7 +116,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_static_mesh(new_mesh:Dynamic):Bool;
+	public function set_static_mesh(new_mesh:unreal.StaticMesh):Bool;
 	/**
 		(StaticMesh):  [Read-Only] Static Mesh
 	**/

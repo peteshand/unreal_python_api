@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LevelSequenceMediaController") extern class LevelSequenceMediaController extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_media_component() -> MediaComponent
 		Access this actor's media component
 		
@@ -50,5 +41,5 @@ package unreal;
 		Args:
 		    desync_threshold_seconds (float):
 	**/
-	public function synchronize_to_server(desync_threshold_seconds:Dynamic):Void;
+	public function synchronize_to_server(desync_threshold_seconds:Float):Void;
 }

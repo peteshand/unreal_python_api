@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARPlaneGeometry") extern class ARPlaneGeometry extends unreal.ARTrackedGeometry {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_boundary_polygon_in_local_space() -> Array(Vector)
 		Get Boundary Polygon in Local Space
 		

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Factory") extern class Factory extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(AssetImportTask):  [Read-Write] Task for importing file via script interfaces
 	**/
 	public var asset_import_task : unreal.AssetImportTask;
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    bool: true if the file is supported, false otherwise.
 	**/
-	public function script_factory_can_import(filename:Dynamic):Bool;
+	public function script_factory_can_import(filename:String):Bool;
 	/**
 		x.script_factory_create_file(task) -> bool
 		Import object(s) using a task via script
@@ -59,7 +50,7 @@ package unreal;
 		Returns:
 		    bool: True if script implements
 	**/
-	public function script_factory_create_file(task:Dynamic):Bool;
+	public function script_factory_create_file(task:unreal.AssetImportTask):Bool;
 	/**
 		(type(Class)):  [Read-Write] The class manufactured by this factory.
 	**/

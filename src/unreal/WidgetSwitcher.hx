@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "WidgetSwitcher") extern class WidgetSwitcher extends unreal.PanelWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(int32):  [Read-Only] The slot index to display
 	**/
 	public var active_widget_index : Int;
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    Widget:
 	**/
-	public function get_widget_at_index(index:Dynamic):unreal.Widget;
+	public function get_widget_at_index(index:Int):unreal.Widget;
 	/**
 		x.set_active_widget(widget) -> None
 		Activates the widget and makes it the active index.
@@ -56,7 +47,7 @@ package unreal;
 		Args:
 		    widget (Widget):
 	**/
-	public function set_active_widget(widget:Dynamic):Void;
+	public function set_active_widget(widget:unreal.Widget):Void;
 	/**
 		x.set_active_widget_index(index) -> None
 		Activates the widget at the specified index.
@@ -64,5 +55,5 @@ package unreal;
 		Args:
 		    index (int32):
 	**/
-	public function set_active_widget_index(index:Dynamic):Void;
+	public function set_active_widget_index(index:Int):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MobilePatchingLibrary") extern class MobilePatchingLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.get_active_device_profile_name() -> str
 		Get the name of currently selected device profile name
 		
@@ -29,7 +20,7 @@ package unreal;
 		Returns:
 		    MobileInstalledContent:
 	**/
-	static public function get_installed_content(install_directory:Dynamic):unreal.MobileInstalledContent;
+	static public function get_installed_content(install_directory:String):unreal.MobileInstalledContent;
 	/**
 		X.get_supported_platform_names() -> Array(str)
 		Get the list of supported platform names on this device. Example: Android_ETC2, Android_ASTC
@@ -59,5 +50,5 @@ package unreal;
 		    on_succeeded (OnRequestContentSucceeded): 
 		    on_failed (OnRequestContentFailed):
 	**/
-	static public function request_content(remote_manifest_url:Dynamic, cloud_url:Dynamic, install_directory:Dynamic, on_succeeded:Dynamic, on_failed:Dynamic):Void;
+	static public function request_content(remote_manifest_url:String, cloud_url:String, install_directory:String, on_succeeded:unreal.OnRequestContentSucceeded, on_failed:unreal.OnRequestContentFailed):Void;
 }

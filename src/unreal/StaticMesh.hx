@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "StaticMesh") extern class StaticMesh extends unreal.StreamableRenderAsset {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_material(material) -> Name
 		Adds a new material and return its slot name
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function add_material(material:Dynamic):unreal.Name;
+	public function add_material(material:unreal.MaterialInterface):unreal.Name;
 	/**
 		x.add_socket(socket) -> None
 		Add a socket object in this StaticMesh.
@@ -28,7 +19,7 @@ package unreal;
 		Args:
 		    socket (StaticMeshSocket):
 	**/
-	public function add_socket(socket:Dynamic):Void;
+	public function add_socket(socket:unreal.StaticMeshSocket):Void;
 	/**
 		x.build_from_static_mesh_descriptions(static_mesh_descriptions, build_simple_collision=False) -> None
 		Builds static mesh LODs from the array of StaticMeshDescriptions passed in
@@ -37,7 +28,7 @@ package unreal;
 		    static_mesh_descriptions (Array(StaticMeshDescription)): 
 		    build_simple_collision (bool):
 	**/
-	public function build_from_static_mesh_descriptions(static_mesh_descriptions:Dynamic, build_simple_collision:Dynamic):Void;
+	public function build_from_static_mesh_descriptions(static_mesh_descriptions:unreal.Array, build_simple_collision:Bool):Void;
 	/**
 		X.create_static_mesh_description(outer=None) -> StaticMeshDescription
 		Create an empty StaticMeshDescription object, to describe a static mesh at runtime
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    StaticMeshDescription:
 	**/
-	static public function create_static_mesh_description(outer:Dynamic):unreal.StaticMeshDescription;
+	static public function create_static_mesh_description(outer:unreal.Object):unreal.StaticMeshDescription;
 	/**
 		x.find_socket(socket_name) -> StaticMeshSocket
 		Find a socket object in this StaticMesh by name.
@@ -60,7 +51,7 @@ package unreal;
 		Returns:
 		    StaticMeshSocket:
 	**/
-	public function find_socket(socket_name:Dynamic):unreal.StaticMeshSocket;
+	public function find_socket(socket_name:unreal.Name):unreal.StaticMeshSocket;
 	/**
 		x.get_bounding_box() -> Box
 		Returns the bounding box, in local space including bounds extension(s), of the StaticMesh asset
@@ -87,7 +78,7 @@ package unreal;
 		Returns:
 		    MaterialInterface: Requested material
 	**/
-	public function get_material(material_index:Dynamic):unreal.MaterialInterface;
+	public function get_material(material_index:Int):unreal.MaterialInterface;
 	/**
 		x.get_material_index(material_slot_name) -> int32
 		Gets a Material index given a slot name
@@ -98,7 +89,7 @@ package unreal;
 		Returns:
 		    int32: Requested material
 	**/
-	public function get_material_index(material_slot_name:Dynamic):Int;
+	public function get_material_index(material_slot_name:unreal.Name):Int;
 	/**
 		x.get_minimum_lod_for_platform(platform_name) -> int32
 		Get Minimum LODFor Platform
@@ -109,7 +100,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_minimum_lod_for_platform(platform_name:Dynamic):Int;
+	public function get_minimum_lod_for_platform(platform_name:unreal.Name):Int;
 	/**
 		x.get_minimum_lod_for_platforms() -> Map(Name, int32)
 		Get Minimum LODFor Platforms
@@ -138,7 +129,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_num_sections(lod:Dynamic):Int;
+	public function get_num_sections(lod:Int):Int;
 	/**
 		(int32):  [Read-Write] Specifies which mesh LOD to use for complex (per-poly) collision.
 		Sometimes it can be desirable to use a lower poly representation for collision to reduce memory usage, improve performance and behaviour.
@@ -156,7 +147,7 @@ package unreal;
 		Args:
 		    socket (StaticMeshSocket):
 	**/
-	public function remove_socket(socket:Dynamic):Void;
+	public function remove_socket(socket:unreal.StaticMeshSocket):Void;
 	/**
 		x.set_lod_group(new_group, rebuild_immediately=True) -> None
 		Set LODGroup
@@ -165,7 +156,7 @@ package unreal;
 		    new_group (Name): 
 		    rebuild_immediately (bool):
 	**/
-	public function set_lod_group(new_group:Dynamic, rebuild_immediately:Dynamic):Void;
+	public function set_lod_group(new_group:unreal.Name, rebuild_immediately:Bool):Void;
 	/**
 		x.set_material(material_index, new_material) -> None
 		Sets a Material given a Material Index
@@ -174,7 +165,7 @@ package unreal;
 		    material_index (int32): 
 		    new_material (MaterialInterface):
 	**/
-	public function set_material(material_index:Dynamic, new_material:Dynamic):Void;
+	public function set_material(material_index:Int, new_material:unreal.MaterialInterface):Void;
 	/**
 		x.set_num_source_models(num) -> None
 		Set Num Source Models
@@ -182,7 +173,7 @@ package unreal;
 		Args:
 		    num (int32):
 	**/
-	public function set_num_source_models(num:Dynamic):Void;
+	public function set_num_source_models(num:Int):Void;
 	/**
 		(Array(StaticMaterial)):  [Read-Write] Static Materials
 	**/

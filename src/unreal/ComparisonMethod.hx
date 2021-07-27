@@ -7,13 +7,4 @@ package unreal;
 	static public var LESS_THAN : Dynamic;
 	static public var LESS_THAN_OR_EQUAL_TO : Dynamic;
 	static public var NOT_EQUAL_TO : Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

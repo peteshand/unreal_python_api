@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenu") extern class ToolMenu extends unreal.ToolMenuBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_dynamic_section(section_name, object) -> None
 		Add Dynamic Section Script
 		
@@ -18,7 +9,7 @@ package unreal;
 		    section_name (Name): 
 		    object (ToolMenuSectionDynamic):
 	**/
-	public function add_dynamic_section(section_name:Dynamic, object:Dynamic):Void;
+	public function add_dynamic_section(section_name:unreal.Name, object:unreal.ToolMenuSectionDynamic):Void;
 	/**
 		x.add_menu_entry(section_name, args) -> None
 		Add Menu Entry
@@ -27,7 +18,7 @@ package unreal;
 		    section_name (Name): 
 		    args (ToolMenuEntry):
 	**/
-	public function add_menu_entry(section_name:Dynamic, args:Dynamic):Void;
+	public function add_menu_entry(section_name:unreal.Name, args:unreal.ToolMenuEntry):Void;
 	/**
 		x.add_menu_entry_object(object) -> None
 		Add Menu Entry Object
@@ -35,7 +26,7 @@ package unreal;
 		Args:
 		    object (ToolMenuEntryScript):
 	**/
-	public function add_menu_entry_object(object:Dynamic):Void;
+	public function add_menu_entry_object(object:unreal.ToolMenuEntryScript):Void;
 	/**
 		x.add_section(section_name, label="", insert_name="None", insert_type=ToolMenuInsertType.DEFAULT) -> None
 		Add Section Script
@@ -46,7 +37,7 @@ package unreal;
 		    insert_name (Name): 
 		    insert_type (ToolMenuInsertType):
 	**/
-	public function add_section(section_name:Dynamic, label:Dynamic, insert_name:Dynamic, insert_type:Dynamic):Void;
+	public function add_section(section_name:unreal.Name, label:unreal.Text, insert_name:unreal.Name, insert_type:unreal.ToolMenuInsertType):Void;
 	/**
 		x.add_sub_menu(owner, section_name, name, label, tool_tip="") -> ToolMenu
 		Add Sub Menu Script
@@ -61,7 +52,7 @@ package unreal;
 		Returns:
 		    ToolMenu:
 	**/
-	public function add_sub_menu(owner:Dynamic, section_name:Dynamic, name:Dynamic, label:Dynamic, tool_tip:Dynamic):unreal.ToolMenu;
+	public function add_sub_menu(owner:unreal.Name, section_name:unreal.Name, name:unreal.Name, label:unreal.Text, tool_tip:unreal.Text):unreal.ToolMenu;
 	/**
 		(bool):  [Read-Write] Close Self Only
 	**/
@@ -76,7 +67,7 @@ package unreal;
 		    parent (Name): 
 		    type (MultiBoxType):
 	**/
-	public function init_menu(owner:Dynamic, name:Dynamic, parent:Dynamic, type:Dynamic):Void;
+	public function init_menu(owner:unreal.ToolMenuOwner, name:unreal.Name, parent:unreal.Name, type:unreal.MultiBoxType):Void;
 	/**
 		(Name):  [Read-Write] Menu Name
 	**/

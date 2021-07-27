@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PaperTileMapComponent") extern class PaperTileMapComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_new_layer() -> PaperTileLayer
 		Creates and adds a new layer to the tile map
 		Note: This will only work on components that own their own tile map (OwnsTileMap returns true), you cannot modify standalone tile map assets
@@ -31,7 +22,7 @@ package unreal;
 		    pixels_per_unreal_unit (float): 
 		    create_layer (bool): Should an empty layer be created?
 	**/
-	public function create_new_tile_map(map_width:Dynamic, map_height:Dynamic, tile_width:Dynamic, tile_height:Dynamic, pixels_per_unreal_unit:Dynamic, create_layer:Dynamic):Void;
+	public function create_new_tile_map(map_width:Int, map_height:Int, tile_width:Int, tile_height:Int, pixels_per_unreal_unit:Float, create_layer:Bool):Void;
 	/**
 		x.get_layer_color(layer=0) -> LinearColor
 		Gets the per-layer color multiplier for a specific layer (multiplied with the tile map color and passed to the material as a vertex color)
@@ -42,7 +33,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function get_layer_color(layer:Dynamic):unreal.LinearColor;
+	public function get_layer_color(layer:Int):unreal.LinearColor;
 	/**
 		x.get_map_size() -> (map_width=int32, map_height=int32, num_layers=int32)
 		Returns the size of the tile map
@@ -69,7 +60,7 @@ package unreal;
 		Returns:
 		    PaperTileInfo:
 	**/
-	public function get_tile(x:Dynamic, y:Dynamic, layer:Dynamic):unreal.PaperTileInfo;
+	public function get_tile(x:Int, y:Int, layer:Int):unreal.PaperTileInfo;
 	/**
 		x.get_tile_center_position(tile_x, tile_y, layer_index=0, world_space=False) -> Vector
 		Returns the position of the center of the specified tile
@@ -83,7 +74,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tile_center_position(tile_x:Dynamic, tile_y:Dynamic, layer_index:Dynamic, world_space:Dynamic):unreal.Vector;
+	public function get_tile_center_position(tile_x:Int, tile_y:Int, layer_index:Int, world_space:Bool):unreal.Vector;
 	/**
 		x.get_tile_corner_position(tile_x, tile_y, layer_index=0, world_space=False) -> Vector
 		Returns the position of the top left corner of the specified tile
@@ -97,7 +88,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tile_corner_position(tile_x:Dynamic, tile_y:Dynamic, layer_index:Dynamic, world_space:Dynamic):unreal.Vector;
+	public function get_tile_corner_position(tile_x:Int, tile_y:Int, layer_index:Int, world_space:Bool):unreal.Vector;
 	/**
 		x.get_tile_map_color() -> LinearColor
 		Gets the tile map global color multiplier (multiplied with the per-layer color and passed to the material as a vertex color)
@@ -121,7 +112,7 @@ package unreal;
 		
 		    points (Array(Vector)):
 	**/
-	public function get_tile_polygon(tile_x:Dynamic, tile_y:Dynamic, layer_index:Dynamic, world_space:Dynamic):Dynamic;
+	public function get_tile_polygon(tile_x:Int, tile_y:Int, layer_index:Int, world_space:Bool):Dynamic;
 	/**
 		x.make_tile_map_editable() -> None
 		Makes the tile map asset pointed to by this component editable.  Nothing happens if it was already instanced, but
@@ -149,7 +140,7 @@ package unreal;
 		    new_width_in_tiles (int32): 
 		    new_height_in_tiles (int32):
 	**/
-	public function resize_map(new_width_in_tiles:Dynamic, new_height_in_tiles:Dynamic):Void;
+	public function resize_map(new_width_in_tiles:Int, new_height_in_tiles:Int):Void;
 	/**
 		x.set_default_collision_thickness(thickness, rebuild_collision=True) -> None
 		Sets the default thickness for any layers that don't override the collision thickness
@@ -159,7 +150,7 @@ package unreal;
 		    thickness (float): 
 		    rebuild_collision (bool):
 	**/
-	public function set_default_collision_thickness(thickness:Dynamic, rebuild_collision:Dynamic):Void;
+	public function set_default_collision_thickness(thickness:Float, rebuild_collision:Bool):Void;
 	/**
 		x.set_layer_collision(layer=0, has_collision=True, override_thickness=True, custom_thickness=50.000000, override_offset=False, custom_offset=0.000000, rebuild_collision=True) -> None
 		Sets the collision thickness for a specific layer
@@ -174,7 +165,7 @@ package unreal;
 		    custom_offset (float): 
 		    rebuild_collision (bool):
 	**/
-	public function set_layer_collision(layer:Dynamic, has_collision:Dynamic, override_thickness:Dynamic, custom_thickness:Dynamic, override_offset:Dynamic, custom_offset:Dynamic, rebuild_collision:Dynamic):Void;
+	public function set_layer_collision(layer:Int, has_collision:Bool, override_thickness:Bool, custom_thickness:Float, override_offset:Bool, custom_offset:Float, rebuild_collision:Bool):Void;
 	/**
 		x.set_layer_color(new_color, layer=0) -> None
 		Sets the per-layer color multiplier for a specific layer (multiplied with the tile map color and passed to the material as a vertex color)
@@ -184,7 +175,7 @@ package unreal;
 		    new_color (LinearColor): 
 		    layer (int32):
 	**/
-	public function set_layer_color(new_color:Dynamic, layer:Dynamic):Void;
+	public function set_layer_color(new_color:unreal.LinearColor, layer:Int):Void;
 	/**
 		x.set_tile(x, y, layer, new_value) -> None
 		Modifies the contents of a specified tile cell (Note: This will only work on components that own their own tile map (OwnsTileMap returns true), you cannot modify standalone tile map assets)
@@ -196,7 +187,7 @@ package unreal;
 		    layer (int32): 
 		    new_value (PaperTileInfo):
 	**/
-	public function set_tile(x:Dynamic, y:Dynamic, layer:Dynamic, new_value:Dynamic):Void;
+	public function set_tile(x:Int, y:Int, layer:Int, new_value:unreal.PaperTileInfo):Void;
 	/**
 		x.set_tile_map(new_tile_map) -> bool
 		Change the PaperTileMap used by this instance.
@@ -207,7 +198,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_tile_map(new_tile_map:Dynamic):Bool;
+	public function set_tile_map(new_tile_map:unreal.PaperTileMap):Bool;
 	/**
 		x.set_tile_map_color(new_color) -> None
 		Sets the tile map global color multiplier (multiplied with the per-layer color and passed to the material as a vertex color)
@@ -215,7 +206,7 @@ package unreal;
 		Args:
 		    new_color (LinearColor):
 	**/
-	public function set_tile_map_color(new_color:Dynamic):Void;
+	public function set_tile_map_color(new_color:unreal.LinearColor):Void;
 	/**
 		(PaperTileMap):  [Read-Only] The tile map used by this component
 	**/

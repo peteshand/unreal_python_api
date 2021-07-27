@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARSharedWorldGameState") extern class ARSharedWorldGameState extends unreal.GameState {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(int32):  [Read-Only] The amount of the AR world data that has been replicated to this client so far
 	**/
 	public var ar_world_bytes_delivered : Int;

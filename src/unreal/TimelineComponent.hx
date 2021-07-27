@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TimelineComponent") extern class TimelineComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_ignore_time_dilation() -> bool
 		Get whether to ignore time dilation.
 		
@@ -94,7 +85,7 @@ package unreal;
 		    new_float_curve (CurveFloat): 
 		    float_track_name (Name):
 	**/
-	public function set_float_curve(new_float_curve:Dynamic, float_track_name:Dynamic):Void;
+	public function set_float_curve(new_float_curve:unreal.CurveFloat, float_track_name:unreal.Name):Void;
 	/**
 		x.set_ignore_time_dilation(new_ignore_time_dilation) -> None
 		Set whether to ignore time dilation.
@@ -102,7 +93,7 @@ package unreal;
 		Args:
 		    new_ignore_time_dilation (bool):
 	**/
-	public function set_ignore_time_dilation(new_ignore_time_dilation:Dynamic):Void;
+	public function set_ignore_time_dilation(new_ignore_time_dilation:Bool):Void;
 	/**
 		x.set_linear_color_curve(new_linear_color_curve, linear_color_track_name) -> None
 		Update a certain linear color track's curve
@@ -111,7 +102,7 @@ package unreal;
 		    new_linear_color_curve (CurveLinearColor): 
 		    linear_color_track_name (Name):
 	**/
-	public function set_linear_color_curve(new_linear_color_curve:Dynamic, linear_color_track_name:Dynamic):Void;
+	public function set_linear_color_curve(new_linear_color_curve:unreal.CurveLinearColor, linear_color_track_name:unreal.Name):Void;
 	/**
 		x.set_looping(new_looping) -> None
 		true means we would loop, false means we should not.
@@ -119,7 +110,7 @@ package unreal;
 		Args:
 		    new_looping (bool):
 	**/
-	public function set_looping(new_looping:Dynamic):Void;
+	public function set_looping(new_looping:Bool):Void;
 	/**
 		x.set_new_time(new_time) -> None
 		Set the new playback position time to use
@@ -127,7 +118,7 @@ package unreal;
 		Args:
 		    new_time (float):
 	**/
-	public function set_new_time(new_time:Dynamic):Void;
+	public function set_new_time(new_time:Float):Void;
 	/**
 		x.set_play_rate(new_rate) -> None
 		Sets the new play rate for this timeline
@@ -135,7 +126,7 @@ package unreal;
 		Args:
 		    new_rate (float):
 	**/
-	public function set_play_rate(new_rate:Dynamic):Void;
+	public function set_play_rate(new_rate:Float):Void;
 	/**
 		x.set_playback_position(new_position, fire_events, fire_update=True) -> None
 		Jump to a position in the timeline.
@@ -145,7 +136,7 @@ package unreal;
 		    fire_events (bool): If true, event functions that are between current position and new playback position will fire.
 		    fire_update (bool): If true, the update output exec will fire after setting the new playback position.
 	**/
-	public function set_playback_position(new_position:Dynamic, fire_events:Dynamic, fire_update:Dynamic):Void;
+	public function set_playback_position(new_position:Float, fire_events:Bool, fire_update:Bool):Void;
 	/**
 		x.set_timeline_length(new_length) -> None
 		Set length of the timeline
@@ -153,7 +144,7 @@ package unreal;
 		Args:
 		    new_length (float):
 	**/
-	public function set_timeline_length(new_length:Dynamic):Void;
+	public function set_timeline_length(new_length:Float):Void;
 	/**
 		x.set_timeline_length_mode(new_length_mode) -> None
 		Sets the length mode of the timeline
@@ -161,7 +152,7 @@ package unreal;
 		Args:
 		    new_length_mode (TimelineLengthMode):
 	**/
-	public function set_timeline_length_mode(new_length_mode:Dynamic):Void;
+	public function set_timeline_length_mode(new_length_mode:unreal.TimelineLengthMode):Void;
 	/**
 		x.set_vector_curve(new_vector_curve, vector_track_name) -> None
 		Update a certain vector track's curve
@@ -170,7 +161,7 @@ package unreal;
 		    new_vector_curve (CurveVector): 
 		    vector_track_name (Name):
 	**/
-	public function set_vector_curve(new_vector_curve:Dynamic, vector_track_name:Dynamic):Void;
+	public function set_vector_curve(new_vector_curve:unreal.CurveVector, vector_track_name:unreal.Name):Void;
 	/**
 		x.stop() -> None
 		Stop playback of timeline

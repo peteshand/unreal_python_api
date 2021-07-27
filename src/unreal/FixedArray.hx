@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "FixedArray") extern class FixedArray extends unreal._WrapperBase {
+@:pythonImport("unreal", "FixedArray") extern class FixedArray extends Dynamic {
 	/**
 		Return self+value.
 	**/
@@ -21,15 +21,6 @@ package unreal;
 		Return self[key].
 	**/
 	public function __getitem__(key:Dynamic):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
 		Implement iter(self).
 	**/

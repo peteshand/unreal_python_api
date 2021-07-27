@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MenuAnchor") extern class MenuAnchor extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.close() -> None
 		Closes the menu if it is currently open.
 	**/
@@ -22,7 +13,7 @@ package unreal;
 		Args:
 		    fit (bool):
 	**/
-	public function fit_in_window(fit:Dynamic):Void;
+	public function fit_in_window(fit:Bool):Void;
 	/**
 		x.get_menu_position() -> Vector2D
 		Returns the current menu position
@@ -64,7 +55,7 @@ package unreal;
 		Args:
 		    focus_menu (bool):
 	**/
-	public function open(focus_menu:Dynamic):Void;
+	public function open(focus_menu:Bool):Void;
 	/**
 		(MenuPlacement):  [Read-Only] The placement location of the summoned widget.
 	**/
@@ -76,7 +67,7 @@ package unreal;
 		Args:
 		    placement (MenuPlacement):
 	**/
-	public function set_placement(placement:Dynamic):Void;
+	public function set_placement(placement:unreal.MenuPlacement):Void;
 	/**
 		(bool):  [Read-Only] Should Defer Painting After Window Content
 	**/
@@ -102,7 +93,7 @@ package unreal;
 		Args:
 		    focus_on_open (bool): Should we focus the popup as soon as it opens?
 	**/
-	public function toggle_open(focus_on_open:Dynamic):Void;
+	public function toggle_open(focus_on_open:Bool):Void;
 	/**
 		(bool):  [Read-Only] Does this menu behave like a normal stacked menu? Set it to false to control the menu's lifetime yourself.
 	**/

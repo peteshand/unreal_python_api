@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CameraActor") extern class CameraActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(CameraComponent):  [Read-Only] The camera component for this camera
 	**/
 	public var camera_component : unreal.CameraComponent;

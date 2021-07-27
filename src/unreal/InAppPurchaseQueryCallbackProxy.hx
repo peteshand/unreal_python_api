@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InAppPurchaseQueryCallbackProxy") extern class InAppPurchaseQueryCallbackProxy extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.create_proxy_object_for_in_app_purchase_query(player_controller, product_identifiers) -> InAppPurchaseQueryCallbackProxy
 		Queries a InAppPurchase for an integer value
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    InAppPurchaseQueryCallbackProxy:
 	**/
-	static public function create_proxy_object_for_in_app_purchase_query(player_controller:Dynamic, product_identifiers:Dynamic):unreal.InAppPurchaseQueryCallbackProxy;
+	static public function create_proxy_object_for_in_app_purchase_query(player_controller:unreal.PlayerController, product_identifiers:unreal.Array):unreal.InAppPurchaseQueryCallbackProxy;
 	/**
 		(InAppPurchaseQueryResult):  [Read-Write] Called when there is an unsuccessful InAppPurchase query
 	**/

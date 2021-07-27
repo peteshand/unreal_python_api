@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PointLight") extern class PointLight extends unreal.Light {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(PointLightComponent):  [Read-Only] Point Light Component
 	**/
 	public var point_light_component : unreal.PointLightComponent;
@@ -22,7 +13,8 @@ package unreal;
 		Args:
 		    new_light_falloff_exponent (float):
 	**/
-	public function set_light_falloff_exponent(new_light_falloff_exponent:Dynamic):Void;
+	@:deprecated
+	public function set_light_falloff_exponent(new_light_falloff_exponent:Float):Void;
 	/**
 		x.set_radius(new_radius) -> None
 		BEGIN DEPRECATED (use component functions now in level script)
@@ -31,5 +23,6 @@ package unreal;
 		Args:
 		    new_radius (float):
 	**/
-	public function set_radius(new_radius:Dynamic):Void;
+	@:deprecated
+	public function set_radius(new_radius:Float):Void;
 }

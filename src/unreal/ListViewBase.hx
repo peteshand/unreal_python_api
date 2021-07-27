@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ListViewBase") extern class ListViewBase extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(OnListEntryGeneratedDynamic):  [Read-Write] Called when a row widget is generated for a list item
 	**/
 	public var bp_on_entry_generated : unreal.OnListEntryGeneratedDynamic;
@@ -68,7 +59,7 @@ package unreal;
 		Args:
 		    scroll_offset (float):
 	**/
-	public function set_scroll_offset(scroll_offset:Dynamic):Void;
+	public function set_scroll_offset(scroll_offset:Float):Void;
 	/**
 		x.set_scrollbar_visibility(visibility) -> None
 		Set Scrollbar Visibility
@@ -76,7 +67,7 @@ package unreal;
 		Args:
 		    visibility (SlateVisibility):
 	**/
-	public function set_scrollbar_visibility(visibility:Dynamic):Void;
+	public function set_scrollbar_visibility(visibility:unreal.SlateVisibility):Void;
 	/**
 		x.set_wheel_scroll_multiplier(new_wheel_scroll_multiplier) -> None
 		Set Wheel Scroll Multiplier
@@ -84,7 +75,7 @@ package unreal;
 		Args:
 		    new_wheel_scroll_multiplier (float):
 	**/
-	public function set_wheel_scroll_multiplier(new_wheel_scroll_multiplier:Dynamic):Void;
+	public function set_wheel_scroll_multiplier(new_wheel_scroll_multiplier:Float):Void;
 	/**
 		(float):  [Read-Only] The multiplier to apply when wheel scrolling
 	**/

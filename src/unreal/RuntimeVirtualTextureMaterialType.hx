@@ -6,13 +6,4 @@ package unreal;
 	static public var BASE_COLOR_NORMAL_SPECULAR_MASK_Y_CO_CG : Dynamic;
 	static public var BASE_COLOR_NORMAL_SPECULAR_Y_CO_CG : Dynamic;
 	static public var WORLD_HEIGHT : Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorUtilityLibrary") extern class EditorUtilityLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_actor_reference(path_to_actor) -> Actor
 		Attempts to find the actor specified by PathToActor in the current editor world
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    Actor: A reference to the actor, or none if it wasn't found
 	**/
-	public function get_actor_reference(path_to_actor:Dynamic):unreal.Actor;
+	public function get_actor_reference(path_to_actor:String):unreal.Actor;
 	/**
 		X.get_selected_asset_data() -> Array(AssetData)
 		Gets the set of currently selected asset data
@@ -75,5 +66,5 @@ package unreal;
 		    asset (Object): 
 		    new_name (str):
 	**/
-	static public function rename_asset(asset:Dynamic, new_name:Dynamic):Void;
+	static public function rename_asset(asset:unreal.Object, new_name:String):Void;
 }

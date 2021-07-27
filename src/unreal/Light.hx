@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Light") extern class Light extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_brightness() -> float
 		Get Brightness
 		deprecated: Function 'GetBrightness' is deprecated.
@@ -18,6 +9,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
+	@:deprecated
 	public function get_brightness():Float;
 	/**
 		x.get_light_color() -> LinearColor
@@ -27,6 +19,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
+	@:deprecated
 	public function get_light_color():unreal.LinearColor;
 	/**
 		x.is_enabled() -> bool
@@ -36,6 +29,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
+	@:deprecated
 	public function is_enabled():Bool;
 	/**
 		(LightComponent):  [Read-Only]
@@ -50,7 +44,8 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_affect_translucent_lighting(new_value:Dynamic):Void;
+	@:deprecated
+	public function set_affect_translucent_lighting(new_value:Bool):Void;
 	/**
 		x.set_brightness(new_brightness) -> None
 		Set Brightness
@@ -59,7 +54,8 @@ package unreal;
 		Args:
 		    new_brightness (float):
 	**/
-	public function set_brightness(new_brightness:Dynamic):Void;
+	@:deprecated
+	public function set_brightness(new_brightness:Float):Void;
 	/**
 		x.set_cast_shadows(new_value) -> None
 		Set Cast Shadows
@@ -68,7 +64,8 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function set_cast_shadows(new_value:Dynamic):Void;
+	@:deprecated
+	public function set_cast_shadows(new_value:Bool):Void;
 	/**
 		x.set_enabled(set_enabled) -> None
 		BEGIN DEPRECATED (use component functions now in level script)
@@ -77,7 +74,8 @@ package unreal;
 		Args:
 		    set_enabled (bool):
 	**/
-	public function set_enabled(set_enabled:Dynamic):Void;
+	@:deprecated
+	public function set_enabled(set_enabled:Bool):Void;
 	/**
 		x.set_light_color(new_light_color) -> None
 		Set Light Color
@@ -86,7 +84,8 @@ package unreal;
 		Args:
 		    new_light_color (LinearColor):
 	**/
-	public function set_light_color(new_light_color:Dynamic):Void;
+	@:deprecated
+	public function set_light_color(new_light_color:unreal.LinearColor):Void;
 	/**
 		x.set_light_function_fade_distance(new_light_function_fade_distance) -> None
 		Set Light Function Fade Distance
@@ -95,7 +94,8 @@ package unreal;
 		Args:
 		    new_light_function_fade_distance (float):
 	**/
-	public function set_light_function_fade_distance(new_light_function_fade_distance:Dynamic):Void;
+	@:deprecated
+	public function set_light_function_fade_distance(new_light_function_fade_distance:Float):Void;
 	/**
 		x.set_light_function_material(new_light_function_material) -> None
 		Set Light Function Material
@@ -104,7 +104,8 @@ package unreal;
 		Args:
 		    new_light_function_material (MaterialInterface):
 	**/
-	public function set_light_function_material(new_light_function_material:Dynamic):Void;
+	@:deprecated
+	public function set_light_function_material(new_light_function_material:unreal.MaterialInterface):Void;
 	/**
 		x.set_light_function_scale(new_light_function_scale) -> None
 		Set Light Function Scale
@@ -113,11 +114,13 @@ package unreal;
 		Args:
 		    new_light_function_scale (Vector):
 	**/
-	public function set_light_function_scale(new_light_function_scale:Dynamic):Void;
+	@:deprecated
+	public function set_light_function_scale(new_light_function_scale:unreal.Vector):Void;
 	/**
 		x.toggle_enabled() -> None
 		Toggle Enabled
 		deprecated: Function 'ToggleEnabled' is deprecated.
 	**/
+	@:deprecated
 	public function toggle_enabled():Void;
 }

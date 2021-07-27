@@ -2,11 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AbcImportSettings") extern class AbcImportSettings extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("new")
-	public function _new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
 		(AbcCompressionSettings):  [Read-Write] Compression Settings
 	**/
 	public var compression_settings : unreal.AbcCompressionSettings;

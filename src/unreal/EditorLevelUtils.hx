@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorLevelUtils") extern class EditorLevelUtils extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_level_to_world(world, level_package_name, level_streaming_class) -> LevelStreaming
 		Adds the named level package to the world.  Does nothing if the level already exists in the world.
 		
@@ -22,7 +13,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: The new level, or NULL if the level couldn't added.
 	**/
-	static public function add_level_to_world(world:Dynamic, level_package_name:Dynamic, level_streaming_class:Dynamic):unreal.LevelStreaming;
+	static public function add_level_to_world(world:unreal.World, level_package_name:String, level_streaming_class:Dynamic):unreal.LevelStreaming;
 	/**
 		X.add_level_to_world_with_transform(world, level_package_name, level_streaming_class, level_transform) -> LevelStreaming
 		Adds the named level package to the world at the given position.  Does nothing if the level already exists in the world.
@@ -36,7 +27,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: The new level, or NULL if the level couldn't added.
 	**/
-	static public function add_level_to_world_with_transform(world:Dynamic, level_package_name:Dynamic, level_streaming_class:Dynamic, level_transform:Dynamic):unreal.LevelStreaming;
+	static public function add_level_to_world_with_transform(world:unreal.World, level_package_name:String, level_streaming_class:Dynamic, level_transform:unreal.Transform):unreal.LevelStreaming;
 	/**
 		X.create_new_streaming_level(level_streaming_class, new_level_path="", move_selected_actors_into_new_level=False) -> LevelStreaming
 		Creates a new streaming level in the current world
@@ -49,7 +40,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: Returns the newly created level, or NULL on failure
 	**/
-	static public function create_new_streaming_level(level_streaming_class:Dynamic, new_level_path:Dynamic, move_selected_actors_into_new_level:Dynamic):unreal.LevelStreaming;
+	static public function create_new_streaming_level(level_streaming_class:Dynamic, new_level_path:String, move_selected_actors_into_new_level:Bool):unreal.LevelStreaming;
 	/**
 		X.make_level_current(streaming_level) -> None
 		Makes the specified streaming level the current level for editing.
@@ -61,7 +52,7 @@ package unreal;
 		Returns:
 		    true    If a level was removed.
 	**/
-	static public function make_level_current(streaming_level:Dynamic):Dynamic;
+	static public function make_level_current(streaming_level:unreal.LevelStreaming):Dynamic;
 	/**
 		X.move_actors_to_level(actors_to_move, dest_streaming_level, warn_about_references=True, warn_about_renaming=True) -> int32
 		Moves the specified list of actors to the specified streaming level. The new actors will be selected
@@ -75,7 +66,7 @@ package unreal;
 		Returns:
 		    int32: The number of actors that were successfully moved to the new level
 	**/
-	static public function move_actors_to_level(actors_to_move:Dynamic, dest_streaming_level:Dynamic, warn_about_references:Dynamic, warn_about_renaming:Dynamic):Int;
+	static public function move_actors_to_level(actors_to_move:unreal.Array, dest_streaming_level:unreal.LevelStreaming, warn_about_references:Bool, warn_about_renaming:Bool):Int;
 	/**
 		X.move_selected_actors_to_level(dest_level, warn_about_references=True) -> int32
 		Moves the currently selected actors to the specified streaming level. The new actors will be selected
@@ -87,7 +78,7 @@ package unreal;
 		Returns:
 		    int32: The number of actors that were successfully moved to the new level
 	**/
-	static public function move_selected_actors_to_level(dest_level:Dynamic, warn_about_references:Dynamic):Int;
+	static public function move_selected_actors_to_level(dest_level:unreal.LevelStreaming, warn_about_references:Bool):Int;
 	/**
 		X.set_level_visibility(level, should_be_visible, force_layers_visible, modify_mode=LevelVisibilityDirtyMode.MODIFY_ON_CHANGE) -> None
 		Sets a level's visibility in the editor. Less efficient than SetLevelsVisibility when changing the visibility of multiple levels simultaneously.
@@ -98,7 +89,7 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	static public function set_level_visibility(level:Dynamic, should_be_visible:Dynamic, force_layers_visible:Dynamic, modify_mode:Dynamic):Void;
+	static public function set_level_visibility(level:unreal.Level, should_be_visible:Bool, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode):Void;
 	/**
 		X.set_levels_visibility(levels, should_be_visible, force_layers_visible, modify_mode=LevelVisibilityDirtyMode.MODIFY_ON_CHANGE) -> None
 		Sets a level's visibility in the editor. More efficient than SetLevelsVisibility when changing the visibility of multiple levels simultaneously.
@@ -109,5 +100,5 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	static public function set_levels_visibility(levels:Dynamic, should_be_visible:Dynamic, force_layers_visible:Dynamic, modify_mode:Dynamic):Void;
+	static public function set_levels_visibility(levels:unreal.Array, should_be_visible:unreal.Array, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode):Void;
 }

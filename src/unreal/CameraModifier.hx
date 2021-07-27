@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CameraModifier") extern class CameraModifier extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] Current blend alpha.
 	**/
 	public var alpha : Float;
@@ -42,7 +33,7 @@ package unreal;
 		
 		    new_fov (float): (out) The modified camera FOV.
 	**/
-	public function blueprint_modify_camera(delta_time:Dynamic, view_location:Dynamic, view_rotation:Dynamic, fov:Dynamic):python.Tuple<Dynamic>;
+	public function blueprint_modify_camera(delta_time:Float, view_location:unreal.Vector, view_rotation:unreal.Rotator, fov:Float):python.Tuple<Dynamic>;
 	/**
 		x.blueprint_modify_post_process(delta_time) -> (post_process_blend_weight=float, post_process_settings=PostProcessSettings)
 		Called per tick that the modifier is active to allow Blueprinted modifiers to modify the camera's postprocess effects.
@@ -58,7 +49,7 @@ package unreal;
 		
 		    post_process_settings (PostProcessSettings): (out) Post process structure defining what settings and values to override.
 	**/
-	public function blueprint_modify_post_process(delta_time:Dynamic):python.Tuple<Dynamic>;
+	public function blueprint_modify_post_process(delta_time:Float):python.Tuple<Dynamic>;
 	/**
 		(PlayerCameraManager):  [Read-Only] Camera this object is associated with.
 	**/
@@ -70,7 +61,7 @@ package unreal;
 		Args:
 		    immediate (bool): true to disable with no blend out, false (default) to allow blend out
 	**/
-	public function disable_modifier(immediate:Dynamic):Void;
+	public function disable_modifier(immediate:Bool):Void;
 	/**
 		x.enable_modifier() -> None
 		Enables this modifier.

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PrimitiveComponent") extern class PrimitiveComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_angular_impulse(impulse, bone_name="None", vel_change=False) -> None
 		Add Angular Impulse
 		deprecated: Use AddAngularImpulseInRadians instead
@@ -20,7 +11,8 @@ package unreal;
 		    bone_name (Name): 
 		    vel_change (bool):
 	**/
-	public function add_angular_impulse(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
+	@:deprecated
+	public function add_angular_impulse(impulse:unreal.Vector, bone_name:unreal.Name, vel_change:Bool):Void;
 	/**
 		x.add_angular_impulse_in_degrees(impulse, bone_name="None", vel_change=False) -> None
 		Add an angular impulse to a single rigid body. Good for one time instant burst.
@@ -30,7 +22,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply angular impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in angular velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_angular_impulse_in_degrees(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
+	public function add_angular_impulse_in_degrees(impulse:unreal.Vector, bone_name:unreal.Name, vel_change:Bool):Void;
 	/**
 		x.add_angular_impulse_in_radians(impulse, bone_name="None", vel_change=False) -> None
 		Add an angular impulse to a single rigid body. Good for one time instant burst.
@@ -40,7 +32,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply angular impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in angular velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_angular_impulse_in_radians(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
+	public function add_angular_impulse_in_radians(impulse:unreal.Vector, bone_name:unreal.Name, vel_change:Bool):Void;
 	/**
 		x.add_force(force, bone_name="None", accel_change=False) -> None
 		Add a force to a single rigid body.
@@ -51,7 +43,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 		    accel_change (bool): If true, Force is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 	**/
-	public function add_force(force:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
+	public function add_force(force:unreal.Vector, bone_name:unreal.Name, accel_change:Bool):Void;
 	/**
 		x.add_force_at_location(force, location, bone_name="None") -> None
 		Add a force to a single rigid body at a particular location in world space.
@@ -62,7 +54,7 @@ package unreal;
 		    location (Vector): Location to apply force, in world space.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 	**/
-	public function add_force_at_location(force:Dynamic, location:Dynamic, bone_name:Dynamic):Void;
+	public function add_force_at_location(force:unreal.Vector, location:unreal.Vector, bone_name:unreal.Name):Void;
 	/**
 		x.add_force_at_location_local(force, location, bone_name="None") -> None
 		Add a force to a single rigid body at a particular location. Both Force and Location should be in body space.
@@ -73,10 +65,11 @@ package unreal;
 		    location (Vector): Location to apply force, in component space.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 	**/
-	public function add_force_at_location_local(force:Dynamic, location:Dynamic, bone_name:Dynamic):Void;
+	public function add_force_at_location_local(force:unreal.Vector, location:unreal.Vector, bone_name:unreal.Name):Void;
 	/**
 		deprecated: 'add_force_at_position' was renamed to 'add_force_at_location'.
 	**/
+	@:deprecated
 	public function add_force_at_position():Void;
 	/**
 		x.add_impulse(impulse, bone_name="None", vel_change=False) -> None
@@ -87,7 +80,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_impulse(impulse:Dynamic, bone_name:Dynamic, vel_change:Dynamic):Void;
+	public function add_impulse(impulse:unreal.Vector, bone_name:unreal.Name, vel_change:Bool):Void;
 	/**
 		x.add_impulse_at_location(impulse, location, bone_name="None") -> None
 		Add an impulse to a single rigid body at a specific location.
@@ -97,10 +90,11 @@ package unreal;
 		    location (Vector): Point in world space to apply impulse at.
 		    bone_name (Name): If a SkeletalMeshComponent, name of bone to apply impulse to. 'None' indicates root body.
 	**/
-	public function add_impulse_at_location(impulse:Dynamic, location:Dynamic, bone_name:Dynamic):Void;
+	public function add_impulse_at_location(impulse:unreal.Vector, location:unreal.Vector, bone_name:unreal.Name):Void;
 	/**
 		deprecated: 'add_impulse_at_position' was renamed to 'add_impulse_at_location'.
 	**/
+	@:deprecated
 	public function add_impulse_at_position():Void;
 	/**
 		x.add_radial_force(origin, radius, strength, falloff, accel_change=False) -> None
@@ -113,7 +107,7 @@ package unreal;
 		    falloff (RadialImpulseFalloff): Allows you to control the strength of the force as a function of distance from Origin.
 		    accel_change (bool): If true, Strength is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 	**/
-	public function add_radial_force(origin:Dynamic, radius:Dynamic, strength:Dynamic, falloff:Dynamic, accel_change:Dynamic):Void;
+	public function add_radial_force(origin:unreal.Vector, radius:Float, strength:Float, falloff:unreal.RadialImpulseFalloff, accel_change:Bool):Void;
 	/**
 		x.add_radial_impulse(origin, radius, strength, falloff, vel_change=False) -> None
 		Add an impulse to all rigid bodies in this component, radiating out from the specified position.
@@ -125,7 +119,7 @@ package unreal;
 		    falloff (RadialImpulseFalloff): Allows you to control the strength of the impulse as a function of distance from Origin.
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_radial_impulse(origin:Dynamic, radius:Dynamic, strength:Dynamic, falloff:Dynamic, vel_change:Dynamic):Void;
+	public function add_radial_impulse(origin:unreal.Vector, radius:Float, strength:Float, falloff:unreal.RadialImpulseFalloff, vel_change:Bool):Void;
 	/**
 		x.add_torque(torque, bone_name="None", accel_change=False) -> None
 		Add Torque
@@ -136,7 +130,8 @@ package unreal;
 		    bone_name (Name): 
 		    accel_change (bool):
 	**/
-	public function add_torque(torque:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
+	@:deprecated
+	public function add_torque(torque:unreal.Vector, bone_name:unreal.Name, accel_change:Bool):Void;
 	/**
 		x.add_torque_in_degrees(torque, bone_name="None", accel_change=False) -> None
 		Add a torque to a single rigid body.
@@ -146,7 +141,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply torque to. 'None' indicates root body.
 		    accel_change (bool): If true, Torque is taken as a change in angular acceleration instead of a physical torque (i.e. mass will have no effect).
 	**/
-	public function add_torque_in_degrees(torque:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
+	public function add_torque_in_degrees(torque:unreal.Vector, bone_name:unreal.Name, accel_change:Bool):Void;
 	/**
 		x.add_torque_in_radians(torque, bone_name="None", accel_change=False) -> None
 		Add a torque to a single rigid body.
@@ -156,7 +151,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply torque to. 'None' indicates root body.
 		    accel_change (bool): If true, Torque is taken as a change in angular acceleration instead of a physical torque (i.e. mass will have no effect).
 	**/
-	public function add_torque_in_radians(torque:Dynamic, bone_name:Dynamic, accel_change:Dynamic):Void;
+	public function add_torque_in_radians(torque:unreal.Vector, bone_name:unreal.Name, accel_change:Bool):Void;
 	/**
 		(bool):  [Read-Only] Controls whether the primitive should affect dynamic distance field lighting methods.  This flag is only used if CastShadow is true. *
 	**/
@@ -209,7 +204,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function box_overlap_component(box_centre:Dynamic, box:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
+	public function box_overlap_component(box_centre:unreal.Vector, box:unreal.Box, trace_complex:Bool, show_trace:Bool, persistent_show_trace:Bool):Dynamic;
 	/**
 		(float):  [Read-Only] The distance to cull this primitive at.
 		A CachedMaxDrawDistance of 0 indicates that the primitive should not be culled by distance.
@@ -218,6 +213,7 @@ package unreal;
 	/**
 		deprecated: 'can_be_character_base' was renamed to 'can_character_step_up_on'.
 	**/
+	@:deprecated
 	public var can_be_character_base : Dynamic;
 	/**
 		x.can_character_step_up(pawn) -> bool
@@ -231,7 +227,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function can_character_step_up(pawn:Dynamic):Bool;
+	public function can_character_step_up(pawn:unreal.Pawn):Bool;
 	/**
 		(CanBeCharacterBase):  [Read-Write] Determine whether a Character can step up onto this component.
 		This controls whether they can try to step up on it when they bump in to it, not whether they can walk on it after landing on it.
@@ -322,7 +318,8 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_and_set_material_instance_dynamic(element_index:Dynamic):unreal.MaterialInstanceDynamic;
+	@:deprecated
+	public function create_and_set_material_instance_dynamic(element_index:Int):unreal.MaterialInstanceDynamic;
 	/**
 		x.create_and_set_material_instance_dynamic_from_material(element_index, parent) -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance for the specified element index.  The parent of the instance is set to the material being replaced.
@@ -335,7 +332,8 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_and_set_material_instance_dynamic_from_material(element_index:Dynamic, parent:Dynamic):unreal.MaterialInstanceDynamic;
+	@:deprecated
+	public function create_and_set_material_instance_dynamic_from_material(element_index:Int, parent:unreal.MaterialInterface):unreal.MaterialInstanceDynamic;
 	/**
 		x.create_dynamic_material_instance(element_index, source_material=None, optional_name="None") -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance for the specified element index, optionally from the supplied material.
@@ -348,7 +346,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_dynamic_material_instance(element_index:Dynamic, source_material:Dynamic, optional_name:Dynamic):unreal.MaterialInstanceDynamic;
+	public function create_dynamic_material_instance(element_index:Int, source_material:unreal.MaterialInterface, optional_name:unreal.Name):unreal.MaterialInstanceDynamic;
 	/**
 		(int32):  [Read-Only] Optionally write this 0-255 value to the stencil buffer in CustomDepth pass (Requires project setting or r.CustomDepth == 3)
 	**/
@@ -396,7 +394,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_center_of_mass(bone_name:Dynamic):unreal.Vector;
+	public function get_center_of_mass(bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_closest_point_on_collision(point, bone_name="None") -> (float, out_point_on_body=Vector)
 		Returns the distance and closest point to the collision surface.
@@ -411,7 +409,7 @@ package unreal;
 		
 		    out_point_on_body (Vector): Point on the surface of collision closest to Point
 	**/
-	public function get_closest_point_on_collision(point:Dynamic, bone_name:Dynamic):unreal.Vector;
+	public function get_closest_point_on_collision(point:unreal.Vector, bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_collision_enabled() -> CollisionEnabled
 		Returns the form of collision for this component
@@ -446,7 +444,7 @@ package unreal;
 		Returns:
 		    CollisionResponseType:
 	**/
-	public function get_collision_response_to_channel(channel:Dynamic):unreal.CollisionResponseType;
+	public function get_collision_response_to_channel(channel:unreal.CollisionChannel):unreal.CollisionResponseType;
 	/**
 		x.get_inertia_tensor(bone_name="None") -> Vector
 		Returns the inertia tensor of this component in kg cm^2. The inertia tensor is in local component space.
@@ -457,7 +455,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_inertia_tensor(bone_name:Dynamic):unreal.Vector;
+	public function get_inertia_tensor(bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_linear_damping() -> float
 		Returns the linear damping of this component.
@@ -484,7 +482,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_mass_scale(bone_name:Dynamic):Float;
+	public function get_mass_scale(bone_name:unreal.Name):Float;
 	/**
 		x.get_material(element_index) -> MaterialInterface
 		Returns the material used by the element at the specified index
@@ -495,7 +493,7 @@ package unreal;
 		Returns:
 		    MaterialInterface: the material used by the indexed element of this mesh.
 	**/
-	public function get_material(element_index:Dynamic):unreal.MaterialInterface;
+	public function get_material(element_index:Int):unreal.MaterialInterface;
 	/**
 		x.get_material_from_collision_face_index(face_index) -> (MaterialInterface, section_index=int32)
 		Try and retrieve the material applied to a particular collision face of mesh. Used with face index returned from collision trace.
@@ -508,10 +506,11 @@ package unreal;
 		
 		    section_index (int32): Section of the mesh that the face belongs to
 	**/
-	public function get_material_from_collision_face_index(face_index:Dynamic):Int;
+	public function get_material_from_collision_face_index(face_index:Int):Int;
 	/**
 		deprecated: 'get_move_ignore_actors' was renamed to 'copy_array_of_move_ignore_actors'.
 	**/
+	@:deprecated
 	public function get_move_ignore_actors():Void;
 	/**
 		x.get_num_materials() -> int32
@@ -555,7 +554,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity(bone_name:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_physics_angular_velocity(bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_angular_velocity_in_degrees(bone_name="None") -> Vector
 		Get the angular velocity of a single body, in degrees per second.
@@ -566,7 +566,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity_in_degrees(bone_name:Dynamic):unreal.Vector;
+	public function get_physics_angular_velocity_in_degrees(bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_angular_velocity_in_radians(bone_name="None") -> Vector
 		Get the angular velocity of a single body, in radians per second.
@@ -577,7 +577,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity_in_radians(bone_name:Dynamic):unreal.Vector;
+	public function get_physics_angular_velocity_in_radians(bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_linear_velocity(bone_name="None") -> Vector
 		Get the linear velocity of a single body.
@@ -588,7 +588,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_linear_velocity(bone_name:Dynamic):unreal.Vector;
+	public function get_physics_linear_velocity(bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_linear_velocity_at_point(point, bone_name="None") -> Vector
 		Get the linear velocity of a point on a single body.
@@ -600,22 +600,26 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_linear_velocity_at_point(point:Dynamic, bone_name:Dynamic):unreal.Vector;
+	public function get_physics_linear_velocity_at_point(point:unreal.Vector, bone_name:unreal.Name):unreal.Vector;
 	/**
 		deprecated: 'get_rb_angular_velocity' was renamed to 'get_physics_angular_velocity'.
 	**/
+	@:deprecated
 	public function get_rb_angular_velocity():Void;
 	/**
 		deprecated: 'get_rb_linear_velocity' was renamed to 'get_physics_linear_velocity'.
 	**/
+	@:deprecated
 	public function get_rb_linear_velocity():Void;
 	/**
 		deprecated: 'get_touching_actors' was renamed to 'get_overlapping_actors'.
 	**/
+	@:deprecated
 	public function get_touching_actors():Void;
 	/**
 		deprecated: 'get_touching_components' was renamed to 'get_overlapping_components'.
 	**/
+	@:deprecated
 	public function get_touching_components():Void;
 	/**
 		x.get_walkable_slope_override() -> WalkableSlopeOverride
@@ -635,7 +639,7 @@ package unreal;
 		    actor (Actor): 
 		    should_ignore (bool):
 	**/
-	public function ignore_actor_when_moving(actor:Dynamic, should_ignore:Dynamic):Void;
+	public function ignore_actor_when_moving(actor:unreal.Actor, should_ignore:Bool):Void;
 	/**
 		x.ignore_component_when_moving(component, should_ignore) -> None
 		Tells this component whether to ignore collision with another component when this component is moved.
@@ -646,7 +650,7 @@ package unreal;
 		    component (PrimitiveComponent): 
 		    should_ignore (bool):
 	**/
-	public function ignore_component_when_moving(component:Dynamic, should_ignore:Dynamic):Void;
+	public function ignore_component_when_moving(component:unreal.PrimitiveComponent, should_ignore:Bool):Void;
 	/**
 		(bool):  [Read-Write] Will ignore radial forces applied to this component.
 	**/
@@ -693,7 +697,7 @@ package unreal;
 		Returns:
 		    bool: Whether this component is overlapping any component of the given Actor.
 	**/
-	public function is_overlapping_actor(other:Dynamic):Bool;
+	public function is_overlapping_actor(other:unreal.Actor):Bool;
 	/**
 		x.is_overlapping_component(other_comp) -> bool
 		Check whether this component is overlapping another component.
@@ -704,7 +708,7 @@ package unreal;
 		Returns:
 		    bool: Whether this component is overlapping another component.
 	**/
-	public function is_overlapping_component(other_comp:Dynamic):Bool;
+	public function is_overlapping_component(other_comp:unreal.PrimitiveComponent):Bool;
 	/**
 		x.is_physics_collision_enabled() -> bool
 		Utility to see if there is any physics collision enabled on this component.
@@ -762,7 +766,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function line_trace_component(trace_start:Dynamic, trace_end:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
+	public function line_trace_component(trace_start:unreal.Vector, trace_end:unreal.Vector, trace_complex:Bool, show_trace:Bool, persistent_show_trace:Bool):Dynamic;
 	/**
 		(float):  [Read-Only] Multiplier used to scale the Light Propagation Volume light injection bias, to reduce light bleeding.
 		Set to 0 for no bias, 1 for default or higher for increased biasing (e.g. for
@@ -859,7 +863,7 @@ package unreal;
 		Args:
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to put to sleep. 'None' indicates root body.
 	**/
-	public function put_rigid_body_to_sleep(bone_name:Dynamic):Void;
+	public function put_rigid_body_to_sleep(bone_name:unreal.Name):Void;
 	/**
 		(bool):  [Read-Only] Mobile only:
 		If disabled this component will not receive CSM shadows. (Components that do not receive CSM may have reduced shading cost)
@@ -907,7 +911,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function scale_by_moment_of_inertia(input_vector:Dynamic, bone_name:Dynamic):unreal.Vector;
+	public function scale_by_moment_of_inertia(input_vector:unreal.Vector, bone_name:unreal.Name):unreal.Vector;
 	/**
 		(bool):  [Read-Only] When enabled, the component will only cast a shadow on itself and not other components in the world.
 		This is especially useful for first person weapons, and forces bCastInsetShadow to be enabled.
@@ -920,7 +924,7 @@ package unreal;
 		Args:
 		    mass_scale (float):
 	**/
-	public function set_all_mass_scale(mass_scale:Dynamic):Void;
+	public function set_all_mass_scale(mass_scale:Float):Void;
 	/**
 		x.set_all_physics_angular_velocity_in_degrees(new_ang_vel, add_to_current=False) -> None
 		Set the angular velocity of all bodies in this component.
@@ -929,7 +933,7 @@ package unreal;
 		    new_ang_vel (Vector): New angular velocity to apply to physics, in degrees per second.
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of all bodies.
 	**/
-	public function set_all_physics_angular_velocity_in_degrees(new_ang_vel:Dynamic, add_to_current:Dynamic):Void;
+	public function set_all_physics_angular_velocity_in_degrees(new_ang_vel:unreal.Vector, add_to_current:Bool):Void;
 	/**
 		x.set_all_physics_angular_velocity_in_radians(new_ang_vel, add_to_current=False) -> None
 		Set the angular velocity of all bodies in this component.
@@ -938,7 +942,7 @@ package unreal;
 		    new_ang_vel (Vector): New angular velocity to apply to physics, in radians per second.
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of all bodies.
 	**/
-	public function set_all_physics_angular_velocity_in_radians(new_ang_vel:Dynamic, add_to_current:Dynamic):Void;
+	public function set_all_physics_angular_velocity_in_radians(new_ang_vel:unreal.Vector, add_to_current:Bool):Void;
 	/**
 		x.set_all_physics_linear_velocity(new_vel, add_to_current=False) -> None
 		Set the linear velocity of all bodies in this component.
@@ -947,10 +951,11 @@ package unreal;
 		    new_vel (Vector): New linear velocity to apply to physics.
 		    add_to_current (bool): If true, NewVel is added to the existing velocity of the body.
 	**/
-	public function set_all_physics_linear_velocity(new_vel:Dynamic, add_to_current:Dynamic):Void;
+	public function set_all_physics_linear_velocity(new_vel:unreal.Vector, add_to_current:Bool):Void;
 	/**
 		deprecated: 'set_all_rb_linear_velocity' was renamed to 'set_all_physics_linear_velocity'.
 	**/
+	@:deprecated
 	public function set_all_rb_linear_velocity():Void;
 	/**
 		x.set_all_use_ccd(use_ccd) -> None
@@ -959,7 +964,7 @@ package unreal;
 		Args:
 		    use_ccd (bool):
 	**/
-	public function set_all_use_ccd(use_ccd:Dynamic):Void;
+	public function set_all_use_ccd(use_ccd:Bool):Void;
 	/**
 		x.set_angular_damping(damping) -> None
 		Sets the angular damping of this component.
@@ -967,7 +972,7 @@ package unreal;
 		Args:
 		    damping (float):
 	**/
-	public function set_angular_damping(damping:Dynamic):Void;
+	public function set_angular_damping(damping:Float):Void;
 	/**
 		x.set_bounds_scale(new_bounds_scale=1.000000) -> None
 		Scale the bounds of this object, used for frustum culling. Useful for features like WorldPositionOffset.
@@ -975,7 +980,7 @@ package unreal;
 		Args:
 		    new_bounds_scale (float):
 	**/
-	public function set_bounds_scale(new_bounds_scale:Dynamic):Void;
+	public function set_bounds_scale(new_bounds_scale:Float):Void;
 	/**
 		x.set_cast_inset_shadow(cast_inset_shadow) -> None
 		Changes the value of CastInsetShadow.
@@ -983,7 +988,7 @@ package unreal;
 		Args:
 		    cast_inset_shadow (bool):
 	**/
-	public function set_cast_inset_shadow(cast_inset_shadow:Dynamic):Void;
+	public function set_cast_inset_shadow(cast_inset_shadow:Bool):Void;
 	/**
 		x.set_cast_shadow(new_cast_shadow) -> None
 		Changes the value of CastShadow.
@@ -991,7 +996,7 @@ package unreal;
 		Args:
 		    new_cast_shadow (bool):
 	**/
-	public function set_cast_shadow(new_cast_shadow:Dynamic):Void;
+	public function set_cast_shadow(new_cast_shadow:Bool):Void;
 	/**
 		x.set_center_of_mass(center_of_mass_offset, bone_name="None") -> None
 		Set the center of mass of a single body. This will offset the physx-calculated center of mass.
@@ -1001,7 +1006,7 @@ package unreal;
 		    center_of_mass_offset (Vector): User specified offset for the center of mass of this object, from the calculated location.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to set center of mass of. 'None' indicates root body.
 	**/
-	public function set_center_of_mass(center_of_mass_offset:Dynamic, bone_name:Dynamic):Void;
+	public function set_center_of_mass(center_of_mass_offset:unreal.Vector, bone_name:unreal.Name):Void;
 	/**
 		x.set_collision_enabled(new_type) -> None
 		Controls what kind of collision is enabled for this body
@@ -1009,7 +1014,7 @@ package unreal;
 		Args:
 		    new_type (CollisionEnabled):
 	**/
-	public function set_collision_enabled(new_type:Dynamic):Void;
+	public function set_collision_enabled(new_type:unreal.CollisionEnabled):Void;
 	/**
 		x.set_collision_object_type(channel) -> None
 		Changes the collision channel that this object uses when it moves
@@ -1017,7 +1022,7 @@ package unreal;
 		Args:
 		    channel (CollisionChannel): The new channel for this component to use
 	**/
-	public function set_collision_object_type(channel:Dynamic):Void;
+	public function set_collision_object_type(channel:unreal.CollisionChannel):Void;
 	/**
 		x.set_collision_profile_name(collision_profile_name, update_overlaps=True) -> None
 		Set Collision Profile Name
@@ -1028,7 +1033,7 @@ package unreal;
 		    collision_profile_name (Name): : New Profile Name
 		    update_overlaps (bool):
 	**/
-	public function set_collision_profile_name(collision_profile_name:Dynamic, update_overlaps:Dynamic):Void;
+	public function set_collision_profile_name(collision_profile_name:unreal.Name, update_overlaps:Bool):Void;
 	/**
 		x.set_collision_response_to_all_channels(new_response) -> None
 		Changes all ResponseToChannels container for this PrimitiveComponent. to be NewResponse
@@ -1036,7 +1041,7 @@ package unreal;
 		Args:
 		    new_response (CollisionResponseType): What the new response should be to the supplied Channel
 	**/
-	public function set_collision_response_to_all_channels(new_response:Dynamic):Void;
+	public function set_collision_response_to_all_channels(new_response:unreal.CollisionResponseType):Void;
 	/**
 		x.set_collision_response_to_channel(channel, new_response) -> None
 		Changes a member of the ResponseToChannels container for this PrimitiveComponent.
@@ -1045,7 +1050,7 @@ package unreal;
 		    channel (CollisionChannel): The channel to change the response of
 		    new_response (CollisionResponseType): What the new response should be to the supplied Channel
 	**/
-	public function set_collision_response_to_channel(channel:Dynamic, new_response:Dynamic):Void;
+	public function set_collision_response_to_channel(channel:unreal.CollisionChannel, new_response:unreal.CollisionResponseType):Void;
 	/**
 		x.set_constraint_mode(constraint_mode) -> None
 		Sets the constraint mode of the component.
@@ -1053,7 +1058,7 @@ package unreal;
 		Args:
 		    constraint_mode (DOFMode): The type of constraint to use.
 	**/
-	public function set_constraint_mode(constraint_mode:Dynamic):Void;
+	public function set_constraint_mode(constraint_mode:unreal.DOFMode):Void;
 	/**
 		x.set_cull_distance(new_cull_distance) -> None
 		Changes the value of CullDistance.
@@ -1061,7 +1066,7 @@ package unreal;
 		Args:
 		    new_cull_distance (float): The value to assign to CullDistance.
 	**/
-	public function set_cull_distance(new_cull_distance:Dynamic):Void;
+	public function set_cull_distance(new_cull_distance:Float):Void;
 	/**
 		x.set_custom_depth_stencil_value(value) -> None
 		Sets the CustomDepth stencil value (0 - 255) and marks the render state dirty.
@@ -1069,7 +1074,7 @@ package unreal;
 		Args:
 		    value (int32):
 	**/
-	public function set_custom_depth_stencil_value(value:Dynamic):Void;
+	public function set_custom_depth_stencil_value(value:Int):Void;
 	/**
 		x.set_custom_depth_stencil_write_mask(write_mask_bit) -> None
 		Sets the CustomDepth stencil write mask and marks the render state dirty.
@@ -1077,7 +1082,7 @@ package unreal;
 		Args:
 		    write_mask_bit (RendererStencilMask):
 	**/
-	public function set_custom_depth_stencil_write_mask(write_mask_bit:Dynamic):Void;
+	public function set_custom_depth_stencil_write_mask(write_mask_bit:unreal.RendererStencilMask):Void;
 	/**
 		x.set_custom_primitive_data_float(data_index, value) -> None
 		Set custom primitive data at index DataIndex. This sets the run-time data only, so it doesn't serialize.
@@ -1086,7 +1091,7 @@ package unreal;
 		    data_index (int32): 
 		    value (float):
 	**/
-	public function set_custom_primitive_data_float(data_index:Dynamic, value:Dynamic):Void;
+	public function set_custom_primitive_data_float(data_index:Int, value:Float):Void;
 	/**
 		x.set_custom_primitive_data_vector2(data_index, value) -> None
 		Set custom primitive data, two floats at once, from index DataIndex to index DataIndex + 1. This sets the run-time data only, so it doesn't serialize.
@@ -1095,7 +1100,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector2D):
 	**/
-	public function set_custom_primitive_data_vector2(data_index:Dynamic, value:Dynamic):Void;
+	public function set_custom_primitive_data_vector2(data_index:Int, value:unreal.Vector2D):Void;
 	/**
 		x.set_custom_primitive_data_vector3(data_index, value) -> None
 		Set custom primitive data, three floats at once, from index DataIndex to index DataIndex + 2. This sets the run-time data only, so it doesn't serialize.
@@ -1104,7 +1109,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector):
 	**/
-	public function set_custom_primitive_data_vector3(data_index:Dynamic, value:Dynamic):Void;
+	public function set_custom_primitive_data_vector3(data_index:Int, value:unreal.Vector):Void;
 	/**
 		x.set_custom_primitive_data_vector4(data_index, value) -> None
 		Set custom primitive data, four floats at once, from index DataIndex to index DataIndex + 3. This sets the run-time data only, so it doesn't serialize.
@@ -1113,7 +1118,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector4):
 	**/
-	public function set_custom_primitive_data_vector4(data_index:Dynamic, value:Dynamic):Void;
+	public function set_custom_primitive_data_vector4(data_index:Int, value:unreal.Vector4):Void;
 	/**
 		x.set_default_custom_primitive_data_float(data_index, value) -> None
 		Set default custom primitive data at index DataIndex, and marks the render state dirty
@@ -1122,7 +1127,7 @@ package unreal;
 		    data_index (int32): 
 		    value (float):
 	**/
-	public function set_default_custom_primitive_data_float(data_index:Dynamic, value:Dynamic):Void;
+	public function set_default_custom_primitive_data_float(data_index:Int, value:Float):Void;
 	/**
 		x.set_default_custom_primitive_data_vector2(data_index, value) -> None
 		Set default custom primitive data, two floats at once, from index DataIndex to index DataIndex + 1, and marks the render state dirty
@@ -1131,7 +1136,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector2D):
 	**/
-	public function set_default_custom_primitive_data_vector2(data_index:Dynamic, value:Dynamic):Void;
+	public function set_default_custom_primitive_data_vector2(data_index:Int, value:unreal.Vector2D):Void;
 	/**
 		x.set_default_custom_primitive_data_vector3(data_index, value) -> None
 		Set default custom primitive data, three floats at once, from index DataIndex to index DataIndex + 2, and marks the render state dirty
@@ -1140,7 +1145,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector):
 	**/
-	public function set_default_custom_primitive_data_vector3(data_index:Dynamic, value:Dynamic):Void;
+	public function set_default_custom_primitive_data_vector3(data_index:Int, value:unreal.Vector):Void;
 	/**
 		x.set_default_custom_primitive_data_vector4(data_index, value) -> None
 		Set default custom primitive data, four floats at once, from index DataIndex to index DataIndex + 3, and marks the render state dirty
@@ -1149,7 +1154,7 @@ package unreal;
 		    data_index (int32): 
 		    value (Vector4):
 	**/
-	public function set_default_custom_primitive_data_vector4(data_index:Dynamic, value:Dynamic):Void;
+	public function set_default_custom_primitive_data_vector4(data_index:Int, value:unreal.Vector4):Void;
 	/**
 		x.set_enable_gravity(gravity_enabled) -> None
 		Enables/disables whether this component is affected by gravity. This applies only to components with bSimulatePhysics set to true.
@@ -1157,7 +1162,7 @@ package unreal;
 		Args:
 		    gravity_enabled (bool):
 	**/
-	public function set_enable_gravity(gravity_enabled:Dynamic):Void;
+	public function set_enable_gravity(gravity_enabled:Bool):Void;
 	/**
 		x.set_exclude_from_light_attachment_group(exclude_from_light_attachment_group) -> None
 		Changes the value of ExcludeFromLightAttachmentGroup.
@@ -1165,7 +1170,7 @@ package unreal;
 		Args:
 		    exclude_from_light_attachment_group (bool):
 	**/
-	public function set_exclude_from_light_attachment_group(exclude_from_light_attachment_group:Dynamic):Void;
+	public function set_exclude_from_light_attachment_group(exclude_from_light_attachment_group:Bool):Void;
 	/**
 		x.set_light_attachments_as_group(light_attachments_as_group) -> None
 		Changes the value of LightAttachmentsAsGroup.
@@ -1173,7 +1178,7 @@ package unreal;
 		Args:
 		    light_attachments_as_group (bool):
 	**/
-	public function set_light_attachments_as_group(light_attachments_as_group:Dynamic):Void;
+	public function set_light_attachments_as_group(light_attachments_as_group:Bool):Void;
 	/**
 		x.set_lighting_channels(channel0, channel1, channel2) -> None
 		Set Lighting Channels
@@ -1183,7 +1188,7 @@ package unreal;
 		    channel1 (bool): 
 		    channel2 (bool):
 	**/
-	public function set_lighting_channels(channel0:Dynamic, channel1:Dynamic, channel2:Dynamic):Void;
+	public function set_lighting_channels(channel0:Bool, channel1:Bool, channel2:Bool):Void;
 	/**
 		x.set_linear_damping(damping) -> None
 		Sets the linear damping of this component.
@@ -1191,7 +1196,7 @@ package unreal;
 		Args:
 		    damping (float):
 	**/
-	public function set_linear_damping(damping:Dynamic):Void;
+	public function set_linear_damping(damping:Float):Void;
 	/**
 		x.set_mass_override_in_kg(bone_name="None", mass_in_kg=1.000000, override_mass=True) -> None
 		Override the mass (in Kg) of a single physics body.
@@ -1203,7 +1208,7 @@ package unreal;
 		    mass_in_kg (float): 
 		    override_mass (bool):
 	**/
-	public function set_mass_override_in_kg(bone_name:Dynamic, mass_in_kg:Dynamic, override_mass:Dynamic):Void;
+	public function set_mass_override_in_kg(bone_name:unreal.Name, mass_in_kg:Float, override_mass:Bool):Void;
 	/**
 		x.set_mass_scale(bone_name="None", mass_scale=1.000000) -> None
 		Change the mass scale used to calculate the mass of a single physics body
@@ -1212,7 +1217,7 @@ package unreal;
 		    bone_name (Name): 
 		    mass_scale (float):
 	**/
-	public function set_mass_scale(bone_name:Dynamic, mass_scale:Dynamic):Void;
+	public function set_mass_scale(bone_name:unreal.Name, mass_scale:Float):Void;
 	/**
 		x.set_material(element_index, material) -> None
 		Changes the material applied to an element of the mesh.
@@ -1224,7 +1229,7 @@ package unreal;
 		Returns:
 		    the material used by the indexed element of this mesh.
 	**/
-	public function set_material(element_index:Dynamic, material:Dynamic):Dynamic;
+	public function set_material(element_index:Int, material:unreal.MaterialInterface):Dynamic;
 	/**
 		x.set_material_by_name(material_slot_name, material) -> None
 		Changes the material applied to an element of the mesh.
@@ -1236,10 +1241,11 @@ package unreal;
 		Returns:
 		    the material used by the indexed element of this mesh.
 	**/
-	public function set_material_by_name(material_slot_name:Dynamic, material:Dynamic):Dynamic;
+	public function set_material_by_name(material_slot_name:unreal.Name, material:unreal.MaterialInterface):Dynamic;
 	/**
 		deprecated: 'set_movement_channel' was renamed to 'set_collision_object_type'.
 	**/
+	@:deprecated
 	public function set_movement_channel():Void;
 	/**
 		x.set_notify_rigid_body_collision(new_notify_rigid_body_collision) -> None
@@ -1248,7 +1254,7 @@ package unreal;
 		Args:
 		    new_notify_rigid_body_collision (bool):
 	**/
-	public function set_notify_rigid_body_collision(new_notify_rigid_body_collision:Dynamic):Void;
+	public function set_notify_rigid_body_collision(new_notify_rigid_body_collision:Bool):Void;
 	/**
 		x.set_only_owner_see(new_only_owner_see) -> None
 		Changes the value of bOnlyOwnerSee.
@@ -1256,7 +1262,7 @@ package unreal;
 		Args:
 		    new_only_owner_see (bool):
 	**/
-	public function set_only_owner_see(new_only_owner_see:Dynamic):Void;
+	public function set_only_owner_see(new_only_owner_see:Bool):Void;
 	/**
 		x.set_owner_no_see(new_owner_no_see) -> None
 		Changes the value of bOwnerNoSee.
@@ -1264,7 +1270,7 @@ package unreal;
 		Args:
 		    new_owner_no_see (bool):
 	**/
-	public function set_owner_no_see(new_owner_no_see:Dynamic):Void;
+	public function set_owner_no_see(new_owner_no_see:Bool):Void;
 	/**
 		x.set_phys_material_override(new_phys_material) -> None
 		Changes the current PhysMaterialOverride for this component.
@@ -1274,7 +1280,7 @@ package unreal;
 		Args:
 		    new_phys_material (PhysicalMaterial):
 	**/
-	public function set_phys_material_override(new_phys_material:Dynamic):Void;
+	public function set_phys_material_override(new_phys_material:unreal.PhysicalMaterial):Void;
 	/**
 		x.set_physics_angular_velocity(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set Physics Angular Velocity
@@ -1285,7 +1291,8 @@ package unreal;
 		    add_to_current (bool): 
 		    bone_name (Name):
 	**/
-	public function set_physics_angular_velocity(new_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	@:deprecated
+	public function set_physics_angular_velocity(new_ang_vel:unreal.Vector, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_angular_velocity_in_degrees(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the angular velocity of a single body.
@@ -1296,7 +1303,7 @@ package unreal;
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_angular_velocity_in_degrees(new_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	public function set_physics_angular_velocity_in_degrees(new_ang_vel:unreal.Vector, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_angular_velocity_in_radians(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the angular velocity of a single body.
@@ -1307,7 +1314,7 @@ package unreal;
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_angular_velocity_in_radians(new_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	public function set_physics_angular_velocity_in_radians(new_ang_vel:unreal.Vector, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_linear_velocity(new_vel, add_to_current=False, bone_name="None") -> None
 		Set the linear velocity of a single body.
@@ -1318,7 +1325,7 @@ package unreal;
 		    add_to_current (bool): If true, NewVel is added to the existing velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_linear_velocity(new_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	public function set_physics_linear_velocity(new_vel:unreal.Vector, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_max_angular_velocity(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set Physics Max Angular Velocity
@@ -1329,7 +1336,8 @@ package unreal;
 		    add_to_current (bool): 
 		    bone_name (Name):
 	**/
-	public function set_physics_max_angular_velocity(new_max_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	@:deprecated
+	public function set_physics_max_angular_velocity(new_max_ang_vel:Float, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_max_angular_velocity_in_degrees(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the maximum angular velocity of a single body.
@@ -1339,7 +1347,7 @@ package unreal;
 		    add_to_current (bool): If true, NewMaxAngVel is added to the existing maximum angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify maximum angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_max_angular_velocity_in_degrees(new_max_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	public function set_physics_max_angular_velocity_in_degrees(new_max_ang_vel:Float, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_max_angular_velocity_in_radians(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the maximum angular velocity of a single body.
@@ -1349,14 +1357,16 @@ package unreal;
 		    add_to_current (bool): If true, NewMaxAngVel is added to the existing maximum angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify maximum angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_max_angular_velocity_in_radians(new_max_ang_vel:Dynamic, add_to_current:Dynamic, bone_name:Dynamic):Void;
+	public function set_physics_max_angular_velocity_in_radians(new_max_ang_vel:Float, add_to_current:Bool, bone_name:unreal.Name):Void;
 	/**
 		deprecated: 'set_rb_angular_velocity' was renamed to 'set_physics_angular_velocity'.
 	**/
+	@:deprecated
 	public function set_rb_angular_velocity():Void;
 	/**
 		deprecated: 'set_rb_linear_velocity' was renamed to 'set_physics_linear_velocity'.
 	**/
+	@:deprecated
 	public function set_rb_linear_velocity():Void;
 	/**
 		x.set_receives_decals(new_receives_decals) -> None
@@ -1365,7 +1375,7 @@ package unreal;
 		Args:
 		    new_receives_decals (bool):
 	**/
-	public function set_receives_decals(new_receives_decals:Dynamic):Void;
+	public function set_receives_decals(new_receives_decals:Bool):Void;
 	/**
 		x.set_render_custom_depth(value) -> None
 		Sets the bRenderCustomDepth property and marks the render state dirty.
@@ -1373,7 +1383,7 @@ package unreal;
 		Args:
 		    value (bool):
 	**/
-	public function set_render_custom_depth(value:Dynamic):Void;
+	public function set_render_custom_depth(value:Bool):Void;
 	/**
 		x.set_render_in_main_pass(value) -> None
 		Sets bRenderInMainPass property and marks the render state dirty.
@@ -1381,7 +1391,7 @@ package unreal;
 		Args:
 		    value (bool):
 	**/
-	public function set_render_in_main_pass(value:Dynamic):Void;
+	public function set_render_in_main_pass(value:Bool):Void;
 	/**
 		x.set_simulate_physics(simulate) -> None
 		Sets whether or not a single body should use physics simulation, or should be 'fixed' (kinematic).
@@ -1390,7 +1400,7 @@ package unreal;
 		Args:
 		    simulate (bool): New simulation state for single body
 	**/
-	public function set_simulate_physics(simulate:Dynamic):Void;
+	public function set_simulate_physics(simulate:Bool):Void;
 	/**
 		x.set_single_sample_shadow_from_stationary_lights(new_single_sample_shadow_from_stationary_lights) -> None
 		Changes the value of bSingleSampleShadowFromStationaryLights.
@@ -1398,7 +1408,7 @@ package unreal;
 		Args:
 		    new_single_sample_shadow_from_stationary_lights (bool):
 	**/
-	public function set_single_sample_shadow_from_stationary_lights(new_single_sample_shadow_from_stationary_lights:Dynamic):Void;
+	public function set_single_sample_shadow_from_stationary_lights(new_single_sample_shadow_from_stationary_lights:Bool):Void;
 	/**
 		x.set_translucent_sort_priority(new_translucent_sort_priority) -> None
 		Changes the value of TranslucentSortPriority.
@@ -1406,7 +1416,7 @@ package unreal;
 		Args:
 		    new_translucent_sort_priority (int32):
 	**/
-	public function set_translucent_sort_priority(new_translucent_sort_priority:Dynamic):Void;
+	public function set_translucent_sort_priority(new_translucent_sort_priority:Int):Void;
 	/**
 		x.set_use_ccd(use_ccd, bone_name="None") -> None
 		Set whether this component should use Continuous Collision Detection
@@ -1415,7 +1425,7 @@ package unreal;
 		    use_ccd (bool): 
 		    bone_name (Name):
 	**/
-	public function set_use_ccd(use_ccd:Dynamic, bone_name:Dynamic):Void;
+	public function set_use_ccd(use_ccd:Bool, bone_name:unreal.Name):Void;
 	/**
 		x.set_walkable_slope_override(new_override) -> None
 		Sets a new slope override for this component instance.
@@ -1423,7 +1433,7 @@ package unreal;
 		Args:
 		    new_override (WalkableSlopeOverride):
 	**/
-	public function set_walkable_slope_override(new_override:Dynamic):Void;
+	public function set_walkable_slope_override(new_override:unreal.WalkableSlopeOverride):Void;
 	/**
 		(bool):  [Read-Only] Whether the whole component should be shadowed as one from stationary lights, which makes shadow receiving much cheaper.
 		When enabled shadowing data comes from the volume lighting samples precomputed by Lightmass, which are very sparse.
@@ -1452,7 +1462,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function sphere_overlap_component(sphere_centre:Dynamic, sphere_radius:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
+	public function sphere_overlap_component(sphere_centre:unreal.Vector, sphere_radius:Float, trace_complex:Bool, show_trace:Bool, persistent_show_trace:Bool):Dynamic;
 	/**
 		x.sphere_trace_component(trace_start, trace_end, sphere_radius, trace_complex, show_trace, persistent_show_trace) -> (hit_location=Vector, hit_normal=Vector, bone_name=Name, out_hit=HitResult) or None
 		Perform a sphere trace against a single component
@@ -1476,7 +1486,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function sphere_trace_component(trace_start:Dynamic, trace_end:Dynamic, sphere_radius:Dynamic, trace_complex:Dynamic, show_trace:Dynamic, persistent_show_trace:Dynamic):Dynamic;
+	public function sphere_trace_component(trace_start:unreal.Vector, trace_end:unreal.Vector, sphere_radius:Float, trace_complex:Bool, show_trace:Bool, persistent_show_trace:Bool):Dynamic;
 	/**
 		(bool):  [Read-Write] If true, component sweeps with this component should trace against complex collision during movement (for example, each triangle of a mesh).
 		If false, collision will be resolved against simple collision bounds instead.
@@ -1535,7 +1545,7 @@ package unreal;
 		Args:
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to wake. 'None' indicates root body.
 	**/
-	public function wake_rigid_body(bone_name:Dynamic):Void;
+	public function wake_rigid_body(bone_name:unreal.Name):Void;
 	/**
 		x.was_recently_rendered(tolerance=0.200000) -> bool
 		Returns true if this component has been rendered "recently", with a tolerance in seconds to define what "recent" means.
@@ -1547,5 +1557,5 @@ package unreal;
 		Returns:
 		    bool: Whether this actor was recently rendered.
 	**/
-	public function was_recently_rendered(tolerance:Dynamic):Bool;
+	public function was_recently_rendered(tolerance:Float):Bool;
 }

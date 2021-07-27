@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TextureRenderTarget2DArray") extern class TextureRenderTarget2DArray extends unreal.TextureRenderTarget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Whether to support storing HDR values, which requires more memory.
 	**/
 	public var hdr : Bool;

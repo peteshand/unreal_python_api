@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MovementComponent") extern class MovementComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] If true, then applies the value of bComponentShouldUpdatePhysicsVolume to the UpdatedComponent. If false, will not change bShouldUpdatePhysicsVolume on the UpdatedComponent at all.
 		bComponentShouldUpdatePhysicsVolume:
 	**/
@@ -41,7 +32,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function constrain_direction_to_plane(direction:Dynamic):unreal.Vector;
+	public function constrain_direction_to_plane(direction:unreal.Vector):unreal.Vector;
 	/**
 		x.constrain_location_to_plane(location) -> Vector
 		Constrain a position vector to the plane constraint, if enabled.
@@ -52,7 +43,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function constrain_location_to_plane(location:Dynamic):unreal.Vector;
+	public function constrain_location_to_plane(location:unreal.Vector):unreal.Vector;
 	/**
 		x.constrain_normal_to_plane(normal) -> Vector
 		Constrain a normal vector (of unit length) to the plane constraint, if enabled.
@@ -63,10 +54,11 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function constrain_normal_to_plane(normal:Dynamic):unreal.Vector;
+	public function constrain_normal_to_plane(normal:unreal.Vector):unreal.Vector;
 	/**
 		deprecated: 'constrain_position_to_plane' was renamed to 'constrain_location_to_plane'.
 	**/
+	@:deprecated
 	public function constrain_position_to_plane():Void;
 	/**
 		(bool):  [Read-Only] If true, movement will be constrained to a plane.
@@ -97,6 +89,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
+	@:deprecated
 	public function get_max_speed_modifier():Float;
 	/**
 		x.get_modified_max_speed() -> float
@@ -150,7 +143,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_exceeding_max_speed(max_speed:Dynamic):Bool;
+	public function is_exceeding_max_speed(max_speed:Float):Bool;
 	/**
 		x.move_updated_component(delta, new_rotation, sweep=True, teleport=False) -> HitResult or None
 		Moves our UpdatedComponent by the given Delta, and sets rotation to NewRotation.
@@ -167,7 +160,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function move_updated_component(delta:Dynamic, new_rotation:Dynamic, sweep:Dynamic, teleport:Dynamic):Dynamic;
+	public function move_updated_component(delta:unreal.Vector, new_rotation:unreal.Rotator, sweep:Bool, teleport:Bool):Dynamic;
 	/**
 		(Vector):  [Read-Only] The normal or axis of the plane that constrains movement, if bConstrainToPlane is enabled.
 		If for example you wanted to constrain movement to the X-Z plane (so that Y cannot change), the normal would be set to X=0 Y=1 Z=0.
@@ -189,7 +182,7 @@ package unreal;
 		Args:
 		    new_axis_setting (PlaneConstraintAxisSetting): New plane constraint axis setting.
 	**/
-	public function set_plane_constraint_axis_setting(new_axis_setting:Dynamic):Void;
+	public function set_plane_constraint_axis_setting(new_axis_setting:unreal.PlaneConstraintAxisSetting):Void;
 	/**
 		x.set_plane_constraint_enabled(enabled) -> None
 		Sets whether or not the plane constraint is enabled.
@@ -197,7 +190,7 @@ package unreal;
 		Args:
 		    enabled (bool):
 	**/
-	public function set_plane_constraint_enabled(enabled:Dynamic):Void;
+	public function set_plane_constraint_enabled(enabled:Bool):Void;
 	/**
 		x.set_plane_constraint_from_vectors(forward, up) -> None
 		Uses the Forward and Up vectors to compute the plane that constrains movement, enforced if the plane constraint is enabled.
@@ -206,7 +199,7 @@ package unreal;
 		    forward (Vector): 
 		    up (Vector):
 	**/
-	public function set_plane_constraint_from_vectors(forward:Dynamic, up:Dynamic):Void;
+	public function set_plane_constraint_from_vectors(forward:unreal.Vector, up:unreal.Vector):Void;
 	/**
 		x.set_plane_constraint_normal(plane_normal) -> None
 		Sets the normal of the plane that constrains movement, enforced if the plane constraint is enabled.
@@ -215,7 +208,7 @@ package unreal;
 		Args:
 		    plane_normal (Vector): The normal of the plane. If non-zero in length, it will be normalized.
 	**/
-	public function set_plane_constraint_normal(plane_normal:Dynamic):Void;
+	public function set_plane_constraint_normal(plane_normal:unreal.Vector):Void;
 	/**
 		x.set_plane_constraint_origin(plane_origin) -> None
 		Sets the origin of the plane that constrains movement, enforced if the plane constraint is enabled.
@@ -223,7 +216,7 @@ package unreal;
 		Args:
 		    plane_origin (Vector):
 	**/
-	public function set_plane_constraint_origin(plane_origin:Dynamic):Void;
+	public function set_plane_constraint_origin(plane_origin:unreal.Vector):Void;
 	/**
 		x.set_updated_component(new_updated_component) -> None
 		Assign the component we move and update.
@@ -231,7 +224,7 @@ package unreal;
 		Args:
 		    new_updated_component (SceneComponent):
 	**/
-	public function set_updated_component(new_updated_component:Dynamic):Void;
+	public function set_updated_component(new_updated_component:unreal.SceneComponent):Void;
 	/**
 		(bool):  [Read-Only] If true and plane constraints are enabled, then the updated component will be snapped to the plane when first attached.
 	**/

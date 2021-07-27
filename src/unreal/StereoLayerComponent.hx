@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "StereoLayerComponent") extern class StereoLayerComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_left_texture() -> Texture
 		
 		
@@ -87,7 +78,8 @@ package unreal;
 		Args:
 		    scale_biases (EquirectProps):
 	**/
-	public function set_equirect_props(scale_biases:Dynamic):Void;
+	@:deprecated
+	public function set_equirect_props(scale_biases:unreal.EquirectProps):Void;
 	/**
 		x.set_left_texture(texture) -> None
 		Change the texture displayed on the stereo layer for left eye, if stereoscopic layer textures are supported on the platform.
@@ -95,7 +87,7 @@ package unreal;
 		Args:
 		    texture (Texture):
 	**/
-	public function set_left_texture(texture:Dynamic):Void;
+	public function set_left_texture(texture:unreal.Texture):Void;
 	/**
 		x.set_priority(priority) -> None
 		Change the layer's render priority, higher priorities render on top of lower priorities
@@ -103,7 +95,7 @@ package unreal;
 		Args:
 		    priority (int32):
 	**/
-	public function set_priority(priority:Dynamic):Void;
+	public function set_priority(priority:Int):Void;
 	/**
 		x.set_quad_size(quad_size) -> None
 		Change the quad size. This is the unscaled height and width, before component scale is applied.
@@ -111,7 +103,7 @@ package unreal;
 		Args:
 		    quad_size (Vector2D):
 	**/
-	public function set_quad_size(quad_size:Dynamic):Void;
+	public function set_quad_size(quad_size:unreal.Vector2D):Void;
 	/**
 		x.set_texture(texture) -> None
 		Change the texture displayed on the stereo layer.
@@ -121,7 +113,7 @@ package unreal;
 		Args:
 		    texture (Texture):
 	**/
-	public function set_texture(texture:Dynamic):Void;
+	public function set_texture(texture:unreal.Texture):Void;
 	/**
 		x.set_uv_rect(uv_rect) -> None
 		Change the UV coordinates mapped to the quad face
@@ -129,7 +121,7 @@ package unreal;
 		Args:
 		    uv_rect (Box2D):
 	**/
-	public function set_uv_rect(uv_rect:Dynamic):Void;
+	public function set_uv_rect(uv_rect:unreal.Box2D):Void;
 	/**
 		(StereoLayerShape):  [Read-Only] Specifies which shape of layer it is.  Note that some shapes will be supported only on certain platforms! *
 	**/

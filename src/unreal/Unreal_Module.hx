@@ -17,11 +17,11 @@ package unreal;
 	/**
 		x.find_asset(name, type=Object, follow_redirectors=True) -> Object -- find an already loaded Unreal asset with the given name, optionally validating its type
 	**/
-	static public function find_asset(name:Dynamic, type:Dynamic, follow_redirectors:Dynamic):Dynamic;
+	static public function find_asset(name:Dynamic, type:unreal.Object = null, follow_redirectors:Bool = true):Dynamic;
 	/**
 		x.find_object(outer, name, type=Object, follow_redirectors=True) -> Object -- find an already loaded Unreal object with the given outer and name, optionally validating its type
 	**/
-	static public function find_object(outer:Dynamic, name:Dynamic, type:Dynamic, follow_redirectors:Dynamic):Dynamic;
+	static public function find_object(outer:Dynamic, name:Dynamic, type:unreal.Object = null, follow_redirectors:Bool = true):Dynamic;
 	/**
 		x.find_package(name) -> Package -- find an already loaded Unreal package with the given name
 	**/
@@ -81,11 +81,11 @@ package unreal;
 	/**
 		x.load_asset(name, type=Object, follow_redirectors=True) -> Object -- load an Unreal asset with the given name, optionally validating its type
 	**/
-	static public function load_asset(name:Dynamic, type:Dynamic, follow_redirectors:Dynamic):Dynamic;
+	static public function load_asset(name:Dynamic, type:unreal.Object = null, follow_redirectors:Bool = true):Dynamic;
 	/**
 		x.load_class(outer, name, type=Object) -> Class -- load an Unreal class with the given outer and name, optionally validating its base type
 	**/
-	static public function load_class(outer:Dynamic, name:Dynamic, type:Dynamic):Dynamic;
+	static public function load_class(outer:Dynamic, name:Dynamic, type:unreal.Object = null):Dynamic;
 	/**
 		x.load_module(str) -> None -- load the given Unreal module and generate any Python code for its reflected types
 	**/
@@ -93,7 +93,7 @@ package unreal;
 	/**
 		x.load_object(outer, name, type=Object, follow_redirectors=True) -> Object -- load an Unreal object with the given outer and name, optionally validating its type
 	**/
-	static public function load_object(outer:Dynamic, name:Dynamic, type:Dynamic, follow_redirectors:Dynamic):Dynamic;
+	static public function load_object(outer:Dynamic, name:Dynamic, type:unreal.Object = null, follow_redirectors:Bool = true):Dynamic;
 	/**
 		x.load_package(name) -> Package -- load an Unreal package with the given name
 	**/
@@ -117,15 +117,15 @@ package unreal;
 	/**
 		x.new_object(type, outer=Transient, name=Default, base_type=Object) -> Object -- create an Unreal object of the given class (and optional outer and name), optionally validating its type
 	**/
-	static public function new_object(type:Dynamic, outer:Dynamic, name:Dynamic, base_type:Dynamic):Dynamic;
+	static public function new_object(type:Dynamic, outer:Dynamic = null, name:Dynamic = null, base_type:unreal.Object = null):Dynamic;
 	/**
 		x.parent_external_window_to_slate(external_window, parent_search_method=SlateParentWindowSearchMethod.ACTIVE_WINDOW) -> None -- parent the given OS specific external window handle to a suitable Slate window
 	**/
-	static public function parent_external_window_to_slate(external_window:Dynamic, parent_search_method:Dynamic):Dynamic;
+	static public function parent_external_window_to_slate(external_window:Dynamic, parent_search_method:unreal.SlateParentWindowSearchMethod = SlateParentWindowSearchMethod.ACTIVE_WINDOW):Dynamic;
 	/**
 		x.purge_object_references(obj, include_inners=True) -> None -- purge all references to the given Unreal object from any living Python objects
 	**/
-	static public function purge_object_references(obj:Dynamic, include_inners:Dynamic):Dynamic;
+	static public function purge_object_references(obj:Dynamic, include_inners:Bool = true):Dynamic;
 	/**
 		x.register_python_shutdown_callback(callable) -> _DelegateHandle -- register the given callable (with no input arguments) as a callback to execute immediately before Python shutdown
 	**/

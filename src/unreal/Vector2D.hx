@@ -5,15 +5,6 @@ package unreal;
 	static public var UNIT45_DEG : Dynamic;
 	static public var ZERO : Dynamic;
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add(b) -> Vector2D
 		Returns addition of Vector A and Vector B (A + B)
 		
@@ -23,7 +14,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function add(b:Dynamic):unreal.Vector2D;
+	public function add(b:unreal.Vector2D):unreal.Vector2D;
 	/**
 		x.add_float(b) -> Vector2D
 		Returns Vector A added by B
@@ -34,7 +25,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function add_float(b:Dynamic):unreal.Vector2D;
+	public function add_float(b:Float):unreal.Vector2D;
 	/**
 		x.clamped_axes(min_axis_val, max_axis_val) -> Vector2D
 		Creates a copy of this vector with both axes clamped to the given range.
@@ -46,7 +37,7 @@ package unreal;
 		Returns:
 		    Vector2D: New vector with clamped axes.
 	**/
-	public function clamped_axes(min_axis_val:Dynamic, max_axis_val:Dynamic):unreal.Vector2D;
+	public function clamped_axes(min_axis_val:Float, max_axis_val:Float):unreal.Vector2D;
 	/**
 		x.cross(b) -> float
 		Returns the cross product of two 2d vectors - see  http://mathworld.wolfram.com/CrossProduct.html
@@ -57,7 +48,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function cross(b:Dynamic):Float;
+	public function cross(b:unreal.Vector2D):Float;
 	/**
 		x.distance(v2) -> float
 		Distance between two 2D points.
@@ -68,7 +59,7 @@ package unreal;
 		Returns:
 		    float: The distance between two 2D points.
 	**/
-	public function distance(v2:Dynamic):Float;
+	public function distance(v2:unreal.Vector2D):Float;
 	/**
 		x.distance_squared(v2) -> float
 		Squared distance between two 2D points.
@@ -79,7 +70,7 @@ package unreal;
 		Returns:
 		    float: The squared distance between two 2D points.
 	**/
-	public function distance_squared(v2:Dynamic):Float;
+	public function distance_squared(v2:unreal.Vector2D):Float;
 	/**
 		x.divide(b) -> Vector2D
 		Element-wise Vector divide (Result = {A.x/B.x, A.y/B.y})
@@ -90,7 +81,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function divide(b:Dynamic):unreal.Vector2D;
+	public function divide(b:unreal.Vector2D):unreal.Vector2D;
 	/**
 		x.divide_float(b=1.000000) -> Vector2D
 		Returns Vector A divided by B
@@ -101,7 +92,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function divide_float(b:Dynamic):unreal.Vector2D;
+	public function divide_float(b:Float):unreal.Vector2D;
 	/**
 		x.dot(b) -> float
 		Returns the dot product of two 2d vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -112,7 +103,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function dot(b:Dynamic):Float;
+	public function dot(b:unreal.Vector2D):Float;
 	/**
 		x.equals(b) -> bool
 		Returns true if vector A is equal to vector B (A == B)
@@ -123,7 +114,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equals(b:Dynamic):Bool;
+	public function equals(b:unreal.Vector2D):Bool;
 	/**
 		x.get_abs() -> Vector2D
 		Get a copy of this vector with absolute value of each component.
@@ -166,7 +157,7 @@ package unreal;
 		Returns:
 		    Vector2D: Rotated Vector
 	**/
-	public function get_rotated(angle_deg:Dynamic):unreal.Vector2D;
+	public function get_rotated(angle_deg:Float):unreal.Vector2D;
 	/**
 		x.int_point() -> IntPoint
 		Convert a Vector2D to an IntPoint
@@ -187,7 +178,7 @@ package unreal;
 		Returns:
 		    Vector2D: New interpolated position
 	**/
-	public function interp_to(target:Dynamic, delta_time:Dynamic, interp_speed:Dynamic):unreal.Vector2D;
+	public function interp_to(target:unreal.Vector2D, delta_time:Float, interp_speed:Float):unreal.Vector2D;
 	/**
 		x.interp_to_constant(target, delta_time, interp_speed) -> Vector2D
 		Tries to reach Target at a constant rate.
@@ -200,7 +191,7 @@ package unreal;
 		Returns:
 		    Vector2D: New interpolated position
 	**/
-	public function interp_to_constant(target:Dynamic, delta_time:Dynamic, interp_speed:Dynamic):unreal.Vector2D;
+	public function interp_to_constant(target:unreal.Vector2D, delta_time:Float, interp_speed:Float):unreal.Vector2D;
 	/**
 		x.is_near_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if vector2D A is equal to vector2D B (A == B) within a specified error tolerance
@@ -212,7 +203,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
+	public function is_near_equal(b:unreal.Vector2D, error_tolerance:Float):Bool;
 	/**
 		x.is_nearly_zero(tolerance=0.000100) -> bool
 		Checks whether vector is near to zero within a specified tolerance.
@@ -223,7 +214,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	public function is_nearly_zero(tolerance:Dynamic):Bool;
+	public function is_nearly_zero(tolerance:Float):Bool;
 	/**
 		x.is_not_near_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if vector2D A is not equal to vector2D B (A != B) within a specified error tolerance
@@ -235,7 +226,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(b:Dynamic, error_tolerance:Dynamic):Bool;
+	public function is_not_near_equal(b:unreal.Vector2D, error_tolerance:Float):Bool;
 	/**
 		x.is_zero() -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -270,7 +261,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function multiply(b:Dynamic):unreal.Vector2D;
+	public function multiply(b:unreal.Vector2D):unreal.Vector2D;
 	/**
 		x.multiply_float(b) -> Vector2D
 		Returns Vector A scaled by B
@@ -281,7 +272,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function multiply_float(b:Dynamic):unreal.Vector2D;
+	public function multiply_float(b:Float):unreal.Vector2D;
 	/**
 		x.negated() -> Vector2D
 		Gets a negated copy of the vector.
@@ -301,7 +292,7 @@ package unreal;
 		Returns:
 		    Vector2D: A normalized copy of the vector if safe, (0,0) otherwise.
 	**/
-	public function normal(tolerance:Dynamic):unreal.Vector2D;
+	public function normal(tolerance:Float):unreal.Vector2D;
 	/**
 		x.normal_unsafe() -> Vector2D
 		Returns a unit normal version of the 2D vector
@@ -318,7 +309,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of vector for normalization.
 	**/
-	public function normalize(tolerance:Dynamic):Void;
+	public function normalize(tolerance:Float):Void;
 	/**
 		x.not_equal(b) -> bool
 		Returns true if vector2D A is not equal to vector2D B (A != B) within a specified error tolerance
@@ -329,7 +320,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal(b:Dynamic):Bool;
+	public function not_equal(b:unreal.Vector2D):Bool;
 	/**
 		x.set(x, y) -> None
 		Set the values of the vector directly.
@@ -338,7 +329,7 @@ package unreal;
 		    x (float): 
 		    y (float):
 	**/
-	public function set(x:Dynamic, y:Dynamic):Void;
+	public function set(x:Float, y:Float):Void;
 	/**
 		x.spherical_to_unit_cartesian() -> Vector
 		Converts spherical coordinates on the unit sphere into a Cartesian unit length vector.
@@ -357,7 +348,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function subtract(b:Dynamic):unreal.Vector2D;
+	public function subtract(b:unreal.Vector2D):unreal.Vector2D;
 	/**
 		x.subtract_float(b) -> Vector2D
 		Returns Vector A subtracted by B
@@ -368,7 +359,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function subtract_float(b:Dynamic):unreal.Vector2D;
+	public function subtract_float(b:Float):unreal.Vector2D;
 	/**
 		x.to_direction_and_length() -> (out_dir=Vector2D, out_length=float)
 		Util to convert this vector into a unit direction vector and its original length.
@@ -408,7 +399,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function vector(z:Dynamic):unreal.Vector;
+	public function vector(z:Float):unreal.Vector;
 	/**
 		(float):  [Read-Write] X
 	**/

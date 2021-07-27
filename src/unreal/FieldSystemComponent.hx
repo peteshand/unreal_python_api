@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FieldSystemComponent") extern class FieldSystemComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_field_command(enabled, target, meta_data, field) -> None
 		ApplyPhysicsField
 		
@@ -20,7 +11,7 @@ package unreal;
 		    meta_data (FieldSystemMetaData): 
 		    field (FieldNodeBase):
 	**/
-	public function add_field_command(enabled:Dynamic, target:Dynamic, meta_data:Dynamic, field:Dynamic):Void;
+	public function add_field_command(enabled:Bool, target:unreal.FieldPhysicsType, meta_data:unreal.FieldSystemMetaData, field:unreal.FieldNodeBase):Void;
 	/**
 		x.apply_linear_force(enabled, direction, magnitude) -> None
 		ApplyLinearForce
@@ -32,7 +23,7 @@ package unreal;
 		    direction (Vector): : The direction of the linear force
 		    magnitude (float): : The size of the linear force.
 	**/
-	public function apply_linear_force(enabled:Dynamic, direction:Dynamic, magnitude:Dynamic):Void;
+	public function apply_linear_force(enabled:Bool, direction:unreal.Vector, magnitude:Float):Void;
 	/**
 		x.apply_physics_field(enabled, target, meta_data, field) -> None
 		ApplyPhysicsField
@@ -45,7 +36,7 @@ package unreal;
 		    meta_data (FieldSystemMetaData): 
 		    field (FieldNodeBase):
 	**/
-	public function apply_physics_field(enabled:Dynamic, target:Dynamic, meta_data:Dynamic, field:Dynamic):Void;
+	public function apply_physics_field(enabled:Bool, target:unreal.FieldPhysicsType, meta_data:unreal.FieldSystemMetaData, field:unreal.FieldNodeBase):Void;
 	/**
 		x.apply_radial_force(enabled, position, magnitude) -> None
 		ApplyRadialForce
@@ -57,7 +48,7 @@ package unreal;
 		    position (Vector): : The origin point of the force
 		    magnitude (float): : The size of the linear force.
 	**/
-	public function apply_radial_force(enabled:Dynamic, position:Dynamic, magnitude:Dynamic):Void;
+	public function apply_radial_force(enabled:Bool, position:unreal.Vector, magnitude:Float):Void;
 	/**
 		x.apply_radial_vector_falloff_force(enabled, position, radius, magnitude) -> None
 		ApplyRadialVectorFalloffForce
@@ -71,7 +62,7 @@ package unreal;
 		    radius (float): : Radial influence from the position, positions further away are weaker.
 		    magnitude (float): : The size of the linear force.
 	**/
-	public function apply_radial_vector_falloff_force(enabled:Dynamic, position:Dynamic, radius:Dynamic, magnitude:Dynamic):Void;
+	public function apply_radial_vector_falloff_force(enabled:Bool, position:unreal.Vector, radius:Float, magnitude:Float):Void;
 	/**
 		x.apply_stay_dynamic_field(enabled, position, radius) -> None
 		ApplyStayDynamicField
@@ -83,7 +74,7 @@ package unreal;
 		    position (Vector): : The location of the command
 		    radius (float): : Radial influence from the position
 	**/
-	public function apply_stay_dynamic_field(enabled:Dynamic, position:Dynamic, radius:Dynamic):Void;
+	public function apply_stay_dynamic_field(enabled:Bool, position:unreal.Vector, radius:Float):Void;
 	/**
 		x.apply_strain_field(enabled, position, radius, magnitude, iterations) -> None
 		ApplyStrainField
@@ -98,7 +89,7 @@ package unreal;
 		    magnitude (float): : The size of the linear force.
 		    iterations (int32): : Levels of evaluation into the cluster hierarchy.
 	**/
-	public function apply_strain_field(enabled:Dynamic, position:Dynamic, radius:Dynamic, magnitude:Dynamic, iterations:Dynamic):Void;
+	public function apply_strain_field(enabled:Bool, position:unreal.Vector, radius:Float, magnitude:Float, iterations:Int):Void;
 	/**
 		x.apply_uniform_vector_falloff_force(enabled, position, direction, radius, magnitude) -> None
 		ApplyUniformVectorFalloffForce
@@ -113,7 +104,7 @@ package unreal;
 		    radius (float): : Radial influence from the position, positions further away are weaker.
 		    magnitude (float): : The size of the linear force.
 	**/
-	public function apply_uniform_vector_falloff_force(enabled:Dynamic, position:Dynamic, direction:Dynamic, radius:Dynamic, magnitude:Dynamic):Void;
+	public function apply_uniform_vector_falloff_force(enabled:Bool, position:unreal.Vector, direction:unreal.Vector, radius:Float, magnitude:Float):Void;
 	/**
 		(FieldSystem):  [Read-Only] Field System
 	**/

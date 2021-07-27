@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InputSettings") extern class InputSettings extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_action_mapping(key_mapping, force_rebuild_keymaps=True) -> None
 		Programmatically add an action mapping to the project defaults
 		
@@ -18,7 +9,7 @@ package unreal;
 		    key_mapping (InputActionKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function add_action_mapping(key_mapping:Dynamic, force_rebuild_keymaps:Dynamic):Void;
+	public function add_action_mapping(key_mapping:unreal.InputActionKeyMapping, force_rebuild_keymaps:Bool):Void;
 	/**
 		x.add_axis_mapping(key_mapping, force_rebuild_keymaps=True) -> None
 		Programmatically add an axis mapping to the project defaults
@@ -27,7 +18,7 @@ package unreal;
 		    key_mapping (InputAxisKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function add_axis_mapping(key_mapping:Dynamic, force_rebuild_keymaps:Dynamic):Void;
+	public function add_axis_mapping(key_mapping:unreal.InputAxisKeyMapping, force_rebuild_keymaps:Bool):Void;
 	/**
 		x.force_rebuild_keymaps() -> None
 		When changes are made to the default mappings, push those changes out to PlayerInput key maps
@@ -45,7 +36,7 @@ package unreal;
 		
 		    out_mappings (Array(InputActionKeyMapping)):
 	**/
-	public function get_action_mapping_by_name(action_name:Dynamic):Dynamic;
+	public function get_action_mapping_by_name(action_name:unreal.Name):Dynamic;
 	/**
 		x.get_action_names() -> Array(Name)
 		Populate a list of all defined action names
@@ -68,7 +59,7 @@ package unreal;
 		
 		    out_mappings (Array(InputAxisKeyMapping)):
 	**/
-	public function get_axis_mapping_by_name(axis_name:Dynamic):Dynamic;
+	public function get_axis_mapping_by_name(axis_name:unreal.Name):Dynamic;
 	/**
 		x.get_axis_names() -> Array(Name)
 		Populate a list of all defined axis names
@@ -95,7 +86,7 @@ package unreal;
 		    key_mapping (InputActionKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function remove_action_mapping(key_mapping:Dynamic, force_rebuild_keymaps:Dynamic):Void;
+	public function remove_action_mapping(key_mapping:unreal.InputActionKeyMapping, force_rebuild_keymaps:Bool):Void;
 	/**
 		x.remove_axis_mapping(key_mapping, force_rebuild_keymaps=True) -> None
 		Programmatically remove an axis mapping to the project defaults
@@ -104,7 +95,7 @@ package unreal;
 		    key_mapping (InputAxisKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function remove_axis_mapping(key_mapping:Dynamic, force_rebuild_keymaps:Dynamic):Void;
+	public function remove_axis_mapping(key_mapping:unreal.InputAxisKeyMapping, force_rebuild_keymaps:Bool):Void;
 	/**
 		x.save_key_mappings() -> None
 		Flush the current mapping values to the config file

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimNotifyState") extern class AnimNotifyState extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_notify_name() -> str
 		Implementable event to get a custom name for the notify
 		
@@ -34,7 +25,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function received_notify_begin(mesh_comp:Dynamic, animation:Dynamic, total_duration:Dynamic):Bool;
+	public function received_notify_begin(mesh_comp:unreal.SkeletalMeshComponent, animation:unreal.AnimSequenceBase, total_duration:Float):Bool;
 	/**
 		x.received_notify_end(mesh_comp, animation) -> bool
 		Received Notify End
@@ -46,7 +37,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function received_notify_end(mesh_comp:Dynamic, animation:Dynamic):Bool;
+	public function received_notify_end(mesh_comp:unreal.SkeletalMeshComponent, animation:unreal.AnimSequenceBase):Bool;
 	/**
 		x.received_notify_tick(mesh_comp, animation, frame_delta_time) -> bool
 		Received Notify Tick
@@ -59,5 +50,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function received_notify_tick(mesh_comp:Dynamic, animation:Dynamic, frame_delta_time:Dynamic):Bool;
+	public function received_notify_tick(mesh_comp:unreal.SkeletalMeshComponent, animation:unreal.AnimSequenceBase, frame_delta_time:Float):Bool;
 }

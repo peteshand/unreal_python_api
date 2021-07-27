@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MediaPlayerOptions") extern class MediaPlayerOptions extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(MediaPlayerOptionBooleanOverride):  [Read-Write] Loop
 	**/
 	public var loop : unreal.MediaPlayerOptionBooleanOverride;

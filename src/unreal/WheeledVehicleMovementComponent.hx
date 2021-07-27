@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "WheeledVehicleMovementComponent") extern class WheeledVehicleMovementComponent extends unreal.PawnMovementComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Area Radius to consider for RVO avoidance
 	**/
 	public var avoidance_consideration_radius : Float;
@@ -105,7 +96,7 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	public function set_avoidance_enabled(enable:Dynamic):Void;
+	public function set_avoidance_enabled(enable:Bool):Void;
 	/**
 		x.set_avoidance_group(group_flags) -> None
 		Set Avoidance Group
@@ -114,7 +105,8 @@ package unreal;
 		Args:
 		    group_flags (int32):
 	**/
-	public function set_avoidance_group(group_flags:Dynamic):Void;
+	@:deprecated
+	public function set_avoidance_group(group_flags:Int):Void;
 	/**
 		x.set_avoidance_group_mask(group_mask) -> None
 		Set Avoidance Group Mask
@@ -122,7 +114,7 @@ package unreal;
 		Args:
 		    group_mask (NavAvoidanceMask):
 	**/
-	public function set_avoidance_group_mask(group_mask:Dynamic):Void;
+	public function set_avoidance_group_mask(group_mask:unreal.NavAvoidanceMask):Void;
 	/**
 		x.set_brake_input(brake) -> None
 		Set the user input for the vehicle Brake
@@ -130,7 +122,7 @@ package unreal;
 		Args:
 		    brake (float):
 	**/
-	public function set_brake_input(brake:Dynamic):Void;
+	public function set_brake_input(brake:Float):Void;
 	/**
 		x.set_gear_down(new_gear_down) -> None
 		Set the user input for gear down
@@ -138,7 +130,7 @@ package unreal;
 		Args:
 		    new_gear_down (bool):
 	**/
-	public function set_gear_down(new_gear_down:Dynamic):Void;
+	public function set_gear_down(new_gear_down:Bool):Void;
 	/**
 		x.set_gear_up(new_gear_up) -> None
 		Set the user input for gear up
@@ -146,7 +138,7 @@ package unreal;
 		Args:
 		    new_gear_up (bool):
 	**/
-	public function set_gear_up(new_gear_up:Dynamic):Void;
+	public function set_gear_up(new_gear_up:Bool):Void;
 	/**
 		x.set_groups_to_avoid(group_flags) -> None
 		Set Groups to Avoid
@@ -155,7 +147,8 @@ package unreal;
 		Args:
 		    group_flags (int32):
 	**/
-	public function set_groups_to_avoid(group_flags:Dynamic):Void;
+	@:deprecated
+	public function set_groups_to_avoid(group_flags:Int):Void;
 	/**
 		x.set_groups_to_avoid_mask(group_mask) -> None
 		Set Groups to Avoid Mask
@@ -163,7 +156,7 @@ package unreal;
 		Args:
 		    group_mask (NavAvoidanceMask):
 	**/
-	public function set_groups_to_avoid_mask(group_mask:Dynamic):Void;
+	public function set_groups_to_avoid_mask(group_mask:unreal.NavAvoidanceMask):Void;
 	/**
 		x.set_groups_to_ignore(group_flags) -> None
 		Set Groups to Ignore
@@ -172,7 +165,8 @@ package unreal;
 		Args:
 		    group_flags (int32):
 	**/
-	public function set_groups_to_ignore(group_flags:Dynamic):Void;
+	@:deprecated
+	public function set_groups_to_ignore(group_flags:Int):Void;
 	/**
 		x.set_groups_to_ignore_mask(group_mask) -> None
 		Set Groups to Ignore Mask
@@ -180,7 +174,7 @@ package unreal;
 		Args:
 		    group_mask (NavAvoidanceMask):
 	**/
-	public function set_groups_to_ignore_mask(group_mask:Dynamic):Void;
+	public function set_groups_to_ignore_mask(group_mask:unreal.NavAvoidanceMask):Void;
 	/**
 		x.set_handbrake_input(new_handbrake) -> None
 		Set the user input for handbrake
@@ -188,7 +182,7 @@ package unreal;
 		Args:
 		    new_handbrake (bool):
 	**/
-	public function set_handbrake_input(new_handbrake:Dynamic):Void;
+	public function set_handbrake_input(new_handbrake:Bool):Void;
 	/**
 		x.set_steering_input(steering) -> None
 		Set the user input for the vehicle steering
@@ -196,7 +190,7 @@ package unreal;
 		Args:
 		    steering (float):
 	**/
-	public function set_steering_input(steering:Dynamic):Void;
+	public function set_steering_input(steering:Float):Void;
 	/**
 		x.set_target_gear(gear_num, immediate) -> None
 		Set the user input for gear (-1 reverse, 0 neutral, 1+ forward)
@@ -205,7 +199,7 @@ package unreal;
 		    gear_num (int32): 
 		    immediate (bool):
 	**/
-	public function set_target_gear(gear_num:Dynamic, immediate:Dynamic):Void;
+	public function set_target_gear(gear_num:Int, immediate:Bool):Void;
 	/**
 		x.set_throttle_input(throttle) -> None
 		Set the user input for the vehicle throttle
@@ -213,7 +207,7 @@ package unreal;
 		Args:
 		    throttle (float):
 	**/
-	public function set_throttle_input(throttle:Dynamic):Void;
+	public function set_throttle_input(throttle:Float):Void;
 	/**
 		x.set_use_auto_gears(use_auto) -> None
 		Set the flag that will be used to select auto-gears
@@ -221,7 +215,7 @@ package unreal;
 		Args:
 		    use_auto (bool):
 	**/
-	public function set_use_auto_gears(use_auto:Dynamic):Void;
+	public function set_use_auto_gears(use_auto:Bool):Void;
 	/**
 		(bool):  [Read-Write] If set, component will use RVO avoidance
 	**/

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "WidgetInteractionComponent") extern class WidgetInteractionComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(LinearColor):  [Read-Write] Determines the color of the debug lines.
 	**/
 	public var debug_color : unreal.LinearColor;
@@ -109,7 +100,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function press_and_release_key(key:Dynamic):Bool;
+	public function press_and_release_key(key:unreal.Key):Bool;
 	/**
 		x.press_key(key, repeat=False) -> bool
 		Press a key as if it had come from the keyboard.  Avoid using this for 'a-z|A-Z', things like
@@ -123,7 +114,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function press_key(key:Dynamic, repeat:Dynamic):Bool;
+	public function press_key(key:unreal.Key, repeat:Bool):Bool;
 	/**
 		x.press_pointer_key(key) -> None
 		Presses a key as if the mouse/pointer were the source of it.  Normally you would just use
@@ -133,7 +124,7 @@ package unreal;
 		Args:
 		    key (Key):
 	**/
-	public function press_pointer_key(key:Dynamic):Void;
+	public function press_pointer_key(key:unreal.Key):Void;
 	/**
 		x.release_key(key) -> bool
 		Releases a key as if it had been released by the keyboard.
@@ -144,7 +135,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function release_key(key:Dynamic):Bool;
+	public function release_key(key:unreal.Key):Bool;
 	/**
 		x.release_pointer_key(key) -> None
 		Releases a key as if the mouse/pointer were the source of it.  Normally you would just use
@@ -154,7 +145,7 @@ package unreal;
 		Args:
 		    key (Key):
 	**/
-	public function release_pointer_key(key:Dynamic):Void;
+	public function release_pointer_key(key:unreal.Key):Void;
 	/**
 		x.scroll_wheel(scroll_delta) -> None
 		Sends a scroll wheel event to the widget under the last hit result.
@@ -162,7 +153,7 @@ package unreal;
 		Args:
 		    scroll_delta (float):
 	**/
-	public function scroll_wheel(scroll_delta:Dynamic):Void;
+	public function scroll_wheel(scroll_delta:Float):Void;
 	/**
 		x.send_key_char(characters, repeat=False) -> bool
 		Transmits a list of characters to a widget by simulating a OnKeyChar event for each key listed in
@@ -175,7 +166,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function send_key_char(characters:Dynamic, repeat:Dynamic):Bool;
+	public function send_key_char(characters:String, repeat:Bool):Bool;
 	/**
 		x.set_custom_hit_result(hit_result) -> None
 		Set custom hit result.  This is only taken into account if InteractionSource is set to EWidgetInteractionSource::Custom.
@@ -183,7 +174,7 @@ package unreal;
 		Args:
 		    hit_result (HitResult):
 	**/
-	public function set_custom_hit_result(hit_result:Dynamic):Void;
+	public function set_custom_hit_result(hit_result:unreal.HitResult):Void;
 	/**
 		x.set_focus(focus_widget) -> None
 		Set the focus target of the virtual user managed by this component
@@ -191,7 +182,7 @@ package unreal;
 		Args:
 		    focus_widget (Widget):
 	**/
-	public function set_focus(focus_widget:Dynamic):Void;
+	public function set_focus(focus_widget:unreal.Widget):Void;
 	/**
 		(bool):  [Read-Write] Shows some debugging lines and a hit sphere to help you debug interactions.
 	**/

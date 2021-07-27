@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimNotify_PlayNiagaraEffect") extern class AnimNotify_PlayNiagaraEffect extends unreal.AnimNotify {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Should attach to the bone/socket
 	**/
 	public var attached : Bool;

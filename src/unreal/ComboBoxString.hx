@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ComboBoxString") extern class ComboBoxString extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_option(option) -> None
 		Add Option
 		
 		Args:
 		    option (str):
 	**/
-	public function add_option(option:Dynamic):Void;
+	public function add_option(option:String):Void;
 	/**
 		x.clear_options() -> None
 		Clear Options
@@ -47,7 +38,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function find_option_index(option:Dynamic):Int;
+	public function find_option_index(option:String):Int;
 	/**
 		(SlateFontInfo):  [Read-Only] The default font to use in the combobox, only applies if you're not implementing OnGenerateWidgetEvent
 		to factory each new entry.
@@ -67,7 +58,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	public function get_option_at_index(index:Dynamic):String;
+	public function get_option_at_index(index:Int):String;
 	/**
 		x.get_option_count() -> int32
 		Returns the number of options
@@ -141,7 +132,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function remove_option(option:Dynamic):Bool;
+	public function remove_option(option:String):Bool;
 	/**
 		x.set_selected_index(index) -> None
 		Set Selected Index
@@ -149,7 +140,7 @@ package unreal;
 		Args:
 		    index (int32):
 	**/
-	public function set_selected_index(index:Dynamic):Void;
+	public function set_selected_index(index:Int):Void;
 	/**
 		x.set_selected_option(option) -> None
 		Set Selected Option
@@ -157,7 +148,7 @@ package unreal;
 		Args:
 		    option (str):
 	**/
-	public function set_selected_option(option:Dynamic):Void;
+	public function set_selected_option(option:String):Void;
 	/**
 		(ComboBoxStyle):  [Read-Write] The style.
 	**/

@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ListView") extern class ListView extends unreal.ListViewBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_item(item) -> None
 		Adds an the item to the list
 		
 		Args:
 		    item (Object):
 	**/
-	public function add_item(item:Dynamic):Void;
+	public function add_item(item:unreal.Object):Void;
 	/**
 		x.bp_cancel_scroll_into_view() -> None
 		Cancels a previous request to scroll and item into view.
@@ -64,7 +55,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function bp_is_item_visible(item:Dynamic):Bool;
+	public function bp_is_item_visible(item:unreal.Object):Bool;
 	/**
 		x.bp_navigate_to_item(item) -> None
 		Requests that the given item is navigated to, scrolling it into view if needed.
@@ -72,7 +63,7 @@ package unreal;
 		Args:
 		    item (Object):
 	**/
-	public function bp_navigate_to_item(item:Dynamic):Void;
+	public function bp_navigate_to_item(item:unreal.Object):Void;
 	/**
 		(OnListEntryInitializedDynamic):  [Read-Write] Called when a row widget is generated for a list item
 	**/
@@ -104,7 +95,7 @@ package unreal;
 		Args:
 		    item (Object):
 	**/
-	public function bp_scroll_item_into_view(item:Dynamic):Void;
+	public function bp_scroll_item_into_view(item:unreal.Object):Void;
 	/**
 		x.bp_set_item_selection(item, selected) -> None
 		Sets whether the given item is selected.
@@ -113,7 +104,7 @@ package unreal;
 		    item (Object): 
 		    selected (bool):
 	**/
-	public function bp_set_item_selection(item:Dynamic, selected:Dynamic):Void;
+	public function bp_set_item_selection(item:unreal.Object, selected:Bool):Void;
 	/**
 		x.bp_set_list_items(list_items) -> None
 		Sets the array of objects to display rows for in the list
@@ -121,7 +112,7 @@ package unreal;
 		Args:
 		    list_items (Array(Object)):
 	**/
-	public function bp_set_list_items(list_items:Dynamic):Void;
+	public function bp_set_list_items(list_items:unreal.Array):Void;
 	/**
 		x.bp_set_selected_item(item) -> None
 		Sets the given item as the sole selected item.
@@ -129,7 +120,7 @@ package unreal;
 		Args:
 		    item (Object):
 	**/
-	public function bp_set_selected_item(item:Dynamic):Void;
+	public function bp_set_selected_item(item:unreal.Object):Void;
 	/**
 		x.clear_list_items() -> None
 		Removes all items from the list
@@ -157,7 +148,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_index_for_item(item:Dynamic):Int;
+	public function get_index_for_item(item:unreal.Object):Int;
 	/**
 		x.get_item_at(index) -> Object
 		Returns the item at the given index
@@ -168,7 +159,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function get_item_at(index:Dynamic):unreal.Object;
+	public function get_item_at(index:Int):unreal.Object;
 	/**
 		x.get_list_items() -> Array(Object)
 		Gets the list of all items in the list.
@@ -205,7 +196,7 @@ package unreal;
 		Args:
 		    index (int32):
 	**/
-	public function navigate_to_index(index:Dynamic):Void;
+	public function navigate_to_index(index:Int):Void;
 	/**
 		(Orientation):  [Read-Only] The scroll & layout orientation of the list. ListView and TileView only.
 		Vertical will scroll vertically and arrange tiles into rows.
@@ -219,7 +210,7 @@ package unreal;
 		Args:
 		    item (Object):
 	**/
-	public function remove_item(item:Dynamic):Void;
+	public function remove_item(item:unreal.Object):Void;
 	/**
 		(bool):  [Read-Only] Return Focus to Selection
 	**/
@@ -231,7 +222,7 @@ package unreal;
 		Args:
 		    index (int32):
 	**/
-	public function scroll_index_into_view(index:Dynamic):Void;
+	public function scroll_index_into_view(index:Int):Void;
 	/**
 		(SelectionMode):  [Read-Only] Selection Mode
 	**/
@@ -243,7 +234,7 @@ package unreal;
 		Args:
 		    index (int32):
 	**/
-	public function set_selected_index(index:Dynamic):Void;
+	public function set_selected_index(index:Int):Void;
 	/**
 		x.set_selection_mode(selection_mode) -> None
 		Sets the new selection mode, preserving the current selection where possible.
@@ -251,5 +242,5 @@ package unreal;
 		Args:
 		    selection_mode (SelectionMode):
 	**/
-	public function set_selection_mode(selection_mode:Dynamic):Void;
+	public function set_selection_mode(selection_mode:unreal.SelectionMode):Void;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Character") extern class Character extends unreal.Pawn {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.cache_initial_mesh_offset(mesh_relative_location, mesh_relative_rotation) -> None
 		Cache mesh offset from capsule. This is used as the target for network smoothing interpolation, when the mesh is offset with lagged smoothing.
 		This is automatically called during initialization; call this at runtime if you intend to change the default mesh offset from the capsule.
@@ -20,7 +11,7 @@ package unreal;
 		    mesh_relative_location (Vector): 
 		    mesh_relative_rotation (Rotator):
 	**/
-	public function cache_initial_mesh_offset(mesh_relative_location:Dynamic, mesh_relative_rotation:Dynamic):Void;
+	public function cache_initial_mesh_offset(mesh_relative_location:unreal.Vector, mesh_relative_rotation:unreal.Rotator):Void;
 	/**
 		x.can_crouch() -> bool
 		
@@ -70,7 +61,7 @@ package unreal;
 		Args:
 		    client_simulation (bool):
 	**/
-	public function crouch(client_simulation:Dynamic):Void;
+	public function crouch(client_simulation:Bool):Void;
 	/**
 		(float):  [Read-Write] Default crouched eye height
 	**/
@@ -131,6 +122,7 @@ package unreal;
 	/**
 		deprecated: 'is_jumping' was renamed to 'is_jump_providing_force'.
 	**/
+	@:deprecated
 	public function is_jumping():Void;
 	/**
 		x.is_playing_networked_root_motion_montage() -> bool
@@ -200,6 +192,7 @@ package unreal;
 	/**
 		deprecated: 'launch' was renamed to 'launch_character'.
 	**/
+	@:deprecated
 	public function launch():Void;
 	/**
 		x.launch_character(launch_velocity, xy_override, z_override) -> None
@@ -211,7 +204,7 @@ package unreal;
 		    xy_override (bool): if true replace the XY part of the Character's velocity instead of adding to it.
 		    z_override (bool): if true replace the Z component of the Character's velocity instead of adding to it.
 	**/
-	public function launch_character(launch_velocity:Dynamic, xy_override:Dynamic, z_override:Dynamic):Void;
+	public function launch_character(launch_velocity:unreal.Vector, xy_override:Bool, z_override:Bool):Void;
 	/**
 		(SkeletalMeshComponent):  [Read-Only] The main skeletal mesh associated with this Character (optional sub-object).
 	**/
@@ -240,7 +233,7 @@ package unreal;
 		    half_height_adjust (float): difference between default collision half-height, and actual crouched capsule half-height.
 		    scaled_half_height_adjust (float): difference after component scale is taken in to account.
 	**/
-	public function on_end_crouch(half_height_adjust:Dynamic, scaled_half_height_adjust:Dynamic):Void;
+	public function on_end_crouch(half_height_adjust:Float, scaled_half_height_adjust:Float):Void;
 	/**
 		x.on_jumped() -> None
 		Event fired when the character has just started jumping
@@ -256,7 +249,7 @@ package unreal;
 		Args:
 		    hit (HitResult): Result describing the landing that resulted in a valid landing spot.
 	**/
-	public function on_landed(hit:Dynamic):Void;
+	public function on_landed(hit:unreal.HitResult):Void;
 	/**
 		x.on_launched(launch_velocity, xy_override, z_override) -> None
 		Let blueprint know that we were launched
@@ -266,7 +259,7 @@ package unreal;
 		    xy_override (bool): 
 		    z_override (bool):
 	**/
-	public function on_launched(launch_velocity:Dynamic, xy_override:Dynamic, z_override:Dynamic):Void;
+	public function on_launched(launch_velocity:unreal.Vector, xy_override:Bool, z_override:Bool):Void;
 	/**
 		x.on_movement_mode_changed(prev_movement_mode, new_movement_mode, prev_custom_mode, new_custom_mode) -> None
 		Called from CharacterMovementComponent to notify the character that the movement mode has changed.
@@ -277,7 +270,7 @@ package unreal;
 		    prev_custom_mode (uint8): Custom mode before the change (applicable if PrevMovementMode is Custom)
 		    new_custom_mode (uint8): New custom mode (applicable if NewMovementMode is Custom)
 	**/
-	public function on_movement_mode_changed(prev_movement_mode:Dynamic, new_movement_mode:Dynamic, prev_custom_mode:Dynamic, new_custom_mode:Dynamic):Void;
+	public function on_movement_mode_changed(prev_movement_mode:unreal.MovementMode, new_movement_mode:unreal.MovementMode, prev_custom_mode:Dynamic, new_custom_mode:Dynamic):Void;
 	/**
 		(CharacterReachedApexSignature):  [Read-Write] Broadcast when Character's jump reaches its apex. Needs CharacterMovement->bNotifyApex = true
 	**/
@@ -290,7 +283,7 @@ package unreal;
 		    half_height_adjust (float): difference between default collision half-height, and actual crouched capsule half-height.
 		    scaled_half_height_adjust (float): difference after component scale is taken in to account.
 	**/
-	public function on_start_crouch(half_height_adjust:Dynamic, scaled_half_height_adjust:Dynamic):Void;
+	public function on_start_crouch(half_height_adjust:Float, scaled_half_height_adjust:Float):Void;
 	/**
 		x.on_walking_off_ledge(previous_floor_impact_normal, previous_floor_contact_normal, previous_location, time_delta) -> None
 		Event fired when the Character is walking off a surface and is about to fall because CharacterMovement->CurrentFloor became unwalkable.
@@ -303,7 +296,7 @@ package unreal;
 		    previous_location (Vector): Previous character location before movement off the ledge.
 		    time_delta (float):
 	**/
-	public function on_walking_off_ledge(previous_floor_impact_normal:Dynamic, previous_floor_contact_normal:Dynamic, previous_location:Dynamic, time_delta:Dynamic):Void;
+	public function on_walking_off_ledge(previous_floor_impact_normal:unreal.Vector, previous_floor_contact_normal:unreal.Vector, previous_location:unreal.Vector, time_delta:Float):Void;
 	/**
 		x.play_anim_montage(anim_montage, play_rate=1.000000, start_section_name="None") -> float
 		Play Animation Montage on the character mesh. Returns the length of the animation montage in seconds, or 0.f if failed to play. *
@@ -316,7 +309,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function play_anim_montage(anim_montage:Dynamic, play_rate:Dynamic, start_section_name:Dynamic):Float;
+	public function play_anim_montage(anim_montage:unreal.AnimMontage, play_rate:Float, start_section_name:unreal.Name):Float;
 	/**
 		(bool):  [Read-Only] When true, player wants to jump
 	**/
@@ -332,7 +325,7 @@ package unreal;
 		Args:
 		    anim_montage (AnimMontage):
 	**/
-	public function stop_anim_montage(anim_montage:Dynamic):Void;
+	public function stop_anim_montage(anim_montage:unreal.AnimMontage):Void;
 	/**
 		x.stop_jumping() -> None
 		Stop the character from jumping on the next update.
@@ -351,7 +344,7 @@ package unreal;
 		Args:
 		    client_simulation (bool):
 	**/
-	public function un_crouch(client_simulation:Dynamic):Void;
+	public function un_crouch(client_simulation:Bool):Void;
 	/**
 		x.update_custom_movement(delta_time) -> None
 		Event for implementing custom character movement mode. Called by CharacterMovement if MovementMode is set to Custom.
@@ -361,7 +354,7 @@ package unreal;
 		Args:
 		    delta_time (float):
 	**/
-	public function update_custom_movement(delta_time:Dynamic):Void;
+	public function update_custom_movement(delta_time:Float):Void;
 	/**
 		(bool):  [Read-Only] Tracks whether or not the character was already jumping last frame.
 	**/

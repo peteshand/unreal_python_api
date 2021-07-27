@@ -2,17 +2,9 @@
 package unreal;
 @:pythonImport("unreal", "CharacterMovementComponent") extern class CharacterMovementComponent extends unreal.PawnMovementComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		deprecated: 'accel_rate' was renamed to 'max_acceleration'.
 	**/
+	@:deprecated
 	public var accel_rate : Dynamic;
 	/**
 		x.add_force(force) -> None
@@ -26,7 +18,7 @@ package unreal;
 		Args:
 		    force (Vector): Force to apply.
 	**/
-	public function add_force(force:Dynamic):Void;
+	public function add_force(force:unreal.Vector):Void;
 	/**
 		x.add_impulse(impulse, velocity_change=False) -> None
 		Add impulse to character. Impulses are accumulated each tick and applied together
@@ -39,10 +31,11 @@ package unreal;
 		    impulse (Vector): Impulse to apply.
 		    velocity_change (bool): Whether or not the impulse is relative to mass.
 	**/
-	public function add_impulse(impulse:Dynamic, velocity_change:Dynamic):Void;
+	public function add_impulse(impulse:unreal.Vector, velocity_change:Bool):Void;
 	/**
 		deprecated: 'add_momentum' was renamed to 'add_impulse'.
 	**/
+	@:deprecated
 	public function add_momentum():Void;
 	/**
 		(float):  [Read-Write] When falling, amount of lateral movement control available to the character.
@@ -62,6 +55,7 @@ package unreal;
 	/**
 		deprecated: 'air_speed' was renamed to 'max_fly_speed'.
 	**/
+	@:deprecated
 	public var air_speed : Dynamic;
 	/**
 		(bool):  [Read-Write] Allow Physics Rotation During Anim Root Motion
@@ -97,14 +91,17 @@ package unreal;
 	/**
 		deprecated: 'b_crouch_moves_character_down' was renamed to 'crouch_maintains_base_location'.
 	**/
+	@:deprecated
 	public var b_crouch_moves_character_down : Dynamic;
 	/**
 		deprecated: 'b_orient_to_movement' was renamed to 'orient_rotation_to_movement'.
 	**/
+	@:deprecated
 	public var b_orient_to_movement : Dynamic;
 	/**
 		deprecated: 'braking_deceleration' was renamed to 'braking_deceleration_walking'.
 	**/
+	@:deprecated
 	public var braking_deceleration : Dynamic;
 	/**
 		(float):  [Read-Write] Lateral deceleration when falling and not applying acceleration.
@@ -161,7 +158,7 @@ package unreal;
 		    fluid (bool): true if moving through a fluid, causing Friction to always be applied regardless of acceleration.
 		    braking_deceleration (float): deceleration applied when not accelerating, or when exceeding max velocity.
 	**/
-	public function calc_velocity(delta_time:Dynamic, friction:Dynamic, fluid:Dynamic, braking_deceleration:Dynamic):Void;
+	public function calc_velocity(delta_time:Float, friction:Float, fluid:Bool, braking_deceleration:Float):Void;
 	/**
 		(bool):  [Read-Write] If true, Character can walk off a ledge.
 	**/
@@ -192,10 +189,11 @@ package unreal;
 		
 		    floor_result (FindFloorResult): Result of the floor check
 	**/
-	public function compute_floor_distance(capsule_location:Dynamic, line_distance:Dynamic, sweep_distance:Dynamic, sweep_radius:Dynamic):unreal.FindFloorResult;
+	public function compute_floor_distance(capsule_location:unreal.Vector, line_distance:Float, sweep_distance:Float, sweep_radius:Float):unreal.FindFloorResult;
 	/**
 		deprecated: 'crouch_height' was renamed to 'crouched_half_height'.
 	**/
+	@:deprecated
 	public var crouch_height : Dynamic;
 	/**
 		(bool):  [Read-Only] If true, crouching should keep the base of the capsule in place by lowering the center of the shrunken capsule. If false, the base of the capsule moves up and the center stays in place.
@@ -257,7 +255,7 @@ package unreal;
 		
 		    floor_result (FindFloorResult): Result of the floor check
 	**/
-	public function find_floor(capsule_location:Dynamic):unreal.FindFloorResult;
+	public function find_floor(capsule_location:unreal.Vector):unreal.FindFloorResult;
 	/**
 		(bool):  [Read-Only] Force the Character in MOVE_Walking to do a check for a valid floor even if he hasn't moved. Cleared after next floor check.
 		Normally if bAlwaysCheckFloor is false we try to avoid the floor check unless some conditions are met, but this can be used to force the next check to always run.
@@ -370,6 +368,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
+	@:deprecated
 	public function get_modified_max_acceleration():Float;
 	/**
 		x.get_movement_base() -> PrimitiveComponent
@@ -427,6 +426,7 @@ package unreal;
 	/**
 		deprecated: 'ground_speed' was renamed to 'max_walk_speed'.
 	**/
+	@:deprecated
 	public var ground_speed : Dynamic;
 	/**
 		(NavAvoidanceMask):  [Read-Only] Will avoid other agents if they are in one of specified groups
@@ -482,7 +482,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_walkable(hit:Dynamic):Bool;
+	public function is_walkable(hit:unreal.HitResult):Bool;
 	/**
 		x.is_walking() -> bool
 		Returns true if the character is in the 'Walking' movement mode.
@@ -502,6 +502,7 @@ package unreal;
 	/**
 		deprecated: 'jump_z' was renamed to 'jump_z_velocity'.
 	**/
+	@:deprecated
 	public var jump_z : Dynamic;
 	/**
 		(float):  [Read-Write] Initial velocity (instantaneous vertical acceleration) when jumping.
@@ -628,10 +629,12 @@ package unreal;
 	/**
 		deprecated: 'nav_mesh_projection_capsule_height_scale_down' was renamed to 'nav_mesh_projection_height_scale_down'.
 	**/
+	@:deprecated
 	public var nav_mesh_projection_capsule_height_scale_down : Dynamic;
 	/**
 		deprecated: 'nav_mesh_projection_capsule_height_scale_up' was renamed to 'nav_mesh_projection_height_scale_up'.
 	**/
+	@:deprecated
 	public var nav_mesh_projection_capsule_height_scale_up : Dynamic;
 	/**
 		(float):  [Read-Write] Scale of the total capsule height to use for projection from navmesh to underlying geometry in the downward direction.
@@ -750,7 +753,7 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	public function set_avoidance_enabled(enable:Dynamic):Void;
+	public function set_avoidance_enabled(enable:Bool):Void;
 	/**
 		x.set_avoidance_group(group_flags) -> None
 		Set Avoidance Group
@@ -759,7 +762,8 @@ package unreal;
 		Args:
 		    group_flags (int32):
 	**/
-	public function set_avoidance_group(group_flags:Dynamic):Void;
+	@:deprecated
+	public function set_avoidance_group(group_flags:Int):Void;
 	/**
 		x.set_avoidance_group_mask(group_mask) -> None
 		Set Avoidance Group Mask
@@ -767,7 +771,7 @@ package unreal;
 		Args:
 		    group_mask (NavAvoidanceMask):
 	**/
-	public function set_avoidance_group_mask(group_mask:Dynamic):Void;
+	public function set_avoidance_group_mask(group_mask:unreal.NavAvoidanceMask):Void;
 	/**
 		x.set_groups_to_avoid(group_flags) -> None
 		Set Groups to Avoid
@@ -776,7 +780,8 @@ package unreal;
 		Args:
 		    group_flags (int32):
 	**/
-	public function set_groups_to_avoid(group_flags:Dynamic):Void;
+	@:deprecated
+	public function set_groups_to_avoid(group_flags:Int):Void;
 	/**
 		x.set_groups_to_avoid_mask(group_mask) -> None
 		Set Groups to Avoid Mask
@@ -784,7 +789,7 @@ package unreal;
 		Args:
 		    group_mask (NavAvoidanceMask):
 	**/
-	public function set_groups_to_avoid_mask(group_mask:Dynamic):Void;
+	public function set_groups_to_avoid_mask(group_mask:unreal.NavAvoidanceMask):Void;
 	/**
 		x.set_groups_to_ignore(group_flags) -> None
 		Set Groups to Ignore
@@ -793,7 +798,8 @@ package unreal;
 		Args:
 		    group_flags (int32):
 	**/
-	public function set_groups_to_ignore(group_flags:Dynamic):Void;
+	@:deprecated
+	public function set_groups_to_ignore(group_flags:Int):Void;
 	/**
 		x.set_groups_to_ignore_mask(group_mask) -> None
 		Set Groups to Ignore Mask
@@ -801,7 +807,7 @@ package unreal;
 		Args:
 		    group_mask (NavAvoidanceMask):
 	**/
-	public function set_groups_to_ignore_mask(group_mask:Dynamic):Void;
+	public function set_groups_to_ignore_mask(group_mask:unreal.NavAvoidanceMask):Void;
 	/**
 		x.set_movement_mode(new_movement_mode, new_custom_mode=0) -> None
 		Change movement mode.
@@ -810,7 +816,7 @@ package unreal;
 		    new_movement_mode (MovementMode): The new movement mode
 		    new_custom_mode (uint8): The new custom sub-mode, only applicable if NewMovementMode is Custom.
 	**/
-	public function set_movement_mode(new_movement_mode:Dynamic, new_custom_mode:Dynamic):Void;
+	public function set_movement_mode(new_movement_mode:unreal.MovementMode, new_custom_mode:Dynamic):Void;
 	/**
 		x.set_walkable_floor_angle(walkable_floor_angle) -> None
 		Set the max angle in degrees of a walkable surface for the character. Also computes WalkableFloorZ.
@@ -818,7 +824,7 @@ package unreal;
 		Args:
 		    walkable_floor_angle (float):
 	**/
-	public function set_walkable_floor_angle(walkable_floor_angle:Dynamic):Void;
+	public function set_walkable_floor_angle(walkable_floor_angle:Float):Void;
 	/**
 		x.set_walkable_floor_z(walkable_floor_z) -> None
 		Set the Z component of the normal of the steepest walkable surface for the character. Also computes WalkableFloorAngle.
@@ -826,7 +832,7 @@ package unreal;
 		Args:
 		    walkable_floor_z (float):
 	**/
-	public function set_walkable_floor_z(walkable_floor_z:Dynamic):Void;
+	public function set_walkable_floor_z(walkable_floor_z:Float):Void;
 	/**
 		(float):  [Read-Write] Force applied to objects we stand on (due to Mass and Gravity) is scaled by this amount.
 	**/
@@ -872,5 +878,6 @@ package unreal;
 	/**
 		deprecated: 'water_speed' was renamed to 'max_swim_speed'.
 	**/
+	@:deprecated
 	public var water_speed : Dynamic;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimGraphLibrary") extern class AnimGraphLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.calculate_velocity_from_position_history(delta_seconds, position, history, number_of_samples, velocity_min, velocity_max) -> (float, history=PositionHistory)
 		This function calculates the velocity of a position changing over time.
 		You need to hook up a valid PositionHistory variable to this for storage.
@@ -28,7 +19,7 @@ package unreal;
 		
 		    history (PositionHistory):
 	**/
-	static public function calculate_velocity_from_position_history(delta_seconds:Dynamic, position:Dynamic, history:Dynamic, number_of_samples:Dynamic, velocity_min:Dynamic, velocity_max:Dynamic):unreal.PositionHistory;
+	static public function calculate_velocity_from_position_history(delta_seconds:Float, position:unreal.Vector, history:unreal.PositionHistory, number_of_samples:Int, velocity_min:Float, velocity_max:Float):unreal.PositionHistory;
 	/**
 		X.calculate_velocity_from_sockets(delta_seconds, component, socket_or_bone_name, reference_socket_or_bone, socket_space, offset_in_bone_space, history, number_of_samples, velocity_min, velocity_max, easing_type, custom_curve) -> (float, history=PositionHistory)
 		This function calculates the velocity of an offset position on a bone / socket over time.
@@ -54,7 +45,7 @@ package unreal;
 		
 		    history (PositionHistory):
 	**/
-	static public function calculate_velocity_from_sockets(delta_seconds:Dynamic, component:Dynamic, socket_or_bone_name:Dynamic, reference_socket_or_bone:Dynamic, socket_space:Dynamic, offset_in_bone_space:Dynamic, history:Dynamic, number_of_samples:Dynamic, velocity_min:Dynamic, velocity_max:Dynamic, easing_type:Dynamic, custom_curve:Dynamic):unreal.PositionHistory;
+	static public function calculate_velocity_from_sockets(delta_seconds:Float, component:unreal.SkeletalMeshComponent, socket_or_bone_name:unreal.Name, reference_socket_or_bone:unreal.Name, socket_space:unreal.RelativeTransformSpace, offset_in_bone_space:unreal.Vector, history:unreal.PositionHistory, number_of_samples:Int, velocity_min:Float, velocity_max:Float, easing_type:unreal.EasingFuncType, custom_curve:unreal.RuntimeFloatCurve):unreal.PositionHistory;
 	/**
 		X.direction_between_sockets(component, socket_or_bone_name_from, socket_or_bone_name_to) -> Vector
 		Computes the direction between two bones / sockets.
@@ -67,7 +58,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function direction_between_sockets(component:Dynamic, socket_or_bone_name_from:Dynamic, socket_or_bone_name_to:Dynamic):unreal.Vector;
+	static public function direction_between_sockets(component:unreal.SkeletalMeshComponent, socket_or_bone_name_from:unreal.Name, socket_or_bone_name_to:unreal.Name):unreal.Vector;
 	/**
 		X.distance_between_sockets(component, socket_or_bone_name_a, socket_space_a, socket_or_bone_name_b, socket_space_b, remap_range, range_min, range_max, out_range_min, out_range_max) -> float
 		Computes the distance between two bones / sockets and can remap the range.
@@ -87,7 +78,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function distance_between_sockets(component:Dynamic, socket_or_bone_name_a:Dynamic, socket_space_a:Dynamic, socket_or_bone_name_b:Dynamic, socket_space_b:Dynamic, remap_range:Dynamic, range_min:Dynamic, range_max:Dynamic, out_range_min:Dynamic, out_range_max:Dynamic):Float;
+	static public function distance_between_sockets(component:unreal.SkeletalMeshComponent, socket_or_bone_name_a:unreal.Name, socket_space_a:unreal.RelativeTransformSpace, socket_or_bone_name_b:unreal.Name, socket_space_b:unreal.RelativeTransformSpace, remap_range:Bool, range_min:Float, range_max:Float, out_range_min:Float, out_range_max:Float):Float;
 	/**
 		X.k2_end_profiling_timer(log=True, log_prefix="") -> float
 		This function ends measuring a profiling bracket and optionally logs the result
@@ -100,7 +91,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function k2_end_profiling_timer(log:Dynamic, log_prefix:Dynamic):Float;
+	static public function k2_end_profiling_timer(log:Bool, log_prefix:String):Float;
 	/**
 		X.k2_start_profiling_timer() -> None
 		This function starts measuring the time for a profiling bracket
@@ -121,7 +112,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	static public function look_at(current_transform:Dynamic, target_position:Dynamic, look_at_vector:Dynamic, use_up_vector:Dynamic, up_vector:Dynamic, clamp_cone_in_degree:Dynamic):unreal.Transform;
+	static public function look_at(current_transform:unreal.Transform, target_position:unreal.Vector, look_at_vector:unreal.Vector, use_up_vector:Bool, up_vector:unreal.Vector, clamp_cone_in_degree:Float):unreal.Transform;
 	/**
 		X.make_float_from_perlin_noise(value, range_out_min, range_out_max) -> float
 		This function creates perlin noise for a single float and then range map to RangeOut
@@ -134,7 +125,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function make_float_from_perlin_noise(value:Dynamic, range_out_min:Dynamic, range_out_max:Dynamic):Float;
+	static public function make_float_from_perlin_noise(value:Float, range_out_min:Float, range_out_max:Float):Float;
 	/**
 		X.make_vector_from_perlin_noise(x, y, z, range_out_min_x, range_out_max_x, range_out_min_y, range_out_max_y, range_out_min_z, range_out_max_z) -> Vector
 		This function creates perlin noise from input X, Y, Z, and then range map to RangeOut, and out put to OutX, OutY, OutZ
@@ -153,7 +144,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function make_vector_from_perlin_noise(x:Dynamic, y:Dynamic, z:Dynamic, range_out_min_x:Dynamic, range_out_max_x:Dynamic, range_out_min_y:Dynamic, range_out_max_y:Dynamic, range_out_min_z:Dynamic, range_out_max_z:Dynamic):unreal.Vector;
+	static public function make_vector_from_perlin_noise(x:Float, y:Float, z:Float, range_out_min_x:Float, range_out_max_x:Float, range_out_min_y:Float, range_out_max_y:Float, range_out_min_z:Float, range_out_max_z:Float):unreal.Vector;
 	/**
 		X.two_bone_ik(root_pos, joint_pos, end_pos, joint_target, effector, allow_stretching, start_stretch_ratio, max_stretch_scale) -> (out_joint_pos=Vector, out_end_pos=Vector)
 		Computes the transform for two bones using inverse kinematics.
@@ -175,5 +166,5 @@ package unreal;
 		
 		    out_end_pos (Vector): The resulting position for the end (wrist)
 	**/
-	static public function two_bone_ik(root_pos:Dynamic, joint_pos:Dynamic, end_pos:Dynamic, joint_target:Dynamic, effector:Dynamic, allow_stretching:Dynamic, start_stretch_ratio:Dynamic, max_stretch_scale:Dynamic):python.Tuple<Dynamic>;
+	static public function two_bone_ik(root_pos:unreal.Vector, joint_pos:unreal.Vector, end_pos:unreal.Vector, joint_target:unreal.Vector, effector:unreal.Vector, allow_stretching:Bool, start_stretch_ratio:Float, max_stretch_scale:Float):python.Tuple<Dynamic>;
 }

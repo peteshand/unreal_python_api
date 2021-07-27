@@ -2,21 +2,14 @@
 package unreal;
 @:pythonImport("unreal", "SpringArmComponent") extern class SpringArmComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		deprecated: 'b_use_controller_view_rotation' was renamed to 'use_pawn_control_rotation'.
 	**/
+	@:deprecated
 	public var b_use_controller_view_rotation : Dynamic;
 	/**
 		deprecated: 'b_use_pawn_view_rotation' was renamed to 'use_pawn_control_rotation'.
 	**/
+	@:deprecated
 	public var b_use_pawn_view_rotation : Dynamic;
 	/**
 		(float):  [Read-Write] Max distance the camera target may lag behind the current location. If set to zero, no max distance is enforced.

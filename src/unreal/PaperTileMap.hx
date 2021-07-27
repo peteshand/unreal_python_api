@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PaperTileMap") extern class PaperTileMap extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] The extrusion thickness of collision geometry when using a 3D collision domain
 	**/
 	public var collision_thickness : Float;

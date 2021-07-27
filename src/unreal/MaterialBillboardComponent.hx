@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MaterialBillboardComponent") extern class MaterialBillboardComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_element(material, distance_to_opacity_curve, size_is_in_screen_space, base_size_x, base_size_y, distance_to_size_curve) -> None
 		Adds an element to the sprite.
 		
@@ -22,7 +13,7 @@ package unreal;
 		    base_size_y (float): 
 		    distance_to_size_curve (CurveFloat):
 	**/
-	public function add_element(material:Dynamic, distance_to_opacity_curve:Dynamic, size_is_in_screen_space:Dynamic, base_size_x:Dynamic, base_size_y:Dynamic, distance_to_size_curve:Dynamic):Void;
+	public function add_element(material:unreal.MaterialInterface, distance_to_opacity_curve:unreal.CurveFloat, size_is_in_screen_space:Bool, base_size_x:Float, base_size_y:Float, distance_to_size_curve:unreal.CurveFloat):Void;
 	/**
 		(Array(MaterialSpriteElement)):  [Read-Only] Current array of material billboard elements
 	**/
@@ -34,5 +25,5 @@ package unreal;
 		Args:
 		    new_elements (Array(MaterialSpriteElement)):
 	**/
-	public function set_elements(new_elements:Dynamic):Void;
+	public function set_elements(new_elements:unreal.Array):Void;
 }

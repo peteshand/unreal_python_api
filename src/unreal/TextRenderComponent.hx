@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TextRenderComponent") extern class TextRenderComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Allows text to draw unmodified when using debug visualization modes. *
 	**/
 	public var always_render_as_text : Bool;
@@ -49,7 +40,7 @@ package unreal;
 		Args:
 		    value (Font):
 	**/
-	public function set_font(value:Dynamic):Void;
+	public function set_font(value:unreal.Font):Void;
 	/**
 		x.set_horiz_spacing_adjust(value) -> None
 		Change the text horizontal spacing adjustment and signal the primitives to be rebuilt
@@ -57,7 +48,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_horiz_spacing_adjust(value:Dynamic):Void;
+	public function set_horiz_spacing_adjust(value:Float):Void;
 	/**
 		x.set_horizontal_alignment(value) -> None
 		Change the horizontal alignment and signal the primitives to be rebuilt
@@ -65,7 +56,7 @@ package unreal;
 		Args:
 		    value (HorizTextAligment):
 	**/
-	public function set_horizontal_alignment(value:Dynamic):Void;
+	public function set_horizontal_alignment(value:unreal.HorizTextAligment):Void;
 	/**
 		x.set_text(value) -> None
 		Change the text value and signal the primitives to be rebuilt
@@ -73,7 +64,7 @@ package unreal;
 		Args:
 		    value (Text):
 	**/
-	public function set_text(value:Dynamic):Void;
+	public function set_text(value:unreal.Text):Void;
 	/**
 		x.set_text_material(material) -> None
 		Change the text material and signal the primitives to be rebuilt
@@ -81,7 +72,7 @@ package unreal;
 		Args:
 		    material (MaterialInterface):
 	**/
-	public function set_text_material(material:Dynamic):Void;
+	public function set_text_material(material:unreal.MaterialInterface):Void;
 	/**
 		x.set_text_render_color(value) -> None
 		Change the text render color and signal the primitives to be rebuilt
@@ -89,7 +80,7 @@ package unreal;
 		Args:
 		    value (Color):
 	**/
-	public function set_text_render_color(value:Dynamic):Void;
+	public function set_text_render_color(value:unreal.Color):Void;
 	/**
 		x.set_vert_spacing_adjust(value) -> None
 		Change the text vertical spacing adjustment and signal the primitives to be rebuilt
@@ -97,7 +88,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_vert_spacing_adjust(value:Dynamic):Void;
+	public function set_vert_spacing_adjust(value:Float):Void;
 	/**
 		x.set_vertical_alignment(value) -> None
 		Change the vertical alignment and signal the primitives to be rebuilt
@@ -105,7 +96,7 @@ package unreal;
 		Args:
 		    value (VerticalTextAligment):
 	**/
-	public function set_vertical_alignment(value:Dynamic):Void;
+	public function set_vertical_alignment(value:unreal.VerticalTextAligment):Void;
 	/**
 		x.set_world_size(value) -> None
 		Change the world size of the text and signal the primitives to be rebuilt
@@ -113,7 +104,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_world_size(value:Dynamic):Void;
+	public function set_world_size(value:Float):Void;
 	/**
 		x.set_x_scale(value) -> None
 		Change the text X scale and signal the primitives to be rebuilt
@@ -121,7 +112,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_x_scale(value:Dynamic):Void;
+	public function set_x_scale(value:Float):Void;
 	/**
 		x.set_y_scale(value) -> None
 		Change the text Y scale and signal the primitives to be rebuilt
@@ -129,7 +120,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_y_scale(value:Dynamic):Void;
+	public function set_y_scale(value:Float):Void;
 	/**
 		(Text):  [Read-Only] Text content, can be multi line using <br> as line separator
 	**/

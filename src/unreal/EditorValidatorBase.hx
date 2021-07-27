@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorValidatorBase") extern class EditorValidatorBase extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.asset_fails(asset, message, validation_errors) -> Array(Text)
 		Asset Fails
 		
@@ -24,7 +15,7 @@ package unreal;
 		
 		    validation_errors (Array(Text)):
 	**/
-	public function asset_fails(asset:Dynamic, message:Dynamic, validation_errors:Dynamic):Dynamic;
+	public function asset_fails(asset:unreal.Object, message:unreal.Text, validation_errors:unreal.Array):Dynamic;
 	/**
 		x.asset_passes(asset) -> None
 		Asset Passes
@@ -32,7 +23,7 @@ package unreal;
 		Args:
 		    asset (Object):
 	**/
-	public function asset_passes(asset:Dynamic):Void;
+	public function asset_passes(asset:unreal.Object):Void;
 	/**
 		x.asset_warning(asset, message) -> None
 		Asset Warning
@@ -41,7 +32,7 @@ package unreal;
 		    asset (Object): 
 		    message (Text):
 	**/
-	public function asset_warning(asset:Dynamic, message:Dynamic):Void;
+	public function asset_warning(asset:unreal.Object, message:unreal.Text):Void;
 	/**
 		x.can_validate_asset(asset) -> bool
 		Override this to determine whether or not you can validate a given asset with this validator
@@ -52,7 +43,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function can_validate_asset(asset:Dynamic):Bool;
+	public function can_validate_asset(asset:unreal.Object):Bool;
 	/**
 		x.get_validation_result() -> DataValidationResult
 		Get Validation Result
@@ -74,5 +65,5 @@ package unreal;
 		
 		    validation_errors (Array(Text)):
 	**/
-	public function validate_loaded_asset(asset:Dynamic, validation_errors:Dynamic):Dynamic;
+	public function validate_loaded_asset(asset:unreal.Object, validation_errors:unreal.Array):Dynamic;
 }

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "VolumetricCloudComponent") extern class VolumetricCloudComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Color):  [Read-Only] The ground albedo used to light the cloud from below with respect to the sun light and sky atmosphere.
 		This is only used by the cloud material when the 'Volumetric Advanced' node have GroundContribution enabled.
 	**/
@@ -43,7 +34,7 @@ package unreal;
 		Args:
 		    new_value (Color):
 	**/
-	public function set_ground_albedo(new_value:Dynamic):Void;
+	public function set_ground_albedo(new_value:unreal.Color):Void;
 	/**
 		x.set_layer_bottom_altitude(new_value) -> None
 		Set Layer Bottom Altitude
@@ -51,7 +42,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_layer_bottom_altitude(new_value:Dynamic):Void;
+	public function set_layer_bottom_altitude(new_value:Float):Void;
 	/**
 		x.set_layer_height(new_value) -> None
 		Set Layer Height
@@ -59,7 +50,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_layer_height(new_value:Dynamic):Void;
+	public function set_layer_height(new_value:Float):Void;
 	/**
 		x.set_material(new_value) -> None
 		Set Material
@@ -67,7 +58,7 @@ package unreal;
 		Args:
 		    new_value (MaterialInterface):
 	**/
-	public function set_material(new_value:Dynamic):Void;
+	public function set_material(new_value:unreal.MaterialInterface):Void;
 	/**
 		x.set_planet_radius(new_value) -> None
 		Set Planet Radius
@@ -75,7 +66,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_planet_radius(new_value:Dynamic):Void;
+	public function set_planet_radius(new_value:Float):Void;
 	/**
 		x.set_reflection_sample_count_scale(new_value) -> None
 		Set Reflection Sample Count Scale
@@ -83,7 +74,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_reflection_sample_count_scale(new_value:Dynamic):Void;
+	public function set_reflection_sample_count_scale(new_value:Float):Void;
 	/**
 		x.set_shadow_reflection_sample_count_scale(new_value) -> None
 		Set Shadow Reflection Sample Count Scale
@@ -91,7 +82,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_reflection_sample_count_scale(new_value:Dynamic):Void;
+	public function set_shadow_reflection_sample_count_scale(new_value:Float):Void;
 	/**
 		x.set_shadow_tracing_distance(new_value) -> None
 		Set Shadow Tracing Distance
@@ -99,7 +90,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_tracing_distance(new_value:Dynamic):Void;
+	public function set_shadow_tracing_distance(new_value:Float):Void;
 	/**
 		x.set_shadow_view_sample_count_scale(new_value) -> None
 		Set Shadow View Sample Count Scale
@@ -107,7 +98,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_shadow_view_sample_count_scale(new_value:Dynamic):Void;
+	public function set_shadow_view_sample_count_scale(new_value:Float):Void;
 	/**
 		x.set_sky_light_cloud_bottom_occlusion(new_value) -> None
 		Set Sky Light Cloud Bottom Occlusion
@@ -115,7 +106,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_sky_light_cloud_bottom_occlusion(new_value:Dynamic):Void;
+	public function set_sky_light_cloud_bottom_occlusion(new_value:Float):Void;
 	/**
 		x.set_tracing_max_distance(new_value) -> None
 		Set Tracing Max Distance
@@ -123,7 +114,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_tracing_max_distance(new_value:Dynamic):Void;
+	public function set_tracing_max_distance(new_value:Float):Void;
 	/**
 		x.set_tracing_start_max_distance(new_value) -> None
 		Set Tracing Start Max Distance
@@ -131,7 +122,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_tracing_start_max_distance(new_value:Dynamic):Void;
+	public function set_tracing_start_max_distance(new_value:Float):Void;
 	/**
 		x.set_view_sample_count_scale(new_value) -> None
 		Set View Sample Count Scale
@@ -139,7 +130,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_view_sample_count_scale(new_value:Dynamic):Void;
+	public function set_view_sample_count_scale(new_value:Float):Void;
 	/**
 		x.setb_use_per_sample_atmospheric_light_transmittance(new_value) -> None
 		Setb Use Per Sample Atmospheric Light Transmittance
@@ -147,7 +138,7 @@ package unreal;
 		Args:
 		    new_value (bool):
 	**/
-	public function setb_use_per_sample_atmospheric_light_transmittance(new_value:Dynamic):Void;
+	public function setb_use_per_sample_atmospheric_light_transmittance(new_value:Bool):Void;
 	/**
 		(float):  [Read-Only] Scale the shadow tracing sample count in reflection views, only used with Advanced Output ray marched shadows. Quality level scalability CVARs affect the maximum range.
 		The sample count resolution is still clamped according to scalability setting to 'r.VolumetricCloud.Shadow.ReflectionRaySampleMaxCount'.

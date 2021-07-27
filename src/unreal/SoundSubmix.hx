@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SoundSubmix") extern class SoundSubmix extends unreal.SoundSubmixWithParentBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_envelope_follower_delegate(world_context_object, on_submix_envelope_bp) -> None
 		Adds an envelope follower delegate to the submix when envelope following is enabled on this submix.
 		
@@ -18,7 +9,7 @@ package unreal;
 		    world_context_object (Object): 
 		    on_submix_envelope_bp (OnSubmixEnvelopeBP): Event to fire when new envelope data is available.
 	**/
-	public function add_envelope_follower_delegate(world_context_object:Dynamic, on_submix_envelope_bp:Dynamic):Void;
+	public function add_envelope_follower_delegate(world_context_object:unreal.Object, on_submix_envelope_bp:unreal.OnSubmixEnvelopeBP):Void;
 	/**
 		x.add_spectral_analysis_delegate(world_context_object, band_settings, on_submix_spectral_analysis_bp, update_rate=10.000000, decibel_noise_floor=-40.000000, do_normalize=True, do_auto_range=False, auto_range_attack_time=0.100000, auto_range_release_time=60.000000) -> None
 		Adds a spectral analysis delegate to receive notifications when this submix has spectrum analysis enabled.
@@ -34,7 +25,7 @@ package unreal;
 		    auto_range_attack_time (float): The time (in seconds) it takes for the range to expand to 90% of a larger range.
 		    auto_range_release_time (float): The time (in seconds) it takes for the range to shrink to 90% of a smaller range.
 	**/
-	public function add_spectral_analysis_delegate(world_context_object:Dynamic, band_settings:Dynamic, on_submix_spectral_analysis_bp:Dynamic, update_rate:Dynamic, decibel_noise_floor:Dynamic, do_normalize:Dynamic, do_auto_range:Dynamic, auto_range_attack_time:Dynamic, auto_range_release_time:Dynamic):Void;
+	public function add_spectral_analysis_delegate(world_context_object:unreal.Object, band_settings:unreal.Array, on_submix_spectral_analysis_bp:unreal.OnSubmixSpectralAnalysisBP, update_rate:Float, decibel_noise_floor:Float, do_normalize:Bool, do_auto_range:Bool, auto_range_attack_time:Float, auto_range_release_time:Float):Void;
 	/**
 		(SoundfieldEncodingSettingsBase):  [Read-Write] Optional settings used by plugins which support ambisonics file playback.
 	**/
@@ -79,7 +70,7 @@ package unreal;
 		    world_context_object (Object): 
 		    on_submix_spectral_analysis_bp (OnSubmixSpectralAnalysisBP): The event delegate to remove.
 	**/
-	public function remove_spectral_analysis_delegate(world_context_object:Dynamic, on_submix_spectral_analysis_bp:Dynamic):Void;
+	public function remove_spectral_analysis_delegate(world_context_object:unreal.Object, on_submix_spectral_analysis_bp:unreal.OnSubmixSpectralAnalysisBP):Void;
 	/**
 		x.set_submix_output_volume(world_context_object, output_volume) -> None
 		Sets the output volume of the submix. This dynamic volume scales with the OutputVolume property of this submix.
@@ -88,7 +79,7 @@ package unreal;
 		    world_context_object (Object): 
 		    output_volume (float):
 	**/
-	public function set_submix_output_volume(world_context_object:Dynamic, output_volume:Dynamic):Void;
+	public function set_submix_output_volume(world_context_object:unreal.Object, output_volume:Float):Void;
 	/**
 		x.start_envelope_following(world_context_object) -> None
 		Start envelope following the submix output. Register with OnSubmixEnvelope to receive envelope follower data in BP.
@@ -96,7 +87,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function start_envelope_following(world_context_object:Dynamic):Void;
+	public function start_envelope_following(world_context_object:unreal.Object):Void;
 	/**
 		x.start_recording_output(world_context_object, expected_duration) -> None
 		Start recording the audio from this submix.
@@ -105,7 +96,7 @@ package unreal;
 		    world_context_object (Object): 
 		    expected_duration (float):
 	**/
-	public function start_recording_output(world_context_object:Dynamic, expected_duration:Dynamic):Void;
+	public function start_recording_output(world_context_object:unreal.Object, expected_duration:Float):Void;
 	/**
 		x.start_spectral_analysis(world_context_object, fft_size=FFTSize.DEFAULT_SIZE, interpolation_method=FFTPeakInterpolationMethod.LINEAR, window_type=FFTWindowType.HANN, hop_size=0.000000, spectrum_type=AudioSpectrumType.MAGNITUDE_SPECTRUM) -> None
 		Start spectrum analysis of the audio output.
@@ -118,7 +109,7 @@ package unreal;
 		    hop_size (float): 
 		    spectrum_type (AudioSpectrumType):
 	**/
-	public function start_spectral_analysis(world_context_object:Dynamic, fft_size:Dynamic, interpolation_method:Dynamic, window_type:Dynamic, hop_size:Dynamic, spectrum_type:Dynamic):Void;
+	public function start_spectral_analysis(world_context_object:unreal.Object, fft_size:unreal.FFTSize, interpolation_method:unreal.FFTPeakInterpolationMethod, window_type:unreal.FFTWindowType, hop_size:Float, spectrum_type:unreal.AudioSpectrumType):Void;
 	/**
 		x.stop_envelope_following(world_context_object) -> None
 		Start envelope following the submix output. Register with OnSubmixEnvelope to receive envelope follower data in BP.
@@ -126,7 +117,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function stop_envelope_following(world_context_object:Dynamic):Void;
+	public function stop_envelope_following(world_context_object:unreal.Object):Void;
 	/**
 		x.stop_recording_output(world_context_object, export_type, name, path, existing_sound_wave_to_overwrite=None) -> None
 		Finish recording the audio from this submix and export it as a wav file or a USoundWave.
@@ -138,7 +129,7 @@ package unreal;
 		    path (str): 
 		    existing_sound_wave_to_overwrite (SoundWave):
 	**/
-	public function stop_recording_output(world_context_object:Dynamic, export_type:Dynamic, name:Dynamic, path:Dynamic, existing_sound_wave_to_overwrite:Dynamic):Void;
+	public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, existing_sound_wave_to_overwrite:unreal.SoundWave):Void;
 	/**
 		x.stop_spectral_analysis(world_context_object) -> None
 		Start spectrum analysis of the audio output.
@@ -146,7 +137,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	public function stop_spectral_analysis(world_context_object:Dynamic):Void;
+	public function stop_spectral_analysis(world_context_object:unreal.Object):Void;
 	/**
 		(Array(SoundEffectSubmixPreset)):  [Read-Only] Submix Effect Chain
 	**/

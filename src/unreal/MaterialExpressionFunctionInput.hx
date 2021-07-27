@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MaterialExpressionFunctionInput") extern class MaterialExpressionFunctionInput extends unreal.MaterialExpression {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Name):  [Read-Write] The input's name, which will be drawn on the connector in function call expressions that use this function.
 	**/
 	public var input_name : unreal.Name;

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "DecalActor") extern class DecalActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.create_dynamic_material_instance() -> MaterialInstanceDynamic
 		Create Dynamic Material Instance
 		deprecated: Function 'CreateDynamicMaterialInstance' is deprecated.
@@ -18,10 +9,12 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
+	@:deprecated
 	public function create_dynamic_material_instance():unreal.MaterialInstanceDynamic;
 	/**
 		deprecated: 'create_mid_for_decal' was renamed to 'create_dynamic_material_instance'.
 	**/
+	@:deprecated
 	public function create_mid_for_decal():Void;
 	/**
 		(DecalComponent):  [Read-Only] The decal component for this decal actor
@@ -35,6 +28,7 @@ package unreal;
 		Returns:
 		    MaterialInterface:
 	**/
+	@:deprecated
 	public function get_decal_material():unreal.MaterialInterface;
 	/**
 		x.set_decal_material(new_decal_material) -> None
@@ -44,5 +38,6 @@ package unreal;
 		Args:
 		    new_decal_material (MaterialInterface):
 	**/
-	public function set_decal_material(new_decal_material:Dynamic):Void;
+	@:deprecated
+	public function set_decal_material(new_decal_material:unreal.MaterialInterface):Void;
 }

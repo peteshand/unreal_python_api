@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "StructBase") extern class StructBase extends unreal._WrapperBase {
+@:pythonImport("unreal", "StructBase") extern class StructBase extends Dynamic {
 	/**
 		Return self+value.
 	**/
@@ -37,15 +37,6 @@ package unreal;
 		Return self*=value.
 	**/
 	public function __imul__(value:Dynamic):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
 		Return self|=value.
 	**/
@@ -171,7 +162,7 @@ package unreal;
 	/**
 		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
 	**/
-	public function set_editor_property(name:Dynamic, value:Dynamic, notify_mode:Dynamic):Void;
+	public function set_editor_property(name:Dynamic, value:Dynamic, notify_mode:unreal.PropertyAccessChangeNotifyMode = PropertyAccessChangeNotifyMode.DEFAULT):Void;
 	/**
 		X.static_struct() -> Struct -- get the Unreal struct of this type
 	**/

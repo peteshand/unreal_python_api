@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AudioVolume") extern class AudioVolume extends unreal.Volume {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(InteriorSettings):  [Read-Only] Interior settings used for this volume
 	**/
 	public var ambient_zone_settings : unreal.InteriorSettings;
@@ -30,7 +21,7 @@ package unreal;
 		Args:
 		    new_enabled (bool):
 	**/
-	public function set_enabled(new_enabled:Dynamic):Void;
+	public function set_enabled(new_enabled:Bool):Void;
 	/**
 		x.set_interior_settings(new_interior_settings) -> None
 		Set Interior Settings
@@ -38,7 +29,7 @@ package unreal;
 		Args:
 		    new_interior_settings (InteriorSettings):
 	**/
-	public function set_interior_settings(new_interior_settings:Dynamic):Void;
+	public function set_interior_settings(new_interior_settings:unreal.InteriorSettings):Void;
 	/**
 		x.set_priority(new_priority) -> None
 		Set Priority
@@ -46,7 +37,7 @@ package unreal;
 		Args:
 		    new_priority (float):
 	**/
-	public function set_priority(new_priority:Dynamic):Void;
+	public function set_priority(new_priority:Float):Void;
 	/**
 		x.set_reverb_settings(new_reverb_settings) -> None
 		Set Reverb Settings
@@ -54,7 +45,7 @@ package unreal;
 		Args:
 		    new_reverb_settings (ReverbSettings):
 	**/
-	public function set_reverb_settings(new_reverb_settings:Dynamic):Void;
+	public function set_reverb_settings(new_reverb_settings:unreal.ReverbSettings):Void;
 	/**
 		x.set_submix_override_settings(new_submix_override_settings) -> None
 		Set Submix Override Settings
@@ -62,7 +53,7 @@ package unreal;
 		Args:
 		    new_submix_override_settings (Array(AudioVolumeSubmixOverrideSettings)):
 	**/
-	public function set_submix_override_settings(new_submix_override_settings:Dynamic):Void;
+	public function set_submix_override_settings(new_submix_override_settings:unreal.Array):Void;
 	/**
 		x.set_submix_send_settings(new_submix_send_settings) -> None
 		Set Submix Send Settings
@@ -70,7 +61,7 @@ package unreal;
 		Args:
 		    new_submix_send_settings (Array(AudioVolumeSubmixSendSettings)):
 	**/
-	public function set_submix_send_settings(new_submix_send_settings:Dynamic):Void;
+	public function set_submix_send_settings(new_submix_send_settings:unreal.Array):Void;
 	/**
 		(ReverbSettings):  [Read-Only] Reverb settings to use for this volume.
 	**/

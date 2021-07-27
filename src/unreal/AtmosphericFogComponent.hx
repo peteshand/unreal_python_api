@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AtmosphericFogComponent") extern class AtmosphericFogComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Scale the view altitude (only Z scale).
 	**/
 	public var altitude_scale : Float;
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    new_ground_scattering (bool):
 	**/
-	public function disable_ground_scattering(new_ground_scattering:Dynamic):Void;
+	public function disable_ground_scattering(new_ground_scattering:Bool):Void;
 	/**
 		(bool):  [Read-Only] Disable color scattering from ground.
 	**/
@@ -53,7 +44,7 @@ package unreal;
 		Args:
 		    new_sun_disk (bool):
 	**/
-	public function disable_sun_disk(new_sun_disk:Dynamic):Void;
+	public function disable_sun_disk(new_sun_disk:Bool):Void;
 	/**
 		(bool):  [Read-Only] Disable sun disk rendering.
 	**/
@@ -85,7 +76,7 @@ package unreal;
 		Args:
 		    new_altitude_scale (float):
 	**/
-	public function set_altitude_scale(new_altitude_scale:Dynamic):Void;
+	public function set_altitude_scale(new_altitude_scale:Float):Void;
 	/**
 		x.set_default_brightness(new_brightness) -> None
 		Set brightness of the light
@@ -93,7 +84,7 @@ package unreal;
 		Args:
 		    new_brightness (float):
 	**/
-	public function set_default_brightness(new_brightness:Dynamic):Void;
+	public function set_default_brightness(new_brightness:Float):Void;
 	/**
 		x.set_default_light_color(new_light_color) -> None
 		Set color of the light
@@ -101,7 +92,7 @@ package unreal;
 		Args:
 		    new_light_color (LinearColor):
 	**/
-	public function set_default_light_color(new_light_color:Dynamic):Void;
+	public function set_default_light_color(new_light_color:unreal.LinearColor):Void;
 	/**
 		x.set_density_multiplier(new_density_multiplier) -> None
 		Set DensityMultiplier
@@ -109,7 +100,7 @@ package unreal;
 		Args:
 		    new_density_multiplier (float):
 	**/
-	public function set_density_multiplier(new_density_multiplier:Dynamic):Void;
+	public function set_density_multiplier(new_density_multiplier:Float):Void;
 	/**
 		x.set_density_offset(new_density_offset) -> None
 		Set DensityOffset
@@ -117,7 +108,7 @@ package unreal;
 		Args:
 		    new_density_offset (float):
 	**/
-	public function set_density_offset(new_density_offset:Dynamic):Void;
+	public function set_density_offset(new_density_offset:Float):Void;
 	/**
 		x.set_distance_offset(new_distance_offset) -> None
 		Set DistanceOffset
@@ -125,7 +116,7 @@ package unreal;
 		Args:
 		    new_distance_offset (float):
 	**/
-	public function set_distance_offset(new_distance_offset:Dynamic):Void;
+	public function set_distance_offset(new_distance_offset:Float):Void;
 	/**
 		x.set_distance_scale(new_distance_scale) -> None
 		Set DistanceScale
@@ -133,7 +124,7 @@ package unreal;
 		Args:
 		    new_distance_scale (float):
 	**/
-	public function set_distance_scale(new_distance_scale:Dynamic):Void;
+	public function set_distance_scale(new_distance_scale:Float):Void;
 	/**
 		x.set_fog_multiplier(new_fog_multiplier) -> None
 		Set FogMultiplier
@@ -141,7 +132,7 @@ package unreal;
 		Args:
 		    new_fog_multiplier (float):
 	**/
-	public function set_fog_multiplier(new_fog_multiplier:Dynamic):Void;
+	public function set_fog_multiplier(new_fog_multiplier:Float):Void;
 	/**
 		x.set_precompute_params(density_height, max_scattering_order, inscatter_altitude_sample_num) -> None
 		Set PrecomputeParams, only valid in Editor mode
@@ -151,7 +142,7 @@ package unreal;
 		    max_scattering_order (int32): 
 		    inscatter_altitude_sample_num (int32):
 	**/
-	public function set_precompute_params(density_height:Dynamic, max_scattering_order:Dynamic, inscatter_altitude_sample_num:Dynamic):Void;
+	public function set_precompute_params(density_height:Float, max_scattering_order:Int, inscatter_altitude_sample_num:Int):Void;
 	/**
 		x.set_start_distance(new_start_distance) -> None
 		Set StartDistance
@@ -159,7 +150,7 @@ package unreal;
 		Args:
 		    new_start_distance (float):
 	**/
-	public function set_start_distance(new_start_distance:Dynamic):Void;
+	public function set_start_distance(new_start_distance:Float):Void;
 	/**
 		x.set_sun_multiplier(new_sun_multiplier) -> None
 		Set SunMultiplier
@@ -167,7 +158,7 @@ package unreal;
 		Args:
 		    new_sun_multiplier (float):
 	**/
-	public function set_sun_multiplier(new_sun_multiplier:Dynamic):Void;
+	public function set_sun_multiplier(new_sun_multiplier:Float):Void;
 	/**
 		(float):  [Read-Write] The atmospheric fog start distance in centimeters.
 	**/

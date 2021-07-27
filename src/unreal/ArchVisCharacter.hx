@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ArchVisCharacter") extern class ArchVisCharacter extends unreal.Character {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(str):  [Read-Only] Axis name for rate-based look up/down inputs (e.g. joystick). This should match an Axis Binding in your input settings
 	**/
 	public var look_up_at_rate_axis_name : String;

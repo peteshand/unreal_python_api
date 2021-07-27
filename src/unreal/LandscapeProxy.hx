@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LandscapeProxy") extern class LandscapeProxy extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Controls whether the primitive should affect dynamic distance field lighting methods.  This flag is only used if CastShadow is true. *
 	**/
 	public var affect_distance_field_lighting : Bool;
@@ -49,7 +40,7 @@ package unreal;
 		Args:
 		    component_screen_size_to_use_sub_sections (float):
 	**/
-	public function change_component_screen_size_to_use_sub_sections(component_screen_size_to_use_sub_sections:Dynamic):Void;
+	public function change_component_screen_size_to_use_sub_sections(component_screen_size_to_use_sub_sections:Float):Void;
 	/**
 		x.change_lod_distance_factor(lod_distance_factor) -> None
 		Change the Level of Detail distance factor
@@ -58,7 +49,8 @@ package unreal;
 		Args:
 		    lod_distance_factor (float):
 	**/
-	public function change_lod_distance_factor(lod_distance_factor:Dynamic):Void;
+	@:deprecated
+	public function change_lod_distance_factor(lod_distance_factor:Float):Void;
 	/**
 		x.change_tessellation_component_screen_size(tessellation_component_screen_size) -> None
 		Change TessellationComponentScreenSize value on the render proxy.
@@ -66,7 +58,7 @@ package unreal;
 		Args:
 		    tessellation_component_screen_size (float):
 	**/
-	public function change_tessellation_component_screen_size(tessellation_component_screen_size:Dynamic):Void;
+	public function change_tessellation_component_screen_size(tessellation_component_screen_size:Float):Void;
 	/**
 		x.change_tessellation_component_screen_size_falloff(use_tessellation_component_screen_size_falloff) -> None
 		Change TessellationComponentScreenSizeFalloff value on the render proxy.
@@ -74,7 +66,7 @@ package unreal;
 		Args:
 		    use_tessellation_component_screen_size_falloff (float):
 	**/
-	public function change_tessellation_component_screen_size_falloff(use_tessellation_component_screen_size_falloff:Dynamic):Void;
+	public function change_tessellation_component_screen_size_falloff(use_tessellation_component_screen_size_falloff:Float):Void;
 	/**
 		x.change_use_tessellation_component_screen_size_falloff(component_screen_size_to_use_sub_sections) -> None
 		Change UseTessellationComponentScreenSizeFalloff value on the render proxy.
@@ -82,7 +74,7 @@ package unreal;
 		Args:
 		    component_screen_size_to_use_sub_sections (bool):
 	**/
-	public function change_use_tessellation_component_screen_size_falloff(component_screen_size_to_use_sub_sections:Dynamic):Void;
+	public function change_use_tessellation_component_screen_size_falloff(component_screen_size_to_use_sub_sections:Bool):Void;
 	/**
 		(int32):  [Read-Only] Optionally write this 0-255 value to the stencil buffer in CustomDepth pass (Requires project setting or r.CustomDepth == 3)
 	**/
@@ -109,7 +101,7 @@ package unreal;
 		    paint_layer (LandscapeLayerInfoObject): LayerInfo to paint, or none to skip painting. The landscape must be configured with the same layer info in one of its layers or this will do nothing!
 		    edit_layer_name (Name): Name of the landscape edition layer to affect (in Edit Layers mode)
 	**/
-	public function editor_apply_spline(spline_component:Dynamic, start_width:Dynamic, end_width:Dynamic, start_side_falloff:Dynamic, end_side_falloff:Dynamic, start_roll:Dynamic, end_roll:Dynamic, num_subdivisions:Dynamic, raise_heights:Dynamic, lower_heights:Dynamic, paint_layer:Dynamic, edit_layer_name:Dynamic):Void;
+	public function editor_apply_spline(spline_component:unreal.SplineComponent, start_width:Float, end_width:Float, start_side_falloff:Float, end_side_falloff:Float, start_roll:Float, end_roll:Float, num_subdivisions:Int, raise_heights:Bool, lower_heights:Bool, paint_layer:unreal.LandscapeLayerInfoObject, edit_layer_name:unreal.Name):Void;
 	/**
 		(bool):  [Read-Only] If true, Landscape will generate overlap events when other components are overlapping it (eg Begin Overlap).
 		Both the Landscape and the other component must have this flag enabled for overlap events to occur.
@@ -129,7 +121,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function landscape_export_heightmap_to_render_target(render_target:Dynamic, export_height_into_rg_channel:Dynamic, export_landscape_proxies:Dynamic):Bool;
+	public function landscape_export_heightmap_to_render_target(render_target:unreal.TextureRenderTarget2D, export_height_into_rg_channel:Bool, export_landscape_proxies:Bool):Bool;
 	/**
 		x.landscape_export_weightmap_to_render_target(render_target, layer_name) -> bool
 		Output a landscape weightmap to a render target
@@ -142,7 +134,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function landscape_export_weightmap_to_render_target(render_target:Dynamic, layer_name:Dynamic):Bool;
+	public function landscape_export_weightmap_to_render_target(render_target:unreal.TextureRenderTarget2D, layer_name:unreal.Name):Bool;
 	/**
 		x.landscape_import_heightmap_from_render_target(render_target, import_height_from_rg_channel=False) -> bool
 		Overwrites a landscape heightmap with render target data
@@ -154,7 +146,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function landscape_import_heightmap_from_render_target(render_target:Dynamic, import_height_from_rg_channel:Dynamic):Bool;
+	public function landscape_import_heightmap_from_render_target(render_target:unreal.TextureRenderTarget2D, import_height_from_rg_channel:Bool):Bool;
 	/**
 		x.landscape_import_weightmap_from_render_target(render_target, layer_name) -> bool
 		Overwrites a landscape weightmap with render target data
@@ -167,7 +159,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function landscape_import_weightmap_from_render_target(render_target:Dynamic, layer_name:Dynamic):Bool;
+	public function landscape_import_weightmap_from_render_target(render_target:unreal.TextureRenderTarget2D, layer_name:unreal.Name):Bool;
 	/**
 		(MaterialInterface):  [Read-Write] Combined material used to render the landscape
 	**/
@@ -206,7 +198,7 @@ package unreal;
 		    parameter_name (Name): 
 		    value (float):
 	**/
-	public function set_landscape_material_scalar_parameter_value(parameter_name:Dynamic, value:Dynamic):Void;
+	public function set_landscape_material_scalar_parameter_value(parameter_name:unreal.Name, value:Float):Void;
 	/**
 		x.set_landscape_material_texture_parameter_value(parameter_name, value) -> None
 		Set an MID texture parameter value for all landscape components.
@@ -215,7 +207,7 @@ package unreal;
 		    parameter_name (Name): 
 		    value (Texture):
 	**/
-	public function set_landscape_material_texture_parameter_value(parameter_name:Dynamic, value:Dynamic):Void;
+	public function set_landscape_material_texture_parameter_value(parameter_name:unreal.Name, value:unreal.Texture):Void;
 	/**
 		x.set_landscape_material_vector_parameter_value(parameter_name, value) -> None
 		Set an MID vector parameter value for all landscape components.
@@ -224,7 +216,7 @@ package unreal;
 		    parameter_name (Name): 
 		    value (LinearColor):
 	**/
-	public function set_landscape_material_vector_parameter_value(parameter_name:Dynamic, value:Dynamic):Void;
+	public function set_landscape_material_vector_parameter_value(parameter_name:unreal.Name, value:unreal.LinearColor):Void;
 	/**
 		(int32):  [Read-Only] Bias to the LOD selected for rendering to runtime virtual textures.
 		Higher values reduce vertex count when rendering to the runtime virtual texture.

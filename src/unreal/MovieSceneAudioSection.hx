@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneAudioSection") extern class MovieSceneAudioSection extends unreal.MovieSceneSection {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_sound() -> SoundBase
 		Gets the sound for this section
 		
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    sound (SoundBase):
 	**/
-	public function set_sound(sound:Dynamic):Void;
+	public function set_sound(sound:unreal.SoundBase):Void;
 	/**
 		x.set_start_offset(start_offset) -> None
 		Set the offset into the beginning of the audio clip
@@ -41,5 +32,5 @@ package unreal;
 		Args:
 		    start_offset (FrameNumber):
 	**/
-	public function set_start_offset(start_offset:Dynamic):Void;
+	public function set_start_offset(start_offset:unreal.FrameNumber):Void;
 }

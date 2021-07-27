@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ActorGroupingUtils") extern class ActorGroupingUtils extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_selected_to_group() -> None
 		Activates "Add to Group" mode which allows the user to select a group to append current selection
 	**/
@@ -30,7 +21,7 @@ package unreal;
 		Args:
 		    actors_to_group (Array(Actor)):
 	**/
-	public function group_actors(actors_to_group:Dynamic):Void;
+	public function group_actors(actors_to_group:unreal.Array):Void;
 	/**
 		x.group_selected() -> None
 		Creates a new group from the current selection removing the actors from any existing groups they are already in
@@ -62,7 +53,7 @@ package unreal;
 		Args:
 		    grouping_active (bool):
 	**/
-	static public function set_grouping_active(grouping_active:Dynamic):Void;
+	static public function set_grouping_active(grouping_active:Bool):Void;
 	/**
 		x.ungroup_actors(actors_to_ungroup) -> None
 		Disbands any groups that the provided actors belong to, does not attempt to maintain any hierarchy
@@ -70,7 +61,7 @@ package unreal;
 		Args:
 		    actors_to_ungroup (Array(Actor)):
 	**/
-	public function ungroup_actors(actors_to_ungroup:Dynamic):Void;
+	public function ungroup_actors(actors_to_ungroup:unreal.Array):Void;
 	/**
 		x.ungroup_selected() -> None
 		Disbands any groups in the current selection, does not attempt to maintain any hierarchy

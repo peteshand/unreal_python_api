@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SoundBase") extern class SoundBase extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Array(SoundSourceBusSendInfo)):  [Read-Write] This sound will send its audio output to this list of buses if there are bus instances playing after source effects are processed.
 	**/
 	public var bus_sends : Array<Dynamic>;

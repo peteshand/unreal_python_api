@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "RectLightComponent") extern class RectLightComponent extends unreal.LocalLightComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] Angle of barn door attached to the light source rect.
 	**/
 	public var barn_door_angle : Float;
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_barn_door_angle(new_value:Dynamic):Void;
+	public function set_barn_door_angle(new_value:Float):Void;
 	/**
 		x.set_barn_door_length(new_value) -> None
 		Set Barn Door Length
@@ -33,7 +24,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_barn_door_length(new_value:Dynamic):Void;
+	public function set_barn_door_length(new_value:Float):Void;
 	/**
 		x.set_source_height(new_value) -> None
 		Set Source Height
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_source_height(new_value:Dynamic):Void;
+	public function set_source_height(new_value:Float):Void;
 	/**
 		x.set_source_texture(new_value) -> None
 		Set Source Texture
@@ -49,7 +40,7 @@ package unreal;
 		Args:
 		    new_value (Texture):
 	**/
-	public function set_source_texture(new_value:Dynamic):Void;
+	public function set_source_texture(new_value:unreal.Texture):Void;
 	/**
 		x.set_source_width(new_value) -> None
 		Set Source Width
@@ -57,7 +48,7 @@ package unreal;
 		Args:
 		    new_value (float):
 	**/
-	public function set_source_width(new_value:Dynamic):Void;
+	public function set_source_width(new_value:Float):Void;
 	/**
 		(float):  [Read-Only] Height of light source rect.
 		Note that light sources shapes which intersect shadow casting geometry can cause shadowing artifacts.

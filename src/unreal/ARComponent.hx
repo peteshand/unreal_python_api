@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ARComponent") extern class ARComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_mr_mesh() -> MRMeshComponent
 		Get MRMesh
 		
@@ -30,7 +21,7 @@ package unreal;
 		Args:
 		    native_id (Guid):
 	**/
-	public function set_native_id(native_id:Dynamic):Void;
+	public function set_native_id(native_id:unreal.Guid):Void;
 	/**
 		x.update_visualization() -> None
 		Update Visualization

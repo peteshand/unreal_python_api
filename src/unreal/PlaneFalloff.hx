@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PlaneFalloff") extern class PlaneFalloff extends unreal.FieldNodeFloat {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Default
 	**/
 	@:native("default")
@@ -60,5 +51,5 @@ package unreal;
 		Returns:
 		    PlaneFalloff:
 	**/
-	public function set_plane_falloff(magnitude:Dynamic, min_range:Dynamic, max_range:Dynamic, default:Dynamic, distance:Dynamic, position:Dynamic, normal:Dynamic, falloff:Dynamic):unreal.PlaneFalloff;
+	public function set_plane_falloff(magnitude:Float, min_range:Float, max_range:Float, default:Float, distance:Float, position:unreal.Vector, normal:unreal.Vector, falloff:unreal.FieldFalloffType):unreal.PlaneFalloff;
 }

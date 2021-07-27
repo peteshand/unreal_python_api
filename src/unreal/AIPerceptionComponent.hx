@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AIPerceptionComponent") extern class AIPerceptionComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.forget_all() -> None
 		basically cleans up PerceptualData, resulting in loss of all previous perception
 	**/
@@ -27,7 +18,7 @@ package unreal;
 		
 		    info (ActorPerceptionBlueprintInfo):
 	**/
-	public function get_actors_perception(actor:Dynamic):Dynamic;
+	public function get_actors_perception(actor:unreal.Actor):Dynamic;
 	/**
 		x.get_currently_perceived_actors(sense_to_use) -> Array(Actor)
 		If SenseToUse is none all actors currently perceived in any way will get fetched
@@ -134,5 +125,5 @@ package unreal;
 		    sense_class (type(Class)): 
 		    enable (bool):
 	**/
-	public function set_sense_enabled(sense_class:Dynamic, enable:Dynamic):Void;
+	public function set_sense_enabled(sense_class:Dynamic, enable:Bool):Void;
 }

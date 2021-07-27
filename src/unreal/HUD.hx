@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "HUD") extern class HUD extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_hit_box(position, size, name, consumes_input, priority=0) -> None
 		Add a hitbox to the hud
 		
@@ -21,7 +12,7 @@ package unreal;
 		    consumes_input (bool): Whether click processing should continue if this hit box is clicked.
 		    priority (int32): The priority of the box used for layering. Larger values are considered first.  Equal values are considered in the order they were added.
 	**/
-	public function add_hit_box(position:Dynamic, size:Dynamic, name:Dynamic, consumes_input:Dynamic, priority:Dynamic):Void;
+	public function add_hit_box(position:unreal.Vector2D, size:unreal.Vector2D, name:unreal.Name, consumes_input:Bool, priority:Int):Void;
 	/**
 		x.deproject(screen_x, screen_y) -> (world_position=Vector, world_direction=Vector)
 		Transforms a 2D screen location into a 3D location and direction
@@ -37,7 +28,7 @@ package unreal;
 		
 		    world_direction (Vector):
 	**/
-	public function deproject(screen_x:Dynamic, screen_y:Dynamic):python.Tuple<Dynamic>;
+	public function deproject(screen_x:Float, screen_y:Float):python.Tuple<Dynamic>;
 	/**
 		x.draw_line(start_screen_x, start_screen_y, end_screen_x, end_screen_y, line_color, line_thickness=0.000000) -> None
 		Draws a 2D line on the HUD.
@@ -50,7 +41,7 @@ package unreal;
 		    line_color (LinearColor): Color to draw line
 		    line_thickness (float): Thickness of the line to draw
 	**/
-	public function draw_line(start_screen_x:Dynamic, start_screen_y:Dynamic, end_screen_x:Dynamic, end_screen_y:Dynamic, line_color:Dynamic, line_thickness:Dynamic):Void;
+	public function draw_line(start_screen_x:Float, start_screen_y:Float, end_screen_x:Float, end_screen_y:Float, line_color:unreal.LinearColor, line_thickness:Float):Void;
 	/**
 		x.draw_material(material, screen_x, screen_y, screen_w, screen_h, material_u, material_v, material_u_width, material_v_height, scale=1.000000, scale_position=False, rotation=0.000000, rot_pivot=[0.000000, 0.000000]) -> None
 		Draws a material-textured quad on the HUD.
@@ -70,7 +61,7 @@ package unreal;
 		    rotation (float): Amount to rotate this quad
 		    rot_pivot (Vector2D): Location (as proportion of quad, 0-1) to rotate about
 	**/
-	public function draw_material(material:Dynamic, screen_x:Dynamic, screen_y:Dynamic, screen_w:Dynamic, screen_h:Dynamic, material_u:Dynamic, material_v:Dynamic, material_u_width:Dynamic, material_v_height:Dynamic, scale:Dynamic, scale_position:Dynamic, rotation:Dynamic, rot_pivot:Dynamic):Void;
+	public function draw_material(material:unreal.MaterialInterface, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, material_u:Float, material_v:Float, material_u_width:Float, material_v_height:Float, scale:Float, scale_position:Bool, rotation:Float, rot_pivot:unreal.Vector2D):Void;
 	/**
 		x.draw_material_simple(material, screen_x, screen_y, screen_w, screen_h, scale=1.000000, scale_position=False) -> None
 		Draws a material-textured quad on the HUD.  Assumes UVs such that the entire material is shown.
@@ -84,7 +75,7 @@ package unreal;
 		    scale (float): Amount to scale the entire texture (horizontally and vertically)
 		    scale_position (bool): Whether the "Scale" parameter should also scale the position of this draw call.
 	**/
-	public function draw_material_simple(material:Dynamic, screen_x:Dynamic, screen_y:Dynamic, screen_w:Dynamic, screen_h:Dynamic, scale:Dynamic, scale_position:Dynamic):Void;
+	public function draw_material_simple(material:unreal.MaterialInterface, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, scale:Float, scale_position:Bool):Void;
 	/**
 		x.draw_material_triangle(material, v0_pos, v1_pos, v2_pos, v0_uv, v1_uv, v2_uv, v0_color=[0.000000, 0.000000, 0.000000, 0.000000], v1_color=[0.000000, 0.000000, 0.000000, 0.000000], v2_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Draw Material Triangle
@@ -101,7 +92,7 @@ package unreal;
 		    v1_color (LinearColor): 
 		    v2_color (LinearColor):
 	**/
-	public function draw_material_triangle(material:Dynamic, v0_pos:Dynamic, v1_pos:Dynamic, v2_pos:Dynamic, v0_uv:Dynamic, v1_uv:Dynamic, v2_uv:Dynamic, v0_color:Dynamic, v1_color:Dynamic, v2_color:Dynamic):Void;
+	public function draw_material_triangle(material:unreal.MaterialInterface, v0_pos:unreal.Vector2D, v1_pos:unreal.Vector2D, v2_pos:unreal.Vector2D, v0_uv:unreal.Vector2D, v1_uv:unreal.Vector2D, v2_uv:unreal.Vector2D, v0_color:unreal.LinearColor, v1_color:unreal.LinearColor, v2_color:unreal.LinearColor):Void;
 	/**
 		x.draw_rect(rect_color, screen_x, screen_y, screen_w, screen_h) -> None
 		Draws a colored untextured quad on the HUD.
@@ -113,7 +104,7 @@ package unreal;
 		    screen_w (float): Screen-space width of the quad (in pixels).
 		    screen_h (float): Screen-space height of the quad (in pixels).
 	**/
-	public function draw_rect(rect_color:Dynamic, screen_x:Dynamic, screen_y:Dynamic, screen_w:Dynamic, screen_h:Dynamic):Void;
+	public function draw_rect(rect_color:unreal.LinearColor, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float):Void;
 	/**
 		x.draw_text(text, text_color, screen_x, screen_y, font=None, scale=1.000000, scale_position=False) -> None
 		Draws a string on the HUD.
@@ -127,7 +118,7 @@ package unreal;
 		    scale (float): Scale multiplier to control size of the text.
 		    scale_position (bool): Whether the "Scale" parameter should also scale the position of this draw call.
 	**/
-	public function draw_text(text:Dynamic, text_color:Dynamic, screen_x:Dynamic, screen_y:Dynamic, font:Dynamic, scale:Dynamic, scale_position:Dynamic):Void;
+	public function draw_text(text:String, text_color:unreal.LinearColor, screen_x:Float, screen_y:Float, font:unreal.Font, scale:Float, scale_position:Bool):Void;
 	/**
 		x.draw_texture(texture, screen_x, screen_y, screen_w, screen_h, texture_u, texture_v, texture_u_width, texture_v_height, tint_color=[0.000000, 0.000000, 0.000000, 0.000000], blend_mode=BlendMode.BLEND_TRANSLUCENT, scale=1.000000, scale_position=False, rotation=0.000000, rot_pivot=[0.000000, 0.000000]) -> None
 		Draws a textured quad on the HUD.
@@ -149,7 +140,7 @@ package unreal;
 		    rotation (float): Amount to rotate this quad
 		    rot_pivot (Vector2D): Location (as proportion of quad, 0-1) to rotate about
 	**/
-	public function draw_texture(texture:Dynamic, screen_x:Dynamic, screen_y:Dynamic, screen_w:Dynamic, screen_h:Dynamic, texture_u:Dynamic, texture_v:Dynamic, texture_u_width:Dynamic, texture_v_height:Dynamic, tint_color:Dynamic, blend_mode:Dynamic, scale:Dynamic, scale_position:Dynamic, rotation:Dynamic, rot_pivot:Dynamic):Void;
+	public function draw_texture(texture:unreal.Texture, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, texture_u:Float, texture_v:Float, texture_u_width:Float, texture_v_height:Float, tint_color:unreal.LinearColor, blend_mode:unreal.BlendMode, scale:Float, scale_position:Bool, rotation:Float, rot_pivot:unreal.Vector2D):Void;
 	/**
 		x.draw_texture_simple(texture, screen_x, screen_y, scale=1.000000, scale_position=False) -> None
 		Draws a textured quad on the HUD. Assumes 1:1 texel density.
@@ -161,7 +152,7 @@ package unreal;
 		    scale (float): Scale multiplier to control size of the text.
 		    scale_position (bool): Whether the "Scale" parameter should also scale the position of this draw call.
 	**/
-	public function draw_texture_simple(texture:Dynamic, screen_x:Dynamic, screen_y:Dynamic, scale:Dynamic, scale_position:Dynamic):Void;
+	public function draw_texture_simple(texture:unreal.Texture, screen_x:Float, screen_y:Float, scale:Float, scale_position:Bool):Void;
 	/**
 		(bool):  [Read-Write] Put shadow on debug strings
 	**/
@@ -187,7 +178,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_actors_in_selection_rectangle(class_filter:Dynamic, first_point:Dynamic, second_point:Dynamic, include_non_colliding_components:Dynamic, actor_must_be_fully_enclosed:Dynamic):Dynamic;
+	public function get_actors_in_selection_rectangle(class_filter:Dynamic, first_point:unreal.Vector2D, second_point:unreal.Vector2D, include_non_colliding_components:Bool, actor_must_be_fully_enclosed:Bool):Dynamic;
 	/**
 		x.get_owning_pawn() -> Pawn
 		Returns the Pawn for this HUD's player.
@@ -220,7 +211,7 @@ package unreal;
 		
 		    out_height (float): Returns the height in pixels of the string.
 	**/
-	public function get_text_size(text:Dynamic, font:Dynamic, scale:Dynamic):python.Tuple<Dynamic>;
+	public function get_text_size(text:String, font:unreal.Font, scale:Float):python.Tuple<Dynamic>;
 	/**
 		(bool):  [Read-Only] Tells whether the game was paused due to lost focus
 	**/
@@ -239,7 +230,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function project(location:Dynamic):unreal.Vector;
+	public function project(location:unreal.Vector):unreal.Vector;
 	/**
 		x.receive_draw_hud(size_x, size_y) -> None
 		Hook to allow blueprints to do custom HUD drawing.
@@ -249,7 +240,7 @@ package unreal;
 		    size_x (int32): 
 		    size_y (int32):
 	**/
-	public function receive_draw_hud(size_x:Dynamic, size_y:Dynamic):Void;
+	public function receive_draw_hud(size_x:Int, size_y:Int):Void;
 	/**
 		x.receive_hit_box_begin_cursor_over(box_name) -> None
 		Called when a hit box is moused over.
@@ -257,7 +248,7 @@ package unreal;
 		Args:
 		    box_name (Name):
 	**/
-	public function receive_hit_box_begin_cursor_over(box_name:Dynamic):Void;
+	public function receive_hit_box_begin_cursor_over(box_name:unreal.Name):Void;
 	/**
 		x.receive_hit_box_click(box_name) -> None
 		Called when a hit box is clicked on. Provides the name associated with that box.
@@ -265,7 +256,7 @@ package unreal;
 		Args:
 		    box_name (Name):
 	**/
-	public function receive_hit_box_click(box_name:Dynamic):Void;
+	public function receive_hit_box_click(box_name:unreal.Name):Void;
 	/**
 		x.receive_hit_box_end_cursor_over(box_name) -> None
 		Called when a hit box no longer has the mouse over it.
@@ -273,7 +264,7 @@ package unreal;
 		Args:
 		    box_name (Name):
 	**/
-	public function receive_hit_box_end_cursor_over(box_name:Dynamic):Void;
+	public function receive_hit_box_end_cursor_over(box_name:unreal.Name):Void;
 	/**
 		x.receive_hit_box_release(box_name) -> None
 		Called when a hit box is unclicked. Provides the name associated with that box.
@@ -281,7 +272,7 @@ package unreal;
 		Args:
 		    box_name (Name):
 	**/
-	public function receive_hit_box_release(box_name:Dynamic):Void;
+	public function receive_hit_box_release(box_name:unreal.Name):Void;
 	/**
 		(bool):  [Read-Write] If true, current ViewTarget shows debug information using its DisplayDebug().
 	**/

@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Viewport") extern class Viewport extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_view_location() -> Vector
 		Get View Location
 		
@@ -41,7 +32,7 @@ package unreal;
 		Args:
 		    location (Vector):
 	**/
-	public function set_view_location(location:Dynamic):Void;
+	public function set_view_location(location:unreal.Vector):Void;
 	/**
 		x.set_view_rotation(rotation) -> None
 		Set View Rotation
@@ -49,7 +40,7 @@ package unreal;
 		Args:
 		    rotation (Rotator):
 	**/
-	public function set_view_rotation(rotation:Dynamic):Void;
+	public function set_view_rotation(rotation:unreal.Rotator):Void;
 	/**
 		x.spawn(actor_class) -> Actor
 		Spawn

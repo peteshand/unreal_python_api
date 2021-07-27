@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MaterialInstance") extern class MaterialInstance extends unreal.MaterialInterface {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Array(FontParameterValue)):  [Read-Only] Font parameters.
 	**/
 	public var font_parameter_values : Array<Dynamic>;

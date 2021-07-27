@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FoliageStatistics") extern class FoliageStatistics extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.foliage_overlapping_box_count(world_context_object, static_mesh, box) -> int32
 		Gets the number of instances overlapping a provided box
 		
@@ -22,7 +13,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function foliage_overlapping_box_count(world_context_object:Dynamic, static_mesh:Dynamic, box:Dynamic):Int;
+	static public function foliage_overlapping_box_count(world_context_object:unreal.Object, static_mesh:unreal.StaticMesh, box:unreal.Box):Int;
 	/**
 		X.foliage_overlapping_sphere_count(world_context_object, static_mesh, center_position, radius) -> int32
 		Counts how many foliage instances overlap a given sphere
@@ -36,5 +27,5 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function foliage_overlapping_sphere_count(world_context_object:Dynamic, static_mesh:Dynamic, center_position:Dynamic, radius:Dynamic):Int;
+	static public function foliage_overlapping_sphere_count(world_context_object:unreal.Object, static_mesh:unreal.StaticMesh, center_position:unreal.Vector, radius:Float):Int;
 }

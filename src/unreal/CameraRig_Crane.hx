@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CameraRig_Crane") extern class CameraRig_Crane extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Controls the length of the crane arm.
 	**/
 	public var crane_arm_length : Float;

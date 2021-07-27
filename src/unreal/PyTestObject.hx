@@ -4,15 +4,6 @@ package unreal;
 	static public var CONSTANT_VALUE : Dynamic;
 	static public var OTHER_CONSTANT_VALUE : Dynamic;
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Bool
 	**/
 	public var bool : Bool;
@@ -26,7 +17,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function call_func_blueprint_implementable(value:Dynamic):Int;
+	public function call_func_blueprint_implementable(value:Int):Int;
 	/**
 		x.call_func_blueprint_native(value) -> int32
 		Call Func Blueprint Native
@@ -37,7 +28,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function call_func_blueprint_native(value:Dynamic):Int;
+	public function call_func_blueprint_native(value:Int):Int;
 	/**
 		x.call_func_blueprint_native_ref(out_struct) -> PyTestStruct
 		Call Func Blueprint Native Ref
@@ -50,7 +41,7 @@ package unreal;
 		
 		    out_struct (PyTestStruct):
 	**/
-	public function call_func_blueprint_native_ref(out_struct:Dynamic):unreal.PyTestStruct;
+	public function call_func_blueprint_native_ref(out_struct:unreal.PyTestStruct):unreal.PyTestStruct;
 	/**
 		(PyTestChildStruct):  [Read-Write] Child Struct
 	**/
@@ -69,7 +60,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function delegate_property_callback(value:Dynamic):Int;
+	public function delegate_property_callback(value:Int):Int;
 	/**
 		X.emit_script_error() -> None
 		Emit Script Error
@@ -99,7 +90,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function func_blueprint_implementable(value:Dynamic):Int;
+	public function func_blueprint_implementable(value:Int):Int;
 	/**
 		x.func_blueprint_native(value) -> int32
 		Func Blueprint Native
@@ -110,7 +101,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function func_blueprint_native(value:Dynamic):Int;
+	public function func_blueprint_native(value:Int):Int;
 	/**
 		x.func_blueprint_native_ref(out_struct) -> PyTestStruct
 		Func Blueprint Native Ref
@@ -123,7 +114,7 @@ package unreal;
 		
 		    out_struct (PyTestStruct):
 	**/
-	public function func_blueprint_native_ref(out_struct:Dynamic):unreal.PyTestStruct;
+	public function func_blueprint_native_ref(out_struct:unreal.PyTestStruct):unreal.PyTestStruct;
 	/**
 		x.func_taking_py_test_child_struct(struct) -> None
 		Func Taking Py Test Child Struct
@@ -131,7 +122,7 @@ package unreal;
 		Args:
 		    struct (PyTestChildStruct):
 	**/
-	public function func_taking_py_test_child_struct(struct:Dynamic):Void;
+	public function func_taking_py_test_child_struct(struct:unreal.PyTestChildStruct):Void;
 	/**
 		x.func_taking_py_test_delegate(delegate, value) -> int32
 		Func Taking Py Test Delegate
@@ -143,7 +134,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function func_taking_py_test_delegate(delegate:Dynamic, value:Dynamic):Int;
+	public function func_taking_py_test_delegate(delegate:unreal.PyTestDelegate, value:Int):Int;
 	/**
 		x.func_taking_py_test_struct(struct) -> None
 		Func Taking Py Test Struct
@@ -151,7 +142,7 @@ package unreal;
 		Args:
 		    struct (PyTestStruct):
 	**/
-	public function func_taking_py_test_struct(struct:Dynamic):Void;
+	public function func_taking_py_test_struct(struct:unreal.PyTestStruct):Void;
 	/**
 		(int32):  [Read-Write] Int
 	**/
@@ -172,7 +163,8 @@ package unreal;
 		Args:
 		    struct (PyTestStruct):
 	**/
-	public function legacy_func_taking_py_test_struct(struct:Dynamic):Void;
+	@:deprecated
+	public function legacy_func_taking_py_test_struct(struct:unreal.PyTestStruct):Void;
 	/**
 		(PyTestMulticastDelegate):  [Read-Write] Multicast Delegate
 	**/
@@ -184,7 +176,7 @@ package unreal;
 		Args:
 		    str (str):
 	**/
-	public function multicast_delegate_property_callback(str:Dynamic):Void;
+	public function multicast_delegate_property_callback(str:String):Void;
 	/**
 		(Name):  [Read-Write] Name
 	**/

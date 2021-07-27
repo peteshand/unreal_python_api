@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TransformConstraint") extern class TransformConstraint extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] When the constraint is first applied, maintain the offset from the target node
 	**/
 	public var maintain_offset : Bool;

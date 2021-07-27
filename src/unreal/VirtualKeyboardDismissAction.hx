@@ -4,13 +4,4 @@ package unreal;
 	static public var TEXT_CHANGE_ON_DISMISS : Dynamic;
 	static public var TEXT_COMMIT_ON_ACCEPT : Dynamic;
 	static public var TEXT_COMMIT_ON_DISMISS : Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

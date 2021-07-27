@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "LightPropagationVolumeSettings") extern class LightPropagationVolumeSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Write] Diffuse occlusion exponent - increase for more contrast. 1 to 2 is recommended
 	**/
 	public var lpv_diffuse_occlusion_exponent : Float;

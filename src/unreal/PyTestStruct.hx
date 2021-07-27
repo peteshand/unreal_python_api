@@ -3,15 +3,6 @@ package unreal;
 @:pythonImport("unreal", "PyTestStruct") extern class PyTestStruct extends unreal.StructBase {
 	static public var CONSTANT_VALUE : Dynamic;
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_float(value) -> None
 		Add Float
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    PyTestStruct:
 	**/
-	public function add_float(value:Dynamic):unreal.PyTestStruct;
+	public function add_float(value:Float):unreal.PyTestStruct;
 	/**
 		x.add_int(value) -> None
 		Add Int
@@ -32,7 +23,7 @@ package unreal;
 		Returns:
 		    PyTestStruct:
 	**/
-	public function add_int(value:Dynamic):unreal.PyTestStruct;
+	public function add_int(value:Int):unreal.PyTestStruct;
 	/**
 		x.add_str(value) -> None
 		Add Str
@@ -43,7 +34,7 @@ package unreal;
 		Returns:
 		    PyTestStruct:
 	**/
-	public function add_str(value:Dynamic):unreal.PyTestStruct;
+	public function add_str(value:String):unreal.PyTestStruct;
 	/**
 		(bool):  [Read-Write] Bool
 	**/
@@ -72,11 +63,13 @@ package unreal;
 	/**
 		deprecated: 'is_bool_set_old' was renamed to 'is_bool_set'.
 	**/
+	@:deprecated
 	public function is_bool_set_old():Void;
 	/**
 		(int32):  [Read-Write] Legacy Int
 		deprecated: LegacyInt is deprecated. Please use Int instead.
 	**/
+	@:deprecated
 	public var legacy_int : Int;
 	/**
 		x.legacy_is_bool_set() -> bool
@@ -86,6 +79,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
+	@:deprecated
 	public function legacy_is_bool_set():Bool;
 	/**
 		(Name):  [Read-Write] Name

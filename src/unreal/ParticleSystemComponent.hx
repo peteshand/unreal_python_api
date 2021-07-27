@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ParticleSystemComponent") extern class ParticleSystemComponent extends unreal.FXSystemComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] If true, this Particle System will be available for recycling after it has completed. Auto-destroyed systems cannot be recycled.
 		Some systems (currently particle trail effects) can recycle components to avoid respawning them to play new effects.
 		This is only an optimization and does not change particle system behavior, aside from not triggering normal component initialization events more than once.
@@ -67,7 +58,7 @@ package unreal;
 		    width_mode (TrailWidthMode): How the width value is applied to the trail.
 		    width (float): The width of the trail.
 	**/
-	public function begin_trails(first_socket_name:Dynamic, second_socket_name:Dynamic, width_mode:Dynamic, width:Dynamic):Void;
+	public function begin_trails(first_socket_name:unreal.Name, second_socket_name:unreal.Name, width_mode:unreal.TrailWidthMode, width:Float):Void;
 	/**
 		x.create_named_dynamic_material_instance(name, source_material=None) -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance for the specified named material override, optionally from the supplied material.
@@ -79,7 +70,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_named_dynamic_material_instance(name:Dynamic, source_material:Dynamic):unreal.MaterialInstanceDynamic;
+	public function create_named_dynamic_material_instance(name:unreal.Name, source_material:unreal.MaterialInterface):unreal.MaterialInstanceDynamic;
 	/**
 		(float):  [Read-Write] Scales DeltaTime in UParticleSystemComponent::Tick(...)
 	**/
@@ -100,7 +91,7 @@ package unreal;
 		    direction (Vector): 
 		    velocity (Vector): The velocity of the particle when the event fired.
 	**/
-	public function generate_particle_event(event_name:Dynamic, emitter_time:Dynamic, location:Dynamic, direction:Dynamic, velocity:Dynamic):Void;
+	public function generate_particle_event(event_name:unreal.Name, emitter_time:Float, location:unreal.Vector, direction:unreal.Vector, velocity:unreal.Vector):Void;
 	/**
 		x.get_beam_end_point(emitter_index) -> Vector or None
 		Get the beam end point
@@ -113,7 +104,7 @@ package unreal;
 		
 		    out_end_point (Vector):
 	**/
-	public function get_beam_end_point(emitter_index:Dynamic):Dynamic;
+	public function get_beam_end_point(emitter_index:Int):Dynamic;
 	/**
 		x.get_beam_source_point(emitter_index, source_index) -> Vector or None
 		Get the beam source point
@@ -127,7 +118,7 @@ package unreal;
 		
 		    out_source_point (Vector): Value of source point
 	**/
-	public function get_beam_source_point(emitter_index:Dynamic, source_index:Dynamic):Dynamic;
+	public function get_beam_source_point(emitter_index:Int, source_index:Int):Dynamic;
 	/**
 		x.get_beam_source_strength(emitter_index, source_index) -> float or None
 		Get the beam source strength
@@ -141,7 +132,7 @@ package unreal;
 		
 		    out_source_strength (float): Value of source tangent
 	**/
-	public function get_beam_source_strength(emitter_index:Dynamic, source_index:Dynamic):Dynamic;
+	public function get_beam_source_strength(emitter_index:Int, source_index:Int):Dynamic;
 	/**
 		x.get_beam_source_tangent(emitter_index, source_index) -> Vector or None
 		Get the beam source tangent
@@ -155,7 +146,7 @@ package unreal;
 		
 		    out_tangent_point (Vector): Value of source tangent
 	**/
-	public function get_beam_source_tangent(emitter_index:Dynamic, source_index:Dynamic):Dynamic;
+	public function get_beam_source_tangent(emitter_index:Int, source_index:Int):Dynamic;
 	/**
 		x.get_beam_target_point(emitter_index, target_index) -> Vector or None
 		Get the beam target point
@@ -169,7 +160,7 @@ package unreal;
 		
 		    out_target_point (Vector): Value of target point
 	**/
-	public function get_beam_target_point(emitter_index:Dynamic, target_index:Dynamic):Dynamic;
+	public function get_beam_target_point(emitter_index:Int, target_index:Int):Dynamic;
 	/**
 		x.get_beam_target_strength(emitter_index, target_index) -> float or None
 		Get the beam target strength
@@ -183,7 +174,7 @@ package unreal;
 		
 		    out_target_strength (float): Value of target tangent
 	**/
-	public function get_beam_target_strength(emitter_index:Dynamic, target_index:Dynamic):Dynamic;
+	public function get_beam_target_strength(emitter_index:Int, target_index:Int):Dynamic;
 	/**
 		x.get_beam_target_tangent(emitter_index, target_index) -> Vector or None
 		Get the beam target tangent
@@ -197,7 +188,7 @@ package unreal;
 		
 		    out_tangent_point (Vector): Value of target tangent
 	**/
-	public function get_beam_target_tangent(emitter_index:Dynamic, target_index:Dynamic):Dynamic;
+	public function get_beam_target_tangent(emitter_index:Int, target_index:Int):Dynamic;
 	/**
 		x.get_named_material(name) -> MaterialInterface
 		Returns a named material. If this named material is not found, returns NULL.
@@ -208,7 +199,7 @@ package unreal;
 		Returns:
 		    MaterialInterface:
 	**/
-	public function get_named_material(name:Dynamic):unreal.MaterialInterface;
+	public function get_named_material(name:unreal.Name):unreal.MaterialInterface;
 	/**
 		x.get_num_active_particles() -> int32
 		Get the current number of active particles in this system
@@ -270,7 +261,8 @@ package unreal;
 		    socket_name (Name): Socket on Parent to attach to.
 		    location_type (AttachLocation): Option for how we handle our location when we attach to Parent.
 	**/
-	public function set_auto_attach_params(parent:Dynamic, socket_name:Dynamic, location_type:Dynamic):Void;
+	@:deprecated
+	public function set_auto_attach_params(parent:unreal.SceneComponent, socket_name:unreal.Name, location_type:unreal.AttachLocation):Void;
 	/**
 		x.set_beam_end_point(emitter_index, new_end_point) -> None
 		Set the beam end point
@@ -279,7 +271,7 @@ package unreal;
 		    emitter_index (int32): The index of the emitter to set it on
 		    new_end_point (Vector): The value to set it to
 	**/
-	public function set_beam_end_point(emitter_index:Dynamic, new_end_point:Dynamic):Void;
+	public function set_beam_end_point(emitter_index:Int, new_end_point:unreal.Vector):Void;
 	/**
 		x.set_beam_source_point(emitter_index, new_source_point, source_index) -> None
 		Set the beam source point
@@ -289,7 +281,7 @@ package unreal;
 		    new_source_point (Vector): The value to set it to
 		    source_index (int32): Which beam within the emitter to set it on
 	**/
-	public function set_beam_source_point(emitter_index:Dynamic, new_source_point:Dynamic, source_index:Dynamic):Void;
+	public function set_beam_source_point(emitter_index:Int, new_source_point:unreal.Vector, source_index:Int):Void;
 	/**
 		x.set_beam_source_strength(emitter_index, new_source_strength, source_index) -> None
 		Set the beam source strength
@@ -299,7 +291,7 @@ package unreal;
 		    new_source_strength (float): The value to set it to
 		    source_index (int32): Which beam within the emitter to set it on
 	**/
-	public function set_beam_source_strength(emitter_index:Dynamic, new_source_strength:Dynamic, source_index:Dynamic):Void;
+	public function set_beam_source_strength(emitter_index:Int, new_source_strength:Float, source_index:Int):Void;
 	/**
 		x.set_beam_source_tangent(emitter_index, new_tangent_point, source_index) -> None
 		Set the beam source tangent
@@ -309,7 +301,7 @@ package unreal;
 		    new_tangent_point (Vector): The value to set it to
 		    source_index (int32): Which beam within the emitter to set it on
 	**/
-	public function set_beam_source_tangent(emitter_index:Dynamic, new_tangent_point:Dynamic, source_index:Dynamic):Void;
+	public function set_beam_source_tangent(emitter_index:Int, new_tangent_point:unreal.Vector, source_index:Int):Void;
 	/**
 		x.set_beam_target_point(emitter_index, new_target_point, target_index) -> None
 		Set the beam target point
@@ -319,7 +311,7 @@ package unreal;
 		    new_target_point (Vector): The value to set it to
 		    target_index (int32): Which beam within the emitter to set it on
 	**/
-	public function set_beam_target_point(emitter_index:Dynamic, new_target_point:Dynamic, target_index:Dynamic):Void;
+	public function set_beam_target_point(emitter_index:Int, new_target_point:unreal.Vector, target_index:Int):Void;
 	/**
 		x.set_beam_target_strength(emitter_index, new_target_strength, target_index) -> None
 		Set the beam target strength
@@ -329,7 +321,7 @@ package unreal;
 		    new_target_strength (float): The value to set it to
 		    target_index (int32): Which beam within the emitter to set it on
 	**/
-	public function set_beam_target_strength(emitter_index:Dynamic, new_target_strength:Dynamic, target_index:Dynamic):Void;
+	public function set_beam_target_strength(emitter_index:Int, new_target_strength:Float, target_index:Int):Void;
 	/**
 		x.set_beam_target_tangent(emitter_index, new_tangent_point, target_index) -> None
 		Set the beam target tangent
@@ -339,7 +331,7 @@ package unreal;
 		    new_tangent_point (Vector): The value to set it to
 		    target_index (int32): Which beam within the emitter to set it on
 	**/
-	public function set_beam_target_tangent(emitter_index:Dynamic, new_tangent_point:Dynamic, target_index:Dynamic):Void;
+	public function set_beam_target_tangent(emitter_index:Int, new_tangent_point:unreal.Vector, target_index:Int):Void;
 	/**
 		x.set_material_parameter(parameter_name, param) -> None
 		Set a named material instance parameter on this ParticleSystemComponent.
@@ -349,7 +341,7 @@ package unreal;
 		    parameter_name (Name): 
 		    param (MaterialInterface):
 	**/
-	public function set_material_parameter(parameter_name:Dynamic, param:Dynamic):Void;
+	public function set_material_parameter(parameter_name:unreal.Name, param:unreal.MaterialInterface):Void;
 	/**
 		x.set_template(new_template) -> None
 		Change the ParticleSystem used by this ParticleSystemComponent
@@ -357,7 +349,7 @@ package unreal;
 		Args:
 		    new_template (ParticleSystem):
 	**/
-	public function set_template(new_template:Dynamic):Void;
+	public function set_template(new_template:unreal.ParticleSystem):Void;
 	/**
 		x.set_trail_source_data(first_socket_name, second_socket_name, width_mode, width) -> None
 		Sets the defining data for all trails in this component.
@@ -368,7 +360,7 @@ package unreal;
 		    width_mode (TrailWidthMode): How the width value is applied to the trail.
 		    width (float): The width of the trail.
 	**/
-	public function set_trail_source_data(first_socket_name:Dynamic, second_socket_name:Dynamic, width_mode:Dynamic, width:Dynamic):Void;
+	public function set_trail_source_data(first_socket_name:unreal.Name, second_socket_name:unreal.Name, width_mode:unreal.TrailWidthMode, width:Float):Void;
 	/**
 		(ParticleSystem):  [Read-Only] Template
 	**/

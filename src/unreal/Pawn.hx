@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Pawn") extern class Pawn extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_controller_pitch_input(val) -> None
 		Add input (affecting Pitch) to the Controller's ControlRotation, if it is a local PlayerController.
 		This value is multiplied by the PlayerController's InputPitchScale value.
@@ -19,7 +10,7 @@ package unreal;
 		Args:
 		    val (float): Amount to add to Pitch. This value is multiplied by the PlayerController's InputPitchScale value.
 	**/
-	public function add_controller_pitch_input(val:Dynamic):Void;
+	public function add_controller_pitch_input(val:Float):Void;
 	/**
 		x.add_controller_roll_input(val) -> None
 		Add input (affecting Roll) to the Controller's ControlRotation, if it is a local PlayerController.
@@ -29,7 +20,7 @@ package unreal;
 		Args:
 		    val (float): Amount to add to Roll. This value is multiplied by the PlayerController's InputRollScale value.
 	**/
-	public function add_controller_roll_input(val:Dynamic):Void;
+	public function add_controller_roll_input(val:Float):Void;
 	/**
 		x.add_controller_yaw_input(val) -> None
 		Add input (affecting Yaw) to the Controller's ControlRotation, if it is a local PlayerController.
@@ -39,10 +30,11 @@ package unreal;
 		Args:
 		    val (float): Amount to add to Yaw. This value is multiplied by the PlayerController's InputYawScale value.
 	**/
-	public function add_controller_yaw_input(val:Dynamic):Void;
+	public function add_controller_yaw_input(val:Float):Void;
 	/**
 		deprecated: 'add_look_up_input' was renamed to 'add_controller_pitch_input'.
 	**/
+	@:deprecated
 	public function add_look_up_input():Void;
 	/**
 		x.add_movement_input(world_direction, scale_value=1.000000, force=False) -> None
@@ -55,22 +47,26 @@ package unreal;
 		    scale_value (float): Scale to apply to input. This can be used for analog input, ie a value of 0.5 applies half the normal value, while -1.0 would reverse the direction.
 		    force (bool): If true always add the input, ignoring the result of IsMoveInputIgnored().
 	**/
-	public function add_movement_input(world_direction:Dynamic, scale_value:Dynamic, force:Dynamic):Void;
+	public function add_movement_input(world_direction:unreal.Vector, scale_value:Float, force:Bool):Void;
 	/**
 		deprecated: 'add_pitch_input' was renamed to 'add_controller_pitch_input'.
 	**/
+	@:deprecated
 	public function add_pitch_input():Void;
 	/**
 		deprecated: 'add_roll_input' was renamed to 'add_controller_roll_input'.
 	**/
+	@:deprecated
 	public function add_roll_input():Void;
 	/**
 		deprecated: 'add_turn_input' was renamed to 'add_controller_yaw_input'.
 	**/
+	@:deprecated
 	public function add_turn_input():Void;
 	/**
 		deprecated: 'add_yaw_input' was renamed to 'add_controller_yaw_input'.
 	**/
+	@:deprecated
 	public function add_yaw_input():Void;
 	/**
 		(type(Class)):  [Read-Write] Default class to use when pawn is controlled by AI.
@@ -101,6 +97,7 @@ package unreal;
 	/**
 		deprecated: 'controller_class' was renamed to 'ai_controller_class'.
 	**/
+	@:deprecated
 	public var controller_class : Dynamic;
 	/**
 		x.detach_from_controller_pending_destroy() -> None
@@ -155,7 +152,7 @@ package unreal;
 		Returns:
 		    Actor:
 	**/
-	static public function get_movement_base_actor(pawn:Dynamic):unreal.Actor;
+	static public function get_movement_base_actor(pawn:unreal.Pawn):unreal.Actor;
 	/**
 		x.get_movement_component() -> PawnMovementComponent
 		Return our PawnMovementComponent, if we have one.
@@ -172,6 +169,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
+	@:deprecated
 	public function get_movement_input_vector():unreal.Vector;
 	/**
 		x.get_nav_agent_location() -> Vector
@@ -253,7 +251,8 @@ package unreal;
 		    xy_override (bool): 
 		    z_override (bool):
 	**/
-	public function launch_pawn(launch_velocity:Dynamic, xy_override:Dynamic, z_override:Dynamic):Void;
+	@:deprecated
+	public function launch_pawn(launch_velocity:unreal.Vector, xy_override:Bool, z_override:Bool):Void;
 	/**
 		x.pawn_make_noise(loudness, noise_location, use_noise_maker_location=True, noise_maker=None) -> None
 		Inform AIControllers that you've made a noise they might hear (they are sent a HearNoise message if they have bHearNoises==true)
@@ -265,10 +264,11 @@ package unreal;
 		    use_noise_maker_location (bool): If true, use the location of the NoiseMaker rather than NoiseLocation.  If false, use NoiseLocation.
 		    noise_maker (Actor): Which actor is the source of the noise.  Not to be confused with the Noise Instigator, which is responsible for the noise (and is the pawn on which this function is called).  If not specified, the pawn instigating the noise will be used as the NoiseMaker
 	**/
-	public function pawn_make_noise(loudness:Dynamic, noise_location:Dynamic, use_noise_maker_location:Dynamic, noise_maker:Dynamic):Void;
+	public function pawn_make_noise(loudness:Float, noise_location:unreal.Vector, use_noise_maker_location:Bool, noise_maker:unreal.Actor):Void;
 	/**
 		deprecated: 'player_replication_info' was renamed to 'player_state'.
 	**/
+	@:deprecated
 	public var player_replication_info : Dynamic;
 	/**
 		(PlayerState):  [Read-Only] If Pawn is possessed by a player, points to its Player State.  Needed for network play as controllers are not replicated to clients.
@@ -281,7 +281,7 @@ package unreal;
 		Args:
 		    new_controller (Controller):
 	**/
-	public function receive_possessed(new_controller:Dynamic):Void;
+	public function receive_possessed(new_controller:unreal.Controller):Void;
 	/**
 		x.receive_unpossessed(old_controller) -> None
 		Event called when the Pawn is no longer possessed by a Controller.
@@ -289,7 +289,7 @@ package unreal;
 		Args:
 		    old_controller (Controller):
 	**/
-	public function receive_unpossessed(old_controller:Dynamic):Void;
+	public function receive_unpossessed(old_controller:unreal.Controller):Void;
 	/**
 		x.set_can_affect_navigation_generation(new_value, force_update=False) -> None
 		Use SetCanAffectNavigationGeneration to change this value at runtime.
@@ -299,7 +299,7 @@ package unreal;
 		    new_value (bool): 
 		    force_update (bool):
 	**/
-	public function set_can_affect_navigation_generation(new_value:Dynamic, force_update:Dynamic):Void;
+	public function set_can_affect_navigation_generation(new_value:Bool, force_update:Bool):Void;
 	/**
 		x.spawn_default_controller() -> None
 		Spawn default controller for this Pawn, and get possessed by it.

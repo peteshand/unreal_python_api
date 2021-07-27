@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CapsuleComponent") extern class CapsuleComponent extends unreal.ShapeComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] Half-height, from center of capsule to the end of top or bottom hemisphere.
 		This cannot be less than CapsuleRadius.
 	**/
@@ -18,6 +9,7 @@ package unreal;
 	/**
 		deprecated: 'capsule_height' was renamed to 'capsule_half_height'.
 	**/
+	@:deprecated
 	public var capsule_height : Dynamic;
 	/**
 		(float):  [Read-Only] Radius of cap hemispheres and center cylinder.
@@ -139,7 +131,7 @@ package unreal;
 		    half_height (float): : half-height, from capsule center to end of top or bottom hemisphere.
 		    update_overlaps (bool):
 	**/
-	public function set_capsule_half_height(half_height:Dynamic, update_overlaps:Dynamic):Void;
+	public function set_capsule_half_height(half_height:Float, update_overlaps:Bool):Void;
 	/**
 		x.set_capsule_radius(radius, update_overlaps=True) -> None
 		Set the capsule radius. This is the unscaled radius, before component scale is applied.
@@ -149,7 +141,7 @@ package unreal;
 		    radius (float): : radius of end-cap hemispheres and center cylinder.
 		    update_overlaps (bool):
 	**/
-	public function set_capsule_radius(radius:Dynamic, update_overlaps:Dynamic):Void;
+	public function set_capsule_radius(radius:Float, update_overlaps:Bool):Void;
 	/**
 		x.set_capsule_size(radius, half_height, update_overlaps=True) -> None
 		Change the capsule size. This is the unscaled size, before component scale is applied.
@@ -159,5 +151,5 @@ package unreal;
 		    half_height (float): : half-height, from capsule center to end of top or bottom hemisphere.
 		    update_overlaps (bool):
 	**/
-	public function set_capsule_size(radius:Dynamic, half_height:Dynamic, update_overlaps:Dynamic):Void;
+	public function set_capsule_size(radius:Float, half_height:Float, update_overlaps:Bool):Void;
 }

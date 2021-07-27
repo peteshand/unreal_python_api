@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuSection") extern class ToolMenuSection extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_entry(args) -> None
 		Add Entry
 		
 		Args:
 		    args (ToolMenuEntry):
 	**/
-	public function add_entry(args:Dynamic):Void;
+	public function add_entry(args:unreal.ToolMenuEntry):Void;
 	/**
 		x.add_entry_object(object) -> None
 		Add Entry Object
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    object (ToolMenuEntryScript):
 	**/
-	public function add_entry_object(object:Dynamic):Void;
+	public function add_entry_object(object:unreal.ToolMenuEntryScript):Void;
 	/**
 		(Array(ToolMenuEntry)):  [Read-Write] Blocks
 	**/
@@ -61,7 +52,7 @@ package unreal;
 		Args:
 		    label (Text):
 	**/
-	public function set_label(label:Dynamic):Void;
+	public function set_label(label:unreal.Text):Void;
 	/**
 		(ToolMenuSectionDynamic):  [Read-Write] Tool Menu Section Dynamic
 	**/

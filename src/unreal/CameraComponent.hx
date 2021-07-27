@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CameraComponent") extern class CameraComponent extends unreal.SceneComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_or_update_blendable(blendable_object, weight=1.000000) -> None
 		Adds an Blendable (implements IBlendableInterface) to the array of Blendables (if it doesn't exist) and update the weight
 		
@@ -18,7 +9,7 @@ package unreal;
 		    blendable_object (BlendableInterface): 
 		    weight (float):
 	**/
-	public function add_or_update_blendable(blendable_object:Dynamic, weight:Dynamic):Void;
+	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float):Void;
 	/**
 		(float):  [Read-Write] Aspect Ratio (Width/Height)
 	**/
@@ -26,10 +17,12 @@ package unreal;
 	/**
 		deprecated: 'b_use_controller_view_rotation' was renamed to 'use_pawn_control_rotation'.
 	**/
+	@:deprecated
 	public var b_use_controller_view_rotation : Dynamic;
 	/**
 		deprecated: 'b_use_pawn_view_rotation' was renamed to 'use_pawn_control_rotation'.
 	**/
+	@:deprecated
 	public var b_use_pawn_view_rotation : Dynamic;
 	/**
 		(StaticMesh):  [Read-Write] Camera Mesh
@@ -60,7 +53,7 @@ package unreal;
 		
 		    desired_view (MinimalViewInfo):
 	**/
-	public function get_camera_view(delta_time:Dynamic):unreal.MinimalViewInfo;
+	public function get_camera_view(delta_time:Float):unreal.MinimalViewInfo;
 	/**
 		(bool):  [Read-Write] True if the camera's orientation and position should be locked to the HMD
 	**/
@@ -104,7 +97,7 @@ package unreal;
 		Args:
 		    aspect_ratio (float):
 	**/
-	public function set_aspect_ratio(aspect_ratio:Dynamic):Void;
+	public function set_aspect_ratio(aspect_ratio:Float):Void;
 	/**
 		x.set_constraint_aspect_ratio(constrain_aspect_ratio) -> None
 		Set Constraint Aspect Ratio
@@ -112,7 +105,7 @@ package unreal;
 		Args:
 		    constrain_aspect_ratio (bool):
 	**/
-	public function set_constraint_aspect_ratio(constrain_aspect_ratio:Dynamic):Void;
+	public function set_constraint_aspect_ratio(constrain_aspect_ratio:Bool):Void;
 	/**
 		x.set_field_of_view(field_of_view) -> None
 		Set Field Of View
@@ -120,7 +113,7 @@ package unreal;
 		Args:
 		    field_of_view (float):
 	**/
-	public function set_field_of_view(field_of_view:Dynamic):Void;
+	public function set_field_of_view(field_of_view:Float):Void;
 	/**
 		x.set_ortho_far_clip_plane(ortho_far_clip_plane) -> None
 		Set Ortho Far Clip Plane
@@ -128,7 +121,7 @@ package unreal;
 		Args:
 		    ortho_far_clip_plane (float):
 	**/
-	public function set_ortho_far_clip_plane(ortho_far_clip_plane:Dynamic):Void;
+	public function set_ortho_far_clip_plane(ortho_far_clip_plane:Float):Void;
 	/**
 		x.set_ortho_near_clip_plane(ortho_near_clip_plane) -> None
 		Set Ortho Near Clip Plane
@@ -136,7 +129,7 @@ package unreal;
 		Args:
 		    ortho_near_clip_plane (float):
 	**/
-	public function set_ortho_near_clip_plane(ortho_near_clip_plane:Dynamic):Void;
+	public function set_ortho_near_clip_plane(ortho_near_clip_plane:Float):Void;
 	/**
 		x.set_ortho_width(ortho_width) -> None
 		Set Ortho Width
@@ -144,7 +137,7 @@ package unreal;
 		Args:
 		    ortho_width (float):
 	**/
-	public function set_ortho_width(ortho_width:Dynamic):Void;
+	public function set_ortho_width(ortho_width:Float):Void;
 	/**
 		x.set_post_process_blend_weight(post_process_blend_weight) -> None
 		Set Post Process Blend Weight
@@ -152,7 +145,7 @@ package unreal;
 		Args:
 		    post_process_blend_weight (float):
 	**/
-	public function set_post_process_blend_weight(post_process_blend_weight:Dynamic):Void;
+	public function set_post_process_blend_weight(post_process_blend_weight:Float):Void;
 	/**
 		x.set_projection_mode(projection_mode) -> None
 		Set Projection Mode
@@ -160,7 +153,7 @@ package unreal;
 		Args:
 		    projection_mode (CameraProjectionMode):
 	**/
-	public function set_projection_mode(projection_mode:Dynamic):Void;
+	public function set_projection_mode(projection_mode:unreal.CameraProjectionMode):Void;
 	/**
 		x.set_use_field_of_view_for_lod(use_field_of_view_for_lod) -> None
 		Set Use Field Of View for LOD
@@ -168,7 +161,7 @@ package unreal;
 		Args:
 		    use_field_of_view_for_lod (bool):
 	**/
-	public function set_use_field_of_view_for_lod(use_field_of_view_for_lod:Dynamic):Void;
+	public function set_use_field_of_view_for_lod(use_field_of_view_for_lod:Bool):Void;
 	/**
 		(bool):  [Read-Write] If true, account for the field of view angle when computing which level of detail to use for meshes.
 	**/

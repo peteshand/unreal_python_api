@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PaperFlipbook") extern class PaperFlipbook extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(FlipbookCollisionMode):  [Read-Only] Collision source
 	**/
 	public var collision_source : unreal.FlipbookCollisionMode;
@@ -34,7 +25,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_key_frame_index_at_time(time:Dynamic, clamp_to_ends:Dynamic):Int;
+	public function get_key_frame_index_at_time(time:Float, clamp_to_ends:Bool):Int;
 	/**
 		x.get_num_frames() -> int32
 		Returns the total number of frames
@@ -61,7 +52,7 @@ package unreal;
 		Returns:
 		    PaperSprite:
 	**/
-	public function get_sprite_at_frame(frame_index:Dynamic):unreal.PaperSprite;
+	public function get_sprite_at_frame(frame_index:Int):unreal.PaperSprite;
 	/**
 		x.get_sprite_at_time(time, clamp_to_ends=False) -> PaperSprite
 		Returns the sprite at the specified time (in seconds), or nullptr if none exists.
@@ -74,7 +65,7 @@ package unreal;
 		Returns:
 		    PaperSprite:
 	**/
-	public function get_sprite_at_time(time:Dynamic, clamp_to_ends:Dynamic):unreal.PaperSprite;
+	public function get_sprite_at_time(time:Float, clamp_to_ends:Bool):unreal.PaperSprite;
 	/**
 		x.get_total_duration() -> float
 		Returns the total duration in seconds
@@ -93,5 +84,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_valid_key_frame_index(index:Dynamic):Bool;
+	public function is_valid_key_frame_index(index:Int):Bool;
 }

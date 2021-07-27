@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InputLibrary") extern class InputLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.calibrate_tilt() -> None
 		Calibrate the tilt for the input device
 	**/
@@ -26,7 +17,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_input_chord_input_chord(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_input_chord_input_chord(a:unreal.InputChord, b:unreal.InputChord):Bool;
 	/**
 		X.equal_equal_key_key(a, b) -> bool
 		Test if the input key are equal (A == B)
@@ -38,7 +29,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_key_key(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_key_key(a:unreal.Key, b:unreal.Key):Bool;
 	/**
 		X.get_analog_value(input) -> float
 		Get Analog Value
@@ -49,7 +40,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_analog_value(input:Dynamic):Float;
+	static public function get_analog_value(input:unreal.AnalogInputEvent):Float;
 	/**
 		X.get_key(input) -> Key
 		Returns the key for this event.
@@ -60,7 +51,7 @@ package unreal;
 		Returns:
 		    Key: Key name
 	**/
-	static public function get_key(input:Dynamic):unreal.Key;
+	static public function get_key(input:unreal.KeyEvent):unreal.Key;
 	/**
 		X.get_user_index(input) -> int32
 		Get User Index
@@ -71,7 +62,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_user_index(input:Dynamic):Int;
+	static public function get_user_index(input:unreal.KeyEvent):Int;
 	/**
 		X.input_chord_get_display_name(key) -> Text
 		
@@ -82,7 +73,7 @@ package unreal;
 		Returns:
 		    Text: The display name of the input chord
 	**/
-	static public function input_chord_get_display_name(key:Dynamic):unreal.Text;
+	static public function input_chord_get_display_name(key:unreal.InputChord):unreal.Text;
 	/**
 		X.input_event_is_alt_down(input) -> bool
 		Returns true if either alt key was down when this event occurred
@@ -93,7 +84,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_alt_down(input:Dynamic):Bool;
+	static public function input_event_is_alt_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_command_down(input) -> bool
 		Returns true if either command key was down when this event occurred
@@ -104,7 +95,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_command_down(input:Dynamic):Bool;
+	static public function input_event_is_command_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_control_down(input) -> bool
 		Returns true if either control key was down when this event occurred
@@ -115,7 +106,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_control_down(input:Dynamic):Bool;
+	static public function input_event_is_control_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_left_alt_down(input) -> bool
 		Returns true if left alt key was down when this event occurred
@@ -126,7 +117,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_left_alt_down(input:Dynamic):Bool;
+	static public function input_event_is_left_alt_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_left_command_down(input) -> bool
 		Returns true if left command key was down when this event occurred
@@ -137,7 +128,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_left_command_down(input:Dynamic):Bool;
+	static public function input_event_is_left_command_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_left_control_down(input) -> bool
 		Returns true if left control key was down when this event occurred
@@ -148,7 +139,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_left_control_down(input:Dynamic):Bool;
+	static public function input_event_is_left_control_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_left_shift_down(input) -> bool
 		Returns true if left shift key was down when this event occurred
@@ -159,7 +150,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_left_shift_down(input:Dynamic):Bool;
+	static public function input_event_is_left_shift_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_repeat(input) -> bool
 		Returns whether or not this character is an auto-repeated keystroke
@@ -170,7 +161,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_repeat(input:Dynamic):Bool;
+	static public function input_event_is_repeat(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_right_alt_down(input) -> bool
 		Returns true if right alt key was down when this event occurred
@@ -181,7 +172,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_right_alt_down(input:Dynamic):Bool;
+	static public function input_event_is_right_alt_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_right_command_down(input) -> bool
 		Returns true if right command key was down when this event occurred
@@ -192,7 +183,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_right_command_down(input:Dynamic):Bool;
+	static public function input_event_is_right_command_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_right_control_down(input) -> bool
 		Returns true if left control key was down when this event occurred
@@ -203,7 +194,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_right_control_down(input:Dynamic):Bool;
+	static public function input_event_is_right_control_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_right_shift_down(input) -> bool
 		Returns true if right shift key was down when this event occurred
@@ -214,7 +205,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_right_shift_down(input:Dynamic):Bool;
+	static public function input_event_is_right_shift_down(input:unreal.InputEvent):Bool;
 	/**
 		X.input_event_is_shift_down(input) -> bool
 		Returns true if either shift key was down when this event occurred
@@ -225,7 +216,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function input_event_is_shift_down(input:Dynamic):Bool;
+	static public function input_event_is_shift_down(input:unreal.InputEvent):Bool;
 	/**
 		X.key_get_display_name(key) -> Text
 		Returns the display name of the key.
@@ -236,7 +227,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function key_get_display_name(key:Dynamic):unreal.Text;
+	static public function key_get_display_name(key:unreal.Key):unreal.Text;
 	/**
 		X.key_get_navigation_action(key) -> UINavigationAction
 		Key Get Navigation Action
@@ -248,7 +239,8 @@ package unreal;
 		Returns:
 		    UINavigationAction:
 	**/
-	static public function key_get_navigation_action(key:Dynamic):unreal.UINavigationAction;
+	@:deprecated
+	static public function key_get_navigation_action(key:unreal.Key):unreal.UINavigationAction;
 	/**
 		X.key_get_navigation_action_from_key(key_event) -> UINavigationAction
 		Returns the navigation action corresponding to this key, or Invalid if not found
@@ -259,7 +251,7 @@ package unreal;
 		Returns:
 		    UINavigationAction:
 	**/
-	static public function key_get_navigation_action_from_key(key_event:Dynamic):unreal.UINavigationAction;
+	static public function key_get_navigation_action_from_key(key_event:unreal.KeyEvent):unreal.UINavigationAction;
 	/**
 		X.key_get_navigation_direction_from_analog(analog_event) -> UINavigation
 		Returns the navigation action corresponding to this key, or Invalid if not found
@@ -270,7 +262,7 @@ package unreal;
 		Returns:
 		    UINavigation:
 	**/
-	static public function key_get_navigation_direction_from_analog(analog_event:Dynamic):unreal.UINavigation;
+	static public function key_get_navigation_direction_from_analog(analog_event:unreal.AnalogInputEvent):unreal.UINavigation;
 	/**
 		X.key_get_navigation_direction_from_key(key_event) -> UINavigation
 		Returns the navigation action corresponding to this key, or Invalid if not found
@@ -281,7 +273,7 @@ package unreal;
 		Returns:
 		    UINavigation:
 	**/
-	static public function key_get_navigation_direction_from_key(key_event:Dynamic):unreal.UINavigation;
+	static public function key_get_navigation_direction_from_key(key_event:unreal.KeyEvent):unreal.UINavigation;
 	/**
 		X.key_is_analog(key) -> bool
 		Returns true if the key is an analog axis
@@ -292,7 +284,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_analog(key:Dynamic):Bool;
+	static public function key_is_analog(key:unreal.Key):Bool;
 	/**
 		X.key_is_axis1d(key) -> bool
 		Returns true if the key is a 1D (float) axis
@@ -303,7 +295,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_axis1d(key:Dynamic):Bool;
+	static public function key_is_axis1d(key:unreal.Key):Bool;
 	/**
 		X.key_is_axis2d(key) -> bool
 		Returns true if the key is a 2D (vector) axis
@@ -314,7 +306,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_axis2d(key:Dynamic):Bool;
+	static public function key_is_axis2d(key:unreal.Key):Bool;
 	/**
 		X.key_is_axis3d(key) -> bool
 		Returns true if the key is a 3D (vector) axis
@@ -325,7 +317,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_axis3d(key:Dynamic):Bool;
+	static public function key_is_axis3d(key:unreal.Key):Bool;
 	/**
 		X.key_is_button_axis(key) -> bool
 		Returns true if the key is a 1D axis emulating a digital button press.
@@ -336,7 +328,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_button_axis(key:Dynamic):Bool;
+	static public function key_is_button_axis(key:unreal.Key):Bool;
 	/**
 		X.key_is_digital(key) -> bool
 		Returns true if the key is a digital button press
@@ -347,10 +339,11 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_digital(key:Dynamic):Bool;
+	static public function key_is_digital(key:unreal.Key):Bool;
 	/**
 		deprecated: 'key_is_float_axis' was renamed to 'key_is_axis1d'.
 	**/
+	@:deprecated
 	static public function key_is_float_axis():Void;
 	/**
 		X.key_is_gamepad_key(key) -> bool
@@ -362,7 +355,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_gamepad_key(key:Dynamic):Bool;
+	static public function key_is_gamepad_key(key:unreal.Key):Bool;
 	/**
 		X.key_is_keyboard_key(key) -> bool
 		Returns true if the key is a keyboard button
@@ -373,7 +366,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_keyboard_key(key:Dynamic):Bool;
+	static public function key_is_keyboard_key(key:unreal.Key):Bool;
 	/**
 		X.key_is_modifier_key(key) -> bool
 		Returns true if the key is a modifier key: Ctrl, Command, Alt, Shift
@@ -384,7 +377,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_modifier_key(key:Dynamic):Bool;
+	static public function key_is_modifier_key(key:unreal.Key):Bool;
 	/**
 		X.key_is_mouse_button(key) -> bool
 		Returns true if the key is a mouse button
@@ -395,7 +388,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_mouse_button(key:Dynamic):Bool;
+	static public function key_is_mouse_button(key:unreal.Key):Bool;
 	/**
 		X.key_is_valid(key) -> bool
 		Returns true if this is a valid key.
@@ -406,7 +399,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_valid(key:Dynamic):Bool;
+	static public function key_is_valid(key:unreal.Key):Bool;
 	/**
 		X.key_is_vector_axis(key) -> bool
 		Returns true if the key is a vector axis
@@ -419,7 +412,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function key_is_vector_axis(key:Dynamic):Bool;
+	@:deprecated
+	static public function key_is_vector_axis(key:unreal.Key):Bool;
 	/**
 		X.pointer_event_get_cursor_delta(input) -> Vector2D
 		Returns the distance the mouse traveled since the last event was handled.
@@ -430,7 +424,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	static public function pointer_event_get_cursor_delta(input:Dynamic):unreal.Vector2D;
+	static public function pointer_event_get_cursor_delta(input:unreal.PointerEvent):unreal.Vector2D;
 	/**
 		X.pointer_event_get_effecting_button(input) -> Key
 		Mouse button that caused this event to be raised (possibly FKey::Invalid)
@@ -441,7 +435,7 @@ package unreal;
 		Returns:
 		    Key:
 	**/
-	static public function pointer_event_get_effecting_button(input:Dynamic):unreal.Key;
+	static public function pointer_event_get_effecting_button(input:unreal.PointerEvent):unreal.Key;
 	/**
 		X.pointer_event_get_gesture_delta(input) -> Vector2D
 		Returns the change in gesture value since the last gesture event of the same type.
@@ -452,7 +446,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	static public function pointer_event_get_gesture_delta(input:Dynamic):unreal.Vector2D;
+	static public function pointer_event_get_gesture_delta(input:unreal.PointerEvent):unreal.Vector2D;
 	/**
 		X.pointer_event_get_gesture_type(input) -> SlateGesture
 		Returns the type of touch gesture
@@ -463,7 +457,7 @@ package unreal;
 		Returns:
 		    SlateGesture:
 	**/
-	static public function pointer_event_get_gesture_type(input:Dynamic):unreal.SlateGesture;
+	static public function pointer_event_get_gesture_type(input:unreal.PointerEvent):unreal.SlateGesture;
 	/**
 		X.pointer_event_get_last_screen_space_position(input) -> Vector2D
 		Returns the position of the cursor in screen space last time we handled an input event
@@ -474,7 +468,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	static public function pointer_event_get_last_screen_space_position(input:Dynamic):unreal.Vector2D;
+	static public function pointer_event_get_last_screen_space_position(input:unreal.PointerEvent):unreal.Vector2D;
 	/**
 		X.pointer_event_get_pointer_index(input) -> int32
 		Returns the unique identifier of the pointer (e.g., finger index)
@@ -485,7 +479,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function pointer_event_get_pointer_index(input:Dynamic):Int;
+	static public function pointer_event_get_pointer_index(input:unreal.PointerEvent):Int;
 	/**
 		X.pointer_event_get_screen_space_position(input) -> Vector2D
 		Returns The position of the cursor in screen space
@@ -496,7 +490,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	static public function pointer_event_get_screen_space_position(input:Dynamic):unreal.Vector2D;
+	static public function pointer_event_get_screen_space_position(input:unreal.PointerEvent):unreal.Vector2D;
 	/**
 		X.pointer_event_get_touchpad_index(input) -> int32
 		Returns the index of the touch pad that generated this event (for platforms with multiple touch pads per user)
@@ -507,7 +501,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function pointer_event_get_touchpad_index(input:Dynamic):Int;
+	static public function pointer_event_get_touchpad_index(input:unreal.PointerEvent):Int;
 	/**
 		X.pointer_event_get_user_index(input) -> int32
 		Returns the index of the user that caused the event
@@ -518,7 +512,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function pointer_event_get_user_index(input:Dynamic):Int;
+	static public function pointer_event_get_user_index(input:unreal.PointerEvent):Int;
 	/**
 		X.pointer_event_get_wheel_delta(input) -> float
 		How much did the mouse wheel turn since the last mouse event
@@ -529,7 +523,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function pointer_event_get_wheel_delta(input:Dynamic):Float;
+	static public function pointer_event_get_wheel_delta(input:unreal.PointerEvent):Float;
 	/**
 		X.pointer_event_is_mouse_button_down(input, mouse_button) -> bool
 		Mouse buttons that are currently pressed
@@ -541,7 +535,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function pointer_event_is_mouse_button_down(input:Dynamic, mouse_button:Dynamic):Bool;
+	static public function pointer_event_is_mouse_button_down(input:unreal.PointerEvent, mouse_button:unreal.Key):Bool;
 	/**
 		X.pointer_event_is_touch_event(input) -> bool
 		Returns true if this event a result from a touch (as opposed to a mouse)
@@ -552,5 +546,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function pointer_event_is_touch_event(input:Dynamic):Bool;
+	static public function pointer_event_is_touch_event(input:unreal.PointerEvent):Bool;
 }

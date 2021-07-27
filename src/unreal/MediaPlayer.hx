@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MediaPlayer") extern class MediaPlayer extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Whether this player should stop when entering or exiting PIE.
 	**/
 	public var affected_by_pie_handling : Bool;
@@ -54,7 +45,7 @@ package unreal;
 		Returns:
 		    bool: true if the media source can be opened, false otherwise.
 	**/
-	public function can_play_source(media_source:Dynamic):Bool;
+	public function can_play_source(media_source:unreal.MediaSource):Bool;
 	/**
 		x.can_play_url(url) -> bool
 		Check whether the specified URL can be played by this player.
@@ -69,7 +60,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function can_play_url(url:Dynamic):Bool;
+	public function can_play_url(url:String):Bool;
 	/**
 		x.close() -> None
 		Close the currently open media, if any.
@@ -88,7 +79,7 @@ package unreal;
 		Returns:
 		    int32: Number of channels.
 	**/
-	public function get_audio_track_channels(track_index:Dynamic, format_index:Dynamic):Int;
+	public function get_audio_track_channels(track_index:Int, format_index:Int):Int;
 	/**
 		x.get_audio_track_sample_rate(track_index, format_index) -> int32
 		Get the sample rate of the specified audio track.
@@ -101,7 +92,7 @@ package unreal;
 		Returns:
 		    int32: Samples per second.
 	**/
-	public function get_audio_track_sample_rate(track_index:Dynamic, format_index:Dynamic):Int;
+	public function get_audio_track_sample_rate(track_index:Int, format_index:Int):Int;
 	/**
 		x.get_audio_track_type(track_index, format_index) -> str
 		Get the type of the specified audio track format.
@@ -114,7 +105,7 @@ package unreal;
 		Returns:
 		    str: Audio format type string.
 	**/
-	public function get_audio_track_type(track_index:Dynamic, format_index:Dynamic):String;
+	public function get_audio_track_type(track_index:Int, format_index:Int):String;
 	/**
 		x.get_desired_player_name() -> Name
 		Get the name of the current desired native player.
@@ -163,7 +154,7 @@ package unreal;
 		Returns:
 		    int32: Number of formats.
 	**/
-	public function get_num_track_formats(track_type:Dynamic, track_index:Dynamic):Int;
+	public function get_num_track_formats(track_type:unreal.MediaPlayerTrack, track_index:Int):Int;
 	/**
 		x.get_num_tracks(track_type) -> int32
 		Get the number of tracks of the given type.
@@ -175,7 +166,7 @@ package unreal;
 		Returns:
 		    int32: Number of tracks.
 	**/
-	public function get_num_tracks(track_type:Dynamic):Int;
+	public function get_num_tracks(track_type:unreal.MediaPlayerTrack):Int;
 	/**
 		x.get_player_name() -> Name
 		Get the name of the current native media player.
@@ -226,7 +217,7 @@ package unreal;
 		Returns:
 		    int32: The index of the selected track, or INDEX_NONE if no track is active.
 	**/
-	public function get_selected_track(track_type:Dynamic):Int;
+	public function get_selected_track(track_type:unreal.MediaPlayerTrack):Int;
 	/**
 		x.get_supported_rates(unthinned) -> Array(FloatRange)
 		Get the supported playback rates.
@@ -240,7 +231,7 @@ package unreal;
 		
 		    out_rates (Array(FloatRange)):
 	**/
-	public function get_supported_rates(unthinned:Dynamic):Dynamic;
+	public function get_supported_rates(unthinned:Bool):Dynamic;
 	/**
 		x.get_time() -> Timespan
 		Get the media's current playback time.
@@ -280,7 +271,7 @@ package unreal;
 		Returns:
 		    Text: Display name.
 	**/
-	public function get_track_display_name(track_type:Dynamic, track_index:Dynamic):unreal.Text;
+	public function get_track_display_name(track_type:unreal.MediaPlayerTrack, track_index:Int):unreal.Text;
 	/**
 		x.get_track_format(track_type, track_index) -> int32
 		Get the index of the active format of the specified track type.
@@ -293,7 +284,7 @@ package unreal;
 		Returns:
 		    int32: The index of the selected format.
 	**/
-	public function get_track_format(track_type:Dynamic, track_index:Dynamic):Int;
+	public function get_track_format(track_type:unreal.MediaPlayerTrack, track_index:Int):Int;
 	/**
 		x.get_track_language(track_type, track_index) -> str
 		Get the language tag of the specified track.
@@ -306,7 +297,7 @@ package unreal;
 		Returns:
 		    str: Language tag, i.e. "en-US" for English, or "und" for undefined.
 	**/
-	public function get_track_language(track_type:Dynamic, track_index:Dynamic):String;
+	public function get_track_language(track_type:unreal.MediaPlayerTrack, track_index:Int):String;
 	/**
 		x.get_url() -> str
 		Get the URL of the currently loaded media, if any.
@@ -337,7 +328,7 @@ package unreal;
 		Returns:
 		    float: Aspect ratio.
 	**/
-	public function get_video_track_aspect_ratio(track_index:Dynamic, format_index:Dynamic):Float;
+	public function get_video_track_aspect_ratio(track_index:Int, format_index:Int):Float;
 	/**
 		x.get_video_track_dimensions(track_index, format_index) -> IntPoint
 		Get the current dimensions of the specified video track.
@@ -350,7 +341,7 @@ package unreal;
 		Returns:
 		    IntPoint: Video dimensions (in pixels).
 	**/
-	public function get_video_track_dimensions(track_index:Dynamic, format_index:Dynamic):unreal.IntPoint;
+	public function get_video_track_dimensions(track_index:Int, format_index:Int):unreal.IntPoint;
 	/**
 		x.get_video_track_frame_rate(track_index, format_index) -> float
 		Get the frame rate of the specified video track.
@@ -363,7 +354,7 @@ package unreal;
 		Returns:
 		    float: Frame rate (in frames per second).
 	**/
-	public function get_video_track_frame_rate(track_index:Dynamic, format_index:Dynamic):Float;
+	public function get_video_track_frame_rate(track_index:Int, format_index:Int):Float;
 	/**
 		x.get_video_track_frame_rates(track_index, format_index) -> FloatRange
 		Get the supported range of frame rates of the specified video track.
@@ -376,7 +367,7 @@ package unreal;
 		Returns:
 		    FloatRange: Frame rate range (in frames per second).
 	**/
-	public function get_video_track_frame_rates(track_index:Dynamic, format_index:Dynamic):unreal.FloatRange;
+	public function get_video_track_frame_rates(track_index:Int, format_index:Int):unreal.FloatRange;
 	/**
 		x.get_video_track_type(track_index, format_index) -> str
 		Get the type of the specified video track format.
@@ -389,7 +380,7 @@ package unreal;
 		Returns:
 		    str: Video format type string.
 	**/
-	public function get_video_track_type(track_index:Dynamic, format_index:Dynamic):String;
+	public function get_video_track_type(track_index:Int, format_index:Int):String;
 	/**
 		x.get_view_rotation() -> Rotator
 		Get the current view rotation (only for 360 videos).
@@ -580,7 +571,7 @@ package unreal;
 		Returns:
 		    bool: true if the file path will be opened, false otherwise.
 	**/
-	public function open_file(file_path:Dynamic):Bool;
+	public function open_file(file_path:String):Bool;
 	/**
 		x.open_playlist(playlist) -> bool
 		Open the first media source in the specified play list.
@@ -592,7 +583,7 @@ package unreal;
 		Returns:
 		    bool: true if the source will be opened, false otherwise.
 	**/
-	public function open_playlist(playlist:Dynamic):Bool;
+	public function open_playlist(playlist:unreal.MediaPlaylist):Bool;
 	/**
 		x.open_playlist_index(playlist, index) -> bool
 		Open a particular media source in the specified play list.
@@ -605,7 +596,7 @@ package unreal;
 		Returns:
 		    bool: true if the source will be opened, false otherwise.
 	**/
-	public function open_playlist_index(playlist:Dynamic, index:Dynamic):Bool;
+	public function open_playlist_index(playlist:unreal.MediaPlaylist, index:Int):Bool;
 	/**
 		x.open_source(media_source) -> bool
 		Open the specified media source.
@@ -622,7 +613,7 @@ package unreal;
 		Returns:
 		    bool: true if the source will be opened, false otherwise.
 	**/
-	public function open_source(media_source:Dynamic):Bool;
+	public function open_source(media_source:unreal.MediaSource):Bool;
 	/**
 		x.open_source_latent(world_context_object, latent_info, media_source, options) -> bool
 		Open the specified media source with options using a latent action.
@@ -641,7 +632,7 @@ package unreal;
 		
 		    success (bool): All requested operations have completed successfully.
 	**/
-	public function open_source_latent(world_context_object:Dynamic, latent_info:Dynamic, media_source:Dynamic, options:Dynamic):Bool;
+	public function open_source_latent(world_context_object:unreal.Object, latent_info:unreal.LatentActionInfo, media_source:unreal.MediaSource, options:unreal.MediaPlayerOptions):Bool;
 	/**
 		x.open_source_with_options(media_source, options) -> bool
 		Open the specified media source with supplied options applied.
@@ -659,7 +650,7 @@ package unreal;
 		Returns:
 		    bool: true if the source will be opened, false otherwise.
 	**/
-	public function open_source_with_options(media_source:Dynamic, options:Dynamic):Bool;
+	public function open_source_with_options(media_source:unreal.MediaSource, options:unreal.MediaPlayerOptions):Bool;
 	/**
 		x.open_url(url) -> bool
 		Opens the specified media URL.
@@ -676,7 +667,7 @@ package unreal;
 		Returns:
 		    bool: true if the URL will be opened, false otherwise.
 	**/
-	public function open_url(url:Dynamic):Bool;
+	public function open_url(url:String):Bool;
 	/**
 		x.pause() -> bool
 		Pauses media playback.
@@ -769,7 +760,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function seek(time:Dynamic):Bool;
+	public function seek(time:unreal.Timespan):Bool;
 	/**
 		x.select_track(track_type, track_index) -> bool
 		Select the active track of the given type.
@@ -786,7 +777,7 @@ package unreal;
 		Returns:
 		    bool: true if the track was selected, false otherwise.
 	**/
-	public function select_track(track_type:Dynamic, track_index:Dynamic):Bool;
+	public function select_track(track_type:unreal.MediaPlayerTrack, track_index:Int):Bool;
 	/**
 		x.set_block_on_time(time) -> None
 		Set the time on which to block.
@@ -797,7 +788,7 @@ package unreal;
 		Args:
 		    time (Timespan): The time to block on, or FTimespan::MinValue to disable.
 	**/
-	public function set_block_on_time(time:Dynamic):Void;
+	public function set_block_on_time(time:unreal.Timespan):Void;
 	/**
 		x.set_desired_player_name(player_name) -> None
 		Set the name of the desired native player.
@@ -806,7 +797,7 @@ package unreal;
 		Args:
 		    player_name (Name): The name of the player to set.
 	**/
-	public function set_desired_player_name(player_name:Dynamic):Void;
+	public function set_desired_player_name(player_name:unreal.Name):Void;
 	/**
 		x.set_looping(looping) -> bool
 		Enables or disables playback looping.
@@ -818,7 +809,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function set_looping(looping:Dynamic):Bool;
+	public function set_looping(looping:Bool):Bool;
 	/**
 		x.set_media_options(options) -> None
 		Sets the media options used by the player.
@@ -826,7 +817,7 @@ package unreal;
 		Args:
 		    options (MediaSource): Options to pass to the player.
 	**/
-	public function set_media_options(options:Dynamic):Void;
+	public function set_media_options(options:unreal.MediaSource):Void;
 	/**
 		x.set_native_volume(volume) -> bool
 		Set the volume on the native player if not mixing with Sound Wave asset.
@@ -841,7 +832,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function set_native_volume(volume:Dynamic):Bool;
+	public function set_native_volume(volume:Float):Bool;
 	/**
 		x.set_rate(rate) -> bool
 		Changes the media's playback rate.
@@ -853,7 +844,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function set_rate(rate:Dynamic):Bool;
+	public function set_rate(rate:Float):Bool;
 	/**
 		x.set_time_delay(time_delay) -> None
 		Delay of the player's time.
@@ -869,7 +860,7 @@ package unreal;
 		Returns:
 		    true on success, false otherwise.
 	**/
-	public function set_time_delay(time_delay:Dynamic):Dynamic;
+	public function set_time_delay(time_delay:unreal.Timespan):Dynamic;
 	/**
 		x.set_track_format(track_type, track_index, format_index) -> bool
 		Set the format on the specified track.
@@ -887,7 +878,7 @@ package unreal;
 		Returns:
 		    bool: true if the track was selected, false otherwise.
 	**/
-	public function set_track_format(track_type:Dynamic, track_index:Dynamic, format_index:Dynamic):Bool;
+	public function set_track_format(track_type:unreal.MediaPlayerTrack, track_index:Int, format_index:Int):Bool;
 	/**
 		x.set_video_track_frame_rate(track_index, format_index, frame_rate) -> bool
 		Set the frame rate of the specified video track.
@@ -901,7 +892,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function set_video_track_frame_rate(track_index:Dynamic, format_index:Dynamic, frame_rate:Dynamic):Bool;
+	public function set_video_track_frame_rate(track_index:Int, format_index:Int, frame_rate:Float):Bool;
 	/**
 		x.set_view_field(horizontal, vertical, absolute) -> bool
 		Set the field of view (only for 360 videos).
@@ -915,7 +906,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function set_view_field(horizontal:Dynamic, vertical:Dynamic, absolute:Dynamic):Bool;
+	public function set_view_field(horizontal:Float, vertical:Float, absolute:Bool):Bool;
 	/**
 		x.set_view_rotation(rotation, absolute) -> bool
 		Set the view's rotation (only for 360 videos).
@@ -928,7 +919,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false otherwise.
 	**/
-	public function set_view_rotation(rotation:Dynamic, absolute:Dynamic):Bool;
+	public function set_view_rotation(rotation:unreal.Rotator, absolute:Bool):Bool;
 	/**
 		(bool):  [Read-Write] Whether playback should shuffle media sources in the play list.
 		OpenPlaylist, OpenPlaylistIndex:
@@ -946,7 +937,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function supports_rate(rate:Dynamic, unthinned:Dynamic):Bool;
+	public function supports_rate(rate:Float, unthinned:Bool):Bool;
 	/**
 		x.supports_scrubbing() -> bool
 		Check whether the currently loaded media supports scrubbing.

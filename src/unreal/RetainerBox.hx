@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "RetainerBox") extern class RetainerBox extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(MaterialInterface):  [Read-Only] The effect to optionally apply to the render target.  We will set the texture sampler based on the name
 		set in the
 		property. If you want to adjust transparency of the final image, make sure you set Blend Mode to AlphaComposite (Pre-Multiplied Alpha) and make sure to multiply the alpha you're apply across the surface to the color and the alpha of the render target, otherwise you won't see the expected color.:
@@ -62,7 +53,7 @@ package unreal;
 		Args:
 		    effect_material (MaterialInterface):
 	**/
-	public function set_effect_material(effect_material:Dynamic):Void;
+	public function set_effect_material(effect_material:unreal.MaterialInterface):Void;
 	/**
 		x.set_rendering_phase(render_phase, total_phases) -> None
 		Requests the retainer redrawn the contents it has.
@@ -71,7 +62,7 @@ package unreal;
 		    render_phase (int32): 
 		    total_phases (int32):
 	**/
-	public function set_rendering_phase(render_phase:Dynamic, total_phases:Dynamic):Void;
+	public function set_rendering_phase(render_phase:Int, total_phases:Int):Void;
 	/**
 		x.set_retain_rendering(retain_rendering) -> None
 		Set the flag for if we retain the render or pass-through
@@ -79,7 +70,7 @@ package unreal;
 		Args:
 		    retain_rendering (bool):
 	**/
-	public function set_retain_rendering(retain_rendering:Dynamic):Void;
+	public function set_retain_rendering(retain_rendering:Bool):Void;
 	/**
 		x.set_texture_parameter(texture_parameter) -> None
 		Sets the name of the texture parameter to set the render target to on the material.
@@ -87,7 +78,7 @@ package unreal;
 		Args:
 		    texture_parameter (Name):
 	**/
-	public function set_texture_parameter(texture_parameter:Dynamic):Void;
+	public function set_texture_parameter(texture_parameter:unreal.Name):Void;
 	/**
 		(Name):  [Read-Only] The texture sampler parameter of the
 		that we'll set to the render target.:

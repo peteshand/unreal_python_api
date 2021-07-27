@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SceneCaptureComponent2D") extern class SceneCaptureComponent2D extends unreal.SceneCaptureComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_or_update_blendable(blendable_object, weight=1.000000) -> None
 		Adds an Blendable (implements IBlendableInterface) to the array of Blendables (if it doesn't exist) and update the weight
 		
@@ -18,7 +9,7 @@ package unreal;
 		    blendable_object (BlendableInterface): 
 		    weight (float):
 	**/
-	public function add_or_update_blendable(blendable_object:Dynamic, weight:Dynamic):Void;
+	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float):Void;
 	/**
 		(bool):  [Read-Write] True if we did a camera cut this frame. Automatically reset to false at every capture.
 		This flag affects various things in the renderer (such as whether to use the occlusion queries from last frame, and motion blur).
@@ -93,6 +84,7 @@ package unreal;
 	/**
 		deprecated: 'update_content' was renamed to 'capture_scene'.
 	**/
+	@:deprecated
 	public function update_content():Void;
 	/**
 		(bool):  [Read-Write] Whether a custom projection matrix will be used during rendering. Use with caution. Does not currently affect culling

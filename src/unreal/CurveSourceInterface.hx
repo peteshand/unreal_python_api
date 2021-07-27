@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CurveSourceInterface") extern class CurveSourceInterface extends unreal.Interface {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_binding_name() -> Name
 		Get the name that this curve source can be bound to by.
 		Clients of this curve source will use this name to identify this source.
@@ -29,7 +20,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_curve_value(curve_name:Dynamic):Float;
+	public function get_curve_value(curve_name:unreal.Name):Float;
 	/**
 		x.get_curves() -> Array(NamedCurveValue)
 		Evaluate all curves that this source provides

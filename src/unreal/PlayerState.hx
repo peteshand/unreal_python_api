@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PlayerState") extern class PlayerState extends unreal.Info {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_player_name() -> str
 		returns current player name
 		
@@ -47,7 +38,7 @@ package unreal;
 		Args:
 		    new_player_state (PlayerState): New PlayerState, which we fill with the current properties
 	**/
-	public function receive_copy_properties(new_player_state:Dynamic):Void;
+	public function receive_copy_properties(new_player_state:unreal.PlayerState):Void;
 	/**
 		x.receive_override_with(old_player_state) -> None
 		* Can be implemented in Blueprint Child to move more properties from old to new PlayerState when reconnecting
@@ -57,7 +48,7 @@ package unreal;
 		Args:
 		    old_player_state (PlayerState): Old PlayerState, which we use to fill the new one with
 	**/
-	public function receive_override_with(old_player_state:Dynamic):Void;
+	public function receive_override_with(old_player_state:unreal.PlayerState):Void;
 	/**
 		(float):  [Read-Only] Score
 	**/

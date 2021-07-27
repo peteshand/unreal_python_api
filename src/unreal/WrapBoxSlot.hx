@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "WrapBoxSlot") extern class WrapBoxSlot extends unreal.PanelSlot {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Should this slot fill the remaining space on the line?
 	**/
 	public var fill_empty_space : Bool;
@@ -34,7 +25,7 @@ package unreal;
 		Args:
 		    inb_fill_empty_space (bool):
 	**/
-	public function set_fill_empty_space(inb_fill_empty_space:Dynamic):Void;
+	public function set_fill_empty_space(inb_fill_empty_space:Bool):Void;
 	/**
 		x.set_fill_span_when_less_than(fill_span_when_less_than) -> None
 		Set Fill Span when Less Than
@@ -42,7 +33,7 @@ package unreal;
 		Args:
 		    fill_span_when_less_than (float):
 	**/
-	public function set_fill_span_when_less_than(fill_span_when_less_than:Dynamic):Void;
+	public function set_fill_span_when_less_than(fill_span_when_less_than:Float):Void;
 	/**
 		x.set_horizontal_alignment(horizontal_alignment) -> None
 		Set Horizontal Alignment
@@ -50,7 +41,7 @@ package unreal;
 		Args:
 		    horizontal_alignment (HorizontalAlignment):
 	**/
-	public function set_horizontal_alignment(horizontal_alignment:Dynamic):Void;
+	public function set_horizontal_alignment(horizontal_alignment:unreal.HorizontalAlignment):Void;
 	/**
 		x.set_padding(padding) -> None
 		Set Padding
@@ -58,7 +49,7 @@ package unreal;
 		Args:
 		    padding (Margin):
 	**/
-	public function set_padding(padding:Dynamic):Void;
+	public function set_padding(padding:unreal.Margin):Void;
 	/**
 		x.set_vertical_alignment(vertical_alignment) -> None
 		Set Vertical Alignment
@@ -66,7 +57,7 @@ package unreal;
 		Args:
 		    vertical_alignment (VerticalAlignment):
 	**/
-	public function set_vertical_alignment(vertical_alignment:Dynamic):Void;
+	public function set_vertical_alignment(vertical_alignment:unreal.VerticalAlignment):Void;
 	/**
 		(VerticalAlignment):  [Read-Only] The alignment of the object vertically.
 	**/

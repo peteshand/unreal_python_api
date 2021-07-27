@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Slider") extern class Slider extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_normalized_value() -> float
 		Get the current value scaled from 0 to 1
 		
@@ -85,7 +76,7 @@ package unreal;
 		Args:
 		    value (bool):
 	**/
-	public function set_indent_handle(value:Dynamic):Void;
+	public function set_indent_handle(value:Bool):Void;
 	/**
 		x.set_locked(value) -> None
 		Sets the handle to be interactive or fixed
@@ -93,7 +84,7 @@ package unreal;
 		Args:
 		    value (bool):
 	**/
-	public function set_locked(value:Dynamic):Void;
+	public function set_locked(value:Bool):Void;
 	/**
 		x.set_max_value(value) -> None
 		Sets the maximum value of the slider.
@@ -101,7 +92,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_max_value(value:Dynamic):Void;
+	public function set_max_value(value:Float):Void;
 	/**
 		x.set_min_value(value) -> None
 		Sets the minimum value of the slider.
@@ -109,7 +100,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_min_value(value:Dynamic):Void;
+	public function set_min_value(value:Float):Void;
 	/**
 		x.set_slider_bar_color(value) -> None
 		Sets the color of the slider bar
@@ -117,7 +108,7 @@ package unreal;
 		Args:
 		    value (LinearColor):
 	**/
-	public function set_slider_bar_color(value:Dynamic):Void;
+	public function set_slider_bar_color(value:unreal.LinearColor):Void;
 	/**
 		x.set_slider_handle_color(value) -> None
 		Sets the color of the handle bar
@@ -125,7 +116,7 @@ package unreal;
 		Args:
 		    value (LinearColor):
 	**/
-	public function set_slider_handle_color(value:Dynamic):Void;
+	public function set_slider_handle_color(value:unreal.LinearColor):Void;
 	/**
 		x.set_step_size(value) -> None
 		Sets the amount to adjust the value by, when using a controller or keyboard
@@ -133,7 +124,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_step_size(value:Dynamic):Void;
+	public function set_step_size(value:Float):Void;
 	/**
 		x.set_value(value) -> None
 		Sets the current value of the slider.
@@ -141,7 +132,7 @@ package unreal;
 		Args:
 		    value (float):
 	**/
-	public function set_value(value:Dynamic):Void;
+	public function set_value(value:Float):Void;
 	/**
 		(LinearColor):  [Read-Only] The color to draw the slider bar in.
 	**/

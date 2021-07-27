@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AvoidanceManager") extern class AvoidanceManager extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_avoidance_velocity_for_component(movement_comp) -> Vector
 		Calculate avoidance velocity for component (avoids collisions with the supplied component)
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_avoidance_velocity_for_component(movement_comp:Dynamic):unreal.Vector;
+	public function get_avoidance_velocity_for_component(movement_comp:unreal.MovementComponent):unreal.Vector;
 	/**
 		x.get_new_avoidance_uid() -> int32
 		Get appropriate UID for use when reporting to this function or requesting RVO assistance.
@@ -48,5 +39,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function register_movement_component(movement_comp:Dynamic, avoidance_weight:Dynamic):Bool;
+	public function register_movement_component(movement_comp:unreal.MovementComponent, avoidance_weight:Float):Bool;
 }

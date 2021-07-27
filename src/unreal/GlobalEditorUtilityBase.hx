@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GlobalEditorUtilityBase") extern class GlobalEditorUtilityBase extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Should this blueprint automatically run OnDefaultActionClicked, or should it open up a details panel to edit properties and/or offer multiple buttons
 	**/
 	public var auto_run_default_action : Bool;
@@ -39,7 +30,7 @@ package unreal;
 		Returns:
 		    Actor: A reference to the actor, or none if it wasn't found
 	**/
-	public function get_actor_reference(path_to_actor:Dynamic):unreal.Actor;
+	public function get_actor_reference(path_to_actor:String):unreal.Actor;
 	/**
 		x.get_editor_user_settings() -> EditorPerProjectUserSettings
 		Get Editor User Settings
@@ -103,7 +94,7 @@ package unreal;
 		    asset (Object): 
 		    new_name (str):
 	**/
-	public function rename_asset(asset:Dynamic, new_name:Dynamic):Void;
+	public function rename_asset(asset:unreal.Object, new_name:String):Void;
 	/**
 		x.select_nothing() -> None
 		Selects nothing in the editor (another way to clear the selection)
@@ -117,5 +108,5 @@ package unreal;
 		    actor (Actor): 
 		    should_be_selected (bool):
 	**/
-	public function set_actor_selection_state(actor:Dynamic, should_be_selected:Dynamic):Void;
+	public function set_actor_selection_state(actor:unreal.Actor, should_be_selected:Bool):Void;
 }

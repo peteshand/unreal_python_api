@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraComponent") extern class NiagaraComponent extends unreal.FXSystemComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.advance_simulation(tick_count, tick_delta_seconds) -> None
 		Advances this system's simulation by the specified number of ticks and delta time.
 		
@@ -18,7 +9,7 @@ package unreal;
 		    tick_count (int32): 
 		    tick_delta_seconds (float):
 	**/
-	public function advance_simulation(tick_count:Dynamic, tick_delta_seconds:Dynamic):Void;
+	public function advance_simulation(tick_count:Int, tick_delta_seconds:Float):Void;
 	/**
 		x.advance_simulation_by_time(simulate_time, tick_delta_seconds) -> None
 		Advances this system's simulation by the specified time in seconds and delta time. Advancement is done in whole ticks of TickDeltaSeconds so actual simulated time will be the nearest lower multiple of TickDeltaSeconds.
@@ -27,7 +18,7 @@ package unreal;
 		    simulate_time (float): 
 		    tick_delta_seconds (float):
 	**/
-	public function advance_simulation_by_time(simulate_time:Dynamic, tick_delta_seconds:Dynamic):Void;
+	public function advance_simulation_by_time(simulate_time:Float, tick_delta_seconds:Float):Void;
 	/**
 		(AttachmentRule):  [Read-Write] Options for how we handle our location when we attach to the AutoAttachParent, if bAutoManageAttachment is true.
 		bAutoManageAttachment, EAttachmentRule:
@@ -93,7 +84,7 @@ package unreal;
 		Returns:
 		    NiagaraDataInterface:
 	**/
-	public function get_data_interface(name:Dynamic):unreal.NiagaraDataInterface;
+	public function get_data_interface(name:String):unreal.NiagaraDataInterface;
 	/**
 		x.get_desired_age() -> float
 		Gets the desired age of the System instance.  This is only relevant when using the DesiredAge age update mode.
@@ -130,7 +121,8 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	public function get_niagara_particle_positions_debug_only(emitter_name:Dynamic):Dynamic;
+	@:deprecated
+	public function get_niagara_particle_positions_debug_only(emitter_name:String):Dynamic;
 	/**
 		x.get_niagara_particle_value_vec3_debug_only(emitter_name, value_name) -> Array(Vector)
 		Debug accessors for getting a FVector attribute array in blueprints. The attribute name should be without namespaces. For example for "Particles.Position", send "Position".
@@ -143,7 +135,8 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	public function get_niagara_particle_value_vec3_debug_only(emitter_name:Dynamic, value_name:Dynamic):Dynamic;
+	@:deprecated
+	public function get_niagara_particle_value_vec3_debug_only(emitter_name:String, value_name:String):Dynamic;
 	/**
 		x.get_niagara_particle_values_debug_only(emitter_name, value_name) -> Array(float)
 		Debug accessors for getting a float attribute array in blueprints.  The attribute name should be without namespaces. For example for "Particles.Position", send "Position".
@@ -156,7 +149,8 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	public function get_niagara_particle_values_debug_only(emitter_name:Dynamic, value_name:Dynamic):Dynamic;
+	@:deprecated
+	public function get_niagara_particle_values_debug_only(emitter_name:String, value_name:String):Dynamic;
 	/**
 		x.get_preview_lod_distance() -> int32
 		Get Preview LODDistance
@@ -220,7 +214,7 @@ package unreal;
 		Args:
 		    desired_age (float):
 	**/
-	public function seek_to_desired_age(desired_age:Dynamic):Void;
+	public function seek_to_desired_age(desired_age:Float):Void;
 	/**
 		x.set_age_update_mode(age_update_mode) -> None
 		Sets the age update mode for the System instance.
@@ -228,7 +222,7 @@ package unreal;
 		Args:
 		    age_update_mode (NiagaraAgeUpdateMode):
 	**/
-	public function set_age_update_mode(age_update_mode:Dynamic):Void;
+	public function set_age_update_mode(age_update_mode:unreal.NiagaraAgeUpdateMode):Void;
 	/**
 		x.set_allow_scalability(allow) -> None
 		Set whether this component is allowed to perform scalability checks and potentially be culled etc. Occasionally it is useful to disable this for specific components. E.g. Effects on the local player.
@@ -236,7 +230,7 @@ package unreal;
 		Args:
 		    allow (bool):
 	**/
-	public function set_allow_scalability(allow:Dynamic):Void;
+	public function set_allow_scalability(allow:Bool):Void;
 	/**
 		x.set_asset(asset) -> None
 		Set Asset
@@ -244,7 +238,7 @@ package unreal;
 		Args:
 		    asset (NiagaraSystem):
 	**/
-	public function set_asset(asset:Dynamic):Void;
+	public function set_asset(asset:unreal.NiagaraSystem):Void;
 	/**
 		x.set_auto_destroy(auto_destroy) -> None
 		Set Auto Destroy
@@ -252,7 +246,7 @@ package unreal;
 		Args:
 		    auto_destroy (bool):
 	**/
-	public function set_auto_destroy(auto_destroy:Dynamic):Void;
+	public function set_auto_destroy(auto_destroy:Bool):Void;
 	/**
 		x.set_can_render_while_seeking(can_render_while_seeking) -> None
 		Sets whether or not the system can render while seeking.
@@ -260,7 +254,7 @@ package unreal;
 		Args:
 		    can_render_while_seeking (bool):
 	**/
-	public function set_can_render_while_seeking(can_render_while_seeking:Dynamic):Void;
+	public function set_can_render_while_seeking(can_render_while_seeking:Bool):Void;
 	/**
 		x.set_desired_age(desired_age) -> None
 		Sets the desired age of the System instance.  This is only relevant when using the DesiredAge age update mode.
@@ -268,7 +262,7 @@ package unreal;
 		Args:
 		    desired_age (float):
 	**/
-	public function set_desired_age(desired_age:Dynamic):Void;
+	public function set_desired_age(desired_age:Float):Void;
 	/**
 		x.set_force_solo(force_solo) -> None
 		Set Force Solo
@@ -276,7 +270,7 @@ package unreal;
 		Args:
 		    force_solo (bool):
 	**/
-	public function set_force_solo(force_solo:Dynamic):Void;
+	public function set_force_solo(force_solo:Bool):Void;
 	/**
 		x.set_gpu_compute_debug(enable_debug) -> None
 		Set Gpu Compute Debug
@@ -284,7 +278,7 @@ package unreal;
 		Args:
 		    enable_debug (bool):
 	**/
-	public function set_gpu_compute_debug(enable_debug:Dynamic):Void;
+	public function set_gpu_compute_debug(enable_debug:Bool):Void;
 	/**
 		x.set_max_sim_time(max_time) -> None
 		Sets the maximum time that you can jump within a tick which is used when seeking from the current age, to the desired age.  This is only relevant
@@ -293,7 +287,7 @@ package unreal;
 		Args:
 		    max_time (float):
 	**/
-	public function set_max_sim_time(max_time:Dynamic):Void;
+	public function set_max_sim_time(max_time:Float):Void;
 	/**
 		x.set_niagara_variable_actor(variable_name, actor) -> None
 		Set Niagara Variable Actor
@@ -302,7 +296,7 @@ package unreal;
 		    variable_name (str): 
 		    actor (Actor):
 	**/
-	public function set_niagara_variable_actor(variable_name:Dynamic, actor:Dynamic):Void;
+	public function set_niagara_variable_actor(variable_name:String, actor:unreal.Actor):Void;
 	/**
 		x.set_niagara_variable_bool(variable_name, value) -> None
 		Sets a Niagara float parameter by name, overriding locally if necessary.
@@ -311,7 +305,7 @@ package unreal;
 		    variable_name (str): 
 		    value (bool):
 	**/
-	public function set_niagara_variable_bool(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_bool(variable_name:String, value:Bool):Void;
 	/**
 		x.set_niagara_variable_float(variable_name, value) -> None
 		Sets a Niagara float parameter by name, overriding locally if necessary.
@@ -320,7 +314,7 @@ package unreal;
 		    variable_name (str): 
 		    value (float):
 	**/
-	public function set_niagara_variable_float(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_float(variable_name:String, value:Float):Void;
 	/**
 		x.set_niagara_variable_int(variable_name, value) -> None
 		Sets a Niagara int parameter by name, overriding locally if necessary.
@@ -329,7 +323,7 @@ package unreal;
 		    variable_name (str): 
 		    value (int32):
 	**/
-	public function set_niagara_variable_int(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_int(variable_name:String, value:Int):Void;
 	/**
 		x.set_niagara_variable_linear_color(variable_name, value) -> None
 		Sets a Niagara FLinearColor parameter by name, overriding locally if necessary.
@@ -338,7 +332,7 @@ package unreal;
 		    variable_name (str): 
 		    value (LinearColor):
 	**/
-	public function set_niagara_variable_linear_color(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_linear_color(variable_name:String, value:unreal.LinearColor):Void;
 	/**
 		x.set_niagara_variable_object(variable_name, object) -> None
 		Set Niagara Variable Object
@@ -347,7 +341,7 @@ package unreal;
 		    variable_name (str): 
 		    object (Object):
 	**/
-	public function set_niagara_variable_object(variable_name:Dynamic, object:Dynamic):Void;
+	public function set_niagara_variable_object(variable_name:String, object:unreal.Object):Void;
 	/**
 		x.set_niagara_variable_quat(variable_name, value) -> None
 		Sets a Niagara Vector3 parameter by name, overriding locally if necessary.
@@ -356,7 +350,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Quat):
 	**/
-	public function set_niagara_variable_quat(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_quat(variable_name:String, value:unreal.Quat):Void;
 	/**
 		x.set_niagara_variable_vec2(variable_name, value) -> None
 		Sets a Niagara Vector3 parameter by name, overriding locally if necessary.
@@ -365,7 +359,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Vector2D):
 	**/
-	public function set_niagara_variable_vec2(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_vec2(variable_name:String, value:unreal.Vector2D):Void;
 	/**
 		x.set_niagara_variable_vec3(variable_name, value) -> None
 		Sets a Niagara Vector3 parameter by name, overriding locally if necessary.
@@ -374,7 +368,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Vector):
 	**/
-	public function set_niagara_variable_vec3(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_vec3(variable_name:String, value:unreal.Vector):Void;
 	/**
 		x.set_niagara_variable_vec4(variable_name, value) -> None
 		Sets a Niagara Vector4 parameter by name, overriding locally if necessary.
@@ -383,7 +377,7 @@ package unreal;
 		    variable_name (str): 
 		    value (Vector4):
 	**/
-	public function set_niagara_variable_vec4(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_niagara_variable_vec4(variable_name:String, value:unreal.Vector4):Void;
 	/**
 		x.set_paused(paused) -> None
 		Set Paused
@@ -391,7 +385,7 @@ package unreal;
 		Args:
 		    paused (bool):
 	**/
-	public function set_paused(paused:Dynamic):Void;
+	public function set_paused(paused:Bool):Void;
 	/**
 		x.set_preview_lod_distance(enable_preview_lod_distance, preview_lod_distance) -> None
 		Set Preview LODDistance
@@ -400,7 +394,7 @@ package unreal;
 		    enable_preview_lod_distance (bool): 
 		    preview_lod_distance (float):
 	**/
-	public function set_preview_lod_distance(enable_preview_lod_distance:Dynamic, preview_lod_distance:Dynamic):Void;
+	public function set_preview_lod_distance(enable_preview_lod_distance:Bool, preview_lod_distance:Float):Void;
 	/**
 		x.set_rendering_enabled(rendering_enabled) -> None
 		Sets whether or not rendering is enabled for this component.
@@ -408,7 +402,7 @@ package unreal;
 		Args:
 		    rendering_enabled (bool):
 	**/
-	public function set_rendering_enabled(rendering_enabled:Dynamic):Void;
+	public function set_rendering_enabled(rendering_enabled:Bool):Void;
 	/**
 		x.set_seek_delta(seek_delta) -> None
 		Sets the delta value which is used when seeking from the current age, to the desired age.  This is only relevant
@@ -417,7 +411,7 @@ package unreal;
 		Args:
 		    seek_delta (float):
 	**/
-	public function set_seek_delta(seek_delta:Dynamic):Void;
+	public function set_seek_delta(seek_delta:Float):Void;
 	/**
 		x.set_tick_behavior(new_tick_behavior) -> None
 		Set Tick Behavior
@@ -425,7 +419,7 @@ package unreal;
 		Args:
 		    new_tick_behavior (NiagaraTickBehavior):
 	**/
-	public function set_tick_behavior(new_tick_behavior:Dynamic):Void;
+	public function set_tick_behavior(new_tick_behavior:unreal.NiagaraTickBehavior):Void;
 	/**
 		x.set_variable_actor(variable_name, actor) -> None
 		Set Variable Actor
@@ -434,7 +428,7 @@ package unreal;
 		    variable_name (Name): 
 		    actor (Actor):
 	**/
-	public function set_variable_actor(variable_name:Dynamic, actor:Dynamic):Void;
+	public function set_variable_actor(variable_name:unreal.Name, actor:unreal.Actor):Void;
 	/**
 		x.set_variable_bool(variable_name, value) -> None
 		Sets a Niagara float parameter by name, overriding locally if necessary.
@@ -443,7 +437,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (bool):
 	**/
-	public function set_variable_bool(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_bool(variable_name:unreal.Name, value:Bool):Void;
 	/**
 		x.set_variable_float(variable_name, value) -> None
 		Sets a Niagara float parameter by name, overriding locally if necessary.
@@ -452,7 +446,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (float):
 	**/
-	public function set_variable_float(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_float(variable_name:unreal.Name, value:Float):Void;
 	/**
 		x.set_variable_int(variable_name, value) -> None
 		Sets a Niagara int parameter by name, overriding locally if necessary.
@@ -461,7 +455,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (int32):
 	**/
-	public function set_variable_int(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_int(variable_name:unreal.Name, value:Int):Void;
 	/**
 		x.set_variable_linear_color(variable_name, value) -> None
 		Sets a Niagara FLinearColor parameter by name, overriding locally if necessary.
@@ -470,7 +464,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (LinearColor):
 	**/
-	public function set_variable_linear_color(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_linear_color(variable_name:unreal.Name, value:unreal.LinearColor):Void;
 	/**
 		x.set_variable_material(variable_name, object) -> None
 		Set Variable Material
@@ -479,7 +473,7 @@ package unreal;
 		    variable_name (Name): 
 		    object (MaterialInterface):
 	**/
-	public function set_variable_material(variable_name:Dynamic, object:Dynamic):Void;
+	public function set_variable_material(variable_name:unreal.Name, object:unreal.MaterialInterface):Void;
 	/**
 		x.set_variable_object(variable_name, object) -> None
 		Set Variable Object
@@ -488,7 +482,7 @@ package unreal;
 		    variable_name (Name): 
 		    object (Object):
 	**/
-	public function set_variable_object(variable_name:Dynamic, object:Dynamic):Void;
+	public function set_variable_object(variable_name:unreal.Name, object:unreal.Object):Void;
 	/**
 		x.set_variable_quat(variable_name, value) -> None
 		Sets a Niagara Vector3 parameter by name, overriding locally if necessary.
@@ -497,7 +491,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (Quat):
 	**/
-	public function set_variable_quat(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_quat(variable_name:unreal.Name, value:unreal.Quat):Void;
 	/**
 		x.set_variable_texture_render_target(variable_name, texture_render_target) -> None
 		Set Variable Texture Render Target
@@ -506,7 +500,7 @@ package unreal;
 		    variable_name (Name): 
 		    texture_render_target (TextureRenderTarget):
 	**/
-	public function set_variable_texture_render_target(variable_name:Dynamic, texture_render_target:Dynamic):Void;
+	public function set_variable_texture_render_target(variable_name:unreal.Name, texture_render_target:unreal.TextureRenderTarget):Void;
 	/**
 		x.set_variable_vec2(variable_name, value) -> None
 		Sets a Niagara Vector3 parameter by name, overriding locally if necessary.
@@ -515,7 +509,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (Vector2D):
 	**/
-	public function set_variable_vec2(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_vec2(variable_name:unreal.Name, value:unreal.Vector2D):Void;
 	/**
 		x.set_variable_vec3(variable_name, value) -> None
 		Sets a Niagara Vector3 parameter by name, overriding locally if necessary.
@@ -524,7 +518,7 @@ package unreal;
 		    variable_name (Name): 
 		    value (Vector):
 	**/
-	public function set_variable_vec3(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_vec3(variable_name:unreal.Name, value:unreal.Vector):Void;
 	/**
 		x.set_variable_vec4(variable_name, value) -> None
 		Sets a Niagara Vector4 parameter by name, overriding locally if necessary.
@@ -533,5 +527,5 @@ package unreal;
 		    variable_name (Name): 
 		    value (Vector4):
 	**/
-	public function set_variable_vec4(variable_name:Dynamic, value:Dynamic):Void;
+	public function set_variable_vec4(variable_name:unreal.Name, value:unreal.Vector4):Void;
 }

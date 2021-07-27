@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "VREditorInteractor") extern class VREditorInteractor extends unreal.ViewportInteractor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_controller_hand_side() -> Name
 		Sets the EControllerHand for this motioncontroller
 		
@@ -117,7 +108,7 @@ package unreal;
 		Args:
 		    vr_mode (VREditorMode):
 	**/
-	public function init(vr_mode:Dynamic):Void;
+	public function init(vr_mode:unreal.VREditorMode):Void;
 	/**
 		x.is_clicking_on_ui() -> bool
 		Gets if the interactor is clicking on any UI
@@ -149,7 +140,7 @@ package unreal;
 		Args:
 		    new_mesh (StaticMesh):
 	**/
-	public function replace_hand_mesh_component(new_mesh:Dynamic):Void;
+	public function replace_hand_mesh_component(new_mesh:unreal.StaticMesh):Void;
 	/**
 		x.set_controller_hand_side(controller_hand_side) -> None
 		Sets the EControllerHand for this motioncontroller
@@ -157,7 +148,7 @@ package unreal;
 		Args:
 		    controller_hand_side (Name):
 	**/
-	public function set_controller_hand_side(controller_hand_side:Dynamic):Void;
+	public function set_controller_hand_side(controller_hand_side:unreal.Name):Void;
 	/**
 		x.set_controller_type(controller_type) -> None
 		Set what controller type this is for asymmetric control schemes
@@ -165,7 +156,7 @@ package unreal;
 		Args:
 		    controller_type (ControllerType):
 	**/
-	public function set_controller_type(controller_type:Dynamic):Void;
+	public function set_controller_type(controller_type:unreal.ControllerType):Void;
 	/**
 		x.set_force_laser_color(color) -> None
 		Next frame this will be used as color for the laser
@@ -173,7 +164,7 @@ package unreal;
 		Args:
 		    color (LinearColor):
 	**/
-	public function set_force_laser_color(color:Dynamic):Void;
+	public function set_force_laser_color(color:unreal.LinearColor):Void;
 	/**
 		x.set_force_show_laser(force_show) -> None
 		Set if we want to force to show the laser
@@ -181,7 +172,7 @@ package unreal;
 		Args:
 		    force_show (bool):
 	**/
-	public function set_force_show_laser(force_show:Dynamic):Void;
+	public function set_force_show_laser(force_show:Bool):Void;
 	/**
 		x.setup_component(owning_actor) -> None
 		Sets up all components
@@ -189,7 +180,7 @@ package unreal;
 		Args:
 		    owning_actor (Actor):
 	**/
-	public function setup_component(owning_actor:Dynamic):Void;
+	public function setup_component(owning_actor:unreal.Actor):Void;
 	/**
 		x.try_override_controller_type(controller_type) -> bool
 		Temporary set what controller type this is for asymmetric control schemes.
@@ -202,5 +193,5 @@ package unreal;
 		Returns:
 		    bool: true if the controller type was changed
 	**/
-	public function try_override_controller_type(controller_type:Dynamic):Bool;
+	public function try_override_controller_type(controller_type:unreal.ControllerType):Bool;
 }

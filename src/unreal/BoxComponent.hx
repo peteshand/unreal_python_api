@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "BoxComponent") extern class BoxComponent extends unreal.ShapeComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Vector):  [Read-Only] The extents (radii dimensions) of the box *
 	**/
 	public var box_extent : unreal.Vector;
@@ -42,5 +33,5 @@ package unreal;
 		    box_extent (Vector): 
 		    update_overlaps (bool):
 	**/
-	public function set_box_extent(box_extent:Dynamic, update_overlaps:Dynamic):Void;
+	public function set_box_extent(box_extent:unreal.Vector, update_overlaps:Bool):Void;
 }

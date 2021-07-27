@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenus") extern class ToolMenus extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.add_menu_entry_object(menu_entry_object) -> bool
 		Registers menu entry object from blueprint/script
 		
@@ -20,7 +11,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function add_menu_entry_object(menu_entry_object:Dynamic):Bool;
+	static public function add_menu_entry_object(menu_entry_object:unreal.ToolMenuEntryScript):Bool;
 	/**
 		x.extend_menu(name) -> ToolMenu
 		Extends a menu without registering the menu or claiming ownership of it. Ok to call even if menu does not exist yet.
@@ -31,7 +22,7 @@ package unreal;
 		Returns:
 		    ToolMenu: ToolMenu        Menu object
 	**/
-	public function extend_menu(name:Dynamic):unreal.ToolMenu;
+	public function extend_menu(name:unreal.Name):unreal.ToolMenu;
 	/**
 		X.find_context(context, class_) -> Object
 		Finds a context object of a given class if it exists
@@ -43,7 +34,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function find_context(context:Dynamic, class_:Dynamic):unreal.Object;
+	static public function find_context(context:unreal.ToolMenuContext, class_:Dynamic):unreal.Object;
 	/**
 		x.find_menu(name) -> ToolMenu
 		Finds an existing menu that has been registered or extended.
@@ -54,7 +45,7 @@ package unreal;
 		Returns:
 		    ToolMenu: ToolMenu        Menu object. Returns null if not found.
 	**/
-	public function find_menu(name:Dynamic):unreal.ToolMenu;
+	public function find_menu(name:unreal.Name):unreal.ToolMenu;
 	/**
 		X.get() -> ToolMenus
 		Get
@@ -73,7 +64,7 @@ package unreal;
 		Returns:
 		    bool: bool    True if menu has already been registered.
 	**/
-	public function is_menu_registered(name:Dynamic):Bool;
+	public function is_menu_registered(name:unreal.Name):Bool;
 	/**
 		x.refresh_all_widgets() -> None
 		Rebuilds all currently generated widgets next tick.
@@ -89,7 +80,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function refresh_menu_widget(name:Dynamic):Bool;
+	public function refresh_menu_widget(name:unreal.Name):Bool;
 	/**
 		x.register_menu(name, parent="None", type=MultiBoxType.MENU, warn_if_already_registered=True) -> ToolMenu
 		Registers a menu by name
@@ -103,7 +94,7 @@ package unreal;
 		Returns:
 		    ToolMenu: ToolMenu        Menu object
 	**/
-	public function register_menu(name:Dynamic, parent:Dynamic, type:Dynamic, warn_if_already_registered:Dynamic):unreal.ToolMenu;
+	public function register_menu(name:unreal.Name, parent:unreal.Name, type:unreal.MultiBoxType, warn_if_already_registered:Bool):unreal.ToolMenu;
 	/**
 		x.remove_entry(menu_name, section, name) -> None
 		Removes a menu entry from a given menu and section
@@ -113,7 +104,7 @@ package unreal;
 		    section (Name): 
 		    name (Name):
 	**/
-	public function remove_entry(menu_name:Dynamic, section:Dynamic, name:Dynamic):Void;
+	public function remove_entry(menu_name:unreal.Name, section:unreal.Name, name:unreal.Name):Void;
 	/**
 		x.remove_menu(menu_name) -> None
 		Unregisters a menu by name
@@ -121,7 +112,7 @@ package unreal;
 		Args:
 		    menu_name (Name):
 	**/
-	public function remove_menu(menu_name:Dynamic):Void;
+	public function remove_menu(menu_name:unreal.Name):Void;
 	/**
 		x.remove_section(menu_name, section) -> None
 		Removes a section from a given menu
@@ -130,7 +121,7 @@ package unreal;
 		    menu_name (Name): 
 		    section (Name):
 	**/
-	public function remove_section(menu_name:Dynamic, section:Dynamic):Void;
+	public function remove_section(menu_name:unreal.Name, section:unreal.Name):Void;
 	/**
 		x.set_section_label(menu_name, section_name, label) -> None
 		Sets a section's displayed label text.
@@ -140,7 +131,7 @@ package unreal;
 		    section_name (Name): 
 		    label (Text):
 	**/
-	public function set_section_label(menu_name:Dynamic, section_name:Dynamic, label:Dynamic):Void;
+	public function set_section_label(menu_name:unreal.Name, section_name:unreal.Name, label:unreal.Text):Void;
 	/**
 		x.set_section_position(menu_name, section_name, other_section_name, position_type) -> None
 		Sets where to insert a section into a menu when generating relative to other section names.
@@ -151,7 +142,7 @@ package unreal;
 		    other_section_name (Name): 
 		    position_type (ToolMenuInsertType):
 	**/
-	public function set_section_position(menu_name:Dynamic, section_name:Dynamic, other_section_name:Dynamic, position_type:Dynamic):Void;
+	public function set_section_position(menu_name:unreal.Name, section_name:unreal.Name, other_section_name:unreal.Name, position_type:unreal.ToolMenuInsertType):Void;
 	/**
 		x.unregister_owner_by_name(owner_name) -> None
 		Removes all entries that were registered under a specific owner name
@@ -159,5 +150,5 @@ package unreal;
 		Args:
 		    owner_name (Name):
 	**/
-	public function unregister_owner_by_name(owner_name:Dynamic):Void;
+	public function unregister_owner_by_name(owner_name:unreal.Name):Void;
 }

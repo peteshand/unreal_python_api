@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ImportanceSamplingLibrary") extern class ImportanceSamplingLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.importance_sample(texture, rand, samples, intensity) -> (sample_position=Vector2D, sample_color=LinearColor, sample_intensity=float, sample_size=float)
 		Distribute sample points proportional to Texture2D luminance.
 		SamplePosition - Importance sampled 2D output texture coordinate (0-1): 
@@ -35,7 +26,7 @@ package unreal;
 		
 		    sample_size (float):
 	**/
-	static public function importance_sample(texture:Dynamic, rand:Dynamic, samples:Dynamic, intensity:Dynamic):python.Tuple<Dynamic>;
+	static public function importance_sample(texture:unreal.ImportanceTexture, rand:unreal.Vector2D, samples:Int, intensity:Float):python.Tuple<Dynamic>;
 	/**
 		X.next_sobol_cell2d(index, num_cells=1, previous_value=[0.000000, 0.000000]) -> Vector2D
 		
@@ -48,7 +39,7 @@ package unreal;
 		Returns:
 		    Vector2D: Sobol-distributed random 2D position in the same grid cell
 	**/
-	static public function next_sobol_cell2d(index:Dynamic, num_cells:Dynamic, previous_value:Dynamic):unreal.Vector2D;
+	static public function next_sobol_cell2d(index:Int, num_cells:Int, previous_value:unreal.Vector2D):unreal.Vector2D;
 	/**
 		X.next_sobol_cell3d(index, num_cells=1, previous_value=[0.000000, 0.000000, 0.000000]) -> Vector
 		
@@ -61,7 +52,7 @@ package unreal;
 		Returns:
 		    Vector: Sobol-distributed random 3D position in the same grid cell
 	**/
-	static public function next_sobol_cell3d(index:Dynamic, num_cells:Dynamic, previous_value:Dynamic):unreal.Vector;
+	static public function next_sobol_cell3d(index:Int, num_cells:Int, previous_value:unreal.Vector):unreal.Vector;
 	/**
 		X.next_sobol_float(index, dimension, previous_value) -> float
 		
@@ -74,7 +65,7 @@ package unreal;
 		Returns:
 		    float: Sobol-distributed random number between 0 and 1
 	**/
-	static public function next_sobol_float(index:Dynamic, dimension:Dynamic, previous_value:Dynamic):Float;
+	static public function next_sobol_float(index:Int, dimension:Int, previous_value:Float):Float;
 	/**
 		X.random_sobol_cell2d(index, num_cells=1, cell=[0.000000, 0.000000], seed=[0.000000, 0.000000]) -> Vector2D
 		
@@ -88,7 +79,7 @@ package unreal;
 		Returns:
 		    Vector2D: Sobol-distributed random 2D position in the given grid cell
 	**/
-	static public function random_sobol_cell2d(index:Dynamic, num_cells:Dynamic, cell:Dynamic, seed:Dynamic):unreal.Vector2D;
+	static public function random_sobol_cell2d(index:Int, num_cells:Int, cell:unreal.Vector2D, seed:unreal.Vector2D):unreal.Vector2D;
 	/**
 		X.random_sobol_cell3d(index, num_cells=1, cell=[0.000000, 0.000000, 0.000000], seed=[0.000000, 0.000000, 0.000000]) -> Vector
 		
@@ -102,7 +93,7 @@ package unreal;
 		Returns:
 		    Vector: Sobol-distributed random 3D vector in the given grid cell
 	**/
-	static public function random_sobol_cell3d(index:Dynamic, num_cells:Dynamic, cell:Dynamic, seed:Dynamic):unreal.Vector;
+	static public function random_sobol_cell3d(index:Int, num_cells:Int, cell:unreal.Vector, seed:unreal.Vector):unreal.Vector;
 	/**
 		X.random_sobol_float(index, dimension, seed) -> float
 		
@@ -115,5 +106,5 @@ package unreal;
 		Returns:
 		    float: Sobol-distributed random number between 0 and 1
 	**/
-	static public function random_sobol_float(index:Dynamic, dimension:Dynamic, seed:Dynamic):Float;
+	static public function random_sobol_float(index:Int, dimension:Int, seed:Float):Float;
 }

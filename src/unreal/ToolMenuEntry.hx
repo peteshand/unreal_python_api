@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuEntry") extern class ToolMenuEntry extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_label() -> Text
 		Get Label
 		
@@ -51,7 +42,7 @@ package unreal;
 		    style_name (Name): 
 		    small_style_name (Name):
 	**/
-	public function set_icon(style_set_name:Dynamic, style_name:Dynamic, small_style_name:Dynamic):Void;
+	public function set_icon(style_set_name:unreal.Name, style_name:unreal.Name, small_style_name:unreal.Name):Void;
 	/**
 		x.set_label(label) -> None
 		Set Label
@@ -59,7 +50,7 @@ package unreal;
 		Args:
 		    label (Text):
 	**/
-	public function set_label(label:Dynamic):Void;
+	public function set_label(label:unreal.Text):Void;
 	/**
 		x.set_string_command(type, custom_type, string) -> None
 		Set String Command
@@ -69,7 +60,7 @@ package unreal;
 		    custom_type (Name): 
 		    string (str):
 	**/
-	public function set_string_command(type:Dynamic, custom_type:Dynamic, string:Dynamic):Void;
+	public function set_string_command(type:unreal.ToolMenuStringCommandType, custom_type:unreal.Name, string:String):Void;
 	/**
 		x.set_tool_tip(tool_tip) -> None
 		Set Tool Tip
@@ -77,7 +68,7 @@ package unreal;
 		Args:
 		    tool_tip (Text):
 	**/
-	public function set_tool_tip(tool_tip:Dynamic):Void;
+	public function set_tool_tip(tool_tip:unreal.Text):Void;
 	/**
 		(bool):  [Read-Write] Should Close Window After Menu Selection
 	**/

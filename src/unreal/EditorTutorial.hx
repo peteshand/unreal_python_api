@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "EditorTutorial") extern class EditorTutorial extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.begin_tutorial(tutorial_to_start, restart) -> None
 		Begin a tutorial. Note that this will end the current tutorial that is in progress, if any
 		
@@ -18,7 +9,7 @@ package unreal;
 		    tutorial_to_start (EditorTutorial): 
 		    restart (bool):
 	**/
-	static public function begin_tutorial(tutorial_to_start:Dynamic, restart:Dynamic):Void;
+	static public function begin_tutorial(tutorial_to_start:unreal.EditorTutorial, restart:Bool):Void;
 	/**
 		x.get_actor_reference(path_to_actor) -> Actor
 		Attempts to find the actor specified by PathToActor in the current editor world
@@ -29,7 +20,7 @@ package unreal;
 		Returns:
 		    Actor: A reference to the actor, or none if it wasn't found
 	**/
-	public function get_actor_reference(path_to_actor:Dynamic):unreal.Actor;
+	public function get_actor_reference(path_to_actor:String):unreal.Actor;
 	/**
 		X.get_engine_folder_visibilty() -> bool
 		Returns the visibility of the engine folder in the content browser
@@ -65,7 +56,7 @@ package unreal;
 		Args:
 		    stage_name (Name):
 	**/
-	public function on_tutorial_stage_ended(stage_name:Dynamic):Void;
+	public function on_tutorial_stage_ended(stage_name:unreal.Name):Void;
 	/**
 		x.on_tutorial_stage_started(stage_name) -> None
 		Event fired when a tutorial stage begins
@@ -73,7 +64,7 @@ package unreal;
 		Args:
 		    stage_name (Name):
 	**/
-	public function on_tutorial_stage_started(stage_name:Dynamic):Void;
+	public function on_tutorial_stage_started(stage_name:unreal.Name):Void;
 	/**
 		X.open_asset(asset) -> None
 		Open an asset for use by a tutorial
@@ -81,7 +72,7 @@ package unreal;
 		Args:
 		    asset (Object): The asset to open
 	**/
-	static public function open_asset(asset:Dynamic):Void;
+	static public function open_asset(asset:unreal.Object):Void;
 	/**
 		X.set_engine_folder_visibilty(new_visibility) -> None
 		Sets the visibility of the engine folder in the content browser
@@ -89,7 +80,7 @@ package unreal;
 		Args:
 		    new_visibility (bool):
 	**/
-	static public function set_engine_folder_visibilty(new_visibility:Dynamic):Void;
+	static public function set_engine_folder_visibilty(new_visibility:Bool):Void;
 	/**
 		(int32):  [Read-Only] Sorting priority, used by the tutorial browser
 	**/

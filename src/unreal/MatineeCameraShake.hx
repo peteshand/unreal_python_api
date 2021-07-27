@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MatineeCameraShake") extern class MatineeCameraShake extends unreal.CameraShakeBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(CameraAnimInst):  [Read-Only] The playing instance of the CameraAnim-based shake, if any.
 	**/
 	public var anim_inst : unreal.CameraAnimInst;
@@ -28,7 +19,7 @@ package unreal;
 		
 		    modified_pov (MinimalViewInfo):
 	**/
-	public function blueprint_update_camera_shake(delta_time:Dynamic, alpha:Dynamic, pov:Dynamic):unreal.MinimalViewInfo;
+	public function blueprint_update_camera_shake(delta_time:Float, alpha:Float, pov:unreal.MinimalViewInfo):unreal.MinimalViewInfo;
 	/**
 		(FOscillator):  [Read-Write] FOV oscillation
 	**/
@@ -56,7 +47,7 @@ package unreal;
 		Args:
 		    scale (float):
 	**/
-	public function receive_play_shake(scale:Dynamic):Void;
+	public function receive_play_shake(scale:Float):Void;
 	/**
 		x.receive_stop_shake(immediately) -> None
 		Called when the shake is explicitly stopped.
@@ -64,7 +55,7 @@ package unreal;
 		Args:
 		    immediately (bool):
 	**/
-	public function receive_stop_shake(immediately:Dynamic):Void;
+	public function receive_stop_shake(immediately:Bool):Void;
 	/**
 		(ROscillator):  [Read-Write] Rotational oscillation
 	**/

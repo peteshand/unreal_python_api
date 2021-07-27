@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PhysicalAnimationComponent") extern class PhysicalAnimationComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.apply_physical_animation_profile_below(body_name, profile_name, include_self=True, clear_not_found=False) -> None
 		Applies the physical animation profile to the body given and all bodies below.
 		
@@ -20,7 +11,7 @@ package unreal;
 		    include_self (bool): Whether to include the provided body name in the list of bodies we act on (useful to ignore for cases where a root has multiple children)
 		    clear_not_found (bool): If true, bodies without the given profile name will have any existing physical animation settings cleared. If false, bodies without the given profile name are left untouched.
 	**/
-	public function apply_physical_animation_profile_below(body_name:Dynamic, profile_name:Dynamic, include_self:Dynamic, clear_not_found:Dynamic):Void;
+	public function apply_physical_animation_profile_below(body_name:unreal.Name, profile_name:unreal.Name, include_self:Bool, clear_not_found:Bool):Void;
 	/**
 		x.apply_physical_animation_settings(body_name, physical_animation_data) -> None
 		Applies the physical animation settings to the body given.
@@ -29,7 +20,7 @@ package unreal;
 		    body_name (Name): 
 		    physical_animation_data (PhysicalAnimationData):
 	**/
-	public function apply_physical_animation_settings(body_name:Dynamic, physical_animation_data:Dynamic):Void;
+	public function apply_physical_animation_settings(body_name:unreal.Name, physical_animation_data:unreal.PhysicalAnimationData):Void;
 	/**
 		x.apply_physical_animation_settings_below(body_name, physical_animation_data, include_self=True) -> None
 		Applies the physical animation settings to the body given and all bodies below.
@@ -39,7 +30,7 @@ package unreal;
 		    physical_animation_data (PhysicalAnimationData): 
 		    include_self (bool):
 	**/
-	public function apply_physical_animation_settings_below(body_name:Dynamic, physical_animation_data:Dynamic, include_self:Dynamic):Void;
+	public function apply_physical_animation_settings_below(body_name:unreal.Name, physical_animation_data:unreal.PhysicalAnimationData, include_self:Bool):Void;
 	/**
 		x.get_body_target_transform(body_name) -> Transform
 		Returns the target transform for the given body. If physical animation component is not controlling this body, returns its current transform.
@@ -50,7 +41,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_body_target_transform(body_name:Dynamic):unreal.Transform;
+	public function get_body_target_transform(body_name:unreal.Name):unreal.Transform;
 	/**
 		x.set_skeletal_mesh_component(skeletal_mesh_component) -> None
 		Sets the skeletal mesh we are driving through physical animation. Will erase any existing physical animation data.
@@ -58,7 +49,7 @@ package unreal;
 		Args:
 		    skeletal_mesh_component (SkeletalMeshComponent):
 	**/
-	public function set_skeletal_mesh_component(skeletal_mesh_component:Dynamic):Void;
+	public function set_skeletal_mesh_component(skeletal_mesh_component:unreal.SkeletalMeshComponent):Void;
 	/**
 		x.set_strength_multiplyer(strength_multiplyer) -> None
 		Updates strength multiplyer and any active motors
@@ -66,7 +57,7 @@ package unreal;
 		Args:
 		    strength_multiplyer (float):
 	**/
-	public function set_strength_multiplyer(strength_multiplyer:Dynamic):Void;
+	public function set_strength_multiplyer(strength_multiplyer:Float):Void;
 	/**
 		(float):  [Read-Only] Multiplies the strength of any active motors. (can blend from 0-1 for example)
 	**/

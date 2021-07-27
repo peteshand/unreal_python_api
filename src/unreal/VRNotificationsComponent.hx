@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "VRNotificationsComponent") extern class VRNotificationsComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(VRNotificationsDelegate):  [Read-Write] This will be called when the user declines to connect the HMD when prompted to do so by a system dialog. (PS4 Only)
 	**/
 	public var hmd_connect_canceled_delegate : unreal.VRNotificationsDelegate;

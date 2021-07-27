@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "GameplayStatics") extern class GameplayStatics extends unreal.BlueprintFunctionLibrary {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.activate_reverb_effect(world_context_object, reverb_effect, tag_name, priority=0.000000, volume=0.500000, fade_time=2.000000) -> None
 		Activates a Reverb Effect without the need for a volume
 		
@@ -22,7 +13,7 @@ package unreal;
 		    volume (float): Volume level of Reverb Effect
 		    fade_time (float): Time before Reverb Effect is fully active
 	**/
-	static public function activate_reverb_effect(world_context_object:Dynamic, reverb_effect:Dynamic, tag_name:Dynamic, priority:Dynamic, volume:Dynamic, fade_time:Dynamic):Void;
+	static public function activate_reverb_effect(world_context_object:unreal.Object, reverb_effect:unreal.ReverbEffect, tag_name:unreal.Name, priority:Float, volume:Float, fade_time:Float):Void;
 	/**
 		X.announce_accessible_string(announcement_string) -> None
 		If accessibility is enabled, have the platform announce a string to the player.
@@ -34,7 +25,7 @@ package unreal;
 		Args:
 		    announcement_string (str):
 	**/
-	static public function announce_accessible_string(announcement_string:Dynamic):Void;
+	static public function announce_accessible_string(announcement_string:String):Void;
 	/**
 		X.apply_damage(damaged_actor, base_damage, event_instigator, damage_causer, damage_type_class) -> float
 		Hurts the specified actor with generic damage.
@@ -49,7 +40,7 @@ package unreal;
 		Returns:
 		    float: Actual damage the ended up being applied to the actor.
 	**/
-	static public function apply_damage(damaged_actor:Dynamic, base_damage:Dynamic, event_instigator:Dynamic, damage_causer:Dynamic, damage_type_class:Dynamic):Float;
+	static public function apply_damage(damaged_actor:unreal.Actor, base_damage:Float, event_instigator:unreal.Controller, damage_causer:unreal.Actor, damage_type_class:Dynamic):Float;
 	/**
 		X.apply_point_damage(damaged_actor, base_damage, hit_from_direction, hit_info, event_instigator, damage_causer, damage_type_class) -> float
 		Hurts the specified actor with the specified impact.
@@ -66,7 +57,7 @@ package unreal;
 		Returns:
 		    float: Actual damage the ended up being applied to the actor.
 	**/
-	static public function apply_point_damage(damaged_actor:Dynamic, base_damage:Dynamic, hit_from_direction:Dynamic, hit_info:Dynamic, event_instigator:Dynamic, damage_causer:Dynamic, damage_type_class:Dynamic):Float;
+	static public function apply_point_damage(damaged_actor:unreal.Actor, base_damage:Float, hit_from_direction:unreal.Vector, hit_info:unreal.HitResult, event_instigator:unreal.Controller, damage_causer:unreal.Actor, damage_type_class:Dynamic):Float;
 	/**
 		X.apply_radial_damage(world_context_object, base_damage, origin, damage_radius, damage_type_class, ignore_actors, damage_causer=None, instigated_by_controller=None, do_full_damage=False, damage_prevention_channel=CollisionChannel.ECC_VISIBILITY) -> bool
 		Hurt locally authoritative actors within the radius. Will only hit components that block the Visibility channel.
@@ -86,7 +77,7 @@ package unreal;
 		Returns:
 		    bool: true if damage was applied to at least one actor.
 	**/
-	static public function apply_radial_damage(world_context_object:Dynamic, base_damage:Dynamic, origin:Dynamic, damage_radius:Dynamic, damage_type_class:Dynamic, ignore_actors:Dynamic, damage_causer:Dynamic, instigated_by_controller:Dynamic, do_full_damage:Dynamic, damage_prevention_channel:Dynamic):Bool;
+	static public function apply_radial_damage(world_context_object:unreal.Object, base_damage:Float, origin:unreal.Vector, damage_radius:Float, damage_type_class:Dynamic, ignore_actors:unreal.Array, damage_causer:unreal.Actor, instigated_by_controller:unreal.Controller, do_full_damage:Bool, damage_prevention_channel:unreal.CollisionChannel):Bool;
 	/**
 		X.apply_radial_damage_with_falloff(world_context_object, base_damage, minimum_damage, origin, damage_inner_radius, damage_outer_radius, damage_falloff, damage_type_class, ignore_actors, damage_causer=None, instigated_by_controller=None, damage_prevention_channel=CollisionChannel.ECC_VISIBILITY) -> bool
 		Hurt locally authoritative actors within the radius. Will only hit components that block the Visibility channel.
@@ -108,7 +99,7 @@ package unreal;
 		Returns:
 		    bool: true if damage was applied to at least one actor.
 	**/
-	static public function apply_radial_damage_with_falloff(world_context_object:Dynamic, base_damage:Dynamic, minimum_damage:Dynamic, origin:Dynamic, damage_inner_radius:Dynamic, damage_outer_radius:Dynamic, damage_falloff:Dynamic, damage_type_class:Dynamic, ignore_actors:Dynamic, damage_causer:Dynamic, instigated_by_controller:Dynamic, damage_prevention_channel:Dynamic):Bool;
+	static public function apply_radial_damage_with_falloff(world_context_object:unreal.Object, base_damage:Float, minimum_damage:Float, origin:unreal.Vector, damage_inner_radius:Float, damage_outer_radius:Float, damage_falloff:Float, damage_type_class:Dynamic, ignore_actors:unreal.Array, damage_causer:unreal.Actor, instigated_by_controller:unreal.Controller, damage_prevention_channel:unreal.CollisionChannel):Bool;
 	/**
 		X.are_any_listeners_within_range(world_context_object, location, maximum_range) -> bool
 		Determines if any audio listeners are within range of the specified location
@@ -122,7 +113,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function are_any_listeners_within_range(world_context_object:Dynamic, location:Dynamic, maximum_range:Dynamic):Bool;
+	static public function are_any_listeners_within_range(world_context_object:unreal.Object, location:unreal.Vector, maximum_range:Float):Bool;
 	/**
 		X.are_subtitles_enabled() -> bool
 		Returns whether or not subtitles are currently enabled.
@@ -145,7 +136,7 @@ package unreal;
 		
 		    predict_result (PredictProjectilePathResult): Output result of the trace (Hit result, array of location/velocity/times for each trace step, etc).
 	**/
-	static public function blueprint_predict_projectile_path_advanced(world_context_object:Dynamic, predict_params:Dynamic):Dynamic;
+	static public function blueprint_predict_projectile_path_advanced(world_context_object:unreal.Object, predict_params:unreal.PredictProjectilePathParams):Dynamic;
 	/**
 		X.blueprint_predict_projectile_path_by_object_type(world_context_object, start_pos, launch_velocity, trace_path, projectile_radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, draw_debug_time, sim_frequency=15.000000, max_sim_time=2.000000, override_gravity_z=0.000000) -> (out_hit=HitResult, out_path_positions=Array(Vector), out_last_trace_destination=Vector) or None
 		Predict the arc of a virtual projectile affected by gravity with collision checks along the arc. Returns a list of positions of the simulated arc and the destination reached by the simulation.
@@ -175,7 +166,7 @@ package unreal;
 		
 		    out_last_trace_destination (Vector): Goal position of the final trace it did. Will not be in the path if there is a hit.
 	**/
-	static public function blueprint_predict_projectile_path_by_object_type(world_context_object:Dynamic, start_pos:Dynamic, launch_velocity:Dynamic, trace_path:Dynamic, projectile_radius:Dynamic, object_types:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, draw_debug_time:Dynamic, sim_frequency:Dynamic, max_sim_time:Dynamic, override_gravity_z:Dynamic):Dynamic;
+	static public function blueprint_predict_projectile_path_by_object_type(world_context_object:unreal.Object, start_pos:unreal.Vector, launch_velocity:unreal.Vector, trace_path:Bool, projectile_radius:Float, object_types:unreal.Array, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, draw_debug_time:Float, sim_frequency:Float, max_sim_time:Float, override_gravity_z:Float):Dynamic;
 	/**
 		X.blueprint_predict_projectile_path_by_trace_channel(world_context_object, start_pos, launch_velocity, trace_path, projectile_radius, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, draw_debug_time, sim_frequency=15.000000, max_sim_time=2.000000, override_gravity_z=0.000000) -> (out_hit=HitResult, out_path_positions=Array(Vector), out_last_trace_destination=Vector) or None
 		Predict the arc of a virtual projectile affected by gravity with collision checks along the arc. Returns a list of positions of the simulated arc and the destination reached by the simulation.
@@ -205,7 +196,7 @@ package unreal;
 		
 		    out_last_trace_destination (Vector): Goal position of the final trace it did. Will not be in the path if there is a hit.
 	**/
-	static public function blueprint_predict_projectile_path_by_trace_channel(world_context_object:Dynamic, start_pos:Dynamic, launch_velocity:Dynamic, trace_path:Dynamic, projectile_radius:Dynamic, trace_channel:Dynamic, trace_complex:Dynamic, actors_to_ignore:Dynamic, draw_debug_type:Dynamic, draw_debug_time:Dynamic, sim_frequency:Dynamic, max_sim_time:Dynamic, override_gravity_z:Dynamic):Dynamic;
+	static public function blueprint_predict_projectile_path_by_trace_channel(world_context_object:unreal.Object, start_pos:unreal.Vector, launch_velocity:unreal.Vector, trace_path:Bool, projectile_radius:Float, trace_channel:unreal.CollisionChannel, trace_complex:Bool, actors_to_ignore:unreal.Array, draw_debug_type:unreal.DrawDebugTrace, draw_debug_time:Float, sim_frequency:Float, max_sim_time:Float, override_gravity_z:Float):Dynamic;
 	/**
 		X.blueprint_suggest_projectile_velocity(world_context_object, start_location, end_location, launch_speed, override_gravity_z, trace_option, collision_radius, favor_high_arc, draw_debug) -> Vector or None
 		Calculates an launch velocity for a projectile to hit a specified point.
@@ -226,7 +217,7 @@ package unreal;
 		
 		    toss_velocity (Vector): (output) Result launch velocity.
 	**/
-	static public function blueprint_suggest_projectile_velocity(world_context_object:Dynamic, start_location:Dynamic, end_location:Dynamic, launch_speed:Dynamic, override_gravity_z:Dynamic, trace_option:Dynamic, collision_radius:Dynamic, favor_high_arc:Dynamic, draw_debug:Dynamic):Dynamic;
+	static public function blueprint_suggest_projectile_velocity(world_context_object:unreal.Object, start_location:unreal.Vector, end_location:unreal.Vector, launch_speed:Float, override_gravity_z:Float, trace_option:unreal.SuggestProjVelocityTraceOption, collision_radius:Float, favor_high_arc:Bool, draw_debug:Bool):Dynamic;
 	/**
 		X.cancel_async_loading() -> None
 		Cancels all currently queued streaming packages
@@ -242,7 +233,7 @@ package unreal;
 		    sound_class (SoundClass): The sound class to override (or add) in the sound mix.
 		    fade_out_time (float): The interpolation time to use to go from the current sound class adjuster override values to the non-override values.
 	**/
-	static public function clear_sound_mix_class_override(world_context_object:Dynamic, sound_mix_modifier:Dynamic, sound_class:Dynamic, fade_out_time:Dynamic):Void;
+	static public function clear_sound_mix_class_override(world_context_object:unreal.Object, sound_mix_modifier:unreal.SoundMix, sound_class:unreal.SoundClass, fade_out_time:Float):Void;
 	/**
 		X.clear_sound_mix_modifiers(world_context_object) -> None
 		Clear all sound mix modifiers from the audio system *
@@ -250,10 +241,11 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	static public function clear_sound_mix_modifiers(world_context_object:Dynamic):Void;
+	static public function clear_sound_mix_modifiers(world_context_object:unreal.Object):Void;
 	/**
 		deprecated: 'clear_sound_mode' was renamed to 'clear_sound_mix_modifiers'.
 	**/
+	@:deprecated
 	static public function clear_sound_mode():Void;
 	/**
 		X.create_player(world_context_object, controller_id=-1, spawn_player_controller=True) -> PlayerController
@@ -267,7 +259,7 @@ package unreal;
 		Returns:
 		    PlayerController: The created player controller if one is created.
 	**/
-	static public function create_player(world_context_object:Dynamic, controller_id:Dynamic, spawn_player_controller:Dynamic):unreal.PlayerController;
+	static public function create_player(world_context_object:unreal.Object, controller_id:Int, spawn_player_controller:Bool):unreal.PlayerController;
 	/**
 		X.create_save_game_object(save_game_class) -> SaveGame
 		Create a new, empty SaveGame object to set data on and then pass to SaveGameToSlot.
@@ -298,7 +290,7 @@ package unreal;
 		Returns:
 		    AudioComponent: An audio component to manipulate the created sound
 	**/
-	static public function create_sound2d(world_context_object:Dynamic, sound:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, concurrency_settings:Dynamic, persist_across_level_transition:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function create_sound2d(world_context_object:unreal.Object, sound:unreal.SoundBase, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, concurrency_settings:unreal.SoundConcurrency, persist_across_level_transition:Bool, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.deactivate_reverb_effect(world_context_object, tag_name) -> None
 		Deactivates a Reverb Effect not applied by a volume
@@ -307,7 +299,7 @@ package unreal;
 		    world_context_object (Object): 
 		    tag_name (Name): Tag associated with Reverb Effect to remove
 	**/
-	static public function deactivate_reverb_effect(world_context_object:Dynamic, tag_name:Dynamic):Void;
+	static public function deactivate_reverb_effect(world_context_object:unreal.Object, tag_name:unreal.Name):Void;
 	/**
 		X.delete_game_in_slot(slot_name, user_index) -> bool
 		Delete a save game in a particular slot.
@@ -319,7 +311,7 @@ package unreal;
 		Returns:
 		    bool: True if a file was actually able to be deleted. use DoesSaveGameExist to distinguish between delete failures and failure due to file not existing.
 	**/
-	static public function delete_game_in_slot(slot_name:Dynamic, user_index:Dynamic):Bool;
+	static public function delete_game_in_slot(slot_name:String, user_index:Int):Bool;
 	/**
 		X.deproject_screen_to_world(player, screen_position) -> (world_position=Vector, world_direction=Vector) or None
 		Transforms the given 2D screen space coordinate into a 3D world-space point and direction.
@@ -335,7 +327,7 @@ package unreal;
 		
 		    world_direction (Vector): (out) World space direction vector away from the camera at the given 2d point.
 	**/
-	static public function deproject_screen_to_world(player:Dynamic, screen_position:Dynamic):Dynamic;
+	static public function deproject_screen_to_world(player:unreal.PlayerController, screen_position:unreal.Vector2D):Dynamic;
 	/**
 		X.does_save_game_exist(slot_name, user_index) -> bool
 		See if a save game exists with the specified name.
@@ -347,7 +339,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function does_save_game_exist(slot_name:Dynamic, user_index:Dynamic):Bool;
+	static public function does_save_game_exist(slot_name:String, user_index:Int):Bool;
 	/**
 		X.enable_live_streaming(enable) -> None
 		Toggle live DVR streaming.
@@ -355,7 +347,7 @@ package unreal;
 		Args:
 		    enable (bool): If true enable streaming, otherwise disable.
 	**/
-	static public function enable_live_streaming(enable:Dynamic):Void;
+	static public function enable_live_streaming(enable:Bool):Void;
 	/**
 		X.find_collision_uv(hit, uv_channel) -> Vector2D or None
 		Try and find the UV for a collision impact. Note this ONLY works if 'Support UV From Hit Results' is enabled in Physics Settings.
@@ -369,7 +361,7 @@ package unreal;
 		
 		    uv (Vector2D):
 	**/
-	static public function find_collision_uv(hit:Dynamic, uv_channel:Dynamic):Dynamic;
+	static public function find_collision_uv(hit:unreal.HitResult, uv_channel:Int):Dynamic;
 	/**
 		X.flush_level_streaming(world_context_object) -> None
 		Flushes level streaming in blocking fashion and returns when all sub-levels are loaded / visible / hidden
@@ -377,7 +369,7 @@ package unreal;
 		Args:
 		    world_context_object (Object):
 	**/
-	static public function flush_level_streaming(world_context_object:Dynamic):Void;
+	static public function flush_level_streaming(world_context_object:unreal.Object):Void;
 	/**
 		X.get_accurate_real_time(world_context_object) -> (seconds=int32, partial_seconds=float)
 		Returns time in seconds since the application was started. Unlike the other time functions this is accurate to the exact time this function is called instead of set once per frame.
@@ -392,7 +384,7 @@ package unreal;
 		
 		    partial_seconds (float):
 	**/
-	static public function get_accurate_real_time(world_context_object:Dynamic):python.Tuple<Dynamic>;
+	static public function get_accurate_real_time(world_context_object:unreal.Object):python.Tuple<Dynamic>;
 	/**
 		X.get_actor_array_average_location(actors) -> Vector
 		Find the average location (centroid) of an array of Actors
@@ -403,7 +395,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function get_actor_array_average_location(actors:Dynamic):unreal.Vector;
+	static public function get_actor_array_average_location(actors:unreal.Array):unreal.Vector;
 	/**
 		X.get_actor_array_bounds(actors, only_colliding_components) -> (center=Vector, box_extent=Vector)
 		Bind the bounds of an array of Actors
@@ -419,7 +411,7 @@ package unreal;
 		
 		    box_extent (Vector):
 	**/
-	static public function get_actor_array_bounds(actors:Dynamic, only_colliding_components:Dynamic):python.Tuple<Dynamic>;
+	static public function get_actor_array_bounds(actors:unreal.Array, only_colliding_components:Bool):python.Tuple<Dynamic>;
 	/**
 		X.get_actor_of_class(world_context_object, actor_class) -> Actor
 		Find the first Actor in the world of the specified class.
@@ -432,7 +424,7 @@ package unreal;
 		Returns:
 		    Actor: Actor of the specified class.
 	**/
-	static public function get_actor_of_class(world_context_object:Dynamic, actor_class:Dynamic):unreal.Actor;
+	static public function get_actor_of_class(world_context_object:unreal.Object, actor_class:Dynamic):unreal.Actor;
 	/**
 		X.get_all_actors_of_class(world_context_object, actor_class) -> Array(Actor)
 		Find all Actors in the world of the specified class.
@@ -447,7 +439,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Output array of Actors of the specified class.
 	**/
-	static public function get_all_actors_of_class(world_context_object:Dynamic, actor_class:Dynamic):Dynamic;
+	static public function get_all_actors_of_class(world_context_object:unreal.Object, actor_class:Dynamic):Dynamic;
 	/**
 		X.get_all_actors_of_class_with_tag(world_context_object, actor_class, tag) -> Array(Actor)
 		Find all Actors in the world of the specified class with the specified tag.
@@ -463,7 +455,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Output array of Actors of the specified tag.
 	**/
-	static public function get_all_actors_of_class_with_tag(world_context_object:Dynamic, actor_class:Dynamic, tag:Dynamic):Dynamic;
+	static public function get_all_actors_of_class_with_tag(world_context_object:unreal.Object, actor_class:Dynamic, tag:unreal.Name):Dynamic;
 	/**
 		X.get_all_actors_with_interface(world_context_object, interface) -> Array(Actor)
 		Find all Actors in the world with the specified interface.
@@ -478,7 +470,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Output array of Actors of the specified interface.
 	**/
-	static public function get_all_actors_with_interface(world_context_object:Dynamic, _interface:Dynamic):Dynamic;
+	static public function get_all_actors_with_interface(world_context_object:unreal.Object, _interface:Dynamic):Dynamic;
 	/**
 		X.get_all_actors_with_tag(world_context_object, tag) -> Array(Actor)
 		Find all Actors in the world with the specified tag.
@@ -493,7 +485,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Output array of Actors of the specified tag.
 	**/
-	static public function get_all_actors_with_tag(world_context_object:Dynamic, tag:Dynamic):Dynamic;
+	static public function get_all_actors_with_tag(world_context_object:unreal.Object, tag:unreal.Name):Dynamic;
 	/**
 		X.get_audio_time_seconds(world_context_object) -> float
 		Returns time in seconds since world was brought up for play, IS stopped when game pauses, NOT dilated/clamped.
@@ -504,7 +496,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_audio_time_seconds(world_context_object:Dynamic):Float;
+	static public function get_audio_time_seconds(world_context_object:unreal.Object):Float;
 	/**
 		X.get_closest_listener_location(world_context_object, location, maximum_range, allow_attenuation_override) -> Vector or None
 		Finds and returns the position of the closest listener to the specified location
@@ -521,7 +513,7 @@ package unreal;
 		
 		    listener_position (Vector): [Out] The position of the closest listener in world space, if found.
 	**/
-	static public function get_closest_listener_location(world_context_object:Dynamic, location:Dynamic, maximum_range:Dynamic, allow_attenuation_override:Dynamic):Dynamic;
+	static public function get_closest_listener_location(world_context_object:unreal.Object, location:unreal.Vector, maximum_range:Float, allow_attenuation_override:Bool):Dynamic;
 	/**
 		X.get_current_level_name(world_context_object, remove_prefix_string=True) -> str
 		Get the name of the currently-open level.
@@ -533,7 +525,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_current_level_name(world_context_object:Dynamic, remove_prefix_string:Dynamic):String;
+	static public function get_current_level_name(world_context_object:unreal.Object, remove_prefix_string:Bool):String;
 	/**
 		X.get_current_reverb_effect(world_context_object) -> ReverbEffect
 		Returns the highest priority reverb settings currently active from any source (volumes or manual setting).
@@ -544,7 +536,7 @@ package unreal;
 		Returns:
 		    ReverbEffect:
 	**/
-	static public function get_current_reverb_effect(world_context_object:Dynamic):unreal.ReverbEffect;
+	static public function get_current_reverb_effect(world_context_object:unreal.Object):unreal.ReverbEffect;
 	/**
 		X.get_enable_world_rendering(world_context_object) -> bool
 		Returns the world rendering state
@@ -555,10 +547,11 @@ package unreal;
 		Returns:
 		    bool: Whether the world should be rendered or not
 	**/
-	static public function get_enable_world_rendering(world_context_object:Dynamic):Bool;
+	static public function get_enable_world_rendering(world_context_object:unreal.Object):Bool;
 	/**
 		deprecated: 'get_game_info' was renamed to 'get_game_mode'.
 	**/
+	@:deprecated
 	static public function get_game_info():Void;
 	/**
 		X.get_game_instance(world_context_object) -> GameInstance
@@ -570,7 +563,7 @@ package unreal;
 		Returns:
 		    GameInstance:
 	**/
-	static public function get_game_instance(world_context_object:Dynamic):unreal.GameInstance;
+	static public function get_game_instance(world_context_object:unreal.Object):unreal.GameInstance;
 	/**
 		X.get_game_mode(world_context_object) -> GameModeBase
 		Returns the current GameModeBase or Null if it can't be retrieved, such as on the client
@@ -581,10 +574,11 @@ package unreal;
 		Returns:
 		    GameModeBase:
 	**/
-	static public function get_game_mode(world_context_object:Dynamic):unreal.GameModeBase;
+	static public function get_game_mode(world_context_object:unreal.Object):unreal.GameModeBase;
 	/**
 		deprecated: 'get_game_replication_info' was renamed to 'get_game_state'.
 	**/
+	@:deprecated
 	static public function get_game_replication_info():Void;
 	/**
 		X.get_game_state(world_context_object) -> GameStateBase
@@ -596,7 +590,7 @@ package unreal;
 		Returns:
 		    GameStateBase:
 	**/
-	static public function get_game_state(world_context_object:Dynamic):unreal.GameStateBase;
+	static public function get_game_state(world_context_object:unreal.Object):unreal.GameStateBase;
 	/**
 		X.get_global_time_dilation(world_context_object) -> float
 		Gets the current global time dilation.
@@ -607,7 +601,7 @@ package unreal;
 		Returns:
 		    float: Current time dilation.
 	**/
-	static public function get_global_time_dilation(world_context_object:Dynamic):Float;
+	static public function get_global_time_dilation(world_context_object:unreal.Object):Float;
 	/**
 		X.get_int_option(options, key, default_value) -> int32
 		Find an option in the options string and return it as an integer.
@@ -620,7 +614,7 @@ package unreal;
 		Returns:
 		    int32: The value associated with Key as an integer if Key found in Options string, otherwise DefaultValue.
 	**/
-	static public function get_int_option(options:Dynamic, key:Dynamic, default_value:Dynamic):Int;
+	static public function get_int_option(options:String, key:String, default_value:Int):Int;
 	/**
 		X.get_key_value(pair) -> (key=str, value=str)
 		Break up a key=value pair into its key and value.
@@ -635,7 +629,7 @@ package unreal;
 		
 		    value (str): (out) Value portion of Pair. If no = in string will be empty.
 	**/
-	static public function get_key_value(pair:Dynamic):python.Tuple<Dynamic>;
+	static public function get_key_value(pair:String):python.Tuple<Dynamic>;
 	/**
 		X.get_max_audio_channel_count(world_context_object) -> int32
 		Retrieves the max voice count currently used by the audio engine.
@@ -646,7 +640,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function get_max_audio_channel_count(world_context_object:Dynamic):Int;
+	static public function get_max_audio_channel_count(world_context_object:unreal.Object):Int;
 	/**
 		X.get_object_class(object) -> type(Class)
 		Returns the class of a passed in Object, will always be valid if Object is not NULL
@@ -657,7 +651,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function get_object_class(object:Dynamic):Dynamic;
+	static public function get_object_class(object:unreal.Object):Dynamic;
 	/**
 		X.get_platform_name() -> str
 		Returns the string name of the current platform, to perform different behavior based on platform.
@@ -670,6 +664,7 @@ package unreal;
 	/**
 		deprecated: 'get_player_camera' was renamed to 'get_player_camera_manager'.
 	**/
+	@:deprecated
 	static public function get_player_camera():Void;
 	/**
 		X.get_player_camera_manager(world_context_object, player_index) -> PlayerCameraManager
@@ -682,7 +677,7 @@ package unreal;
 		Returns:
 		    PlayerCameraManager:
 	**/
-	static public function get_player_camera_manager(world_context_object:Dynamic, player_index:Dynamic):unreal.PlayerCameraManager;
+	static public function get_player_camera_manager(world_context_object:unreal.Object, player_index:Int):unreal.PlayerCameraManager;
 	/**
 		X.get_player_character(world_context_object, player_index) -> Character
 		Returns the player character (NULL if the player pawn doesn't exist OR is not a character) at the specified player index
@@ -694,7 +689,7 @@ package unreal;
 		Returns:
 		    Character:
 	**/
-	static public function get_player_character(world_context_object:Dynamic, player_index:Dynamic):unreal.Character;
+	static public function get_player_character(world_context_object:unreal.Object, player_index:Int):unreal.Character;
 	/**
 		X.get_player_controller(world_context_object, player_index) -> PlayerController
 		Returns the player controller at the specified player index
@@ -706,7 +701,7 @@ package unreal;
 		Returns:
 		    PlayerController:
 	**/
-	static public function get_player_controller(world_context_object:Dynamic, player_index:Dynamic):unreal.PlayerController;
+	static public function get_player_controller(world_context_object:unreal.Object, player_index:Int):unreal.PlayerController;
 	/**
 		X.get_player_controller_from_id(world_context_object, controller_id) -> PlayerController
 		Returns the player controller that has the given controller ID
@@ -718,7 +713,7 @@ package unreal;
 		Returns:
 		    PlayerController:
 	**/
-	static public function get_player_controller_from_id(world_context_object:Dynamic, controller_id:Dynamic):unreal.PlayerController;
+	static public function get_player_controller_from_id(world_context_object:unreal.Object, controller_id:Int):unreal.PlayerController;
 	/**
 		X.get_player_controller_id(player) -> int32
 		Gets what controller ID a Player is using
@@ -729,7 +724,7 @@ package unreal;
 		Returns:
 		    int32: The ID of the passed in player. -1 if there is no controller for the passed in player
 	**/
-	static public function get_player_controller_id(player:Dynamic):Int;
+	static public function get_player_controller_id(player:unreal.PlayerController):Int;
 	/**
 		X.get_player_pawn(world_context_object, player_index) -> Pawn
 		Returns the player pawn at the specified player index
@@ -741,7 +736,7 @@ package unreal;
 		Returns:
 		    Pawn:
 	**/
-	static public function get_player_pawn(world_context_object:Dynamic, player_index:Dynamic):unreal.Pawn;
+	static public function get_player_pawn(world_context_object:unreal.Object, player_index:Int):unreal.Pawn;
 	/**
 		X.get_real_time_seconds(world_context_object) -> float
 		Returns time in seconds since world was brought up for play, does NOT stop when game pauses, NOT dilated/clamped
@@ -752,7 +747,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_real_time_seconds(world_context_object:Dynamic):Float;
+	static public function get_real_time_seconds(world_context_object:unreal.Object):Float;
 	/**
 		X.get_streaming_level(world_context_object, package_name) -> LevelStreaming
 		Returns level streaming object with specified level package name
@@ -764,7 +759,7 @@ package unreal;
 		Returns:
 		    LevelStreaming:
 	**/
-	static public function get_streaming_level(world_context_object:Dynamic, package_name:Dynamic):unreal.LevelStreaming;
+	static public function get_streaming_level(world_context_object:unreal.Object, package_name:unreal.Name):unreal.LevelStreaming;
 	/**
 		X.get_surface_type(hit) -> PhysicalSurface
 		Returns the EPhysicalSurface type of the given Hit.
@@ -776,7 +771,7 @@ package unreal;
 		Returns:
 		    PhysicalSurface:
 	**/
-	static public function get_surface_type(hit:Dynamic):unreal.PhysicalSurface;
+	static public function get_surface_type(hit:unreal.HitResult):unreal.PhysicalSurface;
 	/**
 		X.get_time_seconds(world_context_object) -> float
 		Returns time in seconds since world was brought up for play, adjusted by time dilation and IS stopped when game pauses
@@ -787,7 +782,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_time_seconds(world_context_object:Dynamic):Float;
+	static public function get_time_seconds(world_context_object:unreal.Object):Float;
 	/**
 		X.get_unpaused_time_seconds(world_context_object) -> float
 		Returns time in seconds since world was brought up for play, adjusted by time dilation and IS NOT stopped when game pauses
@@ -798,7 +793,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_unpaused_time_seconds(world_context_object:Dynamic):Float;
+	static public function get_unpaused_time_seconds(world_context_object:unreal.Object):Float;
 	/**
 		X.get_view_projection_matrix(desired_view) -> (view_matrix=Matrix, projection_matrix=Matrix, view_projection_matrix=Matrix)
 		Returns the View Matrix, Projection Matrix and the View x Projection Matrix for a given view
@@ -815,7 +810,7 @@ package unreal;
 		
 		    view_projection_matrix (Matrix): (out) Corresponding View x Projection Matrix
 	**/
-	static public function get_view_projection_matrix(desired_view:Dynamic):python.Tuple<Dynamic>;
+	static public function get_view_projection_matrix(desired_view:unreal.MinimalViewInfo):python.Tuple<Dynamic>;
 	/**
 		X.get_viewport_mouse_capture_mode(world_context_object) -> MouseCaptureMode
 		Returns the current viewport mouse capture mode
@@ -826,7 +821,7 @@ package unreal;
 		Returns:
 		    MouseCaptureMode:
 	**/
-	static public function get_viewport_mouse_capture_mode(world_context_object:Dynamic):unreal.MouseCaptureMode;
+	static public function get_viewport_mouse_capture_mode(world_context_object:unreal.Object):unreal.MouseCaptureMode;
 	/**
 		X.get_world_delta_seconds(world_context_object) -> float
 		Returns the frame delta time in seconds, adjusted by time dilation.
@@ -837,7 +832,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_world_delta_seconds(world_context_object:Dynamic):Float;
+	static public function get_world_delta_seconds(world_context_object:unreal.Object):Float;
 	/**
 		X.get_world_origin_location(world_context_object) -> IntVector
 		Returns world origin current location.
@@ -848,7 +843,7 @@ package unreal;
 		Returns:
 		    IntVector:
 	**/
-	static public function get_world_origin_location(world_context_object:Dynamic):unreal.IntVector;
+	static public function get_world_origin_location(world_context_object:unreal.Object):unreal.IntVector;
 	/**
 		X.grass_overlapping_sphere_count(world_context_object, static_mesh, center_position, radius) -> int32
 		Counts how many grass foliage instances overlap a given sphere.
@@ -862,7 +857,7 @@ package unreal;
 		Returns:
 		    int32: Number of foliage instances with their mesh set to Mesh that overlap the sphere.
 	**/
-	static public function grass_overlapping_sphere_count(world_context_object:Dynamic, static_mesh:Dynamic, center_position:Dynamic, radius:Dynamic):Int;
+	static public function grass_overlapping_sphere_count(world_context_object:unreal.Object, static_mesh:unreal.StaticMesh, center_position:unreal.Vector, radius:Float):Int;
 	/**
 		X.has_launch_option(option_to_check) -> bool
 		Checks the commandline to see if the desired option was specified on the commandline (e.g. -demobuild)
@@ -873,7 +868,7 @@ package unreal;
 		Returns:
 		    bool: True if the launch option was specified on the commandline, false otherwise
 	**/
-	static public function has_launch_option(option_to_check:Dynamic):Bool;
+	static public function has_launch_option(option_to_check:String):Bool;
 	/**
 		X.has_option(options, key) -> bool
 		Returns whether a key exists in an options string.
@@ -885,7 +880,7 @@ package unreal;
 		Returns:
 		    bool: Whether Key was found in Options.
 	**/
-	static public function has_option(options:Dynamic, key:Dynamic):Bool;
+	static public function has_option(options:String, key:String):Bool;
 	/**
 		X.is_game_paused(world_context_object) -> bool
 		Returns the game's paused state
@@ -896,7 +891,7 @@ package unreal;
 		Returns:
 		    bool: Whether the game is currently paused or not
 	**/
-	static public function is_game_paused(world_context_object:Dynamic):Bool;
+	static public function is_game_paused(world_context_object:unreal.Object):Bool;
 	/**
 		X.is_splitscreen_force_disabled(world_context_object) -> bool
 		Returns the split screen state
@@ -907,10 +902,11 @@ package unreal;
 		Returns:
 		    bool: Whether the game viewport is split screen or not
 	**/
-	static public function is_splitscreen_force_disabled(world_context_object:Dynamic):Bool;
+	static public function is_splitscreen_force_disabled(world_context_object:unreal.Object):Bool;
 	/**
 		deprecated: 'k2_set_sound_mode' was renamed to 'set_base_sound_mix'.
 	**/
+	@:deprecated
 	static public function k2_set_sound_mode():Void;
 	/**
 		X.load_game_from_slot(slot_name, user_index) -> SaveGame
@@ -923,7 +919,7 @@ package unreal;
 		Returns:
 		    SaveGame: Object containing loaded game state (nullptr if load fails)
 	**/
-	static public function load_game_from_slot(slot_name:Dynamic, user_index:Dynamic):unreal.SaveGame;
+	static public function load_game_from_slot(slot_name:String, user_index:Int):unreal.SaveGame;
 	/**
 		X.load_stream_level(world_context_object, level_name, make_visible_after_load, should_block_on_load, latent_info) -> None
 		Stream the level (by Name); Calling again before it finishes has no effect
@@ -935,7 +931,7 @@ package unreal;
 		    should_block_on_load (bool): 
 		    latent_info (LatentActionInfo):
 	**/
-	static public function load_stream_level(world_context_object:Dynamic, level_name:Dynamic, make_visible_after_load:Dynamic, should_block_on_load:Dynamic, latent_info:Dynamic):Void;
+	static public function load_stream_level(world_context_object:unreal.Object, level_name:unreal.Name, make_visible_after_load:Bool, should_block_on_load:Bool, latent_info:unreal.LatentActionInfo):Void;
 	/**
 		X.load_stream_level_by_soft_object_ptr(world_context_object, level, make_visible_after_load, should_block_on_load, latent_info) -> None
 		Stream the level (by Object Reference); Calling again before it finishes has no effect
@@ -947,7 +943,7 @@ package unreal;
 		    should_block_on_load (bool): 
 		    latent_info (LatentActionInfo):
 	**/
-	static public function load_stream_level_by_soft_object_ptr(world_context_object:Dynamic, level:Dynamic, make_visible_after_load:Dynamic, should_block_on_load:Dynamic, latent_info:Dynamic):Void;
+	static public function load_stream_level_by_soft_object_ptr(world_context_object:unreal.Object, level:unreal.World, make_visible_after_load:Bool, should_block_on_load:Bool, latent_info:unreal.LatentActionInfo):Void;
 	/**
 		X.open_level(world_context_object, level_name, absolute=True, options="") -> None
 		Travel to another level
@@ -958,7 +954,7 @@ package unreal;
 		    absolute (bool): if true options are reset, if false options are carried over from current level
 		    options (str): a string of options to use for the travel URL
 	**/
-	static public function open_level(world_context_object:Dynamic, level_name:Dynamic, absolute:Dynamic, options:Dynamic):Void;
+	static public function open_level(world_context_object:unreal.Object, level_name:unreal.Name, absolute:Bool, options:String):Void;
 	/**
 		X.open_level_by_soft_object_ptr(world_context_object, level, absolute=True, options="") -> None
 		Travel to another level
@@ -969,7 +965,7 @@ package unreal;
 		    absolute (bool): if true options are reset, if false options are carried over from current level
 		    options (str): a string of options to use for the travel URL
 	**/
-	static public function open_level_by_soft_object_ptr(world_context_object:Dynamic, level:Dynamic, absolute:Dynamic, options:Dynamic):Void;
+	static public function open_level_by_soft_object_ptr(world_context_object:unreal.Object, level:unreal.World, absolute:Bool, options:String):Void;
 	/**
 		X.parse_option(options, key) -> str
 		Find an option in the options string and return it.
@@ -981,7 +977,7 @@ package unreal;
 		Returns:
 		    str: The value associated with Key if Key found in Options string.
 	**/
-	static public function parse_option(options:Dynamic, key:Dynamic):String;
+	static public function parse_option(options:String, key:String):String;
 	/**
 		X.play_dialogue2d(world_context_object, dialogue, context, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000) -> None
 		Plays a dialogue directly with no attenuation, perfect for UI.
@@ -997,7 +993,7 @@ package unreal;
 		    pitch_multiplier (float): Multiplies the pitch.
 		    start_time (float): How far in to the dialogue to begin playback at
 	**/
-	static public function play_dialogue2d(world_context_object:Dynamic, dialogue:Dynamic, context:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic):Void;
+	static public function play_dialogue2d(world_context_object:unreal.Object, dialogue:unreal.DialogueWave, context:unreal.DialogueContext, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float):Void;
 	/**
 		X.play_dialogue_at_location(world_context_object, dialogue, context, location, rotation, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, attenuation_settings=None) -> None
 		Plays a dialogue at the given location. This is a fire and forget sound and does not travel with any actor. Replication is also not handled at this point.
@@ -1013,10 +1009,11 @@ package unreal;
 		    start_time (float): How far in to the dialogue to begin playback at
 		    attenuation_settings (SoundAttenuation): Override attenuation settings package to play sound with
 	**/
-	static public function play_dialogue_at_location(world_context_object:Dynamic, dialogue:Dynamic, context:Dynamic, location:Dynamic, rotation:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic):Void;
+	static public function play_dialogue_at_location(world_context_object:unreal.Object, dialogue:unreal.DialogueWave, context:unreal.DialogueContext, location:unreal.Vector, rotation:unreal.Rotator, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, attenuation_settings:unreal.SoundAttenuation):Void;
 	/**
 		deprecated: 'play_dialogue_attached' was renamed to 'spawn_dialogue_attached'.
 	**/
+	@:deprecated
 	static public function play_dialogue_attached():Void;
 	/**
 		X.play_sound2d(world_context_object, sound, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, concurrency_settings=None, owning_actor=None, is_ui_sound=True) -> None
@@ -1035,7 +1032,7 @@ package unreal;
 		    owning_actor (Actor): The actor to use as the "owner" for concurrency settings purposes. Allows PlaySound calls to do a concurrency limit per owner.
 		    is_ui_sound (bool): True if sound is UI related, else false
 	**/
-	static public function play_sound2d(world_context_object:Dynamic, sound:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, concurrency_settings:Dynamic, owning_actor:Dynamic, is_ui_sound:Dynamic):Void;
+	static public function play_sound2d(world_context_object:unreal.Object, sound:unreal.SoundBase, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, concurrency_settings:unreal.SoundConcurrency, owning_actor:unreal.Actor, is_ui_sound:Bool):Void;
 	/**
 		X.play_sound_at_location(world_context_object, sound, location, rotation, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, concurrency_settings=None, owning_actor=None) -> None
 		Plays a sound at the given location. This is a fire and forget sound and does not travel with any actor. Replication is also not handled at this point.
@@ -1052,10 +1049,11 @@ package unreal;
 		    concurrency_settings (SoundConcurrency): Override concurrency settings package to play sound with
 		    owning_actor (Actor): The actor to use as the "owner" for concurrency settings purposes. Allows PlaySound calls to do a concurrency limit per owner.
 	**/
-	static public function play_sound_at_location(world_context_object:Dynamic, sound:Dynamic, location:Dynamic, rotation:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, concurrency_settings:Dynamic, owning_actor:Dynamic):Void;
+	static public function play_sound_at_location(world_context_object:unreal.Object, sound:unreal.SoundBase, location:unreal.Vector, rotation:unreal.Rotator, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, attenuation_settings:unreal.SoundAttenuation, concurrency_settings:unreal.SoundConcurrency, owning_actor:unreal.Actor):Void;
 	/**
 		deprecated: 'play_sound_attached' was renamed to 'spawn_sound_attached'.
 	**/
+	@:deprecated
 	static public function play_sound_attached():Void;
 	/**
 		X.play_world_camera_shake(world_context_object, shake, epicenter, inner_radius, outer_radius, falloff=1.000000, orient_shake_towards_epicenter=False) -> None
@@ -1070,7 +1068,7 @@ package unreal;
 		    falloff (float): Affects falloff of effect as it nears OuterRadius
 		    orient_shake_towards_epicenter (bool): Changes the rotation of shake to point towards epicenter instead of forward
 	**/
-	static public function play_world_camera_shake(world_context_object:Dynamic, shake:Dynamic, epicenter:Dynamic, inner_radius:Dynamic, outer_radius:Dynamic, falloff:Dynamic, orient_shake_towards_epicenter:Dynamic):Void;
+	static public function play_world_camera_shake(world_context_object:unreal.Object, shake:Dynamic, epicenter:unreal.Vector, inner_radius:Float, outer_radius:Float, falloff:Float, orient_shake_towards_epicenter:Bool):Void;
 	/**
 		X.pop_sound_mix_modifier(world_context_object, sound_mix_modifier) -> None
 		Pop a sound mix modifier from the audio system *
@@ -1079,14 +1077,16 @@ package unreal;
 		    world_context_object (Object): 
 		    sound_mix_modifier (SoundMix):
 	**/
-	static public function pop_sound_mix_modifier(world_context_object:Dynamic, sound_mix_modifier:Dynamic):Void;
+	static public function pop_sound_mix_modifier(world_context_object:unreal.Object, sound_mix_modifier:unreal.SoundMix):Void;
 	/**
 		deprecated: 'pop_sound_mode' was renamed to 'pop_sound_mix_modifier'.
 	**/
+	@:deprecated
 	static public function pop_sound_mode():Void;
 	/**
 		deprecated: 'predict_projectile_path' was renamed to 'blueprint_predict_projectile_path_by_object_type'.
 	**/
+	@:deprecated
 	static public function predict_projectile_path():Void;
 	/**
 		X.prime_sound(sound) -> None
@@ -1095,7 +1095,7 @@ package unreal;
 		Args:
 		    sound (SoundBase):
 	**/
-	static public function prime_sound(sound:Dynamic):Void;
+	static public function prime_sound(sound:unreal.SoundBase):Void;
 	/**
 		X.project_world_to_screen(player, world_position, player_viewport_relative=False) -> Vector2D or None
 		Transforms the given 3D world-space point into a its 2D screen space coordinate.
@@ -1110,7 +1110,7 @@ package unreal;
 		
 		    screen_position (Vector2D): (out) Corresponding 2D position in screen space
 	**/
-	static public function project_world_to_screen(player:Dynamic, world_position:Dynamic, player_viewport_relative:Dynamic):Dynamic;
+	static public function project_world_to_screen(player:unreal.PlayerController, world_position:unreal.Vector, player_viewport_relative:Bool):Dynamic;
 	/**
 		X.push_sound_mix_modifier(world_context_object, sound_mix_modifier) -> None
 		Push a sound mix modifier onto the audio system *
@@ -1119,10 +1119,11 @@ package unreal;
 		    world_context_object (Object): 
 		    sound_mix_modifier (SoundMix):
 	**/
-	static public function push_sound_mix_modifier(world_context_object:Dynamic, sound_mix_modifier:Dynamic):Void;
+	static public function push_sound_mix_modifier(world_context_object:unreal.Object, sound_mix_modifier:unreal.SoundMix):Void;
 	/**
 		deprecated: 'push_sound_mode' was renamed to 'push_sound_mix_modifier'.
 	**/
+	@:deprecated
 	static public function push_sound_mode():Void;
 	/**
 		X.rebase_local_origin_onto_zero(world_context_object, world_location) -> Vector
@@ -1135,7 +1136,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function rebase_local_origin_onto_zero(world_context_object:Dynamic, world_location:Dynamic):unreal.Vector;
+	static public function rebase_local_origin_onto_zero(world_context_object:unreal.Object, world_location:unreal.Vector):unreal.Vector;
 	/**
 		X.rebase_zero_origin_onto_local(world_context_object, world_location) -> Vector
 		Returns local location for origin based position.
@@ -1147,7 +1148,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function rebase_zero_origin_onto_local(world_context_object:Dynamic, world_location:Dynamic):unreal.Vector;
+	static public function rebase_zero_origin_onto_local(world_context_object:unreal.Object, world_location:unreal.Vector):unreal.Vector;
 	/**
 		X.remove_player(player, destroy_pawn) -> None
 		Removes a player from this game.
@@ -1156,7 +1157,7 @@ package unreal;
 		    player (PlayerController): The player controller of the player to be removed
 		    destroy_pawn (bool): Whether the controlled pawn should be deleted as well
 	**/
-	static public function remove_player(player:Dynamic, destroy_pawn:Dynamic):Void;
+	static public function remove_player(player:unreal.PlayerController, destroy_pawn:Bool):Void;
 	/**
 		X.save_game_to_slot(save_game_object, slot_name, user_index) -> bool
 		Save the contents of the SaveGameObject to a platform-specific save slot/file.
@@ -1170,7 +1171,7 @@ package unreal;
 		Returns:
 		    bool: Whether we successfully saved this information
 	**/
-	static public function save_game_to_slot(save_game_object:Dynamic, slot_name:Dynamic, user_index:Dynamic):Bool;
+	static public function save_game_to_slot(save_game_object:unreal.SaveGame, slot_name:String, user_index:Int):Bool;
 	/**
 		X.set_base_sound_mix(world_context_object, sound_mix) -> None
 		Set the sound mix of the audio system for special EQing *
@@ -1179,7 +1180,7 @@ package unreal;
 		    world_context_object (Object): 
 		    sound_mix (SoundMix):
 	**/
-	static public function set_base_sound_mix(world_context_object:Dynamic, sound_mix:Dynamic):Void;
+	static public function set_base_sound_mix(world_context_object:unreal.Object, sound_mix:unreal.SoundMix):Void;
 	/**
 		X.set_enable_world_rendering(world_context_object, enable) -> None
 		Enabled rendering of the world
@@ -1188,7 +1189,7 @@ package unreal;
 		    world_context_object (Object): 
 		    enable (bool): Whether the world should be rendered or not
 	**/
-	static public function set_enable_world_rendering(world_context_object:Dynamic, enable:Dynamic):Void;
+	static public function set_enable_world_rendering(world_context_object:unreal.Object, enable:Bool):Void;
 	/**
 		X.set_force_disable_splitscreen(world_context_object, disable) -> None
 		Enables split screen
@@ -1197,7 +1198,7 @@ package unreal;
 		    world_context_object (Object): 
 		    disable (bool): Whether the viewport should split screen between local players or not
 	**/
-	static public function set_force_disable_splitscreen(world_context_object:Dynamic, disable:Dynamic):Void;
+	static public function set_force_disable_splitscreen(world_context_object:unreal.Object, disable:Bool):Void;
 	/**
 		X.set_game_paused(world_context_object, paused) -> bool
 		Sets the game's paused state
@@ -1209,7 +1210,7 @@ package unreal;
 		Returns:
 		    bool: Whether the game was successfully paused/unpaused
 	**/
-	static public function set_game_paused(world_context_object:Dynamic, paused:Dynamic):Bool;
+	static public function set_game_paused(world_context_object:unreal.Object, paused:Bool):Bool;
 	/**
 		X.set_global_listener_focus_parameters(world_context_object, focus_azimuth_scale=1.000000, non_focus_azimuth_scale=1.000000, focus_distance_scale=1.000000, non_focus_distance_scale=1.000000, focus_volume_scale=1.000000, non_focus_volume_scale=1.000000, focus_priority_scale=1.000000, non_focus_priority_scale=1.000000) -> None
 		Sets the global listener focus parameters which will scale focus behavior of sounds based on their focus azimuth settings in their attenuation settings.
@@ -1228,7 +1229,7 @@ package unreal;
 		    focus_priority_scale (float): A priority scale value (> 0.0) to use for sounds which are in-focus. Values < 1.0 will reduce the priority of in-focus sounds, values > 1.0 will increase the priority of in-focus sounds.
 		    non_focus_priority_scale (float): A priority scale value (> 0.0) to use for sounds which are out-of-focus. Values < 1.0 will reduce the priority of sounds out-of-focus sounds, values > 1.0 will increase the priority of out-of-focus sounds.
 	**/
-	static public function set_global_listener_focus_parameters(world_context_object:Dynamic, focus_azimuth_scale:Dynamic, non_focus_azimuth_scale:Dynamic, focus_distance_scale:Dynamic, non_focus_distance_scale:Dynamic, focus_volume_scale:Dynamic, non_focus_volume_scale:Dynamic, focus_priority_scale:Dynamic, non_focus_priority_scale:Dynamic):Void;
+	static public function set_global_listener_focus_parameters(world_context_object:unreal.Object, focus_azimuth_scale:Float, non_focus_azimuth_scale:Float, focus_distance_scale:Float, non_focus_distance_scale:Float, focus_volume_scale:Float, non_focus_volume_scale:Float, focus_priority_scale:Float, non_focus_priority_scale:Float):Void;
 	/**
 		X.set_global_pitch_modulation(world_context_object, pitch_modulation, time_sec) -> None
 		Sets a global pitch modulation scalar that will apply to all non-UI sounds
@@ -1241,7 +1242,7 @@ package unreal;
 		    pitch_modulation (float): A pitch modulation value to globally set.
 		    time_sec (float): A time value to linearly interpolate the global modulation pitch over from it's current value.
 	**/
-	static public function set_global_pitch_modulation(world_context_object:Dynamic, pitch_modulation:Dynamic, time_sec:Dynamic):Void;
+	static public function set_global_pitch_modulation(world_context_object:unreal.Object, pitch_modulation:Float, time_sec:Float):Void;
 	/**
 		X.set_global_time_dilation(world_context_object, time_dilation) -> None
 		Sets the global time dilation.
@@ -1250,7 +1251,7 @@ package unreal;
 		    world_context_object (Object): 
 		    time_dilation (float): value to set the global time dilation to
 	**/
-	static public function set_global_time_dilation(world_context_object:Dynamic, time_dilation:Dynamic):Void;
+	static public function set_global_time_dilation(world_context_object:unreal.Object, time_dilation:Float):Void;
 	/**
 		X.set_max_audio_channels_scaled(world_context_object, max_channel_count_scale) -> None
 		Sets the max number of voices (also known as "channels") dynamically by percentage. E.g. if you want to temporarily reduce voice count by 50%, use 0.50. Later, you can return to the original max voice count by using 1.0.
@@ -1259,7 +1260,7 @@ package unreal;
 		    world_context_object (Object): 
 		    max_channel_count_scale (float):
 	**/
-	static public function set_max_audio_channels_scaled(world_context_object:Dynamic, max_channel_count_scale:Dynamic):Void;
+	static public function set_max_audio_channels_scaled(world_context_object:unreal.Object, max_channel_count_scale:Float):Void;
 	/**
 		X.set_player_controller_id(player, controller_id) -> None
 		Sets what controller ID a Player should be using
@@ -1268,7 +1269,7 @@ package unreal;
 		    player (PlayerController): The player controller of the player to change the controller ID of
 		    controller_id (int32): The controller ID to assign to this player
 	**/
-	static public function set_player_controller_id(player:Dynamic, controller_id:Dynamic):Void;
+	static public function set_player_controller_id(player:unreal.PlayerController, controller_id:Int):Void;
 	/**
 		X.set_sound_class_distance_scale(world_context_object, sound_class, distance_attenuation_scale, time_sec=0.000000) -> None
 		Sets attenuation distance scale value on the sound class over the given amount of time from it's current attenuation distance override value (1.0f it not overridden).
@@ -1283,7 +1284,7 @@ package unreal;
 		    distance_attenuation_scale (float): A distance attenuation scale value.
 		    time_sec (float): A time value to linearly interpolate from the current distance attenuation scale value to the new value.
 	**/
-	static public function set_sound_class_distance_scale(world_context_object:Dynamic, sound_class:Dynamic, distance_attenuation_scale:Dynamic, time_sec:Dynamic):Void;
+	static public function set_sound_class_distance_scale(world_context_object:unreal.Object, sound_class:unreal.SoundClass, distance_attenuation_scale:Float, time_sec:Float):Void;
 	/**
 		X.set_sound_mix_class_override(world_context_object, sound_mix_modifier, sound_class, volume=1.000000, pitch=1.000000, fade_in_time=1.000000, apply_to_children=True) -> None
 		Overrides the sound class adjuster in the given sound mix. If the sound class does not exist in the input sound mix, the sound class adjustment will be added to the sound mix.
@@ -1297,7 +1298,7 @@ package unreal;
 		    fade_in_time (float): The interpolation time to use to go from the current sound class adjuster values to the new values.
 		    apply_to_children (bool): Whether or not to apply this override to the sound class' children or to just the specified sound class.
 	**/
-	static public function set_sound_mix_class_override(world_context_object:Dynamic, sound_mix_modifier:Dynamic, sound_class:Dynamic, volume:Dynamic, pitch:Dynamic, fade_in_time:Dynamic, apply_to_children:Dynamic):Void;
+	static public function set_sound_mix_class_override(world_context_object:unreal.Object, sound_mix_modifier:unreal.SoundMix, sound_class:unreal.SoundClass, volume:Float, pitch:Float, fade_in_time:Float, apply_to_children:Bool):Void;
 	/**
 		X.set_subtitles_enabled(enabled) -> None
 		Will set subtitles to be enabled or disabled.
@@ -1305,10 +1306,11 @@ package unreal;
 		Args:
 		    enabled (bool): will enable subtitle drawing if true, disable if false.
 	**/
-	static public function set_subtitles_enabled(enabled:Dynamic):Void;
+	static public function set_subtitles_enabled(enabled:Bool):Void;
 	/**
 		deprecated: 'set_time_dilation' was renamed to 'set_global_time_dilation'.
 	**/
+	@:deprecated
 	static public function set_time_dilation():Void;
 	/**
 		X.set_viewport_mouse_capture_mode(world_context_object, mouse_capture_mode) -> None
@@ -1318,7 +1320,7 @@ package unreal;
 		    world_context_object (Object): 
 		    mouse_capture_mode (MouseCaptureMode):
 	**/
-	static public function set_viewport_mouse_capture_mode(world_context_object:Dynamic, mouse_capture_mode:Dynamic):Void;
+	static public function set_viewport_mouse_capture_mode(world_context_object:unreal.Object, mouse_capture_mode:unreal.MouseCaptureMode):Void;
 	/**
 		X.set_world_origin_location(world_context_object, new_location) -> None
 		Requests a new location for a world origin.
@@ -1327,7 +1329,7 @@ package unreal;
 		    world_context_object (Object): 
 		    new_location (IntVector):
 	**/
-	static public function set_world_origin_location(world_context_object:Dynamic, new_location:Dynamic):Void;
+	static public function set_world_origin_location(world_context_object:unreal.Object, new_location:unreal.IntVector):Void;
 	/**
 		X.spawn_decal_at_location(world_context_object, decal_material, decal_size, location, rotation=[0.000000, -90.000000, 0.000000], life_span=0.000000) -> DecalComponent
 		Spawns a decal at the given location and rotation, fire and forget. Does not replicate.
@@ -1343,7 +1345,7 @@ package unreal;
 		Returns:
 		    DecalComponent:
 	**/
-	static public function spawn_decal_at_location(world_context_object:Dynamic, decal_material:Dynamic, decal_size:Dynamic, location:Dynamic, rotation:Dynamic, life_span:Dynamic):unreal.DecalComponent;
+	static public function spawn_decal_at_location(world_context_object:unreal.Object, decal_material:unreal.MaterialInterface, decal_size:unreal.Vector, location:unreal.Vector, rotation:unreal.Rotator, life_span:Float):unreal.DecalComponent;
 	/**
 		X.spawn_decal_attached(decal_material, decal_size, attach_to_component, attach_point_name="None", location=[0.000000, 0.000000, 0.000000], rotation=[0.000000, 0.000000, 0.000000], location_type=AttachLocation.KEEP_RELATIVE_OFFSET, life_span=0.000000) -> DecalComponent
 		Spawns a decal attached to and following the specified component. Does not replicate.
@@ -1361,7 +1363,7 @@ package unreal;
 		Returns:
 		    DecalComponent:
 	**/
-	static public function spawn_decal_attached(decal_material:Dynamic, decal_size:Dynamic, attach_to_component:Dynamic, attach_point_name:Dynamic, location:Dynamic, rotation:Dynamic, location_type:Dynamic, life_span:Dynamic):unreal.DecalComponent;
+	static public function spawn_decal_attached(decal_material:unreal.MaterialInterface, decal_size:unreal.Vector, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, location_type:unreal.AttachLocation, life_span:Float):unreal.DecalComponent;
 	/**
 		X.spawn_dialogue2d(world_context_object, dialogue, context, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, auto_destroy=True) -> AudioComponent
 		Spawns a dialogue with no attenuation, perfect for UI.
@@ -1380,7 +1382,7 @@ package unreal;
 		Returns:
 		    AudioComponent: An audio component to manipulate the spawned sound
 	**/
-	static public function spawn_dialogue2d(world_context_object:Dynamic, dialogue:Dynamic, context:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function spawn_dialogue2d(world_context_object:unreal.Object, dialogue:unreal.DialogueWave, context:unreal.DialogueContext, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.spawn_dialogue_at_location(world_context_object, dialogue, context, location, rotation=[0.000000, 0.000000, 0.000000], volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, auto_destroy=True) -> AudioComponent
 		Plays a dialogue at the given location. This is a fire and forget sound and does not travel with any actor. Replication is also not handled at this point.
@@ -1400,7 +1402,7 @@ package unreal;
 		Returns:
 		    AudioComponent: Audio Component to manipulate the playing dialogue with
 	**/
-	static public function spawn_dialogue_at_location(world_context_object:Dynamic, dialogue:Dynamic, context:Dynamic, location:Dynamic, rotation:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function spawn_dialogue_at_location(world_context_object:unreal.Object, dialogue:unreal.DialogueWave, context:unreal.DialogueContext, location:unreal.Vector, rotation:unreal.Rotator, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, attenuation_settings:unreal.SoundAttenuation, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.spawn_dialogue_attached(dialogue, context, attach_to_component, attach_point_name="None", location=[0.000000, 0.000000, 0.000000], rotation=[0.000000, 0.000000, 0.000000], location_type=AttachLocation.KEEP_RELATIVE_OFFSET, stop_when_attached_to_destroyed=False, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, auto_destroy=True) -> AudioComponent
 		Spawns a dialogue attached to and following the specified component. This is a fire and forget sound. Replication is also not handled at this point.
@@ -1423,7 +1425,7 @@ package unreal;
 		Returns:
 		    AudioComponent: Audio Component to manipulate the playing dialogue with
 	**/
-	static public function spawn_dialogue_attached(dialogue:Dynamic, context:Dynamic, attach_to_component:Dynamic, attach_point_name:Dynamic, location:Dynamic, rotation:Dynamic, location_type:Dynamic, stop_when_attached_to_destroyed:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function spawn_dialogue_attached(dialogue:unreal.DialogueWave, context:unreal.DialogueContext, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, location_type:unreal.AttachLocation, stop_when_attached_to_destroyed:Bool, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, attenuation_settings:unreal.SoundAttenuation, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.spawn_emitter_at_location(world_context_object, emitter_template, location, rotation=[0.000000, 0.000000, 0.000000], scale=[1.000000, 1.000000, 1.000000], auto_destroy=True, pooling_method=PSCPoolMethod.NONE, auto_activate_system=True) -> ParticleSystemComponent
 		Plays the specified effect at the given location and rotation, fire and forget. The system will go away when the effect is complete. Does not replicate.
@@ -1441,7 +1443,7 @@ package unreal;
 		Returns:
 		    ParticleSystemComponent:
 	**/
-	static public function spawn_emitter_at_location(world_context_object:Dynamic, emitter_template:Dynamic, location:Dynamic, rotation:Dynamic, scale:Dynamic, auto_destroy:Dynamic, pooling_method:Dynamic, auto_activate_system:Dynamic):unreal.ParticleSystemComponent;
+	static public function spawn_emitter_at_location(world_context_object:unreal.Object, emitter_template:unreal.ParticleSystem, location:unreal.Vector, rotation:unreal.Rotator, scale:unreal.Vector, auto_destroy:Bool, pooling_method:unreal.PSCPoolMethod, auto_activate_system:Bool):unreal.ParticleSystemComponent;
 	/**
 		X.spawn_emitter_attached(emitter_template, attach_to_component, attach_point_name="None", location=[0.000000, 0.000000, 0.000000], rotation=[0.000000, 0.000000, 0.000000], scale=[1.000000, 1.000000, 1.000000], location_type=AttachLocation.KEEP_RELATIVE_OFFSET, auto_destroy=True, pooling_method=PSCPoolMethod.NONE, auto_activate=True) -> ParticleSystemComponent
 		Plays the specified effect attached to and following the specified component. The system will go away when the effect is complete. Does not replicate.
@@ -1461,7 +1463,7 @@ package unreal;
 		Returns:
 		    ParticleSystemComponent:
 	**/
-	static public function spawn_emitter_attached(emitter_template:Dynamic, attach_to_component:Dynamic, attach_point_name:Dynamic, location:Dynamic, rotation:Dynamic, scale:Dynamic, location_type:Dynamic, auto_destroy:Dynamic, pooling_method:Dynamic, auto_activate:Dynamic):unreal.ParticleSystemComponent;
+	static public function spawn_emitter_attached(emitter_template:unreal.ParticleSystem, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, scale:unreal.Vector, location_type:unreal.AttachLocation, auto_destroy:Bool, pooling_method:unreal.PSCPoolMethod, auto_activate:Bool):unreal.ParticleSystemComponent;
 	/**
 		X.spawn_force_feedback_at_location(world_context_object, force_feedback_effect, location, rotation=[0.000000, 0.000000, 0.000000], looping=False, intensity_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, auto_destroy=True) -> ForceFeedbackComponent
 		Plays a force feedback effect at the given location. This is a fire and forget effect and does not travel with any actor. Replication is also not handled at this point.
@@ -1480,7 +1482,7 @@ package unreal;
 		Returns:
 		    ForceFeedbackComponent: Force Feedback Component to manipulate the playing feedback effect with
 	**/
-	static public function spawn_force_feedback_at_location(world_context_object:Dynamic, force_feedback_effect:Dynamic, location:Dynamic, rotation:Dynamic, looping:Dynamic, intensity_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, auto_destroy:Dynamic):unreal.ForceFeedbackComponent;
+	static public function spawn_force_feedback_at_location(world_context_object:unreal.Object, force_feedback_effect:unreal.ForceFeedbackEffect, location:unreal.Vector, rotation:unreal.Rotator, looping:Bool, intensity_multiplier:Float, start_time:Float, attenuation_settings:unreal.ForceFeedbackAttenuation, auto_destroy:Bool):unreal.ForceFeedbackComponent;
 	/**
 		X.spawn_force_feedback_attached(force_feedback_effect, attach_to_component, attach_point_name="None", location=[0.000000, 0.000000, 0.000000], rotation=[0.000000, 0.000000, 0.000000], location_type=AttachLocation.KEEP_RELATIVE_OFFSET, stop_when_attached_to_destroyed=False, looping=False, intensity_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, auto_destroy=True) -> ForceFeedbackComponent
 		Plays a force feedback effect attached to and following the specified component. This is a fire and forget effect. Replication is also not handled at this point.
@@ -1502,7 +1504,7 @@ package unreal;
 		Returns:
 		    ForceFeedbackComponent: Force Feedback Component to manipulate the playing feedback effect with
 	**/
-	static public function spawn_force_feedback_attached(force_feedback_effect:Dynamic, attach_to_component:Dynamic, attach_point_name:Dynamic, location:Dynamic, rotation:Dynamic, location_type:Dynamic, stop_when_attached_to_destroyed:Dynamic, looping:Dynamic, intensity_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, auto_destroy:Dynamic):unreal.ForceFeedbackComponent;
+	static public function spawn_force_feedback_attached(force_feedback_effect:unreal.ForceFeedbackEffect, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, location_type:unreal.AttachLocation, stop_when_attached_to_destroyed:Bool, looping:Bool, intensity_multiplier:Float, start_time:Float, attenuation_settings:unreal.ForceFeedbackAttenuation, auto_destroy:Bool):unreal.ForceFeedbackComponent;
 	/**
 		X.spawn_sound2d(world_context_object, sound, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, concurrency_settings=None, persist_across_level_transition=False, auto_destroy=True) -> AudioComponent
 		Spawns a sound with no attenuation, perfect for UI sounds.
@@ -1522,7 +1524,7 @@ package unreal;
 		Returns:
 		    AudioComponent: An audio component to manipulate the spawned sound
 	**/
-	static public function spawn_sound2d(world_context_object:Dynamic, sound:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, concurrency_settings:Dynamic, persist_across_level_transition:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function spawn_sound2d(world_context_object:unreal.Object, sound:unreal.SoundBase, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, concurrency_settings:unreal.SoundConcurrency, persist_across_level_transition:Bool, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.spawn_sound_at_location(world_context_object, sound, location, rotation=[0.000000, 0.000000, 0.000000], volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, concurrency_settings=None, auto_destroy=True) -> AudioComponent
 		Spawns a sound at the given location. This does not travel with any actor. Replication is also not handled at this point.
@@ -1542,7 +1544,7 @@ package unreal;
 		Returns:
 		    AudioComponent: An audio component to manipulate the spawned sound
 	**/
-	static public function spawn_sound_at_location(world_context_object:Dynamic, sound:Dynamic, location:Dynamic, rotation:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, concurrency_settings:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function spawn_sound_at_location(world_context_object:unreal.Object, sound:unreal.SoundBase, location:unreal.Vector, rotation:unreal.Rotator, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, attenuation_settings:unreal.SoundAttenuation, concurrency_settings:unreal.SoundConcurrency, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.spawn_sound_attached(sound, attach_to_component, attach_point_name="None", location=[0.000000, 0.000000, 0.000000], rotation=[0.000000, 0.000000, 0.000000], location_type=AttachLocation.KEEP_RELATIVE_OFFSET, stop_when_attached_to_destroyed=False, volume_multiplier=1.000000, pitch_multiplier=1.000000, start_time=0.000000, attenuation_settings=None, concurrency_settings=None, auto_destroy=True) -> AudioComponent
 		Plays a sound attached to and following the specified component. This is a fire and forget sound. Replication is also not handled at this point.
@@ -1565,7 +1567,7 @@ package unreal;
 		Returns:
 		    AudioComponent: An audio component to manipulate the spawned sound
 	**/
-	static public function spawn_sound_attached(sound:Dynamic, attach_to_component:Dynamic, attach_point_name:Dynamic, location:Dynamic, rotation:Dynamic, location_type:Dynamic, stop_when_attached_to_destroyed:Dynamic, volume_multiplier:Dynamic, pitch_multiplier:Dynamic, start_time:Dynamic, attenuation_settings:Dynamic, concurrency_settings:Dynamic, auto_destroy:Dynamic):unreal.AudioComponent;
+	static public function spawn_sound_attached(sound:unreal.SoundBase, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, location_type:unreal.AttachLocation, stop_when_attached_to_destroyed:Bool, volume_multiplier:Float, pitch_multiplier:Float, start_time:Float, attenuation_settings:unreal.SoundAttenuation, concurrency_settings:unreal.SoundConcurrency, auto_destroy:Bool):unreal.AudioComponent;
 	/**
 		X.suggest_projectile_velocity_custom_arc(world_context_object, start_pos, end_pos, override_gravity_z=0.000000, arc_param=0.500000) -> Vector or None
 		Returns the launch velocity needed for a projectile at rest at StartPos to land on EndPos.
@@ -1584,7 +1586,7 @@ package unreal;
 		
 		    out_launch_velocity (Vector): Returns the launch velocity required to reach the EndPos
 	**/
-	static public function suggest_projectile_velocity_custom_arc(world_context_object:Dynamic, start_pos:Dynamic, end_pos:Dynamic, override_gravity_z:Dynamic, arc_param:Dynamic):Dynamic;
+	static public function suggest_projectile_velocity_custom_arc(world_context_object:unreal.Object, start_pos:unreal.Vector, end_pos:unreal.Vector, override_gravity_z:Float, arc_param:Float):Dynamic;
 	/**
 		X.unload_stream_level(world_context_object, level_name, latent_info, should_block_on_unload) -> None
 		Unload a streamed in level (by Name)
@@ -1595,7 +1597,7 @@ package unreal;
 		    latent_info (LatentActionInfo): 
 		    should_block_on_unload (bool):
 	**/
-	static public function unload_stream_level(world_context_object:Dynamic, level_name:Dynamic, latent_info:Dynamic, should_block_on_unload:Dynamic):Void;
+	static public function unload_stream_level(world_context_object:unreal.Object, level_name:unreal.Name, latent_info:unreal.LatentActionInfo, should_block_on_unload:Bool):Void;
 	/**
 		X.unload_stream_level_by_soft_object_ptr(world_context_object, level, latent_info, should_block_on_unload) -> None
 		Unload a streamed in level (by Object Reference)
@@ -1606,5 +1608,5 @@ package unreal;
 		    latent_info (LatentActionInfo): 
 		    should_block_on_unload (bool):
 	**/
-	static public function unload_stream_level_by_soft_object_ptr(world_context_object:Dynamic, level:Dynamic, latent_info:Dynamic, should_block_on_unload:Dynamic):Void;
+	static public function unload_stream_level_by_soft_object_ptr(world_context_object:unreal.Object, level:unreal.World, latent_info:unreal.LatentActionInfo, should_block_on_unload:Bool):Void;
 }

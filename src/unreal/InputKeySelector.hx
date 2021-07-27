@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InputKeySelector") extern class InputKeySelector extends unreal.Widget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] When true gamepad keys are allowed in the input chord representing the selected key, otherwise they are ignored.
 	**/
 	public var allow_gamepad_keys : Bool;
@@ -61,7 +52,7 @@ package unreal;
 		Args:
 		    allow_gamepad_keys (bool):
 	**/
-	public function set_allow_gamepad_keys(allow_gamepad_keys:Dynamic):Void;
+	public function set_allow_gamepad_keys(allow_gamepad_keys:Bool):Void;
 	/**
 		x.set_allow_modifier_keys(allow_modifier_keys) -> None
 		Sets whether or not modifier keys are allowed in the selected key.
@@ -69,7 +60,7 @@ package unreal;
 		Args:
 		    allow_modifier_keys (bool):
 	**/
-	public function set_allow_modifier_keys(allow_modifier_keys:Dynamic):Void;
+	public function set_allow_modifier_keys(allow_modifier_keys:Bool):Void;
 	/**
 		x.set_escape_keys(keys) -> None
 		Sets escape keys.
@@ -77,7 +68,7 @@ package unreal;
 		Args:
 		    keys (Array(Key)):
 	**/
-	public function set_escape_keys(keys:Dynamic):Void;
+	public function set_escape_keys(keys:unreal.Array):Void;
 	/**
 		x.set_key_selection_text(key_selection_text) -> None
 		Sets the text which is displayed while selecting keys.
@@ -85,7 +76,7 @@ package unreal;
 		Args:
 		    key_selection_text (Text):
 	**/
-	public function set_key_selection_text(key_selection_text:Dynamic):Void;
+	public function set_key_selection_text(key_selection_text:unreal.Text):Void;
 	/**
 		x.set_no_key_specified_text(no_key_specified_text) -> None
 		Sets the text to display when no key text is available or not selecting a key.
@@ -93,7 +84,7 @@ package unreal;
 		Args:
 		    no_key_specified_text (Text):
 	**/
-	public function set_no_key_specified_text(no_key_specified_text:Dynamic):Void;
+	public function set_no_key_specified_text(no_key_specified_text:unreal.Text):Void;
 	/**
 		x.set_selected_key(selected_key) -> None
 		Sets the currently selected key.
@@ -101,7 +92,7 @@ package unreal;
 		Args:
 		    selected_key (InputChord):
 	**/
-	public function set_selected_key(selected_key:Dynamic):Void;
+	public function set_selected_key(selected_key:unreal.InputChord):Void;
 	/**
 		x.set_text_block_visibility(visibility) -> None
 		Sets the visibility of the text block.
@@ -109,7 +100,7 @@ package unreal;
 		Args:
 		    visibility (SlateVisibility):
 	**/
-	public function set_text_block_visibility(visibility:Dynamic):Void;
+	public function set_text_block_visibility(visibility:unreal.SlateVisibility):Void;
 	/**
 		(TextBlockStyle):  [Read-Write] The button style used at runtime
 	**/

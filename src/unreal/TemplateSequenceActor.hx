@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "TemplateSequenceActor") extern class TemplateSequenceActor extends unreal.Actor {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(TemplateSequenceBindingOverrideData):  [Read-Only] Binding Override
 	**/
 	public var binding_override : unreal.TemplateSequenceBindingOverrideData;
@@ -45,7 +36,7 @@ package unreal;
 		Args:
 		    actor (Actor):
 	**/
-	public function set_binding(actor:Dynamic):Void;
+	public function set_binding(actor:unreal.Actor):Void;
 	/**
 		x.set_sequence(sequence) -> None
 		Set Sequence
@@ -53,7 +44,7 @@ package unreal;
 		Args:
 		    sequence (TemplateSequence):
 	**/
-	public function set_sequence(sequence:Dynamic):Void;
+	public function set_sequence(sequence:unreal.TemplateSequence):Void;
 	/**
 		(SoftObjectPath):  [Read-Only] Template Sequence
 	**/

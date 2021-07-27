@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InputComponent") extern class InputComponent extends unreal.ActorComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_controller_analog_key_state(key) -> float
 		Returns the analog value for the given key/button.  If analog isn't supported, returns 1 for down and 0 for up.
 		deprecated: Use PlayerController.GetInputAnalogKeyState instead.
@@ -21,7 +12,8 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_controller_analog_key_state(key:Dynamic):Float;
+	@:deprecated
+	public function get_controller_analog_key_state(key:unreal.Key):Float;
 	/**
 		x.get_controller_analog_stick_state(which_stick) -> (stick_x=float, stick_y=float)
 		Retrieves the X and Y displacement of the given analog stick.  For WhickStick, 0 = left, 1 = right.
@@ -37,7 +29,8 @@ package unreal;
 		
 		    stick_y (float):
 	**/
-	public function get_controller_analog_stick_state(which_stick:Dynamic):python.Tuple<Dynamic>;
+	@:deprecated
+	public function get_controller_analog_stick_state(which_stick:unreal.ControllerAnalogStick):python.Tuple<Dynamic>;
 	/**
 		x.get_controller_key_time_down(key) -> float
 		Returns how long the given key/button has been down.  Returns 0 if it's up or it just went down this frame.
@@ -49,7 +42,8 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_controller_key_time_down(key:Dynamic):Float;
+	@:deprecated
+	public function get_controller_key_time_down(key:unreal.Key):Float;
 	/**
 		x.get_controller_mouse_delta() -> (delta_x=float, delta_y=float)
 		Retrieves how far the mouse moved this frame.
@@ -62,6 +56,7 @@ package unreal;
 		
 		    delta_y (float):
 	**/
+	@:deprecated
 	public function get_controller_mouse_delta():python.Tuple<Dynamic>;
 	/**
 		x.get_controller_vector_key_state(key) -> Vector
@@ -74,7 +69,8 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_controller_vector_key_state(key:Dynamic):unreal.Vector;
+	@:deprecated
+	public function get_controller_vector_key_state(key:unreal.Key):unreal.Vector;
 	/**
 		x.get_touch_state(finger_index) -> (location_x=float, location_y=float, is_currently_pressed=bool)
 		Returns the location of a touch, and if it's held down
@@ -92,7 +88,8 @@ package unreal;
 		
 		    is_currently_pressed (bool):
 	**/
-	public function get_touch_state(finger_index:Dynamic):python.Tuple<Dynamic>;
+	@:deprecated
+	public function get_touch_state(finger_index:Int):python.Tuple<Dynamic>;
 	/**
 		x.is_controller_key_down(key) -> bool
 		Returns true if the given key/button is pressed on the input of the controller (if present)
@@ -104,7 +101,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_controller_key_down(key:Dynamic):Bool;
+	@:deprecated
+	public function is_controller_key_down(key:unreal.Key):Bool;
 	/**
 		x.was_controller_key_just_pressed(key) -> bool
 		Returns true if the given key/button was up last frame and down this frame.
@@ -116,7 +114,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function was_controller_key_just_pressed(key:Dynamic):Bool;
+	@:deprecated
+	public function was_controller_key_just_pressed(key:unreal.Key):Bool;
 	/**
 		x.was_controller_key_just_released(key) -> bool
 		Returns true if the given key/button was down last frame and up this frame.
@@ -128,5 +127,6 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function was_controller_key_just_released(key:Dynamic):Bool;
+	@:deprecated
+	public function was_controller_key_just_released(key:unreal.Key):Bool;
 }

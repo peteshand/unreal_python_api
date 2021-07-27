@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ViewportInteractor") extern class ViewportInteractor extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.can_carry() -> bool
 		Gets if the interactor can carry an object
 		
@@ -57,7 +48,7 @@ package unreal;
 		
 		    laser_pointer_end (Vector):
 	**/
-	public function get_laser_pointer(even_if_blocked:Dynamic, laser_length_override:Dynamic):Dynamic;
+	public function get_laser_pointer(even_if_blocked:Bool, laser_length_override:Float):Dynamic;
 	/**
 		x.get_last_room_space_transform() -> Transform
 		Gets the last hand transform of the interactor, in the local tracking space
@@ -133,7 +124,7 @@ package unreal;
 		
 		    out_was_handled (bool):
 	**/
-	public function handle_input_axis_bp(action:Dynamic, key:Dynamic, delta:Dynamic, delta_time:Dynamic):Bool;
+	public function handle_input_axis_bp(action:unreal.ViewportActionKeyInput, key:unreal.Key, delta:Float, delta_time:Float):Bool;
 	/**
 		x.handle_input_key_bp(action, key, event) -> bool
 		To be overridden. Called by HandleInputKey before delegates and default input implementation
@@ -148,7 +139,7 @@ package unreal;
 		
 		    out_was_handled (bool):
 	**/
-	public function handle_input_key_bp(action:Dynamic, key:Dynamic, event:Dynamic):Bool;
+	public function handle_input_key_bp(action:unreal.ViewportActionKeyInput, key:unreal.Key, event:unreal.InputEventType):Bool;
 	/**
 		x.is_hovering_over_gizmo() -> bool
 		If the interactor laser is currently hovering over a gizmo handle
@@ -164,7 +155,7 @@ package unreal;
 		Args:
 		    can_carry (bool):
 	**/
-	public function set_can_carry(can_carry:Dynamic):Void;
+	public function set_can_carry(can_carry:Bool):Void;
 	/**
 		x.set_dragging_mode(new_dragging_mode) -> None
 		Sets the current dragging mode for this interactor
@@ -172,7 +163,7 @@ package unreal;
 		Args:
 		    new_dragging_mode (ViewportInteractionDraggingMode):
 	**/
-	public function set_dragging_mode(new_dragging_mode:Dynamic):Void;
+	public function set_dragging_mode(new_dragging_mode:unreal.ViewportInteractionDraggingMode):Void;
 	/**
 		x.set_hit_result_gizmo_filter_mode(new_filter) -> None
 		Sets the current gizmo filter mode used for Interaction
@@ -180,7 +171,7 @@ package unreal;
 		Args:
 		    new_filter (HitResultGizmoFilterMode):
 	**/
-	public function set_hit_result_gizmo_filter_mode(new_filter:Dynamic):Void;
+	public function set_hit_result_gizmo_filter_mode(new_filter:unreal.HitResultGizmoFilterMode):Void;
 	/**
 		x.shutdown() -> None
 		Whenever the ViewportWorldInteraction is shut down, the interacts will shut down as well
@@ -193,5 +184,5 @@ package unreal;
 		Args:
 		    delta_time (float):
 	**/
-	public function tick(delta_time:Dynamic):Void;
+	public function tick(delta_time:Float):Void;
 }

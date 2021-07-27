@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "InAppPurchaseRestoreCallbackProxy") extern class InAppPurchaseRestoreCallbackProxy extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.create_proxy_object_for_in_app_purchase_restore(consumable_product_flags, player_controller) -> InAppPurchaseRestoreCallbackProxy
 		Kicks off a transaction for the provided product identifier
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    InAppPurchaseRestoreCallbackProxy:
 	**/
-	static public function create_proxy_object_for_in_app_purchase_restore(consumable_product_flags:Dynamic, player_controller:Dynamic):unreal.InAppPurchaseRestoreCallbackProxy;
+	static public function create_proxy_object_for_in_app_purchase_restore(consumable_product_flags:unreal.Array, player_controller:unreal.PlayerController):unreal.InAppPurchaseRestoreCallbackProxy;
 	/**
 		(InAppPurchaseRestoreResult):  [Read-Write] Called when there is an unsuccessful In-App Purchase transaction
 	**/

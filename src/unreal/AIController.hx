@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AIController") extern class AIController extends unreal.Controller {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(PawnActionsComponent):  [Read-Only] Actions Comp
 	**/
 	public var actions_comp : unreal.PawnActionsComponent;
@@ -69,7 +60,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_focal_point_on_actor(actor:Dynamic):unreal.Vector;
+	public function get_focal_point_on_actor(actor:unreal.Actor):unreal.Vector;
 	/**
 		x.get_focus_actor() -> Actor
 		Get the focused actor.
@@ -127,7 +118,7 @@ package unreal;
 		Returns:
 		    PathFollowingRequestResult:
 	**/
-	public function move_to_actor(goal:Dynamic, acceptance_radius:Dynamic, stop_on_overlap:Dynamic, use_pathfinding:Dynamic, can_strafe:Dynamic, filter_class:Dynamic, allow_partial_path:Dynamic):unreal.PathFollowingRequestResult;
+	public function move_to_actor(goal:unreal.Actor, acceptance_radius:Float, stop_on_overlap:Bool, use_pathfinding:Bool, can_strafe:Bool, filter_class:Dynamic, allow_partial_path:Bool):unreal.PathFollowingRequestResult;
 	/**
 		x.move_to_location(dest, acceptance_radius=-1.000000, stop_on_overlap=True, use_pathfinding=True, project_destination_to_navigation=False, can_strafe=True, filter_class=None, allow_partial_path=True) -> PathFollowingRequestResult
 		Makes AI go toward specified Dest location, aborts any active path following
@@ -146,7 +137,7 @@ package unreal;
 		Returns:
 		    PathFollowingRequestResult:
 	**/
-	public function move_to_location(dest:Dynamic, acceptance_radius:Dynamic, stop_on_overlap:Dynamic, use_pathfinding:Dynamic, project_destination_to_navigation:Dynamic, can_strafe:Dynamic, filter_class:Dynamic, allow_partial_path:Dynamic):unreal.PathFollowingRequestResult;
+	public function move_to_location(dest:unreal.Vector, acceptance_radius:Float, stop_on_overlap:Bool, use_pathfinding:Bool, project_destination_to_navigation:Bool, can_strafe:Bool, filter_class:Dynamic, allow_partial_path:Bool):unreal.PathFollowingRequestResult;
 	/**
 		x.on_using_black_board(blackboard_comp, blackboard_asset) -> None
 		On Using Black Board
@@ -155,7 +146,7 @@ package unreal;
 		    blackboard_comp (BlackboardComponent): 
 		    blackboard_asset (BlackboardData):
 	**/
-	public function on_using_black_board(blackboard_comp:Dynamic, blackboard_asset:Dynamic):Void;
+	public function on_using_black_board(blackboard_comp:unreal.BlackboardComponent, blackboard_asset:unreal.BlackboardData):Void;
 	/**
 		(AIMoveCompletedSignature):  [Read-Write] Blueprint notification that we've completed the current movement request
 	**/
@@ -170,7 +161,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function run_behavior_tree(bt_asset:Dynamic):Bool;
+	public function run_behavior_tree(bt_asset:unreal.BehaviorTree):Bool;
 	/**
 		(bool):  [Read-Write] Copy Pawn rotation to ControlRotation, if there is no focus point.
 	**/
@@ -182,7 +173,7 @@ package unreal;
 		Args:
 		    fp (Vector):
 	**/
-	public function set_focal_point(fp:Dynamic):Void;
+	public function set_focal_point(fp:unreal.Vector):Void;
 	/**
 		x.set_focus(new_focus) -> None
 		Set Focus for actor, will set FocalPoint as a result.
@@ -190,7 +181,7 @@ package unreal;
 		Args:
 		    new_focus (Actor):
 	**/
-	public function set_focus(new_focus:Dynamic):Void;
+	public function set_focus(new_focus:unreal.Actor):Void;
 	/**
 		x.set_move_block_detection(enable) -> None
 		Updates state of movement block detection.
@@ -198,7 +189,7 @@ package unreal;
 		Args:
 		    enable (bool):
 	**/
-	public function set_move_block_detection(enable:Dynamic):Void;
+	public function set_move_block_detection(enable:Bool):Void;
 	/**
 		x.set_path_following_component(new_pf_component) -> None
 		Note that his function does not do any pathfollowing state transfer.
@@ -207,7 +198,7 @@ package unreal;
 		Args:
 		    new_pf_component (PathFollowingComponent):
 	**/
-	public function set_path_following_component(new_pf_component:Dynamic):Void;
+	public function set_path_following_component(new_pf_component:unreal.PathFollowingComponent):Void;
 	/**
 		(bool):  [Read-Write] Skip extra line of sight traces to extremities of target being checked.
 	**/
@@ -242,7 +233,7 @@ package unreal;
 		
 		    blackboard_component (BlackboardComponent): The Blackboard component that was used or created to work with the passed-in Blackboard Asset.
 	**/
-	public function use_blackboard(blackboard_asset:Dynamic):Dynamic;
+	public function use_blackboard(blackboard_asset:unreal.BlackboardData):Dynamic;
 	/**
 		(bool):  [Read-Write] Specifies if this AI wants its own PlayerState.
 	**/

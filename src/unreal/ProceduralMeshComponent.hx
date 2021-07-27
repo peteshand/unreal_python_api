@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ProceduralMeshComponent") extern class ProceduralMeshComponent extends unreal.MeshComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add_collision_convex_mesh(convex_verts) -> None
 		Add simple collision convex to this component
 		
 		Args:
 		    convex_verts (Array(Vector)):
 	**/
-	public function add_collision_convex_mesh(convex_verts:Dynamic):Void;
+	public function add_collision_convex_mesh(convex_verts:unreal.Array):Void;
 	/**
 		x.clear_all_mesh_sections() -> None
 		Clear all mesh sections and reset to empty state
@@ -35,7 +26,7 @@ package unreal;
 		Args:
 		    section_index (int32):
 	**/
-	public function clear_mesh_section(section_index:Dynamic):Void;
+	public function clear_mesh_section(section_index:Int):Void;
 	/**
 		x.create_mesh_section(section_index, vertices, triangles, normals, uv0, vertex_colors, tangents, create_collision) -> None
 		Create/replace a section for this procedural mesh component.
@@ -52,7 +43,8 @@ package unreal;
 		    tangents (Array(ProcMeshTangent)): Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
 		    create_collision (bool): Indicates whether collision should be created for this section. This adds significant cost.
 	**/
-	public function create_mesh_section(section_index:Dynamic, vertices:Dynamic, triangles:Dynamic, normals:Dynamic, uv0:Dynamic, vertex_colors:Dynamic, tangents:Dynamic, create_collision:Dynamic):Void;
+	@:deprecated
+	public function create_mesh_section(section_index:Int, vertices:unreal.Array, triangles:unreal.Array, normals:unreal.Array, uv0:unreal.Array, vertex_colors:unreal.Array, tangents:unreal.Array, create_collision:Bool):Void;
 	/**
 		x.create_mesh_section_linear_color(section_index, vertices, triangles, normals, uv0, uv1, uv2, uv3, vertex_colors, tangents, create_collision) -> None
 		Create/replace a section for this procedural mesh component.
@@ -70,7 +62,7 @@ package unreal;
 		    tangents (Array(ProcMeshTangent)): Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
 		    create_collision (bool): Indicates whether collision should be created for this section. This adds significant cost.
 	**/
-	public function create_mesh_section_linear_color(section_index:Dynamic, vertices:Dynamic, triangles:Dynamic, normals:Dynamic, uv0:Dynamic, uv1:Dynamic, uv2:Dynamic, uv3:Dynamic, vertex_colors:Dynamic, tangents:Dynamic, create_collision:Dynamic):Void;
+	public function create_mesh_section_linear_color(section_index:Int, vertices:unreal.Array, triangles:unreal.Array, normals:unreal.Array, uv0:unreal.Array, uv1:unreal.Array, uv2:unreal.Array, uv3:unreal.Array, vertex_colors:unreal.Array, tangents:unreal.Array, create_collision:Bool):Void;
 	/**
 		x.get_num_sections() -> int32
 		Returns number of sections currently created for this component
@@ -89,7 +81,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_mesh_section_visible(section_index:Dynamic):Bool;
+	public function is_mesh_section_visible(section_index:Int):Bool;
 	/**
 		x.set_mesh_section_visible(section_index, new_visibility) -> None
 		Control visibility of a particular section
@@ -98,7 +90,7 @@ package unreal;
 		    section_index (int32): 
 		    new_visibility (bool):
 	**/
-	public function set_mesh_section_visible(section_index:Dynamic, new_visibility:Dynamic):Void;
+	public function set_mesh_section_visible(section_index:Int, new_visibility:Bool):Void;
 	/**
 		x.update_mesh_section(section_index, vertices, normals, uv0, vertex_colors, tangents) -> None
 		Updates a section of this procedural mesh component. This is faster than CreateMeshSection, but does not let you change topology. Collision info is also updated.
@@ -113,7 +105,8 @@ package unreal;
 		    vertex_colors (Array(Color)): Optional array of colors for each vertex. If supplied, must be same length as Vertices array.
 		    tangents (Array(ProcMeshTangent)): Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
 	**/
-	public function update_mesh_section(section_index:Dynamic, vertices:Dynamic, normals:Dynamic, uv0:Dynamic, vertex_colors:Dynamic, tangents:Dynamic):Void;
+	@:deprecated
+	public function update_mesh_section(section_index:Int, vertices:unreal.Array, normals:unreal.Array, uv0:unreal.Array, vertex_colors:unreal.Array, tangents:unreal.Array):Void;
 	/**
 		x.update_mesh_section_linear_color(section_index, vertices, normals, uv0, uv1, uv2, uv3, vertex_colors, tangents) -> None
 		Updates a section of this procedural mesh component. This is faster than CreateMeshSection, but does not let you change topology. Collision info is also updated.
@@ -129,7 +122,7 @@ package unreal;
 		    vertex_colors (Array(LinearColor)): Optional array of colors for each vertex. If supplied, must be same length as Vertices array.
 		    tangents (Array(ProcMeshTangent)): Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
 	**/
-	public function update_mesh_section_linear_color(section_index:Dynamic, vertices:Dynamic, normals:Dynamic, uv0:Dynamic, uv1:Dynamic, uv2:Dynamic, uv3:Dynamic, vertex_colors:Dynamic, tangents:Dynamic):Void;
+	public function update_mesh_section_linear_color(section_index:Int, vertices:unreal.Array, normals:unreal.Array, uv0:unreal.Array, uv1:unreal.Array, uv2:unreal.Array, uv3:unreal.Array, vertex_colors:unreal.Array, tangents:unreal.Array):Void;
 	/**
 		(bool):  [Read-Only] Controls whether the physics cooking should be done off the game thread. This should be used when collision geometry doesn't have to be immediately up to date (For example streaming in far away objects)
 	**/

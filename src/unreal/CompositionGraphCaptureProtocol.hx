@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "CompositionGraphCaptureProtocol") extern class CompositionGraphCaptureProtocol extends unreal.MovieSceneImageCaptureProtocolBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Write] Whether to capture the frames as HDR textures (*.exr format)
 	**/
 	public var capture_frames_in_hdr : Bool;

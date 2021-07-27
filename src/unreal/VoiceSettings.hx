@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "VoiceSettings") extern class VoiceSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(SoundAttenuation):  [Read-Write] Optional attenuation settings to attach to this player's voice.
 		This should only be used when ComponentToAttachTo is set.
 	**/

@@ -2,22 +2,13 @@
 package unreal;
 @:pythonImport("unreal", "ARGeoAnchorComponent") extern class ARGeoAnchorComponent extends unreal.ARComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.receive_add(payload) -> None
 		Event when native representation is first added, called on server and clients.
 		
 		Args:
 		    payload (ARGeoAnchorUpdatePayload):
 	**/
-	public function receive_add(payload:Dynamic):Void;
+	public function receive_add(payload:unreal.ARGeoAnchorUpdatePayload):Void;
 	/**
 		x.receive_update(payload) -> None
 		Event when native representation is updated, called on server and clients.
@@ -25,7 +16,7 @@ package unreal;
 		Args:
 		    payload (ARGeoAnchorUpdatePayload):
 	**/
-	public function receive_update(payload:Dynamic):Void;
+	public function receive_update(payload:unreal.ARGeoAnchorUpdatePayload):Void;
 	/**
 		(ARGeoAnchorUpdatePayload):  [Read-Only] Replicated Payload
 	**/
@@ -37,5 +28,5 @@ package unreal;
 		Args:
 		    new_debug_mode (GeoAnchorComponentDebugMode):
 	**/
-	static public function set_geo_anchor_component_debug_mode(new_debug_mode:Dynamic):Void;
+	static public function set_geo_anchor_component_debug_mode(new_debug_mode:unreal.GeoAnchorComponentDebugMode):Void;
 }

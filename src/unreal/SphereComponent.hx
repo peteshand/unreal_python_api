@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SphereComponent") extern class SphereComponent extends unreal.ShapeComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_scaled_sphere_radius() -> float
 		
 		
@@ -42,7 +33,7 @@ package unreal;
 		    sphere_radius (float): 
 		    update_overlaps (bool):
 	**/
-	public function set_sphere_radius(sphere_radius:Dynamic, update_overlaps:Dynamic):Void;
+	public function set_sphere_radius(sphere_radius:Float, update_overlaps:Bool):Void;
 	/**
 		(float):  [Read-Only] The radius of the sphere *
 	**/

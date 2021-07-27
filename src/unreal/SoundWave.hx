@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SoundWave") extern class SoundWave extends unreal.SoundBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] If set to true will disable automatic generation of line breaks - use if the subtitles have been split manually.
 	**/
 	public var manual_word_wrap : Bool;

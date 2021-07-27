@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "SlateFontInfo") extern class SlateFontInfo extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Object):  [Read-Write] The material to use when rendering this font
 	**/
 	public var font_material : unreal.Object;

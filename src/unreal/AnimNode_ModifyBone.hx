@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimNode_ModifyBone") extern class AnimNode_ModifyBone extends unreal.AnimNode_SkeletalControlBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(Rotator):  [Read-Write] New rotation of bone to apply.
 	**/
 	public var rotation : unreal.Rotator;

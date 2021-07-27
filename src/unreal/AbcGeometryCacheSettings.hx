@@ -2,11 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AbcGeometryCacheSettings") extern class AbcGeometryCacheSettings extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("new")
-	public function _new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
 		(bool):  [Read-Write] Force the preprocessor to only do optimization once instead of when the preprocessor decides. This may lead to some problems with certain meshes but makes sure motion
 		blur always works if the topology is constant.
 	**/

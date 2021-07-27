@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "Button") extern class Button extends unreal.ContentWidget {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(LinearColor):  [Read-Only] The color multiplier for the button background
 	**/
 	public var background_color : unreal.LinearColor;
@@ -65,7 +56,7 @@ package unreal;
 		Args:
 		    background_color (LinearColor):
 	**/
-	public function set_background_color(background_color:Dynamic):Void;
+	public function set_background_color(background_color:unreal.LinearColor):Void;
 	/**
 		x.set_click_method(click_method) -> None
 		Set Click Method
@@ -73,7 +64,7 @@ package unreal;
 		Args:
 		    click_method (ButtonClickMethod):
 	**/
-	public function set_click_method(click_method:Dynamic):Void;
+	public function set_click_method(click_method:unreal.ButtonClickMethod):Void;
 	/**
 		x.set_color_and_opacity(color_and_opacity) -> None
 		Sets the color multiplier for the button content
@@ -81,7 +72,7 @@ package unreal;
 		Args:
 		    color_and_opacity (LinearColor):
 	**/
-	public function set_color_and_opacity(color_and_opacity:Dynamic):Void;
+	public function set_color_and_opacity(color_and_opacity:unreal.LinearColor):Void;
 	/**
 		x.set_press_method(press_method) -> None
 		Set Press Method
@@ -89,7 +80,7 @@ package unreal;
 		Args:
 		    press_method (ButtonPressMethod):
 	**/
-	public function set_press_method(press_method:Dynamic):Void;
+	public function set_press_method(press_method:unreal.ButtonPressMethod):Void;
 	/**
 		x.set_style(style) -> None
 		Sets the color multiplier for the button background
@@ -97,7 +88,7 @@ package unreal;
 		Args:
 		    style (ButtonStyle):
 	**/
-	public function set_style(style:Dynamic):Void;
+	public function set_style(style:unreal.ButtonStyle):Void;
 	/**
 		x.set_touch_method(touch_method) -> None
 		Set Touch Method
@@ -105,7 +96,7 @@ package unreal;
 		Args:
 		    touch_method (ButtonTouchMethod):
 	**/
-	public function set_touch_method(touch_method:Dynamic):Void;
+	public function set_touch_method(touch_method:unreal.ButtonTouchMethod):Void;
 	/**
 		(ButtonTouchMethod):  [Read-Only] The type of touch action required by the user to trigger the buttons 'Click'
 	**/

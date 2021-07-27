@@ -3,15 +3,6 @@ package unreal;
 @:pythonImport("unreal", "Matrix") extern class Matrix extends unreal.StructBase {
 	static public var IDENTITY : Dynamic;
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.add(b) -> Matrix
 		Gets the result of adding a matrix to this.
 		
@@ -21,7 +12,7 @@ package unreal;
 		Returns:
 		    Matrix: The result of addition.
 	**/
-	public function add(b:Dynamic):unreal.Matrix;
+	public function add(b:unreal.Matrix):unreal.Matrix;
 	/**
 		x.apply_scale(scale) -> Matrix
 		Apply Scale to this matrix
@@ -33,7 +24,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function apply_scale(scale:Dynamic):unreal.Matrix;
+	public function apply_scale(scale:Float):unreal.Matrix;
 	/**
 		x.concatenate_translation(translation) -> Matrix
 		Returns a matrix with an additional translation concatenated.
@@ -45,7 +36,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function concatenate_translation(translation:Dynamic):unreal.Matrix;
+	public function concatenate_translation(translation:unreal.Vector):unreal.Matrix;
 	/**
 		x.contains_na_n() -> bool
 		Returns true if any element of this matrix is NaN
@@ -65,7 +56,7 @@ package unreal;
 		Returns:
 		    bool: true if two Matrix are equal, within specified tolerance, otherwise false.
 	**/
-	public function equals(b:Dynamic, tolerance:Dynamic):Bool;
+	public function equals(b:unreal.Matrix, tolerance:Float):Bool;
 	/**
 		x.get_column(column) -> Vector
 		get a column of this matrix
@@ -76,7 +67,7 @@ package unreal;
 		Returns:
 		    Vector: vector of the column
 	**/
-	public function get_column(column:Dynamic):unreal.Vector;
+	public function get_column(column:unreal.MatrixColumns):unreal.Vector;
 	/**
 		x.get_determinant() -> float
 		
@@ -170,7 +161,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function get_matrix_without_scale(tolerance:Dynamic):unreal.Matrix;
+	public function get_matrix_without_scale(tolerance:Float):unreal.Matrix;
 	/**
 		x.get_maximum_axis_scale() -> float
 		
@@ -216,7 +207,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_vector(tolerance:Dynamic):unreal.Vector;
+	public function get_scale_vector(tolerance:Float):unreal.Vector;
 	/**
 		x.get_scaled_axes() -> (x=Vector, y=Vector, z=Vector)
 		get axes of this matrix scaled by the scale of the matrix
@@ -243,7 +234,7 @@ package unreal;
 		Returns:
 		    Vector: vector of the axis
 	**/
-	public function get_scaled_axis(axis:Dynamic):unreal.Vector;
+	public function get_scaled_axis(axis:unreal.AxisType):unreal.Vector;
 	/**
 		x.get_transpose_adjoint() -> Matrix
 		Get the Transose Adjoint of the Matrix.
@@ -286,7 +277,7 @@ package unreal;
 		Returns:
 		    Vector: vector of the axis
 	**/
-	public function get_unit_axis(axis:Dynamic):unreal.Vector;
+	public function get_unit_axis(axis:unreal.AxisType):unreal.Vector;
 	/**
 		x.inverse_transform_position(v) -> Vector
 		Inverts the matrix and then transforms V - correctly handles scaling in this matrix.
@@ -298,7 +289,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function inverse_transform_position(v:Dynamic):unreal.Vector;
+	public function inverse_transform_position(v:unreal.Vector):unreal.Vector;
 	/**
 		x.inverse_transform_vector(v) -> Vector
 		Transform a direction vector by the inverse of this matrix - will not take into account translation part.
@@ -311,7 +302,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function inverse_transform_vector(v:Dynamic):unreal.Vector;
+	public function inverse_transform_vector(v:unreal.Vector):unreal.Vector;
 	/**
 		x.mirror(mirror_axis, flip_axis) -> Matrix
 		Utility for mirroring this transform across a certain plane, and flipping one of the axis as well.
@@ -324,7 +315,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function mirror(mirror_axis:Dynamic, flip_axis:Dynamic):unreal.Matrix;
+	public function mirror(mirror_axis:unreal.AxisType, flip_axis:unreal.AxisType):unreal.Matrix;
 	/**
 		x.multiply(b) -> Matrix
 		Gets the result of multiplying a Matrix to this.
@@ -335,7 +326,7 @@ package unreal;
 		Returns:
 		    Matrix: The result of multiplication.
 	**/
-	public function multiply(b:Dynamic):unreal.Matrix;
+	public function multiply(b:unreal.Matrix):unreal.Matrix;
 	/**
 		x.multiply_float(b) -> Matrix
 		Multiplies all values of the matrix by a float.
@@ -347,7 +338,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function multiply_float(b:Dynamic):unreal.Matrix;
+	public function multiply_float(b:Float):unreal.Matrix;
 	/**
 		x.not_equal(b, tolerance=0.000100) -> bool
 		Checks whether another Matrix is not equal to this, within specified tolerance.
@@ -359,7 +350,7 @@ package unreal;
 		Returns:
 		    bool: true if two Matrix are not equal, within specified tolerance, otherwise false.
 	**/
-	public function not_equal(b:Dynamic, tolerance:Dynamic):Bool;
+	public function not_equal(b:unreal.Matrix, tolerance:Float):Bool;
 	/**
 		x.remove_scaling(tolerance=0.000000) -> None
 		Remove any scaling from this matrix (ie magnitude of each row is 1) with error Tolerance
@@ -368,7 +359,7 @@ package unreal;
 		Args:
 		    tolerance (float):
 	**/
-	public function remove_scaling(tolerance:Dynamic):Void;
+	public function remove_scaling(tolerance:Float):Void;
 	/**
 		x.remove_translation() -> Matrix
 		Remove any translation from this matrix
@@ -398,7 +389,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function scale_translation(scale3d:Dynamic):unreal.Matrix;
+	public function scale_translation(scale3d:unreal.Vector):unreal.Matrix;
 	/**
 		x.set_axis(axis, axis_vector) -> None
 		set an axis of this matrix
@@ -408,7 +399,7 @@ package unreal;
 		    axis (AxisType): vector of the axis
 		    axis_vector (Vector):
 	**/
-	public function set_axis(axis:Dynamic, axis_vector:Dynamic):Void;
+	public function set_axis(axis:unreal.AxisType, axis_vector:unreal.Vector):Void;
 	/**
 		x.set_column(column, value) -> None
 		Matrix Set Column
@@ -417,7 +408,7 @@ package unreal;
 		    column (MatrixColumns): 
 		    value (Vector):
 	**/
-	public function set_column(column:Dynamic, value:Dynamic):Void;
+	public function set_column(column:unreal.MatrixColumns, value:unreal.Vector):Void;
 	/**
 		x.set_origin(new_origin) -> None
 		Set the origin of the coordinate system to the given vector
@@ -426,7 +417,7 @@ package unreal;
 		Args:
 		    new_origin (Vector):
 	**/
-	public function set_origin(new_origin:Dynamic):Void;
+	public function set_origin(new_origin:unreal.Vector):Void;
 	/**
 		x.to_quat() -> Quat
 		Transform a rotation matrix into a quaternion.
@@ -457,7 +448,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function transform_position(v:Dynamic):unreal.Vector4;
+	public function transform_position(v:unreal.Vector):unreal.Vector4;
 	/**
 		x.transform_vector(v) -> Vector4
 		Transform a direction vector - will not take into account translation part of the FMatrix.
@@ -470,7 +461,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function transform_vector(v:Dynamic):unreal.Vector4;
+	public function transform_vector(v:unreal.Vector):unreal.Vector4;
 	/**
 		x.transform_vector4(v) -> Vector4
 		Transform a vector by the matrix.
@@ -482,7 +473,7 @@ package unreal;
 		Returns:
 		    Vector4:
 	**/
-	public function transform_vector4(v:Dynamic):unreal.Vector4;
+	public function transform_vector4(v:unreal.Vector4):unreal.Vector4;
 	/**
 		(Plane):  [Read-Write] WPlane
 	**/

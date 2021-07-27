@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "ClothingSimulationInteractor") extern class ClothingSimulationInteractor extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.cloth_config_updated() -> None
 		Called to update the cloth config without restarting the simulation
 	**/
@@ -27,7 +18,7 @@ package unreal;
 		Args:
 		    vector (Vector):
 	**/
-	public function enable_gravity_override(vector:Dynamic):Void;
+	public function enable_gravity_override(vector:unreal.Vector):Void;
 	/**
 		x.get_num_cloths() -> int32
 		Return the number of cloths run by the simulation.
@@ -88,5 +79,5 @@ package unreal;
 		Args:
 		    stiffness (float):
 	**/
-	public function set_anim_drive_spring_stiffness(stiffness:Dynamic):Void;
+	public function set_anim_drive_spring_stiffness(stiffness:Float):Void;
 }

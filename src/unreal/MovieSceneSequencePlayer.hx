@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneSequencePlayer") extern class MovieSceneSequencePlayer extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.change_playback_direction() -> None
 		Changes the direction of playback (go in reverse if it was going forward, or vice versa)
 	**/
@@ -25,7 +16,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_bound_objects(object_binding:Dynamic):Dynamic;
+	public function get_bound_objects(object_binding:unreal.MovieSceneObjectBindingID):Dynamic;
 	/**
 		x.get_current_time() -> QualifiedTime
 		Get the current playback position
@@ -84,7 +75,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneObjectBindingID):
 	**/
-	public function get_object_bindings(object:Dynamic):Dynamic;
+	public function get_object_bindings(object:unreal.Object):Dynamic;
 	/**
 		x.get_play_rate() -> float
 		Get the playback rate of this player.
@@ -138,7 +129,8 @@ package unreal;
 		Args:
 		    new_position (FrameTime):
 	**/
-	public function jump_to_frame(new_position:Dynamic):Void;
+	@:deprecated
+	public function jump_to_frame(new_position:unreal.FrameTime):Void;
 	/**
 		x.jump_to_marked_frame(label) -> bool
 		Jump to Marked Frame
@@ -150,7 +142,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function jump_to_marked_frame(label:Dynamic):Bool;
+	@:deprecated
+	public function jump_to_marked_frame(label:String):Bool;
 	/**
 		x.jump_to_seconds(time_in_seconds) -> None
 		Jump to Seconds
@@ -159,7 +152,8 @@ package unreal;
 		Args:
 		    time_in_seconds (float):
 	**/
-	public function jump_to_seconds(time_in_seconds:Dynamic):Void;
+	@:deprecated
+	public function jump_to_seconds(time_in_seconds:Float):Void;
 	/**
 		(OnMovieSceneSequencePlayerEvent):  [Read-Write] Event triggered when the level sequence player finishes naturally (without explicitly calling stop)
 	**/
@@ -197,7 +191,7 @@ package unreal;
 		Args:
 		    num_loops (int32): The number of loops to play. -1 indicates infinite looping.
 	**/
-	public function play_looping(num_loops:Dynamic):Void;
+	public function play_looping(num_loops:Int):Void;
 	/**
 		x.play_reverse() -> None
 		Reverse playback.
@@ -212,7 +206,7 @@ package unreal;
 		Args:
 		    playback_params (MovieSceneSequencePlaybackParams): The position settings (ie. the position to play to)
 	**/
-	public function play_to(playback_params:Dynamic):Void;
+	public function play_to(playback_params:unreal.MovieSceneSequencePlaybackParams):Void;
 	/**
 		x.play_to_frame(new_position) -> None
 		Play to Frame
@@ -221,7 +215,8 @@ package unreal;
 		Args:
 		    new_position (FrameTime):
 	**/
-	public function play_to_frame(new_position:Dynamic):Void;
+	@:deprecated
+	public function play_to_frame(new_position:unreal.FrameTime):Void;
 	/**
 		x.play_to_marked_frame(label) -> bool
 		Play to Marked Frame
@@ -233,7 +228,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function play_to_marked_frame(label:Dynamic):Bool;
+	@:deprecated
+	public function play_to_marked_frame(label:String):Bool;
 	/**
 		x.play_to_seconds(time_in_seconds) -> None
 		Play to Seconds
@@ -242,7 +238,8 @@ package unreal;
 		Args:
 		    time_in_seconds (float):
 	**/
-	public function play_to_seconds(time_in_seconds:Dynamic):Void;
+	@:deprecated
+	public function play_to_seconds(time_in_seconds:Float):Void;
 	/**
 		x.scrub() -> None
 		Scrub playback.
@@ -256,7 +253,8 @@ package unreal;
 		Args:
 		    new_position (FrameTime):
 	**/
-	public function scrub_to_frame(new_position:Dynamic):Void;
+	@:deprecated
+	public function scrub_to_frame(new_position:unreal.FrameTime):Void;
 	/**
 		x.scrub_to_marked_frame(label) -> bool
 		Scrub to Marked Frame
@@ -268,7 +266,8 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function scrub_to_marked_frame(label:Dynamic):Bool;
+	@:deprecated
+	public function scrub_to_marked_frame(label:String):Bool;
 	/**
 		x.scrub_to_seconds(time_in_seconds) -> None
 		Scrub to Seconds
@@ -277,7 +276,8 @@ package unreal;
 		Args:
 		    time_in_seconds (float):
 	**/
-	public function scrub_to_seconds(time_in_seconds:Dynamic):Void;
+	@:deprecated
+	public function scrub_to_seconds(time_in_seconds:Float):Void;
 	/**
 		x.set_disable_camera_cuts(disable_camera_cuts) -> None
 		Set whether to disable camera cuts
@@ -285,7 +285,7 @@ package unreal;
 		Args:
 		    disable_camera_cuts (bool):
 	**/
-	public function set_disable_camera_cuts(disable_camera_cuts:Dynamic):Void;
+	public function set_disable_camera_cuts(disable_camera_cuts:Bool):Void;
 	/**
 		x.set_frame_range(start_frame, duration, sub_frames=0.000000) -> None
 		Set the valid play range for this sequence, determined by a starting frame number (in this sequence player's plaback frame), and a number of frames duration
@@ -295,7 +295,7 @@ package unreal;
 		    duration (int32): The number of frames to play
 		    sub_frames (float):
 	**/
-	public function set_frame_range(start_frame:Dynamic, duration:Dynamic, sub_frames:Dynamic):Void;
+	public function set_frame_range(start_frame:Int, duration:Int, sub_frames:Float):Void;
 	/**
 		x.set_frame_rate(frame_rate) -> None
 		Set the frame-rate that this player should play with, making all frame numbers in the specified time-space
@@ -303,7 +303,7 @@ package unreal;
 		Args:
 		    frame_rate (FrameRate):
 	**/
-	public function set_frame_rate(frame_rate:Dynamic):Void;
+	public function set_frame_rate(frame_rate:unreal.FrameRate):Void;
 	/**
 		x.set_play_rate(play_rate) -> None
 		Set the playback rate of this player. Negative values will play the animation in reverse.
@@ -311,7 +311,7 @@ package unreal;
 		Args:
 		    play_rate (float): The new rate of playback for the animation.
 	**/
-	public function set_play_rate(play_rate:Dynamic):Void;
+	public function set_play_rate(play_rate:Float):Void;
 	/**
 		x.set_playback_position(playback_params) -> None
 		Set the current time of the player by evaluating from the current time to the specified time, as if the sequence is playing.
@@ -320,7 +320,7 @@ package unreal;
 		Args:
 		    playback_params (MovieSceneSequencePlaybackParams): The position settings (ie. the position to set playback to)
 	**/
-	public function set_playback_position(playback_params:Dynamic):Void;
+	public function set_playback_position(playback_params:unreal.MovieSceneSequencePlaybackParams):Void;
 	/**
 		x.set_time_range(start_time, duration) -> None
 		Set the valid play range for this sequence, determined by a starting time  and a duration (in seconds)
@@ -329,7 +329,7 @@ package unreal;
 		    start_time (float): The time to start playing back the sequence in seconds
 		    duration (float): The length to play for
 	**/
-	public function set_time_range(start_time:Dynamic, duration:Dynamic):Void;
+	public function set_time_range(start_time:Float, duration:Float):Void;
 	/**
 		x.stop() -> None
 		Stop playback and move the cursor to the end (or start, for reversed playback) of the sequence.

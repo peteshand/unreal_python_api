@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MaterialImportHelpers") extern class MaterialImportHelpers extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.find_existing_material(base_path, material_full_name, recursive_paths) -> (MaterialInterface, out_error=Text)
 		Find Existing Material
 		
@@ -24,7 +15,7 @@ package unreal;
 		
 		    out_error (Text):
 	**/
-	static public function find_existing_material(base_path:Dynamic, material_full_name:Dynamic, recursive_paths:Dynamic):unreal.Text;
+	static public function find_existing_material(base_path:String, material_full_name:String, recursive_paths:Bool):unreal.Text;
 	/**
 		X.find_existing_material_from_search_location(material_full_name, base_package_path, search_location) -> (MaterialInterface, out_error=Text)
 		Find Existing Material from Search Location
@@ -39,5 +30,5 @@ package unreal;
 		
 		    out_error (Text):
 	**/
-	static public function find_existing_material_from_search_location(material_full_name:Dynamic, base_package_path:Dynamic, search_location:Dynamic):unreal.Text;
+	static public function find_existing_material_from_search_location(material_full_name:String, base_package_path:String, search_location:unreal.MaterialSearchLocation):unreal.Text;
 }

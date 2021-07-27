@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "PrimaryAssetId") extern class PrimaryAssetId extends unreal.StructBase {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		x.get_class() -> type(Class)
 		Returns the Blueprint Class associated with a Primary Asset Id, this will only return a valid object if it is in memory, it will not load it
 		
@@ -31,7 +22,7 @@ package unreal;
 		
 		    out_bundles (Array(Name)):
 	**/
-	public function get_current_bundle_state(force_current_state:Dynamic):Dynamic;
+	public function get_current_bundle_state(force_current_state:Bool):Dynamic;
 	/**
 		x.get_object() -> Object
 		Returns the Object associated with a Primary Asset Id, this will only return a valid object if it is in memory, it will not load it

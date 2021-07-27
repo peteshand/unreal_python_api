@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "FbxImportUI") extern class FbxImportUI extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(FbxAnimSequenceImportData):  [Read-Write] Import data used when importing animations
 	**/
 	public var anim_sequence_import_data : unreal.FbxAnimSequenceImportData;

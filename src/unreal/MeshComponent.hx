@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "MeshComponent") extern class MeshComponent extends unreal.PrimitiveComponent {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(bool):  [Read-Only] Enable Material Parameter Caching
 	**/
 	public var enable_material_parameter_caching : Bool;
@@ -24,7 +15,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_material_index(material_slot_name:Dynamic):Int;
+	public function get_material_index(material_slot_name:unreal.Name):Int;
 	/**
 		x.get_material_slot_names() -> Array(Name)
 		Get Material Slot Names
@@ -51,7 +42,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_material_slot_name_valid(material_slot_name:Dynamic):Bool;
+	public function is_material_slot_name_valid(material_slot_name:unreal.Name):Bool;
 	/**
 		x.prestream_textures(seconds, prioritize_character_textures, cinematic_texture_groups=0) -> None
 		Tell the streaming system to start loading all textures with all mip-levels.
@@ -61,7 +52,7 @@ package unreal;
 		    prioritize_character_textures (bool): Whether character textures should be prioritized for a while by the streaming system
 		    cinematic_texture_groups (int32): Bitfield indicating which texture groups that use extra high-resolution mips
 	**/
-	public function prestream_textures(seconds:Dynamic, prioritize_character_textures:Dynamic, cinematic_texture_groups:Dynamic):Void;
+	public function prestream_textures(seconds:Float, prioritize_character_textures:Bool, cinematic_texture_groups:Int):Void;
 	/**
 		x.set_scalar_parameter_value_on_materials(parameter_name, parameter_value) -> None
 		Set all occurrences of Scalar Material Parameters with ParameterName in the set of materials of the SkeletalMesh to ParameterValue
@@ -70,7 +61,7 @@ package unreal;
 		    parameter_name (Name): 
 		    parameter_value (float):
 	**/
-	public function set_scalar_parameter_value_on_materials(parameter_name:Dynamic, parameter_value:Dynamic):Void;
+	public function set_scalar_parameter_value_on_materials(parameter_name:unreal.Name, parameter_value:Float):Void;
 	/**
 		x.set_vector_parameter_value_on_materials(parameter_name, parameter_value) -> None
 		Set all occurrences of Vector Material Parameters with ParameterName in the set of materials of the SkeletalMesh to ParameterValue
@@ -79,5 +70,5 @@ package unreal;
 		    parameter_name (Name): 
 		    parameter_value (Vector):
 	**/
-	public function set_vector_parameter_value_on_materials(parameter_name:Dynamic, parameter_value:Dynamic):Void;
+	public function set_vector_parameter_value_on_materials(parameter_name:unreal.Name, parameter_value:unreal.Vector):Void;
 }

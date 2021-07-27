@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AISenseConfig_Sight") extern class AISenseConfig_Sight extends unreal.AISenseConfig {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		(float):  [Read-Only] If not an InvalidRange (which is the default), we will always be able to see the target that has already been seen if they are within this range of their last seen location.
 	**/
 	public var auto_success_range_from_last_seen_location : Float;

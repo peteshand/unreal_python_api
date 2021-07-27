@@ -2,15 +2,6 @@
 package unreal;
 @:pythonImport("unreal", "AnimationSharingManager") extern class AnimationSharingManager extends unreal.Object {
 	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	@:native("__init__")
-	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
-	/**
-		Initialize self.  See help(type(self)) for accurate signature.
-	**/
-	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
-	/**
 		X.animation_sharing_enabled() -> bool
 		Returns whether or not the animation sharing is enabled
 		
@@ -29,7 +20,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function create_animation_sharing_manager(world_context_object:Dynamic, setup:Dynamic):Bool;
+	static public function create_animation_sharing_manager(world_context_object:unreal.Object, setup:unreal.AnimationSharingSetup):Bool;
 	/**
 		X.get_animation_sharing_manager(world_context_object) -> AnimationSharingManager
 		Returns the AnimationSharing Manager, nullptr if none was set up
@@ -40,7 +31,7 @@ package unreal;
 		Returns:
 		    AnimationSharingManager:
 	**/
-	static public function get_animation_sharing_manager(world_context_object:Dynamic):unreal.AnimationSharingManager;
+	static public function get_animation_sharing_manager(world_context_object:unreal.Object):unreal.AnimationSharingManager;
 	/**
 		x.register_actor_with_skeleton_bp(actor, sharing_skeleton) -> None
 		Register an Actor with this Animation Sharing manager, according to the SharingSkeleton
@@ -49,5 +40,5 @@ package unreal;
 		    actor (Actor): 
 		    sharing_skeleton (Skeleton):
 	**/
-	public function register_actor_with_skeleton_bp(actor:Dynamic, sharing_skeleton:Dynamic):Void;
+	public function register_actor_with_skeleton_bp(actor:unreal.Actor, sharing_skeleton:unreal.Skeleton):Void;
 }
