@@ -2,7 +2,7 @@
 
 package unreal;
 
-@:pythonImport("unreal", "_ObjectBase") extern class _WrapperBase {
+@:pythonImport("unreal", "_ObjectBase") extern class _ObjectBase {
 	public function __class__():Dynamic;
 
 	/**
