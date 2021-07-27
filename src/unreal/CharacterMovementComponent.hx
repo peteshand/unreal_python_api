@@ -31,7 +31,7 @@ package unreal;
 		    impulse (Vector): Impulse to apply.
 		    velocity_change (bool): Whether or not the impulse is relative to mass.
 	**/
-	public function add_impulse(impulse:unreal.Vector, velocity_change:Bool):Void;
+	public function add_impulse(impulse:unreal.Vector, velocity_change:Bool = false):Void;
 	/**
 		deprecated: 'add_momentum' was renamed to 'add_impulse'.
 	**/
@@ -816,7 +816,7 @@ package unreal;
 		    new_movement_mode (MovementMode): The new movement mode
 		    new_custom_mode (uint8): The new custom sub-mode, only applicable if NewMovementMode is Custom.
 	**/
-	public function set_movement_mode(new_movement_mode:unreal.MovementMode, new_custom_mode:Dynamic):Void;
+	public function set_movement_mode(new_movement_mode:unreal.MovementMode, new_custom_mode:Dynamic = 0):Void;
 	/**
 		x.set_walkable_floor_angle(walkable_floor_angle) -> None
 		Set the max angle in degrees of a walkable surface for the character. Also computes WalkableFloorZ.

@@ -12,7 +12,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Implementation
 	**/
-	public var implementation : Dynamic;
+	public var implementation : Class<Dynamic>;
 	/**
 		(float):  [Read-Only] Maximum sight distance to see target that has been already seen.
 	**/

@@ -55,7 +55,7 @@ package unreal;
 		
 		    target (ToolMenuEntry):
 	**/
-	static public function set_icon(target:unreal.ToolMenuEntry, style_set_name:unreal.Name, style_name:unreal.Name, small_style_name:unreal.Name):unreal.ToolMenuEntry;
+	static public function set_icon(target:unreal.ToolMenuEntry, style_set_name:unreal.Name, style_name:unreal.Name = "\"None\"", small_style_name:unreal.Name = "\"None\""):unreal.ToolMenuEntry;
 	/**
 		X.set_label(target, label) -> ToolMenuEntry
 		Set Label

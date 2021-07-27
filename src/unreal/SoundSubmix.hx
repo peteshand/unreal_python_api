@@ -25,7 +25,7 @@ package unreal;
 		    auto_range_attack_time (float): The time (in seconds) it takes for the range to expand to 90% of a larger range.
 		    auto_range_release_time (float): The time (in seconds) it takes for the range to shrink to 90% of a smaller range.
 	**/
-	public function add_spectral_analysis_delegate(world_context_object:unreal.Object, band_settings:unreal.Array, on_submix_spectral_analysis_bp:unreal.OnSubmixSpectralAnalysisBP, update_rate:Float, decibel_noise_floor:Float, do_normalize:Bool, do_auto_range:Bool, auto_range_attack_time:Float, auto_range_release_time:Float):Void;
+	public function add_spectral_analysis_delegate(world_context_object:unreal.Object, band_settings:Array<SoundSubmixSpectralAnalysisBandSettings>, on_submix_spectral_analysis_bp:unreal.OnSubmixSpectralAnalysisBP, update_rate:Float = 10.000000, decibel_noise_floor:Float = -40.000000, do_normalize:Bool = true, do_auto_range:Bool = false, auto_range_attack_time:Float = 0.100000, auto_range_release_time:Float = 60.000000):Void;
 	/**
 		(SoundfieldEncodingSettingsBase):  [Read-Write] Optional settings used by plugins which support ambisonics file playback.
 	**/
@@ -109,7 +109,7 @@ package unreal;
 		    hop_size (float): 
 		    spectrum_type (AudioSpectrumType):
 	**/
-	public function start_spectral_analysis(world_context_object:unreal.Object, fft_size:unreal.FFTSize, interpolation_method:unreal.FFTPeakInterpolationMethod, window_type:unreal.FFTWindowType, hop_size:Float, spectrum_type:unreal.AudioSpectrumType):Void;
+	public function start_spectral_analysis(world_context_object:unreal.Object, fft_size:unreal.FFTSize = FFTSize.DEFAULT_SIZE, interpolation_method:unreal.FFTPeakInterpolationMethod = FFTPeakInterpolationMethod.LINEAR, window_type:unreal.FFTWindowType = FFTWindowType.HANN, hop_size:Float = 0.000000, spectrum_type:unreal.AudioSpectrumType = AudioSpectrumType.MAGNITUDE_SPECTRUM):Void;
 	/**
 		x.stop_envelope_following(world_context_object) -> None
 		Start envelope following the submix output. Register with OnSubmixEnvelope to receive envelope follower data in BP.
@@ -129,7 +129,7 @@ package unreal;
 		    path (str): 
 		    existing_sound_wave_to_overwrite (SoundWave):
 	**/
-	public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, existing_sound_wave_to_overwrite:unreal.SoundWave):Void;
+	public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, existing_sound_wave_to_overwrite:unreal.SoundWave = null):Void;
 	/**
 		x.stop_spectral_analysis(world_context_object) -> None
 		Start spectrum analysis of the audio output.

@@ -142,7 +142,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:unreal.LinearColor, tolerance:Float):Bool;
+	public function is_near_equal(b:unreal.LinearColor, tolerance:Float = 0.000100):Bool;
 	/**
 		x.lerp_to(b, alpha) -> LinearColor
 		Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1)
@@ -272,7 +272,7 @@ package unreal;
 		    v (float): 
 		    a (float):
 	**/
-	public function set_from_hsv(h:Float, s:Float, v:Float, a:Float):Void;
+	public function set_from_hsv(h:Float, s:Float, v:Float, a:Float = 1.000000):Void;
 	/**
 		x.set_from_pow22(color) -> None
 		Assigns an FColor coming from an observed Pow(1/2.2) output, into a linear color.
@@ -304,7 +304,7 @@ package unreal;
 		    b (float): 
 		    a (float):
 	**/
-	public function set_rgba(r:Float, g:Float, b:Float, a:Float):Void;
+	public function set_rgba(r:Float, g:Float, b:Float, a:Float = 1.000000):Void;
 	/**
 		x.set_temperature(temperature) -> None
 		Converts temperature in Kelvins of a black body radiator to RGB chromaticity.
@@ -334,7 +334,7 @@ package unreal;
 		Returns:
 		    Color:
 	**/
-	public function to_color(use_srgb:Bool):unreal.Color;
+	public function to_color(use_srgb:Bool = true):unreal.Color;
 	/**
 		x.to_new_opacity(opacity) -> LinearColor
 		Returns a copy of this color using the specified opacity/alpha.

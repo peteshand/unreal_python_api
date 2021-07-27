@@ -56,7 +56,7 @@ package unreal;
 		Returns:
 		    bool: true if two Matrix are equal, within specified tolerance, otherwise false.
 	**/
-	public function equals(b:unreal.Matrix, tolerance:Float):Bool;
+	public function equals(b:unreal.Matrix, tolerance:Float = 0.000100):Bool;
 	/**
 		x.get_column(column) -> Vector
 		get a column of this matrix
@@ -161,7 +161,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	public function get_matrix_without_scale(tolerance:Float):unreal.Matrix;
+	public function get_matrix_without_scale(tolerance:Float = 0.000000):unreal.Matrix;
 	/**
 		x.get_maximum_axis_scale() -> float
 		
@@ -207,7 +207,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_vector(tolerance:Float):unreal.Vector;
+	public function get_scale_vector(tolerance:Float = 0.000000):unreal.Vector;
 	/**
 		x.get_scaled_axes() -> (x=Vector, y=Vector, z=Vector)
 		get axes of this matrix scaled by the scale of the matrix
@@ -350,7 +350,7 @@ package unreal;
 		Returns:
 		    bool: true if two Matrix are not equal, within specified tolerance, otherwise false.
 	**/
-	public function not_equal(b:unreal.Matrix, tolerance:Float):Bool;
+	public function not_equal(b:unreal.Matrix, tolerance:Float = 0.000100):Bool;
 	/**
 		x.remove_scaling(tolerance=0.000000) -> None
 		Remove any scaling from this matrix (ie magnitude of each row is 1) with error Tolerance
@@ -359,7 +359,7 @@ package unreal;
 		Args:
 		    tolerance (float):
 	**/
-	public function remove_scaling(tolerance:Float):Void;
+	public function remove_scaling(tolerance:Float = 0.000000):Void;
 	/**
 		x.remove_translation() -> Matrix
 		Remove any translation from this matrix

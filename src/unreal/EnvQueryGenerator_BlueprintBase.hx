@@ -24,7 +24,7 @@ package unreal;
 		Args:
 		    context_locations (Array(Vector)):
 	**/
-	public function do_item_generation(context_locations:unreal.Array):Void;
+	public function do_item_generation(context_locations:Array<Vector>):Void;
 	/**
 		x.get_querier() -> Object
 		Get Querier

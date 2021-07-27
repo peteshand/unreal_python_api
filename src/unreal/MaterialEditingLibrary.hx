@@ -49,7 +49,7 @@ package unreal;
 		Returns:
 		    MaterialExpression:
 	**/
-	static public function create_material_expression(material:unreal.Material, expression_class:Dynamic, node_pos_x:Int, node_pos_y:Int):unreal.MaterialExpression;
+	static public function create_material_expression(material:unreal.Material, expression_class:Class<Dynamic>, node_pos_x:Int = 0, node_pos_y:Int = 0):unreal.MaterialExpression;
 	/**
 		X.create_material_expression_in_function(material_function, expression_class, node_pos_x=0, node_pos_y=0) -> MaterialExpression
 		Create a new material expression node within the supplied material function
@@ -63,7 +63,7 @@ package unreal;
 		Returns:
 		    MaterialExpression:
 	**/
-	static public function create_material_expression_in_function(material_function:unreal.MaterialFunction, expression_class:Dynamic, node_pos_x:Int, node_pos_y:Int):unreal.MaterialExpression;
+	static public function create_material_expression_in_function(material_function:unreal.MaterialFunction, expression_class:Class<Dynamic>, node_pos_x:Int = 0, node_pos_y:Int = 0):unreal.MaterialExpression;
 	/**
 		X.delete_all_material_expressions(material) -> None
 		Delete all material expressions in the supplied material
@@ -110,7 +110,7 @@ package unreal;
 		
 		    child_instances (Array(AssetData)):
 	**/
-	static public function get_child_instances(parent:unreal.MaterialInterface):Dynamic;
+	static public function get_child_instances(parent:unreal.MaterialInterface):Array<AssetData>;
 	/**
 		X.get_inputs_for_material_expression(material, material_expression) -> Array(MaterialExpression)
 		Get the set of nodes acting as inputs to a node from an active material editor
@@ -122,7 +122,7 @@ package unreal;
 		Returns:
 		    Array(MaterialExpression):
 	**/
-	static public function get_inputs_for_material_expression(material:unreal.Material, material_expression:unreal.MaterialExpression):Dynamic;
+	static public function get_inputs_for_material_expression(material:unreal.Material, material_expression:unreal.MaterialExpression):Array<MaterialExpression>;
 	/**
 		X.get_material_default_scalar_parameter_value(material, parameter_name) -> float
 		Get the default scalar (float) parameter value from a Material
@@ -276,7 +276,7 @@ package unreal;
 		
 		    parameter_names (Array(Name)):
 	**/
-	static public function get_scalar_parameter_names(material:unreal.MaterialInterface):Dynamic;
+	static public function get_scalar_parameter_names(material:unreal.MaterialInterface):Array<Name>;
 	/**
 		X.get_scalar_parameter_source(material, parameter_name) -> SoftObjectPath or None
 		Returns the path of the asset where the parameter originated, as well as true/false if it was found
@@ -303,7 +303,7 @@ package unreal;
 		
 		    parameter_names (Array(Name)):
 	**/
-	static public function get_static_switch_parameter_names(material:unreal.MaterialInterface):Dynamic;
+	static public function get_static_switch_parameter_names(material:unreal.MaterialInterface):Array<Name>;
 	/**
 		X.get_static_switch_parameter_source(material, parameter_name) -> SoftObjectPath or None
 		Returns the path of the asset where the parameter originated, as well as true/false if it was found
@@ -330,7 +330,7 @@ package unreal;
 		
 		    parameter_names (Array(Name)):
 	**/
-	static public function get_texture_parameter_names(material:unreal.MaterialInterface):Dynamic;
+	static public function get_texture_parameter_names(material:unreal.MaterialInterface):Array<Name>;
 	/**
 		X.get_texture_parameter_source(material, parameter_name) -> SoftObjectPath or None
 		Returns the path of the asset where the parameter originated, as well as true/false if it was found
@@ -355,7 +355,7 @@ package unreal;
 		Returns:
 		    Array(Texture):
 	**/
-	static public function get_used_textures(material:unreal.Material):Dynamic;
+	static public function get_used_textures(material:unreal.Material):Array<Texture>;
 	/**
 		X.get_vector_parameter_names(material) -> Array(Name)
 		Gets all vector parameter names
@@ -368,7 +368,7 @@ package unreal;
 		
 		    parameter_names (Array(Name)):
 	**/
-	static public function get_vector_parameter_names(material:unreal.MaterialInterface):Dynamic;
+	static public function get_vector_parameter_names(material:unreal.MaterialInterface):Array<Name>;
 	/**
 		X.get_vector_parameter_source(material, parameter_name) -> SoftObjectPath or None
 		Returns the path of the asset where the parameter originated, as well as true/false if it was found
@@ -490,7 +490,7 @@ package unreal;
 		    material_function (MaterialFunctionInterface): 
 		    preview_material (Material):
 	**/
-	static public function update_material_function(material_function:unreal.MaterialFunctionInterface, preview_material:unreal.Material):Void;
+	static public function update_material_function(material_function:unreal.MaterialFunctionInterface, preview_material:unreal.Material = null):Void;
 	/**
 		X.update_material_instance(instance) -> None
 		Called after making modifications to a Material Instance to recompile shaders etc.

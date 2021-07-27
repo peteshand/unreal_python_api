@@ -14,7 +14,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_instance(transform:unreal.Transform, sprite:unreal.PaperSprite, world_space:Bool, color:unreal.LinearColor):Int;
+	public function add_instance(transform:unreal.Transform, sprite:unreal.PaperSprite, world_space:Bool = false, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):Int;
 	/**
 		x.clear_instances() -> None
 		Clear all instances being rendered by this component
@@ -41,7 +41,7 @@ package unreal;
 		
 		    out_instance_transform (Transform):
 	**/
-	public function get_instance_transform(instance_index:Int, world_space:Bool):Dynamic;
+	public function get_instance_transform(instance_index:Int, world_space:Bool = false):Dynamic;
 	/**
 		x.remove_instance(instance_index) -> bool
 		Remove the instance specified. Returns True on success.
@@ -73,7 +73,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function update_instance_color(instance_index:Int, new_instance_color:unreal.LinearColor, mark_render_state_dirty:Bool):Bool;
+	public function update_instance_color(instance_index:Int, new_instance_color:unreal.LinearColor, mark_render_state_dirty:Bool = true):Bool;
 	/**
 		x.update_instance_transform(instance_index, new_instance_transform, world_space=False, mark_render_state_dirty=True, teleport=False) -> bool
 		Update the transform for the instance specified. Instance is given in local space of this component unless bWorldSpace is set.  Returns True on success.
@@ -88,5 +88,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function update_instance_transform(instance_index:Int, new_instance_transform:unreal.Transform, world_space:Bool, mark_render_state_dirty:Bool, teleport:Bool):Bool;
+	public function update_instance_transform(instance_index:Int, new_instance_transform:unreal.Transform, world_space:Bool = false, mark_render_state_dirty:Bool = true, teleport:Bool = false):Bool;
 }

@@ -21,5 +21,5 @@ package unreal;
 		
 		    out_classification_location (Vector):
 	**/
-	public function get_object_classification_at_location(world_location:unreal.Vector, max_location_diff:Float):Dynamic;
+	public function get_object_classification_at_location(world_location:unreal.Vector, max_location_diff:Float = 10.000000):Dynamic;
 }

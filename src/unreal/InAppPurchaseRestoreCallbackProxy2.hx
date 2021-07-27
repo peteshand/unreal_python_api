@@ -12,7 +12,7 @@ package unreal;
 		Returns:
 		    InAppPurchaseRestoreCallbackProxy2:
 	**/
-	static public function create_proxy_object_for_in_app_purchase_restore(consumable_product_flags:unreal.Array, player_controller:unreal.PlayerController):unreal.InAppPurchaseRestoreCallbackProxy2;
+	static public function create_proxy_object_for_in_app_purchase_restore(consumable_product_flags:Array<InAppPurchaseProductRequest2>, player_controller:unreal.PlayerController):unreal.InAppPurchaseRestoreCallbackProxy2;
 	/**
 		(InAppPurchaseRestoreResult2):  [Read-Write] Called when there is an unsuccessful In-App Purchase transaction
 	**/

@@ -9,7 +9,7 @@ package unreal;
 		    asset_group (Name): The asset group to clear the culture for.
 		    save_to_config (bool): If true, save the new setting to the users' "GameUserSettings" config so that it persists after a reload.
 	**/
-	static public function clear_current_asset_group_culture(asset_group:unreal.Name, save_to_config:Bool):Void;
+	static public function clear_current_asset_group_culture(asset_group:unreal.Name, save_to_config:Bool = false):Void;
 	/**
 		X.get_culture_display_name(culture, localized=True) -> str
 		Get the display name of the given culture.
@@ -21,7 +21,7 @@ package unreal;
 		Returns:
 		    str: The display name of the culture, or the given culture code on failure.
 	**/
-	static public function get_culture_display_name(culture:String, localized:Bool):String;
+	static public function get_culture_display_name(culture:String, localized:Bool = true):String;
 	/**
 		X.get_current_asset_group_culture(asset_group) -> str
 		Get the given asset group category culture.
@@ -81,7 +81,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of cultures as IETF language tags (eg, "zh-Hans-CN").
 	**/
-	static public function get_localized_cultures(include_game:Bool, include_engine:Bool, include_editor:Bool, include_additional:Bool):Dynamic;
+	static public function get_localized_cultures(include_game:Bool = true, include_engine:Bool = false, include_editor:Bool = false, include_additional:Bool = false):Array<str>;
 	/**
 		X.get_native_culture(text_category) -> str
 		Get the native culture for the given localization category.
@@ -107,7 +107,7 @@ package unreal;
 		Returns:
 		    str: The culture as an IETF language tag (eg, "zh-Hans-CN").
 	**/
-	static public function get_suitable_culture(available_cultures:unreal.Array, culture_to_match:String, fallback_culture:String):String;
+	static public function get_suitable_culture(available_cultures:Array<str>, culture_to_match:String, fallback_culture:String = "\"en\""):String;
 	/**
 		X.set_current_asset_group_culture(asset_group, culture, save_to_config=False) -> bool
 		Set the given asset group category culture from an IETF language tag (eg, "zh-Hans-CN").
@@ -120,7 +120,7 @@ package unreal;
 		Returns:
 		    bool: True if the culture was set, false otherwise.
 	**/
-	static public function set_current_asset_group_culture(asset_group:unreal.Name, culture:String, save_to_config:Bool):Bool;
+	static public function set_current_asset_group_culture(asset_group:unreal.Name, culture:String, save_to_config:Bool = false):Bool;
 	/**
 		X.set_current_culture(culture, save_to_config=False) -> bool
 		Set the current culture.
@@ -133,7 +133,7 @@ package unreal;
 		Returns:
 		    bool: True if the culture was set, false otherwise.
 	**/
-	static public function set_current_culture(culture:String, save_to_config:Bool):Bool;
+	static public function set_current_culture(culture:String, save_to_config:Bool = false):Bool;
 	/**
 		X.set_current_language(culture, save_to_config=False) -> bool
 		Set *only* the current language (for localization).
@@ -146,7 +146,7 @@ package unreal;
 		Returns:
 		    bool: True if the language was set, false otherwise.
 	**/
-	static public function set_current_language(culture:String, save_to_config:Bool):Bool;
+	static public function set_current_language(culture:String, save_to_config:Bool = false):Bool;
 	/**
 		X.set_current_language_and_locale(culture, save_to_config=False) -> bool
 		Set the current language (for localization) and locale (for internationalization).
@@ -158,7 +158,7 @@ package unreal;
 		Returns:
 		    bool: True if the language and locale were set, false otherwise.
 	**/
-	static public function set_current_language_and_locale(culture:String, save_to_config:Bool):Bool;
+	static public function set_current_language_and_locale(culture:String, save_to_config:Bool = false):Bool;
 	/**
 		X.set_current_locale(culture, save_to_config=False) -> bool
 		Set *only* the current locale (for internationalization).
@@ -171,5 +171,5 @@ package unreal;
 		Returns:
 		    bool: True if the locale was set, false otherwise.
 	**/
-	static public function set_current_locale(culture:String, save_to_config:Bool):Bool;
+	static public function set_current_locale(culture:String, save_to_config:Bool = false):Bool;
 }

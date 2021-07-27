@@ -4,7 +4,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] The actor class to attach new instance static mesh components to
 	**/
-	public var actor_class_to_use : Dynamic;
+	public var actor_class_to_use : Class<Dynamic>;
 	/**
 		(int32):  [Read-Write] The number of static mesh instances needed before a mesh is replaced with an instanced version
 	**/
@@ -12,7 +12,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Whether to use the Instanced Static Mesh Compoment or the Hierarchical Instanced Static Mesh Compoment
 	**/
-	public var ism_component_to_use : Dynamic;
+	public var ism_component_to_use : Class<Dynamic>;
 	/**
 		(MeshInstancingReplacementMethod):  [Read-Write] How to replace the original actors when instancing
 	**/

@@ -29,7 +29,7 @@ package unreal;
 		    affects_movement (bool): specify true to disable movement in cinematic mode, enable it when leaving
 		    affects_turning (bool): specify true to disable turning in cinematic mode or enable it when leaving
 	**/
-	public function set_cinematic_mode(cinematic_mode:Bool, hide_player:Bool, affects_hud:Bool, affects_movement:Bool, affects_turning:Bool):Void;
+	public function set_cinematic_mode(cinematic_mode:Bool, hide_player:Bool = true, affects_hud:Bool = true, affects_movement:Bool = false, affects_turning:Bool = false):Void;
 	/**
 		x.world_origin_location_changed(old_origin_location, new_origin_location) -> None
 		Event called on world origin location changes

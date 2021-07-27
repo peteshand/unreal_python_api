@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    EmitterCameraLensEffectBase: Returns the new emitter actor.
 	**/
-	public function add_camera_lens_effect(lens_effect_emitter_class:Dynamic):unreal.EmitterCameraLensEffectBase;
+	public function add_camera_lens_effect(lens_effect_emitter_class:Class<Dynamic>):unreal.EmitterCameraLensEffectBase;
 	/**
 		x.add_new_camera_modifier(modifier_class) -> CameraModifier
 		Creates and initializes a new camera modifier of the specified class.
@@ -22,7 +22,7 @@ package unreal;
 		Returns:
 		    CameraModifier: Returns the newly created camera modifier.
 	**/
-	public function add_new_camera_modifier(modifier_class:Dynamic):unreal.CameraModifier;
+	public function add_new_camera_modifier(modifier_class:Class<Dynamic>):unreal.CameraModifier;
 	/**
 		x.blueprint_update_camera(camera_target) -> (new_camera_location=Vector, new_camera_rotation=Rotator, new_camera_fov=float) or None
 		Blueprint hook to allow blueprints to override existing camera behavior or implement custom cameras.
@@ -82,7 +82,7 @@ package unreal;
 		Returns:
 		    CameraModifier:
 	**/
-	public function find_camera_modifier_by_class(modifier_class:Dynamic):unreal.CameraModifier;
+	public function find_camera_modifier_by_class(modifier_class:Class<Dynamic>):unreal.CameraModifier;
 	/**
 		(float):  [Read-Write] Distance to place free camera from view target (used in certain CameraStyles)
 	**/
@@ -212,7 +212,7 @@ package unreal;
 		Returns:
 		    CameraAnimInst: The CameraAnim instance, which can be stored to manipulate/stop the anim after the fact.
 	**/
-	public function play_camera_anim(anim:unreal.CameraAnim, rate:Float, scale:Float, blend_in_time:Float, blend_out_time:Float, loop:Bool, random_start_time:Bool, duration:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):unreal.CameraAnimInst;
+	public function play_camera_anim(anim:unreal.CameraAnim, rate:Float = 1.000000, scale:Float = 1.000000, blend_in_time:Float = 0.000000, blend_out_time:Float = 0.000000, loop:Bool = false, random_start_time:Bool = false, duration:Float = 0.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):unreal.CameraAnimInst;
 	/**
 		deprecated: 'play_camera_shake' was renamed to 'start_matinee_camera_shake'.
 	**/
@@ -270,7 +270,7 @@ package unreal;
 		    should_fade_audio (bool): True to fade audio volume along with the alpha of the solid color.
 		    hold_when_finished (bool): True for fade to hold at the ToAlpha until explicitly stopped (e.g. with StopCameraFade)
 	**/
-	public function start_camera_fade(from_alpha:Float, to_alpha:Float, duration:Float, color:unreal.LinearColor, should_fade_audio:Bool, hold_when_finished:Bool):Void;
+	public function start_camera_fade(from_alpha:Float, to_alpha:Float, duration:Float, color:unreal.LinearColor, should_fade_audio:Bool = false, hold_when_finished:Bool = false):Void;
 	/**
 		x.start_camera_shake(shake_class, scale=1.000000, play_space=CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot=[0.000000, 0.000000, 0.000000]) -> CameraShakeBase
 		Plays a camera shake on this camera.
@@ -284,7 +284,7 @@ package unreal;
 		Returns:
 		    CameraShakeBase:
 	**/
-	public function start_camera_shake(shake_class:Dynamic, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):unreal.CameraShakeBase;
+	public function start_camera_shake(shake_class:Class<Dynamic>, scale:Float = 1.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):unreal.CameraShakeBase;
 	/**
 		x.start_camera_shake_from_source(shake_class, source_component, scale=1.000000, play_space=CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot=[0.000000, 0.000000, 0.000000]) -> CameraShakeBase
 		Plays a camera shake on this camera.
@@ -299,7 +299,7 @@ package unreal;
 		Returns:
 		    CameraShakeBase:
 	**/
-	public function start_camera_shake_from_source(shake_class:Dynamic, source_component:unreal.CameraShakeSourceComponent, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):unreal.CameraShakeBase;
+	public function start_camera_shake_from_source(shake_class:Class<Dynamic>, source_component:unreal.CameraShakeSourceComponent, scale:Float = 1.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):unreal.CameraShakeBase;
 	/**
 		x.start_matinee_camera_shake(shake_class, scale=1.000000, play_space=CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot=[0.000000, 0.000000, 0.000000]) -> MatineeCameraShake
 		Backwards compatible method used by core BP redirectors. This is needed because the return value is specifically a Matinee camera shake,
@@ -314,7 +314,7 @@ package unreal;
 		Returns:
 		    MatineeCameraShake:
 	**/
-	public function start_matinee_camera_shake(shake_class:Dynamic, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):unreal.MatineeCameraShake;
+	public function start_matinee_camera_shake(shake_class:Class<Dynamic>, scale:Float = 1.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):unreal.MatineeCameraShake;
 	/**
 		x.start_matinee_camera_shake_from_source(shake_class, source_component, scale=1.000000, play_space=CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot=[0.000000, 0.000000, 0.000000]) -> MatineeCameraShake
 		Backwards compatible method used by core BP redirectors. This is needed because the return value is specifically a Matinee camera shake,
@@ -330,7 +330,7 @@ package unreal;
 		Returns:
 		    MatineeCameraShake:
 	**/
-	public function start_matinee_camera_shake_from_source(shake_class:Dynamic, source_component:unreal.CameraShakeSourceComponent, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):unreal.MatineeCameraShake;
+	public function start_matinee_camera_shake_from_source(shake_class:Class<Dynamic>, source_component:unreal.CameraShakeSourceComponent, scale:Float = 1.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):unreal.MatineeCameraShake;
 	/**
 		x.stop_all_camera_anims(immediate=False) -> None
 		Stop playing all CameraAnims on this CameraManager.
@@ -338,7 +338,7 @@ package unreal;
 		Args:
 		    immediate (bool): True to stop it right now and ignore blend out, false to let it blend out as indicated.
 	**/
-	public function stop_all_camera_anims(immediate:Bool):Void;
+	public function stop_all_camera_anims(immediate:Bool = false):Void;
 	/**
 		x.stop_all_camera_shakes(immediately=True) -> None
 		Stops all active camera shakes on this camera.
@@ -346,7 +346,7 @@ package unreal;
 		Args:
 		    immediately (bool):
 	**/
-	public function stop_all_camera_shakes(immediately:Bool):Void;
+	public function stop_all_camera_shakes(immediately:Bool = true):Void;
 	/**
 		x.stop_all_camera_shakes_from_source(source_component, immediately=True) -> None
 		Stops playing all shakes originating from the given source.
@@ -355,7 +355,7 @@ package unreal;
 		    source_component (CameraShakeSourceComponent): 
 		    immediately (bool):
 	**/
-	public function stop_all_camera_shakes_from_source(source_component:unreal.CameraShakeSourceComponent, immediately:Bool):Void;
+	public function stop_all_camera_shakes_from_source(source_component:unreal.CameraShakeSourceComponent, immediately:Bool = true):Void;
 	/**
 		x.stop_all_instances_of_camera_anim(anim, immediate=False) -> None
 		Stop playing all instances of the indicated CameraAnim.
@@ -364,7 +364,7 @@ package unreal;
 		    anim (CameraAnim): 
 		    immediate (bool): True to stop it right now and ignore blend out, false to let it blend out as indicated.
 	**/
-	public function stop_all_instances_of_camera_anim(anim:unreal.CameraAnim, immediate:Bool):Void;
+	public function stop_all_instances_of_camera_anim(anim:unreal.CameraAnim, immediate:Bool = false):Void;
 	/**
 		x.stop_all_instances_of_camera_shake(shake, immediately=True) -> None
 		Stops playing all shakes of the given class.
@@ -373,7 +373,7 @@ package unreal;
 		    shake (type(Class)): 
 		    immediately (bool):
 	**/
-	public function stop_all_instances_of_camera_shake(shake:Dynamic, immediately:Bool):Void;
+	public function stop_all_instances_of_camera_shake(shake:Class<Dynamic>, immediately:Bool = true):Void;
 	/**
 		x.stop_all_instances_of_camera_shake_from_source(shake, source_component, immediately=True) -> None
 		Stops playing all shakes of the given class originating from the given source.
@@ -383,7 +383,7 @@ package unreal;
 		    source_component (CameraShakeSourceComponent): 
 		    immediately (bool):
 	**/
-	public function stop_all_instances_of_camera_shake_from_source(shake:Dynamic, source_component:unreal.CameraShakeSourceComponent, immediately:Bool):Void;
+	public function stop_all_instances_of_camera_shake_from_source(shake:Class<Dynamic>, source_component:unreal.CameraShakeSourceComponent, immediately:Bool = true):Void;
 	/**
 		x.stop_camera_anim_inst(anim_inst, immediate=False) -> None
 		Stops the given CameraAnimInst from playing.  The given pointer should be considered invalid after this.
@@ -392,7 +392,7 @@ package unreal;
 		    anim_inst (CameraAnimInst): 
 		    immediate (bool): True to stop it right now and ignore blend out, false to let it blend out as indicated.
 	**/
-	public function stop_camera_anim_inst(anim_inst:unreal.CameraAnimInst, immediate:Bool):Void;
+	public function stop_camera_anim_inst(anim_inst:unreal.CameraAnimInst, immediate:Bool = false):Void;
 	/**
 		x.stop_camera_fade() -> None
 		Stops camera fading.
@@ -406,7 +406,7 @@ package unreal;
 		    shake_instance (CameraShakeBase): 
 		    immediately (bool):
 	**/
-	public function stop_camera_shake(shake_instance:unreal.CameraShakeBase, immediately:Bool):Void;
+	public function stop_camera_shake(shake_instance:unreal.CameraShakeBase, immediately:Bool = true):Void;
 	/**
 		(SceneComponent):  [Read-Only] Dummy component we can use to attach things to the camera.
 	**/

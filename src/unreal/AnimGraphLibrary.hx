@@ -91,7 +91,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function k2_end_profiling_timer(log:Bool, log_prefix:String):Float;
+	static public function k2_end_profiling_timer(log:Bool = true, log_prefix:String = "\"\""):Float;
 	/**
 		X.k2_start_profiling_timer() -> None
 		This function starts measuring the time for a profiling bracket

@@ -14,7 +14,7 @@ package unreal;
 		
 		    resulting_actors_set (Array(Actor)):
 	**/
-	public function provide_actors_set(querier_object:unreal.Object, querier_actor:unreal.Actor):Dynamic;
+	public function provide_actors_set(querier_object:unreal.Object, querier_actor:unreal.Actor):Array<Actor>;
 	/**
 		x.provide_locations_set(querier_object, querier_actor) -> Array(Vector)
 		Provide Locations Set
@@ -28,7 +28,7 @@ package unreal;
 		
 		    resulting_location_set (Array(Vector)):
 	**/
-	public function provide_locations_set(querier_object:unreal.Object, querier_actor:unreal.Actor):Dynamic;
+	public function provide_locations_set(querier_object:unreal.Object, querier_actor:unreal.Actor):Array<Vector>;
 	/**
 		x.provide_single_actor(querier_object, querier_actor) -> Actor
 		Provide Single Actor

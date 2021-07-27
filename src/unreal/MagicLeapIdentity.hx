@@ -11,7 +11,7 @@ package unreal;
 		
 		    available_attributes (Array(MagicLeapIdentityAttributeType)): Output parameter populated with the list of attributes available for the user's Magic Leap profile.
 	**/
-	public function get_all_available_attributes():Dynamic;
+	public function get_all_available_attributes():Array<MagicLeapIdentityAttributeType>;
 	/**
 		x.get_all_available_attributes_async(result_delegate) -> None
 		Asynchronous call to get the attributes available for the user's Magic Leap profile. Note that this does not request the values for these attribtues.
@@ -36,7 +36,7 @@ package unreal;
 		
 		    requested_attribute_values (Array(MagicLeapIdentityAttribute)): Output parameter populated with the list of attributes and their values.
 	**/
-	public function request_attribute_value(requested_attribute_list:unreal.Array):Dynamic;
+	public function request_attribute_value(requested_attribute_list:Array<MagicLeapIdentityAttributeType>):Array<MagicLeapIdentityAttribute>;
 	/**
 		x.request_attribute_value_async(requested_attribute_list, result_delegate) -> MagicLeapIdentityError
 		Asynchronous call to get the values for the attributes of the user's Magic Leap profile.
@@ -48,5 +48,5 @@ package unreal;
 		Returns:
 		    MagicLeapIdentityError: Error code when getting the attribute values.
 	**/
-	public function request_attribute_value_async(requested_attribute_list:unreal.Array, result_delegate:unreal.RequestIdentityAttributeValueDelegate):unreal.MagicLeapIdentityError;
+	public function request_attribute_value_async(requested_attribute_list:Array<MagicLeapIdentityAttributeType>, result_delegate:unreal.RequestIdentityAttributeValueDelegate):unreal.MagicLeapIdentityError;
 }

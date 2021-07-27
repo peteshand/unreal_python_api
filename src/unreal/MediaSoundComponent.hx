@@ -35,7 +35,7 @@ package unreal;
 		Returns:
 		    Array(MediaSoundComponentSpectralData):
 	**/
-	public function get_normalized_spectral_data():Dynamic;
+	public function get_normalized_spectral_data():Array<MediaSoundComponentSpectralData>;
 	/**
 		x.get_spectral_data() -> Array(MediaSoundComponentSpectralData)
 		Retrieves the spectral data if spectral analysis is enabled.
@@ -43,7 +43,7 @@ package unreal;
 		Returns:
 		    Array(MediaSoundComponentSpectralData):
 	**/
-	public function get_spectral_data():Dynamic;
+	public function get_spectral_data():Array<MediaSoundComponentSpectralData>;
 	/**
 		x.set_enable_envelope_following(envelope_following) -> None
 		Turns on amplitude envelope following the audio in the media sound component.
@@ -86,5 +86,5 @@ package unreal;
 		    frequencies_to_analyze (Array(float)): 
 		    fft_size (MediaSoundComponentFFTSize):
 	**/
-	public function set_spectral_analysis_settings(frequencies_to_analyze:unreal.Array, fft_size:unreal.MediaSoundComponentFFTSize):Void;
+	public function set_spectral_analysis_settings(frequencies_to_analyze:Array<float>, fft_size:unreal.MediaSoundComponentFFTSize = MediaSoundComponentFFTSize.MEDIUM_512):Void;
 }

@@ -41,7 +41,7 @@ package unreal;
 		    atlas_region (SlateTextureAtlasInterface): Region of the Atlas to use to set on Brush.
 		    match_size (bool): If true, image will change its size to atlas region size. If false, atlas region will be stretched to image size.
 	**/
-	public function set_brush_from_atlas_interface(atlas_region:Dynamic, match_size:Bool):Void;
+	public function set_brush_from_atlas_interface(atlas_region:Dynamic, match_size:Bool = false):Void;
 	/**
 		x.set_brush_from_material(material) -> None
 		Set Brush from Material
@@ -66,7 +66,7 @@ package unreal;
 		    soft_texture (Texture2D): Soft Texture to use to set on Brush.
 		    match_size (bool): If true, image will change its size to texture size. If false, texture will be stretched to image size.
 	**/
-	public function set_brush_from_soft_texture(soft_texture:unreal.Texture2D, match_size:Bool):Void;
+	public function set_brush_from_soft_texture(soft_texture:unreal.Texture2D, match_size:Bool = false):Void;
 	/**
 		x.set_brush_from_texture(texture, match_size=False) -> None
 		Sets the Brush to the specified Texture.
@@ -75,7 +75,7 @@ package unreal;
 		    texture (Texture2D): Texture to use to set on Brush.
 		    match_size (bool): If true, image will change its size to texture size. If false, texture will be stretched to image size.
 	**/
-	public function set_brush_from_texture(texture:unreal.Texture2D, match_size:Bool):Void;
+	public function set_brush_from_texture(texture:unreal.Texture2D, match_size:Bool = false):Void;
 	/**
 		x.set_brush_from_texture_dynamic(texture, match_size=False) -> None
 		Sets the Brush to the specified Dynamic Texture.
@@ -84,7 +84,7 @@ package unreal;
 		    texture (Texture2DDynamic): Dynamic Texture to use to set on Brush.
 		    match_size (bool): If true, image will change its size to texture size. If false, texture will be stretched to image size.
 	**/
-	public function set_brush_from_texture_dynamic(texture:unreal.Texture2DDynamic, match_size:Bool):Void;
+	public function set_brush_from_texture_dynamic(texture:unreal.Texture2DDynamic, match_size:Bool = false):Void;
 	/**
 		x.set_brush_resource_object(resource_object) -> None
 		Set Brush Resource Object

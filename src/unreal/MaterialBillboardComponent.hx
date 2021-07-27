@@ -25,5 +25,5 @@ package unreal;
 		Args:
 		    new_elements (Array(MaterialSpriteElement)):
 	**/
-	public function set_elements(new_elements:unreal.Array):Void;
+	public function set_elements(new_elements:Array<MaterialSpriteElement>):Void;
 }

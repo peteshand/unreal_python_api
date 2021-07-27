@@ -16,7 +16,7 @@ package unreal;
 		Args:
 		    actors_to_record (Array(Actor)): The actors to record
 	**/
-	static public function start_recording_sequence(actors_to_record:unreal.Array):Void;
+	static public function start_recording_sequence(actors_to_record:Array<Actor>):Void;
 	/**
 		X.stop_recording_sequence() -> None
 		Stop recording the current sequence, if any

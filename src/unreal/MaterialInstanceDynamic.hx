@@ -12,7 +12,7 @@ package unreal;
 		    source (MaterialInterface): 
 		    quick_parameters_only (bool): Copy scalar, vector and texture parameters only. Much faster but may not include required data
 	**/
-	public function copy_material_instance_parameters(source:unreal.MaterialInterface, quick_parameters_only:Bool):Void;
+	public function copy_material_instance_parameters(source:unreal.MaterialInterface, quick_parameters_only:Bool = false):Void;
 	/**
 		x.copy_parameter_overrides(material_instance) -> None
 		Copy parameter values from another material instance. This will copy only

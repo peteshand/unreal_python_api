@@ -28,7 +28,7 @@ package unreal;
 		    static_mesh_descriptions (Array(StaticMeshDescription)): 
 		    build_simple_collision (bool):
 	**/
-	public function build_from_static_mesh_descriptions(static_mesh_descriptions:unreal.Array, build_simple_collision:Bool):Void;
+	public function build_from_static_mesh_descriptions(static_mesh_descriptions:Array<StaticMeshDescription>, build_simple_collision:Bool = false):Void;
 	/**
 		X.create_static_mesh_description(outer=None) -> StaticMeshDescription
 		Create an empty StaticMeshDescription object, to describe a static mesh at runtime
@@ -39,7 +39,7 @@ package unreal;
 		Returns:
 		    StaticMeshDescription:
 	**/
-	static public function create_static_mesh_description(outer:unreal.Object):unreal.StaticMeshDescription;
+	static public function create_static_mesh_description(outer:unreal.Object = null):unreal.StaticMeshDescription;
 	/**
 		x.find_socket(socket_name) -> StaticMeshSocket
 		Find a socket object in this StaticMesh by name.
@@ -156,7 +156,7 @@ package unreal;
 		    new_group (Name): 
 		    rebuild_immediately (bool):
 	**/
-	public function set_lod_group(new_group:unreal.Name, rebuild_immediately:Bool):Void;
+	public function set_lod_group(new_group:unreal.Name, rebuild_immediately:Bool = true):Void;
 	/**
 		x.set_material(material_index, new_material) -> None
 		Sets a Material given a Material Index

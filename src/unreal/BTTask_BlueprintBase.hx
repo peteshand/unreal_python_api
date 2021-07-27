@@ -112,5 +112,5 @@ package unreal;
 		    message_name (Name): 
 		    request_id (int32):
 	**/
-	public function set_finish_on_message_with_id(message_name:unreal.Name, request_id:Int):Void;
+	public function set_finish_on_message_with_id(message_name:unreal.Name, request_id:Int = -1):Void;
 }

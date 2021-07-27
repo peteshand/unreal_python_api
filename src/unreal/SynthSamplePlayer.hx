@@ -50,7 +50,7 @@ package unreal;
 		    seek_type (SamplePlayerSeekType): 
 		    wrap (bool):
 	**/
-	public function seek_to_time(time_sec:Float, seek_type:unreal.SamplePlayerSeekType, wrap:Bool):Void;
+	public function seek_to_time(time_sec:Float, seek_type:unreal.SamplePlayerSeekType, wrap:Bool = true):Void;
 	/**
 		x.set_pitch(pitch, time_sec) -> None
 		Set Pitch

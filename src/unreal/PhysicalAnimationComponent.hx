@@ -11,7 +11,7 @@ package unreal;
 		    include_self (bool): Whether to include the provided body name in the list of bodies we act on (useful to ignore for cases where a root has multiple children)
 		    clear_not_found (bool): If true, bodies without the given profile name will have any existing physical animation settings cleared. If false, bodies without the given profile name are left untouched.
 	**/
-	public function apply_physical_animation_profile_below(body_name:unreal.Name, profile_name:unreal.Name, include_self:Bool, clear_not_found:Bool):Void;
+	public function apply_physical_animation_profile_below(body_name:unreal.Name, profile_name:unreal.Name, include_self:Bool = true, clear_not_found:Bool = false):Void;
 	/**
 		x.apply_physical_animation_settings(body_name, physical_animation_data) -> None
 		Applies the physical animation settings to the body given.
@@ -30,7 +30,7 @@ package unreal;
 		    physical_animation_data (PhysicalAnimationData): 
 		    include_self (bool):
 	**/
-	public function apply_physical_animation_settings_below(body_name:unreal.Name, physical_animation_data:unreal.PhysicalAnimationData, include_self:Bool):Void;
+	public function apply_physical_animation_settings_below(body_name:unreal.Name, physical_animation_data:unreal.PhysicalAnimationData, include_self:Bool = true):Void;
 	/**
 		x.get_body_target_transform(body_name) -> Transform
 		Returns the target transform for the given body. If physical animation component is not controlling this body, returns its current transform.

@@ -39,5 +39,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function register_movement_component(movement_comp:unreal.MovementComponent, avoidance_weight:Float):Bool;
+	public function register_movement_component(movement_comp:unreal.MovementComponent, avoidance_weight:Float = 0.500000):Bool;
 }

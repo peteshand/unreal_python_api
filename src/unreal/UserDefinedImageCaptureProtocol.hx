@@ -52,5 +52,5 @@ package unreal;
 		Returns:
 		    A fully qualified file name for the current frame number
 	**/
-	public function write_image_to_disk(pixel_data:unreal.CapturedPixels, stream_id:unreal.CapturedPixelsID, frame_metrics:unreal.FrameMetrics, copy_image_data:Bool):Dynamic;
+	public function write_image_to_disk(pixel_data:unreal.CapturedPixels, stream_id:unreal.CapturedPixelsID, frame_metrics:unreal.FrameMetrics, copy_image_data:Bool = false):Dynamic;
 }

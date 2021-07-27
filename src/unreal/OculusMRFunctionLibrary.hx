@@ -51,7 +51,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function set_mrc_scaling_factor(scaling_factor:Float):Bool;
+	static public function set_mrc_scaling_factor(scaling_factor:Float = 1.000000):Bool;
 	/**
 		X.set_tracking_reference_component(component) -> bool
 		Set the component for the OculusMR camera to track. If this is set to null, the camera will track the player pawn.

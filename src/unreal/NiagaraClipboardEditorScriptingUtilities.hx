@@ -197,7 +197,7 @@ package unreal;
 		
 		    out_input (NiagaraClipboardFunctionInput):
 	**/
-	static public function try_get_input_by_name(inputs:unreal.Array, input_name:unreal.Name):python.Tuple<Dynamic>;
+	static public function try_get_input_by_name(inputs:Array<NiagaraClipboardFunctionInput>, input_name:unreal.Name):python.Tuple<Dynamic>;
 	/**
 		X.try_get_local_value_as_float(input) -> (out_succeeded=bool, out_value=float)
 		Try Get Local Value as Float
@@ -242,5 +242,5 @@ package unreal;
 		
 		    out_succeeded (bool):
 	**/
-	static public function try_set_local_value_as_int(input:unreal.NiagaraClipboardFunctionInput, value:Int, loose_typing:Bool):Bool;
+	static public function try_set_local_value_as_int(input:unreal.NiagaraClipboardFunctionInput, value:Int, loose_typing:Bool = true):Bool;
 }

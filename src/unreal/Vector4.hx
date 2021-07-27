@@ -87,7 +87,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:unreal.Vector4, error_tolerance:Float):Bool;
+	public function is_near_equal(b:unreal.Vector4, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_nearly_zero3(tolerance=0.000100) -> bool
 		Checks whether vector is near to zero within a specified tolerance. The W element is ignored.
@@ -98,7 +98,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	public function is_nearly_zero3(tolerance:Float):Bool;
+	public function is_nearly_zero3(tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_normal3() -> bool
 		Determines if vector is normalized / unit (length 1). The W element is ignored.
@@ -118,7 +118,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(b:unreal.Vector4, error_tolerance:Float):Bool;
+	public function is_not_near_equal(b:unreal.Vector4, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_unit3(squared_lenth_tolerance=0.000100) -> bool
 		Determines if vector is normalized / unit (length 1) within specified squared tolerance. The W element is ignored.
@@ -129,7 +129,7 @@ package unreal;
 		Returns:
 		    bool: true if unit, false otherwise.
 	**/
-	public function is_unit3(squared_lenth_tolerance:Float):Bool;
+	public function is_unit3(squared_lenth_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_zero() -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -213,7 +213,7 @@ package unreal;
 		Returns:
 		    Vector4: A normalized copy if safe, (0,0,0) otherwise.
 	**/
-	public function normal3(tolerance:Float):unreal.Vector4;
+	public function normal3(tolerance:Float = 0.000100):unreal.Vector4;
 	/**
 		x.normal_unsafe3() -> Vector4
 		Calculates normalized unit version of vector without checking for zero length. The W element is ignored and the returned vector has W=0.
@@ -229,7 +229,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of vector for normalization.
 	**/
-	public function normalize3(tolerance:Float):Void;
+	public function normalize3(tolerance:Float = 0.000000):Void;
 	/**
 		x.not_equal(b) -> bool
 		Returns true if vector A is not equal to vector B (A != B) within a specified error tolerance

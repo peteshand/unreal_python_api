@@ -11,7 +11,7 @@ package unreal;
 		    world_vector (Vector): 
 		    force (bool): If true always add the input, ignoring the result of IsMoveInputIgnored().
 	**/
-	public function add_input_vector(world_vector:unreal.Vector, force:Bool):Void;
+	public function add_input_vector(world_vector:unreal.Vector, force:Bool = false):Void;
 	/**
 		x.consume_input_vector() -> Vector
 		Returns the pending input vector and resets it to zero.

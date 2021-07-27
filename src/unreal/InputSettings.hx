@@ -9,7 +9,7 @@ package unreal;
 		    key_mapping (InputActionKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function add_action_mapping(key_mapping:unreal.InputActionKeyMapping, force_rebuild_keymaps:Bool):Void;
+	public function add_action_mapping(key_mapping:unreal.InputActionKeyMapping, force_rebuild_keymaps:Bool = true):Void;
 	/**
 		x.add_axis_mapping(key_mapping, force_rebuild_keymaps=True) -> None
 		Programmatically add an axis mapping to the project defaults
@@ -18,7 +18,7 @@ package unreal;
 		    key_mapping (InputAxisKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function add_axis_mapping(key_mapping:unreal.InputAxisKeyMapping, force_rebuild_keymaps:Bool):Void;
+	public function add_axis_mapping(key_mapping:unreal.InputAxisKeyMapping, force_rebuild_keymaps:Bool = true):Void;
 	/**
 		x.force_rebuild_keymaps() -> None
 		When changes are made to the default mappings, push those changes out to PlayerInput key maps
@@ -36,7 +36,7 @@ package unreal;
 		
 		    out_mappings (Array(InputActionKeyMapping)):
 	**/
-	public function get_action_mapping_by_name(action_name:unreal.Name):Dynamic;
+	public function get_action_mapping_by_name(action_name:unreal.Name):Array<InputActionKeyMapping>;
 	/**
 		x.get_action_names() -> Array(Name)
 		Populate a list of all defined action names
@@ -46,7 +46,7 @@ package unreal;
 		
 		    action_names (Array(Name)):
 	**/
-	public function get_action_names():Dynamic;
+	public function get_action_names():Array<Name>;
 	/**
 		x.get_axis_mapping_by_name(axis_name) -> Array(InputAxisKeyMapping)
 		Retrieve all axis mappings by a certain name.
@@ -59,7 +59,7 @@ package unreal;
 		
 		    out_mappings (Array(InputAxisKeyMapping)):
 	**/
-	public function get_axis_mapping_by_name(axis_name:unreal.Name):Dynamic;
+	public function get_axis_mapping_by_name(axis_name:unreal.Name):Array<InputAxisKeyMapping>;
 	/**
 		x.get_axis_names() -> Array(Name)
 		Populate a list of all defined axis names
@@ -69,7 +69,7 @@ package unreal;
 		
 		    axis_names (Array(Name)):
 	**/
-	public function get_axis_names():Dynamic;
+	public function get_axis_names():Array<Name>;
 	/**
 		X.get_input_settings() -> InputSettings
 		Returns the game local input settings (action mappings, axis mappings, etc...)
@@ -86,7 +86,7 @@ package unreal;
 		    key_mapping (InputActionKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function remove_action_mapping(key_mapping:unreal.InputActionKeyMapping, force_rebuild_keymaps:Bool):Void;
+	public function remove_action_mapping(key_mapping:unreal.InputActionKeyMapping, force_rebuild_keymaps:Bool = true):Void;
 	/**
 		x.remove_axis_mapping(key_mapping, force_rebuild_keymaps=True) -> None
 		Programmatically remove an axis mapping to the project defaults
@@ -95,7 +95,7 @@ package unreal;
 		    key_mapping (InputAxisKeyMapping): 
 		    force_rebuild_keymaps (bool):
 	**/
-	public function remove_axis_mapping(key_mapping:unreal.InputAxisKeyMapping, force_rebuild_keymaps:Bool):Void;
+	public function remove_axis_mapping(key_mapping:unreal.InputAxisKeyMapping, force_rebuild_keymaps:Bool = true):Void;
 	/**
 		x.save_key_mappings() -> None
 		Flush the current mapping values to the config file

@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function get_options():Dynamic;
+	public function get_options():Array<Actor>;
 	/**
 		x.get_selected_option() -> int32
 		If we have exactly one child actor visible, it will return a pointer to it. Returns nullptr otherwise

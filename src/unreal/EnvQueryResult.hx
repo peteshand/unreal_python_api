@@ -4,7 +4,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] type of generated items
 	**/
-	public var item_type : Dynamic;
+	public var item_type : Class<Dynamic>;
 	/**
 		(int32):  [Read-Only] index of query option, that generated items
 	**/

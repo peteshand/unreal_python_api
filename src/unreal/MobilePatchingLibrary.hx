@@ -28,7 +28,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_supported_platform_names():Dynamic;
+	static public function get_supported_platform_names():Array<str>;
 	/**
 		X.has_active_wi_fi_connection() -> bool
 		Whether WiFi connection is currently available

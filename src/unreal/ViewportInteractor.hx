@@ -48,7 +48,7 @@ package unreal;
 		
 		    laser_pointer_end (Vector):
 	**/
-	public function get_laser_pointer(even_if_blocked:Bool, laser_length_override:Float):Dynamic;
+	public function get_laser_pointer(even_if_blocked:Bool = false, laser_length_override:Float = 0.000000):Dynamic;
 	/**
 		x.get_last_room_space_transform() -> Transform
 		Gets the last hand transform of the interactor, in the local tracking space

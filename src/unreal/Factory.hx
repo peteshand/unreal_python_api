@@ -12,7 +12,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Class of the context object used to help create the object.
 	**/
-	public var context_class : Dynamic;
+	public var context_class : Class<Dynamic>;
 	/**
 		(bool):  [Read-Write] The default value to return from CanCreateNew()
 	**/
@@ -54,7 +54,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] The class manufactured by this factory.
 	**/
-	public var supported_class : Dynamic;
+	public var supported_class : Class<Dynamic>;
 	/**
 		(bool):  [Read-Write] true if the factory imports objects from text.
 	**/

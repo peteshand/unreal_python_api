@@ -10,7 +10,7 @@ package unreal;
 		
 		    listener_actors (Array(Actor)):
 	**/
-	public function get_all_listener_actors():Dynamic;
+	public function get_all_listener_actors():Array<Actor>;
 	/**
 		x.get_all_listener_components() -> Array(AIPerceptionComponent)
 		Get All Listener Components
@@ -20,7 +20,7 @@ package unreal;
 		
 		    listener_components (Array(AIPerceptionComponent)):
 	**/
-	public function get_all_listener_components():Dynamic;
+	public function get_all_listener_components():Array<AIPerceptionComponent>;
 	/**
 		(Array(AIPerceptionComponent)):  [Read-Only] Listener Container
 	**/
@@ -28,7 +28,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Listener Data Type
 	**/
-	public var listener_data_type : Dynamic;
+	public var listener_data_type : Class<Dynamic>;
 	/**
 		x.on_listener_registered(actor_listener, perception_component) -> None
 		
@@ -75,5 +75,5 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function on_update(events_to_process:unreal.Array):Float;
+	public function on_update(events_to_process:Array<AISenseEvent>):Float;
 }

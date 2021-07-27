@@ -42,7 +42,7 @@ package unreal;
 		    style_name (Name): 
 		    small_style_name (Name):
 	**/
-	public function set_icon(style_set_name:unreal.Name, style_name:unreal.Name, small_style_name:unreal.Name):Void;
+	public function set_icon(style_set_name:unreal.Name, style_name:unreal.Name = "\"None\"", small_style_name:unreal.Name = "\"None\""):Void;
 	/**
 		x.set_label(label) -> None
 		Set Label

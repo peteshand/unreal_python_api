@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_class():Dynamic;
+	public function get_class():Class<Dynamic>;
 	/**
 		x.get_export_text_name() -> str
 		Returns the name for the asset in the form: Class'ObjectPath'

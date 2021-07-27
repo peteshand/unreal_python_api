@@ -39,7 +39,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function perform_action(pawn:unreal.Pawn, action:unreal.PawnAction, priority:unreal.AIRequestPriority):Bool;
+	static public function perform_action(pawn:unreal.Pawn, action:unreal.PawnAction, priority:unreal.AIRequestPriority = AIRequestPriority.HARD_SCRIPT):Bool;
 	/**
 		x.push_action(new_action, priority, instigator=None) -> bool
 		K2 Push Action
@@ -52,5 +52,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function push_action(new_action:unreal.PawnAction, priority:unreal.AIRequestPriority, instigator:unreal.Object):Bool;
+	public function push_action(new_action:unreal.PawnAction, priority:unreal.AIRequestPriority, instigator:unreal.Object = null):Bool;
 }

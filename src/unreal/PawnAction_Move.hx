@@ -12,7 +12,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] "None" will result in default filter being used
 	**/
-	public var filter_class : Dynamic;
+	public var filter_class : Class<Dynamic>;
 	/**
 		(Actor):  [Read-Write] Goal Actor
 	**/

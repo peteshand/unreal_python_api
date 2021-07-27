@@ -8,7 +8,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Type of damage done
 	**/
-	public var damage_type : Dynamic;
+	public var damage_type : Class<Dynamic>;
 	/**
 		(bool):  [Read-Write] if bPainCausing, cause pain when something enters the volume in addition to damage each second
 	**/

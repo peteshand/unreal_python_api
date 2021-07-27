@@ -34,7 +34,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function find_context(context:unreal.ToolMenuContext, class_:Dynamic):unreal.Object;
+	static public function find_context(context:unreal.ToolMenuContext, class_:Class<Dynamic>):unreal.Object;
 	/**
 		x.find_menu(name) -> ToolMenu
 		Finds an existing menu that has been registered or extended.
@@ -94,7 +94,7 @@ package unreal;
 		Returns:
 		    ToolMenu: ToolMenu        Menu object
 	**/
-	public function register_menu(name:unreal.Name, parent:unreal.Name, type:unreal.MultiBoxType, warn_if_already_registered:Bool):unreal.ToolMenu;
+	public function register_menu(name:unreal.Name, parent:unreal.Name = "\"None\"", type:unreal.MultiBoxType = MultiBoxType.MENU, warn_if_already_registered:Bool = true):unreal.ToolMenu;
 	/**
 		x.remove_entry(menu_name, section, name) -> None
 		Removes a menu entry from a given menu and section

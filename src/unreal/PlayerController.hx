@@ -55,7 +55,7 @@ package unreal;
 		(type(Class)):  [Read-Only] Class of my CheatManager.
 		CheatManager for more information about when it will be instantiated.:
 	**/
-	public var cheat_class : Dynamic;
+	public var cheat_class : Class<Dynamic>;
 	/**
 		(CheatManager):  [Read-Only] Object that manages "cheat" commands.
 		
@@ -99,7 +99,7 @@ package unreal;
 		    space (CameraShakePlaySpace): Animation play area
 		    custom_play_space (Rotator): Matrix used when Space = CAPS_UserDefined
 	**/
-	public function client_play_camera_anim(anim_to_play:unreal.CameraAnim, scale:Float, rate:Float, blend_in_time:Float, blend_out_time:Float, loop:Bool, random_start_time:Bool, space:unreal.CameraShakePlaySpace, custom_play_space:unreal.Rotator):Void;
+	public function client_play_camera_anim(anim_to_play:unreal.CameraAnim, scale:Float = 1.000000, rate:Float = 1.000000, blend_in_time:Float = 0.000000, blend_out_time:Float = 0.000000, loop:Bool = false, random_start_time:Bool = false, space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, custom_play_space:unreal.Rotator = [0.000000, 0.000000, 0.000000]):Void;
 	/**
 		deprecated: 'client_play_camera_shake' was renamed to 'client_start_camera_shake'.
 	**/
@@ -122,7 +122,7 @@ package unreal;
 		Args:
 		    new_hud_class (type(Class)):
 	**/
-	public function client_set_hud(new_hud_class:Dynamic):Void;
+	public function client_set_hud(new_hud_class:Class<Dynamic>):Void;
 	/**
 		x.client_spawn_camera_lens_effect(lens_effect_emitter_class) -> None
 		Spawn a camera lens effect (e.g. blood).
@@ -130,7 +130,7 @@ package unreal;
 		Args:
 		    lens_effect_emitter_class (type(Class)):
 	**/
-	public function client_spawn_camera_lens_effect(lens_effect_emitter_class:Dynamic):Void;
+	public function client_spawn_camera_lens_effect(lens_effect_emitter_class:Class<Dynamic>):Void;
 	/**
 		x.client_start_camera_shake(shake, scale=1.000000, play_space=CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot=[0.000000, 0.000000, 0.000000]) -> None
 		Play Camera Shake
@@ -141,7 +141,7 @@ package unreal;
 		    play_space (CameraShakePlaySpace): Which coordinate system to play the shake in (used for CameraAnims within the shake).
 		    user_play_space_rot (Rotator): Matrix used when PlaySpace = CAPS_UserDefined
 	**/
-	public function client_start_camera_shake(shake:Dynamic, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):Void;
+	public function client_start_camera_shake(shake:Class<Dynamic>, scale:Float = 1.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):Void;
 	/**
 		x.client_start_camera_shake_from_source(shake, source_component) -> None
 		Play Camera Shake localized to a given source
@@ -150,7 +150,7 @@ package unreal;
 		    shake (type(Class)): Camera shake animation to play
 		    source_component (CameraShakeSourceComponent): The source from which the camera shakes originates
 	**/
-	public function client_start_camera_shake_from_source(shake:Dynamic, source_component:unreal.CameraShakeSourceComponent):Void;
+	public function client_start_camera_shake_from_source(shake:Class<Dynamic>, source_component:unreal.CameraShakeSourceComponent):Void;
 	/**
 		x.client_stop_camera_shake(shake, immediately=True) -> None
 		Stop camera shake on client.
@@ -159,7 +159,7 @@ package unreal;
 		    shake (type(Class)): 
 		    immediately (bool):
 	**/
-	public function client_stop_camera_shake(shake:Dynamic, immediately:Bool):Void;
+	public function client_stop_camera_shake(shake:Class<Dynamic>, immediately:Bool = true):Void;
 	/**
 		x.client_stop_camera_shakes_from_source(source_component, immediately=True) -> None
 		Stop camera shake on client.
@@ -168,7 +168,7 @@ package unreal;
 		    source_component (CameraShakeSourceComponent): 
 		    immediately (bool):
 	**/
-	public function client_stop_camera_shakes_from_source(source_component:unreal.CameraShakeSourceComponent, immediately:Bool):Void;
+	public function client_stop_camera_shakes_from_source(source_component:unreal.CameraShakeSourceComponent, immediately:Bool = true):Void;
 	/**
 		x.client_stop_force_feedback(force_feedback_effect, tag) -> None
 		Stops a playing force feedback pattern
@@ -296,7 +296,7 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_cursor_for_objects(object_types:unreal.Array, trace_complex:Bool):Dynamic;
+	public function get_hit_result_under_cursor_for_objects(object_types:Array<ObjectTypeQuery>, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hit_result_under_finger(finger_index, trace_channel, trace_complex) -> HitResult or None
 		Get Hit Result Under Finger
@@ -343,7 +343,7 @@ package unreal;
 		
 		    hit_result (HitResult):
 	**/
-	public function get_hit_result_under_finger_for_objects(finger_index:unreal.TouchIndex, object_types:unreal.Array, trace_complex:Bool):Dynamic;
+	public function get_hit_result_under_finger_for_objects(finger_index:unreal.TouchIndex, object_types:Array<ObjectTypeQuery>, trace_complex:Bool):Dynamic;
 	/**
 		x.get_hud() -> HUD
 		Gets the HUD currently being used by this player controller
@@ -554,7 +554,7 @@ package unreal;
 		    scale (float): Scale between 0.0 and 1.0 on the intensity of playback
 		    loop (bool):
 	**/
-	public function play_haptic_effect(haptic_effect:unreal.HapticFeedbackEffect_Base, hand:unreal.ControllerHand, scale:Float, loop:Bool):Void;
+	public function play_haptic_effect(haptic_effect:unreal.HapticFeedbackEffect_Base, hand:unreal.ControllerHand, scale:Float = 1.000000, loop:Bool = false):Void;
 	/**
 		deprecated: 'player_camera' was renamed to 'player_camera_manager'.
 	**/
@@ -572,7 +572,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] PlayerCamera class should be set for each game, otherwise Engine.PlayerCameraManager is used
 	**/
-	public var player_camera_manager_class : Dynamic;
+	public var player_camera_manager_class : Class<Dynamic>;
 	/**
 		(bool):  [Read-Only] True if PlayerController is currently waiting for the match to start or to respawn. Only valid in Spectating state.
 	**/
@@ -590,7 +590,7 @@ package unreal;
 		
 		    screen_location (Vector2D):
 	**/
-	public function project_world_location_to_screen(world_location:unreal.Vector, player_viewport_relative:Bool):Dynamic;
+	public function project_world_location_to_screen(world_location:unreal.Vector, player_viewport_relative:Bool = false):Dynamic;
 	/**
 		x.reset_controller_light_color() -> None
 		Resets the light color of the player's controller to default
@@ -684,7 +684,7 @@ package unreal;
 		    blend_exp (float): Exponent, used by certain blend functions to control the shape of the curve.
 		    lock_outgoing (bool): If true, lock outgoing viewtarget to last frame's camera position for the remainder of the blend.
 	**/
-	public function set_view_target_with_blend(new_view_target:unreal.Actor, blend_time:Float, blend_func:unreal.ViewTargetBlendFunction, blend_exp:Float, lock_outgoing:Bool):Void;
+	public function set_view_target_with_blend(new_view_target:unreal.Actor, blend_time:Float = 0.000000, blend_func:unreal.ViewTargetBlendFunction = ViewTargetBlendFunction.VT_BLEND_LINEAR, blend_exp:Float = 0.000000, lock_outgoing:Bool = false):Void;
 	/**
 		x.set_virtual_joystick_visibility(visible) -> None
 		Set the virtual joystick visibility.

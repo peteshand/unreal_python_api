@@ -11,5 +11,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function contains_emitter_type(type_data:Dynamic):Bool;
+	public function contains_emitter_type(type_data:Class<Dynamic>):Bool;
 }

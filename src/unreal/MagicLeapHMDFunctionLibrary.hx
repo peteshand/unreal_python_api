@@ -138,7 +138,7 @@ package unreal;
 		    focus_actor (Actor): The actor that will be set as the new focus actor.
 		    set_stabilization_actor (bool): True if the function should set the stabilization depth actor to match the passed in focus actor. (RECOMMENDED TO STAY CHECKED)
 	**/
-	static public function set_focus_actor(focus_actor:unreal.Actor, set_stabilization_actor:Bool):Void;
+	static public function set_focus_actor(focus_actor:unreal.Actor, set_stabilization_actor:Bool = true):Void;
 	/**
 		X.set_stabilization_depth_actor(stabilization_depth_actor, set_focus_actor=True) -> None
 		Set the actor whose location is used as the depth for timewarp stabilization.
@@ -147,5 +147,5 @@ package unreal;
 		    stabilization_depth_actor (Actor): The actor that will be set as the new stabilization depth actor.
 		    set_focus_actor (bool): True if the function should set the focus actor to match the passed in stabilization depth actor. (RECOMMENDED TO STAY CHECKED)
 	**/
-	static public function set_stabilization_depth_actor(stabilization_depth_actor:unreal.Actor, set_focus_actor:Bool):Void;
+	static public function set_stabilization_depth_actor(stabilization_depth_actor:unreal.Actor, set_focus_actor:Bool = true):Void;
 }

@@ -22,5 +22,5 @@ package unreal;
 		Returns:
 		    Array(MovieSceneObjectBindingID):
 	**/
-	public function find_bindings_by_tag(binding_name:unreal.Name):Dynamic;
+	public function find_bindings_by_tag(binding_name:unreal.Name):Array<MovieSceneObjectBindingID>;
 }

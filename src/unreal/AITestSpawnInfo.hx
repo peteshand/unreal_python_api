@@ -8,7 +8,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] class to override default pawn's controller class. If None the default will be used
 	**/
-	public var controller_class : Dynamic;
+	public var controller_class : Class<Dynamic>;
 	/**
 		(int32):  [Read-Write] Number to Spawn
 	**/
@@ -16,7 +16,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Determines AI to be spawned
 	**/
-	public var pawn_class : Dynamic;
+	public var pawn_class : Class<Dynamic>;
 	/**
 		(float):  [Read-Write] delay before attempting first spawn
 	**/

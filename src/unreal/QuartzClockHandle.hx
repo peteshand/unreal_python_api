@@ -91,7 +91,7 @@ package unreal;
 		    delegate (OnQuartzCommandEventBP): 
 		    beats_per_minute (float):
 	**/
-	public function set_beats_per_minute(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, beats_per_minute:Float):Void;
+	public function set_beats_per_minute(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, beats_per_minute:Float = 60.000000):Void;
 	/**
 		x.set_milliseconds_per_tick(world_context_object, quantization_boundary, delegate, milliseconds_per_tick=100.000000) -> None
 		Metronome Alteration (setters)
@@ -102,7 +102,7 @@ package unreal;
 		    delegate (OnQuartzCommandEventBP): 
 		    milliseconds_per_tick (float):
 	**/
-	public function set_milliseconds_per_tick(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, milliseconds_per_tick:Float):Void;
+	public function set_milliseconds_per_tick(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, milliseconds_per_tick:Float = 100.000000):Void;
 	/**
 		x.set_seconds_per_tick(world_context_object, quantization_boundary, delegate, seconds_per_tick=0.250000) -> None
 		Set Seconds Per Tick
@@ -113,7 +113,7 @@ package unreal;
 		    delegate (OnQuartzCommandEventBP): 
 		    seconds_per_tick (float):
 	**/
-	public function set_seconds_per_tick(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, seconds_per_tick:Float):Void;
+	public function set_seconds_per_tick(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, seconds_per_tick:Float = 0.250000):Void;
 	/**
 		x.set_thirty_second_notes_per_minute(world_context_object, quantization_boundary, delegate, thirty_seconds_notes_per_minute=960.000000) -> None
 		Set Thirty Second Notes Per Minute
@@ -124,7 +124,7 @@ package unreal;
 		    delegate (OnQuartzCommandEventBP): 
 		    thirty_seconds_notes_per_minute (float):
 	**/
-	public function set_thirty_second_notes_per_minute(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, thirty_seconds_notes_per_minute:Float):Void;
+	public function set_thirty_second_notes_per_minute(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, thirty_seconds_notes_per_minute:Float = 960.000000):Void;
 	/**
 		x.set_ticks_per_second(world_context_object, quantization_boundary, delegate, ticks_per_second=10.000000) -> None
 		Set Ticks Per Second
@@ -135,7 +135,7 @@ package unreal;
 		    delegate (OnQuartzCommandEventBP): 
 		    ticks_per_second (float):
 	**/
-	public function set_ticks_per_second(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, ticks_per_second:Float):Void;
+	public function set_ticks_per_second(world_context_object:unreal.Object, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, ticks_per_second:Float = 10.000000):Void;
 	/**
 		x.subscribe_to_all_quantization_events(world_context_object, on_quantization_event) -> None
 		Subscribe to All Quantization Events

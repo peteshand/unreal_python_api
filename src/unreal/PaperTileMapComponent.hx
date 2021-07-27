@@ -22,7 +22,7 @@ package unreal;
 		    pixels_per_unreal_unit (float): 
 		    create_layer (bool): Should an empty layer be created?
 	**/
-	public function create_new_tile_map(map_width:Int, map_height:Int, tile_width:Int, tile_height:Int, pixels_per_unreal_unit:Float, create_layer:Bool):Void;
+	public function create_new_tile_map(map_width:Int = 4, map_height:Int = 4, tile_width:Int = 32, tile_height:Int = 32, pixels_per_unreal_unit:Float = 1.000000, create_layer:Bool = true):Void;
 	/**
 		x.get_layer_color(layer=0) -> LinearColor
 		Gets the per-layer color multiplier for a specific layer (multiplied with the tile map color and passed to the material as a vertex color)
@@ -33,7 +33,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	public function get_layer_color(layer:Int):unreal.LinearColor;
+	public function get_layer_color(layer:Int = 0):unreal.LinearColor;
 	/**
 		x.get_map_size() -> (map_width=int32, map_height=int32, num_layers=int32)
 		Returns the size of the tile map
@@ -74,7 +74,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tile_center_position(tile_x:Int, tile_y:Int, layer_index:Int, world_space:Bool):unreal.Vector;
+	public function get_tile_center_position(tile_x:Int, tile_y:Int, layer_index:Int = 0, world_space:Bool = false):unreal.Vector;
 	/**
 		x.get_tile_corner_position(tile_x, tile_y, layer_index=0, world_space=False) -> Vector
 		Returns the position of the top left corner of the specified tile
@@ -88,7 +88,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tile_corner_position(tile_x:Int, tile_y:Int, layer_index:Int, world_space:Bool):unreal.Vector;
+	public function get_tile_corner_position(tile_x:Int, tile_y:Int, layer_index:Int = 0, world_space:Bool = false):unreal.Vector;
 	/**
 		x.get_tile_map_color() -> LinearColor
 		Gets the tile map global color multiplier (multiplied with the per-layer color and passed to the material as a vertex color)
@@ -112,7 +112,7 @@ package unreal;
 		
 		    points (Array(Vector)):
 	**/
-	public function get_tile_polygon(tile_x:Int, tile_y:Int, layer_index:Int, world_space:Bool):Dynamic;
+	public function get_tile_polygon(tile_x:Int, tile_y:Int, layer_index:Int = 0, world_space:Bool = false):Array<Vector>;
 	/**
 		x.make_tile_map_editable() -> None
 		Makes the tile map asset pointed to by this component editable.  Nothing happens if it was already instanced, but
@@ -150,7 +150,7 @@ package unreal;
 		    thickness (float): 
 		    rebuild_collision (bool):
 	**/
-	public function set_default_collision_thickness(thickness:Float, rebuild_collision:Bool):Void;
+	public function set_default_collision_thickness(thickness:Float, rebuild_collision:Bool = true):Void;
 	/**
 		x.set_layer_collision(layer=0, has_collision=True, override_thickness=True, custom_thickness=50.000000, override_offset=False, custom_offset=0.000000, rebuild_collision=True) -> None
 		Sets the collision thickness for a specific layer
@@ -165,7 +165,7 @@ package unreal;
 		    custom_offset (float): 
 		    rebuild_collision (bool):
 	**/
-	public function set_layer_collision(layer:Int, has_collision:Bool, override_thickness:Bool, custom_thickness:Float, override_offset:Bool, custom_offset:Float, rebuild_collision:Bool):Void;
+	public function set_layer_collision(layer:Int = 0, has_collision:Bool = true, override_thickness:Bool = true, custom_thickness:Float = 50.000000, override_offset:Bool = false, custom_offset:Float = 0.000000, rebuild_collision:Bool = true):Void;
 	/**
 		x.set_layer_color(new_color, layer=0) -> None
 		Sets the per-layer color multiplier for a specific layer (multiplied with the tile map color and passed to the material as a vertex color)
@@ -175,7 +175,7 @@ package unreal;
 		    new_color (LinearColor): 
 		    layer (int32):
 	**/
-	public function set_layer_color(new_color:unreal.LinearColor, layer:Int):Void;
+	public function set_layer_color(new_color:unreal.LinearColor, layer:Int = 0):Void;
 	/**
 		x.set_tile(x, y, layer, new_value) -> None
 		Modifies the contents of a specified tile cell (Note: This will only work on components that own their own tile map (OwnsTileMap returns true), you cannot modify standalone tile map assets)

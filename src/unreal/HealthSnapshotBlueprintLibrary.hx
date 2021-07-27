@@ -9,7 +9,7 @@ package unreal;
 		    snapshot_title (str): The name to be given to the new HealthSnapshot.
 		    reset_stats (bool):
 	**/
-	static public function log_performance_snapshot(snapshot_title:String, reset_stats:Bool):Void;
+	static public function log_performance_snapshot(snapshot_title:String, reset_stats:Bool = true):Void;
 	/**
 		X.start_performance_snapshots() -> None
 		Begins capturing FPS charts that can be used to include performance data in a HealthSnapshot. If snapshots are already running clears all accumulated performance data

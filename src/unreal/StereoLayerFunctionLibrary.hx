@@ -29,7 +29,7 @@ package unreal;
 		    show_on_set (bool):
 	**/
 	@:deprecated
-	static public function set_splash_screen(texture:unreal.Texture, scale:unreal.Vector2D, offset:unreal.Vector, show_loading_movie:Bool, show_on_set:Bool):Void;
+	static public function set_splash_screen(texture:unreal.Texture, scale:unreal.Vector2D = [1.000000, 1.000000], offset:unreal.Vector = [0.000000, 0.000000, 0.000000], show_loading_movie:Bool = false, show_on_set:Bool = false):Void;
 	/**
 		X.show_splash_screen() -> None
 		Show the splash screen and override the VR display

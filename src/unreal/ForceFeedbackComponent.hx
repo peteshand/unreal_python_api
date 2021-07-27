@@ -58,7 +58,7 @@ package unreal;
 		Args:
 		    start_time (float):
 	**/
-	public function play(start_time:Float):Void;
+	public function play(start_time:Float = 0.000000):Void;
 	/**
 		x.set_force_feedback_effect(new_force_feedback_effect) -> None
 		Set what force feedback effect is played by this component

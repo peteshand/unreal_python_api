@@ -14,7 +14,7 @@ package unreal;
 		
 		    out_constant_q (Array(float)):
 	**/
-	public function get_channel_constant_q_at_time(seconds:Float, channel:Int):Dynamic;
+	public function get_channel_constant_q_at_time(seconds:Float, channel:Int):Array<float>;
 	/**
 		x.get_normalized_channel_constant_q_at_time(seconds, channel) -> Array(float)
 		Get a specific channel cqt of the analyzed sound at a given time.
@@ -28,7 +28,7 @@ package unreal;
 		
 		    out_constant_q (Array(float)):
 	**/
-	public function get_normalized_channel_constant_q_at_time(seconds:Float, channel:Int):Dynamic;
+	public function get_normalized_channel_constant_q_at_time(seconds:Float, channel:Int):Array<float>;
 	/**
 		(ConstantQNRTSettings):  [Read-Only] The settings for the audio analyzer.
 	**/

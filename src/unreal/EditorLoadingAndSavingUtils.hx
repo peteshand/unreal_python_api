@@ -18,7 +18,7 @@ package unreal;
 		
 		    out_dirty_packages (Array(Package)): Array to append dirty packages to.
 	**/
-	static public function get_dirty_content_packages():Dynamic;
+	static public function get_dirty_content_packages():Array<Package>;
 	/**
 		X.get_dirty_map_packages() -> Array(Package)
 		Appends array with all currently dirty map packages.
@@ -28,7 +28,7 @@ package unreal;
 		
 		    out_dirty_packages (Array(Package)): Array to append dirty packages to.
 	**/
-	static public function get_dirty_map_packages():Dynamic;
+	static public function get_dirty_map_packages():Array<Package>;
 	/**
 		X.import_scene(filename) -> None
 		Imports a file such as (FBX or obj) and spawns actors f into the current level
@@ -95,7 +95,7 @@ package unreal;
 		
 		    out_error_message (Text): An error message specifying any problems with reloading packages
 	**/
-	static public function reload_packages(packages_to_reload:unreal.Array, interaction_mode:unreal.ReloadPackagesInteractionMode):python.Tuple<Dynamic>;
+	static public function reload_packages(packages_to_reload:Array<Package>, interaction_mode:unreal.ReloadPackagesInteractionMode = ReloadPackagesInteractionMode.INTERACTIVE):python.Tuple<Dynamic>;
 	/**
 		X.save_current_level() -> bool
 		Saves the active level, prompting the use for checkout if necessary.
@@ -154,7 +154,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	static public function save_packages(packages_to_save:unreal.Array, only_dirty:Bool):Bool;
+	static public function save_packages(packages_to_save:Array<Package>, only_dirty:Bool):Bool;
 	/**
 		X.save_packages_with_dialog(packages_to_save, only_dirty) -> bool
 		Save all packages. Optionally prompting the user to select which packages to save.
@@ -167,7 +167,7 @@ package unreal;
 		Returns:
 		    bool: true on success, false on fail.
 	**/
-	static public function save_packages_with_dialog(packages_to_save:unreal.Array, only_dirty:Bool):Bool;
+	static public function save_packages_with_dialog(packages_to_save:Array<Package>, only_dirty:Bool):Bool;
 	/**
 		X.unload_packages(packages_to_unload) -> (out_any_packages_unloaded=bool, out_error_message=Text)
 		Unloads a list of packages
@@ -182,5 +182,5 @@ package unreal;
 		
 		    out_error_message (Text):
 	**/
-	static public function unload_packages(packages_to_unload:unreal.Array):python.Tuple<Dynamic>;
+	static public function unload_packages(packages_to_unload:Array<Package>):python.Tuple<Dynamic>;
 }

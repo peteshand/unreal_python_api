@@ -11,5 +11,5 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function find_by_class(class_:Dynamic):unreal.Object;
+	public function find_by_class(class_:Class<Dynamic>):unreal.Object;
 }

@@ -15,7 +15,7 @@ package unreal;
 		    clear_before_add (bool): (in) If true, clears splashes before adding a new one.
 	**/
 	@:deprecated
-	static public function add_loading_splash_screen(texture:unreal.Texture2D, translation_in_meters:unreal.Vector, rotation:unreal.Rotator, size_in_meters:unreal.Vector2D, delta_rotation:unreal.Rotator, clear_before_add:Bool):Void;
+	static public function add_loading_splash_screen(texture:unreal.Texture2D, translation_in_meters:unreal.Vector, rotation:unreal.Rotator, size_in_meters:unreal.Vector2D = [1.000000, 1.000000], delta_rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], clear_before_add:Bool = false):Void;
 	/**
 		X.clear_loading_splash_screens() -> None
 		Removes all the splash screens.
@@ -46,7 +46,7 @@ package unreal;
 		Returns:
 		    Array(float):
 	**/
-	static public function get_available_display_frequencies():Dynamic;
+	static public function get_available_display_frequencies():Array<float>;
 	/**
 		X.get_base_rotation_and_base_offset_in_meters() -> (out_rotation=Rotator, out_base_offset_in_meters=Vector)
 		Returns current base rotation and base offset.
@@ -153,7 +153,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	static public function get_guardian_points(boundary_type:unreal.BoundaryType, use_pawn_space:Bool):Dynamic;
+	static public function get_guardian_points(boundary_type:unreal.BoundaryType, use_pawn_space:Bool = false):Array<Vector>;
 	/**
 		X.get_hmd_color_desc() -> ColorSpace
 		Returns the color space of the target HMD
@@ -212,7 +212,7 @@ package unreal;
 		
 		    neck_position (Vector): (out) The estimated neck position, calculated using NeckToEye vector from User Profile. Same coordinate space as DevicePosition.
 	**/
-	static public function get_pose(use_orienation_for_player_camera:Bool, use_position_for_player_camera:Bool, position_scale:unreal.Vector):python.Tuple<Dynamic>;
+	static public function get_pose(use_orienation_for_player_camera:Bool = false, use_position_for_player_camera:Bool = false, position_scale:unreal.Vector = [0.000000, 0.000000, 0.000000]):python.Tuple<Dynamic>;
 	/**
 		X.get_raw_sensor_data(device_type=TrackedDeviceType.HMD) -> (angular_acceleration=Vector, linear_acceleration=Vector, angular_velocity=Vector, linear_velocity=Vector, time_in_seconds=float)
 		Reports raw sensor data. If HMD doesn't support any of the parameters then it will be set to zero.
@@ -233,7 +233,7 @@ package unreal;
 		
 		    time_in_seconds (float): (out) Time when the reported IMU reading took place, in seconds.
 	**/
-	static public function get_raw_sensor_data(device_type:unreal.TrackedDeviceType):python.Tuple<Dynamic>;
+	static public function get_raw_sensor_data(device_type:unreal.TrackedDeviceType = TrackedDeviceType.HMD):python.Tuple<Dynamic>;
 	/**
 		X.get_system_hmd3_dof_mode_enabled() -> bool
 		Returns true if system headset is in 3dof mode
@@ -348,7 +348,7 @@ package unreal;
 		    color_offset (LinearColor): 
 		    apply_to_all_layers (bool):
 	**/
-	static public function set_color_scale_and_offset(color_scale:unreal.LinearColor, color_offset:unreal.LinearColor, apply_to_all_layers:Bool):Void;
+	static public function set_color_scale_and_offset(color_scale:unreal.LinearColor, color_offset:unreal.LinearColor, apply_to_all_layers:Bool = false):Void;
 	/**
 		X.set_cpu_and_gpu_levels(cpu_level, gpu_level) -> None
 		Returns if the device is currently tracked by the runtime or not.

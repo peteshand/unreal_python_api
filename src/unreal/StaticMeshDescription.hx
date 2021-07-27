@@ -37,7 +37,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function get_vertex_instance_uv(vertex_instance_id:unreal.VertexInstanceID, uv_index:Int):unreal.Vector2D;
+	public function get_vertex_instance_uv(vertex_instance_id:unreal.VertexInstanceID, uv_index:Int = 0):unreal.Vector2D;
 	/**
 		x.set_polygon_group_material_slot_name(polygon_group_id, slot_name) -> None
 		Set Polygon Group Material Slot Name
@@ -56,5 +56,5 @@ package unreal;
 		    uv (Vector2D): 
 		    uv_index (int32):
 	**/
-	public function set_vertex_instance_uv(vertex_instance_id:unreal.VertexInstanceID, uv:unreal.Vector2D, uv_index:Int):Void;
+	public function set_vertex_instance_uv(vertex_instance_id:unreal.VertexInstanceID, uv:unreal.Vector2D, uv_index:Int = 0):Void;
 }

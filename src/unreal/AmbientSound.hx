@@ -26,7 +26,7 @@ package unreal;
 		    fade_volume_level (float):
 	**/
 	@:deprecated
-	public function fade_in(fade_in_duration:Float, fade_volume_level:Float):Void;
+	public function fade_in(fade_in_duration:Float, fade_volume_level:Float = 1.000000):Void;
 	/**
 		x.fade_out(fade_out_duration, fade_volume_level) -> None
 		Fade Out
@@ -47,7 +47,7 @@ package unreal;
 		    start_time (float):
 	**/
 	@:deprecated
-	public function play(start_time:Float):Void;
+	public function play(start_time:Float = 0.000000):Void;
 	/**
 		x.stop() -> None
 		Stop

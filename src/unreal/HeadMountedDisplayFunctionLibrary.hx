@@ -81,7 +81,7 @@ package unreal;
 		Returns:
 		    Array(XRDeviceId): A list of device identifiers matching the query. Use these to query and operate on the device (e.g. through GetDevicePose, AddDeviceVisualizationComponent, etc.)
 	**/
-	static public function enumerate_tracked_devices(system_id:unreal.Name, device_type:unreal.XRTrackedDeviceType):Dynamic;
+	static public function enumerate_tracked_devices(system_id:unreal.Name = "\"None\"", device_type:unreal.XRTrackedDeviceType = XRTrackedDeviceType.ANY):Array<XRDeviceId>;
 	/**
 		X.get_controller_transform_for_time(world_context, controller_index, motion_source, time) -> (time_was_used=bool, orientation=Rotator, position=Vector, provided_linear_velocity=bool, linear_velocity=Vector, provided_angular_velocity=bool, angular_velocity_rad_per_sec=Vector) or None
 		Get the transform and potentially velocity data at a specified time near the current frame in unreal world space.
@@ -303,7 +303,7 @@ package unreal;
 		
 		    is_active (bool): (out) True, if the query for the specified sensor succeeded.
 	**/
-	static public function get_tracking_sensor_parameters(index:Int):python.Tuple<Dynamic>;
+	static public function get_tracking_sensor_parameters(index:Int = 0):python.Tuple<Dynamic>;
 	/**
 		X.get_tracking_to_world_transform(world_context) -> Transform
 		Returns a transform that can be used to convert points from tracking space to world space.
@@ -417,7 +417,7 @@ package unreal;
 		    yaw (float): (in) the desired yaw to be set after orientation reset.
 		    options (OrientPositionSelector): (in) specifies either position, orientation or both should be reset.
 	**/
-	static public function reset_orientation_and_position(yaw:Float, options:unreal.OrientPositionSelector):Void;
+	static public function reset_orientation_and_position(yaw:Float = 0.000000, options:unreal.OrientPositionSelector = OrientPositionSelector.ORIENTATION_AND_POSITION):Void;
 	/**
 		X.set_clipping_planes(near, far) -> None
 		Sets near and far clipping planes (NCP and FCP) for stereo rendering. Similar to 'stereo ncp= fcp' console command, but NCP and FCP set by this
@@ -459,7 +459,7 @@ package unreal;
 		    clear_black (bool): 
 		    use_alpha (bool):
 	**/
-	static public function set_spectator_screen_mode_texture_plus_eye_layout(eye_rect_min:unreal.Vector2D, eye_rect_max:unreal.Vector2D, texture_rect_min:unreal.Vector2D, texture_rect_max:unreal.Vector2D, draw_eye_first:Bool, clear_black:Bool, use_alpha:Bool):Void;
+	static public function set_spectator_screen_mode_texture_plus_eye_layout(eye_rect_min:unreal.Vector2D, eye_rect_max:unreal.Vector2D, texture_rect_min:unreal.Vector2D, texture_rect_max:unreal.Vector2D, draw_eye_first:Bool = true, clear_black:Bool = false, use_alpha:Bool = false):Void;
 	/**
 		X.set_spectator_screen_texture(texture) -> None
 		Change the texture displayed on the social screen
@@ -484,7 +484,7 @@ package unreal;
 		    world_context (Object): 
 		    new_scale (float): Specifies how many Unreal units correspond to one meter in the real world
 	**/
-	static public function set_world_to_meters_scale(world_context:unreal.Object, new_scale:Float):Void;
+	static public function set_world_to_meters_scale(world_context:unreal.Object, new_scale:Float = 100.000000):Void;
 	/**
 		X.set_xr_disconnect_delegate(disconnected_delegate) -> None
 		Set XRDisconnect Delegate

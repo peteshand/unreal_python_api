@@ -26,7 +26,7 @@ package unreal;
 		    play_rate (float): 
 		    start_position (float):
 	**/
-	public function play_anim(is_looping:Bool, play_rate:Float, start_position:Float):Void;
+	public function play_anim(is_looping:Bool = false, play_rate:Float = 1.000000, start_position:Float = 0.000000):Void;
 	/**
 		x.set_animation_asset(new_asset, is_looping=True, play_rate=1.000000) -> None
 		Set New Asset - calls InitializeAnimation, for now we need MeshComponent *
@@ -36,7 +36,7 @@ package unreal;
 		    is_looping (bool): 
 		    play_rate (float):
 	**/
-	public function set_animation_asset(new_asset:unreal.AnimationAsset, is_looping:Bool, play_rate:Float):Void;
+	public function set_animation_asset(new_asset:unreal.AnimationAsset, is_looping:Bool = true, play_rate:Float = 1.000000):Void;
 	/**
 		x.set_blend_space_input(blend_input) -> None
 		Set Blend Space Input
@@ -77,7 +77,7 @@ package unreal;
 		    position (float): 
 		    fire_notifies (bool):
 	**/
-	public function set_position(position:Float, fire_notifies:Bool):Void;
+	public function set_position(position:Float, fire_notifies:Bool = true):Void;
 	/**
 		x.set_position_with_previous_time(position, previous_time, fire_notifies=True) -> None
 		Set Position with Previous Time
@@ -87,7 +87,7 @@ package unreal;
 		    previous_time (float): 
 		    fire_notifies (bool):
 	**/
-	public function set_position_with_previous_time(position:Float, previous_time:Float, fire_notifies:Bool):Void;
+	public function set_position_with_previous_time(position:Float, previous_time:Float, fire_notifies:Bool = true):Void;
 	/**
 		x.set_preview_curve_override(pose_name, value, remove_if_zero) -> None
 		Set pose value

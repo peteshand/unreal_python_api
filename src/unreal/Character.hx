@@ -61,7 +61,7 @@ package unreal;
 		Args:
 		    client_simulation (bool):
 	**/
-	public function crouch(client_simulation:Bool):Void;
+	public function crouch(client_simulation:Bool = false):Void;
 	/**
 		(float):  [Read-Write] Default crouched eye height
 	**/
@@ -309,7 +309,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function play_anim_montage(anim_montage:unreal.AnimMontage, play_rate:Float, start_section_name:unreal.Name):Float;
+	public function play_anim_montage(anim_montage:unreal.AnimMontage, play_rate:Float = 1.000000, start_section_name:unreal.Name = "\"None\""):Float;
 	/**
 		(bool):  [Read-Only] When true, player wants to jump
 	**/
@@ -325,7 +325,7 @@ package unreal;
 		Args:
 		    anim_montage (AnimMontage):
 	**/
-	public function stop_anim_montage(anim_montage:unreal.AnimMontage):Void;
+	public function stop_anim_montage(anim_montage:unreal.AnimMontage = null):Void;
 	/**
 		x.stop_jumping() -> None
 		Stop the character from jumping on the next update.
@@ -344,7 +344,7 @@ package unreal;
 		Args:
 		    client_simulation (bool):
 	**/
-	public function un_crouch(client_simulation:Bool):Void;
+	public function un_crouch(client_simulation:Bool = false):Void;
 	/**
 		x.update_custom_movement(delta_time) -> None
 		Event for implementing custom character movement mode. Called by CharacterMovement if MovementMode is set to Custom.

@@ -4,7 +4,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Role
 	**/
-	public var role : Dynamic;
+	public var role : Class<Dynamic>;
 	/**
 		(LiveLinkSubjectName):  [Read-Write] Subject
 	**/

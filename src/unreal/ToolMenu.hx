@@ -37,7 +37,7 @@ package unreal;
 		    insert_name (Name): 
 		    insert_type (ToolMenuInsertType):
 	**/
-	public function add_section(section_name:unreal.Name, label:unreal.Text, insert_name:unreal.Name, insert_type:unreal.ToolMenuInsertType):Void;
+	public function add_section(section_name:unreal.Name, label:unreal.Text = "\"\"", insert_name:unreal.Name = "\"None\"", insert_type:unreal.ToolMenuInsertType = ToolMenuInsertType.DEFAULT):Void;
 	/**
 		x.add_sub_menu(owner, section_name, name, label, tool_tip="") -> ToolMenu
 		Add Sub Menu Script
@@ -52,7 +52,7 @@ package unreal;
 		Returns:
 		    ToolMenu:
 	**/
-	public function add_sub_menu(owner:unreal.Name, section_name:unreal.Name, name:unreal.Name, label:unreal.Text, tool_tip:unreal.Text):unreal.ToolMenu;
+	public function add_sub_menu(owner:unreal.Name, section_name:unreal.Name, name:unreal.Name, label:unreal.Text, tool_tip:unreal.Text = "\"\""):unreal.ToolMenu;
 	/**
 		(bool):  [Read-Write] Close Self Only
 	**/
@@ -67,7 +67,7 @@ package unreal;
 		    parent (Name): 
 		    type (MultiBoxType):
 	**/
-	public function init_menu(owner:unreal.ToolMenuOwner, name:unreal.Name, parent:unreal.Name, type:unreal.MultiBoxType):Void;
+	public function init_menu(owner:unreal.ToolMenuOwner, name:unreal.Name, parent:unreal.Name = "\"None\"", type:unreal.MultiBoxType = MultiBoxType.MENU):Void;
 	/**
 		(Name):  [Read-Write] Menu Name
 	**/

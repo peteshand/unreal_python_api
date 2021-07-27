@@ -25,7 +25,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function get_key_frame_index_at_time(time:Float, clamp_to_ends:Bool):Int;
+	public function get_key_frame_index_at_time(time:Float, clamp_to_ends:Bool = false):Int;
 	/**
 		x.get_num_frames() -> int32
 		Returns the total number of frames
@@ -65,7 +65,7 @@ package unreal;
 		Returns:
 		    PaperSprite:
 	**/
-	public function get_sprite_at_time(time:Float, clamp_to_ends:Bool):unreal.PaperSprite;
+	public function get_sprite_at_time(time:Float, clamp_to_ends:Bool = false):unreal.PaperSprite;
 	/**
 		x.get_total_duration() -> float
 		Returns the total duration in seconds

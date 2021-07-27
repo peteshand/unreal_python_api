@@ -8,7 +8,7 @@ package unreal;
 		Args:
 		    triangles (Array(OculusMR_PlaneMeshTriangle)):
 	**/
-	public function add_custom_mesh_triangles(triangles:unreal.Array):Void;
+	public function add_custom_mesh_triangles(triangles:Array<OculusMR_PlaneMeshTriangle>):Void;
 	/**
 		x.clear_custom_mesh_triangles() -> None
 		Removes all geometry from this triangle mesh.  Does not deallocate memory, allowing new geometry to reuse the existing allocation.
@@ -24,5 +24,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function set_custom_mesh_triangles(triangles:unreal.Array):Bool;
+	public function set_custom_mesh_triangles(triangles:Array<OculusMR_PlaneMeshTriangle>):Bool;
 }

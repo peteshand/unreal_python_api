@@ -101,7 +101,7 @@ package unreal;
 		    paint_layer (LandscapeLayerInfoObject): LayerInfo to paint, or none to skip painting. The landscape must be configured with the same layer info in one of its layers or this will do nothing!
 		    edit_layer_name (Name): Name of the landscape edition layer to affect (in Edit Layers mode)
 	**/
-	public function editor_apply_spline(spline_component:unreal.SplineComponent, start_width:Float, end_width:Float, start_side_falloff:Float, end_side_falloff:Float, start_roll:Float, end_roll:Float, num_subdivisions:Int, raise_heights:Bool, lower_heights:Bool, paint_layer:unreal.LandscapeLayerInfoObject, edit_layer_name:unreal.Name):Void;
+	public function editor_apply_spline(spline_component:unreal.SplineComponent, start_width:Float = 200.000000, end_width:Float = 200.000000, start_side_falloff:Float = 200.000000, end_side_falloff:Float = 200.000000, start_roll:Float = 0.000000, end_roll:Float = 0.000000, num_subdivisions:Int = 20, raise_heights:Bool = true, lower_heights:Bool = true, paint_layer:unreal.LandscapeLayerInfoObject = null, edit_layer_name:unreal.Name = "\"None\""):Void;
 	/**
 		(bool):  [Read-Only] If true, Landscape will generate overlap events when other components are overlapping it (eg Begin Overlap).
 		Both the Landscape and the other component must have this flag enabled for overlap events to occur.
@@ -121,7 +121,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function landscape_export_heightmap_to_render_target(render_target:unreal.TextureRenderTarget2D, export_height_into_rg_channel:Bool, export_landscape_proxies:Bool):Bool;
+	public function landscape_export_heightmap_to_render_target(render_target:unreal.TextureRenderTarget2D, export_height_into_rg_channel:Bool = false, export_landscape_proxies:Bool = true):Bool;
 	/**
 		x.landscape_export_weightmap_to_render_target(render_target, layer_name) -> bool
 		Output a landscape weightmap to a render target
@@ -146,7 +146,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function landscape_import_heightmap_from_render_target(render_target:unreal.TextureRenderTarget2D, import_height_from_rg_channel:Bool):Bool;
+	public function landscape_import_heightmap_from_render_target(render_target:unreal.TextureRenderTarget2D, import_height_from_rg_channel:Bool = false):Bool;
 	/**
 		x.landscape_import_weightmap_from_render_target(render_target, layer_name) -> bool
 		Overwrites a landscape weightmap with render target data

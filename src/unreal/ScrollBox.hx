@@ -99,7 +99,7 @@ package unreal;
 		    scroll_destination (DescendantScrollDestination): 
 		    padding (float):
 	**/
-	public function scroll_widget_into_view(widget_to_find:unreal.Widget, animate_scroll:Bool, scroll_destination:unreal.DescendantScrollDestination, padding:Float):Void;
+	public function scroll_widget_into_view(widget_to_find:unreal.Widget, animate_scroll:Bool = true, scroll_destination:unreal.DescendantScrollDestination = DescendantScrollDestination.INTO_VIEW, padding:Float = 0.000000):Void;
 	/**
 		(Margin):  [Read-Only] The margin around the scrollbar
 	**/

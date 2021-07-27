@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    LevelVariantSets:
 	**/
-	public function get_level_variant_sets(load:Bool):unreal.LevelVariantSets;
+	public function get_level_variant_sets(load:Bool = false):unreal.LevelVariantSets;
 	/**
 		(SoftObjectPath):  [Read-Only] Level Variant Sets
 	**/

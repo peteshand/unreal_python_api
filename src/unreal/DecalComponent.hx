@@ -114,7 +114,7 @@ package unreal;
 		    duration (float): Time in second for the decal to fade out.
 		    destroy_owner_after_fade (bool): Should the owning actor automatically be destroyed after it is completely faded out.
 	**/
-	public function set_fade_out(start_delay:Float, duration:Float, destroy_owner_after_fade:Bool):Void;
+	public function set_fade_out(start_delay:Float, duration:Float, destroy_owner_after_fade:Bool = true):Void;
 	/**
 		x.set_fade_screen_size(new_fade_screen_size) -> None
 		Set the FadeScreenSize for this decal component

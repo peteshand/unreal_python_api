@@ -10,7 +10,7 @@ package unreal;
 		    occurrences (int32): 
 		    exact_match (bool):
 	**/
-	static public function add_expected_log_error(expected_pattern_string:String, occurrences:Int, exact_match:Bool):Void;
+	static public function add_expected_log_error(expected_pattern_string:String, occurrences:Int = 1, exact_match:Bool = false):Void;
 	/**
 		X.are_automated_tests_running() -> bool
 		Lets you know if any automated tests are running, or are about to run and the automation system is spinning up tests.
@@ -58,7 +58,7 @@ package unreal;
 		Returns:
 		    AutomationScreenshotOptions:
 	**/
-	static public function get_default_screenshot_options_for_gameplay(tolerance:unreal.ComparisonTolerance, delay:Float):unreal.AutomationScreenshotOptions;
+	static public function get_default_screenshot_options_for_gameplay(tolerance:unreal.ComparisonTolerance = ComparisonTolerance.LOW, delay:Float = 0.200000):unreal.AutomationScreenshotOptions;
 	/**
 		X.get_default_screenshot_options_for_rendering(tolerance=ComparisonTolerance.LOW, delay=0.200000) -> AutomationScreenshotOptions
 		Get Default Screenshot Options for Rendering
@@ -70,7 +70,7 @@ package unreal;
 		Returns:
 		    AutomationScreenshotOptions:
 	**/
-	static public function get_default_screenshot_options_for_rendering(tolerance:unreal.ComparisonTolerance, delay:Float):unreal.AutomationScreenshotOptions;
+	static public function get_default_screenshot_options_for_rendering(tolerance:unreal.ComparisonTolerance = ComparisonTolerance.LOW, delay:Float = 0.200000):unreal.AutomationScreenshotOptions;
 	/**
 		X.get_stat_call_count(stat_name) -> float
 		Get Stat Call Count
@@ -134,7 +134,7 @@ package unreal;
 		    world_context_object (Object): 
 		    value (int32): 0:Cinematic, 1:Epic...etc.
 	**/
-	static public function set_scalability_quality_level_relative_to_max(world_context_object:unreal.Object, value:Int):Void;
+	static public function set_scalability_quality_level_relative_to_max(world_context_object:unreal.Object, value:Int = 1):Void;
 	/**
 		X.set_scalability_quality_to_epic(world_context_object) -> None
 		Set Scalability Quality to Epic
@@ -205,5 +205,5 @@ package unreal;
 		Returns:
 		    AutomationEditorTask:
 	**/
-	static public function take_high_res_screenshot(res_x:Int, res_y:Int, filename:String, camera:unreal.CameraActor, mask_enabled:Bool, capture_hdr:Bool, comparison_tolerance:unreal.ComparisonTolerance, comparison_notes:String, delay:Float):unreal.AutomationEditorTask;
+	static public function take_high_res_screenshot(res_x:Int, res_y:Int, filename:String, camera:unreal.CameraActor = null, mask_enabled:Bool = false, capture_hdr:Bool = false, comparison_tolerance:unreal.ComparisonTolerance = ComparisonTolerance.LOW, comparison_notes:String = "\"\"", delay:Float = 0.000000):unreal.AutomationEditorTask;
 }

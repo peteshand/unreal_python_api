@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	static public function get_bone_rotation(device_hand:unreal.OculusHandType, bone_id:unreal.Bone, controller_index:Int):unreal.Quat;
+	static public function get_bone_rotation(device_hand:unreal.OculusHandType, bone_id:unreal.Bone, controller_index:Int = 0):unreal.Quat;
 	/**
 		X.get_dominant_hand(controller_index=0) -> OculusHandType
 		Get the user's dominant hand
@@ -35,7 +35,7 @@ package unreal;
 		Returns:
 		    OculusHandType:
 	**/
-	static public function get_dominant_hand(controller_index:Int):unreal.OculusHandType;
+	static public function get_dominant_hand(controller_index:Int = 0):unreal.OculusHandType;
 	/**
 		X.get_hand_scale(device_hand, controller_index=0) -> float
 		Get the scale of the hand
@@ -47,7 +47,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_hand_scale(device_hand:unreal.OculusHandType, controller_index:Int):Float;
+	static public function get_hand_scale(device_hand:unreal.OculusHandType, controller_index:Int = 0):Float;
 	/**
 		X.get_hand_skeletal_mesh(hand_skeletal_mesh, skeleton_type, mesh_type, world_to_meters=100.000000) -> bool
 		Creates a new runtime hand skeletal mesh.
@@ -61,7 +61,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function get_hand_skeletal_mesh(hand_skeletal_mesh:unreal.SkeletalMesh, skeleton_type:unreal.OculusHandType, mesh_type:unreal.OculusHandType, world_to_meters:Float):Bool;
+	static public function get_hand_skeletal_mesh(hand_skeletal_mesh:unreal.SkeletalMesh, skeleton_type:unreal.OculusHandType, mesh_type:unreal.OculusHandType, world_to_meters:Float = 100.000000):Bool;
 	/**
 		X.get_pointer_pose(device_hand, controller_index=0) -> Transform
 		Get the pointer pose
@@ -73,7 +73,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	static public function get_pointer_pose(device_hand:unreal.OculusHandType, controller_index:Int):unreal.Transform;
+	static public function get_pointer_pose(device_hand:unreal.OculusHandType, controller_index:Int = 0):unreal.Transform;
 	/**
 		X.get_tracking_confidence(device_hand, controller_index=0) -> TrackingConfidence
 		Get the tracking confidence of the hand
@@ -85,7 +85,7 @@ package unreal;
 		Returns:
 		    TrackingConfidence:
 	**/
-	static public function get_tracking_confidence(device_hand:unreal.OculusHandType, controller_index:Int):unreal.TrackingConfidence;
+	static public function get_tracking_confidence(device_hand:unreal.OculusHandType, controller_index:Int = 0):unreal.TrackingConfidence;
 	/**
 		X.initialize_hand_physics(skeleton_type, hand_component, world_to_meters=100.000000) -> Array(OculusCapsuleCollider)
 		Initializes physics capsules for collision and physics on the runtime mesh
@@ -98,7 +98,7 @@ package unreal;
 		Returns:
 		    Array(OculusCapsuleCollider):
 	**/
-	static public function initialize_hand_physics(skeleton_type:unreal.OculusHandType, hand_component:unreal.SkinnedMeshComponent, world_to_meters:Float):Dynamic;
+	static public function initialize_hand_physics(skeleton_type:unreal.OculusHandType, hand_component:unreal.SkinnedMeshComponent, world_to_meters:Float = 100.000000):Array<OculusCapsuleCollider>;
 	/**
 		X.is_hand_tracking_enabled() -> bool
 		Check if hand tracking is enabled currently
@@ -118,5 +118,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_pointer_pose_valid(device_hand:unreal.OculusHandType, controller_index:Int):Bool;
+	static public function is_pointer_pose_valid(device_hand:unreal.OculusHandType, controller_index:Int = 0):Bool;
 }

@@ -12,7 +12,7 @@ package unreal;
 		    axis (VertexPaintAxis): 
 		    convert_to_srgb (bool):
 	**/
-	static public function paint_vertices_lerp_along_axis(static_mesh_component:unreal.StaticMeshComponent, start_color:unreal.LinearColor, end_color:unreal.LinearColor, axis:unreal.VertexPaintAxis, convert_to_srgb:Bool):Void;
+	static public function paint_vertices_lerp_along_axis(static_mesh_component:unreal.StaticMeshComponent, start_color:unreal.LinearColor, end_color:unreal.LinearColor, axis:unreal.VertexPaintAxis, convert_to_srgb:Bool = true):Void;
 	/**
 		X.paint_vertices_single_color(static_mesh_component, fill_color, convert_to_srgb=True) -> None
 		Paints vertex colors on a mesh component in a specified color.
@@ -22,7 +22,7 @@ package unreal;
 		    fill_color (LinearColor): 
 		    convert_to_srgb (bool):
 	**/
-	static public function paint_vertices_single_color(static_mesh_component:unreal.StaticMeshComponent, fill_color:unreal.LinearColor, convert_to_srgb:Bool):Void;
+	static public function paint_vertices_single_color(static_mesh_component:unreal.StaticMeshComponent, fill_color:unreal.LinearColor, convert_to_srgb:Bool = true):Void;
 	/**
 		X.remove_painted_vertices(static_mesh_component) -> None
 		Removes vertex colors on a mesh component

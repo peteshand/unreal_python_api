@@ -195,7 +195,7 @@ package unreal;
 		    new_light_color (LinearColor): 
 		    srgb (bool):
 	**/
-	public function set_light_color(new_light_color:unreal.LinearColor, srgb:Bool):Void;
+	public function set_light_color(new_light_color:unreal.LinearColor, srgb:Bool = true):Void;
 	/**
 		x.set_light_function_disabled_brightness(new_value) -> None
 		Set Light Function Disabled Brightness

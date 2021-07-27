@@ -21,7 +21,7 @@ package unreal;
 		    log_category (Name): 
 		    add_to_message_log (bool):
 	**/
-	static public function log_box(world_context_object:unreal.Object, box_shape:unreal.Box, text:String, object_color:unreal.LinearColor, log_category:unreal.Name, add_to_message_log:Bool):Void;
+	static public function log_box(world_context_object:unreal.Object, box_shape:unreal.Box, text:String, object_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], log_category:unreal.Name = "\"VisLogBP\"", add_to_message_log:Bool = false):Void;
 	/**
 		X.log_location(world_context_object, location, text, object_color=[0.000000, 0.000000, 0.000000, 0.000000], radius=10.000000, log_category="VisLogBP", add_to_message_log=False) -> None
 		Logs location as sphere with given radius - recording for Visual Logs has to be enabled to record this data
@@ -35,7 +35,7 @@ package unreal;
 		    log_category (Name): 
 		    add_to_message_log (bool):
 	**/
-	static public function log_location(world_context_object:unreal.Object, location:unreal.Vector, text:String, object_color:unreal.LinearColor, radius:Float, log_category:unreal.Name, add_to_message_log:Bool):Void;
+	static public function log_location(world_context_object:unreal.Object, location:unreal.Vector, text:String, object_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], radius:Float = 10.000000, log_category:unreal.Name = "\"VisLogBP\"", add_to_message_log:Bool = false):Void;
 	/**
 		X.log_segment(world_context_object, segment_start, segment_end, text, object_color=[0.000000, 0.000000, 0.000000, 0.000000], thickness=0.000000, category_name="VisLogBP", add_to_message_log=False) -> None
 		Log Segment
@@ -50,7 +50,7 @@ package unreal;
 		    category_name (Name): 
 		    add_to_message_log (bool):
 	**/
-	static public function log_segment(world_context_object:unreal.Object, segment_start:unreal.Vector, segment_end:unreal.Vector, text:String, object_color:unreal.LinearColor, thickness:Float, category_name:unreal.Name, add_to_message_log:Bool):Void;
+	static public function log_segment(world_context_object:unreal.Object, segment_start:unreal.Vector, segment_end:unreal.Vector, text:String, object_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], thickness:Float = 0.000000, category_name:unreal.Name = "\"VisLogBP\"", add_to_message_log:Bool = false):Void;
 	/**
 		X.log_text(world_context_object, text, log_category="VisLogBP", add_to_message_log=False) -> None
 		Logs simple text string with Visual Logger - recording for Visual Logs has to be enabled to record this data
@@ -61,7 +61,7 @@ package unreal;
 		    log_category (Name): 
 		    add_to_message_log (bool):
 	**/
-	static public function log_text(world_context_object:unreal.Object, text:String, log_category:unreal.Name, add_to_message_log:Bool):Void;
+	static public function log_text(world_context_object:unreal.Object, text:String, log_category:unreal.Name = "\"VisLogBP\"", add_to_message_log:Bool = false):Void;
 	/**
 		X.redirect_vislog(source_owner, destination_owner) -> None
 		Makes SourceOwner log to DestinationOwner's vislog

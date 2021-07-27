@@ -14,7 +14,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	static public function create_dynamic_material_instance(world_context_object:unreal.Object, parent:unreal.MaterialInterface, optional_name:unreal.Name, creation_flags:unreal.MIDCreationFlags):unreal.MaterialInstanceDynamic;
+	static public function create_dynamic_material_instance(world_context_object:unreal.Object, parent:unreal.MaterialInterface, optional_name:unreal.Name = "\"None\"", creation_flags:unreal.MIDCreationFlags = MIDCreationFlags.NONE):unreal.MaterialInstanceDynamic;
 	/**
 		deprecated: 'create_material_instance_dynamic' was renamed to 'create_dynamic_material_instance'.
 	**/

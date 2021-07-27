@@ -20,7 +20,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	static public function get_selected_actors():Dynamic;
+	static public function get_selected_actors():Array<Actor>;
 	/**
 		x.set_gizmo_mode(gizmo_mode) -> None
 		Sets the gizmo mode for selected object

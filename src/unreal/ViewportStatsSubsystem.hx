@@ -21,7 +21,7 @@ package unreal;
 		    color (LinearColor): Color of the text to be displayed
 		    duration (float): How long the text will be on screen, if 0 then it will stay indefinitely
 	**/
-	public function add_timed_display(text:unreal.Text, color:unreal.LinearColor, duration:Float):Void;
+	public function add_timed_display(text:unreal.Text, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
 	/**
 		x.remove_display_delegate(index_to_remove) -> None
 		Remove a callback function from the display subsystem

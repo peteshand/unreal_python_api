@@ -12,7 +12,7 @@ package unreal;
 		    consumes_input (bool): Whether click processing should continue if this hit box is clicked.
 		    priority (int32): The priority of the box used for layering. Larger values are considered first.  Equal values are considered in the order they were added.
 	**/
-	public function add_hit_box(position:unreal.Vector2D, size:unreal.Vector2D, name:unreal.Name, consumes_input:Bool, priority:Int):Void;
+	public function add_hit_box(position:unreal.Vector2D, size:unreal.Vector2D, name:unreal.Name, consumes_input:Bool, priority:Int = 0):Void;
 	/**
 		x.deproject(screen_x, screen_y) -> (world_position=Vector, world_direction=Vector)
 		Transforms a 2D screen location into a 3D location and direction
@@ -41,7 +41,7 @@ package unreal;
 		    line_color (LinearColor): Color to draw line
 		    line_thickness (float): Thickness of the line to draw
 	**/
-	public function draw_line(start_screen_x:Float, start_screen_y:Float, end_screen_x:Float, end_screen_y:Float, line_color:unreal.LinearColor, line_thickness:Float):Void;
+	public function draw_line(start_screen_x:Float, start_screen_y:Float, end_screen_x:Float, end_screen_y:Float, line_color:unreal.LinearColor, line_thickness:Float = 0.000000):Void;
 	/**
 		x.draw_material(material, screen_x, screen_y, screen_w, screen_h, material_u, material_v, material_u_width, material_v_height, scale=1.000000, scale_position=False, rotation=0.000000, rot_pivot=[0.000000, 0.000000]) -> None
 		Draws a material-textured quad on the HUD.
@@ -61,7 +61,7 @@ package unreal;
 		    rotation (float): Amount to rotate this quad
 		    rot_pivot (Vector2D): Location (as proportion of quad, 0-1) to rotate about
 	**/
-	public function draw_material(material:unreal.MaterialInterface, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, material_u:Float, material_v:Float, material_u_width:Float, material_v_height:Float, scale:Float, scale_position:Bool, rotation:Float, rot_pivot:unreal.Vector2D):Void;
+	public function draw_material(material:unreal.MaterialInterface, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, material_u:Float, material_v:Float, material_u_width:Float, material_v_height:Float, scale:Float = 1.000000, scale_position:Bool = false, rotation:Float = 0.000000, rot_pivot:unreal.Vector2D = [0.000000, 0.000000]):Void;
 	/**
 		x.draw_material_simple(material, screen_x, screen_y, screen_w, screen_h, scale=1.000000, scale_position=False) -> None
 		Draws a material-textured quad on the HUD.  Assumes UVs such that the entire material is shown.
@@ -75,7 +75,7 @@ package unreal;
 		    scale (float): Amount to scale the entire texture (horizontally and vertically)
 		    scale_position (bool): Whether the "Scale" parameter should also scale the position of this draw call.
 	**/
-	public function draw_material_simple(material:unreal.MaterialInterface, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, scale:Float, scale_position:Bool):Void;
+	public function draw_material_simple(material:unreal.MaterialInterface, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, scale:Float = 1.000000, scale_position:Bool = false):Void;
 	/**
 		x.draw_material_triangle(material, v0_pos, v1_pos, v2_pos, v0_uv, v1_uv, v2_uv, v0_color=[0.000000, 0.000000, 0.000000, 0.000000], v1_color=[0.000000, 0.000000, 0.000000, 0.000000], v2_color=[0.000000, 0.000000, 0.000000, 0.000000]) -> None
 		Draw Material Triangle
@@ -92,7 +92,7 @@ package unreal;
 		    v1_color (LinearColor): 
 		    v2_color (LinearColor):
 	**/
-	public function draw_material_triangle(material:unreal.MaterialInterface, v0_pos:unreal.Vector2D, v1_pos:unreal.Vector2D, v2_pos:unreal.Vector2D, v0_uv:unreal.Vector2D, v1_uv:unreal.Vector2D, v2_uv:unreal.Vector2D, v0_color:unreal.LinearColor, v1_color:unreal.LinearColor, v2_color:unreal.LinearColor):Void;
+	public function draw_material_triangle(material:unreal.MaterialInterface, v0_pos:unreal.Vector2D, v1_pos:unreal.Vector2D, v2_pos:unreal.Vector2D, v0_uv:unreal.Vector2D, v1_uv:unreal.Vector2D, v2_uv:unreal.Vector2D, v0_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], v1_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], v2_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):Void;
 	/**
 		x.draw_rect(rect_color, screen_x, screen_y, screen_w, screen_h) -> None
 		Draws a colored untextured quad on the HUD.
@@ -118,7 +118,7 @@ package unreal;
 		    scale (float): Scale multiplier to control size of the text.
 		    scale_position (bool): Whether the "Scale" parameter should also scale the position of this draw call.
 	**/
-	public function draw_text(text:String, text_color:unreal.LinearColor, screen_x:Float, screen_y:Float, font:unreal.Font, scale:Float, scale_position:Bool):Void;
+	public function draw_text(text:String, text_color:unreal.LinearColor, screen_x:Float, screen_y:Float, font:unreal.Font = null, scale:Float = 1.000000, scale_position:Bool = false):Void;
 	/**
 		x.draw_texture(texture, screen_x, screen_y, screen_w, screen_h, texture_u, texture_v, texture_u_width, texture_v_height, tint_color=[0.000000, 0.000000, 0.000000, 0.000000], blend_mode=BlendMode.BLEND_TRANSLUCENT, scale=1.000000, scale_position=False, rotation=0.000000, rot_pivot=[0.000000, 0.000000]) -> None
 		Draws a textured quad on the HUD.
@@ -140,7 +140,7 @@ package unreal;
 		    rotation (float): Amount to rotate this quad
 		    rot_pivot (Vector2D): Location (as proportion of quad, 0-1) to rotate about
 	**/
-	public function draw_texture(texture:unreal.Texture, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, texture_u:Float, texture_v:Float, texture_u_width:Float, texture_v_height:Float, tint_color:unreal.LinearColor, blend_mode:unreal.BlendMode, scale:Float, scale_position:Bool, rotation:Float, rot_pivot:unreal.Vector2D):Void;
+	public function draw_texture(texture:unreal.Texture, screen_x:Float, screen_y:Float, screen_w:Float, screen_h:Float, texture_u:Float, texture_v:Float, texture_u_width:Float, texture_v_height:Float, tint_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], blend_mode:unreal.BlendMode = BlendMode.BLEND_TRANSLUCENT, scale:Float = 1.000000, scale_position:Bool = false, rotation:Float = 0.000000, rot_pivot:unreal.Vector2D = [0.000000, 0.000000]):Void;
 	/**
 		x.draw_texture_simple(texture, screen_x, screen_y, scale=1.000000, scale_position=False) -> None
 		Draws a textured quad on the HUD. Assumes 1:1 texel density.
@@ -152,7 +152,7 @@ package unreal;
 		    scale (float): Scale multiplier to control size of the text.
 		    scale_position (bool): Whether the "Scale" parameter should also scale the position of this draw call.
 	**/
-	public function draw_texture_simple(texture:unreal.Texture, screen_x:Float, screen_y:Float, scale:Float, scale_position:Bool):Void;
+	public function draw_texture_simple(texture:unreal.Texture, screen_x:Float, screen_y:Float, scale:Float = 1.000000, scale_position:Bool = false):Void;
 	/**
 		(bool):  [Read-Write] Put shadow on debug strings
 	**/
@@ -178,7 +178,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_actors_in_selection_rectangle(class_filter:Dynamic, first_point:unreal.Vector2D, second_point:unreal.Vector2D, include_non_colliding_components:Bool, actor_must_be_fully_enclosed:Bool):Dynamic;
+	public function get_actors_in_selection_rectangle(class_filter:Class<Dynamic>, first_point:unreal.Vector2D, second_point:unreal.Vector2D, include_non_colliding_components:Bool = true, actor_must_be_fully_enclosed:Bool = false):Array<Actor>;
 	/**
 		x.get_owning_pawn() -> Pawn
 		Returns the Pawn for this HUD's player.
@@ -211,7 +211,7 @@ package unreal;
 		
 		    out_height (float): Returns the height in pixels of the string.
 	**/
-	public function get_text_size(text:String, font:unreal.Font, scale:Float):python.Tuple<Dynamic>;
+	public function get_text_size(text:String, font:unreal.Font = null, scale:Float = 1.000000):python.Tuple<Dynamic>;
 	/**
 		(bool):  [Read-Only] Tells whether the game was paused due to lost focus
 	**/

@@ -21,5 +21,5 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] class of selected key
 	**/
-	public var selected_key_type : Dynamic;
+	public var selected_key_type : Class<Dynamic>;
 }

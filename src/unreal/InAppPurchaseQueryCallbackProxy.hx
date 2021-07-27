@@ -12,7 +12,7 @@ package unreal;
 		Returns:
 		    InAppPurchaseQueryCallbackProxy:
 	**/
-	static public function create_proxy_object_for_in_app_purchase_query(player_controller:unreal.PlayerController, product_identifiers:unreal.Array):unreal.InAppPurchaseQueryCallbackProxy;
+	static public function create_proxy_object_for_in_app_purchase_query(player_controller:unreal.PlayerController, product_identifiers:Array<str>):unreal.InAppPurchaseQueryCallbackProxy;
 	/**
 		(InAppPurchaseQueryResult):  [Read-Write] Called when there is an unsuccessful InAppPurchase query
 	**/

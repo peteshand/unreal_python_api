@@ -19,7 +19,7 @@ package unreal;
 		Returns:
 		    Array(AssetData):
 	**/
-	static public function get_selected_asset_data():Dynamic;
+	static public function get_selected_asset_data():Array<AssetData>;
 	/**
 		X.get_selected_assets() -> Array(Object)
 		Gets the set of currently selected assets
@@ -27,7 +27,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	static public function get_selected_assets():Dynamic;
+	static public function get_selected_assets():Array<Object>;
 	/**
 		X.get_selected_blueprint_classes() -> Array(type(Class))
 		Gets the set of currently selected classes
@@ -35,7 +35,7 @@ package unreal;
 		Returns:
 		    Array(type(Class)):
 	**/
-	static public function get_selected_blueprint_classes():Dynamic;
+	static public function get_selected_blueprint_classes():Array<type(Class>;
 	/**
 		X.get_selection_bounds() -> (origin=Vector, box_extent=Vector, sphere_radius=float)
 		Get Selection Bounds
@@ -57,7 +57,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	static public function get_selection_set():Dynamic;
+	static public function get_selection_set():Array<Actor>;
 	/**
 		X.rename_asset(asset, new_name) -> None
 		Renames an asset (cannot move folders)

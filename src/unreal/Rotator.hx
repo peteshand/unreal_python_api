@@ -80,7 +80,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:unreal.Rotator, error_tolerance:Float):Bool;
+	public function is_near_equal(b:unreal.Rotator, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_not_near_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if rotator A is not equal to rotator B (A != B) within a specified error tolerance
@@ -92,7 +92,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(b:unreal.Rotator, error_tolerance:Float):Bool;
+	public function is_not_near_equal(b:unreal.Rotator, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.lerp(b, alpha, shortest_path) -> Rotator
 		Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1)

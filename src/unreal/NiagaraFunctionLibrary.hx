@@ -54,7 +54,7 @@ package unreal;
 		    override_name (str): 
 		    sampling_regions (Array(Name)):
 	**/
-	static public function set_skeletal_mesh_data_interface_sampling_regions(niagara_system:unreal.NiagaraComponent, override_name:String, sampling_regions:unreal.Array):Void;
+	static public function set_skeletal_mesh_data_interface_sampling_regions(niagara_system:unreal.NiagaraComponent, override_name:String, sampling_regions:Array<Name>):Void;
 	/**
 		X.set_texture_object(niagara_system, override_name, texture) -> None
 		Overrides the Texture Object for a Niagara Texture Data Interface User Parameter.
@@ -93,7 +93,7 @@ package unreal;
 		Returns:
 		    NiagaraComponent: The spawned UNiagaraComponent
 	**/
-	static public function spawn_system_at_location(world_context_object:unreal.Object, system_template:unreal.NiagaraSystem, location:unreal.Vector, rotation:unreal.Rotator, scale:unreal.Vector, auto_destroy:Bool, auto_activate:Bool, pooling_method:unreal.NCPoolMethod, pre_cull_check:Bool):unreal.NiagaraComponent;
+	static public function spawn_system_at_location(world_context_object:unreal.Object, system_template:unreal.NiagaraSystem, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], scale:unreal.Vector = [1.000000, 1.000000, 1.000000], auto_destroy:Bool = true, auto_activate:Bool = true, pooling_method:unreal.NCPoolMethod = NCPoolMethod.NONE, pre_cull_check:Bool = true):unreal.NiagaraComponent;
 	/**
 		X.spawn_system_attached(system_template, attach_to_component, attach_point_name, location, rotation, location_type, auto_destroy, auto_activate=True, pooling_method=NCPoolMethod.NONE, pre_cull_check=True) -> NiagaraComponent
 		Spawn System Attached
@@ -113,5 +113,5 @@ package unreal;
 		Returns:
 		    NiagaraComponent:
 	**/
-	static public function spawn_system_attached(system_template:unreal.NiagaraSystem, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, location_type:unreal.AttachLocation, auto_destroy:Bool, auto_activate:Bool, pooling_method:unreal.NCPoolMethod, pre_cull_check:Bool):unreal.NiagaraComponent;
+	static public function spawn_system_attached(system_template:unreal.NiagaraSystem, attach_to_component:unreal.SceneComponent, attach_point_name:unreal.Name, location:unreal.Vector, rotation:unreal.Rotator, location_type:unreal.AttachLocation, auto_destroy:Bool, auto_activate:Bool = true, pooling_method:unreal.NCPoolMethod = NCPoolMethod.NONE, pre_cull_check:Bool = true):unreal.NiagaraComponent;
 }

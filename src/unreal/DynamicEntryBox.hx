@@ -19,12 +19,12 @@ package unreal;
 		Returns:
 		    UserWidget:
 	**/
-	public function bp_create_entry_of_class(entry_class:Dynamic):unreal.UserWidget;
+	public function bp_create_entry_of_class(entry_class:Class<Dynamic>):unreal.UserWidget;
 	/**
 		(type(Class)):  [Read-Only] The class of widget to create entries of.
 		If natively binding this widget, use the EntryClass UPROPERTY metadata to specify the desired entry widget base class.
 	**/
-	public var entry_widget_class : Dynamic;
+	public var entry_widget_class : Class<Dynamic>;
 	/**
 		x.remove_entry(entry_widget) -> None
 		Remove Entry
@@ -40,5 +40,5 @@ package unreal;
 		Args:
 		    delete_widgets (bool):
 	**/
-	public function reset(delete_widgets:Bool):Void;
+	public function reset(delete_widgets:Bool = false):Void;
 }

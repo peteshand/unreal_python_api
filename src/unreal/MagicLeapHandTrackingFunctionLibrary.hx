@@ -78,7 +78,7 @@ package unreal;
 		
 		    keypoints (Array(Transform)): Output parameter containing transforms of the keypoints detected on the given hand.
 	**/
-	static public function get_gesture_keypoints(hand:unreal.ControllerHand):Dynamic;
+	static public function get_gesture_keypoints(hand:unreal.ControllerHand):Array<Transform>;
 	/**
 		X.get_hand_center(hand) -> Transform or None
 		Transform of the center of the hand.  Approximately the center of the palm.
@@ -226,7 +226,7 @@ package unreal;
 		Returns:
 		    bool: true if the configuration was set successfully.
 	**/
-	static public function set_configuration(static_gestures_to_activate:unreal.Array, keypoints_filter_level:unreal.MagicLeapHandTrackingKeypointFilterLevel, gesture_filter_level:unreal.MagicLeapHandTrackingGestureFilterLevel, tracking_enabled:Bool):Bool;
+	static public function set_configuration(static_gestures_to_activate:Array<MagicLeapHandTrackingGesture>, keypoints_filter_level:unreal.MagicLeapHandTrackingKeypointFilterLevel = MagicLeapHandTrackingKeypointFilterLevel.NO_FILTER, gesture_filter_level:unreal.MagicLeapHandTrackingGestureFilterLevel = MagicLeapHandTrackingGestureFilterLevel.NO_FILTER, tracking_enabled:Bool = true):Bool;
 	/**
 		X.set_static_gesture_confidence_threshold(gesture, confidence) -> None
 		Sets the minimum gesture confidence to filter out the detected static gesture.

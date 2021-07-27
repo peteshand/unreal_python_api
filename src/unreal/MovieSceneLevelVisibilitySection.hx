@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	public function get_level_names():Dynamic;
+	public function get_level_names():Array<Name>;
 	/**
 		x.get_visibility() -> LevelVisibility
 		Get Visibility
@@ -24,7 +24,7 @@ package unreal;
 		Args:
 		    level_names (Array(Name)):
 	**/
-	public function set_level_names(level_names:unreal.Array):Void;
+	public function set_level_names(level_names:Array<Name>):Void;
 	/**
 		x.set_visibility(visibility) -> None
 		Set Visibility

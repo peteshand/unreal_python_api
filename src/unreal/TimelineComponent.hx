@@ -136,7 +136,7 @@ package unreal;
 		    fire_events (bool): If true, event functions that are between current position and new playback position will fire.
 		    fire_update (bool): If true, the update output exec will fire after setting the new playback position.
 	**/
-	public function set_playback_position(new_position:Float, fire_events:Bool, fire_update:Bool):Void;
+	public function set_playback_position(new_position:Float, fire_events:Bool, fire_update:Bool = true):Void;
 	/**
 		x.set_timeline_length(new_length) -> None
 		Set length of the timeline

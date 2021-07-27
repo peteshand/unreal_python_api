@@ -46,7 +46,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_selected_assets():Dynamic;
+	public function get_selected_assets():Array<Object>;
 	/**
 		x.get_selection_bounds() -> (origin=Vector, box_extent=Vector, sphere_radius=float)
 		Get Selection Bounds
@@ -68,7 +68,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function get_selection_set():Dynamic;
+	public function get_selection_set():Array<Actor>;
 	/**
 		(str):  [Read-Write] Help Text
 	**/

@@ -41,5 +41,5 @@ package unreal;
 		Args:
 		    desync_threshold_seconds (float):
 	**/
-	public function synchronize_to_server(desync_threshold_seconds:Float):Void;
+	public function synchronize_to_server(desync_threshold_seconds:Float = 2.000000):Void;
 }

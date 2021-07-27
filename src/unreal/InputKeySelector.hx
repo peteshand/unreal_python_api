@@ -68,7 +68,7 @@ package unreal;
 		Args:
 		    keys (Array(Key)):
 	**/
-	public function set_escape_keys(keys:unreal.Array):Void;
+	public function set_escape_keys(keys:Array<Key>):Void;
 	/**
 		x.set_key_selection_text(key_selection_text) -> None
 		Sets the text which is displayed while selecting keys.

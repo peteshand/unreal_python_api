@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_class():Dynamic;
+	public function get_class():Class<Dynamic>;
 	/**
 		x.get_current_bundle_state(force_current_state) -> Array(Name) or None
 		Returns the list of loaded bundles for a given Primary Asset. This will return false if the asset is not loaded at all.
@@ -22,7 +22,7 @@ package unreal;
 		
 		    out_bundles (Array(Name)):
 	**/
-	public function get_current_bundle_state(force_current_state:Bool):Dynamic;
+	public function get_current_bundle_state(force_current_state:Bool):Array<Name>;
 	/**
 		x.get_object() -> Object
 		Returns the Object associated with a Primary Asset Id, this will only return a valid object if it is in memory, it will not load it

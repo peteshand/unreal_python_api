@@ -43,7 +43,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function equals(b:unreal.Quat, tolerance:Float):Bool;
+	public function equals(b:unreal.Quat, tolerance:Float = 0.000100):Bool;
 	/**
 		x.euler() -> Vector
 		Convert a Quaternion into floating-point Euler angles (in degrees).
@@ -131,7 +131,7 @@ package unreal;
 		Returns:
 		    bool: true if Quaternion is a normalized Identity Quaternion.
 	**/
-	public function is_identity(tolerance:Float):Bool;
+	public function is_identity(tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_non_finite() -> bool
 		Determine if there are any non-finite values (NaN or Inf) in this Quat.
@@ -178,7 +178,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of quaternion for normalization.
 	**/
-	public function normalize(tolerance:Float):Void;
+	public function normalize(tolerance:Float = 0.000100):Void;
 	/**
 		x.normalized(tolerance=0.000100) -> Quat
 		Get a normalized copy of this quaternion.
@@ -190,7 +190,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	public function normalized(tolerance:Float):unreal.Quat;
+	public function normalized(tolerance:Float = 0.000100):unreal.Quat;
 	/**
 		x.not_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if Quat A is not equal to Quat B (A != B) within a specified error tolerance
@@ -202,7 +202,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function not_equal(b:unreal.Quat, error_tolerance:Float):Bool;
+	public function not_equal(b:unreal.Quat, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.rotate_vector(v) -> Vector
 		Rotate a vector by this quaternion.

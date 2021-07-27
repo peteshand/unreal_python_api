@@ -21,7 +21,7 @@ package unreal;
 		Args:
 		    actors_to_group (Array(Actor)):
 	**/
-	public function group_actors(actors_to_group:unreal.Array):Void;
+	public function group_actors(actors_to_group:Array<Actor>):Void;
 	/**
 		x.group_selected() -> None
 		Creates a new group from the current selection removing the actors from any existing groups they are already in
@@ -61,7 +61,7 @@ package unreal;
 		Args:
 		    actors_to_ungroup (Array(Actor)):
 	**/
-	public function ungroup_actors(actors_to_ungroup:unreal.Array):Void;
+	public function ungroup_actors(actors_to_ungroup:Array<Actor>):Void;
 	/**
 		x.ungroup_selected() -> None
 		Disbands any groups in the current selection, does not attempt to maintain any hierarchy

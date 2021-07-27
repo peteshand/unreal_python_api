@@ -31,7 +31,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_currently_perceived_actors(sense_to_use:Dynamic):Dynamic;
+	public function get_currently_perceived_actors(sense_to_use:Class<Dynamic>):Array<Actor>;
 	/**
 		x.get_known_perceived_actors(sense_to_use) -> Array(Actor)
 		If SenseToUse is none all actors ever perceived in any way (and not forgotten yet) will get fetched
@@ -44,7 +44,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_known_perceived_actors(sense_to_use:Dynamic):Dynamic;
+	public function get_known_perceived_actors(sense_to_use:Class<Dynamic>):Array<Actor>;
 	/**
 		x.get_perceived_actors(sense_to_use) -> Array(Actor)
 		Get Perceived Actors
@@ -57,7 +57,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_perceived_actors(sense_to_use:Dynamic):Dynamic;
+	public function get_perceived_actors(sense_to_use:Class<Dynamic>):Array<Actor>;
 	/**
 		x.get_perceived_hostile_actors() -> Array(Actor)
 		blueprint interface
@@ -67,7 +67,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_perceived_hostile_actors():Dynamic;
+	public function get_perceived_hostile_actors():Array<Actor>;
 	/**
 		x.get_perceived_hostile_actors_by_sense(sense_to_use) -> Array(Actor)
 		Get Perceived Hostile Actors by Sense
@@ -80,7 +80,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_perceived_hostile_actors_by_sense(sense_to_use:Dynamic):Dynamic;
+	public function get_perceived_hostile_actors_by_sense(sense_to_use:Class<Dynamic>):Array<Actor>;
 	/**
 		(PerceptionUpdatedDelegate):  [Read-Write] Might want to move these to special "BP_AIPerceptionComponent"
 	**/
@@ -125,5 +125,5 @@ package unreal;
 		    sense_class (type(Class)): 
 		    enable (bool):
 	**/
-	public function set_sense_enabled(sense_class:Dynamic, enable:Bool):Void;
+	public function set_sense_enabled(sense_class:Class<Dynamic>, enable:Bool):Void;
 }

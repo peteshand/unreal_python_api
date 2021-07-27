@@ -4,5 +4,5 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The method by which the preview is animated
 	**/
-	public var preview_controller : Dynamic;
+	public var preview_controller : Class<Dynamic>;
 }

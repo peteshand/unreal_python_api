@@ -76,7 +76,7 @@ package unreal;
 		Args:
 		    initial_direction (float):
 	**/
-	public function restart_movement(initial_direction:Float):Void;
+	public function restart_movement(initial_direction:Float = 1.000000):Void;
 	/**
 		x.stop_simulating(hit_result) -> None
 		Clears the reference to UpdatedComponent, fires stop event, and stops ticking.

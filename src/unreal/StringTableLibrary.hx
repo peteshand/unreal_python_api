@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_keys_from_string_table(table_id:unreal.Name):Dynamic;
+	static public function get_keys_from_string_table(table_id:unreal.Name):Array<str>;
 	/**
 		X.get_meta_data_ids_from_string_table_entry(table_id, key) -> Array(Name)
 		Returns an array of all meta-data IDs within the given string table entry
@@ -23,7 +23,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	static public function get_meta_data_ids_from_string_table_entry(table_id:unreal.Name, key:String):Dynamic;
+	static public function get_meta_data_ids_from_string_table_entry(table_id:unreal.Name, key:String):Array<Name>;
 	/**
 		X.get_registered_string_tables() -> Array(Name)
 		Returns an array of all registered string table IDs
@@ -31,7 +31,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	static public function get_registered_string_tables():Dynamic;
+	static public function get_registered_string_tables():Array<Name>;
 	/**
 		X.get_table_entry_meta_data(table_id, key, meta_data_id) -> str
 		Returns the specified meta-data of the given string table entry (or an empty string).

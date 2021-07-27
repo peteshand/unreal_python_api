@@ -196,7 +196,7 @@ package unreal;
 		Returns:
 		    bool: True if this widget has captured the mouse with given user and pointer
 	**/
-	public function has_mouse_capture_by_user(user_index:Int, pointer_index:Int):Bool;
+	public function has_mouse_capture_by_user(user_index:Int, pointer_index:Int = -1):Bool;
 	/**
 		x.has_user_focus(player_controller) -> bool
 		Returns true if this widget is focused by a specific user.

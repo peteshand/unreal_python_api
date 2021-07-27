@@ -17,7 +17,7 @@ package unreal;
 		    polygon_group_for_polygons (Array(PolygonGroupForPolygon)): 
 		    delete_orphaned_polygon_groups (bool):
 	**/
-	public function assign_polygons_to_polygon_groups(polygon_group_for_polygons:unreal.Array, delete_orphaned_polygon_groups:Bool):Void;
+	public function assign_polygons_to_polygon_groups(polygon_group_for_polygons:Array<PolygonGroupForPolygon>, delete_orphaned_polygon_groups:Bool):Void;
 	/**
 		x.bevel_polygons(polygon_i_ds, bevel_fixed_distance, bevel_progress_toward_center) -> (out_new_center_polygon_i_ds=Array(PolygonID), out_new_side_polygon_i_ds=Array(PolygonID))
 		Bevel Polygons
@@ -34,7 +34,7 @@ package unreal;
 		
 		    out_new_side_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function bevel_polygons(polygon_i_ds:unreal.Array, bevel_fixed_distance:Float, bevel_progress_toward_center:Float):python.Tuple<Dynamic>;
+	public function bevel_polygons(polygon_i_ds:Array<PolygonID>, bevel_fixed_distance:Float, bevel_progress_toward_center:Float):python.Tuple<Dynamic>;
 	/**
 		x.change_polygons_vertex_instances(vertex_instances_for_polygons) -> None
 		Change Polygons Vertex Instances
@@ -42,7 +42,7 @@ package unreal;
 		Args:
 		    vertex_instances_for_polygons (Array(ChangeVertexInstancesForPolygon)):
 	**/
-	public function change_polygons_vertex_instances(vertex_instances_for_polygons:unreal.Array):Void;
+	public function change_polygons_vertex_instances(vertex_instances_for_polygons:Array<ChangeVertexInstancesForPolygon>):Void;
 	/**
 		x.commit() -> None
 		Commit
@@ -120,7 +120,7 @@ package unreal;
 		
 		    out_shared_edge_i_ds (Array(EdgeID)):
 	**/
-	public function compute_polygons_shared_edges(polygon_i_ds:unreal.Array):Dynamic;
+	public function compute_polygons_shared_edges(polygon_i_ds:Array<PolygonID>):Array<EdgeID>;
 	/**
 		x.create_edges(edges_to_create) -> Array(EdgeID)
 		Create Edges
@@ -133,7 +133,7 @@ package unreal;
 		
 		    out_new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_edges(edges_to_create:unreal.Array):Dynamic;
+	public function create_edges(edges_to_create:Array<EdgeToCreate>):Array<EdgeID>;
 	/**
 		x.create_empty_vertex_range(num_vertices_to_create) -> Array(VertexID)
 		Create Empty Vertex Range
@@ -146,7 +146,7 @@ package unreal;
 		
 		    out_new_vertex_i_ds (Array(VertexID)):
 	**/
-	public function create_empty_vertex_range(num_vertices_to_create:Int):Dynamic;
+	public function create_empty_vertex_range(num_vertices_to_create:Int):Array<VertexID>;
 	/**
 		x.create_missing_polygon_perimeter_edges(polygon_id) -> Array(EdgeID)
 		Create Missing Polygon Perimeter Edges
@@ -159,7 +159,7 @@ package unreal;
 		
 		    out_new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_missing_polygon_perimeter_edges(polygon_id:unreal.PolygonID):Dynamic;
+	public function create_missing_polygon_perimeter_edges(polygon_id:unreal.PolygonID):Array<EdgeID>;
 	/**
 		x.create_polygon_groups(polygon_groups_to_create) -> Array(PolygonGroupID)
 		Create Polygon Groups
@@ -172,7 +172,7 @@ package unreal;
 		
 		    out_new_polygon_group_i_ds (Array(PolygonGroupID)):
 	**/
-	public function create_polygon_groups(polygon_groups_to_create:unreal.Array):Dynamic;
+	public function create_polygon_groups(polygon_groups_to_create:Array<PolygonGroupToCreate>):Array<PolygonGroupID>;
 	/**
 		x.create_polygons(polygons_to_create) -> (out_new_polygon_i_ds=Array(PolygonID), out_new_edge_i_ds=Array(EdgeID))
 		Create Polygons
@@ -187,7 +187,7 @@ package unreal;
 		
 		    out_new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function create_polygons(polygons_to_create:unreal.Array):python.Tuple<Dynamic>;
+	public function create_polygons(polygons_to_create:Array<PolygonToCreate>):python.Tuple<Dynamic>;
 	/**
 		x.create_vertex_instances(vertex_instances_to_create) -> Array(VertexInstanceID)
 		Create Vertex Instances
@@ -200,7 +200,7 @@ package unreal;
 		
 		    out_new_vertex_instance_i_ds (Array(VertexInstanceID)):
 	**/
-	public function create_vertex_instances(vertex_instances_to_create:unreal.Array):Dynamic;
+	public function create_vertex_instances(vertex_instances_to_create:Array<VertexInstanceToCreate>):Array<VertexInstanceID>;
 	/**
 		x.create_vertices(vertices_to_create) -> Array(VertexID)
 		Create Vertices
@@ -213,7 +213,7 @@ package unreal;
 		
 		    out_new_vertex_i_ds (Array(VertexID)):
 	**/
-	public function create_vertices(vertices_to_create:unreal.Array):Dynamic;
+	public function create_vertices(vertices_to_create:Array<VertexToCreate>):Array<VertexID>;
 	/**
 		x.delete_edge_and_connected_polygons(edge_id, delete_orphaned_edges, delete_orphaned_vertices, delete_orphaned_vertex_instances, delete_empty_polygon_groups) -> None
 		Delete Edge and Connected Polygons
@@ -234,7 +234,7 @@ package unreal;
 		    edge_i_ds_to_delete (Array(EdgeID)): 
 		    delete_orphaned_vertices (bool):
 	**/
-	public function delete_edges(edge_i_ds_to_delete:unreal.Array, delete_orphaned_vertices:Bool):Void;
+	public function delete_edges(edge_i_ds_to_delete:Array<EdgeID>, delete_orphaned_vertices:Bool):Void;
 	/**
 		x.delete_orphan_vertices(vertex_i_ds_to_delete) -> None
 		Delete Orphan Vertices
@@ -242,7 +242,7 @@ package unreal;
 		Args:
 		    vertex_i_ds_to_delete (Array(VertexID)):
 	**/
-	public function delete_orphan_vertices(vertex_i_ds_to_delete:unreal.Array):Void;
+	public function delete_orphan_vertices(vertex_i_ds_to_delete:Array<VertexID>):Void;
 	/**
 		x.delete_polygon_groups(polygon_group_i_ds) -> None
 		Delete Polygon Groups
@@ -250,7 +250,7 @@ package unreal;
 		Args:
 		    polygon_group_i_ds (Array(PolygonGroupID)):
 	**/
-	public function delete_polygon_groups(polygon_group_i_ds:unreal.Array):Void;
+	public function delete_polygon_groups(polygon_group_i_ds:Array<PolygonGroupID>):Void;
 	/**
 		x.delete_polygons(polygon_i_ds_to_delete, delete_orphaned_edges, delete_orphaned_vertices, delete_orphaned_vertex_instances, delete_empty_polygon_groups) -> None
 		Delete Polygons
@@ -262,7 +262,7 @@ package unreal;
 		    delete_orphaned_vertex_instances (bool): 
 		    delete_empty_polygon_groups (bool):
 	**/
-	public function delete_polygons(polygon_i_ds_to_delete:unreal.Array, delete_orphaned_edges:Bool, delete_orphaned_vertices:Bool, delete_orphaned_vertex_instances:Bool, delete_empty_polygon_groups:Bool):Void;
+	public function delete_polygons(polygon_i_ds_to_delete:Array<PolygonID>, delete_orphaned_edges:Bool, delete_orphaned_vertices:Bool, delete_orphaned_vertex_instances:Bool, delete_empty_polygon_groups:Bool):Void;
 	/**
 		x.delete_vertex_and_connected_edges_and_polygons(vertex_id, delete_orphaned_edges, delete_orphaned_vertices, delete_orphaned_vertex_instances, delete_empty_polygon_groups) -> None
 		Delete Vertex and Connected Edges and Polygons
@@ -283,7 +283,7 @@ package unreal;
 		    vertex_instance_i_ds_to_delete (Array(VertexInstanceID)): 
 		    delete_orphaned_vertices (bool):
 	**/
-	public function delete_vertex_instances(vertex_instance_i_ds_to_delete:unreal.Array, delete_orphaned_vertices:Bool):Void;
+	public function delete_vertex_instances(vertex_instance_i_ds_to_delete:Array<VertexInstanceID>, delete_orphaned_vertices:Bool):Void;
 	/**
 		x.end_modification(from_undo=False) -> None
 		End Modification
@@ -291,7 +291,7 @@ package unreal;
 		Args:
 		    from_undo (bool):
 	**/
-	public function end_modification(from_undo:Bool):Void;
+	public function end_modification(from_undo:Bool = false):Void;
 	/**
 		x.extend_edges(edge_i_ds, weld_neighbors) -> Array(EdgeID)
 		Extend Edges
@@ -305,7 +305,7 @@ package unreal;
 		
 		    out_new_extended_edge_i_ds (Array(EdgeID)):
 	**/
-	public function extend_edges(edge_i_ds:unreal.Array, weld_neighbors:Bool):Dynamic;
+	public function extend_edges(edge_i_ds:Array<EdgeID>, weld_neighbors:Bool):Array<EdgeID>;
 	/**
 		x.extend_vertices(vertex_i_ds, only_extend_closest_edge, reference_position) -> Array(VertexID)
 		Extend Vertices
@@ -320,7 +320,7 @@ package unreal;
 		
 		    out_new_extended_vertex_i_ds (Array(VertexID)):
 	**/
-	public function extend_vertices(vertex_i_ds:unreal.Array, only_extend_closest_edge:Bool, reference_position:unreal.Vector):Dynamic;
+	public function extend_vertices(vertex_i_ds:Array<VertexID>, only_extend_closest_edge:Bool, reference_position:unreal.Vector):Array<VertexID>;
 	/**
 		x.extrude_polygons(polygons, extrude_distance, keep_neighbors_together) -> Array(PolygonID)
 		Extrude Polygons
@@ -335,7 +335,7 @@ package unreal;
 		
 		    out_new_extruded_front_polygons (Array(PolygonID)):
 	**/
-	public function extrude_polygons(polygons:unreal.Array, extrude_distance:Float, keep_neighbors_together:Bool):Dynamic;
+	public function extrude_polygons(polygons:Array<PolygonID>, extrude_distance:Float, keep_neighbors_together:Bool):Array<PolygonID>;
 	/**
 		x.find_polygon_loop(edge_id) -> (out_edge_loop_edge_i_ds=Array(EdgeID), out_flipped_edge_i_ds=Array(EdgeID), out_reversed_edge_id_path_to_take=Array(EdgeID), out_polygon_i_ds_to_split=Array(PolygonID))
 		Find Polygon Loop
@@ -388,7 +388,7 @@ package unreal;
 		Args:
 		    polygon_i_ds (Array(PolygonID)):
 	**/
-	public function flip_polygons(polygon_i_ds:unreal.Array):Void;
+	public function flip_polygons(polygon_i_ds:Array<PolygonID>):Void;
 	/**
 		x.generate_polygon_tangents_and_normals(polygon_i_ds) -> None
 		Generate Polygon Tangents and Normals
@@ -396,7 +396,7 @@ package unreal;
 		Args:
 		    polygon_i_ds (Array(PolygonID)):
 	**/
-	public function generate_polygon_tangents_and_normals(polygon_i_ds:unreal.Array):Void;
+	public function generate_polygon_tangents_and_normals(polygon_i_ds:Array<PolygonID>):Void;
 	/**
 		x.get_edge_connected_polygon(edge_id, connected_polygon_number) -> PolygonID
 		Returns the indexed polygon connected to this edge
@@ -432,7 +432,7 @@ package unreal;
 		
 		    out_connected_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_edge_connected_polygons(edge_id:unreal.EdgeID):Dynamic;
+	public function get_edge_connected_polygons(edge_id:unreal.EdgeID):Array<PolygonID>;
 	/**
 		x.get_edge_count() -> int32
 		Returns the number of edges in this mesh
@@ -453,7 +453,7 @@ package unreal;
 		
 		    edge_loop_i_ds (Array(EdgeID)):
 	**/
-	public function get_edge_loop_elements(edge_id:unreal.EdgeID):Dynamic;
+	public function get_edge_loop_elements(edge_id:unreal.EdgeID):Array<EdgeID>;
 	/**
 		x.get_edge_that_connects_vertices(vertex_id0, vertex_id1) -> EdgeID
 		Get Edge That Connects Vertices
@@ -524,7 +524,7 @@ package unreal;
 		
 		    out_adjacent_polygons (Array(PolygonID)):
 	**/
-	public function get_polygon_adjacent_polygons(polygon_id:unreal.PolygonID):Dynamic;
+	public function get_polygon_adjacent_polygons(polygon_id:unreal.PolygonID):Array<PolygonID>;
 	/**
 		x.get_polygon_count() -> int32
 		Returns the number of polygons in this mesh
@@ -601,7 +601,7 @@ package unreal;
 		
 		    out_polygon_perimeter_edge_i_ds (Array(EdgeID)):
 	**/
-	public function get_polygon_perimeter_edges(polygon_id:unreal.PolygonID):Dynamic;
+	public function get_polygon_perimeter_edges(polygon_id:unreal.PolygonID):Array<EdgeID>;
 	/**
 		x.get_polygon_perimeter_vertex(polygon_id, polygon_vertex_number) -> VertexID
 		Returns the indexed vertex on this polygon's perimeter
@@ -649,7 +649,7 @@ package unreal;
 		
 		    out_polygon_perimeter_vertex_instance_i_ds (Array(VertexInstanceID)):
 	**/
-	public function get_polygon_perimeter_vertex_instances(polygon_id:unreal.PolygonID):Dynamic;
+	public function get_polygon_perimeter_vertex_instances(polygon_id:unreal.PolygonID):Array<VertexInstanceID>;
 	/**
 		x.get_polygon_perimeter_vertices(polygon_id) -> Array(VertexID)
 		Get Polygon Perimeter Vertices
@@ -662,7 +662,7 @@ package unreal;
 		
 		    out_polygon_perimeter_vertex_i_ds (Array(VertexID)):
 	**/
-	public function get_polygon_perimeter_vertices(polygon_id:unreal.PolygonID):Dynamic;
+	public function get_polygon_perimeter_vertices(polygon_id:unreal.PolygonID):Array<VertexID>;
 	/**
 		x.get_polygon_triangulated_triangle(polygon_id, polygon_triangle_number) -> TriangleID
 		Returns the indexed triangle of the triangulated polygon
@@ -722,7 +722,7 @@ package unreal;
 		
 		    out_adjacent_vertex_i_ds (Array(VertexID)):
 	**/
-	public function get_vertex_adjacent_vertices(vertex_id:unreal.VertexID):Dynamic;
+	public function get_vertex_adjacent_vertices(vertex_id:unreal.VertexID):Array<VertexID>;
 	/**
 		x.get_vertex_connected_edge(vertex_id, connected_edge_number) -> EdgeID
 		Returns the requested edge connected to this vertex
@@ -758,7 +758,7 @@ package unreal;
 		
 		    out_connected_edge_i_ds (Array(EdgeID)):
 	**/
-	public function get_vertex_connected_edges(vertex_id:unreal.VertexID):Dynamic;
+	public function get_vertex_connected_edges(vertex_id:unreal.VertexID):Array<EdgeID>;
 	/**
 		x.get_vertex_connected_polygons(vertex_id) -> Array(PolygonID)
 		Get Vertex Connected Polygons
@@ -771,7 +771,7 @@ package unreal;
 		
 		    out_connected_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_vertex_connected_polygons(vertex_id:unreal.VertexID):Dynamic;
+	public function get_vertex_connected_polygons(vertex_id:unreal.VertexID):Array<PolygonID>;
 	/**
 		x.get_vertex_count() -> int32
 		Returns the number of vertices in this mesh
@@ -815,7 +815,7 @@ package unreal;
 		
 		    out_connected_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function get_vertex_instance_connected_polygons(vertex_instance_id:unreal.VertexInstanceID):Dynamic;
+	public function get_vertex_instance_connected_polygons(vertex_instance_id:unreal.VertexInstanceID):Array<PolygonID>;
 	/**
 		x.get_vertex_instance_count() -> int32
 		Returns the number of vertex instances in this mesh
@@ -867,7 +867,7 @@ package unreal;
 		
 		    out_new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function insert_edge_loop(edge_id:unreal.EdgeID, splits:unreal.Array):Dynamic;
+	public function insert_edge_loop(edge_id:unreal.EdgeID, splits:Array<float>):Array<EdgeID>;
 	/**
 		x.inset_polygons(polygon_i_ds, inset_fixed_distance, inset_progress_toward_center, mode) -> (out_new_center_polygon_i_ds=Array(PolygonID), out_new_side_polygon_i_ds=Array(PolygonID))
 		Inset Polygons
@@ -885,7 +885,7 @@ package unreal;
 		
 		    out_new_side_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function inset_polygons(polygon_i_ds:unreal.Array, inset_fixed_distance:Float, inset_progress_toward_center:Float, mode:unreal.InsetPolygonsMode):python.Tuple<Dynamic>;
+	public function inset_polygons(polygon_i_ds:Array<PolygonID>, inset_fixed_distance:Float, inset_progress_toward_center:Float, mode:unreal.InsetPolygonsMode):python.Tuple<Dynamic>;
 	/**
 		X.invalid_edge_id() -> EdgeID
 		Invalid Edge ID
@@ -1080,7 +1080,7 @@ package unreal;
 		Args:
 		    vertices_to_move (Array(VertexToMove)):
 	**/
-	public function move_vertices(vertices_to_move:unreal.Array):Void;
+	public function move_vertices(vertices_to_move:Array<VertexToMove>):Void;
 	/**
 		x.propagate_instance_changes() -> None
 		Propagate Instance Changes
@@ -1095,7 +1095,7 @@ package unreal;
 		
 		    out_new_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function quadrangulate_mesh():Dynamic;
+	public function quadrangulate_mesh():Array<PolygonID>;
 	/**
 		x.rebuild_render_mesh() -> None
 		Rebuild Render Mesh
@@ -1126,7 +1126,7 @@ package unreal;
 		
 		    out_polygons (Array(PolygonID)):
 	**/
-	public function search_spatial_database_for_polygons_in_volume(planes:unreal.Array):Dynamic;
+	public function search_spatial_database_for_polygons_in_volume(planes:Array<Plane>):Array<PolygonID>;
 	/**
 		x.search_spatial_database_for_polygons_potentially_intersecting_line_segment(line_segment_start, line_segment_end) -> Array(PolygonID)
 		Search Spatial Database for Polygons Potentially Intersecting Line Segment
@@ -1140,7 +1140,7 @@ package unreal;
 		
 		    out_polygons (Array(PolygonID)):
 	**/
-	public function search_spatial_database_for_polygons_potentially_intersecting_line_segment(line_segment_start:unreal.Vector, line_segment_end:unreal.Vector):Dynamic;
+	public function search_spatial_database_for_polygons_potentially_intersecting_line_segment(line_segment_start:unreal.Vector, line_segment_end:unreal.Vector):Array<PolygonID>;
 	/**
 		x.search_spatial_database_for_polygons_potentially_intersecting_plane(plane) -> Array(PolygonID)
 		Search Spatial Database for Polygons Potentially Intersecting Plane
@@ -1153,7 +1153,7 @@ package unreal;
 		
 		    out_polygons (Array(PolygonID)):
 	**/
-	public function search_spatial_database_for_polygons_potentially_intersecting_plane(plane:unreal.Plane):Dynamic;
+	public function search_spatial_database_for_polygons_potentially_intersecting_plane(plane:unreal.Plane):Array<PolygonID>;
 	/**
 		x.set_allow_compact(allow_compact) -> None
 		Sets whether the mesh can be sporadically compacted as modifications are performed
@@ -1187,7 +1187,7 @@ package unreal;
 		Args:
 		    attributes_for_edges (Array(AttributesForEdge)):
 	**/
-	public function set_edges_attributes(attributes_for_edges:unreal.Array):Void;
+	public function set_edges_attributes(attributes_for_edges:Array<AttributesForEdge>):Void;
 	/**
 		x.set_edges_crease_sharpness(edge_i_ds, edges_new_crease_sharpness) -> None
 		Set Edges Crease Sharpness
@@ -1196,7 +1196,7 @@ package unreal;
 		    edge_i_ds (Array(EdgeID)): 
 		    edges_new_crease_sharpness (Array(float)):
 	**/
-	public function set_edges_crease_sharpness(edge_i_ds:unreal.Array, edges_new_crease_sharpness:unreal.Array):Void;
+	public function set_edges_crease_sharpness(edge_i_ds:Array<EdgeID>, edges_new_crease_sharpness:Array<float>):Void;
 	/**
 		x.set_edges_hardness(edge_i_ds, edges_new_is_hard) -> None
 		Set Edges Hardness
@@ -1205,7 +1205,7 @@ package unreal;
 		    edge_i_ds (Array(EdgeID)): 
 		    edges_new_is_hard (Array(bool)):
 	**/
-	public function set_edges_hardness(edge_i_ds:unreal.Array, edges_new_is_hard:unreal.Array):Void;
+	public function set_edges_hardness(edge_i_ds:Array<EdgeID>, edges_new_is_hard:Array<bool>):Void;
 	/**
 		x.set_edges_hardness_automatically(edge_i_ds, max_dot_product_for_soft_edge) -> None
 		Set Edges Hardness Automatically
@@ -1214,7 +1214,7 @@ package unreal;
 		    edge_i_ds (Array(EdgeID)): 
 		    max_dot_product_for_soft_edge (float):
 	**/
-	public function set_edges_hardness_automatically(edge_i_ds:unreal.Array, max_dot_product_for_soft_edge:Float):Void;
+	public function set_edges_hardness_automatically(edge_i_ds:Array<EdgeID>, max_dot_product_for_soft_edge:Float):Void;
 	/**
 		x.set_polygons_vertex_attributes(vertex_attributes_for_polygons) -> None
 		Set Polygons Vertex Attributes
@@ -1222,7 +1222,7 @@ package unreal;
 		Args:
 		    vertex_attributes_for_polygons (Array(VertexAttributesForPolygon)):
 	**/
-	public function set_polygons_vertex_attributes(vertex_attributes_for_polygons:unreal.Array):Void;
+	public function set_polygons_vertex_attributes(vertex_attributes_for_polygons:Array<VertexAttributesForPolygon>):Void;
 	/**
 		x.set_subdivision_count(new_subdivision_count) -> None
 		Set Subdivision Count
@@ -1246,7 +1246,7 @@ package unreal;
 		Args:
 		    attributes_for_vertex_instances (Array(AttributesForVertexInstance)):
 	**/
-	public function set_vertex_instances_attributes(attributes_for_vertex_instances:unreal.Array):Void;
+	public function set_vertex_instances_attributes(attributes_for_vertex_instances:Array<AttributesForVertexInstance>):Void;
 	/**
 		x.set_vertices_attributes(attributes_for_vertices) -> None
 		Set Vertices Attributes
@@ -1254,7 +1254,7 @@ package unreal;
 		Args:
 		    attributes_for_vertices (Array(AttributesForVertex)):
 	**/
-	public function set_vertices_attributes(attributes_for_vertices:unreal.Array):Void;
+	public function set_vertices_attributes(attributes_for_vertices:Array<AttributesForVertex>):Void;
 	/**
 		x.set_vertices_corner_sharpness(vertex_i_ds, vertices_new_corner_sharpness) -> None
 		Set Vertices Corner Sharpness
@@ -1263,7 +1263,7 @@ package unreal;
 		    vertex_i_ds (Array(VertexID)): 
 		    vertices_new_corner_sharpness (Array(float)):
 	**/
-	public function set_vertices_corner_sharpness(vertex_i_ds:unreal.Array, vertices_new_corner_sharpness:unreal.Array):Void;
+	public function set_vertices_corner_sharpness(vertex_i_ds:Array<VertexID>, vertices_new_corner_sharpness:Array<float>):Void;
 	/**
 		x.split_edge(edge_id, splits) -> Array(VertexID)
 		Split Edge
@@ -1277,7 +1277,7 @@ package unreal;
 		
 		    out_new_vertex_i_ds (Array(VertexID)):
 	**/
-	public function split_edge(edge_id:unreal.EdgeID, splits:unreal.Array):Dynamic;
+	public function split_edge(edge_id:unreal.EdgeID, splits:Array<float>):Array<VertexID>;
 	/**
 		x.split_polygonal_mesh(plane) -> (polygon_i_ds1=Array(PolygonID), polygon_i_ds2=Array(PolygonID), boundary_i_ds=Array(EdgeID))
 		Split Polygonal Mesh
@@ -1307,7 +1307,7 @@ package unreal;
 		
 		    out_new_edge_i_ds (Array(EdgeID)):
 	**/
-	public function split_polygons(polygons_to_split:unreal.Array):Dynamic;
+	public function split_polygons(polygons_to_split:Array<PolygonToSplit>):Array<EdgeID>;
 	/**
 		x.start_modification(mesh_modification_type, mesh_topology_change) -> None
 		Start Modification
@@ -1334,7 +1334,7 @@ package unreal;
 		
 		    out_new_polygon_i_ds (Array(PolygonID)):
 	**/
-	public function tessellate_polygons(polygon_i_ds:unreal.Array, triangle_tessellation_mode:unreal.TriangleTessellationMode):Dynamic;
+	public function tessellate_polygons(polygon_i_ds:Array<PolygonID>, triangle_tessellation_mode:unreal.TriangleTessellationMode):Array<PolygonID>;
 	/**
 		(int32):  [Read-Only] The number of texture coordinates stored on the vertices of this mesh
 	**/
@@ -1351,7 +1351,7 @@ package unreal;
 		
 		    out_new_triangle_polygons (Array(PolygonID)):
 	**/
-	public function triangulate_polygons(polygon_i_ds:unreal.Array):Dynamic;
+	public function triangulate_polygons(polygon_i_ds:Array<PolygonID>):Array<PolygonID>;
 	/**
 		x.try_to_remove_polygon_edge(edge_id) -> (out_was_edge_removed=bool, out_new_polygon_id=PolygonID)
 		Try to Remove Polygon Edge
@@ -1394,5 +1394,5 @@ package unreal;
 		
 		    out_new_vertex_id (VertexID):
 	**/
-	public function weld_vertices(vertex_i_ds:unreal.Array):unreal.VertexID;
+	public function weld_vertices(vertex_i_ds:Array<VertexID>):unreal.VertexID;
 }

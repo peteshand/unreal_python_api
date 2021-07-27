@@ -4,5 +4,5 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Implementation
 	**/
-	public var implementation : Dynamic;
+	public var implementation : Class<Dynamic>;
 }

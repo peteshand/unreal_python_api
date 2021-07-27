@@ -184,7 +184,7 @@ package unreal;
 		    scale_rule (DetachmentRule): How to handle scales when detaching.
 		    call_modify (bool): If true, call Modify() on the component and the current attach parent component
 	**/
-	public function detach_from_component(location_rule:unreal.DetachmentRule, rotation_rule:unreal.DetachmentRule, scale_rule:unreal.DetachmentRule, call_modify:Bool):Void;
+	public function detach_from_component(location_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, rotation_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, scale_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, call_modify:Bool = true):Void;
 	/**
 		x.detach_from_parent(maintain_world_position=False, call_modify=True) -> None
 		Detach from Parent
@@ -193,7 +193,7 @@ package unreal;
 		    maintain_world_position (bool): 
 		    call_modify (bool):
 	**/
-	public function detach_from_parent(maintain_world_position:Bool, call_modify:Bool):Void;
+	public function detach_from_parent(maintain_world_position:Bool = false, call_modify:Bool = true):Void;
 	/**
 		(DetailMode):  [Read-Only] If detail mode is >= system detail mode, primitive won't be rendered.
 	**/
@@ -216,7 +216,7 @@ package unreal;
 		Returns:
 		    Array(Name): Get the names of all the sockets on the component.
 	**/
-	public function get_all_socket_names():Dynamic;
+	public function get_all_socket_names():Array<Name>;
 	/**
 		x.get_attach_parent() -> SceneComponent
 		Get the SceneComponent we are attached to.
@@ -256,7 +256,7 @@ package unreal;
 		
 		    children (Array(SceneComponent)): The list of attached child components
 	**/
-	public function get_children_components(include_all_descendants:Bool):Dynamic;
+	public function get_children_components(include_all_descendants:Bool):Array<SceneComponent>;
 	/**
 		x.get_component_velocity() -> Vector
 		Get velocity of the component: either ComponentVelocity, or the velocity of the physics body if simulating physics.
@@ -290,7 +290,7 @@ package unreal;
 		
 		    parents (Array(SceneComponent)):
 	**/
-	public function get_parent_components():Dynamic;
+	public function get_parent_components():Array<SceneComponent>;
 	/**
 		x.get_physics_volume() -> PhysicsVolume
 		Get the PhysicsVolume overlapping this component.
@@ -361,7 +361,7 @@ package unreal;
 		Returns:
 		    Transform: Socket transform in world space if socket if found. Otherwise it will return component's transform in world space.
 	**/
-	public function get_socket_transform(socket_name:unreal.Name, transform_space:unreal.RelativeTransformSpace):unreal.Transform;
+	public function get_socket_transform(socket_name:unreal.Name, transform_space:unreal.RelativeTransformSpace = RelativeTransformSpace.RTS_WORLD):unreal.Transform;
 	/**
 		x.get_up_vector() -> Vector
 		Get the up (Z) unit direction vector from this component, in world space.
@@ -424,7 +424,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_simulating_physics(bone_name:unreal.Name):Bool;
+	public function is_simulating_physics(bone_name:unreal.Name = "\"None\""):Bool;
 	/**
 		x.is_visible() -> bool
 		Returns true if this component is visible in the current context
@@ -446,7 +446,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function k2_attach_to(parent:unreal.SceneComponent, socket_name:unreal.Name, attach_type:unreal.AttachLocation, weld_simulated_bodies:Bool):Bool;
+	public function k2_attach_to(parent:unreal.SceneComponent, socket_name:unreal.Name = "\"None\"", attach_type:unreal.AttachLocation = AttachLocation.KEEP_RELATIVE_OFFSET, weld_simulated_bodies:Bool = true):Bool;
 	/**
 		(ComponentMobility):  [Read-Only] How often this component is allowed to move, used to make various optimizations. Only safe to set in constructor.
 	**/
@@ -492,7 +492,7 @@ package unreal;
 		    new_absolute_rotation (bool): 
 		    new_absolute_scale (bool):
 	**/
-	public function set_absolute(new_absolute_location:Bool, new_absolute_rotation:Bool, new_absolute_scale:Bool):Void;
+	public function set_absolute(new_absolute_location:Bool = false, new_absolute_rotation:Bool = false, new_absolute_scale:Bool = false):Void;
 	/**
 		x.set_hidden_in_game(new_hidden, propagate_to_children=False) -> None
 		Changes the value of bHiddenInGame, if false this will disable Visibility during gameplay
@@ -501,7 +501,7 @@ package unreal;
 		    new_hidden (bool): 
 		    propagate_to_children (bool):
 	**/
-	public function set_hidden_in_game(new_hidden:Bool, propagate_to_children:Bool):Void;
+	public function set_hidden_in_game(new_hidden:Bool, propagate_to_children:Bool = false):Void;
 	/**
 		x.set_mobility(new_mobility) -> None
 		Set how often this component is allowed to move during runtime. Causes a component re-register if the component is already registered
@@ -587,7 +587,7 @@ package unreal;
 		    new_visibility (bool): 
 		    propagate_to_children (bool):
 	**/
-	public function set_visibility(new_visibility:Bool, propagate_to_children:Bool):Void;
+	public function set_visibility(new_visibility:Bool, propagate_to_children:Bool = false):Void;
 	/**
 		x.set_world_location(new_location, sweep, teleport) -> HitResult
 		Put this component at the specified location in world space. Updates relative location to achieve the final world location.
@@ -676,7 +676,7 @@ package unreal;
 		    bool:
 	**/
 	@:deprecated
-	public function snap_to(parent:unreal.SceneComponent, socket_name:unreal.Name):Bool;
+	public function snap_to(parent:unreal.SceneComponent, socket_name:unreal.Name = "\"None\""):Bool;
 	/**
 		x.toggle_visibility(propagate_to_children=False) -> None
 		Toggle visibility of the component
@@ -684,7 +684,7 @@ package unreal;
 		Args:
 		    propagate_to_children (bool):
 	**/
-	public function toggle_visibility(propagate_to_children:Bool):Void;
+	public function toggle_visibility(propagate_to_children:Bool = false):Void;
 	/**
 		(bool):  [Read-Write] If true, this component uses its parents bounds when attached.
 		This can be a significant optimization with many components attached together.

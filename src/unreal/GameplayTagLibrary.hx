@@ -46,7 +46,7 @@ package unreal;
 		
 		    gameplay_tags (Array(GameplayTag)):
 	**/
-	static public function break_gameplay_tag_container(gameplay_tag_container:unreal.GameplayTagContainer):Dynamic;
+	static public function break_gameplay_tag_container(gameplay_tag_container:unreal.GameplayTagContainer):Array<GameplayTag>;
 	/**
 		deprecated: 'do_gameplay_tags_match' was renamed to 'matches_tag'.
 	**/
@@ -117,7 +117,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	static public function get_all_actors_of_class_matching_tag_query(world_context_object:unreal.Object, actor_class:Dynamic, gameplay_tag_query:unreal.GameplayTagQuery):Dynamic;
+	static public function get_all_actors_of_class_matching_tag_query(world_context_object:unreal.Object, actor_class:Class<Dynamic>, gameplay_tag_query:unreal.GameplayTagQuery):Array<Actor>;
 	/**
 		X.get_debug_string_from_gameplay_tag(gameplay_tag) -> str
 		Returns an FString representation of a gameplay tag for debugging purposes.
@@ -233,7 +233,7 @@ package unreal;
 		Returns:
 		    GameplayTagContainer:
 	**/
-	static public function make_gameplay_tag_container_from_array(gameplay_tags:unreal.Array):unreal.GameplayTagContainer;
+	static public function make_gameplay_tag_container_from_array(gameplay_tags:Array<GameplayTag>):unreal.GameplayTagContainer;
 	/**
 		X.make_gameplay_tag_container_from_tag(single_tag) -> GameplayTagContainer
 		Creates a FGameplayTagContainer containing a single tag

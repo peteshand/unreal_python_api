@@ -18,7 +18,7 @@ package unreal;
 		
 		    found_action_set (SteamVRActionSet):
 	**/
-	static public function find_steam_vr_action(action_name:unreal.Name, action_set:unreal.Name):python.Tuple<Dynamic>;
+	static public function find_steam_vr_action(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):python.Tuple<Dynamic>;
 	/**
 		X.find_steam_vr_action_origin(action_name, action_set="main") -> bool
 		Search and show the current binding of a provided action name and action set in the user's HMD
@@ -30,7 +30,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function find_steam_vr_action_origin(action_name:unreal.Name, action_set:unreal.Name):Bool;
+	static public function find_steam_vr_action_origin(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):Bool;
 	/**
 		X.find_steam_vr_input_binding_info(action_name, action_set="main") -> Array(SteamVRInputBindingInfo)
 		Retrieves useful information about the SteamVR input bindings with a given action name and action set.
@@ -42,7 +42,7 @@ package unreal;
 		Returns:
 		    Array(SteamVRInputBindingInfo): SteamVRInputBindingInfo - Array of binding info for an action with the currently active controller
 	**/
-	static public function find_steam_vr_input_binding_info(action_name:unreal.Name, action_set:unreal.Name):Dynamic;
+	static public function find_steam_vr_input_binding_info(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):Array<SteamVRInputBindingInfo>;
 	/**
 		X.find_steam_vr_origin_tracked_device_info(action_name, action_set="main") -> (result=bool, input_origin_info=SteamVRInputOriginInfo)
 		Find and return information about the tracked device associated from the input source.
@@ -58,7 +58,7 @@ package unreal;
 		
 		    input_origin_info (SteamVRInputOriginInfo):
 	**/
-	static public function find_steam_vr_origin_tracked_device_info(action_name:unreal.Name, action_set:unreal.Name):python.Tuple<Dynamic>;
+	static public function find_steam_vr_origin_tracked_device_info(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):python.Tuple<Dynamic>;
 	/**
 		X.get_controller_fidelity() -> (left_controller_fidelity=ControllerFidelity, right_controller_fidelity=ControllerFidelity)
 		Retrieve skeletal tracking level for all controllers
@@ -98,7 +98,7 @@ package unreal;
 		
 		    finger_splays (SteamVRFingerSplays):
 	**/
-	static public function get_finger_curls_and_splays(hand:unreal.Hand, summary_data_type:unreal.SkeletalSummaryDataType):python.Tuple<Dynamic>;
+	static public function get_finger_curls_and_splays(hand:unreal.Hand, summary_data_type:unreal.SkeletalSummaryDataType = SkeletalSummaryDataType.VR_SUMMARY_TYPE_FROM_ANIMATION):python.Tuple<Dynamic>;
 	/**
 		X.get_left_hand_pose_data() -> (position=Vector, orientation=Rotator, angular_velocity=Vector, velocity=Vector)
 		Retrieve the left hand pose information - position, orientation and velocities
@@ -167,7 +167,7 @@ package unreal;
 		
 		    right_hand (SteamVRSkeletonTransform):
 	**/
-	static public function get_skeletal_transform(with_controller:Bool):python.Tuple<Dynamic>;
+	static public function get_skeletal_transform(with_controller:Bool = false):python.Tuple<Dynamic>;
 	/**
 		X.get_steam_vr_action_array() -> Array(SteamVRAction)
 		Retrieve the input actions for this project
@@ -177,7 +177,7 @@ package unreal;
 		
 		    steam_vr_actions (Array(SteamVRAction)):
 	**/
-	static public function get_steam_vr_action_array():Dynamic;
+	static public function get_steam_vr_action_array():Array<SteamVRAction>;
 	/**
 		X.get_steam_vr_action_set_array() -> Array(SteamVRActionSet)
 		Retrieve the input action sets for this project
@@ -187,7 +187,7 @@ package unreal;
 		
 		    steam_vr_action_sets (Array(SteamVRActionSet)):
 	**/
-	static public function get_steam_vr_action_set_array():Dynamic;
+	static public function get_steam_vr_action_set_array():Array<SteamVRActionSet>;
 	/**
 		X.get_steam_vr_global_predicted_seconds_from_now() -> float
 		Returns the the current value of the global PredictedSecondsFromNow use in any Get Pose Action Data calls (i.e. Getting controller transform)
@@ -212,7 +212,7 @@ package unreal;
 		
 		    orientation (Rotator):
 	**/
-	static public function get_steam_vr_hand_pose_relative_to_now(hand:unreal.SteamVRHand, predicted_seconds_from_now:Float):Dynamic;
+	static public function get_steam_vr_hand_pose_relative_to_now(hand:unreal.SteamVRHand = SteamVRHand.VR_LEFT, predicted_seconds_from_now:Float = 0.000000):Dynamic;
 	/**
 		X.get_steam_vr_input_binding_info(steam_vr_action_handle) -> Array(SteamVRInputBindingInfo)
 		Retrieves useful information about the SteamVR input bindings for an action.
@@ -223,7 +223,7 @@ package unreal;
 		Returns:
 		    Array(SteamVRInputBindingInfo): SteamVRInputBindingInfo - Array of binding info for an action with the currently active controller
 	**/
-	static public function get_steam_vr_input_binding_info(steam_vr_action_handle:unreal.SteamVRAction):Dynamic;
+	static public function get_steam_vr_input_binding_info(steam_vr_action_handle:unreal.SteamVRAction):Array<SteamVRInputBindingInfo>;
 	/**
 		X.get_steam_vr_origin_localized_name(steam_vr_action, localized_parts) -> str
 		Retrieve the localized name of the origin of a given action (e.g. "Left Hand Index Controller Trackpad")
@@ -237,7 +237,7 @@ package unreal;
 		
 		    origin_localized_name (str):
 	**/
-	static public function get_steam_vr_origin_localized_name(steam_vr_action:unreal.SteamVRAction, localized_parts:unreal.Array):String;
+	static public function get_steam_vr_origin_localized_name(steam_vr_action:unreal.SteamVRAction, localized_parts:Array<SteamVRInputStringBits>):String;
 	/**
 		X.get_steam_vr_origin_tracked_device_info(steam_vr_action) -> SteamVRInputOriginInfo or None
 		Returns information about the tracked device associated from the input source.
@@ -270,7 +270,7 @@ package unreal;
 		    frequency (float): Frequency used in the haptic feedback
 		    amplitude (float): Amplitude used in the haptic feedback
 	**/
-	static public function play_steam_vr_haptic_feedback(hand:unreal.SteamVRHand, start_seconds_from_now:Float, duration_seconds:Float, frequency:Float, amplitude:Float):Void;
+	static public function play_steam_vr_haptic_feedback(hand:unreal.SteamVRHand, start_seconds_from_now:Float, duration_seconds:Float = 1.000000, frequency:Float = 1.000000, amplitude:Float = 0.500000):Void;
 	/**
 		X.reset_seated_position() -> bool
 		Sets the zero pose for the seated tracker coordinate system to the current position and yaw of the HMD.

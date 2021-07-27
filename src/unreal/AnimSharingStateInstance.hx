@@ -14,7 +14,7 @@ package unreal;
 		
 		    actors (Array(Actor)):
 	**/
-	public function get_instanced_actors():Dynamic;
+	public function get_instanced_actors():Array<Actor>;
 	/**
 		(float):  [Read-Only] Permutation Time Offset
 	**/

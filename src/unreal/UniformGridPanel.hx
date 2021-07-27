@@ -13,7 +13,7 @@ package unreal;
 		Returns:
 		    UniformGridSlot:
 	**/
-	public function add_child_to_uniform_grid(content:unreal.Widget, row:Int, column:Int):unreal.UniformGridSlot;
+	public function add_child_to_uniform_grid(content:unreal.Widget, row:Int = 0, column:Int = 0):unreal.UniformGridSlot;
 	/**
 		(float):  [Read-Only] The minimum desired height of the slots
 	**/

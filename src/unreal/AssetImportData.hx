@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	public function extract_filenames():Dynamic;
+	public function extract_filenames():Array<str>;
 	/**
 		x.get_first_filename() -> str
 		Helper function to return the first filename stored in this data. The resulting filename will be absolute (ie, not relative to the asset).

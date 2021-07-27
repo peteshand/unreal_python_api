@@ -14,5 +14,5 @@ package unreal;
 		Returns:
 		    bool: true if any polygon/link has been touched
 	**/
-	public function k2_replace_area_in_tile_bounds(bounds:unreal.Box, old_area:Dynamic, new_area:Dynamic, replace_links:Bool):Bool;
+	public function k2_replace_area_in_tile_bounds(bounds:unreal.Box, old_area:Class<Dynamic>, new_area:Class<Dynamic>, replace_links:Bool = true):Bool;
 }

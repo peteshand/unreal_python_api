@@ -121,7 +121,7 @@ package unreal;
 		    boundary_max (float): 
 		    update_mesh (bool):
 	**/
-	public function set_boundary_max(boundary_max:Float, update_mesh:Bool):Void;
+	public function set_boundary_max(boundary_max:Float, update_mesh:Bool = true):Void;
 	/**
 		x.set_boundary_min(boundary_min, update_mesh=True) -> None
 		Set the boundary min
@@ -130,7 +130,7 @@ package unreal;
 		    boundary_min (float): 
 		    update_mesh (bool):
 	**/
-	public function set_boundary_min(boundary_min:Float, update_mesh:Bool):Void;
+	public function set_boundary_min(boundary_min:Float, update_mesh:Bool = true):Void;
 	/**
 		x.set_end_offset(end_offset, update_mesh=True) -> None
 		Set the end offset
@@ -139,7 +139,7 @@ package unreal;
 		    end_offset (Vector2D): 
 		    update_mesh (bool):
 	**/
-	public function set_end_offset(end_offset:unreal.Vector2D, update_mesh:Bool):Void;
+	public function set_end_offset(end_offset:unreal.Vector2D, update_mesh:Bool = true):Void;
 	/**
 		x.set_end_position(end_pos, update_mesh=True) -> None
 		Set the end position of spline in local space
@@ -148,7 +148,7 @@ package unreal;
 		    end_pos (Vector): 
 		    update_mesh (bool):
 	**/
-	public function set_end_position(end_pos:unreal.Vector, update_mesh:Bool):Void;
+	public function set_end_position(end_pos:unreal.Vector, update_mesh:Bool = true):Void;
 	/**
 		x.set_end_roll(end_roll, update_mesh=True) -> None
 		Set the end roll
@@ -157,7 +157,7 @@ package unreal;
 		    end_roll (float): 
 		    update_mesh (bool):
 	**/
-	public function set_end_roll(end_roll:Float, update_mesh:Bool):Void;
+	public function set_end_roll(end_roll:Float, update_mesh:Bool = true):Void;
 	/**
 		x.set_end_scale(end_scale=[1.000000, 1.000000], update_mesh=True) -> None
 		Set the end scaling
@@ -166,7 +166,7 @@ package unreal;
 		    end_scale (Vector2D): 
 		    update_mesh (bool):
 	**/
-	public function set_end_scale(end_scale:unreal.Vector2D, update_mesh:Bool):Void;
+	public function set_end_scale(end_scale:unreal.Vector2D = [1.000000, 1.000000], update_mesh:Bool = true):Void;
 	/**
 		x.set_end_tangent(end_tangent, update_mesh=True) -> None
 		Set the end tangent vector of spline in local space
@@ -175,7 +175,7 @@ package unreal;
 		    end_tangent (Vector): 
 		    update_mesh (bool):
 	**/
-	public function set_end_tangent(end_tangent:unreal.Vector, update_mesh:Bool):Void;
+	public function set_end_tangent(end_tangent:unreal.Vector, update_mesh:Bool = true):Void;
 	/**
 		x.set_forward_axis(forward_axis, update_mesh=True) -> None
 		Set the forward axis
@@ -184,7 +184,7 @@ package unreal;
 		    forward_axis (SplineMeshAxis): 
 		    update_mesh (bool):
 	**/
-	public function set_forward_axis(forward_axis:unreal.SplineMeshAxis, update_mesh:Bool):Void;
+	public function set_forward_axis(forward_axis:unreal.SplineMeshAxis, update_mesh:Bool = true):Void;
 	/**
 		x.set_spline_up_dir(spline_up_dir, update_mesh=True) -> None
 		Set the spline up direction
@@ -193,7 +193,7 @@ package unreal;
 		    spline_up_dir (Vector): 
 		    update_mesh (bool):
 	**/
-	public function set_spline_up_dir(spline_up_dir:unreal.Vector, update_mesh:Bool):Void;
+	public function set_spline_up_dir(spline_up_dir:unreal.Vector, update_mesh:Bool = true):Void;
 	/**
 		x.set_start_and_end(start_pos, start_tangent, end_pos, end_tangent, update_mesh=True) -> None
 		Set the start and end, position and tangent, all in local space
@@ -205,7 +205,7 @@ package unreal;
 		    end_tangent (Vector): 
 		    update_mesh (bool):
 	**/
-	public function set_start_and_end(start_pos:unreal.Vector, start_tangent:unreal.Vector, end_pos:unreal.Vector, end_tangent:unreal.Vector, update_mesh:Bool):Void;
+	public function set_start_and_end(start_pos:unreal.Vector, start_tangent:unreal.Vector, end_pos:unreal.Vector, end_tangent:unreal.Vector, update_mesh:Bool = true):Void;
 	/**
 		x.set_start_offset(start_offset, update_mesh=True) -> None
 		Set the start offset
@@ -214,7 +214,7 @@ package unreal;
 		    start_offset (Vector2D): 
 		    update_mesh (bool):
 	**/
-	public function set_start_offset(start_offset:unreal.Vector2D, update_mesh:Bool):Void;
+	public function set_start_offset(start_offset:unreal.Vector2D, update_mesh:Bool = true):Void;
 	/**
 		x.set_start_position(start_pos, update_mesh=True) -> None
 		Set the start position of spline in local space
@@ -223,7 +223,7 @@ package unreal;
 		    start_pos (Vector): 
 		    update_mesh (bool):
 	**/
-	public function set_start_position(start_pos:unreal.Vector, update_mesh:Bool):Void;
+	public function set_start_position(start_pos:unreal.Vector, update_mesh:Bool = true):Void;
 	/**
 		x.set_start_roll(start_roll, update_mesh=True) -> None
 		Set the start roll
@@ -232,7 +232,7 @@ package unreal;
 		    start_roll (float): 
 		    update_mesh (bool):
 	**/
-	public function set_start_roll(start_roll:Float, update_mesh:Bool):Void;
+	public function set_start_roll(start_roll:Float, update_mesh:Bool = true):Void;
 	/**
 		x.set_start_scale(start_scale=[1.000000, 1.000000], update_mesh=True) -> None
 		Set the start scaling
@@ -241,7 +241,7 @@ package unreal;
 		    start_scale (Vector2D): 
 		    update_mesh (bool):
 	**/
-	public function set_start_scale(start_scale:unreal.Vector2D, update_mesh:Bool):Void;
+	public function set_start_scale(start_scale:unreal.Vector2D = [1.000000, 1.000000], update_mesh:Bool = true):Void;
 	/**
 		x.set_start_tangent(start_tangent, update_mesh=True) -> None
 		Set the start tangent vector of spline in local space
@@ -250,7 +250,7 @@ package unreal;
 		    start_tangent (Vector): 
 		    update_mesh (bool):
 	**/
-	public function set_start_tangent(start_tangent:unreal.Vector, update_mesh:Bool):Void;
+	public function set_start_tangent(start_tangent:unreal.Vector, update_mesh:Bool = true):Void;
 	/**
 		x.update_mesh() -> None
 		Update the collision and render state on the spline mesh following changes to its geometry

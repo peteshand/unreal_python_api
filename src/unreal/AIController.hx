@@ -24,7 +24,7 @@ package unreal;
 		Args:
 		    resource_class (type(Class)):
 	**/
-	public function claim_task_resource(resource_class:Dynamic):Void;
+	public function claim_task_resource(resource_class:Class<Dynamic>):Void;
 	/**
 		x.clear_focus() -> None
 		Clears Focus, will also clear FocalPoint as a result
@@ -33,7 +33,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Default Navigation Filter Class
 	**/
-	public var default_navigation_filter_class : Dynamic;
+	public var default_navigation_filter_class : Class<Dynamic>;
 	/**
 		x.get_ai_perception_component() -> AIPerceptionComponent
 		Get AIPerception Component
@@ -118,7 +118,7 @@ package unreal;
 		Returns:
 		    PathFollowingRequestResult:
 	**/
-	public function move_to_actor(goal:unreal.Actor, acceptance_radius:Float, stop_on_overlap:Bool, use_pathfinding:Bool, can_strafe:Bool, filter_class:Dynamic, allow_partial_path:Bool):unreal.PathFollowingRequestResult;
+	public function move_to_actor(goal:unreal.Actor, acceptance_radius:Float = -1.000000, stop_on_overlap:Bool = true, use_pathfinding:Bool = true, can_strafe:Bool = true, filter_class:Class<Dynamic> = null, allow_partial_path:Bool = true):unreal.PathFollowingRequestResult;
 	/**
 		x.move_to_location(dest, acceptance_radius=-1.000000, stop_on_overlap=True, use_pathfinding=True, project_destination_to_navigation=False, can_strafe=True, filter_class=None, allow_partial_path=True) -> PathFollowingRequestResult
 		Makes AI go toward specified Dest location, aborts any active path following
@@ -137,7 +137,7 @@ package unreal;
 		Returns:
 		    PathFollowingRequestResult:
 	**/
-	public function move_to_location(dest:unreal.Vector, acceptance_radius:Float, stop_on_overlap:Bool, use_pathfinding:Bool, project_destination_to_navigation:Bool, can_strafe:Bool, filter_class:Dynamic, allow_partial_path:Bool):unreal.PathFollowingRequestResult;
+	public function move_to_location(dest:unreal.Vector, acceptance_radius:Float = -1.000000, stop_on_overlap:Bool = true, use_pathfinding:Bool = true, project_destination_to_navigation:Bool = false, can_strafe:Bool = true, filter_class:Class<Dynamic> = null, allow_partial_path:Bool = true):unreal.PathFollowingRequestResult;
 	/**
 		x.on_using_black_board(blackboard_comp, blackboard_asset) -> None
 		On Using Black Board
@@ -220,7 +220,7 @@ package unreal;
 		Args:
 		    resource_class (type(Class)):
 	**/
-	public function unclaim_task_resource(resource_class:Dynamic):Void;
+	public function unclaim_task_resource(resource_class:Class<Dynamic>):Void;
 	/**
 		x.use_blackboard(blackboard_asset) -> BlackboardComponent or None
 		Makes AI use the specified Blackboard asset & creates a Blackboard Component if one does not already exist.

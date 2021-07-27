@@ -4,7 +4,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Area Class
 	**/
-	public var area_class : Dynamic;
+	public var area_class : Class<Dynamic>;
 	/**
 		x.set_area_class(new_area_class=None) -> None
 		Set Area Class
@@ -12,5 +12,5 @@ package unreal;
 		Args:
 		    new_area_class (type(Class)):
 	**/
-	public function set_area_class(new_area_class:Dynamic):Void;
+	public function set_area_class(new_area_class:Class<Dynamic> = null):Void;
 }

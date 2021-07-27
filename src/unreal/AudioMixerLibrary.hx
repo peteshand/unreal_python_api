@@ -74,7 +74,7 @@ package unreal;
 		
 		    magnitudes (Array(float)):
 	**/
-	static public function get_magnitude_for_frequencies(world_context_object:unreal.Object, frequencies:unreal.Array, submix_to_analyze:unreal.SoundSubmix):Dynamic;
+	static public function get_magnitude_for_frequencies(world_context_object:unreal.Object, frequencies:Array<float>, submix_to_analyze:unreal.SoundSubmix = null):Array<float>;
 	/**
 		X.get_number_of_entries_in_source_effect_chain(world_context_object, preset_chain) -> int32
 		Returns the number of effect chain entries in the given source effect chain.
@@ -101,7 +101,7 @@ package unreal;
 		
 		    phases (Array(float)):
 	**/
-	static public function get_phase_for_frequencies(world_context_object:unreal.Object, frequencies:unreal.Array, submix_to_analyze:unreal.SoundSubmix):Dynamic;
+	static public function get_phase_for_frequencies(world_context_object:unreal.Object, frequencies:Array<float>, submix_to_analyze:unreal.SoundSubmix = null):Array<float>;
 	/**
 		X.is_audio_bus_active(world_context_object, audio_bus) -> bool
 		Queries if the given audio bus is active (and audio can be mixed to it).
@@ -128,7 +128,7 @@ package unreal;
 		Returns:
 		    Array(SoundSubmixSpectralAnalysisBandSettings):
 	**/
-	static public function make_full_spectrum_spectral_analysis_band_settings(num_bands:Int, minimum_frequency:Float, maximum_frequency:Float, attack_time_msec:Int, release_time_msec:Int):Dynamic;
+	static public function make_full_spectrum_spectral_analysis_band_settings(num_bands:Int = 30, minimum_frequency:Float = 40.000000, maximum_frequency:Float = 16000.000000, attack_time_msec:Int = 10, release_time_msec:Int = 10):Array<SoundSubmixSpectralAnalysisBandSettings>;
 	/**
 		X.make_musical_spectral_analysis_band_settings(num_semitones=60, starting_musical_note=MusicalNoteName.C, starting_octave=2, attack_time_msec=10, release_time_msec=10) -> Array(SoundSubmixSpectralAnalysisBandSettings)
 		Make an array of musically spaced bands with ascending frequency.
@@ -143,7 +143,7 @@ package unreal;
 		Returns:
 		    Array(SoundSubmixSpectralAnalysisBandSettings):
 	**/
-	static public function make_musical_spectral_analysis_band_settings(num_semitones:Int, starting_musical_note:unreal.MusicalNoteName, starting_octave:Int, attack_time_msec:Int, release_time_msec:Int):Dynamic;
+	static public function make_musical_spectral_analysis_band_settings(num_semitones:Int = 60, starting_musical_note:unreal.MusicalNoteName = MusicalNoteName.C, starting_octave:Int = 2, attack_time_msec:Int = 10, release_time_msec:Int = 10):Array<SoundSubmixSpectralAnalysisBandSettings>;
 	/**
 		X.make_preset_spectral_analysis_band_settings(band_preset_type, num_bands=10, attack_time_msec=10, release_time_msec=10) -> Array(SoundSubmixSpectralAnalysisBandSettings)
 		Make an array of bands which span the frequency range of a given EAudioSpectrumBandPresetType.
@@ -157,7 +157,7 @@ package unreal;
 		Returns:
 		    Array(SoundSubmixSpectralAnalysisBandSettings):
 	**/
-	static public function make_preset_spectral_analysis_band_settings(band_preset_type:unreal.AudioSpectrumBandPresetType, num_bands:Int, attack_time_msec:Int, release_time_msec:Int):Dynamic;
+	static public function make_preset_spectral_analysis_band_settings(band_preset_type:unreal.AudioSpectrumBandPresetType, num_bands:Int = 10, attack_time_msec:Int = 10, release_time_msec:Int = 10):Array<SoundSubmixSpectralAnalysisBandSettings>;
 	/**
 		X.pause_recording_output(world_context_object, submix_to_pause=None) -> None
 		Pause recording audio, without finalizing the recording to disk. By leaving the Submix To Record field blank, you can record the master output of the game.
@@ -166,7 +166,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_to_pause (SoundSubmix):
 	**/
-	static public function pause_recording_output(world_context_object:unreal.Object, submix_to_pause:unreal.SoundSubmix):Void;
+	static public function pause_recording_output(world_context_object:unreal.Object, submix_to_pause:unreal.SoundSubmix = null):Void;
 	/**
 		X.prime_sound_cue_for_playback(sound_cue) -> None
 		Begin loading any sounds referenced by a sound cue into the cache so that it can be played immediately.
@@ -242,7 +242,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_to_pause (SoundSubmix):
 	**/
-	static public function resume_recording_output(world_context_object:unreal.Object, submix_to_pause:unreal.SoundSubmix):Void;
+	static public function resume_recording_output(world_context_object:unreal.Object, submix_to_pause:unreal.SoundSubmix = null):Void;
 	/**
 		X.set_bypass_source_effect_chain_entry(world_context_object, preset_chain, entry_index, bypassed) -> None
 		Set whether or not to bypass the effect at the source effect chain index.
@@ -264,7 +264,7 @@ package unreal;
 		    submix_effect_preset_chain (Array(SoundEffectSubmixPreset)): 
 		    fade_time_sec (float):
 	**/
-	static public function set_submix_effect_chain_override(world_context_object:unreal.Object, sound_submix:unreal.SoundSubmix, submix_effect_preset_chain:unreal.Array, fade_time_sec:Float):Void;
+	static public function set_submix_effect_chain_override(world_context_object:unreal.Object, sound_submix:unreal.SoundSubmix, submix_effect_preset_chain:Array<SoundEffectSubmixPreset>, fade_time_sec:Float):Void;
 	/**
 		X.start_analyzing_output(world_context_object, submix_to_analyze=None, fft_size=FFTSize.DEFAULT_SIZE, interpolation_method=FFTPeakInterpolationMethod.LINEAR, window_type=FFTWindowType.HANN, hop_size=0.000000, spectrum_type=AudioSpectrumType.MAGNITUDE_SPECTRUM) -> None
 		Start spectrum analysis of the audio output. By leaving the Submix To Analyze blank, you can analyze the master output of the game.
@@ -278,7 +278,7 @@ package unreal;
 		    hop_size (float): 
 		    spectrum_type (AudioSpectrumType):
 	**/
-	static public function start_analyzing_output(world_context_object:unreal.Object, submix_to_analyze:unreal.SoundSubmix, fft_size:unreal.FFTSize, interpolation_method:unreal.FFTPeakInterpolationMethod, window_type:unreal.FFTWindowType, hop_size:Float, spectrum_type:unreal.AudioSpectrumType):Void;
+	static public function start_analyzing_output(world_context_object:unreal.Object, submix_to_analyze:unreal.SoundSubmix = null, fft_size:unreal.FFTSize = FFTSize.DEFAULT_SIZE, interpolation_method:unreal.FFTPeakInterpolationMethod = FFTPeakInterpolationMethod.LINEAR, window_type:unreal.FFTWindowType = FFTWindowType.HANN, hop_size:Float = 0.000000, spectrum_type:unreal.AudioSpectrumType = AudioSpectrumType.MAGNITUDE_SPECTRUM):Void;
 	/**
 		X.start_audio_bus(world_context_object, audio_bus) -> None
 		Starts the given audio bus.
@@ -297,7 +297,7 @@ package unreal;
 		    expected_duration (float): 
 		    submix_to_record (SoundSubmix):
 	**/
-	static public function start_recording_output(world_context_object:unreal.Object, expected_duration:Float, submix_to_record:unreal.SoundSubmix):Void;
+	static public function start_recording_output(world_context_object:unreal.Object, expected_duration:Float, submix_to_record:unreal.SoundSubmix = null):Void;
 	/**
 		X.stop_analyzing_output(world_context_object, submix_to_stop_analyzing=None) -> None
 		Start spectrum analysis of the audio output. By leaving the Submix To Stop Analyzing blank, you can analyze the master output of the game.
@@ -306,7 +306,7 @@ package unreal;
 		    world_context_object (Object): 
 		    submix_to_stop_analyzing (SoundSubmix):
 	**/
-	static public function stop_analyzing_output(world_context_object:unreal.Object, submix_to_stop_analyzing:unreal.SoundSubmix):Void;
+	static public function stop_analyzing_output(world_context_object:unreal.Object, submix_to_stop_analyzing:unreal.SoundSubmix = null):Void;
 	/**
 		X.stop_audio_bus(world_context_object, audio_bus) -> None
 		Stops the given audio bus.
@@ -331,7 +331,7 @@ package unreal;
 		Returns:
 		    SoundWave:
 	**/
-	static public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, submix_to_record:unreal.SoundSubmix, existing_sound_wave_to_overwrite:unreal.SoundWave):unreal.SoundWave;
+	static public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, submix_to_record:unreal.SoundSubmix = null, existing_sound_wave_to_overwrite:unreal.SoundWave = null):unreal.SoundWave;
 	/**
 		X.trim_audio_cache(megabytes_to_free) -> float
 		Trim memory used by the audio cache. Returns the number of megabytes freed.

@@ -21,7 +21,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	static public function get_actors(world_context_object:unreal.Object, actor_layer:unreal.ActorLayer):Dynamic;
+	static public function get_actors(world_context_object:unreal.Object, actor_layer:unreal.ActorLayer):Array<Actor>;
 	/**
 		X.remove_actor_from_layer(actor, layer) -> None
 		Removes the actor from the specified layer

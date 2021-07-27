@@ -14,7 +14,7 @@ package unreal;
 		Returns:
 		    CanvasRenderTarget2D: Returns the instanced render target.
 	**/
-	static public function create_canvas_render_target2d(world_context_object:unreal.Object, canvas_render_target2d_class:Dynamic, width:Int, height:Int):unreal.CanvasRenderTarget2D;
+	static public function create_canvas_render_target2d(world_context_object:unreal.Object, canvas_render_target2d_class:Class<Dynamic>, width:Int = 1024, height:Int = 1024):unreal.CanvasRenderTarget2D;
 	/**
 		x.get_size() -> (width=int32, height=int32)
 		Gets a specific render target's size from the global map of canvas render targets.

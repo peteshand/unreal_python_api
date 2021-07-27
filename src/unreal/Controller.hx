@@ -96,7 +96,7 @@ package unreal;
 		Returns:
 		    bool: true if controller's pawn can see Other actor.
 	**/
-	public function line_of_sight_to(other:unreal.Actor, view_point:unreal.Vector, alternate_checks:Bool):Bool;
+	public function line_of_sight_to(other:unreal.Actor, view_point:unreal.Vector = [0.000000, 0.000000, 0.000000], alternate_checks:Bool = false):Bool;
 	/**
 		(InstigatedAnyDamageSignature):  [Read-Write] Called when the controller has instigated damage in any way
 	**/

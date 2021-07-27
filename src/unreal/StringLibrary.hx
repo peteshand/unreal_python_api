@@ -166,7 +166,7 @@ package unreal;
 		Returns:
 		    bool: Returns whether the string contains the substring
 	**/
-	static public function contains(search_in:String, substring:String, use_case:Bool, search_from_end:Bool):Bool;
+	static public function contains(search_in:String, substring:String, use_case:Bool = false, search_from_end:Bool = false):Bool;
 	/**
 		X.conv_bool_to_string(bool) -> str
 		Converts a boolean value to a string, either 'true' or 'false'
@@ -426,7 +426,7 @@ package unreal;
 		
 		    array (Array(str)): The array to cull
 	**/
-	static public function cull_array(source_string:String):Dynamic;
+	static public function cull_array(source_string:String):Array<str>;
 	/**
 		X.ends_with(source_string, suffix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string ends with given string.
@@ -439,7 +439,7 @@ package unreal;
 		Returns:
 		    bool: true if this string ends with specified text, false otherwise
 	**/
-	static public function ends_with(source_string:String, suffix:String, search_case:unreal.SearchCase):Bool;
+	static public function ends_with(source_string:String, suffix:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):Bool;
 	/**
 		X.equal_equal_str_str(a, b) -> bool
 		Test if the input strings are equal (A == B)
@@ -478,7 +478,7 @@ package unreal;
 		Returns:
 		    int32: The index (starting from 0 if bSearchFromEnd is false) of the first occurence of the substring
 	**/
-	static public function find_substring(search_in:String, substring:String, use_case:Bool, search_from_end:Bool, start_position:Int):Int;
+	static public function find_substring(search_in:String, substring:String, use_case:Bool = false, search_from_end:Bool = false, start_position:Int = -1):Int;
 	/**
 		X.get_character_array_from_string(source_string) -> Array(str)
 		Returns an array that contains one entry for each character in SourceString
@@ -489,7 +489,7 @@ package unreal;
 		Returns:
 		    Array(str): An array containing one entry for each character in SourceString
 	**/
-	static public function get_character_array_from_string(source_string:String):Dynamic;
+	static public function get_character_array_from_string(source_string:String):Array<str>;
 	/**
 		X.get_character_as_number(source_string, index=0) -> int32
 		Gets a single character from the string (as an integer)
@@ -501,7 +501,7 @@ package unreal;
 		Returns:
 		    int32: The integer value of the character or 0 if index is out of range
 	**/
-	static public function get_character_as_number(source_string:String, index:Int):Int;
+	static public function get_character_as_number(source_string:String, index:Int = 0):Int;
 	/**
 		X.get_substring(source_string, start_index=0, length=1) -> str
 		Returns a substring from the string starting at the specified position
@@ -514,7 +514,7 @@ package unreal;
 		Returns:
 		    str: The requested substring
 	**/
-	static public function get_substring(source_string:String, start_index:Int, length:Int):String;
+	static public function get_substring(source_string:String, start_index:Int = 0, length:Int = 1):String;
 	/**
 		X.is_empty(string) -> bool
 		Returns true if the string is empty
@@ -549,7 +549,7 @@ package unreal;
 		Returns:
 		    str: The final, joined, separated string.
 	**/
-	static public function join_string_array(source_array:unreal.Array, separator:String):String;
+	static public function join_string_array(source_array:Array<str>, separator:String = "\" \""):String;
 	/**
 		X.left(source_string, count) -> str
 		Returns the left most given number of characters
@@ -611,7 +611,7 @@ package unreal;
 		Returns:
 		    bool: true if this string matches the *?-type wildcard given.
 	**/
-	static public function matches_wildcard(source_string:String, wildcard:String, search_case:unreal.SearchCase):Bool;
+	static public function matches_wildcard(source_string:String, wildcard:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):Bool;
 	/**
 		X.mid(source_string, start, count) -> str
 		Returns the substring from Start position for Count characters.
@@ -661,7 +661,7 @@ package unreal;
 		Returns:
 		    Array(str): The array of string that have been separated
 	**/
-	static public function parse_into_array(source_string:String, delimiter:String, cull_empty_strings:Bool):Dynamic;
+	static public function parse_into_array(source_string:String, delimiter:String = "\" \"", cull_empty_strings:Bool = true):Array<str>;
 	/**
 		X.replace(source_string, from_, to, search_case=SearchCase.IGNORE_CASE) -> str
 		Replace all occurrences of a substring in this string
@@ -675,7 +675,7 @@ package unreal;
 		Returns:
 		    str: a copy of this string with the replacement made
 	**/
-	static public function replace(source_string:String, from_:String, to:String, search_case:unreal.SearchCase):String;
+	static public function replace(source_string:String, from_:String, to:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):String;
 	/**
 		X.replace_inline(source_string, search_text, replacement_text, search_case=SearchCase.IGNORE_CASE) -> (int32, source_string=str)
 		Replace all occurrences of SearchText with ReplacementText in this string.
@@ -691,7 +691,7 @@ package unreal;
 		
 		    source_string (str):
 	**/
-	static public function replace_inline(source_string:String, search_text:String, replacement_text:String, search_case:unreal.SearchCase):String;
+	static public function replace_inline(source_string:String, search_text:String, replacement_text:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):String;
 	/**
 		X.reverse(source_string) -> str
 		Returns a copy of this string, with the characters in reverse order
@@ -757,7 +757,7 @@ package unreal;
 		
 		    right_s (str): out the string to the right of InStr, not updated if return is false
 	**/
-	static public function split(source_string:String, str:String, search_case:unreal.SearchCase, search_dir:unreal.SearchDir):Dynamic;
+	static public function split(source_string:String, str:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE, search_dir:unreal.SearchDir = SearchDir.FROM_START):Dynamic;
 	/**
 		X.starts_with(source_string, prefix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string starts with given string.
@@ -770,7 +770,7 @@ package unreal;
 		Returns:
 		    bool: true if this string begins with specified text, false otherwise
 	**/
-	static public function starts_with(source_string:String, prefix:String, search_case:unreal.SearchCase):Bool;
+	static public function starts_with(source_string:String, prefix:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):Bool;
 	/**
 		X.time_seconds_to_string(seconds) -> str
 		Convert a number of seconds into minutes:seconds.milliseconds format string (including leading zeroes)

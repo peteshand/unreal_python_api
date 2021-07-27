@@ -16,5 +16,5 @@ package unreal;
 		
 		    filtered_array (Array(Actor)):
 	**/
-	static public function filter_array(target_array:unreal.Array, filter_class:Dynamic):Dynamic;
+	static public function filter_array(target_array:Array<Actor>, filter_class:Class<Dynamic>):Array<Actor>;
 }

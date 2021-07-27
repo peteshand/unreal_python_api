@@ -61,7 +61,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function get_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector):Dynamic;
+	static public function get_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector):Class<Dynamic>;
 	/**
 		X.get_blackboard_value_as_enum(node_owner, key) -> uint8
 		Get Blackboard Value as Enum
@@ -199,7 +199,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (type(Class)):
 	**/
-	static public function set_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector, value:Dynamic):Void;
+	static public function set_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector, value:Class<Dynamic>):Void;
 	/**
 		X.set_blackboard_value_as_enum(node_owner, key, value) -> None
 		Set Blackboard Value as Enum

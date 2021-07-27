@@ -43,7 +43,7 @@ package unreal;
 		    actor (Actor): 
 		    include_from_child_actors (bool): Whether to include the components from child actors
 	**/
-	public function hide_actor_components(actor:unreal.Actor, include_from_child_actors:Bool):Void;
+	public function hide_actor_components(actor:unreal.Actor, include_from_child_actors:Bool = false):Void;
 	/**
 		x.hide_component(component) -> None
 		Adds the component to our list of hidden components.
@@ -72,7 +72,7 @@ package unreal;
 		    actor (Actor): 
 		    include_from_child_actors (bool): Whether to remove the components from child actors
 	**/
-	public function remove_show_only_actor_components(actor:unreal.Actor, include_from_child_actors:Bool):Void;
+	public function remove_show_only_actor_components(actor:unreal.Actor, include_from_child_actors:Bool = false):Void;
 	/**
 		x.remove_show_only_component(component) -> None
 		Removes a component from the Show Only list.
@@ -101,7 +101,7 @@ package unreal;
 		    actor (Actor): 
 		    include_from_child_actors (bool): Whether to include the components from child actors
 	**/
-	public function show_only_actor_components(actor:unreal.Actor, include_from_child_actors:Bool):Void;
+	public function show_only_actor_components(actor:unreal.Actor, include_from_child_actors:Bool = false):Void;
 	/**
 		(Array(Actor)):  [Read-Write] The only actors to be rendered by this scene capture, if PrimitiveRenderMode is set to UseShowOnlyList.
 	**/

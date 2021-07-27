@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_supported_class():Dynamic;
+	public function get_supported_class():Class<Dynamic>;
 	/**
 		x.is_action_for_blueprints() -> bool
 		Returns whether or not this action is designed to work specifically on Blueprints (true) or on all assets (false).

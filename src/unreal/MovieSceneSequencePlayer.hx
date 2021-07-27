@@ -16,7 +16,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_bound_objects(object_binding:unreal.MovieSceneObjectBindingID):Dynamic;
+	public function get_bound_objects(object_binding:unreal.MovieSceneObjectBindingID):Array<Object>;
 	/**
 		x.get_current_time() -> QualifiedTime
 		Get the current playback position
@@ -75,7 +75,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneObjectBindingID):
 	**/
-	public function get_object_bindings(object:unreal.Object):Dynamic;
+	public function get_object_bindings(object:unreal.Object):Array<MovieSceneObjectBindingID>;
 	/**
 		x.get_play_rate() -> float
 		Get the playback rate of this player.
@@ -191,7 +191,7 @@ package unreal;
 		Args:
 		    num_loops (int32): The number of loops to play. -1 indicates infinite looping.
 	**/
-	public function play_looping(num_loops:Int):Void;
+	public function play_looping(num_loops:Int = -1):Void;
 	/**
 		x.play_reverse() -> None
 		Reverse playback.
@@ -295,7 +295,7 @@ package unreal;
 		    duration (int32): The number of frames to play
 		    sub_frames (float):
 	**/
-	public function set_frame_range(start_frame:Int, duration:Int, sub_frames:Float):Void;
+	public function set_frame_range(start_frame:Int, duration:Int, sub_frames:Float = 0.000000):Void;
 	/**
 		x.set_frame_rate(frame_rate) -> None
 		Set the frame-rate that this player should play with, making all frame numbers in the specified time-space

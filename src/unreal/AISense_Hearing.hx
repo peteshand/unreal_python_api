@@ -13,5 +13,5 @@ package unreal;
 		    max_range (float): Max range at which the sound can be heard, multiplied by Loudness. Values <= 0 mean no limit (still limited by listener's range however).
 		    tag (Name): Identifier for the event.
 	**/
-	static public function report_noise_event(world_context_object:unreal.Object, noise_location:unreal.Vector, loudness:Float, instigator:unreal.Actor, max_range:Float, tag:unreal.Name):Void;
+	static public function report_noise_event(world_context_object:unreal.Object, noise_location:unreal.Vector, loudness:Float = 1.000000, instigator:unreal.Actor = null, max_range:Float = 0.000000, tag:unreal.Name = "\"None\""):Void;
 }

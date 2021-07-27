@@ -40,7 +40,7 @@ package unreal;
 		    enable (bool): 
 		    display_nits (int32):
 	**/
-	public function enable_hdr_display_output(enable:Bool, display_nits:Int):Void;
+	public function enable_hdr_display_output(enable:Bool, display_nits:Int = 1000):Void;
 	/**
 		x.get_anti_aliasing_quality() -> int32
 		Returns the anti-aliasing quality (0..4, higher is better)
@@ -362,7 +362,7 @@ package unreal;
 		Args:
 		    force_reload (bool):
 	**/
-	public function load_settings(force_reload:Bool):Void;
+	public function load_settings(force_reload:Bool = false):Void;
 	/**
 		(OnGameUserSettingsUINeedsUpdate):  [Read-Write] On Game User Settings UINeeds Update
 	**/
@@ -386,7 +386,7 @@ package unreal;
 		    cpu_multiplier (float): 
 		    gpu_multiplier (float):
 	**/
-	public function run_hardware_benchmark(work_scale:Int, cpu_multiplier:Float, gpu_multiplier:Float):Void;
+	public function run_hardware_benchmark(work_scale:Int = 10, cpu_multiplier:Float = 1.000000, gpu_multiplier:Float = 1.000000):Void;
 	/**
 		x.save_settings() -> None
 		Save the user settings to persistent storage (automatically happens as part of ApplySettings)

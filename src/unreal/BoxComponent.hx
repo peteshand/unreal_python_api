@@ -33,5 +33,5 @@ package unreal;
 		    box_extent (Vector): 
 		    update_overlaps (bool):
 	**/
-	public function set_box_extent(box_extent:unreal.Vector, update_overlaps:Bool):Void;
+	public function set_box_extent(box_extent:unreal.Vector, update_overlaps:Bool = true):Void;
 }

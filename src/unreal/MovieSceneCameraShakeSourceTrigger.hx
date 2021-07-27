@@ -12,7 +12,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Class of the camera shake to play
 	**/
-	public var shake_class : Dynamic;
+	public var shake_class : Class<Dynamic>;
 	/**
 		(Rotator):  [Read-Write] User Defined Play Space
 	**/

@@ -33,7 +33,7 @@ package unreal;
 		    sphere_radius (float): 
 		    update_overlaps (bool):
 	**/
-	public function set_sphere_radius(sphere_radius:Float, update_overlaps:Bool):Void;
+	public function set_sphere_radius(sphere_radius:Float, update_overlaps:Bool = true):Void;
 	/**
 		(float):  [Read-Only] The radius of the sphere *
 	**/

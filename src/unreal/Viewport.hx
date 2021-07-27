@@ -51,5 +51,5 @@ package unreal;
 		Returns:
 		    Actor:
 	**/
-	public function spawn(actor_class:Dynamic):unreal.Actor;
+	public function spawn(actor_class:Class<Dynamic>):unreal.Actor;
 }

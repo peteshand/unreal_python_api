@@ -20,7 +20,7 @@ package unreal;
 		Args:
 		    ar_world_data (Array(uint8)): the blob to use as the AR world data
 	**/
-	public function set_ar_shared_world_data(ar_world_data:unreal.Array):Void;
+	public function set_ar_shared_world_data(ar_world_data:Array<uint8>):Void;
 	/**
 		x.set_ar_world_sharing_is_ready() -> None
 		Tells the game mode that the AR data is ready and should be replicated to all connected clients
@@ -33,5 +33,5 @@ package unreal;
 		Args:
 		    image_data (Array(uint8)): the blob to use as the image data
 	**/
-	public function set_preview_image_data(image_data:unreal.Array):Void;
+	public function set_preview_image_data(image_data:Array<uint8>):Void;
 }

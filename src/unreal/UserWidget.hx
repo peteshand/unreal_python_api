@@ -12,7 +12,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function add_to_player_screen(z_order:Int):Bool;
+	public function add_to_player_screen(z_order:Int = 0):Bool;
 	/**
 		x.add_to_viewport(z_order=0) -> None
 		Adds it to the game's viewport and fills the entire screen, unless SetDesiredSizeInViewport is called
@@ -21,7 +21,7 @@ package unreal;
 		Args:
 		    z_order (int32): The higher the number, the more on top this widget will be.
 	**/
-	public function add_to_viewport(z_order:Int):Void;
+	public function add_to_viewport(z_order:Int = 0):Void;
 	/**
 		x.bind_to_animation_event(animation, delegate, animation_event, user_tag="None") -> None
 		Allows binding to a specific animation's event.
@@ -32,7 +32,7 @@ package unreal;
 		    animation_event (WidgetAnimationEvent): the event to watch for.
 		    user_tag (Name): Scopes the delegate to only be called when the animation completes with a specific tag set on it when it was played.
 	**/
-	public function bind_to_animation_event(animation:unreal.WidgetAnimation, delegate:unreal.WidgetAnimationDynamicEvent, animation_event:unreal.WidgetAnimationEvent, user_tag:unreal.Name):Void;
+	public function bind_to_animation_event(animation:unreal.WidgetAnimation, delegate:unreal.WidgetAnimationDynamicEvent, animation_event:unreal.WidgetAnimationEvent, user_tag:unreal.Name = "\"None\""):Void;
 	/**
 		x.bind_to_animation_finished(animation, delegate) -> None
 		Bind an animation finished delegate.
@@ -629,7 +629,7 @@ package unreal;
 		Returns:
 		    UMGSequencePlayer:
 	**/
-	public function play_animation(animation:unreal.WidgetAnimation, start_at_time:Float, num_loops_to_play:Int, play_mode:unreal.UMGSequencePlayMode, playback_speed:Float, restore_state:Bool):unreal.UMGSequencePlayer;
+	public function play_animation(animation:unreal.WidgetAnimation, start_at_time:Float = 0.000000, num_loops_to_play:Int = 1, play_mode:unreal.UMGSequencePlayMode = UMGSequencePlayMode.FORWARD, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
 	/**
 		deprecated: 'play_animation_at_time' was renamed to 'play_animation'.
 	**/
@@ -649,7 +649,7 @@ package unreal;
 		Returns:
 		    UMGSequencePlayer:
 	**/
-	public function play_animation_forward(animation:unreal.WidgetAnimation, playback_speed:Float, restore_state:Bool):unreal.UMGSequencePlayer;
+	public function play_animation_forward(animation:unreal.WidgetAnimation, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
 	/**
 		x.play_animation_reverse(animation, playback_speed=1.000000, restore_state=False) -> UMGSequencePlayer
 		Plays an animation on this widget relative to it's current state in reverse.  You should use this version in situations where
@@ -664,7 +664,7 @@ package unreal;
 		Returns:
 		    UMGSequencePlayer:
 	**/
-	public function play_animation_reverse(animation:unreal.WidgetAnimation, playback_speed:Float, restore_state:Bool):unreal.UMGSequencePlayer;
+	public function play_animation_reverse(animation:unreal.WidgetAnimation, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
 	/**
 		x.play_animation_time_range(animation, start_at_time=0.000000, end_at_time=0.000000, num_loops_to_play=1, play_mode=UMGSequencePlayMode.FORWARD, playback_speed=1.000000, restore_state=False) -> UMGSequencePlayer
 		Plays an animation in this widget a specified number of times stopping at a specified time
@@ -681,7 +681,7 @@ package unreal;
 		Returns:
 		    UMGSequencePlayer:
 	**/
-	public function play_animation_time_range(animation:unreal.WidgetAnimation, start_at_time:Float, end_at_time:Float, num_loops_to_play:Int, play_mode:unreal.UMGSequencePlayMode, playback_speed:Float, restore_state:Bool):unreal.UMGSequencePlayer;
+	public function play_animation_time_range(animation:unreal.WidgetAnimation, start_at_time:Float = 0.000000, end_at_time:Float = 0.000000, num_loops_to_play:Int = 1, play_mode:unreal.UMGSequencePlayMode = UMGSequencePlayMode.FORWARD, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
 	/**
 		deprecated: 'play_animation_to' was renamed to 'play_animation_time_range'.
 	**/
@@ -839,7 +839,7 @@ package unreal;
 		    animation (WidgetAnimation): The animation that is already playing
 		    playback_speed (float):
 	**/
-	public function set_playback_speed(animation:unreal.WidgetAnimation, playback_speed:Float):Void;
+	public function set_playback_speed(animation:unreal.WidgetAnimation, playback_speed:Float = 1.000000):Void;
 	/**
 		x.set_position_in_viewport(position, remove_dpi_scale=True) -> None
 		Sets the widgets position in the viewport.
@@ -848,7 +848,7 @@ package unreal;
 		    position (Vector2D): The 2D position to set the widget to in the viewport.
 		    remove_dpi_scale (bool): If you've already calculated inverse DPI, set this to false. Otherwise inverse DPI is applied to the position so that when the location is scaled by DPI, it ends up in the expected position.
 	**/
-	public function set_position_in_viewport(position:unreal.Vector2D, remove_dpi_scale:Bool):Void;
+	public function set_position_in_viewport(position:unreal.Vector2D, remove_dpi_scale:Bool = true):Void;
 	/**
 		(bool):  [Read-Write] Stop Action
 	**/

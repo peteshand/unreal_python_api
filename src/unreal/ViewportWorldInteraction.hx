@@ -33,7 +33,7 @@ package unreal;
 		Returns:
 		    Array(ViewportInteractor):
 	**/
-	public function get_interactors():Dynamic;
+	public function get_interactors():Array<ViewportInteractor>;
 	/**
 		x.get_room_space_head_transform() -> Transform
 		Gets the transform of the viewport / user's HMD in room space
@@ -100,5 +100,5 @@ package unreal;
 		    new_world_to_meters_scale (float): 
 		    compensate_room_world_scale (bool):
 	**/
-	public function set_world_to_meters_scale(new_world_to_meters_scale:Float, compensate_room_world_scale:Bool):Void;
+	public function set_world_to_meters_scale(new_world_to_meters_scale:Float, compensate_room_world_scale:Bool = false):Void;
 }

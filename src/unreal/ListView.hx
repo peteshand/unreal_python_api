@@ -44,7 +44,7 @@ package unreal;
 		
 		    items (Array(Object)):
 	**/
-	public function bp_get_selected_items():Dynamic;
+	public function bp_get_selected_items():Array<Object>;
 	/**
 		x.bp_is_item_visible(item) -> bool
 		Gets whether the entry for the given object is currently visible in the list
@@ -112,7 +112,7 @@ package unreal;
 		Args:
 		    list_items (Array(Object)):
 	**/
-	public function bp_set_list_items(list_items:unreal.Array):Void;
+	public function bp_set_list_items(list_items:Array<Object>):Void;
 	/**
 		x.bp_set_selected_item(item) -> None
 		Sets the given item as the sole selected item.
@@ -168,7 +168,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_list_items():Dynamic;
+	public function get_list_items():Array<Object>;
 	/**
 		x.get_num_items() -> int32
 		Returns the total number of items

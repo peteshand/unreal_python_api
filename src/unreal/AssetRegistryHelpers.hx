@@ -12,7 +12,7 @@ package unreal;
 		Returns:
 		    AssetData:
 	**/
-	static public function create_asset_data(asset:unreal.Object, allow_blueprint_class:Bool):unreal.AssetData;
+	static public function create_asset_data(asset:unreal.Object, allow_blueprint_class:Bool = false):unreal.AssetData;
 	/**
 		X.get_asset(asset_data) -> Object
 		Returns the asset UObject if it is loaded or loads the asset if it is unloaded then returns the result
@@ -112,7 +112,7 @@ package unreal;
 		Returns:
 		    ARFilter:
 	**/
-	static public function set_filter_tags_and_values(filter:unreal.ARFilter, tags_and_values:unreal.Array):unreal.ARFilter;
+	static public function set_filter_tags_and_values(filter:unreal.ARFilter, tags_and_values:Array<TagAndValue>):unreal.ARFilter;
 	/**
 		X.to_soft_object_path(asset_data) -> SoftObjectPath
 		Convert to a SoftObjectPath for loading

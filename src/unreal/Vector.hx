@@ -207,7 +207,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function divide(b:unreal.Vector):unreal.Vector;
+	public function divide(b:unreal.Vector = [1.000000, 1.000000, 1.000000]):unreal.Vector;
 	/**
 		x.divide_float(b=1.000000) -> Vector
 		Vector divide by a float
@@ -218,7 +218,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function divide_float(b:Float):unreal.Vector;
+	public function divide_float(b:Float = 1.000000):unreal.Vector;
 	/**
 		x.divide_int(b=1) -> Vector
 		Vector divide by an integer
@@ -229,7 +229,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function divide_int(b:Int):unreal.Vector;
+	public function divide_int(b:Int = 1):unreal.Vector;
 	/**
 		x.dot(b) -> float
 		Returns the dot product of two 3d vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -356,7 +356,7 @@ package unreal;
 		
 		    spring_state (VectorSpringState):
 	**/
-	public function interp_spring_to(target:unreal.Vector, spring_state:unreal.VectorSpringState, stiffness:Float, critical_damping_factor:Float, delta_time:Float, mass:Float):unreal.VectorSpringState;
+	public function interp_spring_to(target:unreal.Vector, spring_state:unreal.VectorSpringState, stiffness:Float, critical_damping_factor:Float, delta_time:Float, mass:Float = 1.000000):unreal.VectorSpringState;
 	/**
 		x.interp_to(target, delta_time, interp_speed) -> Vector
 		Tries to reach Target based on distance from Current position, giving a nice smooth feeling when tracking a position.
@@ -402,7 +402,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:unreal.Vector, error_tolerance:Float):Bool;
+	public function is_near_equal(b:unreal.Vector, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_nearly_zero(tolerance=0.000100) -> bool
 		Checks whether vector is near to zero within a specified tolerance.
@@ -413,7 +413,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	public function is_nearly_zero(tolerance:Float):Bool;
+	public function is_nearly_zero(tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_normal() -> bool
 		Determines if vector is normalized / unit (length 1).
@@ -433,7 +433,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(b:unreal.Vector, error_tolerance:Float):Bool;
+	public function is_not_near_equal(b:unreal.Vector, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_uniform(tolerance=0.000100) -> bool
 		Checks whether all components of this vector are the same, within a tolerance.
@@ -444,7 +444,7 @@ package unreal;
 		Returns:
 		    bool: true if the vectors are equal within tolerance limits, false otherwise.
 	**/
-	public function is_uniform(tolerance:Float):Bool;
+	public function is_uniform(tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_unit(squared_lenth_tolerance=0.000100) -> bool
 		Determines if vector is normalized / unit (length 1) within specified squared tolerance.
@@ -455,7 +455,7 @@ package unreal;
 		Returns:
 		    bool: true if unit, false otherwise.
 	**/
-	public function is_unit(squared_lenth_tolerance:Float):Bool;
+	public function is_unit(squared_lenth_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_zero() -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -591,7 +591,7 @@ package unreal;
 		Returns:
 		    Vector: A normalized copy if safe, (0,0,0) otherwise.
 	**/
-	public function normal(tolerance:Float):unreal.Vector;
+	public function normal(tolerance:Float = 0.000100):unreal.Vector;
 	/**
 		x.normal2d(tolerance=0.000100) -> Vector
 		Gets a normalized unit copy of the 2D components of the vector, ensuring it is safe to do so. Z is set to zero.
@@ -603,7 +603,7 @@ package unreal;
 		Returns:
 		    Vector: Normalized copy if safe, (0,0,0) otherwise.
 	**/
-	public function normal2d(tolerance:Float):unreal.Vector;
+	public function normal2d(tolerance:Float = 0.000100):unreal.Vector;
 	/**
 		x.normal_unsafe() -> Vector
 		Calculates normalized unit version of vector without checking for zero length.
@@ -619,7 +619,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of vector for normalization.
 	**/
-	public function normalize(tolerance:Float):Void;
+	public function normalize(tolerance:Float = 0.000000):Void;
 	/**
 		x.not_equal(b) -> bool
 		Returns true if vector A is not equal to vector B (A != B)

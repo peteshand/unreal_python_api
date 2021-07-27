@@ -114,7 +114,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function press_key(key:unreal.Key, repeat:Bool):Bool;
+	public function press_key(key:unreal.Key, repeat:Bool = false):Bool;
 	/**
 		x.press_pointer_key(key) -> None
 		Presses a key as if the mouse/pointer were the source of it.  Normally you would just use
@@ -166,7 +166,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function send_key_char(characters:String, repeat:Bool):Bool;
+	public function send_key_char(characters:String, repeat:Bool = false):Bool;
 	/**
 		x.set_custom_hit_result(hit_result) -> None
 		Set custom hit result.  This is only taken into account if InteractionSource is set to EWidgetInteractionSource::Custom.

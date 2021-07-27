@@ -13,7 +13,7 @@ package unreal;
 		Returns:
 		    GridSlot:
 	**/
-	public function add_child_to_grid(content:unreal.Widget, row:Int, column:Int):unreal.GridSlot;
+	public function add_child_to_grid(content:unreal.Widget, row:Int = 0, column:Int = 0):unreal.GridSlot;
 	/**
 		(Array(float)):  [Read-Only] The column fill rules
 	**/

@@ -56,7 +56,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_value_as_class(key_name:unreal.Name):Dynamic;
+	public function get_value_as_class(key_name:unreal.Name):Class<Dynamic>;
 	/**
 		x.get_value_as_enum(key_name) -> uint8
 		Get Value as Enum
@@ -173,7 +173,7 @@ package unreal;
 		    key_name (Name): 
 		    class_value (type(Class)):
 	**/
-	public function set_value_as_class(key_name:unreal.Name, class_value:Dynamic):Void;
+	public function set_value_as_class(key_name:unreal.Name, class_value:Class<Dynamic>):Void;
 	/**
 		x.set_value_as_enum(key_name, enum_value) -> None
 		Set Value as Enum

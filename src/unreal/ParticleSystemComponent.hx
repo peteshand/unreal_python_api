@@ -70,7 +70,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_named_dynamic_material_instance(name:unreal.Name, source_material:unreal.MaterialInterface):unreal.MaterialInstanceDynamic;
+	public function create_named_dynamic_material_instance(name:unreal.Name, source_material:unreal.MaterialInterface = null):unreal.MaterialInstanceDynamic;
 	/**
 		(float):  [Read-Write] Scales DeltaTime in UParticleSystemComponent::Tick(...)
 	**/
@@ -262,7 +262,7 @@ package unreal;
 		    location_type (AttachLocation): Option for how we handle our location when we attach to Parent.
 	**/
 	@:deprecated
-	public function set_auto_attach_params(parent:unreal.SceneComponent, socket_name:unreal.Name, location_type:unreal.AttachLocation):Void;
+	public function set_auto_attach_params(parent:unreal.SceneComponent, socket_name:unreal.Name = "\"None\"", location_type:unreal.AttachLocation = AttachLocation.KEEP_RELATIVE_OFFSET):Void;
 	/**
 		x.set_beam_end_point(emitter_index, new_end_point) -> None
 		Set the beam end point

@@ -9,7 +9,7 @@ package unreal;
 		    blendable_object (BlendableInterface): 
 		    weight (float):
 	**/
-	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float):Void;
+	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float = 1.000000):Void;
 	/**
 		(bool):  [Read-Write] True if we did a camera cut this frame. Automatically reset to false at every capture.
 		This flag affects various things in the renderer (such as whether to use the occlusion queries from last frame, and motion blur).

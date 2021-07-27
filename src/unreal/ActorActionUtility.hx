@@ -8,5 +8,5 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_supported_class():Dynamic;
+	public function get_supported_class():Class<Dynamic>;
 }

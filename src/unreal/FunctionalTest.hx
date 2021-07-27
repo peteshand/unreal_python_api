@@ -38,7 +38,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_bool(actual:Bool, expected:Bool, what:String, context_object:unreal.Object):Bool;
+	public function assert_equal_bool(actual:Bool, expected:Bool, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_float(actual, expected, what, tolerance=0.000100, context_object=None) -> bool
 		Assert that two floats are equal within tolerance between two floats.
@@ -53,7 +53,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_float(actual:Float, expected:Float, what:String, tolerance:Float, context_object:unreal.Object):Bool;
+	public function assert_equal_float(actual:Float, expected:Float, what:String, tolerance:Float = 0.000100, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_int(actual, expected, what, context_object=None) -> bool
 		Assert that two ints are equal
@@ -67,7 +67,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_int(actual:Int, expected:Int, what:String, context_object:unreal.Object):Bool;
+	public function assert_equal_int(actual:Int, expected:Int, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_name(actual, expected, what, context_object=None) -> bool
 		Assert that two FNames are equal
@@ -81,7 +81,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_name(actual:unreal.Name, expected:unreal.Name, what:String, context_object:unreal.Object):Bool;
+	public function assert_equal_name(actual:unreal.Name, expected:unreal.Name, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_object(actual, expected, what, context_object=None) -> bool
 		Assert that two Objects are equal
@@ -95,7 +95,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_object(actual:unreal.Object, expected:unreal.Object, what:String, context_object:unreal.Object):Bool;
+	public function assert_equal_object(actual:unreal.Object, expected:unreal.Object, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_rotator(actual, expected, what, tolerance=0.000100, context_object=None) -> bool
 		Assert that the component angles of two rotators are all equal within a small tolerance.
@@ -110,7 +110,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_rotator(actual:unreal.Rotator, expected:unreal.Rotator, what:String, tolerance:Float, context_object:unreal.Object):Bool;
+	public function assert_equal_rotator(actual:unreal.Rotator, expected:unreal.Rotator, what:String, tolerance:Float = 0.000100, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_string(actual, expected, what, context_object=None) -> bool
 		Assert that two Strings are equal.
@@ -124,7 +124,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_string(actual:String, expected:String, what:String, context_object:unreal.Object):Bool;
+	public function assert_equal_string(actual:String, expected:String, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_trace_query_results(actual, expected, what, context_object=None) -> bool
 		Assert that two TraceQueryResults are equal.
@@ -138,7 +138,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_trace_query_results(actual:unreal.TraceQueryTestResults, expected:unreal.TraceQueryTestResults, what:String, context_object:unreal.Object):Bool;
+	public function assert_equal_trace_query_results(actual:unreal.TraceQueryTestResults, expected:unreal.TraceQueryTestResults, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_transform(actual, expected, what, tolerance=0.000100, context_object=None) -> bool
 		Assert that two transforms are (components memberwise - translation, rotation, scale) equal within a small tolerance.
@@ -153,7 +153,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_transform(actual:unreal.Transform, expected:unreal.Transform, what:String, tolerance:Float, context_object:unreal.Object):Bool;
+	public function assert_equal_transform(actual:unreal.Transform, expected:unreal.Transform, what:String, tolerance:Float = 0.000100, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_equal_vector(actual, expected, what, tolerance=0.000100, context_object=None) -> bool
 		Assert that two vectors are (memberwise) equal within a small tolerance.
@@ -168,7 +168,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_equal_vector(actual:unreal.Vector, expected:unreal.Vector, what:String, tolerance:Float, context_object:unreal.Object):Bool;
+	public function assert_equal_vector(actual:unreal.Vector, expected:unreal.Vector, what:String, tolerance:Float = 0.000100, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_false(condition, message, context_object=None) -> bool
 		Assert that a boolean value is false.
@@ -181,7 +181,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_false(condition:Bool, message:String, context_object:unreal.Object):Bool;
+	public function assert_false(condition:Bool, message:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_is_valid(object, message, context_object=None) -> bool
 		Assert that a UObject is valid
@@ -194,7 +194,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_is_valid(object:unreal.Object, message:String, context_object:unreal.Object):Bool;
+	public function assert_is_valid(object:unreal.Object, message:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_not_equal_rotator(actual, not_expected, what, context_object=None) -> bool
 		Assert that the component angles of two rotators are all not equal within a small tolerance.
@@ -208,7 +208,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_not_equal_rotator(actual:unreal.Rotator, not_expected:unreal.Rotator, what:String, context_object:unreal.Object):Bool;
+	public function assert_not_equal_rotator(actual:unreal.Rotator, not_expected:unreal.Rotator, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_not_equal_string(actual, not_expected, what, context_object=None) -> bool
 		Assert that two Strings are not equal.
@@ -222,7 +222,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_not_equal_string(actual:String, not_expected:String, what:String, context_object:unreal.Object):Bool;
+	public function assert_not_equal_string(actual:String, not_expected:String, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_not_equal_transform(actual, not_expected, what, context_object=None) -> bool
 		Assert that two transforms are (components memberwise - translation, rotation, scale) not equal within a small tolerance.
@@ -236,7 +236,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_not_equal_transform(actual:unreal.Transform, not_expected:unreal.Transform, what:String, context_object:unreal.Object):Bool;
+	public function assert_not_equal_transform(actual:unreal.Transform, not_expected:unreal.Transform, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_not_equal_vector(actual, not_expected, what, context_object=None) -> bool
 		Assert that two vectors are (memberwise) not equal within a small tolerance.
@@ -250,7 +250,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_not_equal_vector(actual:unreal.Vector, not_expected:unreal.Vector, what:String, context_object:unreal.Object):Bool;
+	public function assert_not_equal_vector(actual:unreal.Vector, not_expected:unreal.Vector, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_true(condition, message, context_object=None) -> bool
 		Assert that a boolean value is true.
@@ -263,7 +263,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_true(condition:Bool, message:String, context_object:unreal.Object):Bool;
+	public function assert_true(condition:Bool, message:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_value_date_time(actual, should_be, expected, what, context_object=None) -> bool
 		Assert on a relationship between two DateTimes.
@@ -278,7 +278,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_value_date_time(actual:unreal.DateTime, should_be:unreal.ComparisonMethod, expected:unreal.DateTime, what:String, context_object:unreal.Object):Bool;
+	public function assert_value_date_time(actual:unreal.DateTime, should_be:unreal.ComparisonMethod, expected:unreal.DateTime, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_value_float(actual, should_be, expected, what, context_object=None) -> bool
 		Assert on a relationship between two floats.
@@ -293,7 +293,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_value_float(actual:Float, should_be:unreal.ComparisonMethod, expected:Float, what:String, context_object:unreal.Object):Bool;
+	public function assert_value_float(actual:Float, should_be:unreal.ComparisonMethod, expected:Float, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		x.assert_value_int(actual, should_be, expected, what, context_object=None) -> bool
 		Assert on a relationship between two integers.
@@ -308,7 +308,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function assert_value_int(actual:Int, should_be:unreal.ComparisonMethod, expected:Int, what:String, context_object:unreal.Object):Bool;
+	public function assert_value_int(actual:Int, should_be:unreal.ComparisonMethod, expected:Int, what:String, context_object:unreal.Object = null):Bool;
 	/**
 		(str):  [Read-Only] The author is the group or person responsible for the test.  Generally you should use a group name
 		like 'Editor Team' or 'Rendering Team'.  When a test fails it may not be obvious who should investigate
@@ -322,7 +322,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function debug_gather_relevant_actors():Dynamic;
+	public function debug_gather_relevant_actors():Array<Actor>;
 	/**
 		(str):  [Read-Only] A description of the test, like what is this test trying to determine.
 	**/

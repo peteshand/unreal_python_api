@@ -20,7 +20,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Debug camera - used to have independent camera without stopping gameplay
 	**/
-	public var debug_camera_controller_class : Dynamic;
+	public var debug_camera_controller_class : Class<Dynamic>;
 	/**
 		x.destroy_target() -> None
 		Destroy the actor you're looking at.

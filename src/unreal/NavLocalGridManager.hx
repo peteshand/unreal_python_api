@@ -17,7 +17,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_local_navigation_grid_for_box(world_context_object:unreal.Object, location:unreal.Vector, extent:unreal.Vector, rotation:unreal.Rotator, radius2d:Int, height:Float, rebuild_grids:Bool):Int;
+	static public function add_local_navigation_grid_for_box(world_context_object:unreal.Object, location:unreal.Vector, extent:unreal.Vector = [1.000000, 1.000000, 1.000000], rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], radius2d:Int = 5, height:Float = 100.000000, rebuild_grids:Bool = true):Int;
 	/**
 		X.add_local_navigation_grid_for_capsule(world_context_object, location, capsule_radius, capsule_half_height, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		Add Local Navigation Grid for Capsule
@@ -34,7 +34,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_local_navigation_grid_for_capsule(world_context_object:unreal.Object, location:unreal.Vector, capsule_radius:Float, capsule_half_height:Float, radius2d:Int, height:Float, rebuild_grids:Bool):Int;
+	static public function add_local_navigation_grid_for_capsule(world_context_object:unreal.Object, location:unreal.Vector, capsule_radius:Float, capsule_half_height:Float, radius2d:Int = 5, height:Float = 100.000000, rebuild_grids:Bool = true):Int;
 	/**
 		X.add_local_navigation_grid_for_point(world_context_object, location, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		creates new grid data for single point
@@ -49,7 +49,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_local_navigation_grid_for_point(world_context_object:unreal.Object, location:unreal.Vector, radius2d:Int, height:Float, rebuild_grids:Bool):Int;
+	static public function add_local_navigation_grid_for_point(world_context_object:unreal.Object, location:unreal.Vector, radius2d:Int = 5, height:Float = 100.000000, rebuild_grids:Bool = true):Int;
 	/**
 		X.add_local_navigation_grid_for_points(world_context_object, locations, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		creates single grid data for set of points
@@ -64,7 +64,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_local_navigation_grid_for_points(world_context_object:unreal.Object, locations:unreal.Array, radius2d:Int, height:Float, rebuild_grids:Bool):Int;
+	static public function add_local_navigation_grid_for_points(world_context_object:unreal.Object, locations:Array<Vector>, radius2d:Int = 5, height:Float = 100.000000, rebuild_grids:Bool = true):Int;
 	/**
 		X.find_local_navigation_grid_path(world_context_object, start, end) -> Array(Vector) or None
 		Find Local Navigation Grid Path
@@ -79,7 +79,7 @@ package unreal;
 		
 		    path_points (Array(Vector)):
 	**/
-	static public function find_local_navigation_grid_path(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector):Dynamic;
+	static public function find_local_navigation_grid_path(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector):Array<Vector>;
 	/**
 		X.remove_local_navigation_grid(world_context_object, grid_id, rebuild_grids=True) -> None
 		Remove Local Navigation Grid
@@ -89,7 +89,7 @@ package unreal;
 		    grid_id (int32): 
 		    rebuild_grids (bool):
 	**/
-	static public function remove_local_navigation_grid(world_context_object:unreal.Object, grid_id:Int, rebuild_grids:Bool):Void;
+	static public function remove_local_navigation_grid(world_context_object:unreal.Object, grid_id:Int, rebuild_grids:Bool = true):Void;
 	/**
 		X.set_local_navigation_grid_density(world_context_object, cell_size) -> bool
 		Set Local Navigation Grid Density

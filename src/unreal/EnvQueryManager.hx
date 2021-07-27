@@ -15,5 +15,5 @@ package unreal;
 		Returns:
 		    EnvQueryInstanceBlueprintWrapper:
 	**/
-	static public function run_eqs_query(world_context_object:unreal.Object, query_template:unreal.EnvQuery, querier:unreal.Object, run_mode:unreal.EnvQueryRunMode, wrapper_class:Dynamic):unreal.EnvQueryInstanceBlueprintWrapper;
+	static public function run_eqs_query(world_context_object:unreal.Object, query_template:unreal.EnvQuery, querier:unreal.Object, run_mode:unreal.EnvQueryRunMode, wrapper_class:Class<Dynamic>):unreal.EnvQueryInstanceBlueprintWrapper;
 }

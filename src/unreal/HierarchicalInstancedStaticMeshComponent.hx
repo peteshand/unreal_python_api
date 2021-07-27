@@ -11,5 +11,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function remove_instances(instances_to_remove:unreal.Array):Bool;
+	public function remove_instances(instances_to_remove:Array<int32>):Bool;
 }

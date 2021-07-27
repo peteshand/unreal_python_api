@@ -28,5 +28,5 @@ package unreal;
 		Args:
 		    immediate (bool):
 	**/
-	public function stop(immediate:Bool):Void;
+	public function stop(immediate:Bool = false):Void;
 }

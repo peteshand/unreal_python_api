@@ -8,7 +8,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The class of Actor to spawn
 	**/
-	public var child_actor_class : Dynamic;
+	public var child_actor_class : Class<Dynamic>;
 	/**
 		x.set_child_actor_class(class_) -> None
 		Sets the class to use for the child actor.
@@ -18,5 +18,5 @@ package unreal;
 		Args:
 		    class_ (type(Class)): The Actor subclass to spawn as a child actor
 	**/
-	public function set_child_actor_class(class_:Dynamic):Void;
+	public function set_child_actor_class(class_:Class<Dynamic>):Void;
 }

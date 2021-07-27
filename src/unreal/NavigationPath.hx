@@ -9,7 +9,7 @@ package unreal;
 		    should_draw_debug_data (bool): 
 		    path_color (LinearColor):
 	**/
-	public function enable_debug_drawing(should_draw_debug_data:Bool, path_color:unreal.LinearColor):Void;
+	public function enable_debug_drawing(should_draw_debug_data:Bool, path_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):Void;
 	/**
 		x.enable_recalculation_on_invalidation(do_recalculation) -> None
 		if enabled path will request recalculation if it gets invalidated due to a change to underlying navigation

@@ -17,7 +17,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Camera Shake
 	**/
-	public var camera_shake : Dynamic;
+	public var camera_shake : Class<Dynamic>;
 	/**
 		x.get_attenuation_factor(location) -> float
 		Computes an attenuation factor from this source
@@ -62,7 +62,7 @@ package unreal;
 		    play_space (CameraShakePlaySpace): 
 		    user_play_space_rot (Rotator):
 	**/
-	public function start_camera_shake(camera_shake:Dynamic, scale:Float, play_space:unreal.CameraShakePlaySpace, user_play_space_rot:unreal.Rotator):Void;
+	public function start_camera_shake(camera_shake:Class<Dynamic>, scale:Float = 1.000000, play_space:unreal.CameraShakePlaySpace = CameraShakePlaySpace.CAMERA_LOCAL, user_play_space_rot:unreal.Rotator = [0.000000, 0.000000, 0.000000]):Void;
 	/**
 		x.stop_all_camera_shakes(immediately=True) -> None
 		Stops all currently active camera shakes that are originating from this source from all player controllers
@@ -70,7 +70,7 @@ package unreal;
 		Args:
 		    immediately (bool):
 	**/
-	public function stop_all_camera_shakes(immediately:Bool):Void;
+	public function stop_all_camera_shakes(immediately:Bool = true):Void;
 	/**
 		x.stop_all_camera_shakes_of_type(camera_shake, immediately=True) -> None
 		Stops a camera shake originating from this source
@@ -79,5 +79,5 @@ package unreal;
 		    camera_shake (type(Class)): 
 		    immediately (bool):
 	**/
-	public function stop_all_camera_shakes_of_type(camera_shake:Dynamic, immediately:Bool):Void;
+	public function stop_all_camera_shakes_of_type(camera_shake:Class<Dynamic>, immediately:Bool = true):Void;
 }

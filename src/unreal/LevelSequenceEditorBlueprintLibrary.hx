@@ -21,7 +21,7 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	static public function get_bound_objects(object_binding:unreal.MovieSceneObjectBindingID):Dynamic;
+	static public function get_bound_objects(object_binding:unreal.MovieSceneObjectBindingID):Array<Object>;
 	/**
 		X.get_current_level_sequence() -> LevelSequence
 		* Get the currently opened level sequence asset
@@ -45,7 +45,7 @@ package unreal;
 		Returns:
 		    Array(SequencerChannelProxy):
 	**/
-	static public function get_selected_channels():Dynamic;
+	static public function get_selected_channels():Array<SequencerChannelProxy>;
 	/**
 		X.get_selected_folders() -> Array(MovieSceneFolder)
 		Gets the currently selected folders.
@@ -53,7 +53,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneFolder):
 	**/
-	static public function get_selected_folders():Dynamic;
+	static public function get_selected_folders():Array<MovieSceneFolder>;
 	/**
 		X.get_selected_objects() -> Array(Guid)
 		Gets the currently selected Object Guids
@@ -61,7 +61,7 @@ package unreal;
 		Returns:
 		    Array(Guid):
 	**/
-	static public function get_selected_objects():Dynamic;
+	static public function get_selected_objects():Array<Guid>;
 	/**
 		X.get_selected_sections() -> Array(MovieSceneSection)
 		Gets the currently selected sections.
@@ -69,7 +69,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneSection):
 	**/
-	static public function get_selected_sections():Dynamic;
+	static public function get_selected_sections():Array<MovieSceneSection>;
 	/**
 		X.get_selected_tracks() -> Array(MovieSceneTrack)
 		Gets the currently selected tracks.
@@ -77,7 +77,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack):
 	**/
-	static public function get_selected_tracks():Dynamic;
+	static public function get_selected_tracks():Array<MovieSceneTrack>;
 	/**
 		X.is_level_sequence_locked() -> bool
 		Check whether the current level sequence and its descendants are locked for editing.
@@ -127,7 +127,7 @@ package unreal;
 		Args:
 		    channels (Array(SequencerChannelProxy)):
 	**/
-	static public function select_channels(channels:unreal.Array):Void;
+	static public function select_channels(channels:Array<SequencerChannelProxy>):Void;
 	/**
 		X.select_folders(folders) -> None
 		Select folders
@@ -135,7 +135,7 @@ package unreal;
 		Args:
 		    folders (Array(MovieSceneFolder)):
 	**/
-	static public function select_folders(folders:unreal.Array):Void;
+	static public function select_folders(folders:Array<MovieSceneFolder>):Void;
 	/**
 		X.select_objects(object_binding) -> None
 		Select objects by GUID
@@ -143,7 +143,7 @@ package unreal;
 		Args:
 		    object_binding (Array(Guid)):
 	**/
-	static public function select_objects(object_binding:unreal.Array):Void;
+	static public function select_objects(object_binding:Array<Guid>):Void;
 	/**
 		X.select_sections(sections) -> None
 		Select sections
@@ -151,7 +151,7 @@ package unreal;
 		Args:
 		    sections (Array(MovieSceneSection)):
 	**/
-	static public function select_sections(sections:unreal.Array):Void;
+	static public function select_sections(sections:Array<MovieSceneSection>):Void;
 	/**
 		X.select_tracks(tracks) -> None
 		Select tracks
@@ -159,7 +159,7 @@ package unreal;
 		Args:
 		    tracks (Array(MovieSceneTrack)):
 	**/
-	static public function select_tracks(tracks:unreal.Array):Void;
+	static public function select_tracks(tracks:Array<MovieSceneTrack>):Void;
 	/**
 		X.set_current_time(new_frame) -> None
 		Set playback position for the current level sequence in frames

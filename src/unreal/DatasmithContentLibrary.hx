@@ -14,7 +14,7 @@ package unreal;
 		
 		    out_user_data (Array(DatasmithUserData)): Output array of Datasmith User Data.
 	**/
-	static public function get_all_datasmith_user_data(object_class:Dynamic):Dynamic;
+	static public function get_all_datasmith_user_data(object_class:Class<Dynamic>):Array<DatasmithUserData>;
 	/**
 		X.get_all_objects_and_values_for_key(key, object_class) -> (out_objects=Array(Object), out_values=Array(str))
 		Find all loaded objects of the given type that have a Datasmith User Data that contains the given key and their associated values.
@@ -31,7 +31,7 @@ package unreal;
 		
 		    out_values (Array(str)): Output array of values associated with each object in OutObjects.
 	**/
-	static public function get_all_objects_and_values_for_key(key:unreal.Name, object_class:Dynamic):python.Tuple<Dynamic>;
+	static public function get_all_objects_and_values_for_key(key:unreal.Name, object_class:Class<Dynamic>):python.Tuple<Dynamic>;
 	/**
 		X.get_datasmith_user_data(object) -> DatasmithUserData
 		Get the Datasmith User Data of a given object

@@ -47,7 +47,7 @@ package unreal;
 		    scale_value (float): Scale to apply to input. This can be used for analog input, ie a value of 0.5 applies half the normal value, while -1.0 would reverse the direction.
 		    force (bool): If true always add the input, ignoring the result of IsMoveInputIgnored().
 	**/
-	public function add_movement_input(world_direction:unreal.Vector, scale_value:Float, force:Bool):Void;
+	public function add_movement_input(world_direction:unreal.Vector, scale_value:Float = 1.000000, force:Bool = false):Void;
 	/**
 		deprecated: 'add_pitch_input' was renamed to 'add_controller_pitch_input'.
 	**/
@@ -71,7 +71,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Default class to use when pawn is controlled by AI.
 	**/
-	public var ai_controller_class : Dynamic;
+	public var ai_controller_class : Class<Dynamic>;
 	/**
 		(float):  [Read-Write] Base eye height above collision center.
 	**/
@@ -264,7 +264,7 @@ package unreal;
 		    use_noise_maker_location (bool): If true, use the location of the NoiseMaker rather than NoiseLocation.  If false, use NoiseLocation.
 		    noise_maker (Actor): Which actor is the source of the noise.  Not to be confused with the Noise Instigator, which is responsible for the noise (and is the pawn on which this function is called).  If not specified, the pawn instigating the noise will be used as the NoiseMaker
 	**/
-	public function pawn_make_noise(loudness:Float, noise_location:unreal.Vector, use_noise_maker_location:Bool, noise_maker:unreal.Actor):Void;
+	public function pawn_make_noise(loudness:Float, noise_location:unreal.Vector, use_noise_maker_location:Bool = true, noise_maker:unreal.Actor = null):Void;
 	/**
 		deprecated: 'player_replication_info' was renamed to 'player_state'.
 	**/
@@ -299,7 +299,7 @@ package unreal;
 		    new_value (bool): 
 		    force_update (bool):
 	**/
-	public function set_can_affect_navigation_generation(new_value:Bool, force_update:Bool):Void;
+	public function set_can_affect_navigation_generation(new_value:Bool, force_update:Bool = false):Void;
 	/**
 		x.spawn_default_controller() -> None
 		Spawn default controller for this Pawn, and get possessed by it.

@@ -231,7 +231,7 @@ package unreal;
 		
 		    out_rates (Array(FloatRange)):
 	**/
-	public function get_supported_rates(unthinned:Bool):Dynamic;
+	public function get_supported_rates(unthinned:Bool):Array<FloatRange>;
 	/**
 		x.get_time() -> Timespan
 		Get the media's current playback time.

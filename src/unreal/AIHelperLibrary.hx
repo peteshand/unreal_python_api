@@ -59,7 +59,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	static public function get_current_path_points(controller:unreal.Controller):Dynamic;
+	static public function get_current_path_points(controller:unreal.Controller):Array<Vector>;
 	/**
 		X.get_next_nav_link_index(controller) -> int32
 		Return the path index of the next nav link for the current path of the given controller. Returns INDEX_NONE if no path or no incoming nav link.
@@ -124,7 +124,7 @@ package unreal;
 		    message_source (Object): 
 		    success (bool):
 	**/
-	static public function send_ai_message(target:unreal.Pawn, message:unreal.Name, message_source:unreal.Object, success:Bool):Void;
+	static public function send_ai_message(target:unreal.Pawn, message:unreal.Name, message_source:unreal.Object, success:Bool = true):Void;
 	/**
 		X.simple_move_to_actor(controller, goal) -> None
 		Simple Move to Actor
@@ -160,7 +160,7 @@ package unreal;
 		Returns:
 		    Pawn:
 	**/
-	static public function spawn_ai_from_class(world_context_object:unreal.Object, pawn_class:Dynamic, behavior_tree:unreal.BehaviorTree, location:unreal.Vector, rotation:unreal.Rotator, no_collision_fail:Bool, owner:unreal.Actor):unreal.Pawn;
+	static public function spawn_ai_from_class(world_context_object:unreal.Object, pawn_class:Class<Dynamic>, behavior_tree:unreal.BehaviorTree, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], no_collision_fail:Bool = false, owner:unreal.Actor = null):unreal.Pawn;
 	/**
 		X.unlock_ai_resources_with_animation(anim_instance, unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources

@@ -22,7 +22,7 @@ package unreal;
 		
 		    out_streamable_assets (Array(Object)):
 	**/
-	public function get_blueprint_render_dependencies():Dynamic;
+	public function get_blueprint_render_dependencies():Array<Object>;
 	/**
 		x.initialize(landscape_transform, landscape_size, landscape_render_target_size) -> None
 		Initialize

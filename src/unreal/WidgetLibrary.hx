@@ -22,7 +22,7 @@ package unreal;
 		    reply (EventReply):
 	**/
 	@:deprecated
-	static public function capture_joystick(reply:unreal.EventReply, capturing_widget:unreal.Widget, all_joysticks:Bool):unreal.EventReply;
+	static public function capture_joystick(reply:unreal.EventReply, capturing_widget:unreal.Widget, all_joysticks:Bool = false):unreal.EventReply;
 	/**
 		X.capture_mouse(reply, capturing_widget) -> (EventReply, reply=EventReply)
 		Capture Mouse
@@ -50,7 +50,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function clear_user_focus(reply:unreal.EventReply, all_users:Bool):unreal.EventReply;
+	static public function clear_user_focus(reply:unreal.EventReply, all_users:Bool = false):unreal.EventReply;
 	/**
 		X.detect_drag(reply, widget_detecting_drag, drag_key) -> (EventReply, reply=EventReply)
 		Ask Slate to detect if a user starts dragging in this widget later.  Slate internally tracks the movement
@@ -102,7 +102,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_box(context:unreal.PaintContext, position:unreal.Vector2D, size:unreal.Vector2D, brush:unreal.SlateBrushAsset, tint:unreal.LinearColor):unreal.PaintContext;
+	static public function draw_box(context:unreal.PaintContext, position:unreal.Vector2D, size:unreal.Vector2D, brush:unreal.SlateBrushAsset, tint:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):unreal.PaintContext;
 	/**
 		X.draw_line(context, position_a, position_b, tint=[0.000000, 0.000000, 0.000000, 0.000000], anti_alias=True, thickness=1.000000) -> PaintContext
 		Draws a line.
@@ -120,7 +120,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_line(context:unreal.PaintContext, position_a:unreal.Vector2D, position_b:unreal.Vector2D, tint:unreal.LinearColor, anti_alias:Bool, thickness:Float):unreal.PaintContext;
+	static public function draw_line(context:unreal.PaintContext, position_a:unreal.Vector2D, position_b:unreal.Vector2D, tint:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], anti_alias:Bool = true, thickness:Float = 1.000000):unreal.PaintContext;
 	/**
 		X.draw_lines(context, points, tint=[0.000000, 0.000000, 0.000000, 0.000000], anti_alias=True, thickness=1.000000) -> PaintContext
 		Draws several line segments.
@@ -137,7 +137,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_lines(context:unreal.PaintContext, points:unreal.Array, tint:unreal.LinearColor, anti_alias:Bool, thickness:Float):unreal.PaintContext;
+	static public function draw_lines(context:unreal.PaintContext, points:Array<Vector2D>, tint:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], anti_alias:Bool = true, thickness:Float = 1.000000):unreal.PaintContext;
 	/**
 		X.draw_text(context, string, position, tint=[0.000000, 0.000000, 0.000000, 0.000000]) -> PaintContext
 		Draws text.
@@ -155,7 +155,7 @@ package unreal;
 		    context (PaintContext):
 	**/
 	@:deprecated
-	static public function draw_text(context:unreal.PaintContext, string:String, position:unreal.Vector2D, tint:unreal.LinearColor):unreal.PaintContext;
+	static public function draw_text(context:unreal.PaintContext, string:String, position:unreal.Vector2D, tint:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):unreal.PaintContext;
 	/**
 		X.draw_text_formatted(context, text, position, font, font_size=16, font_type_face="Regular", tint=[0.000000, 0.000000, 0.000000, 0.000000]) -> PaintContext
 		Draws text.
@@ -174,7 +174,7 @@ package unreal;
 		
 		    context (PaintContext):
 	**/
-	static public function draw_text_formatted(context:unreal.PaintContext, text:unreal.Text, position:unreal.Vector2D, font:unreal.Font, font_size:Int, font_type_face:unreal.Name, tint:unreal.LinearColor):unreal.PaintContext;
+	static public function draw_text_formatted(context:unreal.PaintContext, text:unreal.Text, position:unreal.Vector2D, font:unreal.Font, font_size:Int = 16, font_type_face:unreal.Name = "\"Regular\"", tint:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):unreal.PaintContext;
 	/**
 		X.end_drag_drop(reply) -> (EventReply, reply=EventReply)
 		An event should return FReply::Handled().EndDragDrop() to request that the current drag/drop operation be terminated.
@@ -202,7 +202,7 @@ package unreal;
 		
 		    found_widgets (Array(UserWidget)): The widgets that were found matching the filter.
 	**/
-	static public function get_all_widgets_of_class(world_context_object:unreal.Object, widget_class:Dynamic, top_level_only:Bool):Dynamic;
+	static public function get_all_widgets_of_class(world_context_object:unreal.Object, widget_class:Class<Dynamic>, top_level_only:Bool = true):Array<UserWidget>;
 	/**
 		X.get_all_widgets_with_interface(world_context_object, interface, top_level_only) -> Array(UserWidget)
 		Find all widgets in the world with the specified interface.
@@ -218,7 +218,7 @@ package unreal;
 		
 		    found_widgets (Array(UserWidget)): Output array of widgets that implement the specified interface.
 	**/
-	static public function get_all_widgets_with_interface(world_context_object:unreal.Object, _interface:Dynamic, top_level_only:Bool):Dynamic;
+	static public function get_all_widgets_with_interface(world_context_object:unreal.Object, _interface:Class<Dynamic>, top_level_only:Bool):Array<UserWidget>;
 	/**
 		X.get_brush_resource(brush) -> Object
 		Gets the resource object on a brush.  This could be a UTexture2D or a UMaterialInterface.
@@ -401,7 +401,7 @@ package unreal;
 		Returns:
 		    SlateBrush: A new slate brush using the material.
 	**/
-	static public function make_brush_from_material(material:unreal.MaterialInterface, width:Int, height:Int):unreal.SlateBrush;
+	static public function make_brush_from_material(material:unreal.MaterialInterface, width:Int = 32, height:Int = 32):unreal.SlateBrush;
 	/**
 		X.make_brush_from_texture(texture, width=0, height=0) -> SlateBrush
 		Creates a Slate Brush from a Texture2D
@@ -414,7 +414,7 @@ package unreal;
 		Returns:
 		    SlateBrush: A new slate brush using the texture.
 	**/
-	static public function make_brush_from_texture(texture:unreal.Texture2D, width:Int, height:Int):unreal.SlateBrush;
+	static public function make_brush_from_texture(texture:unreal.Texture2D, width:Int = 0, height:Int = 0):unreal.SlateBrush;
 	/**
 		X.no_resource_brush() -> SlateBrush
 		Creates a Slate Brush that wont draw anything, the "Null Brush".
@@ -438,7 +438,7 @@ package unreal;
 		    reply (EventReply):
 	**/
 	@:deprecated
-	static public function release_joystick_capture(reply:unreal.EventReply, all_joysticks:Bool):unreal.EventReply;
+	static public function release_joystick_capture(reply:unreal.EventReply, all_joysticks:Bool = false):unreal.EventReply;
 	/**
 		X.release_mouse_capture(reply) -> (EventReply, reply=EventReply)
 		Release Mouse Capture
@@ -527,7 +527,7 @@ package unreal;
 		    hide_cursor_during_capture (bool):
 	**/
 	@:deprecated
-	static public function set_input_mode_game_and_ui(target:unreal.PlayerController, widget_to_focus:unreal.Widget, lock_mouse_to_viewport:Bool, hide_cursor_during_capture:Bool):Void;
+	static public function set_input_mode_game_and_ui(target:unreal.PlayerController, widget_to_focus:unreal.Widget = null, lock_mouse_to_viewport:Bool = false, hide_cursor_during_capture:Bool = true):Void;
 	/**
 		X.set_input_mode_game_and_ui_ex(player_controller, widget_to_focus=None, mouse_lock_mode=MouseLockMode.DO_NOT_LOCK, hide_cursor_during_capture=True) -> None
 		Setup an input mode that allows only the UI to respond to user input, and if the UI doesn't handle it player input / player controller gets a chance.
@@ -538,7 +538,7 @@ package unreal;
 		    mouse_lock_mode (MouseLockMode): 
 		    hide_cursor_during_capture (bool):
 	**/
-	static public function set_input_mode_game_and_ui_ex(player_controller:unreal.PlayerController, widget_to_focus:unreal.Widget, mouse_lock_mode:unreal.MouseLockMode, hide_cursor_during_capture:Bool):Void;
+	static public function set_input_mode_game_and_ui_ex(player_controller:unreal.PlayerController, widget_to_focus:unreal.Widget = null, mouse_lock_mode:unreal.MouseLockMode = MouseLockMode.DO_NOT_LOCK, hide_cursor_during_capture:Bool = true):Void;
 	/**
 		X.set_input_mode_game_only(player_controller) -> None
 		Setup an input mode that allows only player input / player controller to respond to user input.
@@ -558,7 +558,7 @@ package unreal;
 		    lock_mouse_to_viewport (bool):
 	**/
 	@:deprecated
-	static public function set_input_mode_ui_only(target:unreal.PlayerController, widget_to_focus:unreal.Widget, lock_mouse_to_viewport:Bool):Void;
+	static public function set_input_mode_ui_only(target:unreal.PlayerController, widget_to_focus:unreal.Widget = null, lock_mouse_to_viewport:Bool = false):Void;
 	/**
 		X.set_input_mode_ui_only_ex(player_controller, widget_to_focus=None, mouse_lock_mode=MouseLockMode.DO_NOT_LOCK) -> None
 		Setup an input mode that allows only the UI to respond to user input.
@@ -568,7 +568,7 @@ package unreal;
 		    widget_to_focus (Widget): 
 		    mouse_lock_mode (MouseLockMode):
 	**/
-	static public function set_input_mode_ui_only_ex(player_controller:unreal.PlayerController, widget_to_focus:unreal.Widget, mouse_lock_mode:unreal.MouseLockMode):Void;
+	static public function set_input_mode_ui_only_ex(player_controller:unreal.PlayerController, widget_to_focus:unreal.Widget = null, mouse_lock_mode:unreal.MouseLockMode = MouseLockMode.DO_NOT_LOCK):Void;
 	/**
 		X.set_mouse_position(reply, new_mouse_position) -> (EventReply, reply=EventReply)
 		Set Mouse Position
@@ -597,7 +597,7 @@ package unreal;
 		
 		    reply (EventReply):
 	**/
-	static public function set_user_focus(reply:unreal.EventReply, focus_widget:unreal.Widget, all_users:Bool):unreal.EventReply;
+	static public function set_user_focus(reply:unreal.EventReply, focus_widget:unreal.Widget, all_users:Bool = false):unreal.EventReply;
 	/**
 		X.set_window_title_bar_close_button_active(active) -> None
 		Set Window Title Bar Close Button Active

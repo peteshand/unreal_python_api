@@ -10,7 +10,7 @@ package unreal;
 		
 		    out_primary_asset_id_list (Array(PrimaryAssetId)):
 	**/
-	public function get_primary_asset_id_list():Dynamic;
+	public function get_primary_asset_id_list():Array<PrimaryAssetId>;
 	/**
 		x.is_valid() -> bool
 		Returns list of Primary Asset Ids for a PrimaryAssetType

@@ -9,5 +9,5 @@ package unreal;
 		    data (Array(BasicParticleData)): 
 		    niagara_system (NiagaraSystem):
 	**/
-	public function receive_particle_data(data:unreal.Array, niagara_system:unreal.NiagaraSystem):Void;
+	public function receive_particle_data(data:Array<BasicParticleData>, niagara_system:unreal.NiagaraSystem):Void;
 }

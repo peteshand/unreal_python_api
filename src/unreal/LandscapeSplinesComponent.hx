@@ -8,5 +8,5 @@ package unreal;
 		Returns:
 		    Array(SplineMeshComponent):
 	**/
-	public function get_spline_mesh_components():Dynamic;
+	public function get_spline_mesh_components():Array<SplineMeshComponent>;
 }

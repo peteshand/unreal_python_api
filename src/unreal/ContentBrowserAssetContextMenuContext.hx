@@ -8,5 +8,5 @@ package unreal;
 		Returns:
 		    Array(Object):
 	**/
-	public function get_selected_objects():Dynamic;
+	public function get_selected_objects():Array<Object>;
 }

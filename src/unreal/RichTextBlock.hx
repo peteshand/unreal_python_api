@@ -11,7 +11,7 @@ package unreal;
 		Returns:
 		    RichTextBlockDecorator:
 	**/
-	public function get_decorator_by_class(decorator_class:Dynamic):unreal.RichTextBlockDecorator;
+	public function get_decorator_by_class(decorator_class:Class<Dynamic>):unreal.RichTextBlockDecorator;
 	/**
 		x.get_text() -> Text
 		Returns widgets text.

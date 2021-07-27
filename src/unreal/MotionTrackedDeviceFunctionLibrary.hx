@@ -87,7 +87,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	static public function enumerate_motion_sources():Dynamic;
+	static public function enumerate_motion_sources():Array<Name>;
 	/**
 		X.get_active_tracking_system_name() -> Name
 		Returns the system name used to distinguish the current tracking system.

@@ -122,7 +122,7 @@ package unreal;
 		    Array(Vector):
 	**/
 	@:deprecated
-	public function get_niagara_particle_positions_debug_only(emitter_name:String):Dynamic;
+	public function get_niagara_particle_positions_debug_only(emitter_name:String):Array<Vector>;
 	/**
 		x.get_niagara_particle_value_vec3_debug_only(emitter_name, value_name) -> Array(Vector)
 		Debug accessors for getting a FVector attribute array in blueprints. The attribute name should be without namespaces. For example for "Particles.Position", send "Position".
@@ -136,7 +136,7 @@ package unreal;
 		    Array(Vector):
 	**/
 	@:deprecated
-	public function get_niagara_particle_value_vec3_debug_only(emitter_name:String, value_name:String):Dynamic;
+	public function get_niagara_particle_value_vec3_debug_only(emitter_name:String, value_name:String):Array<Vector>;
 	/**
 		x.get_niagara_particle_values_debug_only(emitter_name, value_name) -> Array(float)
 		Debug accessors for getting a float attribute array in blueprints.  The attribute name should be without namespaces. For example for "Particles.Position", send "Position".
@@ -150,7 +150,7 @@ package unreal;
 		    Array(float):
 	**/
 	@:deprecated
-	public function get_niagara_particle_values_debug_only(emitter_name:String, value_name:String):Dynamic;
+	public function get_niagara_particle_values_debug_only(emitter_name:String, value_name:String):Array<float>;
 	/**
 		x.get_preview_lod_distance() -> int32
 		Get Preview LODDistance

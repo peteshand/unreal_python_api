@@ -26,7 +26,7 @@ package unreal;
 		Returns:
 		    Array(UserWidget):
 	**/
-	public function get_all_entries():Dynamic;
+	public function get_all_entries():Array<UserWidget>;
 	/**
 		x.get_num_entries() -> int32
 		Get Num Entries

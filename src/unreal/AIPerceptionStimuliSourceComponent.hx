@@ -16,7 +16,7 @@ package unreal;
 		Args:
 		    sense_class (type(Class)):
 	**/
-	public function register_for_sense(sense_class:Dynamic):Void;
+	public function register_for_sense(sense_class:Class<Dynamic>):Void;
 	/**
 		x.register_with_perception_system() -> None
 		Registers owning actor as source of stimuli for senses specified in RegisterAsSourceForSenses.
@@ -35,5 +35,5 @@ package unreal;
 		Args:
 		    sense_class (type(Class)):
 	**/
-	public function unregister_from_sense(sense_class:Dynamic):Void;
+	public function unregister_from_sense(sense_class:Class<Dynamic>):Void;
 }

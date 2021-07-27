@@ -56,7 +56,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function add_byte_byte(a:Dynamic, b:Dynamic):Dynamic;
+	static public function add_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.add_date_time_date_time(a, b) -> DateTime
 		Addition (A + B)
@@ -92,7 +92,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function add_float_float(a:Float, b:Float):Float;
+	static public function add_float_float(a:Float, b:Float = 1.000000):Float;
 	/**
 		X.add_int64_int64(a, b=1) -> int64
 		Addition (A + B)
@@ -104,7 +104,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	static public function add_int64_int64(a:Dynamic, b:Dynamic):Dynamic;
+	static public function add_int64_int64(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.add_int_int(a, b=1) -> int32
 		Addition (A + B)
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_int_int(a:Int, b:Int):Int;
+	static public function add_int_int(a:Int, b:Int = 1):Int;
 	/**
 		X.add_int_point_int(a, b) -> IntPoint
 		Addition (A - B)
@@ -540,7 +540,7 @@ package unreal;
 		Returns:
 		    bool: true if TestClass == ParentClass, or if TestClass is a child of ParentClass; false otherwise, or if either the value for either parameter is 'None'.
 	**/
-	static public function class_is_child_of(test_class:Dynamic, parent_class:Dynamic):Bool;
+	static public function class_is_child_of(test_class:Class<Dynamic>, parent_class:Class<Dynamic>):Bool;
 	/**
 		X.compose_rotators(a, b) -> Rotator
 		Combine 2 rotations to give you the resulting rotation of first applying A, then B.
@@ -769,7 +769,7 @@ package unreal;
 		Returns:
 		    Color:
 	**/
-	static public function conv_linear_color_to_color(linear_color:unreal.LinearColor, use_srgb:Bool):unreal.Color;
+	static public function conv_linear_color_to_color(linear_color:unreal.LinearColor, use_srgb:Bool = true):unreal.Color;
 	/**
 		X.conv_linear_color_to_vector(linear_color) -> Vector
 		Converts a LinearColor to a vector
@@ -860,7 +860,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function conv_vector2d_to_vector(vector2d:unreal.Vector2D, z:Float):unreal.Vector;
+	static public function conv_vector2d_to_vector(vector2d:unreal.Vector2D, z:Float = 0.000000):unreal.Vector;
 	/**
 		deprecated: 'conv_vector4_to_quaterion' was renamed to 'conv_vector4_to_quaternion'.
 	**/
@@ -1000,7 +1000,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function create_vector_from_yaw_pitch(yaw:Float, pitch:Float, length:Float):unreal.Vector;
+	static public function create_vector_from_yaw_pitch(yaw:Float, pitch:Float, length:Float = 1.000000):unreal.Vector;
 	/**
 		X.cross_product2d(a, b) -> float
 		Returns the cross product of two 2d vectors - see  http://mathworld.wolfram.com/CrossProduct.html
@@ -1214,7 +1214,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function divide_byte_byte(a:Dynamic, b:Dynamic):Dynamic;
+	static public function divide_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.divide_int64_int64(a, b=1) -> int64
 		Division (A / B)
@@ -1226,7 +1226,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	static public function divide_int64_int64(a:Dynamic, b:Dynamic):Dynamic;
+	static public function divide_int64_int64(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.divide_int_int(a, b=1) -> int32
 		Division (A / B)
@@ -1238,7 +1238,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function divide_int_int(a:Int, b:Int):Int;
+	static public function divide_int_int(a:Int, b:Int = 1):Int;
 	/**
 		X.divide_int_point_int(a, b) -> IntPoint
 		Division (A * B)
@@ -1298,7 +1298,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	static public function divide_vector2d_float(a:unreal.Vector2D, b:Float):unreal.Vector2D;
+	static public function divide_vector2d_float(a:unreal.Vector2D, b:Float = 1.000000):unreal.Vector2D;
 	/**
 		X.divide_vector2d_vector2d(a, b) -> Vector2D
 		Element-wise Vector divide (Result = {A.x/B.x, A.y/B.y})
@@ -1334,7 +1334,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function divide_vector_float(a:unreal.Vector, b:Float):unreal.Vector;
+	static public function divide_vector_float(a:unreal.Vector, b:Float = 1.000000):unreal.Vector;
 	/**
 		X.divide_vector_int(a, b=1) -> Vector
 		Vector divide by an integer
@@ -1346,7 +1346,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function divide_vector_int(a:unreal.Vector, b:Int):unreal.Vector;
+	static public function divide_vector_int(a:unreal.Vector, b:Int = 1):unreal.Vector;
 	/**
 		X.divide_vector_vector(a, b=[1.000000, 1.000000, 1.000000]) -> Vector
 		Element-wise Vector division (Result = {A.x/B.x, A.y/B.y, A.z/B.z})
@@ -1358,7 +1358,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function divide_vector_vector(a:unreal.Vector, b:unreal.Vector):unreal.Vector;
+	static public function divide_vector_vector(a:unreal.Vector, b:unreal.Vector = [1.000000, 1.000000, 1.000000]):unreal.Vector;
 	/**
 		X.dot_product2d(a, b) -> float
 		Returns the dot product of two 2d vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -1469,7 +1469,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_class_class(a:Dynamic, b:Dynamic):Bool;
+	static public function equal_equal_class_class(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
 	/**
 		X.equal_equal_date_time_date_time(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1542,7 +1542,7 @@ package unreal;
 		Returns:
 		    bool: true if two Matrix are equal, within specified tolerance, otherwise false.
 	**/
-	static public function equal_equal_matrix_matrix(a:unreal.Matrix, b:unreal.Matrix, tolerance:Float):Bool;
+	static public function equal_equal_matrix_matrix(a:unreal.Matrix, b:unreal.Matrix, tolerance:Float = 0.000100):Bool;
 	/**
 		X.equal_equal_name_name(a, b) -> bool
 		Returns true if A and B are equal (A == B)
@@ -1579,7 +1579,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_quat_quat(a:unreal.Quat, b:unreal.Quat, tolerance:Float):Bool;
+	static public function equal_equal_quat_quat(a:unreal.Quat, b:unreal.Quat, tolerance:Float = 0.000100):Bool;
 	/**
 		X.equal_equal_rotator_rotator(a, b, error_tolerance=0.000100) -> bool
 		Returns true if rotator A is equal to rotator B (A == B) within a specified error tolerance
@@ -1592,7 +1592,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_rotator_rotator(a:unreal.Rotator, b:unreal.Rotator, error_tolerance:Float):Bool;
+	static public function equal_equal_rotator_rotator(a:unreal.Rotator, b:unreal.Rotator, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.equal_equal_timespan_timespan(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1629,7 +1629,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_vector2d_vector2d(a:unreal.Vector2D, b:unreal.Vector2D, error_tolerance:Float):Bool;
+	static public function equal_equal_vector2d_vector2d(a:unreal.Vector2D, b:unreal.Vector2D, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.equal_equal_vector4_vector4(a, b, error_tolerance=0.000100) -> bool
 		Returns true if vector A is equal to vector B (A == B) within a specified error tolerance
@@ -1642,7 +1642,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_vector4_vector4(a:unreal.Vector4, b:unreal.Vector4, error_tolerance:Float):Bool;
+	static public function equal_equal_vector4_vector4(a:unreal.Vector4, b:unreal.Vector4, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.equal_equal_vector_vector(a, b, error_tolerance=0.000100) -> bool
 		Returns true if vector A is equal to vector B (A == B) within a specified error tolerance
@@ -1655,7 +1655,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_vector_vector(a:unreal.Vector, b:unreal.Vector, error_tolerance:Float):Bool;
+	static public function equal_equal_vector_vector(a:unreal.Vector, b:unreal.Vector, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.equal_exactly_vector2d_vector2d(a, b) -> bool
 		Returns true if vector A is equal to vector B (A == B)
@@ -2005,7 +2005,7 @@ package unreal;
 		
 		    spring_state (FloatSpringState):
 	**/
-	static public function float_spring_interp(current:Float, target:Float, spring_state:unreal.FloatSpringState, stiffness:Float, critical_damping_factor:Float, delta_time:Float, mass:Float):unreal.FloatSpringState;
+	static public function float_spring_interp(current:Float, target:Float, spring_state:unreal.FloatSpringState, stiffness:Float, critical_damping_factor:Float, delta_time:Float, mass:Float = 1.000000):unreal.FloatSpringState;
 	/**
 		X.fraction(a) -> float
 		Returns the fractional part of a float.
@@ -2532,7 +2532,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function get_vector_array_average(vectors:unreal.Array):unreal.Vector;
+	static public function get_vector_array_average(vectors:Array<Vector>):unreal.Vector;
 	/**
 		X.get_year(a) -> int32
 		Returns the year component of A
@@ -2728,7 +2728,7 @@ package unreal;
 		Returns:
 		    LinearColor:
 	**/
-	static public function hsv_to_rgb(h:Float, s:Float, v:Float, a:Float):unreal.LinearColor;
+	static public function hsv_to_rgb(h:Float, s:Float, v:Float, a:Float = 1.000000):unreal.LinearColor;
 	/**
 		X.hsv_to_rgb_linear(hsv) -> LinearColor
 		Converts a HSV linear color (where H is in R, S is in G, and V is in B) to linear RGB
@@ -2781,7 +2781,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function in_range_float_float(value:Float, min:Float, max:Float, inclusive_min:Bool, inclusive_max:Bool):Bool;
+	static public function in_range_float_float(value:Float, min:Float, max:Float, inclusive_min:Bool = true, inclusive_max:Bool = true):Bool;
 	/**
 		X.in_range_int64_int64(value, min, max, inclusive_min=True, inclusive_max=True) -> bool
 		Returns true if value is between Min and Max (V >= Min && V <= Max)
@@ -2798,7 +2798,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function in_range_int64_int64(value:Dynamic, min:Dynamic, max:Dynamic, inclusive_min:Bool, inclusive_max:Bool):Bool;
+	static public function in_range_int64_int64(value:Dynamic, min:Dynamic, max:Dynamic, inclusive_min:Bool = true, inclusive_max:Bool = true):Bool;
 	/**
 		X.in_range_int_int(value, min, max, inclusive_min=True, inclusive_max=True) -> bool
 		Returns true if value is between Min and Max (V >= Min && V <= Max)
@@ -2815,7 +2815,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function in_range_int_int(value:Int, min:Int, max:Int, inclusive_min:Bool, inclusive_max:Bool):Bool;
+	static public function in_range_int_int(value:Int, min:Int, max:Int, inclusive_min:Bool = true, inclusive_max:Bool = true):Bool;
 	/**
 		deprecated: 'inverse_lerp' was renamed to 'normalize_to_range'.
 	**/
@@ -2922,7 +2922,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	static public function is_nearly_zero2d(a:unreal.Vector2D, tolerance:Float):Bool;
+	static public function is_nearly_zero2d(a:unreal.Vector2D, tolerance:Float = 0.000100):Bool;
 	/**
 		X.is_point_in_box(point, box_origin, box_extent) -> bool
 		Determines whether the given point is in a box. Includes points on the box.
@@ -3233,7 +3233,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function linear_color_is_near_equal(a:unreal.LinearColor, b:unreal.LinearColor, tolerance:Float):Bool;
+	static public function linear_color_is_near_equal(a:unreal.LinearColor, b:unreal.LinearColor, tolerance:Float = 0.000100):Bool;
 	/**
 		X.linear_color_lerp(a, b, alpha) -> LinearColor
 		Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1)
@@ -3312,7 +3312,7 @@ package unreal;
 		
 		    out_color (LinearColor):
 	**/
-	static public function linear_color_set_from_hsv(out_color:unreal.LinearColor, h:Float, s:Float, v:Float, a:Float):unreal.LinearColor;
+	static public function linear_color_set_from_hsv(out_color:unreal.LinearColor, h:Float, s:Float, v:Float, a:Float = 1.000000):unreal.LinearColor;
 	/**
 		X.linear_color_set_from_pow22(out_color, color) -> LinearColor
 		Assigns an FColor coming from an observed Pow(1/2.2) output, into a linear color.
@@ -3370,7 +3370,7 @@ package unreal;
 		
 		    out_color (LinearColor):
 	**/
-	static public function linear_color_set_rgba(out_color:unreal.LinearColor, r:Float, g:Float, b:Float, a:Float):unreal.LinearColor;
+	static public function linear_color_set_rgba(out_color:unreal.LinearColor, r:Float, g:Float, b:Float, a:Float = 1.000000):unreal.LinearColor;
 	/**
 		X.linear_color_set_temperature(out_color, temperature) -> LinearColor
 		Converts temperature in Kelvins of a black body radiator to RGB chromaticity.
@@ -3419,7 +3419,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function log(a:Float, base:Float):Float;
+	static public function log(a:Float, base:Float = 1.000000):Float;
 	/**
 		X.loge(a) -> float
 		Returns natural log of A (if e^R == A, returns R)
@@ -3455,7 +3455,7 @@ package unreal;
 		Returns:
 		    float: Pulsating value (0.0-1.0)
 	**/
-	static public function make_pulsating_value(current_time:Float, pulses_per_second:Float, phase:Float):Float;
+	static public function make_pulsating_value(current_time:Float, pulses_per_second:Float = 1.000000, phase:Float = 0.000000):Float;
 	/**
 		X.make_relative_transform(a, relative_to) -> Transform
 		Computes a relative transform of one transform compared to another.
@@ -3791,7 +3791,7 @@ package unreal;
 		Returns:
 		    Matrix:
 	**/
-	static public function matrix_get_matrix_without_scale(m:unreal.Matrix, tolerance:Float):unreal.Matrix;
+	static public function matrix_get_matrix_without_scale(m:unreal.Matrix, tolerance:Float = 0.000000):unreal.Matrix;
 	/**
 		X.matrix_get_maximum_axis_scale(m) -> float
 		
@@ -3850,7 +3850,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function matrix_get_scale_vector(m:unreal.Matrix, tolerance:Float):unreal.Vector;
+	static public function matrix_get_scale_vector(m:unreal.Matrix, tolerance:Float = 0.000000):unreal.Vector;
 	/**
 		X.matrix_get_scaled_axes(m) -> (x=Vector, y=Vector, z=Vector)
 		get axes of this matrix scaled by the scale of the matrix
@@ -3990,7 +3990,7 @@ package unreal;
 		
 		    m (Matrix):
 	**/
-	static public function matrix_remove_scaling(m:unreal.Matrix, tolerance:Float):unreal.Matrix;
+	static public function matrix_remove_scaling(m:unreal.Matrix, tolerance:Float = 0.000000):unreal.Matrix;
 	/**
 		X.matrix_remove_translation(m) -> Matrix
 		Remove any translation from this matrix
@@ -4153,7 +4153,7 @@ package unreal;
 		
 		    max_value (uint8):
 	**/
-	static public function max_of_byte_array(byte_array:unreal.Array):python.Tuple<Dynamic>;
+	static public function max_of_byte_array(byte_array:Array<uint8>):python.Tuple<Dynamic>;
 	/**
 		X.max_of_float_array(float_array) -> (index_of_max_value=int32, max_value=float)
 		Returns max of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4168,7 +4168,7 @@ package unreal;
 		
 		    max_value (float):
 	**/
-	static public function max_of_float_array(float_array:unreal.Array):python.Tuple<Dynamic>;
+	static public function max_of_float_array(float_array:Array<float>):python.Tuple<Dynamic>;
 	/**
 		X.max_of_int_array(int_array) -> (index_of_max_value=int32, max_value=int32)
 		Returns max of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4183,7 +4183,7 @@ package unreal;
 		
 		    max_value (int32):
 	**/
-	static public function max_of_int_array(int_array:unreal.Array):python.Tuple<Dynamic>;
+	static public function max_of_int_array(int_array:Array<int32>):python.Tuple<Dynamic>;
 	/**
 		X.min(a, b) -> int32
 		Returns the minimum value of A and B
@@ -4222,7 +4222,7 @@ package unreal;
 		
 		    min_value (uint8):
 	**/
-	static public function min_of_byte_array(byte_array:unreal.Array):python.Tuple<Dynamic>;
+	static public function min_of_byte_array(byte_array:Array<uint8>):python.Tuple<Dynamic>;
 	/**
 		X.min_of_float_array(float_array) -> (index_of_min_value=int32, min_value=float)
 		Returns min of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4237,7 +4237,7 @@ package unreal;
 		
 		    min_value (float):
 	**/
-	static public function min_of_float_array(float_array:unreal.Array):python.Tuple<Dynamic>;
+	static public function min_of_float_array(float_array:Array<float>):python.Tuple<Dynamic>;
 	/**
 		X.min_of_int_array(int_array) -> (index_of_min_value=int32, min_value=int32)
 		Returns min of all array entries and the index at which it was found. Returns value of 0 and index of -1 if the supplied array is empty.
@@ -4252,7 +4252,7 @@ package unreal;
 		
 		    min_value (int32):
 	**/
-	static public function min_of_int_array(int_array:unreal.Array):python.Tuple<Dynamic>;
+	static public function min_of_int_array(int_array:Array<int32>):python.Tuple<Dynamic>;
 	/**
 		X.minimum_area_rectangle(world_context_object, verts, sample_surface_normal, debug_draw=False) -> (out_rect_center=Vector, out_rect_rotation=Rotator, out_side_length_x=float, out_side_length_y=float)
 		Finds the minimum area rectangle that encloses all of the points in InVerts
@@ -4278,7 +4278,7 @@ package unreal;
 		
 		    out_side_length_y (float):
 	**/
-	static public function minimum_area_rectangle(world_context_object:unreal.Object, verts:unreal.Array, sample_surface_normal:unreal.Vector, debug_draw:Bool):python.Tuple<Dynamic>;
+	static public function minimum_area_rectangle(world_context_object:unreal.Object, verts:Array<Vector>, sample_surface_normal:unreal.Vector, debug_draw:Bool = false):python.Tuple<Dynamic>;
 	/**
 		X.mirror_vector_by_normal(vect, normal) -> Vector
 		Given a direction vector and a surface normal, returns the vector reflected across the surface normal.
@@ -4583,7 +4583,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function nearly_equal_float_float(a:Float, b:Float, error_tolerance:Float):Bool;
+	static public function nearly_equal_float_float(a:Float, b:Float, error_tolerance:Float = 0.000001):Bool;
 	/**
 		deprecated: 'nearly_equal_rotator_rotator' was renamed to 'equal_equal_rotator_rotator'.
 	**/
@@ -4603,7 +4603,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function nearly_equal_transform_transform(a:unreal.Transform, b:unreal.Transform, location_tolerance:Float, rotation_tolerance:Float, scale3d_tolerance:Float):Bool;
+	static public function nearly_equal_transform_transform(a:unreal.Transform, b:unreal.Transform, location_tolerance:Float = 0.000100, rotation_tolerance:Float = 0.000100, scale3d_tolerance:Float = 0.000100):Bool;
 	/**
 		deprecated: 'nearly_equal_vector_vector' was renamed to 'equal_equal_vector_vector'.
 	**/
@@ -4654,7 +4654,7 @@ package unreal;
 		Returns:
 		    Vector: A normalized copy if safe, (0,0,0) otherwise.
 	**/
-	static public function normal(a:unreal.Vector, tolerance:Float):unreal.Vector;
+	static public function normal(a:unreal.Vector, tolerance:Float = 0.000100):unreal.Vector;
 	/**
 		X.normal2d(a) -> Vector2D
 		Returns a unit normal version of the 2D vector
@@ -4678,7 +4678,7 @@ package unreal;
 		Returns:
 		    Vector2D: A normalized copy of the vector if safe, (0,0) otherwise.
 	**/
-	static public function normal_safe2d(a:unreal.Vector2D, tolerance:Float):unreal.Vector2D;
+	static public function normal_safe2d(a:unreal.Vector2D, tolerance:Float = 0.000000):unreal.Vector2D;
 	/**
 		X.normalize2d(a, tolerance=0.000000) -> Vector2D
 		Normalize this vector in-place if it is large enough, set it to (0,0) otherwise.
@@ -4693,7 +4693,7 @@ package unreal;
 		
 		    a (Vector2D):
 	**/
-	static public function normalize2d(a:unreal.Vector2D, tolerance:Float):unreal.Vector2D;
+	static public function normalize2d(a:unreal.Vector2D, tolerance:Float = 0.000000):unreal.Vector2D;
 	/**
 		X.normalize_axis(angle) -> float
 		Clamps an angle to the range of [-180, 180].
@@ -4765,7 +4765,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_class_class(a:Dynamic, b:Dynamic):Bool;
+	static public function not_equal_class_class(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
 	/**
 		X.not_equal_date_time_date_time(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -4886,7 +4886,7 @@ package unreal;
 		Returns:
 		    bool: true if two Matrix are not equal, within specified tolerance, otherwise false.
 	**/
-	static public function not_equal_matrix_matrix(a:unreal.Matrix, b:unreal.Matrix, tolerance:Float):Bool;
+	static public function not_equal_matrix_matrix(a:unreal.Matrix, b:unreal.Matrix, tolerance:Float = 0.000100):Bool;
 	/**
 		X.not_equal_name_name(a, b) -> bool
 		Returns true if A and B are not equal (A != B)
@@ -4923,7 +4923,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_quat_quat(a:unreal.Quat, b:unreal.Quat, error_tolerance:Float):Bool;
+	static public function not_equal_quat_quat(a:unreal.Quat, b:unreal.Quat, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.not_equal_rotator_rotator(a, b, error_tolerance=0.000100) -> bool
 		Returns true if rotator A is not equal to rotator B (A != B) within a specified error tolerance
@@ -4936,7 +4936,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_rotator_rotator(a:unreal.Rotator, b:unreal.Rotator, error_tolerance:Float):Bool;
+	static public function not_equal_rotator_rotator(a:unreal.Rotator, b:unreal.Rotator, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.not_equal_timespan_timespan(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -4961,7 +4961,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_vector2d_vector2d(a:unreal.Vector2D, b:unreal.Vector2D, error_tolerance:Float):Bool;
+	static public function not_equal_vector2d_vector2d(a:unreal.Vector2D, b:unreal.Vector2D, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.not_equal_vector4_vector4(a, b, error_tolerance=0.000100) -> bool
 		Returns true if vector A is not equal to vector B (A != B) within a specified error tolerance
@@ -4974,7 +4974,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_vector4_vector4(a:unreal.Vector4, b:unreal.Vector4, error_tolerance:Float):Bool;
+	static public function not_equal_vector4_vector4(a:unreal.Vector4, b:unreal.Vector4, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.not_equal_vector_vector(a, b, error_tolerance=0.000100) -> bool
 		Returns true if vector A is not equal to vector B (A != B) within a specified error tolerance
@@ -4987,7 +4987,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_vector_vector(a:unreal.Vector, b:unreal.Vector, error_tolerance:Float):Bool;
+	static public function not_equal_vector_vector(a:unreal.Vector, b:unreal.Vector, error_tolerance:Float = 0.000100):Bool;
 	/**
 		X.not_int(a) -> int32
 		Bitwise NOT (~A)
@@ -5064,7 +5064,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function percent_byte_byte(a:Dynamic, b:Dynamic):Dynamic;
+	static public function percent_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.percent_int_int(a, b=1) -> int32
 		Modulo (A % B)
@@ -5076,7 +5076,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function percent_int_int(a:Int, b:Int):Int;
+	static public function percent_int_int(a:Int, b:Int = 1):Int;
 	/**
 		X.perlin_noise1d(value) -> float
 		Generates a 1D Perlin noise from the given value.  Returns a continuous random value between -1.0 and 1.0.
@@ -5099,7 +5099,7 @@ package unreal;
 		Returns:
 		    bool: Whether the points are relatively coplanar, based on the tolerance
 	**/
-	static public function points_are_coplanar(points:unreal.Array, tolerance:Float):Bool;
+	static public function points_are_coplanar(points:Array<Vector>, tolerance:Float = 0.100000):Bool;
 	/**
 		deprecated: 'project_on_to' was renamed to 'project_vector_on_to_vector'.
 	**/
@@ -5284,7 +5284,7 @@ package unreal;
 		Returns:
 		    bool: true if Quaternion is a normalized Identity Quaternion.
 	**/
-	static public function quat_is_identity(q:unreal.Quat, tolerance:Float):Bool;
+	static public function quat_is_identity(q:unreal.Quat, tolerance:Float = 0.000100):Bool;
 	/**
 		X.quat_is_non_finite(q) -> bool
 		Determine if there are any non-finite values (NaN or Inf) in this Quat.
@@ -5343,7 +5343,7 @@ package unreal;
 		
 		    q (Quat):
 	**/
-	static public function quat_normalize(q:unreal.Quat, tolerance:Float):unreal.Quat;
+	static public function quat_normalize(q:unreal.Quat, tolerance:Float = 0.000100):unreal.Quat;
 	/**
 		X.quat_normalized(q, tolerance=0.000100) -> Quat
 		Get a normalized copy of this quaternion.
@@ -5356,7 +5356,7 @@ package unreal;
 		Returns:
 		    Quat:
 	**/
-	static public function quat_normalized(q:unreal.Quat, tolerance:Float):unreal.Quat;
+	static public function quat_normalized(q:unreal.Quat, tolerance:Float = 0.000100):unreal.Quat;
 	/**
 		X.quat_rotate_vector(q, v) -> Vector
 		Rotate a vector by this quaternion.
@@ -5742,7 +5742,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	static public function random_rotator(roll:Bool):unreal.Rotator;
+	static public function random_rotator(roll:Bool = false):unreal.Rotator;
 	/**
 		X.random_rotator_from_stream(roll, stream) -> Rotator
 		Create a random rotation
@@ -6063,7 +6063,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function select_class(a:Dynamic, b:Dynamic, select_a:Bool):Dynamic;
+	static public function select_class(a:Class<Dynamic>, b:Class<Dynamic>, select_a:Bool):Class<Dynamic>;
 	/**
 		X.select_color(a, b, pick_a) -> LinearColor
 		If bPickA is true, A is returned, otherwise B is
@@ -6285,7 +6285,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	static public function subtract_byte_byte(a:Dynamic, b:Dynamic):Dynamic;
+	static public function subtract_byte_byte(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.subtract_date_time_date_time(a, b) -> Timespan
 		Subtraction (A - B)
@@ -6321,7 +6321,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function subtract_float_float(a:Float, b:Float):Float;
+	static public function subtract_float_float(a:Float, b:Float = 1.000000):Float;
 	/**
 		X.subtract_int64_int64(a, b=1) -> int64
 		Subtraction (A - B)
@@ -6333,7 +6333,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	static public function subtract_int64_int64(a:Dynamic, b:Dynamic):Dynamic;
+	static public function subtract_int64_int64(a:Dynamic, b:Dynamic = 1):Dynamic;
 	/**
 		X.subtract_int_int(a, b=1) -> int32
 		Subtraction (A - B)
@@ -6345,7 +6345,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function subtract_int_int(a:Int, b:Int):Int;
+	static public function subtract_int_int(a:Int, b:Int = 1):Int;
 	/**
 		X.subtract_int_point_int(a, b) -> IntPoint
 		Subtraction (A - B)
@@ -6505,7 +6505,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	static public function t_lerp(a:unreal.Transform, b:unreal.Transform, alpha:Float, interp_mode:unreal.LerpInterpolationMode):unreal.Transform;
+	static public function t_lerp(a:unreal.Transform, b:unreal.Transform, alpha:Float, interp_mode:unreal.LerpInterpolationMode = LerpInterpolationMode.QUAT_INTERP):unreal.Transform;
 	/**
 		X.tan(a) -> float
 		Returns the tan of A (expects Radians)
@@ -6880,7 +6880,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	static public function vector4_is_nearly_zero3(a:unreal.Vector4, tolerance:Float):Bool;
+	static public function vector4_is_nearly_zero3(a:unreal.Vector4, tolerance:Float = 0.000100):Bool;
 	/**
 		X.vector4_is_normal3(a) -> bool
 		Determines if vector is normalized / unit (length 1). The W element is ignored.
@@ -6903,7 +6903,7 @@ package unreal;
 		Returns:
 		    bool: true if unit, false otherwise.
 	**/
-	static public function vector4_is_unit3(a:unreal.Vector4, squared_lenth_tolerance:Float):Bool;
+	static public function vector4_is_unit3(a:unreal.Vector4, squared_lenth_tolerance:Float = 0.000100):Bool;
 	/**
 		X.vector4_is_zero(a) -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -6952,7 +6952,7 @@ package unreal;
 		Returns:
 		    Vector4: A normalized copy if safe, (0,0,0) otherwise.
 	**/
-	static public function vector4_normal3(a:unreal.Vector4, tolerance:Float):unreal.Vector4;
+	static public function vector4_normal3(a:unreal.Vector4, tolerance:Float = 0.000100):unreal.Vector4;
 	/**
 		X.vector4_normal_unsafe3(a) -> Vector4
 		Calculates normalized unit version of vector without checking for zero length. The W element is ignored and the returned vector has W=0.
@@ -6977,7 +6977,7 @@ package unreal;
 		
 		    a (Vector4):
 	**/
-	static public function vector4_normalize3(a:unreal.Vector4, tolerance:Float):unreal.Vector4;
+	static public function vector4_normalize3(a:unreal.Vector4, tolerance:Float = 0.000000):unreal.Vector4;
 	/**
 		X.vector4_set(a, x, y, z, w) -> Vector4
 		Set the values of the vector directly.
@@ -7303,7 +7303,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	static public function vector_is_nearly_zero(a:unreal.Vector, tolerance:Float):Bool;
+	static public function vector_is_nearly_zero(a:unreal.Vector, tolerance:Float = 0.000100):Bool;
 	/**
 		X.vector_is_normal(a) -> bool
 		Determines if vector is normalized / unit (length 1).
@@ -7326,7 +7326,7 @@ package unreal;
 		Returns:
 		    bool: true if the vectors are equal within tolerance limits, false otherwise.
 	**/
-	static public function vector_is_uniform(a:unreal.Vector, tolerance:Float):Bool;
+	static public function vector_is_uniform(a:unreal.Vector, tolerance:Float = 0.000100):Bool;
 	/**
 		X.vector_is_unit(a, squared_lenth_tolerance=0.000100) -> bool
 		Determines if vector is normalized / unit (length 1) within specified squared tolerance.
@@ -7338,7 +7338,7 @@ package unreal;
 		Returns:
 		    bool: true if unit, false otherwise.
 	**/
-	static public function vector_is_unit(a:unreal.Vector, squared_lenth_tolerance:Float):Bool;
+	static public function vector_is_unit(a:unreal.Vector, squared_lenth_tolerance:Float = 0.000100):Bool;
 	/**
 		X.vector_is_zero(a) -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -7374,7 +7374,7 @@ package unreal;
 		Returns:
 		    Vector: Normalized copy if safe, (0,0,0) otherwise.
 	**/
-	static public function vector_normal2d(a:unreal.Vector, tolerance:Float):unreal.Vector;
+	static public function vector_normal2d(a:unreal.Vector, tolerance:Float = 0.000100):unreal.Vector;
 	/**
 		X.vector_normal_unsafe(a) -> Vector
 		Calculates normalized unit version of vector without checking for zero length.
@@ -7399,7 +7399,7 @@ package unreal;
 		
 		    a (Vector):
 	**/
-	static public function vector_normalize(a:unreal.Vector, tolerance:Float):unreal.Vector;
+	static public function vector_normalize(a:unreal.Vector, tolerance:Float = 0.000000):unreal.Vector;
 	/**
 		X.vector_project_on_to_normal(v, normal) -> Vector
 		Gets a copy of this vector projected onto the input vector, which is assumed to be unit length.
@@ -7470,7 +7470,7 @@ package unreal;
 		
 		    spring_state (VectorSpringState):
 	**/
-	static public function vector_spring_interp(current:unreal.Vector, target:unreal.Vector, spring_state:unreal.VectorSpringState, stiffness:Float, critical_damping_factor:Float, delta_time:Float, mass:Float):unreal.VectorSpringState;
+	static public function vector_spring_interp(current:unreal.Vector, target:unreal.Vector, spring_state:unreal.VectorSpringState, stiffness:Float, critical_damping_factor:Float, delta_time:Float, mass:Float = 1.000000):unreal.VectorSpringState;
 	/**
 		X.vector_to_degrees(a) -> Vector
 		Converts a vector containing radian values to a vector containing degree values.

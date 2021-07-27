@@ -36,7 +36,7 @@ package unreal;
 		Args:
 		    protocol_type (type(Class)):
 	**/
-	public function set_audio_capture_protocol_type(protocol_type:Dynamic):Void;
+	public function set_audio_capture_protocol_type(protocol_type:Class<Dynamic>):Void;
 	/**
 		x.set_image_capture_protocol_type(protocol_type) -> None
 		Set Image Capture Protocol Type
@@ -44,7 +44,7 @@ package unreal;
 		Args:
 		    protocol_type (type(Class)):
 	**/
-	public function set_image_capture_protocol_type(protocol_type:Dynamic):Void;
+	public function set_image_capture_protocol_type(protocol_type:Class<Dynamic>):Void;
 	/**
 		(MovieSceneCaptureSettings):  [Read-Write] Settings that define how to capture
 	**/

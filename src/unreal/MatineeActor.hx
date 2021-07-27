@@ -143,7 +143,7 @@ package unreal;
 		    new_position (float): the new position to set the interpolation to
 		    jump (bool): if true, teleport to the new position (don't trigger any events between the old and new positions, etc)
 	**/
-	public function set_position(new_position:Float, jump:Bool):Void;
+	public function set_position(new_position:Float, jump:Bool = false):Void;
 	/**
 		(bool):  [Read-Write] if bClientSideOnly is true, whether this matinee should be completely skipped if none of the affected Actors are visible
 	**/

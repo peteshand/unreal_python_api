@@ -36,7 +36,7 @@ package unreal;
 		Returns:
 		    bool: true if all tasks ran without error
 	**/
-	static public function run_asset_export_tasks(export_tasks:unreal.Array):Bool;
+	static public function run_asset_export_tasks(export_tasks:Array<AssetExportTask>):Bool;
 	/**
 		x.script_run_asset_export_task(task) -> bool
 		Export the given object to file.  Overridden by script based exporters.
@@ -51,7 +51,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Supported class of this exporter
 	**/
-	public var supported_class : Dynamic;
+	public var supported_class : Class<Dynamic>;
 	/**
 		(bool):  [Read-Write] If true, this will export the data as text
 	**/

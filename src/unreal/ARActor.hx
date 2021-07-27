@@ -12,5 +12,5 @@ package unreal;
 		Returns:
 		    ARComponent:
 	**/
-	public function add_ar_component(component_class:Dynamic, native_id:unreal.Guid):unreal.ARComponent;
+	public function add_ar_component(component_class:Class<Dynamic>, native_id:unreal.Guid):unreal.ARComponent;
 }

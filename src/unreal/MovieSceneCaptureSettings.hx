@@ -32,7 +32,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Optional game mode to override the map's default game mode with.  This can be useful if the game's normal mode displays UI elements or loading screens that you don't want captured.
 	**/
-	public var game_mode_override : Dynamic;
+	public var game_mode_override : Class<Dynamic>;
 	/**
 		(int32):  [Read-Write] Number of frame handles to include for each shot
 	**/

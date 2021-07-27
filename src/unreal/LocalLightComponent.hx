@@ -18,7 +18,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	static public function get_units_conversion_factor(src_units:unreal.LightUnits, target_units:unreal.LightUnits, cos_half_cone_angle:Float):Float;
+	static public function get_units_conversion_factor(src_units:unreal.LightUnits, target_units:unreal.LightUnits, cos_half_cone_angle:Float = -1.000000):Float;
 	/**
 		(LightUnits):  [Read-Only] Units used for the intensity.
 		The peak luminous intensity is measured in candelas,

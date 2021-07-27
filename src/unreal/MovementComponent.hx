@@ -160,7 +160,7 @@ package unreal;
 		
 		    out_hit (HitResult):
 	**/
-	public function move_updated_component(delta:unreal.Vector, new_rotation:unreal.Rotator, sweep:Bool, teleport:Bool):Dynamic;
+	public function move_updated_component(delta:unreal.Vector, new_rotation:unreal.Rotator, sweep:Bool = true, teleport:Bool = false):Dynamic;
 	/**
 		(Vector):  [Read-Only] The normal or axis of the plane that constrains movement, if bConstrainToPlane is enabled.
 		If for example you wanted to constrain movement to the X-Z plane (so that Y cannot change), the normal would be set to X=0 Y=1 Z=0.

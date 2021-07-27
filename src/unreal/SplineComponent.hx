@@ -9,7 +9,7 @@ package unreal;
 		    point (SplinePoint): 
 		    update_spline (bool):
 	**/
-	public function add_point(point:unreal.SplinePoint, update_spline:Bool):Void;
+	public function add_point(point:unreal.SplinePoint, update_spline:Bool = true):Void;
 	/**
 		x.add_points(points, update_spline=True) -> None
 		Adds an array of FSplinePoints to the spline.
@@ -18,7 +18,7 @@ package unreal;
 		    points (Array(SplinePoint)): 
 		    update_spline (bool):
 	**/
-	public function add_points(points:unreal.Array, update_spline:Bool):Void;
+	public function add_points(points:Array<SplinePoint>, update_spline:Bool = true):Void;
 	/**
 		x.add_spline_local_point(position) -> None
 		Adds a local space point to the spline
@@ -38,7 +38,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function add_spline_point(position:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function add_spline_point(position:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.add_spline_point_at_index(position, index, coordinate_space, update_spline=True) -> None
 		Adds a point to the spline at the specified index
@@ -49,7 +49,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function add_spline_point_at_index(position:unreal.Vector, index:Int, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function add_spline_point_at_index(position:unreal.Vector, index:Int, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.add_spline_world_point(position) -> None
 		Adds a world space point to the spline
@@ -72,7 +72,7 @@ package unreal;
 		Args:
 		    update_spline (bool):
 	**/
-	public function clear_spline_points(update_spline:Bool):Void;
+	public function clear_spline_points(update_spline:Bool = true):Void;
 	/**
 		(Vector):  [Read-Write] Default up vector in local space to be used when calculating transforms along the spline
 	**/
@@ -191,7 +191,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function find_transform_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
+	public function find_transform_closest_to_world_location(world_location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool = false):unreal.Transform;
 	/**
 		x.find_up_vector_closest_to_world_location(world_location, coordinate_space) -> Vector
 		Given a location, in world space, return a unit direction vector corresponding to the spline's up vector closest to the location.
@@ -275,7 +275,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_direction_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
+	public function get_direction_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_distance_along_spline_at_spline_input_key(key) -> float
 		Get distance along the spline at the provided input key value
@@ -426,7 +426,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_location_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
+	public function get_location_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		deprecated: 'get_num_spline_points' was renamed to 'get_number_of_spline_points'.
 	**/
@@ -496,7 +496,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_right_vector_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
+	public function get_right_vector_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_roll_at_distance_along_spline(distance, coordinate_space) -> float
 		Given a distance along the length of this spline, return the spline's roll there, in degrees.
@@ -545,7 +545,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_roll_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):Float;
+	public function get_roll_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):Float;
 	/**
 		x.get_rotation_at_distance_along_spline(distance, coordinate_space) -> Rotator
 		Given a distance along the length of this spline, return a rotation corresponding to the spline's rotation there.
@@ -594,7 +594,7 @@ package unreal;
 		Returns:
 		    Rotator:
 	**/
-	public function get_rotation_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Rotator;
+	public function get_rotation_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):unreal.Rotator;
 	/**
 		x.get_scale_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return the spline's scale there.
@@ -639,7 +639,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_scale_at_time(time:Float, use_constant_velocity:Bool):unreal.Vector;
+	public function get_scale_at_time(time:Float, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_spline_length() -> float
 		Returns total length along this spline
@@ -707,7 +707,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_tangent_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
+	public function get_tangent_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_transform_at_distance_along_spline(distance, coordinate_space, use_scale=False) -> Transform
 		Given a distance along the length of this spline, return an FTransform corresponding to that point on the spline.
@@ -720,7 +720,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
+	public function get_transform_at_distance_along_spline(distance:Float, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool = false):unreal.Transform;
 	/**
 		x.get_transform_at_spline_input_key(key, coordinate_space, use_scale=False) -> Transform
 		Get transform at the provided input key value
@@ -733,7 +733,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
+	public function get_transform_at_spline_input_key(key:Float, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool = false):unreal.Transform;
 	/**
 		x.get_transform_at_spline_point(point_index, coordinate_space, use_scale=False) -> Transform
 		Get the transform at spline point
@@ -746,7 +746,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool):unreal.Transform;
+	public function get_transform_at_spline_point(point_index:Int, coordinate_space:unreal.SplineCoordinateSpace, use_scale:Bool = false):unreal.Transform;
 	/**
 		x.get_transform_at_time(time, coordinate_space, use_constant_velocity=False, use_scale=False) -> Transform
 		Given a time from 0 to the spline duration, return the spline's transform at the corresponding position.
@@ -760,7 +760,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function get_transform_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool, use_scale:Bool):unreal.Transform;
+	public function get_transform_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false, use_scale:Bool = false):unreal.Transform;
 	/**
 		x.get_up_vector_at_distance_along_spline(distance, coordinate_space) -> Vector
 		Given a distance along the length of this spline, return a unit direction vector corresponding to the spline's up vector there.
@@ -809,7 +809,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_up_vector_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool):unreal.Vector;
+	public function get_up_vector_at_time(time:Float, coordinate_space:unreal.SplineCoordinateSpace, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_vector_property_at_spline_input_key(key, property_name) -> Vector
 		Get a metadata property vector value along the spline at spline input key
@@ -860,7 +860,7 @@ package unreal;
 		    Vector:
 	**/
 	@:deprecated
-	public function get_world_direction_at_time(time:Float, use_constant_velocity:Bool):unreal.Vector;
+	public function get_world_direction_at_time(time:Float, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_world_location_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return the point in world space where this puts you
@@ -900,7 +900,7 @@ package unreal;
 		    Vector:
 	**/
 	@:deprecated
-	public function get_world_location_at_time(time:Float, use_constant_velocity:Bool):unreal.Vector;
+	public function get_world_location_at_time(time:Float, use_constant_velocity:Bool = false):unreal.Vector;
 	/**
 		x.get_world_rotation_at_distance_along_spline(distance) -> Rotator
 		Given a distance along the length of this spline, return a rotation corresponding to the spline's rotation there, in world space.
@@ -927,7 +927,7 @@ package unreal;
 		    Rotator:
 	**/
 	@:deprecated
-	public function get_world_rotation_at_time(time:Float, use_constant_velocity:Bool):unreal.Rotator;
+	public function get_world_rotation_at_time(time:Float, use_constant_velocity:Bool = false):unreal.Rotator;
 	/**
 		x.get_world_tangent_at_distance_along_spline(distance) -> Vector
 		Given a distance along the length of this spline, return the tangent vector of the spline there, in world space.
@@ -962,7 +962,7 @@ package unreal;
 		    index (int32): 
 		    update_spline (bool):
 	**/
-	public function remove_spline_point(index:Int, update_spline:Bool):Void;
+	public function remove_spline_point(index:Int, update_spline:Bool = true):Void;
 	/**
 		x.set_closed_loop(closed_loop, update_spline=True) -> None
 		Specify whether the spline is a closed loop or not. The loop position will be at 1.0 after the last point's input key
@@ -971,7 +971,7 @@ package unreal;
 		    closed_loop (bool): 
 		    update_spline (bool):
 	**/
-	public function set_closed_loop(closed_loop:Bool, update_spline:Bool):Void;
+	public function set_closed_loop(closed_loop:Bool, update_spline:Bool = true):Void;
 	/**
 		x.set_closed_loop_at_position(closed_loop, key, update_spline=True) -> None
 		Specify whether the spline is a closed loop or not, and if so, the input key corresponding to the loop point
@@ -981,7 +981,7 @@ package unreal;
 		    key (float): 
 		    update_spline (bool):
 	**/
-	public function set_closed_loop_at_position(closed_loop:Bool, key:Float, update_spline:Bool):Void;
+	public function set_closed_loop_at_position(closed_loop:Bool, key:Float, update_spline:Bool = true):Void;
 	/**
 		x.set_default_up_vector(up_vector, coordinate_space) -> None
 		Sets the default up vector used by this spline
@@ -1009,7 +1009,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_location_at_spline_point(point_index:Int, location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function set_location_at_spline_point(point_index:Int, location:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.set_rotation_at_spline_point(point_index, rotation, coordinate_space, update_spline=True) -> None
 		Set the rotation of an existing spline point
@@ -1020,7 +1020,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_rotation_at_spline_point(point_index:Int, rotation:unreal.Rotator, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function set_rotation_at_spline_point(point_index:Int, rotation:unreal.Rotator, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.set_scale_at_spline_point(point_index, scale_vector, update_spline=True) -> None
 		Set the scale at a given spline point
@@ -1030,7 +1030,7 @@ package unreal;
 		    scale_vector (Vector): 
 		    update_spline (bool):
 	**/
-	public function set_scale_at_spline_point(point_index:Int, scale_vector:unreal.Vector, update_spline:Bool):Void;
+	public function set_scale_at_spline_point(point_index:Int, scale_vector:unreal.Vector, update_spline:Bool = true):Void;
 	/**
 		x.set_selected_spline_segment_color(segment_color) -> None
 		Specify selected spline component segment color in the editor
@@ -1048,7 +1048,7 @@ package unreal;
 		    points (Array(Vector)):
 	**/
 	@:deprecated
-	public function set_spline_local_points(points:unreal.Array):Void;
+	public function set_spline_local_points(points:Array<Vector>):Void;
 	/**
 		x.set_spline_point_type(point_index, type, update_spline=True) -> None
 		Specify the type of a spline point
@@ -1058,7 +1058,7 @@ package unreal;
 		    type (SplinePointType): 
 		    update_spline (bool):
 	**/
-	public function set_spline_point_type(point_index:Int, type:unreal.SplinePointType, update_spline:Bool):Void;
+	public function set_spline_point_type(point_index:Int, type:unreal.SplinePointType, update_spline:Bool = true):Void;
 	/**
 		x.set_spline_points(points, coordinate_space, update_spline=True) -> None
 		Sets the spline to an array of points
@@ -1068,7 +1068,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_spline_points(points:unreal.Array, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function set_spline_points(points:Array<Vector>, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.set_spline_world_points(points) -> None
 		Sets the spline to an array of world space points
@@ -1078,7 +1078,7 @@ package unreal;
 		    points (Array(Vector)):
 	**/
 	@:deprecated
-	public function set_spline_world_points(points:unreal.Array):Void;
+	public function set_spline_world_points(points:Array<Vector>):Void;
 	/**
 		x.set_tangent_at_spline_point(point_index, tangent, coordinate_space, update_spline=True) -> None
 		Specify the tangent at a given spline point
@@ -1089,7 +1089,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_tangent_at_spline_point(point_index:Int, tangent:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function set_tangent_at_spline_point(point_index:Int, tangent:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.set_tangent_color(tangent_color) -> None
 		Specify selected spline component segment color in the editor
@@ -1109,7 +1109,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_tangents_at_spline_point(point_index:Int, arrive_tangent:unreal.Vector, leave_tangent:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function set_tangents_at_spline_point(point_index:Int, arrive_tangent:unreal.Vector, leave_tangent:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.set_unselected_spline_segment_color(segment_color) -> None
 		Specify unselected spline component segment color in the editor
@@ -1128,7 +1128,7 @@ package unreal;
 		    coordinate_space (SplineCoordinateSpace): 
 		    update_spline (bool):
 	**/
-	public function set_up_vector_at_spline_point(point_index:Int, up_vector:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool):Void;
+	public function set_up_vector_at_spline_point(point_index:Int, up_vector:unreal.Vector, coordinate_space:unreal.SplineCoordinateSpace, update_spline:Bool = true):Void;
 	/**
 		x.set_world_location_at_spline_point(point_index, location) -> None
 		Move an existing point to a new world location

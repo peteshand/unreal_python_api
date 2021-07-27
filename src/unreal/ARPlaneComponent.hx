@@ -36,7 +36,7 @@ package unreal;
 		Args:
 		    colors (Map(ARObjectClassification, LinearColor)):
 	**/
-	static public function set_object_classification_debug_colors(colors:unreal.Map):Void;
+	static public function set_object_classification_debug_colors(colors:Dynamic):Void;
 	/**
 		X.set_plane_component_debug_mode(new_debug_mode) -> None
 		Set Plane Component Debug Mode

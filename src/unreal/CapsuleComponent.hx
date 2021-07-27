@@ -131,7 +131,7 @@ package unreal;
 		    half_height (float): : half-height, from capsule center to end of top or bottom hemisphere.
 		    update_overlaps (bool):
 	**/
-	public function set_capsule_half_height(half_height:Float, update_overlaps:Bool):Void;
+	public function set_capsule_half_height(half_height:Float, update_overlaps:Bool = true):Void;
 	/**
 		x.set_capsule_radius(radius, update_overlaps=True) -> None
 		Set the capsule radius. This is the unscaled radius, before component scale is applied.
@@ -141,7 +141,7 @@ package unreal;
 		    radius (float): : radius of end-cap hemispheres and center cylinder.
 		    update_overlaps (bool):
 	**/
-	public function set_capsule_radius(radius:Float, update_overlaps:Bool):Void;
+	public function set_capsule_radius(radius:Float, update_overlaps:Bool = true):Void;
 	/**
 		x.set_capsule_size(radius, half_height, update_overlaps=True) -> None
 		Change the capsule size. This is the unscaled size, before component scale is applied.
@@ -151,5 +151,5 @@ package unreal;
 		    half_height (float): : half-height, from capsule center to end of top or bottom hemisphere.
 		    update_overlaps (bool):
 	**/
-	public function set_capsule_size(radius:Float, half_height:Float, update_overlaps:Bool):Void;
+	public function set_capsule_size(radius:Float, half_height:Float, update_overlaps:Bool = true):Void;
 }

@@ -11,5 +11,5 @@ package unreal;
 		    max_local_error (float): 
 		    map_name_override (str):
 	**/
-	static public function take_gameplay_automation_screenshot(screenshot_name:String, max_global_error:Float, max_local_error:Float, map_name_override:String):Void;
+	static public function take_gameplay_automation_screenshot(screenshot_name:String, max_global_error:Float = 0.020000, max_local_error:Float = 0.120000, map_name_override:String = "\"\""):Void;
 }

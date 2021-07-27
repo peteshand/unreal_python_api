@@ -13,7 +13,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: The new level, or NULL if the level couldn't added.
 	**/
-	static public function add_level_to_world(world:unreal.World, level_package_name:String, level_streaming_class:Dynamic):unreal.LevelStreaming;
+	static public function add_level_to_world(world:unreal.World, level_package_name:String, level_streaming_class:Class<Dynamic>):unreal.LevelStreaming;
 	/**
 		X.add_level_to_world_with_transform(world, level_package_name, level_streaming_class, level_transform) -> LevelStreaming
 		Adds the named level package to the world at the given position.  Does nothing if the level already exists in the world.
@@ -27,7 +27,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: The new level, or NULL if the level couldn't added.
 	**/
-	static public function add_level_to_world_with_transform(world:unreal.World, level_package_name:String, level_streaming_class:Dynamic, level_transform:unreal.Transform):unreal.LevelStreaming;
+	static public function add_level_to_world_with_transform(world:unreal.World, level_package_name:String, level_streaming_class:Class<Dynamic>, level_transform:unreal.Transform):unreal.LevelStreaming;
 	/**
 		X.create_new_streaming_level(level_streaming_class, new_level_path="", move_selected_actors_into_new_level=False) -> LevelStreaming
 		Creates a new streaming level in the current world
@@ -40,7 +40,7 @@ package unreal;
 		Returns:
 		    LevelStreaming: Returns the newly created level, or NULL on failure
 	**/
-	static public function create_new_streaming_level(level_streaming_class:Dynamic, new_level_path:String, move_selected_actors_into_new_level:Bool):unreal.LevelStreaming;
+	static public function create_new_streaming_level(level_streaming_class:Class<Dynamic>, new_level_path:String = "\"\"", move_selected_actors_into_new_level:Bool = false):unreal.LevelStreaming;
 	/**
 		X.make_level_current(streaming_level) -> None
 		Makes the specified streaming level the current level for editing.
@@ -66,7 +66,7 @@ package unreal;
 		Returns:
 		    int32: The number of actors that were successfully moved to the new level
 	**/
-	static public function move_actors_to_level(actors_to_move:unreal.Array, dest_streaming_level:unreal.LevelStreaming, warn_about_references:Bool, warn_about_renaming:Bool):Int;
+	static public function move_actors_to_level(actors_to_move:Array<Actor>, dest_streaming_level:unreal.LevelStreaming, warn_about_references:Bool = true, warn_about_renaming:Bool = true):Int;
 	/**
 		X.move_selected_actors_to_level(dest_level, warn_about_references=True) -> int32
 		Moves the currently selected actors to the specified streaming level. The new actors will be selected
@@ -78,7 +78,7 @@ package unreal;
 		Returns:
 		    int32: The number of actors that were successfully moved to the new level
 	**/
-	static public function move_selected_actors_to_level(dest_level:unreal.LevelStreaming, warn_about_references:Bool):Int;
+	static public function move_selected_actors_to_level(dest_level:unreal.LevelStreaming, warn_about_references:Bool = true):Int;
 	/**
 		X.set_level_visibility(level, should_be_visible, force_layers_visible, modify_mode=LevelVisibilityDirtyMode.MODIFY_ON_CHANGE) -> None
 		Sets a level's visibility in the editor. Less efficient than SetLevelsVisibility when changing the visibility of multiple levels simultaneously.
@@ -89,7 +89,7 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	static public function set_level_visibility(level:unreal.Level, should_be_visible:Bool, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode):Void;
+	static public function set_level_visibility(level:unreal.Level, should_be_visible:Bool, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode = LevelVisibilityDirtyMode.MODIFY_ON_CHANGE):Void;
 	/**
 		X.set_levels_visibility(levels, should_be_visible, force_layers_visible, modify_mode=LevelVisibilityDirtyMode.MODIFY_ON_CHANGE) -> None
 		Sets a level's visibility in the editor. More efficient than SetLevelsVisibility when changing the visibility of multiple levels simultaneously.
@@ -100,5 +100,5 @@ package unreal;
 		    force_layers_visible (bool): If true and the level is visible, force the level's layers to be visible.
 		    modify_mode (LevelVisibilityDirtyMode): ELevelVisibilityDirtyMode mode value.
 	**/
-	static public function set_levels_visibility(levels:unreal.Array, should_be_visible:unreal.Array, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode):Void;
+	static public function set_levels_visibility(levels:Array<Level>, should_be_visible:Array<bool>, force_layers_visible:Bool, modify_mode:unreal.LevelVisibilityDirtyMode = LevelVisibilityDirtyMode.MODIFY_ON_CHANGE):Void;
 }

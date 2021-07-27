@@ -81,7 +81,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function combine(paths:unreal.Array):String;
+	static public function combine(paths:Array<str>):String;
 	/**
 		X.convert_from_sandbox_path(path, sandbox_name) -> str
 		Converts a sandbox (in Saved/Sandboxes) path to a normal path.
@@ -106,7 +106,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function convert_relative_path_to_full(path:String, base_path:String):String;
+	static public function convert_relative_path_to_full(path:String, base_path:String = "\"\""):String;
 	/**
 		X.convert_to_sandbox_path(path, sandbox_name) -> str
 		Converts a normal path to a sandbox path (in Saved/Sandboxes).
@@ -131,7 +131,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function create_temp_filename(path:String, prefix:String, extension:String):String;
+	static public function create_temp_filename(path:String, prefix:String = "\"\"", extension:String = "\".tmp\""):String;
 	/**
 		X.diff_dir() -> str
 		Returns the directory for temp files used for diffing
@@ -321,7 +321,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_base_filename(path:String, remove_path:Bool):String;
+	static public function get_base_filename(path:String, remove_path:Bool = true):String;
 	/**
 		X.get_clean_filename(path) -> str
 		Returns the filename (with extension), minus any path information.
@@ -340,7 +340,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_editor_localization_paths():Dynamic;
+	static public function get_editor_localization_paths():Array<str>;
 	/**
 		X.get_engine_localization_paths() -> Array(str)
 		Returns a list of engine-specific localization paths
@@ -348,7 +348,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_engine_localization_paths():Dynamic;
+	static public function get_engine_localization_paths():Array<str>;
 	/**
 		X.get_extension(path, include_dot=False) -> str
 		Gets the extension for this filename.
@@ -360,7 +360,7 @@ package unreal;
 		Returns:
 		    str: the extension of this filename, or an empty string if the filename doesn't have an extension.
 	**/
-	static public function get_extension(path:String, include_dot:Bool):String;
+	static public function get_extension(path:String, include_dot:Bool = false):String;
 	/**
 		X.get_game_localization_paths() -> Array(str)
 		Returns a list of game-specific localization paths
@@ -368,7 +368,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_game_localization_paths():Dynamic;
+	static public function get_game_localization_paths():Array<str>;
 	/**
 		X.get_invalid_file_system_chars() -> str
 		Returns a string containing all invalid characters as dictated by the operating system
@@ -403,7 +403,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_property_name_localization_paths():Dynamic;
+	static public function get_property_name_localization_paths():Array<str>;
 	/**
 		X.get_relative_path_to_root() -> str
 		Gets the relative path to get from BaseDir to RootDirectory
@@ -419,7 +419,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_restricted_folder_names():Dynamic;
+	static public function get_restricted_folder_names():Array<str>;
 	/**
 		X.get_tool_tip_localization_paths() -> Array(str)
 		Returns a list of tool tip localization paths
@@ -427,7 +427,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_tool_tip_localization_paths():Dynamic;
+	static public function get_tool_tip_localization_paths():Array<str>;
 	/**
 		X.has_project_persistent_download_dir() -> bool
 		* Returns true if a writable directory for downloaded data that persists across play sessions is available
@@ -555,7 +555,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function make_valid_file_name(string:String, replacement_char:String):String;
+	static public function make_valid_file_name(string:String, replacement_char:String = "\"\""):String;
 	/**
 		X.normalize_directory_name(path) -> str
 		Normalize all / and \ to TEXT("/") and remove any trailing TEXT("/") if the character before that is not a TEXT("/") or a colon

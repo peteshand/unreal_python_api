@@ -19,5 +19,5 @@ package unreal;
 		Returns:
 		    GameplayTaskRunResult:
 	**/
-	static public function run_gameplay_task(task_owner:Dynamic, task:unreal.GameplayTask, priority:Dynamic, additional_required_resources:unreal.Array, additional_claimed_resources:unreal.Array):unreal.GameplayTaskRunResult;
+	static public function run_gameplay_task(task_owner:Dynamic, task:unreal.GameplayTask, priority:Dynamic, additional_required_resources:Array<type(Class>, additional_claimed_resources:Array<type(Class>):unreal.GameplayTaskRunResult;
 }

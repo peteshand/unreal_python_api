@@ -90,7 +90,7 @@ package unreal;
 		    label (Text): 
 		    tool_tip (Text):
 	**/
-	public function init_entry(owner_name:unreal.Name, menu:unreal.Name, section:unreal.Name, name:unreal.Name, label:unreal.Text, tool_tip:unreal.Text):Void;
+	public function init_entry(owner_name:unreal.Name, menu:unreal.Name, section:unreal.Name, name:unreal.Name, label:unreal.Text = "\"\"", tool_tip:unreal.Text = "\"\""):Void;
 	/**
 		x.is_visible(context) -> bool
 		Is Visible

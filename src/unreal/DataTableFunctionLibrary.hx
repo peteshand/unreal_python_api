@@ -67,7 +67,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	static public function fill_data_table_from_json_file(data_table:unreal.DataTable, json_file_path:String, import_row_struct:unreal.ScriptStruct):Bool;
+	static public function fill_data_table_from_json_file(data_table:unreal.DataTable, json_file_path:String, import_row_struct:unreal.ScriptStruct = null):Bool;
 	/**
 		X.fill_data_table_from_json_string(data_table, json_string) -> bool
 		Empty and fill a Data Table from JSON string.
@@ -91,7 +91,7 @@ package unreal;
 		Returns:
 		    Array(str):
 	**/
-	static public function get_data_table_column_as_string(data_table:unreal.DataTable, property_name:unreal.Name):Dynamic;
+	static public function get_data_table_column_as_string(data_table:unreal.DataTable, property_name:unreal.Name):Array<str>;
 	/**
 		X.get_data_table_row_names(table) -> Array(Name)
 		Get Data Table Row Names
@@ -104,5 +104,5 @@ package unreal;
 		
 		    out_row_names (Array(Name)):
 	**/
-	static public function get_data_table_row_names(table:unreal.DataTable):Dynamic;
+	static public function get_data_table_row_names(table:unreal.DataTable):Array<Name>;
 }

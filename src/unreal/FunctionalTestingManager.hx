@@ -26,5 +26,5 @@ package unreal;
 		Returns:
 		    bool: true if any tests have been triggered
 	**/
-	static public function run_all_functional_tests(world_context_object:unreal.Object, new_log:Bool, run_looped:Bool, failed_tests_repro_string:String):Bool;
+	static public function run_all_functional_tests(world_context_object:unreal.Object, new_log:Bool = true, run_looped:Bool = false, failed_tests_repro_string:String = "\"\""):Bool;
 }

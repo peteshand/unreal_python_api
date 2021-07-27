@@ -48,7 +48,7 @@ package unreal;
 		Returns:
 		    bool: if the operation succeeds. Note that this is an async operation - the added point won't be available until a few frames later.
 	**/
-	static public function add_tracked_point_with_name(world_transform:unreal.Transform, point_name:String, delete_points_with_same_name:Bool):Bool;
+	static public function add_tracked_point_with_name(world_transform:unreal.Transform, point_name:String, delete_points_with_same_name:Bool = true):Bool;
 	/**
 		X.calculate_alignment_transform(transform_in_first_coordinate_system, transform_in_second_coordinate_system) -> Transform
 		Computes a transform that aligns two coordinate systems. Requires the transform of the same known point in each coordinate system.
@@ -76,7 +76,7 @@ package unreal;
 		
 		    closest_intersection (Vector):
 	**/
-	static public function calculate_closest_intersection(start_points:unreal.Array, end_points:unreal.Array):unreal.Vector;
+	static public function calculate_closest_intersection(start_points:Array<Vector>, end_points:Array<Vector>):unreal.Vector;
 	/**
 		X.debug_draw_pin(ar_pin, world_context_object, color=[0.000000, 0.000000, 0.000000, 0.000000], scale=5.000000, persist_for_seconds=0.000000) -> None
 		Given a \c UARPin, draw it for debugging purposes.
@@ -88,7 +88,7 @@ package unreal;
 		    scale (float): 
 		    persist_for_seconds (float):
 	**/
-	static public function debug_draw_pin(ar_pin:unreal.ARPin, world_context_object:unreal.Object, color:unreal.LinearColor, scale:Float, persist_for_seconds:Float):Void;
+	static public function debug_draw_pin(ar_pin:unreal.ARPin, world_context_object:unreal.Object, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], scale:Float = 5.000000, persist_for_seconds:Float = 0.000000):Void;
 	/**
 		X.debug_draw_tracked_geometry(tracked_geometry, world_context_object, color=[0.000000, 0.000000, 0.000000, 0.000000], outline_thickness=5.000000, persist_for_seconds=0.000000) -> None
 		Given some real-world geometry being tracked by the Augmented Reality system, draw it on the screen for debugging purposes (rudimentary)
@@ -100,7 +100,7 @@ package unreal;
 		    outline_thickness (float): 
 		    persist_for_seconds (float):
 	**/
-	static public function debug_draw_tracked_geometry(tracked_geometry:unreal.ARTrackedGeometry, world_context_object:unreal.Object, color:unreal.LinearColor, outline_thickness:Float, persist_for_seconds:Float):Void;
+	static public function debug_draw_tracked_geometry(tracked_geometry:unreal.ARTrackedGeometry, world_context_object:unreal.Object, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], outline_thickness:Float = 5.000000, persist_for_seconds:Float = 0.000000):Void;
 	/**
 		X.find_tracked_points_by_name(point_name) -> Array(ARTrackedPoint)
 		
@@ -111,7 +111,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedPoint): a list of the tracked points with the given name
 	**/
-	static public function find_tracked_points_by_name(point_name:String):Dynamic;
+	static public function find_tracked_points_by_name(point_name:String):Array<ARTrackedPoint>;
 	/**
 		X.get_alignment_transform() -> Transform
 		
@@ -127,7 +127,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedGeometry): a list of all the real-world geometry as currently seen by the Augmented Reality system
 	**/
-	static public function get_all_geometries():Dynamic;
+	static public function get_all_geometries():Array<ARTrackedGeometry>;
 	/**
 		X.get_all_geometries_by_class(geometry_class) -> Array(ARTrackedGeometry)
 		
@@ -138,7 +138,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedGeometry): a list of all the real-world geometry of the specified class as currently seen by the Augmented Reality system
 	**/
-	static public function get_all_geometries_by_class(geometry_class:Dynamic):Dynamic;
+	static public function get_all_geometries_by_class(geometry_class:Class<Dynamic>):Array<ARTrackedGeometry>;
 	/**
 		X.get_all_pins() -> Array(ARPin)
 		Get a list of all the \c UARPin objects that the Augmented Reality session is currently using to connect virtual objects to real-world, tracked locations.
@@ -146,7 +146,7 @@ package unreal;
 		Returns:
 		    Array(ARPin):
 	**/
-	static public function get_all_pins():Dynamic;
+	static public function get_all_pins():Array<ARPin>;
 	/**
 		X.get_all_tracked2d_poses() -> Array(ARPose2D)
 		
@@ -154,7 +154,7 @@ package unreal;
 		Returns:
 		    Array(ARPose2D): all the 2D poses tracked by the AR system
 	**/
-	static public function get_all_tracked2d_poses():Dynamic;
+	static public function get_all_tracked2d_poses():Array<ARPose2D>;
 	/**
 		X.get_all_tracked_environment_capture_probes() -> Array(AREnvironmentCaptureProbe)
 		Get All Tracked Environment Capture Probes
@@ -164,7 +164,7 @@ package unreal;
 		    Array(AREnvironmentCaptureProbe):
 	**/
 	@:deprecated
-	static public function get_all_tracked_environment_capture_probes():Dynamic;
+	static public function get_all_tracked_environment_capture_probes():Array<AREnvironmentCaptureProbe>;
 	/**
 		X.get_all_tracked_images() -> Array(ARTrackedImage)
 		Get All Tracked Images
@@ -174,7 +174,7 @@ package unreal;
 		    Array(ARTrackedImage):
 	**/
 	@:deprecated
-	static public function get_all_tracked_images():Dynamic;
+	static public function get_all_tracked_images():Array<ARTrackedImage>;
 	/**
 		X.get_all_tracked_planes() -> Array(ARPlaneGeometry)
 		Get All Tracked Planes
@@ -184,7 +184,7 @@ package unreal;
 		    Array(ARPlaneGeometry):
 	**/
 	@:deprecated
-	static public function get_all_tracked_planes():Dynamic;
+	static public function get_all_tracked_planes():Array<ARPlaneGeometry>;
 	/**
 		X.get_all_tracked_points() -> Array(ARTrackedPoint)
 		Get All Tracked Points
@@ -194,7 +194,7 @@ package unreal;
 		    Array(ARTrackedPoint):
 	**/
 	@:deprecated
-	static public function get_all_tracked_points():Dynamic;
+	static public function get_all_tracked_points():Array<ARTrackedPoint>;
 	/**
 		X.get_all_tracked_poses() -> Array(ARTrackedPose)
 		Get All Tracked Poses
@@ -204,7 +204,7 @@ package unreal;
 		    Array(ARTrackedPose):
 	**/
 	@:deprecated
-	static public function get_all_tracked_poses():Dynamic;
+	static public function get_all_tracked_poses():Array<ARTrackedPose>;
 	/**
 		X.get_ar_session_status() -> ARSessionStatus
 		It is intended that you check the status of the Augmented Reality session on every frame and take action accordingly.
@@ -303,7 +303,7 @@ package unreal;
 		
 		    out_classification_location (Vector):
 	**/
-	static public function get_object_classification_at_location(world_location:unreal.Vector, max_location_diff:Float):Dynamic;
+	static public function get_object_classification_at_location(world_location:unreal.Vector, max_location_diff:Float = 10.000000):Dynamic;
 	/**
 		X.get_person_segmentation_depth_image() -> ARTexture
 		Get Person Segmentation Depth Image
@@ -331,7 +331,7 @@ package unreal;
 		Returns:
 		    Array(Vector): the raw point cloud view of the AR scene
 	**/
-	static public function get_point_cloud():Dynamic;
+	static public function get_point_cloud():Array<Vector>;
 	/**
 		X.get_session_config() -> ARSessionConfig
 		
@@ -350,7 +350,7 @@ package unreal;
 		Returns:
 		    Array(ARVideoFormat): The list of supported video formats for this device
 	**/
-	static public function get_supported_video_formats(session_type:unreal.ARSessionType):Dynamic;
+	static public function get_supported_video_formats(session_type:unreal.ARSessionType):Array<ARVideoFormat>;
 	/**
 		X.get_tracking_quality() -> ARTrackingQuality
 		
@@ -454,7 +454,7 @@ package unreal;
 		Returns:
 		    Array(ARTraceResult): a list of \c FARTraceResult sorted by distance from camera.
 	**/
-	static public function line_trace_tracked_objects(screen_coord:unreal.Vector2D, test_feature_points:Bool, test_ground_plane:Bool, test_plane_extents:Bool, test_plane_boundary_polygon:Bool):Dynamic;
+	static public function line_trace_tracked_objects(screen_coord:unreal.Vector2D, test_feature_points:Bool = true, test_ground_plane:Bool = true, test_plane_extents:Bool = true, test_plane_boundary_polygon:Bool = true):Array<ARTraceResult>;
 	/**
 		X.line_trace_tracked_objects3d(start, end, test_feature_points=True, test_ground_plane=True, test_plane_extents=True, test_plane_boundary_polygon=True) -> Array(ARTraceResult)
 		Perform a line trace against any real-world geometry as tracked by the AR system.
@@ -470,7 +470,7 @@ package unreal;
 		Returns:
 		    Array(ARTraceResult): a list of \c FARTraceResult sorted by distance from camera.
 	**/
-	static public function line_trace_tracked_objects3d(start:unreal.Vector, end:unreal.Vector, test_feature_points:Bool, test_ground_plane:Bool, test_plane_extents:Bool, test_plane_boundary_polygon:Bool):Dynamic;
+	static public function line_trace_tracked_objects3d(start:unreal.Vector, end:unreal.Vector, test_feature_points:Bool = true, test_ground_plane:Bool = true, test_plane_extents:Bool = true, test_plane_boundary_polygon:Bool = true):Array<ARTraceResult>;
 	/**
 		X.load_ar_pins_from_local_store() -> Map(Name, ARPin)
 		Load all ARPins from local save
@@ -498,7 +498,7 @@ package unreal;
 		Returns:
 		    ARPin: an object representing the pin that connects \c ComponentToPin component to a real-world location and optionally to the \c TrackedGeometry.
 	**/
-	static public function pin_component(component_to_pin:unreal.SceneComponent, pin_to_world_transform:unreal.Transform, tracked_geometry:unreal.ARTrackedGeometry, debug_name:unreal.Name):unreal.ARPin;
+	static public function pin_component(component_to_pin:unreal.SceneComponent, pin_to_world_transform:unreal.Transform, tracked_geometry:unreal.ARTrackedGeometry = null, debug_name:unreal.Name = "\"None\""):unreal.ARPin;
 	/**
 		X.pin_component_to_ar_pin(component_to_pin, pin) -> bool
 		Associate a component with an ARPin, so that its transform will be updated by the pin.  Any previously associated component will be detached.
@@ -524,7 +524,7 @@ package unreal;
 		Returns:
 		    ARPin:
 	**/
-	static public function pin_component_to_trace_result(component_to_pin:unreal.SceneComponent, trace_result:unreal.ARTraceResult, debug_name:unreal.Name):unreal.ARPin;
+	static public function pin_component_to_trace_result(component_to_pin:unreal.SceneComponent, trace_result:unreal.ARTraceResult, debug_name:unreal.Name = "\"None\""):unreal.ARPin;
 	/**
 		X.remove_all_ar_pins_from_local_store() -> None
 		Remove all ARPins from the local store
@@ -604,7 +604,7 @@ package unreal;
 		    is_transform_in_world_space (bool): 
 		    maintain_up_direction (bool):
 	**/
-	static public function set_ar_world_origin_location_and_rotation(origin_location:unreal.Vector, origin_rotation:unreal.Rotator, is_transform_in_world_space:Bool, maintain_up_direction:Bool):Void;
+	static public function set_ar_world_origin_location_and_rotation(origin_location:unreal.Vector, origin_rotation:unreal.Rotator, is_transform_in_world_space:Bool = true, maintain_up_direction:Bool = true):Void;
 	/**
 		X.set_ar_world_scale(world_scale) -> None
 		Helper function that modifies the alignment transform scale so that virtual content in the world space appears to be "scaled".

@@ -23,7 +23,7 @@ package unreal;
 		
 		    out_previews (Array(NiagaraComponent)):
 	**/
-	public function get_previews():Dynamic;
+	public function get_previews():Array<NiagaraComponent>;
 	/**
 		x.set_paused(paused) -> None
 		Set Paused

@@ -58,7 +58,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_timecode_to_string(timecode:unreal.Timecode, force_sign_display:Bool):String;
+	static public function conv_timecode_to_string(timecode:unreal.Timecode, force_sign_display:Bool = false):String;
 	/**
 		X.divide_frame_number_integer(a, b) -> FrameNumber
 		Divide (FrameNumber A / B)

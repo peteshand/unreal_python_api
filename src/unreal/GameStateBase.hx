@@ -8,7 +8,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Class of the server's game mode, assigned by GameModeBase.
 	**/
-	public var game_mode_class : Dynamic;
+	public var game_mode_class : Class<Dynamic>;
 	/**
 		x.get_player_respawn_delay(controller) -> float
 		Returns how much time needs to be spent before a player can respawn
@@ -70,5 +70,5 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Class used by spectators, assigned by GameModeBase.
 	**/
-	public var spectator_class : Dynamic;
+	public var spectator_class : Class<Dynamic>;
 }

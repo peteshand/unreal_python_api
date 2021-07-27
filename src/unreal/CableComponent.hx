@@ -70,7 +70,7 @@ package unreal;
 		
 		    locations (Array(Vector)):
 	**/
-	public function get_cable_particle_locations():Dynamic;
+	public function get_cable_particle_locations():Array<Vector>;
 	/**
 		(int32):  [Read-Only] How many segments the cable has
 	**/
@@ -88,7 +88,7 @@ package unreal;
 		    component_property (Name): 
 		    socket_name (Name):
 	**/
-	public function set_attach_end_to(actor:unreal.Actor, component_property:unreal.Name, socket_name:unreal.Name):Void;
+	public function set_attach_end_to(actor:unreal.Actor, component_property:unreal.Name, socket_name:unreal.Name = "\"None\""):Void;
 	/**
 		x.set_attach_end_to_component(component, socket_name="None") -> None
 		Attaches the end of the cable to a specific Component *
@@ -97,7 +97,7 @@ package unreal;
 		    component (SceneComponent): 
 		    socket_name (Name):
 	**/
-	public function set_attach_end_to_component(component:unreal.SceneComponent, socket_name:unreal.Name):Void;
+	public function set_attach_end_to_component(component:unreal.SceneComponent, socket_name:unreal.Name = "\"None\""):Void;
 	/**
 		(bool):  [Read-Write] Skip Cable Update when Not Owner Recently Rendered
 	**/

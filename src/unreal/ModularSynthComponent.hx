@@ -13,7 +13,7 @@ package unreal;
 		Returns:
 		    PatchId:
 	**/
-	public function create_patch(patch_source:unreal.Synth1PatchSource, patch_cables:unreal.Array, enable_by_default:Bool):unreal.PatchId;
+	public function create_patch(patch_source:unreal.Synth1PatchSource, patch_cables:Array<Synth1PatchCable>, enable_by_default:Bool):unreal.PatchId;
 	/**
 		x.note_off(note, all_notes_off=False, kill_all_notes=False) -> None
 		Stop the note (will only do anything if a voice is playing with that note)
@@ -23,7 +23,7 @@ package unreal;
 		    all_notes_off (bool): 
 		    kill_all_notes (bool):
 	**/
-	public function note_off(note:Float, all_notes_off:Bool, kill_all_notes:Bool):Void;
+	public function note_off(note:Float, all_notes_off:Bool = false, kill_all_notes:Bool = false):Void;
 	/**
 		x.note_on(note, velocity, duration=-1.000000) -> None
 		Play a new note. Optionally pass in a duration to automatically turn off the note.
@@ -33,7 +33,7 @@ package unreal;
 		    velocity (int32): 
 		    duration (float):
 	**/
-	public function note_on(note:Float, velocity:Int, duration:Float):Void;
+	public function note_on(note:Float, velocity:Int, duration:Float = -1.000000):Void;
 	/**
 		x.set_attack_time(attack_time_msec) -> None
 		Sets the envelope attack time in msec.

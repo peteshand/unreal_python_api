@@ -59,7 +59,7 @@ package unreal;
 		Returns:
 		    Array(str): The list of morph targets
 	**/
-	public function get_all_morph_target_names():Dynamic;
+	public function get_all_morph_target_names():Array<str>;
 	/**
 		x.get_bounds() -> BoxSphereBounds
 		Get the extended bounds of this mesh (imported bounds plus bounds extension)
@@ -112,7 +112,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_section_using_cloth(section_index:Int, check_corresponding_sections:Bool):Bool;
+	public function is_section_using_cloth(section_index:Int, check_corresponding_sections:Bool = true):Bool;
 	/**
 		(SkeletalMeshLODSettings):  [Read-Write] LODSettings
 	**/
@@ -165,7 +165,7 @@ package unreal;
 		This blueprint will be ran before physics, but after the main
 		anim instance for any skeletal mesh component using this mesh.
 	**/
-	public var post_process_anim_blueprint : Dynamic;
+	public var post_process_anim_blueprint : Class<Dynamic>;
 	/**
 		(PhysicsAsset):  [Read-Only] Physics asset whose shapes will be used for shadowing when components have bCastCharacterCapsuleDirectShadow or bCastCharacterCapsuleIndirectShadow enabled.
 		Only spheres and sphyl shapes in the physics asset can be supported.  The more shapes used, the higher the cost of the capsule shadows will be.

@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was added to at least one of the provided layers.
 	**/
-	public function add_actor_to_layers(actor:unreal.Actor, layer_names:unreal.Array):Bool;
+	public function add_actor_to_layers(actor:unreal.Actor, layer_names:Array<Name>):Bool;
 	/**
 		x.add_actors_to_layer(actors, layer_name) -> bool
 		Add the actors to the named layer
@@ -36,7 +36,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added to the layer.  false is returned if all the actors already belonged to the layer.
 	**/
-	public function add_actors_to_layer(actors:unreal.Array, layer_name:unreal.Name):Bool;
+	public function add_actors_to_layer(actors:Array<Actor>, layer_name:unreal.Name):Bool;
 	/**
 		x.add_actors_to_layers(actors, layer_names) -> bool
 		Add the actors to the named layers
@@ -48,7 +48,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added to at least one layer.  false is returned if all the actors already belonged to all specified layers.
 	**/
-	public function add_actors_to_layers(actors:unreal.Array, layer_names:unreal.Array):Bool;
+	public function add_actors_to_layers(actors:Array<Actor>, layer_names:Array<Name>):Bool;
 	/**
 		x.add_all_layer_names_to() -> Array(Name)
 		Gets all known layers and appends their names to the provide array
@@ -58,7 +58,7 @@ package unreal;
 		
 		    out_layer_names (Array(Name)):
 	**/
-	public function add_all_layer_names_to():Dynamic;
+	public function add_all_layer_names_to():Array<Name>;
 	/**
 		x.add_all_layers_to() -> Array(Layer)
 		Gets all known layers and appends them to the provided array
@@ -68,7 +68,7 @@ package unreal;
 		
 		    out_layers (Array(Layer)):
 	**/
-	public function add_all_layers_to():Dynamic;
+	public function add_all_layers_to():Array<Layer>;
 	/**
 		x.add_level_layer_information(level) -> None
 		Aggregates any information regarding layers associated with the level and it contents
@@ -98,7 +98,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was added.  false is returned if all selected actors already belong to the named layers.
 	**/
-	public function add_selected_actors_to_layers(layer_names:unreal.Array):Bool;
+	public function add_selected_actors_to_layers(layer_names:Array<Name>):Bool;
 	/**
 		x.append_actors_from_layer(layer_name) -> Array(Actor)
 		Appends all the actors associated with the specified layer.
@@ -111,7 +111,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): The list to append the found actors to.
 	**/
-	public function append_actors_from_layer(layer_name:unreal.Name):Dynamic;
+	public function append_actors_from_layer(layer_name:unreal.Name):Array<Actor>;
 	/**
 		x.append_actors_from_layers(layer_names) -> Array(Actor)
 		Appends all the actors associated with ANY of the specified layers.
@@ -124,7 +124,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): The list to append the found actors to.
 	**/
-	public function append_actors_from_layers(layer_names:unreal.Array):Dynamic;
+	public function append_actors_from_layers(layer_names:Array<Name>):Array<Actor>;
 	/**
 		x.create_layer(layer_name) -> Layer
 		Creates a ULayer Object for the named layer
@@ -151,7 +151,7 @@ package unreal;
 		Args:
 		    layers_to_delete (Array(Name)): A valid list of layer names.
 	**/
-	public function delete_layers(layers_to_delete:unreal.Array):Void;
+	public function delete_layers(layers_to_delete:Array<Name>):Void;
 	/**
 		x.disassociate_actor_from_layers(actor) -> bool
 		Disassociates an Actor's layers from the layer system, general used before deleting the Actor
@@ -183,7 +183,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The list to assign the found actors to.
 	**/
-	public function get_actors_from_layer(layer_name:unreal.Name):Dynamic;
+	public function get_actors_from_layer(layer_name:unreal.Name):Array<Actor>;
 	/**
 		x.get_actors_from_layers(layer_names) -> Array(Actor)
 		Gets all the actors associated with ANY of the specified layers. Analog to AppendActorsFromLayers but it returns rather than appends the actors.
@@ -194,7 +194,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The list to assign the found actors to.
 	**/
-	public function get_actors_from_layers(layer_names:unreal.Array):Dynamic;
+	public function get_actors_from_layers(layer_names:Array<Name>):Array<Actor>;
 	/**
 		x.get_layer(layer_name) -> Layer
 		Gets the ULayer Object of the named layer
@@ -213,7 +213,7 @@ package unreal;
 		Returns:
 		    Array(Actor): The selected AActor's as a TArray.
 	**/
-	public function get_selected_actors():Dynamic;
+	public function get_selected_actors():Array<Actor>;
 	/**
 		x.initialize_new_actor_layers(actor) -> bool
 		Synchronizes an newly created Actor's layers with the layer system
@@ -264,7 +264,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was removed from the layer.  false is returned if the actor already belonged to the layer.
 	**/
-	public function remove_actor_from_layer(actor:unreal.Actor, layer_to_remove:unreal.Name, update_stats:Bool):Bool;
+	public function remove_actor_from_layer(actor:unreal.Actor, layer_to_remove:unreal.Name, update_stats:Bool = true):Bool;
 	/**
 		x.remove_actor_from_layers(actor, layer_names, update_stats=True) -> bool
 		Removes the provided actor from the named layers.
@@ -277,7 +277,7 @@ package unreal;
 		Returns:
 		    bool: true if the actor was removed from at least one of the provided layers.
 	**/
-	public function remove_actor_from_layers(actor:unreal.Actor, layer_names:unreal.Array, update_stats:Bool):Bool;
+	public function remove_actor_from_layers(actor:unreal.Actor, layer_names:Array<Name>, update_stats:Bool = true):Bool;
 	/**
 		x.remove_actors_from_layer(actors, layer_name, update_stats=True) -> bool
 		Removes the actors from the specified layer.
@@ -290,7 +290,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was removed from the layer.  false is returned if all the actors already belonged to the layer.
 	**/
-	public function remove_actors_from_layer(actors:unreal.Array, layer_name:unreal.Name, update_stats:Bool):Bool;
+	public function remove_actors_from_layer(actors:Array<Actor>, layer_name:unreal.Name, update_stats:Bool = true):Bool;
 	/**
 		x.remove_actors_from_layers(actors, layer_names, update_stats=True) -> bool
 		Remove the actors to the named layers
@@ -303,7 +303,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was removed from at least one layer.  false is returned if none of the actors belonged to any of the specified layers.
 	**/
-	public function remove_actors_from_layers(actors:unreal.Array, layer_names:unreal.Array, update_stats:Bool):Bool;
+	public function remove_actors_from_layers(actors:Array<Actor>, layer_names:Array<Name>, update_stats:Bool = true):Bool;
 	/**
 		x.remove_level_layer_information(level) -> None
 		Purges any information regarding layers associated with the level and it contents
@@ -333,7 +333,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was removed.
 	**/
-	public function remove_selected_actors_from_layers(layer_names:unreal.Array):Bool;
+	public function remove_selected_actors_from_layers(layer_names:Array<Name>):Bool;
 	/**
 		x.rename_layer(original_layer_name, new_layer_name) -> bool
 		Renames the provided originally named layer to the provided new name
@@ -359,7 +359,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was selected/deselected.
 	**/
-	public function select_actors_in_layer(layer_name:unreal.Name, select:Bool, notify:Bool, select_even_if_hidden:Bool):Bool;
+	public function select_actors_in_layer(layer_name:unreal.Name, select:Bool, notify:Bool, select_even_if_hidden:Bool = false):Bool;
 	/**
 		x.select_actors_in_layers(layer_names, select, notify, select_even_if_hidden=False) -> bool
 		Selects/de-selects actors belonging to the named layers.
@@ -373,7 +373,7 @@ package unreal;
 		Returns:
 		    bool: true if at least one actor was selected/deselected.
 	**/
-	public function select_actors_in_layers(layer_names:unreal.Array, select:Bool, notify:Bool, select_even_if_hidden:Bool):Bool;
+	public function select_actors_in_layers(layer_names:Array<Name>, select:Bool, notify:Bool, select_even_if_hidden:Bool = false):Bool;
 	/**
 		x.set_layer_visibility(layer_name, is_visible) -> None
 		Changes the named layer's visibility to the provided state
@@ -391,7 +391,7 @@ package unreal;
 		    layer_names (Array(Name)): The names of the layers to affect
 		    is_visible (bool): If true the layers will be visible; if false, the layers will not be visible
 	**/
-	public function set_layers_visibility(layer_names:unreal.Array, is_visible:Bool):Void;
+	public function set_layers_visibility(layer_names:Array<Name>, is_visible:Bool):Void;
 	/**
 		x.toggle_layer_visibility(layer_name) -> None
 		Toggles the named layer's visibility
@@ -407,7 +407,7 @@ package unreal;
 		Args:
 		    layer_names (Array(Name)): The names of the layers to affect
 	**/
-	public function toggle_layers_visibility(layer_names:unreal.Array):Void;
+	public function toggle_layers_visibility(layer_names:Array<Name>):Void;
 	/**
 		x.try_get_layer(layer_name) -> Layer or None
 		Attempts to get the ULayer Object of the provided layer name.

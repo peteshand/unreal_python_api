@@ -26,7 +26,7 @@ package unreal;
 		Returns:
 		    Array(ARCandidateImage):
 	**/
-	public function get_candidate_image_list():Dynamic;
+	public function get_candidate_image_list():Array<ARCandidateImage>;
 	/**
 		x.get_candidate_object_list() -> Array(ARCandidateObject)
 		
@@ -35,7 +35,7 @@ package unreal;
 		Returns:
 		    Array(ARCandidateObject):
 	**/
-	public function get_candidate_object_list():Dynamic;
+	public function get_candidate_object_list():Array<ARCandidateObject>;
 	/**
 		x.get_desired_video_format() -> ARVideoFormat
 		
@@ -152,7 +152,7 @@ package unreal;
 		Returns:
 		    Array(uint8):
 	**/
-	public function get_world_map_data():Dynamic;
+	public function get_world_map_data():Array<uint8>;
 	/**
 		x.set_candidate_object_list(candidate_objects) -> None
 		
@@ -161,7 +161,7 @@ package unreal;
 		Args:
 		    candidate_objects (Array(ARCandidateObject)):
 	**/
-	public function set_candidate_object_list(candidate_objects:unreal.Array):Void;
+	public function set_candidate_object_list(candidate_objects:Array<ARCandidateObject>):Void;
 	/**
 		x.set_desired_video_format(new_format) -> None
 		
@@ -242,7 +242,7 @@ package unreal;
 		Args:
 		    world_map_data (Array(uint8)):
 	**/
-	public function set_world_map_data(world_map_data:unreal.Array):Void;
+	public function set_world_map_data(world_map_data:Array<uint8>):Void;
 	/**
 		x.should_enable_auto_focus() -> bool
 		

@@ -16,7 +16,7 @@ package unreal;
 		
 		    out_devices (Array(MediaCaptureDevice)): Will contain the available capture devices.
 	**/
-	static public function enumerate_audio_capture_devices(filter:Int):Dynamic;
+	static public function enumerate_audio_capture_devices(filter:Int = -1):Array<MediaCaptureDevice>;
 	/**
 		X.enumerate_video_capture_devices(filter=-1) -> Array(MediaCaptureDevice)
 		Enumerate available audio capture devices.
@@ -32,7 +32,7 @@ package unreal;
 		
 		    out_devices (Array(MediaCaptureDevice)): Will contain the available capture devices.
 	**/
-	static public function enumerate_video_capture_devices(filter:Int):Dynamic;
+	static public function enumerate_video_capture_devices(filter:Int = -1):Array<MediaCaptureDevice>;
 	/**
 		X.enumerate_webcam_capture_devices(filter=-1) -> Array(MediaCaptureDevice)
 		Enumerate available audio capture devices.
@@ -48,5 +48,5 @@ package unreal;
 		
 		    out_devices (Array(MediaCaptureDevice)): Will contain the available capture devices.
 	**/
-	static public function enumerate_webcam_capture_devices(filter:Int):Dynamic;
+	static public function enumerate_webcam_capture_devices(filter:Int = -1):Array<MediaCaptureDevice>;
 }

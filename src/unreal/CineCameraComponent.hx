@@ -44,7 +44,7 @@ package unreal;
 		Returns:
 		    Array(NamedFilmbackPreset):
 	**/
-	static public function get_filmback_presets_copy():Dynamic;
+	static public function get_filmback_presets_copy():Array<NamedFilmbackPreset>;
 	/**
 		x.get_horizontal_field_of_view() -> float
 		Returns the horizonal FOV of the camera with current settings.
@@ -68,7 +68,7 @@ package unreal;
 		Returns:
 		    Array(NamedLensPreset):
 	**/
-	static public function get_lens_presets_copy():Dynamic;
+	static public function get_lens_presets_copy():Array<NamedLensPreset>;
 	/**
 		x.get_vertical_field_of_view() -> float
 		Returns the vertical FOV of the camera with current settings.

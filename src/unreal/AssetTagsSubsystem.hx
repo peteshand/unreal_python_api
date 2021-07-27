@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    bool: True if the collection was modified, false otherwise (see the output log for details on error).
 	**/
-	public function add_asset_datas_to_collection(name:unreal.Name, asset_datas:unreal.Array):Bool;
+	public function add_asset_datas_to_collection(name:unreal.Name, asset_datas:Array<AssetData>):Bool;
 	/**
 		x.add_asset_ptr_to_collection(name, asset_ptr) -> bool
 		Add the given asset to the given collection.
@@ -48,7 +48,7 @@ package unreal;
 		Returns:
 		    bool: True if the collection was modified, false otherwise (see the output log for details on error).
 	**/
-	public function add_asset_ptrs_to_collection(name:unreal.Name, asset_ptrs:unreal.Array):Bool;
+	public function add_asset_ptrs_to_collection(name:unreal.Name, asset_ptrs:Array<Object>):Bool;
 	/**
 		x.add_asset_to_collection(name, asset_path_name) -> bool
 		Add the given asset to the given collection.
@@ -72,7 +72,7 @@ package unreal;
 		Returns:
 		    bool: True if the collection was modified, false otherwise (see the output log for details on error).
 	**/
-	public function add_assets_to_collection(name:unreal.Name, asset_path_names:unreal.Array):Bool;
+	public function add_assets_to_collection(name:unreal.Name, asset_path_names:Array<Name>):Bool;
 	/**
 		x.collection_exists(name) -> bool
 		Check whether the given collection exists.
@@ -128,7 +128,7 @@ package unreal;
 		Returns:
 		    Array(AssetData): Assets in the given collection.
 	**/
-	public function get_assets_in_collection(name:unreal.Name):Dynamic;
+	public function get_assets_in_collection(name:unreal.Name):Array<AssetData>;
 	/**
 		x.get_collections() -> Array(Name)
 		Get the names of all available collections.
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    Array(Name): Names of all available collections.
 	**/
-	public function get_collections():Dynamic;
+	public function get_collections():Array<Name>;
 	/**
 		x.get_collections_containing_asset(asset_path_name) -> Array(Name)
 		Get the names of the collections that contain the given asset.
@@ -147,7 +147,7 @@ package unreal;
 		Returns:
 		    Array(Name): Names of the collections that contain the asset.
 	**/
-	public function get_collections_containing_asset(asset_path_name:unreal.Name):Dynamic;
+	public function get_collections_containing_asset(asset_path_name:unreal.Name):Array<Name>;
 	/**
 		x.get_collections_containing_asset_data(asset_data) -> Array(Name)
 		Get the names of the collections that contain the given asset.
@@ -158,7 +158,7 @@ package unreal;
 		Returns:
 		    Array(Name): Names of the collections that contain the asset.
 	**/
-	public function get_collections_containing_asset_data(asset_data:unreal.AssetData):Dynamic;
+	public function get_collections_containing_asset_data(asset_data:unreal.AssetData):Array<Name>;
 	/**
 		x.get_collections_containing_asset_ptr(asset_ptr) -> Array(Name)
 		Get the names of the collections that contain the given asset.
@@ -169,7 +169,7 @@ package unreal;
 		Returns:
 		    Array(Name): Names of the collections that contain the asset.
 	**/
-	public function get_collections_containing_asset_ptr(asset_ptr:unreal.Object):Dynamic;
+	public function get_collections_containing_asset_ptr(asset_ptr:unreal.Object):Array<Name>;
 	/**
 		x.remove_asset_data_from_collection(name, asset_data) -> bool
 		Remove the given asset from the given collection.
@@ -193,7 +193,7 @@ package unreal;
 		Returns:
 		    bool: True if the collection was modified, false otherwise (see the output log for details on error).
 	**/
-	public function remove_asset_datas_from_collection(name:unreal.Name, asset_datas:unreal.Array):Bool;
+	public function remove_asset_datas_from_collection(name:unreal.Name, asset_datas:Array<AssetData>):Bool;
 	/**
 		x.remove_asset_from_collection(name, asset_path_name) -> bool
 		Remove the given asset from the given collection.
@@ -229,7 +229,7 @@ package unreal;
 		Returns:
 		    bool: True if the collection was modified, false otherwise (see the output log for details on error).
 	**/
-	public function remove_asset_ptrs_from_collection(name:unreal.Name, asset_ptrs:unreal.Array):Bool;
+	public function remove_asset_ptrs_from_collection(name:unreal.Name, asset_ptrs:Array<Object>):Bool;
 	/**
 		x.remove_assets_from_collection(name, asset_path_names) -> bool
 		Remove the given assets from the given collection.
@@ -241,7 +241,7 @@ package unreal;
 		Returns:
 		    bool: True if the collection was modified, false otherwise (see the output log for details on error).
 	**/
-	public function remove_assets_from_collection(name:unreal.Name, asset_path_names:unreal.Array):Bool;
+	public function remove_assets_from_collection(name:unreal.Name, asset_path_names:Array<Name>):Bool;
 	/**
 		x.rename_collection(name, new_name) -> bool
 		Rename the given collection.

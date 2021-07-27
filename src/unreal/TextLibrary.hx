@@ -34,7 +34,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function as_currency_float(value:Float, rounding_mode:unreal.RoundingMode, always_sign:Bool, use_grouping:Bool, minimum_integral_digits:Int, maximum_integral_digits:Int, minimum_fractional_digits:Int, maximum_fractional_digits:Int, currency_code:String):unreal.Text;
+	static public function as_currency_float(value:Float, rounding_mode:unreal.RoundingMode, always_sign:Bool = false, use_grouping:Bool = true, minimum_integral_digits:Int = 1, maximum_integral_digits:Int = 324, minimum_fractional_digits:Int = 0, maximum_fractional_digits:Int = 3, currency_code:String = "\"\""):unreal.Text;
 	/**
 		X.as_currency_integer(value, rounding_mode, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324, minimum_fractional_digits=0, maximum_fractional_digits=3, currency_code="") -> Text
 		Converts a passed in integer to a text formatted as a currency
@@ -53,7 +53,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function as_currency_integer(value:Int, rounding_mode:unreal.RoundingMode, always_sign:Bool, use_grouping:Bool, minimum_integral_digits:Int, maximum_integral_digits:Int, minimum_fractional_digits:Int, maximum_fractional_digits:Int, currency_code:String):unreal.Text;
+	static public function as_currency_integer(value:Int, rounding_mode:unreal.RoundingMode, always_sign:Bool = false, use_grouping:Bool = true, minimum_integral_digits:Int = 1, maximum_integral_digits:Int = 324, minimum_fractional_digits:Int = 0, maximum_fractional_digits:Int = 3, currency_code:String = "\"\""):unreal.Text;
 	/**
 		X.as_date_date_time(date_time) -> Text
 		Converts a passed in date & time to a text, formatted as a date using an invariant timezone. This will use the given date & time as-is, so it's assumed to already be in the correct timezone.
@@ -93,7 +93,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function as_percent_float(value:Float, rounding_mode:unreal.RoundingMode, always_sign:Bool, use_grouping:Bool, minimum_integral_digits:Int, maximum_integral_digits:Int, minimum_fractional_digits:Int, maximum_fractional_digits:Int):unreal.Text;
+	static public function as_percent_float(value:Float, rounding_mode:unreal.RoundingMode, always_sign:Bool = false, use_grouping:Bool = true, minimum_integral_digits:Int = 1, maximum_integral_digits:Int = 324, minimum_fractional_digits:Int = 0, maximum_fractional_digits:Int = 3):unreal.Text;
 	/**
 		X.as_time_date_time(in_) -> Text
 		Converts a passed in date & time to a text, formatted as a time using an invariant timezone. This will use the given date & time as-is, so it's assumed to already be in the correct timezone.
@@ -116,7 +116,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function as_time_zone_date_date_time(date_time:unreal.DateTime, time_zone:String):unreal.Text;
+	static public function as_time_zone_date_date_time(date_time:unreal.DateTime, time_zone:String = "\"\""):unreal.Text;
 	/**
 		X.as_time_zone_date_time_date_time(date_time, time_zone="") -> Text
 		Converts a passed in date & time to a text, formatted as a date & time using the given timezone (default is the local timezone). This will convert the given date & time from UTC to the given timezone (taking into account DST).
@@ -128,7 +128,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function as_time_zone_date_time_date_time(date_time:unreal.DateTime, time_zone:String):unreal.Text;
+	static public function as_time_zone_date_time_date_time(date_time:unreal.DateTime, time_zone:String = "\"\""):unreal.Text;
 	/**
 		X.as_time_zone_time_date_time(date_time, time_zone="") -> Text
 		Converts a passed in date & time to a text, formatted as a time using the given timezone (default is the local timezone). This will convert the given date & time from UTC to the given timezone (taking into account DST).
@@ -140,7 +140,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function as_time_zone_time_date_time(date_time:unreal.DateTime, time_zone:String):unreal.Text;
+	static public function as_time_zone_time_date_time(date_time:unreal.DateTime, time_zone:String = "\"\""):unreal.Text;
 	/**
 		X.as_timespan_timespan(timespan) -> Text
 		Converts a passed in time span to a text, formatted as a time span
@@ -202,7 +202,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function conv_float_to_text(value:Float, rounding_mode:unreal.RoundingMode, always_sign:Bool, use_grouping:Bool, minimum_integral_digits:Int, maximum_integral_digits:Int, minimum_fractional_digits:Int, maximum_fractional_digits:Int):unreal.Text;
+	static public function conv_float_to_text(value:Float, rounding_mode:unreal.RoundingMode, always_sign:Bool = false, use_grouping:Bool = true, minimum_integral_digits:Int = 1, maximum_integral_digits:Int = 324, minimum_fractional_digits:Int = 0, maximum_fractional_digits:Int = 3):unreal.Text;
 	/**
 		X.conv_int64_to_text(value, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324) -> Text
 		Converts a passed in integer to text based on formatting options
@@ -217,7 +217,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function conv_int64_to_text(value:Dynamic, always_sign:Bool, use_grouping:Bool, minimum_integral_digits:Int, maximum_integral_digits:Int):unreal.Text;
+	static public function conv_int64_to_text(value:Dynamic, always_sign:Bool = false, use_grouping:Bool = true, minimum_integral_digits:Int = 1, maximum_integral_digits:Int = 324):unreal.Text;
 	/**
 		X.conv_int_to_text(value, always_sign=False, use_grouping=True, minimum_integral_digits=1, maximum_integral_digits=324) -> Text
 		Converts a passed in integer to text based on formatting options
@@ -232,7 +232,7 @@ package unreal;
 		Returns:
 		    Text:
 	**/
-	static public function conv_int_to_text(value:Int, always_sign:Bool, use_grouping:Bool, minimum_integral_digits:Int, maximum_integral_digits:Int):unreal.Text;
+	static public function conv_int_to_text(value:Int, always_sign:Bool = false, use_grouping:Bool = true, minimum_integral_digits:Int = 1, maximum_integral_digits:Int = 324):unreal.Text;
 	/**
 		X.conv_name_to_text(name) -> Text
 		Converts Name to culture invariant text

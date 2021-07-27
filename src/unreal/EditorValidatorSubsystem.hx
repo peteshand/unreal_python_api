@@ -50,7 +50,7 @@ package unreal;
 		Returns:
 		    int32: Number of assets with validation failures or warnings
 	**/
-	public function validate_assets(asset_data_list:unreal.Array, skip_excluded_directories:Bool, show_if_no_failures:Bool):Int;
+	public function validate_assets(asset_data_list:Array<AssetData>, skip_excluded_directories:Bool = true, show_if_no_failures:Bool = true):Int;
 	/**
 		(bool):  [Read-Write] Whether it should validate assets on save inside the editor
 		deprecated: Use bValidateOnSave on UDataValidationSettings instead.

@@ -18,7 +18,7 @@ package unreal;
 		    wet_level (float): 
 		    dry_level (float):
 	**/
-	public function set_settings_with_reverb_effect(reverb_effect:unreal.ReverbEffect, wet_level:Float, dry_level:Float):Void;
+	public function set_settings_with_reverb_effect(reverb_effect:unreal.ReverbEffect, wet_level:Float, dry_level:Float = 0.000000):Void;
 	/**
 		(SubmixEffectReverbSettings):  [Read-Write] Settings
 	**/

@@ -64,7 +64,7 @@ package unreal;
 		
 		    out_names (Array(Name)):
 	**/
-	public function get_active_curve_names(curve_type:unreal.AnimCurveType):Dynamic;
+	public function get_active_curve_names(curve_type:unreal.AnimCurveType):Array<Name>;
 	/**
 		x.get_all_curve_names() -> Array(Name)
 		This returns all curve names
@@ -74,7 +74,7 @@ package unreal;
 		
 		    out_names (Array(Name)):
 	**/
-	public function get_all_curve_names():Dynamic;
+	public function get_all_curve_names():Array<Name>;
 	/**
 		x.get_current_active_montage() -> AnimMontage
 		Get a current Active Montage in this AnimInstance.
@@ -128,7 +128,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_graph_instances_by_tag(tag:unreal.Name):Dynamic;
+	public function get_linked_anim_graph_instances_by_tag(tag:unreal.Name):Array<AnimInstance>;
 	/**
 		x.get_linked_anim_layer_instance_by_class(class_) -> AnimInstance
 		Gets the first layer linked instance corresponding to the specified class
@@ -139,7 +139,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_class(class_:Dynamic):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_class(class_:Class<Dynamic>):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group(group) -> AnimInstance
 		Gets the layer linked instance corresponding to the specified group
@@ -162,7 +162,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_group_and_class(group:unreal.Name, class_:Dynamic):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_group_and_class(group:unreal.Name, class_:Class<Dynamic>):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instances_by_group(group) -> Array(AnimInstance)
 		Runs through all nodes, attempting to find all distinct layer linked instances in the group
@@ -175,7 +175,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_layer_instances_by_group(group:unreal.Name):Dynamic;
+	public function get_linked_anim_layer_instances_by_group(group:unreal.Name):Array<AnimInstance>;
 	/**
 		x.get_owning_actor() -> Actor
 		Returns the owning actor of this AnimInstance
@@ -288,7 +288,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_sync_group_between_markers(sync_group_name:unreal.Name, previous_marker:unreal.Name, next_marker:unreal.Name, respect_marker_order:Bool):Bool;
+	public function is_sync_group_between_markers(sync_group_name:unreal.Name, previous_marker:unreal.Name, next_marker:unreal.Name, respect_marker_order:Bool = true):Bool;
 	/**
 		deprecated: 'kismet_initialize_animation' was renamed to 'blueprint_initialize_animation'.
 	**/
@@ -309,7 +309,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function link_anim_class_layers(class_:Dynamic):Void;
+	public function link_anim_class_layers(class_:Class<Dynamic>):Void;
 	/**
 		x.link_anim_graph_by_tag(tag, class_) -> None
 		Runs through all nodes, attempting to find a linked instance by name/tag, then sets the class of each node if the tag matches
@@ -318,7 +318,7 @@ package unreal;
 		    tag (Name): 
 		    class_ (type(Class)):
 	**/
-	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Dynamic):Void;
+	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Class<Dynamic>):Void;
 	/**
 		x.lock_ai_resources(lock_movement, lock_ai_logic) -> None
 		locks indicated AI resources of animated pawn
@@ -353,7 +353,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function montage_get_current_section(montage:unreal.AnimMontage):unreal.Name;
+	public function montage_get_current_section(montage:unreal.AnimMontage = null):unreal.Name;
 	/**
 		x.montage_get_is_stopped(montage) -> bool
 		return true if Montage is not currently active. (not valid or blending out)
@@ -420,7 +420,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_section(section_name:unreal.Name, montage:unreal.AnimMontage):Void;
+	public function montage_jump_to_section(section_name:unreal.Name, montage:unreal.AnimMontage = null):Void;
 	/**
 		x.montage_jump_to_sections_end(section_name, montage=None) -> None
 		Makes a montage jump to the end of a named section. If Montage reference is NULL, it will do that to all active montages.
@@ -429,7 +429,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_sections_end(section_name:unreal.Name, montage:unreal.AnimMontage):Void;
+	public function montage_jump_to_sections_end(section_name:unreal.Name, montage:unreal.AnimMontage = null):Void;
 	/**
 		x.montage_pause(montage=None) -> None
 		Pauses the animation montage. If reference is NULL, it will pause ALL active montages.
@@ -437,7 +437,7 @@ package unreal;
 		Args:
 		    montage (AnimMontage):
 	**/
-	public function montage_pause(montage:unreal.AnimMontage):Void;
+	public function montage_pause(montage:unreal.AnimMontage = null):Void;
 	/**
 		x.montage_play(montage_to_play, play_rate=1.000000, return_value_type=MontagePlayReturnType.MONTAGE_LENGTH, time_to_start_montage_at=0.000000, stop_all_montages=True) -> float
 		Plays an animation montage. Returns the length of the animation montage in seconds. Returns 0.f if failed to play.
@@ -452,7 +452,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_play(montage_to_play:unreal.AnimMontage, play_rate:Float, return_value_type:unreal.MontagePlayReturnType, time_to_start_montage_at:Float, stop_all_montages:Bool):Float;
+	public function montage_play(montage_to_play:unreal.AnimMontage, play_rate:Float = 1.000000, return_value_type:unreal.MontagePlayReturnType = MontagePlayReturnType.MONTAGE_LENGTH, time_to_start_montage_at:Float = 0.000000, stop_all_montages:Bool = true):Float;
 	/**
 		x.montage_resume(montage) -> None
 		Resumes a paused animation montage. If reference is NULL, it will resume ALL active montages.
@@ -474,7 +474,7 @@ package unreal;
 		    next_section (Name): : new next section
 		    montage (AnimMontage):
 	**/
-	public function montage_set_next_section(section_name_to_change:unreal.Name, next_section:unreal.Name, montage:unreal.AnimMontage):Void;
+	public function montage_set_next_section(section_name_to_change:unreal.Name, next_section:unreal.Name, montage:unreal.AnimMontage = null):Void;
 	/**
 		x.montage_set_play_rate(montage, new_play_rate=1.000000) -> None
 		Change AnimMontage play rate. NewPlayRate = 1.0 is the default playback rate.
@@ -483,7 +483,7 @@ package unreal;
 		    montage (AnimMontage): 
 		    new_play_rate (float):
 	**/
-	public function montage_set_play_rate(montage:unreal.AnimMontage, new_play_rate:Float):Void;
+	public function montage_set_play_rate(montage:unreal.AnimMontage, new_play_rate:Float = 1.000000):Void;
 	/**
 		x.montage_set_position(montage, new_position) -> None
 		Set position.
@@ -501,7 +501,7 @@ package unreal;
 		    blend_out_time (float): 
 		    montage (AnimMontage):
 	**/
-	public function montage_stop(blend_out_time:Float, montage:unreal.AnimMontage):Void;
+	public function montage_stop(blend_out_time:Float, montage:unreal.AnimMontage = null):Void;
 	/**
 		x.montage_stop_group_by_name(blend_out_time, group_name) -> None
 		Stops all active montages belonging to a group.
@@ -542,7 +542,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function play_slot_animation(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name, blend_in_time:Float, blend_out_time:Float, play_rate:Float, loop_count:Int):Float;
+	public function play_slot_animation(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name, blend_in_time:Float = 0.250000, blend_out_time:Float = 0.250000, play_rate:Float = 1.000000, loop_count:Int = 1):Float;
 	/**
 		x.play_slot_animation_as_dynamic_montage(asset, slot_node_name, blend_in_time=0.250000, blend_out_time=0.250000, play_rate=1.000000, loop_count=1, blend_out_trigger_time=-1.000000, time_to_start_montage_at=0.000000) -> AnimMontage
 		Play normal animation asset on the slot node by creating a dynamic UAnimMontage. You can only play one asset (whether montage or animsequence) at a time per SlotGroup.
@@ -560,7 +560,7 @@ package unreal;
 		Returns:
 		    AnimMontage:
 	**/
-	public function play_slot_animation_as_dynamic_montage(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name, blend_in_time:Float, blend_out_time:Float, play_rate:Float, loop_count:Int, blend_out_trigger_time:Float, time_to_start_montage_at:Float):unreal.AnimMontage;
+	public function play_slot_animation_as_dynamic_montage(asset:unreal.AnimSequenceBase, slot_node_name:unreal.Name, blend_in_time:Float = 0.250000, blend_out_time:Float = 0.250000, play_rate:Float = 1.000000, loop_count:Int = 1, blend_out_trigger_time:Float = -1.000000, time_to_start_montage_at:Float = 0.000000):unreal.AnimMontage;
 	/**
 		x.reset_dynamics(teleport_type) -> None
 		Reset any dynamics running simulation-style updates (e.g. on teleport, time skip etc.)
@@ -645,7 +645,7 @@ package unreal;
 		    blend_out_time (float): 
 		    slot_node_name (Name):
 	**/
-	public function stop_slot_animation(blend_out_time:Float, slot_node_name:unreal.Name):Void;
+	public function stop_slot_animation(blend_out_time:Float = 0.250000, slot_node_name:unreal.Name = "\"None\""):Void;
 	/**
 		x.try_get_pawn_owner() -> Pawn
 		kismet event functions
@@ -663,7 +663,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function unlink_anim_class_layers(class_:Dynamic):Void;
+	public function unlink_anim_class_layers(class_:Class<Dynamic>):Void;
 	/**
 		x.unlock_ai_resources(unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources.

@@ -28,5 +28,5 @@ package unreal;
 		Returns:
 		    TraceQueryTestResults:
 	**/
-	static public function trace_channel_test_util(world_context_object:unreal.Object, batch_options:unreal.TraceChannelTestBatchOptions, start:unreal.Vector, end:unreal.Vector, sphere_capsule_radius:Float, capsule_half_height:Float, box_half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, object_types:unreal.Array, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:unreal.Array, ignore_self:Bool, draw_debug_type:unreal.DrawDebugTrace, trace_color:unreal.LinearColor, trace_hit_color:unreal.LinearColor, draw_time:Float):unreal.TraceQueryTestResults;
+	static public function trace_channel_test_util(world_context_object:unreal.Object, batch_options:unreal.TraceChannelTestBatchOptions, start:unreal.Vector, end:unreal.Vector, sphere_capsule_radius:Float, capsule_half_height:Float, box_half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, object_types:Array<ObjectTypeQuery>, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, ignore_self:Bool, draw_debug_type:unreal.DrawDebugTrace, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):unreal.TraceQueryTestResults;
 }

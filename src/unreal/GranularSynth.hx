@@ -33,7 +33,7 @@ package unreal;
 		    note (float): 
 		    kill (bool):
 	**/
-	public function note_off(note:Float, kill:Bool):Void;
+	public function note_off(note:Float, kill:Bool = false):Void;
 	/**
 		x.note_on(note, velocity, duration=-1.000000) -> None
 		Note On
@@ -43,7 +43,7 @@ package unreal;
 		    velocity (int32): 
 		    duration (float):
 	**/
-	public function note_on(note:Float, velocity:Int, duration:Float):Void;
+	public function note_on(note:Float, velocity:Int, duration:Float = -1.000000):Void;
 	/**
 		x.set_attack_time(attack_time_msec) -> None
 		Set Attack Time
@@ -68,7 +68,7 @@ package unreal;
 		    base_duration_msec (float): 
 		    duration_range (Vector2D):
 	**/
-	public function set_grain_duration(base_duration_msec:Float, duration_range:unreal.Vector2D):Void;
+	public function set_grain_duration(base_duration_msec:Float, duration_range:unreal.Vector2D = [0.000000, 0.000000]):Void;
 	/**
 		x.set_grain_envelope_type(envelope_type) -> None
 		Set Grain Envelope Type
@@ -85,7 +85,7 @@ package unreal;
 		    base_pan (float): 
 		    pan_range (Vector2D):
 	**/
-	public function set_grain_pan(base_pan:Float, pan_range:unreal.Vector2D):Void;
+	public function set_grain_pan(base_pan:Float, pan_range:unreal.Vector2D = [0.000000, 0.000000]):Void;
 	/**
 		x.set_grain_pitch(base_pitch, pitch_range=[0.000000, 0.000000]) -> None
 		Set Grain Pitch
@@ -94,7 +94,7 @@ package unreal;
 		    base_pitch (float): 
 		    pitch_range (Vector2D):
 	**/
-	public function set_grain_pitch(base_pitch:Float, pitch_range:unreal.Vector2D):Void;
+	public function set_grain_pitch(base_pitch:Float, pitch_range:unreal.Vector2D = [0.000000, 0.000000]):Void;
 	/**
 		x.set_grain_probability(grain_probability) -> None
 		Set Grain Probability
@@ -111,7 +111,7 @@ package unreal;
 		    base_volume (float): 
 		    volume_range (Vector2D):
 	**/
-	public function set_grain_volume(base_volume:Float, volume_range:unreal.Vector2D):Void;
+	public function set_grain_volume(base_volume:Float, volume_range:unreal.Vector2D = [0.000000, 0.000000]):Void;
 	/**
 		x.set_grains_per_second(grains_per_second) -> None
 		Set Grains Per Second
@@ -137,7 +137,7 @@ package unreal;
 		    lerp_time_sec (float): 
 		    seek_type (GranularSynthSeekType):
 	**/
-	public function set_playhead_time(position_sec:Float, lerp_time_sec:Float, seek_type:unreal.GranularSynthSeekType):Void;
+	public function set_playhead_time(position_sec:Float, lerp_time_sec:Float = 0.000000, seek_type:unreal.GranularSynthSeekType = GranularSynthSeekType.FROM_BEGINNING):Void;
 	/**
 		x.set_release_time_msec(release_time_msec) -> None
 		Set Release Time Msec

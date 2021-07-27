@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	public function get_boundary_polygon_in_local_space():Dynamic;
+	public function get_boundary_polygon_in_local_space():Array<Vector>;
 	/**
 		x.get_center() -> Vector
 		Get Center

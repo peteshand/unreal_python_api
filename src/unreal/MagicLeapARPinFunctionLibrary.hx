@@ -122,7 +122,7 @@ package unreal;
 		
 		    pins (Array(Guid)): Output array containing IDs of the found Pins. Valid only if return value is EMagicLeapPassableWorldError::None.
 	**/
-	static public function get_available_ar_pins(num_requested:Int):Dynamic;
+	static public function get_available_ar_pins(num_requested:Int):Array<Guid>;
 	/**
 		X.get_closest_ar_pin(search_point) -> (MagicLeapPassableWorldError, pin_id=Guid)
 		Returns the Pin closest to the target point passed in.
@@ -198,7 +198,7 @@ package unreal;
 		
 		    pins (Array(Guid)): Output array containing IDs of the found Pins. Valid only if return value is EMagicLeapPassableWorldError::None.
 	**/
-	static public function query_ar_pins(query:unreal.MagicLeapARPinQuery):Dynamic;
+	static public function query_ar_pins(query:unreal.MagicLeapARPinQuery):Array<Guid>;
 	/**
 		X.set_content_binding_save_game_user_index(user_index) -> None
 		Set the user index to be used to save / load the save game object used for storing all the content bindings (PinID and ObjectID associations in a MagicLeapARPinComponent).

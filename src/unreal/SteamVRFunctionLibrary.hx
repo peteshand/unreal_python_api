@@ -46,5 +46,5 @@ package unreal;
 		
 		    out_tracked_device_ids (Array(int32)): (out) Array containing the ID of each device that's currently tracked
 	**/
-	static public function get_valid_tracked_device_ids(device_type:unreal.SteamVRTrackedDeviceType):Dynamic;
+	static public function get_valid_tracked_device_ids(device_type:unreal.SteamVRTrackedDeviceType):Array<int32>;
 }

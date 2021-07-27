@@ -27,5 +27,5 @@ package unreal;
 		
 		    out_hit_results (Array(ARTraceResult)): The list of hit results sorted by distance.
 	**/
-	static public function lumin_ar_line_trace(world_context_object:unreal.Object, screen_position:unreal.Vector2D, trace_channels:unreal.Set):Dynamic;
+	static public function lumin_ar_line_trace(world_context_object:unreal.Object, screen_position:unreal.Vector2D, trace_channels:Dynamic):Array<ARTraceResult>;
 }

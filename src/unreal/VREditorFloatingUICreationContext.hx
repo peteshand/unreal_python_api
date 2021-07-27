@@ -40,5 +40,5 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Widget to open in the VR window. null to close an open window (if if matches the PanelID)
 	**/
-	public var widget_class : Dynamic;
+	public var widget_class : Class<Dynamic>;
 }

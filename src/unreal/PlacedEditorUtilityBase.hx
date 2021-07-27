@@ -36,7 +36,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	public function get_selection_set():Dynamic;
+	public function get_selection_set():Array<Actor>;
 	/**
 		(str):  [Read-Write] Help Text
 	**/

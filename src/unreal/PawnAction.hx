@@ -21,7 +21,7 @@ package unreal;
 		Returns:
 		    PawnAction:
 	**/
-	static public function create_action_instance(world_context_object:unreal.Object, action_class:Dynamic):unreal.PawnAction;
+	static public function create_action_instance(world_context_object:unreal.Object, action_class:Class<Dynamic>):unreal.PawnAction;
 	/**
 		x.finish(with_result) -> None
 		Finish

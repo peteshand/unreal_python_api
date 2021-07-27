@@ -61,7 +61,7 @@ package unreal;
 		    cinematic_texture_groups (int32): Bitfield indicating texture groups that should use extra high-resolution mips
 		    fast_response (bool): USE WITH EXTREME CAUTION! Fast response textures incur sizable GT overhead and disturb streaming metric calculation. Avoid whenever possible.
 	**/
-	public function set_force_mip_levels_to_be_resident(override_force_miplevels_to_be_resident:Bool, force_miplevels_to_be_resident_value:Bool, force_duration:Float, cinematic_texture_groups:Int, fast_response:Bool):Void;
+	public function set_force_mip_levels_to_be_resident(override_force_miplevels_to_be_resident:Bool, force_miplevels_to_be_resident_value:Bool, force_duration:Float, cinematic_texture_groups:Int = 0, fast_response:Bool = false):Void;
 	/**
 		(SubsurfaceProfile):  [Read-Only] SubsurfaceProfile, for Screen Space Subsurface Scattering
 	**/

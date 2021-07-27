@@ -15,7 +15,7 @@ package unreal;
 		Returns:
 		    QuartzClockHandle:
 	**/
-	public function create_new_clock(world_context_object:unreal.Object, clock_name:unreal.Name, settings:unreal.QuartzClockSettings, override_settings_if_clock_exists:Bool):unreal.QuartzClockHandle;
+	public function create_new_clock(world_context_object:unreal.Object, clock_name:unreal.Name, settings:unreal.QuartzClockSettings, override_settings_if_clock_exists:Bool = false):unreal.QuartzClockHandle;
 	/**
 		x.does_clock_exist(world_context_object, clock_name) -> bool
 		returns true if the clock exists

@@ -13,7 +13,7 @@ package unreal;
 		    delta_rotation (Rotator): (in) Incremental rotation, that is added each 2nd frame to the quad transform. The quad is rotated around the center of the quad.
 		    clear_before_add (bool): (in) If true, clears splashes before adding a new one.
 	**/
-	static public function add_loading_screen_splash(texture:unreal.Texture, translation:unreal.Vector, rotation:unreal.Rotator, size:unreal.Vector2D, delta_rotation:unreal.Rotator, clear_before_add:Bool):Void;
+	static public function add_loading_screen_splash(texture:unreal.Texture, translation:unreal.Vector, rotation:unreal.Rotator, size:unreal.Vector2D = [1.000000, 1.000000], delta_rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], clear_before_add:Bool = false):Void;
 	/**
 		X.clear_loading_screen_splashes() -> None
 		Clear Loading Screen Splashes
@@ -35,7 +35,7 @@ package unreal;
 		    show_loading_movie (bool): 
 		    show_on_set (bool):
 	**/
-	static public function set_loading_screen(texture:unreal.Texture, scale:unreal.Vector2D, offset:unreal.Vector, show_loading_movie:Bool, show_on_set:Bool):Void;
+	static public function set_loading_screen(texture:unreal.Texture, scale:unreal.Vector2D = [1.000000, 1.000000], offset:unreal.Vector = [0.000000, 0.000000, 0.000000], show_loading_movie:Bool = false, show_on_set:Bool = false):Void;
 	/**
 		X.show_loading_screen() -> None
 		Show the loading screen and override the VR display

@@ -61,7 +61,7 @@ package unreal;
 		Args:
 		    immediate (bool): true to disable with no blend out, false (default) to allow blend out
 	**/
-	public function disable_modifier(immediate:Bool):Void;
+	public function disable_modifier(immediate:Bool = false):Void;
 	/**
 		x.enable_modifier() -> None
 		Enables this modifier.

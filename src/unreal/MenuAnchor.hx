@@ -43,7 +43,7 @@ package unreal;
 		If you want to customize the creation of the popup, you should bind a function to OnGetMenuContentEvent
 		instead.
 	**/
-	public var menu_class : Dynamic;
+	public var menu_class : Class<Dynamic>;
 	/**
 		(OnMenuOpenChangedEvent):  [Read-Write] Called when the opened state of the menu changes
 	**/

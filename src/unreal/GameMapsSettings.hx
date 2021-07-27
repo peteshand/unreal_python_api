@@ -25,5 +25,5 @@ package unreal;
 		Args:
 		    skip_first_player (bool): If set connected game pads will only be assigned to the second and subsequent players
 	**/
-	public function set_skip_assigning_gamepad_to_player1(skip_first_player:Bool):Void;
+	public function set_skip_assigning_gamepad_to_player1(skip_first_player:Bool = true):Void;
 }

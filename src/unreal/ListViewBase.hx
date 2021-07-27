@@ -16,7 +16,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The type of widget to create for each entry displayed in the list.
 	**/
-	public var entry_widget_class : Dynamic;
+	public var entry_widget_class : Class<Dynamic>;
 	/**
 		x.get_displayed_entry_widgets() -> Array(UserWidget)
 		Gets all of the list entry widgets currently being displayed by the list
@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    Array(UserWidget):
 	**/
-	public function get_displayed_entry_widgets():Dynamic;
+	public function get_displayed_entry_widgets():Array<UserWidget>;
 	/**
 		x.regenerate_all_entries() -> None
 		Full regeneration of all entries in the list. Note that the entry UWidget instances will not be destroyed, but they will be released and re-generated.

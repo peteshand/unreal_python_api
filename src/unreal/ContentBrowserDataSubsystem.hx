@@ -40,7 +40,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	public function get_active_data_sources():Dynamic;
+	public function get_active_data_sources():Array<Name>;
 	/**
 		x.get_available_data_sources() -> Array(Name)
 		Get the list of current available data sources.
@@ -48,7 +48,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	public function get_available_data_sources():Dynamic;
+	public function get_available_data_sources():Array<Name>;
 	/**
 		x.get_item_at_path(path, item_type_filter) -> ContentBrowserItem
 		Get the first item (folder and/or file) that exists at the given virtual path.
@@ -73,7 +73,7 @@ package unreal;
 		Returns:
 		    Array(ContentBrowserItem):
 	**/
-	public function get_items_at_path(path:unreal.Name, item_type_filter:unreal.ContentBrowserItemTypeFilter):Dynamic;
+	public function get_items_at_path(path:unreal.Name, item_type_filter:unreal.ContentBrowserItemTypeFilter):Array<ContentBrowserItem>;
 	/**
 		x.get_items_under_path(path, filter) -> Array(ContentBrowserItem)
 		Get the items (folders and/or files) that exist under the given virtual path.
@@ -85,5 +85,5 @@ package unreal;
 		Returns:
 		    Array(ContentBrowserItem):
 	**/
-	public function get_items_under_path(path:unreal.Name, filter:unreal.ContentBrowserDataFilter):Dynamic;
+	public function get_items_under_path(path:unreal.Name, filter:unreal.ContentBrowserDataFilter):Array<ContentBrowserItem>;
 }

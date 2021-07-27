@@ -13,5 +13,5 @@ package unreal;
 		
 		    requested_mesh (Array(MagicLeapMeshBlockRequest)): output array containing details of blocks for whom the mesh should be requested.
 	**/
-	public function select_mesh_blocks(new_mesh_info:unreal.MagicLeapTrackingMeshInfo):Dynamic;
+	public function select_mesh_blocks(new_mesh_info:unreal.MagicLeapTrackingMeshInfo):Array<MagicLeapMeshBlockRequest>;
 }

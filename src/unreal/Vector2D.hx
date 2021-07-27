@@ -92,7 +92,7 @@ package unreal;
 		Returns:
 		    Vector2D:
 	**/
-	public function divide_float(b:Float):unreal.Vector2D;
+	public function divide_float(b:Float = 1.000000):unreal.Vector2D;
 	/**
 		x.dot(b) -> float
 		Returns the dot product of two 2d vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -203,7 +203,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:unreal.Vector2D, error_tolerance:Float):Bool;
+	public function is_near_equal(b:unreal.Vector2D, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_nearly_zero(tolerance=0.000100) -> bool
 		Checks whether vector is near to zero within a specified tolerance.
@@ -214,7 +214,7 @@ package unreal;
 		Returns:
 		    bool: true if vector is in tolerance to zero, otherwise false.
 	**/
-	public function is_nearly_zero(tolerance:Float):Bool;
+	public function is_nearly_zero(tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_not_near_equal(b, error_tolerance=0.000100) -> bool
 		Returns true if vector2D A is not equal to vector2D B (A != B) within a specified error tolerance
@@ -226,7 +226,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_not_near_equal(b:unreal.Vector2D, error_tolerance:Float):Bool;
+	public function is_not_near_equal(b:unreal.Vector2D, error_tolerance:Float = 0.000100):Bool;
 	/**
 		x.is_zero() -> bool
 		Checks whether all components of the vector are exactly zero.
@@ -292,7 +292,7 @@ package unreal;
 		Returns:
 		    Vector2D: A normalized copy of the vector if safe, (0,0) otherwise.
 	**/
-	public function normal(tolerance:Float):unreal.Vector2D;
+	public function normal(tolerance:Float = 0.000000):unreal.Vector2D;
 	/**
 		x.normal_unsafe() -> Vector2D
 		Returns a unit normal version of the 2D vector
@@ -309,7 +309,7 @@ package unreal;
 		Args:
 		    tolerance (float): Minimum squared length of vector for normalization.
 	**/
-	public function normalize(tolerance:Float):Void;
+	public function normalize(tolerance:Float = 0.000000):Void;
 	/**
 		x.not_equal(b) -> bool
 		Returns true if vector2D A is not equal to vector2D B (A != B) within a specified error tolerance
@@ -399,7 +399,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function vector(z:Float):unreal.Vector;
+	public function vector(z:Float = 0.000000):unreal.Vector;
 	/**
 		(float):  [Read-Write] X
 	**/

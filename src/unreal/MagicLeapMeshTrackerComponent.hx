@@ -111,7 +111,7 @@ package unreal;
 		
 		    requested_mesh (Array(MagicLeapMeshBlockRequest)):
 	**/
-	public function select_mesh_blocks(new_mesh_info:unreal.MagicLeapTrackingMeshInfo):Dynamic;
+	public function select_mesh_blocks(new_mesh_info:unreal.MagicLeapTrackingMeshInfo):Array<MagicLeapMeshBlockRequest>;
 	/**
 		(LinearColor):  [Read-Write] Color mapped to confidence value of one.
 	**/

@@ -23,7 +23,7 @@ package unreal;
 		Returns:
 		    Object: An instance of this class if it already exists as metadata on this Level Sequence, otherwise null.
 	**/
-	public function find_meta_data_by_class(class_:Dynamic):unreal.Object;
+	public function find_meta_data_by_class(class_:Class<Dynamic>):unreal.Object;
 	/**
 		x.find_or_add_meta_data_by_class(class_) -> Object
 		Find meta-data of a particular type for this level sequence instance, adding it if it doesn't already exist.
@@ -34,7 +34,7 @@ package unreal;
 		Returns:
 		    Object: An instance of this class as metadata on this Level Sequence.
 	**/
-	public function find_or_add_meta_data_by_class(class_:Dynamic):unreal.Object;
+	public function find_or_add_meta_data_by_class(class_:Class<Dynamic>):unreal.Object;
 	/**
 		x.remove_meta_data_by_class(class_) -> None
 		Remove meta-data of a particular type for this level sequence instance, if it exists
@@ -42,5 +42,5 @@ package unreal;
 		Args:
 		    class_ (type(Class)): The class type that you wish to remove the metadata for
 	**/
-	public function remove_meta_data_by_class(class_:Dynamic):Void;
+	public function remove_meta_data_by_class(class_:Class<Dynamic>):Void;
 }

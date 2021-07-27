@@ -9,7 +9,7 @@ package unreal;
 		    blendable_object (BlendableInterface): 
 		    weight (float):
 	**/
-	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float):Void;
+	public function add_or_update_blendable(blendable_object:Dynamic, weight:Float = 1.000000):Void;
 	/**
 		(float):  [Read-Write] Aspect Ratio (Width/Height)
 	**/

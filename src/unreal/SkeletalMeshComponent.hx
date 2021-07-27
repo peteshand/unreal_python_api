@@ -10,7 +10,7 @@ package unreal;
 		    add_physics_blend_weight (float): 
 		    skip_custom_physics_type (bool):
 	**/
-	public function accumulate_all_bodies_below_physics_blend_weight(bone_name:unreal.Name, add_physics_blend_weight:Float, skip_custom_physics_type:Bool):Void;
+	public function accumulate_all_bodies_below_physics_blend_weight(bone_name:unreal.Name, add_physics_blend_weight:Float, skip_custom_physics_type:Bool = false):Void;
 	/**
 		x.add_force_to_all_bodies_below(force, bone_name="None", accel_change=False, include_self=True) -> None
 		Add a force to all rigid bodies below.
@@ -22,7 +22,7 @@ package unreal;
 		    accel_change (bool): If true, Force is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 		    include_self (bool): If false, Force is only applied to bodies below but not given bone name.
 	**/
-	public function add_force_to_all_bodies_below(force:unreal.Vector, bone_name:unreal.Name, accel_change:Bool, include_self:Bool):Void;
+	public function add_force_to_all_bodies_below(force:unreal.Vector, bone_name:unreal.Name = "\"None\"", accel_change:Bool = false, include_self:Bool = true):Void;
 	/**
 		x.add_impulse_to_all_bodies_below(impulse, bone_name="None", vel_change=False, include_self=True) -> None
 		Add impulse to all single rigid bodies below. Good for one time instant burst.
@@ -33,7 +33,7 @@ package unreal;
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 		    include_self (bool): If false, Force is only applied to bodies below but not given bone name.
 	**/
-	public function add_impulse_to_all_bodies_below(impulse:unreal.Vector, bone_name:unreal.Name, vel_change:Bool, include_self:Bool):Void;
+	public function add_impulse_to_all_bodies_below(impulse:unreal.Vector, bone_name:unreal.Name = "\"None\"", vel_change:Bool = false, include_self:Bool = true):Void;
 	/**
 		x.allow_anim_curve_evaluation(name_of_curve, allow) -> None
 		Allow Anim Curve Evaluation
@@ -50,7 +50,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The AnimBlueprint class to use. Use 'SetAnimInstanceClass' to change at runtime.
 	**/
-	public var anim_class : Dynamic;
+	public var anim_class : Class<Dynamic>;
 	/**
 		deprecated: 'animation_blueprint' was renamed to 'anim_blueprint_generated_class'.
 	**/
@@ -222,7 +222,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_bone_mass(bone_name:unreal.Name, scale_mass:Bool):Float;
+	public function get_bone_mass(bone_name:unreal.Name = "\"None\"", scale_mass:Bool = true):Float;
 	/**
 		x.get_closest_point_on_physics_asset(world_position) -> (closest_world_position=Vector, normal=Vector, bone_name=Name, distance=float) or None
 		Given a world position, find the closest point on the physics asset. Note that this is independent of collision and welding. This is based purely on animation position
@@ -298,7 +298,7 @@ package unreal;
 		
 		    out_value (float): Retrieved attribute value if found, otherwise is set to DefaultValue
 	**/
-	public function get_float_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Float, lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
+	public function get_float_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Float, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
 	/**
 		x.get_float_attribute_ref(bone_name, attribute_name, out_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> float or None
 		Get float type custom attribute value.
@@ -314,7 +314,7 @@ package unreal;
 		
 		    out_value (float):
 	**/
-	public function get_float_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Float, lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
+	public function get_float_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Float, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
 	/**
 		x.get_integer_attribute(bone_name, attribute_name, default_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> int32 or None
 		Get integer type custom attribute value.
@@ -330,7 +330,7 @@ package unreal;
 		
 		    out_value (int32): Retrieved attribute value if found, otherwise is set to DefaultValue
 	**/
-	public function get_integer_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Int, lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
+	public function get_integer_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Int, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
 	/**
 		x.get_integer_attribute_ref(bone_name, attribute_name, out_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> int32 or None
 		Get integer type custom attribute value.
@@ -346,7 +346,7 @@ package unreal;
 		
 		    out_value (int32):
 	**/
-	public function get_integer_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Int, lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
+	public function get_integer_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Int, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
 	/**
 		deprecated: 'get_layer_sub_instance_by_class' was renamed to 'get_linked_anim_layer_instance_by_class'.
 	**/
@@ -381,7 +381,7 @@ package unreal;
 		
 		    out_linked_instances (Array(AnimInstance)):
 	**/
-	public function get_linked_anim_graph_instances_by_tag(tag:unreal.Name):Dynamic;
+	public function get_linked_anim_graph_instances_by_tag(tag:unreal.Name):Array<AnimInstance>;
 	/**
 		x.get_linked_anim_layer_instance_by_class(class_) -> AnimInstance
 		Gets the first layer linked instance corresponding to the specified class
@@ -392,7 +392,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_class(class_:Dynamic):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_class(class_:Class<Dynamic>):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group(group) -> AnimInstance
 		Gets the layer linked instance corresponding to the specified group
@@ -471,7 +471,7 @@ package unreal;
 		
 		    out_value (str): Retrieved attribute value if found, otherwise is set to DefaultValue
 	**/
-	public function get_string_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:String, lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
+	public function get_string_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:String, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
 	/**
 		x.get_string_attribute_ref(bone_name, attribute_name, out_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> str or None
 		Get string type custom attribute value.
@@ -487,7 +487,7 @@ package unreal;
 		
 		    out_value (str):
 	**/
-	public function get_string_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:String, lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
+	public function get_string_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:String, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
 	/**
 		deprecated: 'get_sub_instance_by_tag' was renamed to 'get_linked_anim_graph_instance_by_tag'.
 	**/
@@ -568,7 +568,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function link_anim_class_layers(class_:Dynamic):Void;
+	public function link_anim_class_layers(class_:Class<Dynamic>):Void;
 	/**
 		x.link_anim_graph_by_tag(tag, class_) -> None
 		Runs through all nodes, attempting to find linked instance by name/tag, then sets the class of each node if the tag matches
@@ -577,7 +577,7 @@ package unreal;
 		    tag (Name): 
 		    class_ (type(Class)):
 	**/
-	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Dynamic):Void;
+	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Class<Dynamic>):Void;
 	/**
 		(bool):  [Read-Write] It's worth trying this option when you feel that the current cloth simulation is unstable.
 		The scale of the actor is maintained during the simulation.
@@ -624,7 +624,7 @@ package unreal;
 		    position (float): 
 		    play_rate (float):
 	**/
-	public function override_animation_data(anim_to_play:unreal.AnimationAsset, is_looping:Bool, is_playing:Bool, position:Float, play_rate:Float):Void;
+	public function override_animation_data(anim_to_play:unreal.AnimationAsset, is_looping:Bool = true, is_playing:Bool = true, position:Float = 0.000000, play_rate:Float = 1.000000):Void;
 	/**
 		(bool):  [Read-Write] pauses this component's animations (doesn't tick them, but still refreshes bones)
 	**/
@@ -684,7 +684,7 @@ package unreal;
 		Args:
 		    teleport_type (TeleportType):
 	**/
-	public function reset_anim_instance_dynamics(teleport_type:unreal.TeleportType):Void;
+	public function reset_anim_instance_dynamics(teleport_type:unreal.TeleportType = TeleportType.RESET_PHYSICS):Void;
 	/**
 		x.reset_cloth_teleport_mode() -> None
 		Reset the teleport mode of a next update to 'Continuous'
@@ -705,7 +705,7 @@ package unreal;
 		    skip_custom_physics_type (bool): 
 		    include_self (bool):
 	**/
-	public function set_all_bodies_below_physics_blend_weight(bone_name:unreal.Name, physics_blend_weight:Float, skip_custom_physics_type:Bool, include_self:Bool):Void;
+	public function set_all_bodies_below_physics_blend_weight(bone_name:unreal.Name, physics_blend_weight:Float, skip_custom_physics_type:Bool = false, include_self:Bool = true):Void;
 	/**
 		x.set_all_bodies_below_simulate_physics(bone_name, new_simulate, include_self=True) -> None
 		Set all of the bones below passed in bone to be simulated
@@ -715,7 +715,7 @@ package unreal;
 		    new_simulate (bool): 
 		    include_self (bool):
 	**/
-	public function set_all_bodies_below_simulate_physics(bone_name:unreal.Name, new_simulate:Bool, include_self:Bool):Void;
+	public function set_all_bodies_below_simulate_physics(bone_name:unreal.Name, new_simulate:Bool, include_self:Bool = true):Void;
 	/**
 		x.set_all_bodies_physics_blend_weight(physics_blend_weight, skip_custom_physics_type=False) -> None
 		Set All Bodies Physics Blend Weight
@@ -724,7 +724,7 @@ package unreal;
 		    physics_blend_weight (float): 
 		    skip_custom_physics_type (bool):
 	**/
-	public function set_all_bodies_physics_blend_weight(physics_blend_weight:Float, skip_custom_physics_type:Bool):Void;
+	public function set_all_bodies_physics_blend_weight(physics_blend_weight:Float, skip_custom_physics_type:Bool = false):Void;
 	/**
 		x.set_all_bodies_simulate_physics(new_simulate) -> None
 		Set bSimulatePhysics to true for all bone bodies. Does not change the component bSimulatePhysics flag.
@@ -743,7 +743,7 @@ package unreal;
 		    force_limit (float): 
 		    skip_custom_physics_type (bool):
 	**/
-	public function set_all_motors_angular_drive_params(spring:Float, damping:Float, force_limit:Float, skip_custom_physics_type:Bool):Void;
+	public function set_all_motors_angular_drive_params(spring:Float, damping:Float, force_limit:Float, skip_custom_physics_type:Bool = false):Void;
 	/**
 		x.set_all_motors_angular_position_drive(enable_swing_drive, enable_twist_drive, skip_custom_physics_type=False) -> None
 		Enable or Disable AngularPositionDrive. If motor is in SLERP mode it will be turned on if either EnableSwingDrive OR EnableTwistDrive are enabled. In Twist and Swing mode the twist and the swing can be controlled individually.
@@ -753,7 +753,7 @@ package unreal;
 		    enable_twist_drive (bool): 
 		    skip_custom_physics_type (bool):
 	**/
-	public function set_all_motors_angular_position_drive(enable_swing_drive:Bool, enable_twist_drive:Bool, skip_custom_physics_type:Bool):Void;
+	public function set_all_motors_angular_position_drive(enable_swing_drive:Bool, enable_twist_drive:Bool, skip_custom_physics_type:Bool = false):Void;
 	/**
 		x.set_all_motors_angular_velocity_drive(enable_swing_drive, enable_twist_drive, skip_custom_physics_type=False) -> None
 		Enable or Disable AngularVelocityDrive. If motor is in SLERP mode it will be turned on if either EnableSwingDrive OR EnableTwistDrive are enabled. In Twist and Swing mode the twist and the swing can be controlled individually.
@@ -763,7 +763,7 @@ package unreal;
 		    enable_twist_drive (bool): 
 		    skip_custom_physics_type (bool):
 	**/
-	public function set_all_motors_angular_velocity_drive(enable_swing_drive:Bool, enable_twist_drive:Bool, skip_custom_physics_type:Bool):Void;
+	public function set_all_motors_angular_velocity_drive(enable_swing_drive:Bool, enable_twist_drive:Bool, skip_custom_physics_type:Bool = false):Void;
 	/**
 		x.set_allow_anim_curve_evaluation(allow) -> None
 		Set Allow Anim Curve Evaluation
@@ -780,7 +780,7 @@ package unreal;
 		    allow (bool): 
 		    reinit_anim (bool):
 	**/
-	public function set_allow_rigid_body_anim_node(allow:Bool, reinit_anim:Bool):Void;
+	public function set_allow_rigid_body_anim_node(allow:Bool, reinit_anim:Bool = true):Void;
 	/**
 		x.set_allowed_anim_curves_evaluation(list, allow) -> None
 		resets, and then only allow the following list to be allowed/disallowed
@@ -789,7 +789,7 @@ package unreal;
 		    list (Array(Name)): 
 		    allow (bool):
 	**/
-	public function set_allowed_anim_curves_evaluation(list:unreal.Array, allow:Bool):Void;
+	public function set_allowed_anim_curves_evaluation(list:Array<Name>, allow:Bool):Void;
 	/**
 		x.set_angular_limits(bone_name, swing1_limit_angle, twist_limit_angle, swing2_limit_angle) -> None
 		Sets the Angular Motion Ranges for a named bone
@@ -808,7 +808,7 @@ package unreal;
 		Args:
 		    new_class (type(Class)):
 	**/
-	public function set_anim_class(new_class:Dynamic):Void;
+	public function set_anim_class(new_class:Class<Dynamic>):Void;
 	/**
 		deprecated: 'set_anim_instance_class' was renamed to 'set_anim_class'.
 	**/
@@ -842,7 +842,7 @@ package unreal;
 		    new_notify_rigid_body_collision (bool): The value to assign to bNotifyRigidBodyCollision
 		    bone_name (Name): Name of the body to turn hit notifies on/off. None implies root body
 	**/
-	public function set_body_notify_rigid_body_collision(new_notify_rigid_body_collision:Bool, bone_name:unreal.Name):Void;
+	public function set_body_notify_rigid_body_collision(new_notify_rigid_body_collision:Bool, bone_name:unreal.Name = "\"None\""):Void;
 	/**
 		x.set_cloth_max_distance_scale(scale) -> None
 		Set Cloth Max Distance Scale
@@ -860,7 +860,7 @@ package unreal;
 		    profile_name (Name): 
 		    default_if_not_found (bool):
 	**/
-	public function set_constraint_profile(joint_name:unreal.Name, profile_name:unreal.Name, default_if_not_found:Bool):Void;
+	public function set_constraint_profile(joint_name:unreal.Name, profile_name:unreal.Name, default_if_not_found:Bool = false):Void;
 	/**
 		x.set_constraint_profile_for_all(profile_name, default_if_not_found=False) -> None
 		Sets the constraint profile properties (limits, motors, etc...) to match the constraint profile as defined in the physics asset for all constraints. If profile name is not found the joint is set to use the default constraint profile.
@@ -869,7 +869,7 @@ package unreal;
 		    profile_name (Name): 
 		    default_if_not_found (bool):
 	**/
-	public function set_constraint_profile_for_all(profile_name:unreal.Name, default_if_not_found:Bool):Void;
+	public function set_constraint_profile_for_all(profile_name:unreal.Name, default_if_not_found:Bool = false):Void;
 	/**
 		x.set_disable_anim_curves(disable_anim_curves) -> None
 		Set Disable Anim Curves
@@ -900,7 +900,7 @@ package unreal;
 		    bone_name (Name): The name of the top most bone.
 		    include_self (bool): Whether the bone specified should be edited.
 	**/
-	public function set_enable_gravity_on_all_bodies_below(enable_gravity:Bool, bone_name:unreal.Name, include_self:Bool):Void;
+	public function set_enable_gravity_on_all_bodies_below(enable_gravity:Bool, bone_name:unreal.Name, include_self:Bool = true):Void;
 	/**
 		x.set_enable_physics_blending(new_blend_physics) -> None
 		Disable physics blending of bones *
@@ -923,7 +923,7 @@ package unreal;
 		    value (float): 
 		    remove_zero_weight (bool): : Used by editor code when it should stay in the active list with zero weight
 	**/
-	public function set_morph_target(morph_target_name:unreal.Name, value:Float, remove_zero_weight:Bool):Void;
+	public function set_morph_target(morph_target_name:unreal.Name, value:Float, remove_zero_weight:Bool = true):Void;
 	/**
 		x.set_notify_rigid_body_collision_below(new_notify_rigid_body_collision, bone_name="None", include_self=True) -> None
 		Changes the value of bNotifyRigidBodyCollision on all bodies below a given bone
@@ -933,7 +933,7 @@ package unreal;
 		    bone_name (Name): Name of the body to turn hit notifies on (and below)
 		    include_self (bool): Whether to modify the given body (useful for roots with multiple children)
 	**/
-	public function set_notify_rigid_body_collision_below(new_notify_rigid_body_collision:Bool, bone_name:unreal.Name, include_self:Bool):Void;
+	public function set_notify_rigid_body_collision_below(new_notify_rigid_body_collision:Bool, bone_name:unreal.Name = "\"None\"", include_self:Bool = true):Void;
 	/**
 		x.set_physics_blend_weight(physics_blend_weight) -> None
 		This is global set up for setting physics blend weight
@@ -970,7 +970,7 @@ package unreal;
 		    pos (float): 
 		    fire_notifies (bool):
 	**/
-	public function set_position(pos:Float, fire_notifies:Bool):Void;
+	public function set_position(pos:Float, fire_notifies:Bool = true):Void;
 	/**
 		deprecated: 'set_sub_instance_class_by_tag' was renamed to 'link_anim_graph_by_tag'.
 	**/
@@ -1082,7 +1082,7 @@ package unreal;
 		Args:
 		    restore_simulation_space (bool): if true and the master pose cloth was originally simulating in world space, we will restore this setting. This will cause the master component to reset which may be undesirable.
 	**/
-	public function unbind_cloth_from_master_pose_component(restore_simulation_space:Bool):Void;
+	public function unbind_cloth_from_master_pose_component(restore_simulation_space:Bool = true):Void;
 	/**
 		(float):  [Read-Write] Uniform Mass
 		deprecated: This property is deprecated, please set it on the Clothing Asset / ClothConfig instead.
@@ -1098,7 +1098,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function unlink_anim_class_layers(class_:Dynamic):Void;
+	public function unlink_anim_class_layers(class_:Class<Dynamic>):Void;
 	/**
 		(bool):  [Read-Write] If we should pass joint position to joints each frame, so that they can be used by motorized joints to drive the
 		ragdoll based on the animation.

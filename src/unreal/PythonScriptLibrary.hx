@@ -28,7 +28,7 @@ package unreal;
 		
 		    log_output (Array(PythonLogOutputEntry)): The log output captured while running the command.
 	**/
-	static public function execute_python_command_ex(python_command:String, execution_mode:unreal.PythonCommandExecutionMode, file_execution_scope:unreal.PythonFileExecutionScope):Dynamic;
+	static public function execute_python_command_ex(python_command:String, execution_mode:unreal.PythonCommandExecutionMode = PythonCommandExecutionMode.EXECUTE_FILE, file_execution_scope:unreal.PythonFileExecutionScope = PythonFileExecutionScope.PRIVATE):Dynamic;
 	/**
 		X.is_python_available() -> bool
 		Check to see whether Python support is available in the current build.

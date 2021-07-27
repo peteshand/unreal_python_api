@@ -23,7 +23,7 @@ package unreal;
 		Returns:
 		    Array(Name):
 	**/
-	public function get_material_slot_names():Dynamic;
+	public function get_material_slot_names():Array<Name>;
 	/**
 		x.get_materials() -> Array(MaterialInterface)
 		Get Materials
@@ -31,7 +31,7 @@ package unreal;
 		Returns:
 		    Array(MaterialInterface):
 	**/
-	public function get_materials():Dynamic;
+	public function get_materials():Array<MaterialInterface>;
 	/**
 		x.is_material_slot_name_valid(material_slot_name) -> bool
 		Is Material Slot Name Valid
@@ -52,7 +52,7 @@ package unreal;
 		    prioritize_character_textures (bool): Whether character textures should be prioritized for a while by the streaming system
 		    cinematic_texture_groups (int32): Bitfield indicating which texture groups that use extra high-resolution mips
 	**/
-	public function prestream_textures(seconds:Float, prioritize_character_textures:Bool, cinematic_texture_groups:Int):Void;
+	public function prestream_textures(seconds:Float, prioritize_character_textures:Bool, cinematic_texture_groups:Int = 0):Void;
 	/**
 		x.set_scalar_parameter_value_on_materials(parameter_name, parameter_value) -> None
 		Set all occurrences of Scalar Material Parameters with ParameterName in the set of materials of the SkeletalMesh to ParameterValue

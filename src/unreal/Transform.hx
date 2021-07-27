@@ -92,7 +92,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_near_equal(b:unreal.Transform, location_tolerance:Float, rotation_tolerance:Float, scale3d_tolerance:Float):Bool;
+	public function is_near_equal(b:unreal.Transform, location_tolerance:Float = 0.000100, rotation_tolerance:Float = 0.000100, scale3d_tolerance:Float = 0.000100):Bool;
 	/**
 		x.lerp(b, alpha, interp_mode=LerpInterpolationMode.QUAT_INTERP) -> Transform
 		Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1).
@@ -105,7 +105,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	public function lerp(b:unreal.Transform, alpha:Float, interp_mode:unreal.LerpInterpolationMode):unreal.Transform;
+	public function lerp(b:unreal.Transform, alpha:Float, interp_mode:unreal.LerpInterpolationMode = LerpInterpolationMode.QUAT_INTERP):unreal.Transform;
 	/**
 		x.make_relative(relative_to) -> Transform
 		Computes a relative transform of one transform compared to another.

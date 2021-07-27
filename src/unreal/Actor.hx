@@ -201,7 +201,7 @@ package unreal;
 		    rotation_rule (DetachmentRule): How to handle rotation when detaching.
 		    scale_rule (DetachmentRule): How to handle scale when detaching.
 	**/
-	public function detach_from_actor(location_rule:unreal.DetachmentRule, rotation_rule:unreal.DetachmentRule, scale_rule:unreal.DetachmentRule):Void;
+	public function detach_from_actor(location_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, rotation_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, scale_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE):Void;
 	/**
 		x.disable_input(player_controller) -> None
 		Removes this actor from the stack of input being handled by a PlayerController.
@@ -257,7 +257,7 @@ package unreal;
 		
 		    box_extent (Vector): Set to half the actor's size in 3d space
 	**/
-	public function get_actor_bounds(only_colliding_components:Bool, include_from_child_actors:Bool):python.Tuple<Dynamic>;
+	public function get_actor_bounds(only_colliding_components:Bool, include_from_child_actors:Bool = false):python.Tuple<Dynamic>;
 	/**
 		x.get_actor_enable_collision() -> bool
 		Get current state of collision for the whole actor
@@ -384,7 +384,7 @@ package unreal;
 		
 		    child_actors (Array(Actor)):
 	**/
-	public function get_all_child_actors(include_descendants:Bool):Dynamic;
+	public function get_all_child_actors(include_descendants:Bool = true):Array<Actor>;
 	/**
 		x.get_attach_parent_actor() -> Actor
 		Walk up the attachment chain from RootComponent until we encounter a different actor, and return it. If we are not attached to a component in a different actor, returns nullptr
@@ -413,7 +413,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	public function get_attached_actors(reset_array:Bool):Dynamic;
+	public function get_attached_actors(reset_array:Bool = true):Array<Actor>;
 	/**
 		x.get_component_by_class(component_class) -> ActorComponent
 		Searches components array and returns first encountered component of the specified class
@@ -424,7 +424,7 @@ package unreal;
 		Returns:
 		    ActorComponent:
 	**/
-	public function get_component_by_class(component_class:Dynamic):unreal.ActorComponent;
+	public function get_component_by_class(component_class:Class<Dynamic>):unreal.ActorComponent;
 	/**
 		x.get_components_by_class(component_class) -> Array(ActorComponent)
 		Gets all the components that inherit from the given class.
@@ -437,7 +437,7 @@ package unreal;
 		Returns:
 		    Array(ActorComponent):
 	**/
-	public function get_components_by_class(component_class:Dynamic):Dynamic;
+	public function get_components_by_class(component_class:Class<Dynamic>):Array<ActorComponent>;
 	/**
 		x.get_components_by_interface(interface) -> Array(ActorComponent)
 		Gets all the components that implements the given interface.
@@ -448,7 +448,7 @@ package unreal;
 		Returns:
 		    Array(ActorComponent):
 	**/
-	public function get_components_by_interface(_interface:Dynamic):Dynamic;
+	public function get_components_by_interface(_interface:Class<Dynamic>):Array<ActorComponent>;
 	/**
 		x.get_components_by_tag(component_class, tag) -> Array(ActorComponent)
 		Gets all the components that inherit from the given class with a given tag.
@@ -460,7 +460,7 @@ package unreal;
 		Returns:
 		    Array(ActorComponent):
 	**/
-	public function get_components_by_tag(component_class:Dynamic, tag:unreal.Name):Dynamic;
+	public function get_components_by_tag(component_class:Class<Dynamic>, tag:unreal.Name):Array<ActorComponent>;
 	/**
 		x.get_distance_to(other_actor) -> float
 		Returns the distance from this Actor to OtherActor.
@@ -565,7 +565,7 @@ package unreal;
 		
 		    overlapping_actors (Array(Actor)): [out] Returned list of overlapping actors
 	**/
-	public function get_overlapping_actors(class_filter:Dynamic):Dynamic;
+	public function get_overlapping_actors(class_filter:Class<Dynamic> = null):Array<Actor>;
 	/**
 		x.get_overlapping_components() -> Array(PrimitiveComponent)
 		Returns list of components this actor is overlapping.
@@ -575,7 +575,7 @@ package unreal;
 		
 		    overlapping_components (Array(PrimitiveComponent)):
 	**/
-	public function get_overlapping_components():Dynamic;
+	public function get_overlapping_components():Array<PrimitiveComponent>;
 	/**
 		x.get_owner() -> Actor
 		Get the owner of this Actor, used primarily for network replication.
@@ -759,7 +759,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_temporarily_hidden_in_editor(include_parent:Bool):Bool;
+	public function is_temporarily_hidden_in_editor(include_parent:Bool = false):Bool;
 	/**
 		deprecated: 'life_span' was renamed to 'initial_life_span'.
 	**/
@@ -791,7 +791,7 @@ package unreal;
 		    max_range (float): Max range at which the sound may be heard. A value of 0 indicates no max range (though perception may have its own range). Loudness scales the range. (Note: not supported for legacy PawnSensingComponent, only for AIPerception)
 		    tag (Name): Identifier for the noise.
 	**/
-	public function make_noise(loudness:Float, noise_instigator:unreal.Pawn, noise_location:unreal.Vector, max_range:Float, tag:unreal.Name):Void;
+	public function make_noise(loudness:Float = 1.000000, noise_instigator:unreal.Pawn = null, noise_location:unreal.Vector = [0.000000, 0.000000, 0.000000], max_range:Float = 0.000000, tag:unreal.Name = "\"None\""):Void;
 	/**
 		(float):  [Read-Write] Used to determine what rate to throttle down to when replicated properties are changing infrequently
 	**/
@@ -933,7 +933,7 @@ package unreal;
 		    enable_streaming (bool): Whether to start (true) or stop (false) streaming
 		    cinematic_texture_groups (int32): Bitfield indicating which texture groups that use extra high-resolution mips
 	**/
-	public function prestream_textures(seconds:Float, enable_streaming:Bool, cinematic_texture_groups:Int):Void;
+	public function prestream_textures(seconds:Float, enable_streaming:Bool, cinematic_texture_groups:Int = 0):Void;
 	/**
 		x.receive_actor_begin_cursor_over() -> None
 		Event when this actor has the mouse moved over it with the clickable interface.
@@ -1162,7 +1162,7 @@ package unreal;
 		    new_actor_label (str): The new label string to assign to the actor.  If empty, the actor will have a default label.
 		    mark_dirty (bool): If true the actor's package will be marked dirty for saving.  Otherwise it will not be.  You should pass false for this parameter if dirtying is not allowed (like during loads)
 	**/
-	public function set_actor_label(new_actor_label:String, mark_dirty:Bool):Void;
+	public function set_actor_label(new_actor_label:String, mark_dirty:Bool = true):Void;
 	/**
 		x.set_actor_location(new_location, sweep, teleport) -> HitResult or None
 		Move the Actor to the specified location.
@@ -1424,5 +1424,5 @@ package unreal;
 		Returns:
 		    bool: Whether this actor was recently rendered.
 	**/
-	public function was_recently_rendered(tolerance:Float):Bool;
+	public function was_recently_rendered(tolerance:Float = 0.200000):Bool;
 }

@@ -53,7 +53,7 @@ package unreal;
 		Args:
 		    new_submix_override_settings (Array(AudioVolumeSubmixOverrideSettings)):
 	**/
-	public function set_submix_override_settings(new_submix_override_settings:unreal.Array):Void;
+	public function set_submix_override_settings(new_submix_override_settings:Array<AudioVolumeSubmixOverrideSettings>):Void;
 	/**
 		x.set_submix_send_settings(new_submix_send_settings) -> None
 		Set Submix Send Settings
@@ -61,7 +61,7 @@ package unreal;
 		Args:
 		    new_submix_send_settings (Array(AudioVolumeSubmixSendSettings)):
 	**/
-	public function set_submix_send_settings(new_submix_send_settings:unreal.Array):Void;
+	public function set_submix_send_settings(new_submix_send_settings:Array<AudioVolumeSubmixSendSettings>):Void;
 	/**
 		(ReverbSettings):  [Read-Only] Reverb settings to use for this volume.
 	**/

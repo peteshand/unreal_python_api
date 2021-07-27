@@ -24,5 +24,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function open_editor_for_assets(assets:unreal.Array):Bool;
+	public function open_editor_for_assets(assets:Array<Object>):Bool;
 }

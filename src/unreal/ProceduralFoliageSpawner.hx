@@ -20,7 +20,7 @@ package unreal;
 		Args:
 		    num_steps (int32):
 	**/
-	public function simulate(num_steps:Int):Void;
+	public function simulate(num_steps:Int = -1):Void;
 	/**
 		(float):  [Read-Only] Length of the tile (in cm) along one axis. The total area of the tile will be TileSize*TileSize.
 	**/

@@ -85,7 +85,7 @@ package unreal;
 		
 		    bone_location (Vector): (optional, out) if specified, set to the world space location of the bone that was found, or (0,0,0) if no bone was found
 	**/
-	public function find_closest_bone_k2(test_location:unreal.Vector, ignore_scale:Float, require_physics_asset:Bool):unreal.Vector;
+	public function find_closest_bone_k2(test_location:unreal.Vector, ignore_scale:Float = 0.000000, require_physics_asset:Bool = false):unreal.Vector;
 	/**
 		(int32):  [Read-Only] Forced Lod Model
 	**/
@@ -133,7 +133,7 @@ package unreal;
 		Returns:
 		    Transform: the delta transform from refpose in that given space (BaseName)
 	**/
-	public function get_delta_transform_from_ref_pose(bone_name:unreal.Name, base_name:unreal.Name):unreal.Transform;
+	public function get_delta_transform_from_ref_pose(bone_name:unreal.Name, base_name:unreal.Name = "\"None\""):unreal.Transform;
 	/**
 		x.get_forced_lod() -> int32
 		Get ForcedLodModel of the mesh component. Note that the actual forced LOD level is the return value minus one and zero means no forced LOD
@@ -343,7 +343,7 @@ package unreal;
 		    new_master_bone_component (SkinnedMeshComponent): New MasterPoseComponent
 		    force_update (bool):
 	**/
-	public function set_master_pose_component(new_master_bone_component:unreal.SkinnedMeshComponent, force_update:Bool):Void;
+	public function set_master_pose_component(new_master_bone_component:unreal.SkinnedMeshComponent, force_update:Bool = false):Void;
 	/**
 		x.set_min_lod(new_min_lod) -> None
 		Set MinLodModel of the mesh component
@@ -360,7 +360,7 @@ package unreal;
 		    new_physics_asset (PhysicsAsset): New PhysicsAsset
 		    force_re_init (bool): Force reinitialize
 	**/
-	public function set_physics_asset(new_physics_asset:unreal.PhysicsAsset, force_re_init:Bool):Void;
+	public function set_physics_asset(new_physics_asset:unreal.PhysicsAsset, force_re_init:Bool = false):Void;
 	/**
 		x.set_post_skinning_offsets(lod_index, offsets) -> None
 		Set Post Skinning Offsets
@@ -369,7 +369,7 @@ package unreal;
 		    lod_index (int32): 
 		    offsets (Array(Vector)):
 	**/
-	public function set_post_skinning_offsets(lod_index:Int, offsets:unreal.Array):Void;
+	public function set_post_skinning_offsets(lod_index:Int, offsets:Array<Vector>):Void;
 	/**
 		x.set_pre_skinning_offsets(lod_index, offsets) -> None
 		Set Pre Skinning Offsets
@@ -378,7 +378,7 @@ package unreal;
 		    lod_index (int32): 
 		    offsets (Array(Vector)):
 	**/
-	public function set_pre_skinning_offsets(lod_index:Int, offsets:unreal.Array):Void;
+	public function set_pre_skinning_offsets(lod_index:Int, offsets:Array<Vector>):Void;
 	/**
 		x.set_render_static(new_value) -> None
 		Set whether this skinned mesh should be rendered as static mesh in a reference pose
@@ -395,7 +395,7 @@ package unreal;
 		    new_mesh (SkeletalMesh): New mesh to set for this component
 		    reinit_pose (bool): Whether we should keep current pose or reinitialize.
 	**/
-	public function set_skeletal_mesh(new_mesh:unreal.SkeletalMesh, reinit_pose:Bool):Void;
+	public function set_skeletal_mesh(new_mesh:unreal.SkeletalMesh, reinit_pose:Bool = true):Void;
 	/**
 		x.set_skin_weight_override(lod_index, skin_weights) -> None
 		Allow override of skin weights on a per-component basis.
@@ -404,7 +404,7 @@ package unreal;
 		    lod_index (int32): 
 		    skin_weights (Array(SkelMeshSkinWeightInfo)):
 	**/
-	public function set_skin_weight_override(lod_index:Int, skin_weights:unreal.Array):Void;
+	public function set_skin_weight_override(lod_index:Int, skin_weights:Array<SkelMeshSkinWeightInfo>):Void;
 	/**
 		x.set_skin_weight_profile(profile_name) -> bool
 		Setup an override Skin Weight Profile for this component
@@ -424,7 +424,7 @@ package unreal;
 		    lod_index (int32): 
 		    vertex_colors (Array(LinearColor)):
 	**/
-	public function set_vertex_color_override_linear_color(lod_index:Int, vertex_colors:unreal.Array):Void;
+	public function set_vertex_color_override_linear_color(lod_index:Int, vertex_colors:Array<LinearColor>):Void;
 	/**
 		x.set_vertex_offset_usage(lod_index, usage) -> None
 		Set Vertex Offset Usage

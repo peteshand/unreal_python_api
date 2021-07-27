@@ -87,7 +87,7 @@ package unreal;
 		
 		    out_flags (Array(MagicLeapPlaneQueryFlags)):
 	**/
-	static public function remove_flags_not_in_query(query_flags:unreal.Array, result_flags:unreal.Array):Dynamic;
+	static public function remove_flags_not_in_query(query_flags:Array<MagicLeapPlaneQueryFlags>, result_flags:Array<MagicLeapPlaneQueryFlags>):Array<MagicLeapPlaneQueryFlags>;
 	/**
 		X.remove_persistent_query(handle) -> bool
 		Removes a plane query. Returns a boolean of the operation's success
@@ -112,5 +112,5 @@ package unreal;
 		
 		    out_reordered_flags (Array(MagicLeapPlaneQueryFlags)): The reordered array of plane query flags.
 	**/
-	static public function reorder_plane_flags(priority:unreal.Array, flags_to_reorder:unreal.Array):Dynamic;
+	static public function reorder_plane_flags(priority:Array<MagicLeapPlaneQueryFlags>, flags_to_reorder:Array<MagicLeapPlaneQueryFlags>):Array<MagicLeapPlaneQueryFlags>;
 }

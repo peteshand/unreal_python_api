@@ -30,5 +30,5 @@ package unreal;
 		
 		    out_values (Array(NamedCurveValue)):
 	**/
-	public function get_curves():Dynamic;
+	public function get_curves():Array<NamedCurveValue>;
 }

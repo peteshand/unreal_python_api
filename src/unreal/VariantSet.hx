@@ -74,7 +74,7 @@ package unreal;
 		    min_z (float): 
 		    gamma (float):
 	**/
-	public function set_thumbnail_from_camera(world_context_object:unreal.Object, camera_transform:unreal.Transform, fov_degrees:Float, min_z:Float, gamma:Float):Void;
+	public function set_thumbnail_from_camera(world_context_object:unreal.Object, camera_transform:unreal.Transform, fov_degrees:Float = 50.000000, min_z:Float = 50.000000, gamma:Float = 2.200000):Void;
 	/**
 		x.set_thumbnail_from_editor_viewport() -> None
 		Sets the thumbnail from the active editor viewport. Doesn't do anything if the Editor is not available

@@ -8,7 +8,7 @@ package unreal;
 		Args:
 		    reset (bool): Whether the activation should happen even if ShouldActivate returns false.
 	**/
-	public function activate(reset:Bool):Void;
+	public function activate(reset:Bool = false):Void;
 	/**
 		x.add_tick_prerequisite_actor(prerequisite_actor) -> None
 		Make this component tick after PrerequisiteActor
@@ -169,7 +169,7 @@ package unreal;
 		    new_active (bool): The new active state of the component
 		    reset (bool): Whether the activation should happen even if ShouldActivate returns false.
 	**/
-	public function set_active(new_active:Bool, reset:Bool):Void;
+	public function set_active(new_active:Bool, reset:Bool = false):Void;
 	/**
 		x.set_auto_activate(new_auto_activate) -> None
 		Sets whether the component should be auto activate or not. Only safe during construction scripts.

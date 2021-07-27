@@ -12,7 +12,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_settings_class():Dynamic;
+	public function get_settings_class():Class<Dynamic>;
 	/**
 		(LevelSequenceActor):  [Read-Only] The actor to get our burn in frames from
 	**/

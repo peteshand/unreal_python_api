@@ -15,7 +15,7 @@ package unreal;
 		
 		    validation_errors (Array(Text)):
 	**/
-	public function asset_fails(asset:unreal.Object, message:unreal.Text, validation_errors:unreal.Array):Dynamic;
+	public function asset_fails(asset:unreal.Object, message:unreal.Text, validation_errors:Array<Text>):Array<Text>;
 	/**
 		x.asset_passes(asset) -> None
 		Asset Passes
@@ -65,5 +65,5 @@ package unreal;
 		
 		    validation_errors (Array(Text)):
 	**/
-	public function validate_loaded_asset(asset:unreal.Object, validation_errors:unreal.Array):Dynamic;
+	public function validate_loaded_asset(asset:unreal.Object, validation_errors:Array<Text>):Array<Text>;
 }

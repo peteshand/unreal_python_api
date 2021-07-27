@@ -41,7 +41,7 @@ package unreal;
 		
 		    tap_ids (Array(int32)):
 	**/
-	public function get_tap_ids():Dynamic;
+	public function get_tap_ids():Array<int32>;
 	/**
 		x.remove_tap(tap_id) -> None
 		Remove the tap from the preset.

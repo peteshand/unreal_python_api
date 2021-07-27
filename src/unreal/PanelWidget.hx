@@ -25,7 +25,7 @@ package unreal;
 		Returns:
 		    Array(Widget):
 	**/
-	public function get_all_children():Dynamic;
+	public function get_all_children():Array<Widget>;
 	/**
 		x.get_child_at(index) -> Widget
 		Gets the widget at an index.

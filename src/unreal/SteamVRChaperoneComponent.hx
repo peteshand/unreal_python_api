@@ -8,7 +8,7 @@ package unreal;
 		Returns:
 		    Array(Vector):
 	**/
-	public function get_bounds():Dynamic;
+	public function get_bounds():Array<Vector>;
 	/**
 		(SteamVRChaperoneEvent):  [Read-Write] On Leave Bounds
 	**/
