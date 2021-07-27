@@ -1,0 +1,22 @@
+/* This file is generated, do not edit! */
+package unreal;
+@:pythonImport("unreal", "MagicLeapTouchpadGesturesComponent") extern class MagicLeapTouchpadGesturesComponent extends unreal.ActorComponent {
+	/**
+		(TouchpadGestureEvent):  [Read-Write] DEPRECATED use Touchpad Gesture Events instead. - Event called when a touchpad gesture continues. Provides all the meta data about the given gestures.
+		deprecated: Use Touchpad Gesture Events instead.
+	**/
+	@:deprecated
+	public var on_touchpad_gesture_continue : unreal.TouchpadGestureEvent;
+	/**
+		(TouchpadGestureEvent):  [Read-Write] DEPRECATED use Touchpad Gesture Events instead. - Event called when a touchpad gesture ends. Provides all the meta data about the given gestures.
+		deprecated: Use Touchpad Gesture Events instead.
+	**/
+	@:deprecated
+	public var on_touchpad_gesture_end : unreal.TouchpadGestureEvent;
+	/**
+		(TouchpadGestureEvent):  [Read-Write] DEPRECATED use Touchpad Gesture Events instead. - Event called when a touchpad gesture starts. Provides all the meta data about the given gestures.
+		deprecated: Use Touchpad Gesture Events instead.
+	**/
+	@:deprecated
+	public var on_touchpad_gesture_start : unreal.TouchpadGestureEvent;
+}
