@@ -143,7 +143,7 @@ package unreal;
 	/**
 		x.get_class() -> Class -- get the Unreal class of this instance
 	**/
-	public function get_class():Class<Dynamic>;
+	// public function get_class():Class<Dynamic>;
 
 	/**
 		X.get_default_object() -> Object -- get the Unreal class default object (CDO) of this type
@@ -203,7 +203,7 @@ package unreal;
 	/**
 		x.rename(name=None, outer=None) -> bool -- rename this instance
 	**/
-	public function rename(name:Dynamic, outer:Dynamic):Bool;
+	public function rename(name:Dynamic, ?outer:Dynamic):Bool;
 
 	/**
 		x.set_editor_properties(property_info) -> None -- set the value of any properties visible to the editor (from a name->value dict), ensuring that the pre/post change notifications are called
@@ -213,10 +213,10 @@ package unreal;
 	/**
 		x.set_editor_property(name, value, notify_mode=PropertyAccessChangeNotifyMode.DEFAULT) -> None -- set the value of any property visible to the editor, ensuring that the pre/post change notifications are called
 	**/
-	public function set_editor_property(name:Dynamic, value:Dynamic, notify_mode:Dynamic):Void;
+	public function set_editor_property(name:String, value:Dynamic, ?notify_mode:PropertyAccessChangeNotifyMode):Void;
 
 	/**
 		X.static_class() -> Class -- get the Unreal class of this type
 	**/
-	static public function static_class():Class<Dynamic>;
+	// static public function static_class():Class<Dynamic>;
 }

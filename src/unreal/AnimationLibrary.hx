@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AnimationLibrary") extern class AnimationLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_animation_notify_event(animation_sequence, notify_track_name, start_time, notify_class) -> AnimNotify
 		Adds an Animation Notify Event to Notify track in the given Animation with the given Notify creation data
 		
@@ -14,7 +23,7 @@ package unreal;
 		Returns:
 		    AnimNotify:
 	**/
-	static public function add_animation_notify_event(animation_sequence:unreal.AnimSequence, notify_track_name:unreal.Name, start_time:Float, notify_class:Class<Dynamic>):unreal.AnimNotify;
+	static public function add_animation_notify_event(animation_sequence:unreal.AnimSequence, notify_track_name:unreal.Name, start_time:Float, notify_class:Dynamic):unreal.AnimNotify;
 	/**
 		X.add_animation_notify_event_object(animation_sequence, start_time, notify, notify_track_name) -> None
 		Adds an the specific Animation Notify to the Animation Sequence (requires Notify's outer to be the Animation Sequence)
@@ -40,7 +49,7 @@ package unreal;
 		Returns:
 		    AnimNotifyState:
 	**/
-	static public function add_animation_notify_state_event(animation_sequence:unreal.AnimSequence, notify_track_name:unreal.Name, start_time:Float, duration:Float, notify_state_class:Class<Dynamic>):unreal.AnimNotifyState;
+	static public function add_animation_notify_state_event(animation_sequence:unreal.AnimSequence, notify_track_name:unreal.Name, start_time:Float, duration:Float, notify_state_class:Dynamic):unreal.AnimNotifyState;
 	/**
 		X.add_animation_notify_state_event_object(animation_sequence, start_time, duration, notify_state, notify_track_name) -> None
 		Adds an the specific Animation Notify State to the Animation Sequence (requires Notify State's outer to be the Animation Sequence)
@@ -62,7 +71,7 @@ package unreal;
 		    notify_track_name (Name): 
 		    track_color (LinearColor):
 	**/
-	static public function add_animation_notify_track(animation_sequence:unreal.AnimSequence, notify_track_name:unreal.Name, track_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):Void;
+	static public function add_animation_notify_track(animation_sequence:unreal.AnimSequence, notify_track_name:unreal.Name, ?track_color:unreal.LinearColor):Void;
 	/**
 		X.add_animation_sync_marker(animation_sequence, marker_name, time, notify_track_name) -> None
 		Adds an Animation Sync Marker to Notify track in the given Animation with the corresponding Marker Name and Time
@@ -84,7 +93,7 @@ package unreal;
 		    curve_type (RawCurveTrackTypes): 
 		    meta_data_curve (bool):
 	**/
-	static public function add_curve(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, curve_type:unreal.RawCurveTrackTypes = RawCurveTrackTypes.RCT_FLOAT, meta_data_curve:Bool = false):Void;
+	static public function add_curve(animation_sequence:unreal.AnimSequence, curve_name:unreal.Name, ?curve_type:unreal.RawCurveTrackTypes, meta_data_curve:Bool = false):Void;
 	/**
 		X.add_float_curve_key(animation_sequence, curve_name, time, value) -> None
 		Adds a Float Key to the specified Animation Curve inside of the given Animation Sequence
@@ -116,7 +125,7 @@ package unreal;
 		    meta_data_class (type(Class)): 
 		    meta_data_instance (AnimMetaData):
 	**/
-	static public function add_meta_data(animation_sequence:unreal.AnimSequence, meta_data_class:Class<Dynamic>, meta_data_instance:unreal.AnimMetaData):Void;
+	static public function add_meta_data(animation_sequence:unreal.AnimSequence, meta_data_class:Dynamic, meta_data_instance:unreal.AnimMetaData):Void;
 	/**
 		X.add_meta_data_object(animation_sequence, meta_data_object) -> None
 		Adds an instance of the specified MetaData Class to the given Animation Sequence (requires MetaDataObject's outer to be the Animation Sequence)
@@ -196,7 +205,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function contains_meta_data_of_class(animation_sequence:unreal.AnimSequence, meta_data_class:Class<Dynamic>):Bool;
+	static public function contains_meta_data_of_class(animation_sequence:unreal.AnimSequence, meta_data_class:Dynamic):Bool;
 	/**
 		X.copy_anim_notifies_from_sequence(src_anim_sequence, dest_anim_sequence) -> None
 		Copies animation notifies from Src Animation Sequence to Dest. Creates anim notify tracks as necessary. Returns true on success.
@@ -473,7 +482,7 @@ package unreal;
 		
 		    poses (Array(Transform)):
 	**/
-	static public function get_bone_poses_for_frame(animation_sequence:unreal.AnimSequence, bone_names:Array<Name>, frame:Int, extract_root_motion:Bool, preview_mesh:unreal.SkeletalMesh = null):Array<Transform>;
+	static public function get_bone_poses_for_frame(animation_sequence:unreal.AnimSequence, bone_names:Array<Name>, frame:Int, extract_root_motion:Bool, ?preview_mesh:unreal.SkeletalMesh):Array<Transform>;
 	/**
 		X.get_bone_poses_for_time(animation_sequence, bone_names, time, extract_root_motion, preview_mesh=None) -> Array(Transform)
 		Retrieves Bone Pose data for the given Bone Names at the specified Time from the given Animation Sequence
@@ -490,7 +499,7 @@ package unreal;
 		
 		    poses (Array(Transform)):
 	**/
-	static public function get_bone_poses_for_time(animation_sequence:unreal.AnimSequence, bone_names:Array<Name>, time:Float, extract_root_motion:Bool, preview_mesh:unreal.SkeletalMesh = null):Array<Transform>;
+	static public function get_bone_poses_for_time(animation_sequence:unreal.AnimSequence, bone_names:Array<Name>, time:Float, extract_root_motion:Bool, ?preview_mesh:unreal.SkeletalMesh):Array<Transform>;
 	/**
 		X.get_curve_compression_settings(animation_sequence) -> AnimCurveCompressionSettings
 		Retrieves the Curve Compression Settings for the given Animation Sequence
@@ -552,7 +561,7 @@ package unreal;
 		    meta_data_class (type(Class)): 
 		    meta_data_of_class (Array(AnimMetaData)):
 	**/
-	static public function get_meta_data_of_class(animation_sequence:unreal.AnimSequence, meta_data_class:Class<Dynamic>, meta_data_of_class:Array<AnimMetaData>):Void;
+	static public function get_meta_data_of_class(animation_sequence:unreal.AnimSequence, meta_data_class:Dynamic, meta_data_of_class:Array<AnimMetaData>):Void;
 	/**
 		X.get_num_frames(animation_sequence) -> int32
 		Retrieves the number of animation frames for the given Animation Sequence
@@ -939,7 +948,7 @@ package unreal;
 		    animation_sequence (AnimSequence): 
 		    meta_data_class (type(Class)):
 	**/
-	static public function remove_meta_data_of_class(animation_sequence:unreal.AnimSequence, meta_data_class:Class<Dynamic>):Void;
+	static public function remove_meta_data_of_class(animation_sequence:unreal.AnimSequence, meta_data_class:Dynamic):Void;
 	/**
 		X.remove_virtual_bone(animation_sequence, virtual_bone_name) -> None
 		Removes a Virtual Bone with the specified Bone Name from the given Animation Sequence
@@ -968,7 +977,7 @@ package unreal;
 		    new_notify_class (type(Class)): 
 		    on_notify_replaced (OnNotifyReplaced):
 	**/
-	static public function replace_anim_notifies(animation_sequence:unreal.AnimSequenceBase, old_notify_class:Class<Dynamic>, new_notify_class:Class<Dynamic>, on_notify_replaced:unreal.OnNotifyReplaced):Void;
+	static public function replace_anim_notifies(animation_sequence:unreal.AnimSequenceBase, old_notify_class:Dynamic, new_notify_class:Dynamic, on_notify_replaced:unreal.OnNotifyReplaced):Void;
 	/**
 		X.replace_anim_notify_states(animation_sequence, old_notify_class, new_notify_class, on_notify_state_replaced) -> None
 		Replaces animation notifies in the specified Animation Sequence
@@ -979,7 +988,7 @@ package unreal;
 		    new_notify_class (type(Class)): 
 		    on_notify_state_replaced (OnNotifyStateReplaced):
 	**/
-	static public function replace_anim_notify_states(animation_sequence:unreal.AnimSequenceBase, old_notify_class:Class<Dynamic>, new_notify_class:Class<Dynamic>, on_notify_state_replaced:unreal.OnNotifyStateReplaced):Void;
+	static public function replace_anim_notify_states(animation_sequence:unreal.AnimSequenceBase, old_notify_class:Dynamic, new_notify_class:Dynamic, on_notify_state_replaced:unreal.OnNotifyStateReplaced):Void;
 	/**
 		X.set_additive_animation_type(animation_sequence, additive_animation_type) -> None
 		Sets the Additive Animation type for the given Animation Sequence

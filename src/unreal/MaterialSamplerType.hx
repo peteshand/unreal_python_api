@@ -18,4 +18,13 @@ package unreal;
 	static public var SAMPLERTYPE_VIRTUAL_LINEAR_GRAYSCALE : Dynamic;
 	static public var SAMPLERTYPE_VIRTUAL_MASKS : Dynamic;
 	static public var SAMPLERTYPE_VIRTUAL_NORMAL : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PhysicalMaterial") extern class PhysicalMaterial extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] Used with the shape of the object to calculate its mass properties. The higher the number, the heavier the object. g per cubic cm.
 	**/
 	public var density : Float;

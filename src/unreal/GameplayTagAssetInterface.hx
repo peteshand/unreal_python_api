@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "GameplayTagAssetInterface") extern class GameplayTagAssetInterface extends unreal.Interface {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_owned_gameplay_tags() -> GameplayTagContainer
 		Get any owned gameplay tags on the asset
 		

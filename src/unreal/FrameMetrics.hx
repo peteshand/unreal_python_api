@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "FrameMetrics") extern class FrameMetrics extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] The total amount of time, in seconds, that this specific frame took to render (not accounting for dropped frames)
 	**/
 	public var frame_delta : Float;

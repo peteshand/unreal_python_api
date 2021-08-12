@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneCapture") extern class MovieSceneCapture extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(str):  [Read-Write] Additional command line arguments to pass to the external process when capturing
 	**/
 	public var additional_command_line_arguments : String;
@@ -36,7 +45,7 @@ package unreal;
 		Args:
 		    protocol_type (type(Class)):
 	**/
-	public function set_audio_capture_protocol_type(protocol_type:Class<Dynamic>):Void;
+	public function set_audio_capture_protocol_type(protocol_type:Dynamic):Void;
 	/**
 		x.set_image_capture_protocol_type(protocol_type) -> None
 		Set Image Capture Protocol Type
@@ -44,7 +53,7 @@ package unreal;
 		Args:
 		    protocol_type (type(Class)):
 	**/
-	public function set_image_capture_protocol_type(protocol_type:Class<Dynamic>):Void;
+	public function set_image_capture_protocol_type(protocol_type:Dynamic):Void;
 	/**
 		(MovieSceneCaptureSettings):  [Read-Write] Settings that define how to capture
 	**/

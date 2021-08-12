@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SourceEffectPannerSettings") extern class SourceEffectPannerSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] The pan of the source. -1.0 means left, 0.0 means center, 1.0 means right.
 	**/
 	public var pan : Float;

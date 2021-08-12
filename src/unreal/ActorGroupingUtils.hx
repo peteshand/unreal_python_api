@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ActorGroupingUtils") extern class ActorGroupingUtils extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_selected_to_group() -> None
 		Activates "Add to Group" mode which allows the user to select a group to append current selection
 	**/

@@ -20,7 +20,7 @@ package unreal;
 		Returns:
 		    MovieSceneSection: The newly create section if successful
 	**/
-	static public function add_section(track:Dynamic):unreal.MovieSceneSection;
+	static public function add_section(track:unreal.MovieSceneTrack):unreal.MovieSceneSection;
 	/**
 		X.get_color_tint(track) -> Color
 		Get the color tint for this track
@@ -31,7 +31,7 @@ package unreal;
 		Returns:
 		    Color: The color tint of the requested track
 	**/
-	static public function get_color_tint(track:Dynamic):unreal.Color;
+	static public function get_color_tint(track:unreal.MovieSceneTrack):unreal.Color;
 	/**
 		X.get_display_name(track) -> Text
 		Get this track's display name
@@ -42,7 +42,7 @@ package unreal;
 		Returns:
 		    Text: This track's display name
 	**/
-	static public function get_display_name(track:Dynamic):unreal.Text;
+	static public function get_display_name(track:unreal.MovieSceneTrack):unreal.Text;
 	/**
 		X.get_sections(track) -> Array(MovieSceneSection)
 		Access all this track's sections
@@ -53,7 +53,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneSection): An array of this track's sections
 	**/
-	static public function get_sections(track:Dynamic):Dynamic;
+	static public function get_sections(track:unreal.MovieSceneTrack):Array<MovieSceneSection>;
 	/**
 		X.get_sorting_order(track) -> int32
 		Get the sorting order for this track
@@ -64,7 +64,7 @@ package unreal;
 		Returns:
 		    int32: The sorting order of the requested track
 	**/
-	static public function get_sorting_order(track:Dynamic):Int;
+	static public function get_sorting_order(track:unreal.MovieSceneTrack):Int;
 	/**
 		X.remove_section(track, section) -> None
 		Remove the specified section
@@ -73,7 +73,7 @@ package unreal;
 		    track (MovieSceneTrack): The track to remove the section from, if present
 		    section (MovieSceneSection): The section to remove
 	**/
-	static public function remove_section(track:Dynamic, section:Dynamic):Void;
+	static public function remove_section(track:unreal.MovieSceneTrack, section:unreal.MovieSceneSection):Void;
 	/**
 		X.set_color_tint(track, color_tint) -> None
 		Set the color tint for this track
@@ -82,7 +82,7 @@ package unreal;
 		    track (MovieSceneTrack): The track to get the color tint from
 		    color_tint (Color): The color tint to set
 	**/
-	static public function set_color_tint(track:Dynamic, color_tint:Dynamic):Void;
+	static public function set_color_tint(track:unreal.MovieSceneTrack, color_tint:unreal.Color):Void;
 	/**
 		X.set_display_name(track, name) -> None
 		Set this track's display name
@@ -91,7 +91,7 @@ package unreal;
 		    track (MovieSceneTrack): The track to use
 		    name (Text): The name for this track
 	**/
-	static public function set_display_name(track:Dynamic, name:Dynamic):Void;
+	static public function set_display_name(track:unreal.MovieSceneTrack, name:unreal.Text):Void;
 	/**
 		X.set_sorting_order(track, sorting_order) -> None
 		Set the sorting order for this track
@@ -100,5 +100,5 @@ package unreal;
 		    track (MovieSceneTrack): The track to get the sorting order from
 		    sorting_order (int32): The sorting order to set
 	**/
-	static public function set_sorting_order(track:Dynamic, sorting_order:Dynamic):Void;
+	static public function set_sorting_order(track:unreal.MovieSceneTrack, sorting_order:Int):Void;
 }

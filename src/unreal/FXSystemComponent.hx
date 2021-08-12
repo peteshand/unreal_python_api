@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "FXSystemComponent") extern class FXSystemComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_fx_system_asset() -> FXSystemAsset
 		Get the referenced FXSystem asset.
 		

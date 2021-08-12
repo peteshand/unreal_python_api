@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraDataInterfaceGrid3DCollection") extern class NiagaraDataInterfaceGrid3DCollection extends unreal.NiagaraDataInterfaceGrid3D {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.fill_raw_volume_texture(component, dest) -> (tiles_x=int32, tiles_y=int32, tile_z=int32) or None
 		Fill Raw Volume Texture
 		deprecated: This function has been replaced by object user variables on the emitter to specify render targets to fill with data.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InternationalizationLibrary") extern class InternationalizationLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.clear_current_asset_group_culture(asset_group, save_to_config=False) -> None
 		Clear the given asset group category culture.
 		

@@ -25,4 +25,13 @@ package unreal;
 	static public var WRIST_CENTER : Dynamic;
 	static public var WRIST_RADIAL : Dynamic;
 	static public var WRIST_ULNAR : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

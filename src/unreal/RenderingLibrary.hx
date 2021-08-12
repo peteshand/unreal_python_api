@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "RenderingLibrary") extern class RenderingLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.begin_draw_canvas_to_render_target(world_context_object, texture_render_target) -> (canvas=Canvas, size=Vector2D, context=DrawToRenderTargetContext)
 		Returns a Canvas object that can be used to draw to the specified render target.
 		Canvas has functions like DrawMaterial with size parameters that can be used to draw to a specific area of a render target.
@@ -30,7 +39,7 @@ package unreal;
 		    texture_render_target (TextureRenderTarget2D): 
 		    clear_color (LinearColor):
 	**/
-	static public function clear_render_target2d(world_context_object:unreal.Object, texture_render_target:unreal.TextureRenderTarget2D, clear_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):Void;
+	static public function clear_render_target2d(world_context_object:unreal.Object, texture_render_target:unreal.TextureRenderTarget2D, ?clear_color:unreal.LinearColor):Void;
 	/**
 		X.convert_render_target_to_texture2d_editor_only(world_context_object, render_target, texture) -> None
 		Copies the contents of a render target to a UTexture2D
@@ -57,7 +66,7 @@ package unreal;
 		Returns:
 		    TextureRenderTarget2D:
 	**/
-	static public function create_render_target2d(world_context_object:unreal.Object, width:Int = 256, height:Int = 256, format:unreal.TextureRenderTargetFormat = TextureRenderTargetFormat.RTF_RGBA16F, clear_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps:Bool = false):unreal.TextureRenderTarget2D;
+	static public function create_render_target2d(world_context_object:unreal.Object, width:Int = 256, height:Int = 256, ?format:unreal.TextureRenderTargetFormat, ?clear_color:unreal.LinearColor, auto_generate_mip_maps:Bool = false):unreal.TextureRenderTarget2D;
 	/**
 		X.create_render_target2d_array(world_context_object, width=256, height=256, slices=1, format=TextureRenderTargetFormat.RTF_RGBA16F, clear_color=[0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps=False) -> TextureRenderTarget2DArray
 		Creates a new render target array and initializes it to the specified dimensions
@@ -74,7 +83,7 @@ package unreal;
 		Returns:
 		    TextureRenderTarget2DArray:
 	**/
-	static public function create_render_target2d_array(world_context_object:unreal.Object, width:Int = 256, height:Int = 256, slices:Int = 1, format:unreal.TextureRenderTargetFormat = TextureRenderTargetFormat.RTF_RGBA16F, clear_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps:Bool = false):unreal.TextureRenderTarget2DArray;
+	static public function create_render_target2d_array(world_context_object:unreal.Object, width:Int = 256, height:Int = 256, slices:Int = 1, ?format:unreal.TextureRenderTargetFormat, ?clear_color:unreal.LinearColor, auto_generate_mip_maps:Bool = false):unreal.TextureRenderTarget2DArray;
 	/**
 		X.create_render_target_volume(world_context_object, width=16, height=16, depth=16, format=TextureRenderTargetFormat.RTF_RGBA16F, clear_color=[0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps=False) -> TextureRenderTargetVolume
 		Creates a new volume render target and initializes it to the specified dimensions
@@ -91,7 +100,7 @@ package unreal;
 		Returns:
 		    TextureRenderTargetVolume:
 	**/
-	static public function create_render_target_volume(world_context_object:unreal.Object, width:Int = 16, height:Int = 16, depth:Int = 16, format:unreal.TextureRenderTargetFormat = TextureRenderTargetFormat.RTF_RGBA16F, clear_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], auto_generate_mip_maps:Bool = false):unreal.TextureRenderTargetVolume;
+	static public function create_render_target_volume(world_context_object:unreal.Object, width:Int = 16, height:Int = 16, depth:Int = 16, ?format:unreal.TextureRenderTargetFormat, ?clear_color:unreal.LinearColor, auto_generate_mip_maps:Bool = false):unreal.TextureRenderTargetVolume;
 	/**
 		X.draw_material_to_render_target(world_context_object, texture_render_target, material) -> None
 		Renders a quad with the material applied to the specified render target.
@@ -242,7 +251,7 @@ package unreal;
 		Returns:
 		    Texture2D:
 	**/
-	static public function render_target_create_static_texture2d_editor_only(render_target:unreal.TextureRenderTarget2D, name:String = "\"Texture\"", compression_settings:unreal.TextureCompressionSettings = TextureCompressionSettings.TC_DEFAULT, mip_settings:unreal.TextureMipGenSettings = TextureMipGenSettings.TMGS_FROM_TEXTURE_GROUP):unreal.Texture2D;
+	static public function render_target_create_static_texture2d_editor_only(render_target:unreal.TextureRenderTarget2D, name:String = "\"Texture\"", ?compression_settings:unreal.TextureCompressionSettings, ?mip_settings:unreal.TextureMipGenSettings):unreal.Texture2D;
 	/**
 		X.set_cast_inset_shadow_for_all_attachments(primitive_component, cast_inset_shadow, light_attachments_as_group) -> None
 		Set the inset shadow casting state of the given component and all its child attachments.

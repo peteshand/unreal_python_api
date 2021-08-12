@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ContentBrowserDataSubsystem") extern class ContentBrowserDataSubsystem extends unreal.EditorSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.activate_all_data_sources() -> None
 		Activate all available data sources.
 	**/

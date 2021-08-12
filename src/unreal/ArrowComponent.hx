@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ArrowComponent") extern class ArrowComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Color):  [Read-Write] Color to draw arrow
 	**/
 	public var arrow_color : unreal.Color;

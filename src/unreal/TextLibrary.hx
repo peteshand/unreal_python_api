@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "TextLibrary") extern class TextLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.as_currency_base(base_value, currency_code) -> Text
 		Generate an FText that represents the passed number as currency in the current culture.
 		BaseVal is specified in the smallest fractional value of the currency and will be converted for formatting according to the selected culture.

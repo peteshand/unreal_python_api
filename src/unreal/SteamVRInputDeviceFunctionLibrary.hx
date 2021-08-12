@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SteamVRInputDeviceFunctionLibrary") extern class SteamVRInputDeviceFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.find_steam_vr_action(action_name, action_set="main") -> (result=bool, found_action=SteamVRAction, found_action_set=SteamVRActionSet)
 		Search for a valid action matching the given action name and action set
 		
@@ -18,7 +27,7 @@ package unreal;
 		
 		    found_action_set (SteamVRActionSet):
 	**/
-	static public function find_steam_vr_action(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):python.Tuple<Dynamic>;
+	static public function find_steam_vr_action(action_name:unreal.Name, ?action_set:unreal.Name):python.Tuple<Dynamic>;
 	/**
 		X.find_steam_vr_action_origin(action_name, action_set="main") -> bool
 		Search and show the current binding of a provided action name and action set in the user's HMD
@@ -30,7 +39,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function find_steam_vr_action_origin(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):Bool;
+	static public function find_steam_vr_action_origin(action_name:unreal.Name, ?action_set:unreal.Name):Bool;
 	/**
 		X.find_steam_vr_input_binding_info(action_name, action_set="main") -> Array(SteamVRInputBindingInfo)
 		Retrieves useful information about the SteamVR input bindings with a given action name and action set.
@@ -42,7 +51,7 @@ package unreal;
 		Returns:
 		    Array(SteamVRInputBindingInfo): SteamVRInputBindingInfo - Array of binding info for an action with the currently active controller
 	**/
-	static public function find_steam_vr_input_binding_info(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):Array<SteamVRInputBindingInfo>;
+	static public function find_steam_vr_input_binding_info(action_name:unreal.Name, ?action_set:unreal.Name):Array<SteamVRInputBindingInfo>;
 	/**
 		X.find_steam_vr_origin_tracked_device_info(action_name, action_set="main") -> (result=bool, input_origin_info=SteamVRInputOriginInfo)
 		Find and return information about the tracked device associated from the input source.
@@ -58,7 +67,7 @@ package unreal;
 		
 		    input_origin_info (SteamVRInputOriginInfo):
 	**/
-	static public function find_steam_vr_origin_tracked_device_info(action_name:unreal.Name, action_set:unreal.Name = "\"main\""):python.Tuple<Dynamic>;
+	static public function find_steam_vr_origin_tracked_device_info(action_name:unreal.Name, ?action_set:unreal.Name):python.Tuple<Dynamic>;
 	/**
 		X.get_controller_fidelity() -> (left_controller_fidelity=ControllerFidelity, right_controller_fidelity=ControllerFidelity)
 		Retrieve skeletal tracking level for all controllers
@@ -98,7 +107,7 @@ package unreal;
 		
 		    finger_splays (SteamVRFingerSplays):
 	**/
-	static public function get_finger_curls_and_splays(hand:unreal.Hand, summary_data_type:unreal.SkeletalSummaryDataType = SkeletalSummaryDataType.VR_SUMMARY_TYPE_FROM_ANIMATION):python.Tuple<Dynamic>;
+	static public function get_finger_curls_and_splays(hand:unreal.Hand, ?summary_data_type:unreal.SkeletalSummaryDataType):python.Tuple<Dynamic>;
 	/**
 		X.get_left_hand_pose_data() -> (position=Vector, orientation=Rotator, angular_velocity=Vector, velocity=Vector)
 		Retrieve the left hand pose information - position, orientation and velocities
@@ -212,7 +221,7 @@ package unreal;
 		
 		    orientation (Rotator):
 	**/
-	static public function get_steam_vr_hand_pose_relative_to_now(hand:unreal.SteamVRHand = SteamVRHand.VR_LEFT, predicted_seconds_from_now:Float = 0.000000):Dynamic;
+	static public function get_steam_vr_hand_pose_relative_to_now(?hand:unreal.SteamVRHand, predicted_seconds_from_now:Float = 0.000000):Dynamic;
 	/**
 		X.get_steam_vr_input_binding_info(steam_vr_action_handle) -> Array(SteamVRInputBindingInfo)
 		Retrieves useful information about the SteamVR input bindings for an action.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuEntryExtensions") extern class ToolMenuEntryExtensions extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_label(target) -> Text
 		Get Label
 		
@@ -55,7 +64,7 @@ package unreal;
 		
 		    target (ToolMenuEntry):
 	**/
-	static public function set_icon(target:unreal.ToolMenuEntry, style_set_name:unreal.Name, style_name:unreal.Name = "\"None\"", small_style_name:unreal.Name = "\"None\""):unreal.ToolMenuEntry;
+	static public function set_icon(target:unreal.ToolMenuEntry, style_set_name:unreal.Name, ?style_name:unreal.Name, ?small_style_name:unreal.Name):unreal.ToolMenuEntry;
 	/**
 		X.set_label(target, label) -> ToolMenuEntry
 		Set Label

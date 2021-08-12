@@ -5,6 +5,15 @@ package unreal;
 	static public var UNIT45_DEG : Dynamic;
 	static public var ZERO : Dynamic;
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add(b) -> Vector2D
 		Returns addition of Vector A and Vector B (A + B)
 		

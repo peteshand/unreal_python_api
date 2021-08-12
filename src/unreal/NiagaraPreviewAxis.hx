@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraPreviewAxis") extern class NiagaraPreviewAxis extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.apply_to_preview(preview_component, preview_index, is_x_axis) -> str
 		Applies this axis for the preview at PreviewIndex on this axis.
 		

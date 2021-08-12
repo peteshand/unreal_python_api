@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AvoidanceManager") extern class AvoidanceManager extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_avoidance_velocity_for_component(movement_comp) -> Vector
 		Calculate avoidance velocity for component (avoids collisions with the supplied component)
 		

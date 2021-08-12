@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SkeletalMeshComponent") extern class SkeletalMeshComponent extends unreal.SkinnedMeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.accumulate_all_bodies_below_physics_blend_weight(bone_name, add_physics_blend_weight, skip_custom_physics_type=False) -> None
 		Accumulate AddPhysicsBlendWeight to physics blendweight for all of the bones below passed in bone to be simulated
 		
@@ -22,7 +31,7 @@ package unreal;
 		    accel_change (bool): If true, Force is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 		    include_self (bool): If false, Force is only applied to bodies below but not given bone name.
 	**/
-	public function add_force_to_all_bodies_below(force:unreal.Vector, bone_name:unreal.Name = "\"None\"", accel_change:Bool = false, include_self:Bool = true):Void;
+	public function add_force_to_all_bodies_below(force:unreal.Vector, ?bone_name:unreal.Name, accel_change:Bool = false, include_self:Bool = true):Void;
 	/**
 		x.add_impulse_to_all_bodies_below(impulse, bone_name="None", vel_change=False, include_self=True) -> None
 		Add impulse to all single rigid bodies below. Good for one time instant burst.
@@ -33,7 +42,7 @@ package unreal;
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 		    include_self (bool): If false, Force is only applied to bodies below but not given bone name.
 	**/
-	public function add_impulse_to_all_bodies_below(impulse:unreal.Vector, bone_name:unreal.Name = "\"None\"", vel_change:Bool = false, include_self:Bool = true):Void;
+	public function add_impulse_to_all_bodies_below(impulse:unreal.Vector, ?bone_name:unreal.Name, vel_change:Bool = false, include_self:Bool = true):Void;
 	/**
 		x.allow_anim_curve_evaluation(name_of_curve, allow) -> None
 		Allow Anim Curve Evaluation
@@ -50,7 +59,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The AnimBlueprint class to use. Use 'SetAnimInstanceClass' to change at runtime.
 	**/
-	public var anim_class : Class<Dynamic>;
+	public var anim_class : Dynamic;
 	/**
 		deprecated: 'animation_blueprint' was renamed to 'anim_blueprint_generated_class'.
 	**/
@@ -222,7 +231,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_bone_mass(bone_name:unreal.Name = "\"None\"", scale_mass:Bool = true):Float;
+	public function get_bone_mass(?bone_name:unreal.Name, scale_mass:Bool = true):Float;
 	/**
 		x.get_closest_point_on_physics_asset(world_position) -> (closest_world_position=Vector, normal=Vector, bone_name=Name, distance=float) or None
 		Given a world position, find the closest point on the physics asset. Note that this is independent of collision and welding. This is based purely on animation position
@@ -298,7 +307,7 @@ package unreal;
 		
 		    out_value (float): Retrieved attribute value if found, otherwise is set to DefaultValue
 	**/
-	public function get_float_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Float, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
+	public function get_float_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Float, ?lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
 	/**
 		x.get_float_attribute_ref(bone_name, attribute_name, out_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> float or None
 		Get float type custom attribute value.
@@ -314,7 +323,7 @@ package unreal;
 		
 		    out_value (float):
 	**/
-	public function get_float_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Float, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
+	public function get_float_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Float, ?lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
 	/**
 		x.get_integer_attribute(bone_name, attribute_name, default_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> int32 or None
 		Get integer type custom attribute value.
@@ -330,7 +339,7 @@ package unreal;
 		
 		    out_value (int32): Retrieved attribute value if found, otherwise is set to DefaultValue
 	**/
-	public function get_integer_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Int, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
+	public function get_integer_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:Int, ?lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
 	/**
 		x.get_integer_attribute_ref(bone_name, attribute_name, out_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> int32 or None
 		Get integer type custom attribute value.
@@ -346,7 +355,7 @@ package unreal;
 		
 		    out_value (int32):
 	**/
-	public function get_integer_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Int, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
+	public function get_integer_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:Int, ?lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
 	/**
 		deprecated: 'get_layer_sub_instance_by_class' was renamed to 'get_linked_anim_layer_instance_by_class'.
 	**/
@@ -392,7 +401,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_class(class_:Class<Dynamic>):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_class(class_:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group(group) -> AnimInstance
 		Gets the layer linked instance corresponding to the specified group
@@ -471,7 +480,7 @@ package unreal;
 		
 		    out_value (str): Retrieved attribute value if found, otherwise is set to DefaultValue
 	**/
-	public function get_string_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:String, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
+	public function get_string_attribute(bone_name:unreal.Name, attribute_name:unreal.Name, default_value:String, ?lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
 	/**
 		x.get_string_attribute_ref(bone_name, attribute_name, out_value, lookup_type=CustomBoneAttributeLookup.BONE_ONLY) -> str or None
 		Get string type custom attribute value.
@@ -487,7 +496,7 @@ package unreal;
 		
 		    out_value (str):
 	**/
-	public function get_string_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:String, lookup_type:unreal.CustomBoneAttributeLookup = CustomBoneAttributeLookup.BONE_ONLY):Dynamic;
+	public function get_string_attribute_ref(bone_name:unreal.Name, attribute_name:unreal.Name, out_value:String, ?lookup_type:unreal.CustomBoneAttributeLookup):Dynamic;
 	/**
 		deprecated: 'get_sub_instance_by_tag' was renamed to 'get_linked_anim_graph_instance_by_tag'.
 	**/
@@ -568,7 +577,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function link_anim_class_layers(class_:Class<Dynamic>):Void;
+	public function link_anim_class_layers(class_:Dynamic):Void;
 	/**
 		x.link_anim_graph_by_tag(tag, class_) -> None
 		Runs through all nodes, attempting to find linked instance by name/tag, then sets the class of each node if the tag matches
@@ -577,7 +586,7 @@ package unreal;
 		    tag (Name): 
 		    class_ (type(Class)):
 	**/
-	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Class<Dynamic>):Void;
+	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Dynamic):Void;
 	/**
 		(bool):  [Read-Write] It's worth trying this option when you feel that the current cloth simulation is unstable.
 		The scale of the actor is maintained during the simulation.
@@ -684,7 +693,7 @@ package unreal;
 		Args:
 		    teleport_type (TeleportType):
 	**/
-	public function reset_anim_instance_dynamics(teleport_type:unreal.TeleportType = TeleportType.RESET_PHYSICS):Void;
+	public function reset_anim_instance_dynamics(?teleport_type:unreal.TeleportType):Void;
 	/**
 		x.reset_cloth_teleport_mode() -> None
 		Reset the teleport mode of a next update to 'Continuous'
@@ -808,7 +817,7 @@ package unreal;
 		Args:
 		    new_class (type(Class)):
 	**/
-	public function set_anim_class(new_class:Class<Dynamic>):Void;
+	public function set_anim_class(new_class:Dynamic):Void;
 	/**
 		deprecated: 'set_anim_instance_class' was renamed to 'set_anim_class'.
 	**/
@@ -842,7 +851,7 @@ package unreal;
 		    new_notify_rigid_body_collision (bool): The value to assign to bNotifyRigidBodyCollision
 		    bone_name (Name): Name of the body to turn hit notifies on/off. None implies root body
 	**/
-	public function set_body_notify_rigid_body_collision(new_notify_rigid_body_collision:Bool, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_body_notify_rigid_body_collision(new_notify_rigid_body_collision:Bool, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_cloth_max_distance_scale(scale) -> None
 		Set Cloth Max Distance Scale
@@ -933,7 +942,7 @@ package unreal;
 		    bone_name (Name): Name of the body to turn hit notifies on (and below)
 		    include_self (bool): Whether to modify the given body (useful for roots with multiple children)
 	**/
-	public function set_notify_rigid_body_collision_below(new_notify_rigid_body_collision:Bool, bone_name:unreal.Name = "\"None\"", include_self:Bool = true):Void;
+	public function set_notify_rigid_body_collision_below(new_notify_rigid_body_collision:Bool, ?bone_name:unreal.Name, include_self:Bool = true):Void;
 	/**
 		x.set_physics_blend_weight(physics_blend_weight) -> None
 		This is global set up for setting physics blend weight
@@ -1098,7 +1107,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function unlink_anim_class_layers(class_:Class<Dynamic>):Void;
+	public function unlink_anim_class_layers(class_:Dynamic):Void;
 	/**
 		(bool):  [Read-Write] If we should pass joint position to joints each frame, so that they can be used by motorized joints to drive the
 		ragdoll based on the animation.

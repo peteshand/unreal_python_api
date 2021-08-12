@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AREnvironmentCaptureProbeTexture") extern class AREnvironmentCaptureProbeTexture extends unreal.TextureCube {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Guid):  [Read-Only] The guid of texture that gets registered as an external texture
 	**/
 	public var external_texture_guid : unreal.Guid;

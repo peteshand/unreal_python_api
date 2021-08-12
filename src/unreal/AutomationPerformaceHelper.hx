@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AutomationPerformaceHelper") extern class AutomationPerformaceHelper extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.begin_recording(record_name, gpu_budget, render_thread_budget, game_thread_budget) -> None
 		Begins recording a new named performance stats record. We start by recording the baseline.
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "FunctionalTestingManager") extern class FunctionalTestingManager extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(FunctionalTestEventSignature):  [Read-Write] On Setup Tests
 	**/
 	public var on_setup_tests : unreal.FunctionalTestEventSignature;

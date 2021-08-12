@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "RadialForceComponent") extern class RadialForceComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_object_type_to_affect(object_type) -> None
 		Add an object type for this radial force to affect
 		

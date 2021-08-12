@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "HeadMountedDisplayFunctionLibrary") extern class HeadMountedDisplayFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.calibrate_external_tracking_to_hmd(external_tracking_transform) -> None
 		Called to calibrate the offset transform between an external tracking source and the internal tracking source
 		(e.g. mocap tracker to and HMD tracker).  This should be called once per session, or when the physical relationship
@@ -81,7 +90,7 @@ package unreal;
 		Returns:
 		    Array(XRDeviceId): A list of device identifiers matching the query. Use these to query and operate on the device (e.g. through GetDevicePose, AddDeviceVisualizationComponent, etc.)
 	**/
-	static public function enumerate_tracked_devices(system_id:unreal.Name = "\"None\"", device_type:unreal.XRTrackedDeviceType = XRTrackedDeviceType.ANY):Array<XRDeviceId>;
+	static public function enumerate_tracked_devices(?system_id:unreal.Name, ?device_type:unreal.XRTrackedDeviceType):Array<XRDeviceId>;
 	/**
 		X.get_controller_transform_for_time(world_context, controller_index, motion_source, time) -> (time_was_used=bool, orientation=Rotator, position=Vector, provided_linear_velocity=bool, linear_velocity=Vector, provided_angular_velocity=bool, angular_velocity_rad_per_sec=Vector) or None
 		Get the transform and potentially velocity data at a specified time near the current frame in unreal world space.
@@ -417,7 +426,7 @@ package unreal;
 		    yaw (float): (in) the desired yaw to be set after orientation reset.
 		    options (OrientPositionSelector): (in) specifies either position, orientation or both should be reset.
 	**/
-	static public function reset_orientation_and_position(yaw:Float = 0.000000, options:unreal.OrientPositionSelector = OrientPositionSelector.ORIENTATION_AND_POSITION):Void;
+	static public function reset_orientation_and_position(yaw:Float = 0.000000, ?options:unreal.OrientPositionSelector):Void;
 	/**
 		X.set_clipping_planes(near, far) -> None
 		Sets near and far clipping planes (NCP and FCP) for stereo rendering. Similar to 'stereo ncp= fcp' console command, but NCP and FCP set by this

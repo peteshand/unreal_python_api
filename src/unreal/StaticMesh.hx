@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "StaticMesh") extern class StaticMesh extends unreal.StreamableRenderAsset {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_material(material) -> Name
 		Adds a new material and return its slot name
 		
@@ -39,7 +48,7 @@ package unreal;
 		Returns:
 		    StaticMeshDescription:
 	**/
-	static public function create_static_mesh_description(outer:unreal.Object = null):unreal.StaticMeshDescription;
+	static public function create_static_mesh_description(?outer:unreal.Object):unreal.StaticMeshDescription;
 	/**
 		x.find_socket(socket_name) -> StaticMeshSocket
 		Find a socket object in this StaticMesh by name.

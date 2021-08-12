@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EpicSynth1Patch") extern class EpicSynth1Patch extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Array(Synth1PatchCable)):  [Read-Write] Patch cables to patch destinations from the patch source.
 	**/
 	public var patch_cables : Array<Dynamic>;

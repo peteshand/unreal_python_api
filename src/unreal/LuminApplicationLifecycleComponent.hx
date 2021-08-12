@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LuminApplicationLifecycleComponent") extern class LuminApplicationLifecycleComponent extends unreal.ApplicationLifecycleComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(LuminApplicationLifetimeDelegate):  [Read-Write] This event is called when the device has transitioned to the active mode
 		from reality or standby.
 		This is triggered when the device comes out of the reality mode

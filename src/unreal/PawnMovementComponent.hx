@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PawnMovementComponent") extern class PawnMovementComponent extends unreal.NavMovementComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_input_vector(world_vector, force=False) -> None
 		Adds the given vector to the accumulated input in world space. Input vectors are usually between 0 and 1 in magnitude.
 		They are accumulated during a frame then applied as acceleration during the movement update.

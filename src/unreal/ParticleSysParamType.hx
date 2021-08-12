@@ -10,4 +10,13 @@ package unreal;
 	static public var PSPT_VECTOR : Dynamic;
 	static public var PSPT_VECTOR_RAND : Dynamic;
 	static public var PSPT_VECTOR_UNIT_RAND : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

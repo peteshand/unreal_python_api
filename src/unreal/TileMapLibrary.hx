@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "TileMapLibrary") extern class TileMapLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.break_tile(tile) -> (tile_index=int32, tile_set=PaperTileSet, flip_h=bool, flip_v=bool, flip_d=bool)
 		Breaks out the information for a tile
 		

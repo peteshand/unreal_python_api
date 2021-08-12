@@ -3,4 +3,13 @@ package unreal;
 @:pythonImport("unreal", "MIDCreationFlags") extern class MIDCreationFlags extends unreal.EnumBase {
 	static public var NONE : Dynamic;
 	static public var TRANSIENT : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

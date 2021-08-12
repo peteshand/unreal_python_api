@@ -1,17 +1,20 @@
-/* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "Name") extern class Name extends unreal._WrapperBase {
-	/**
-		X.cast(object) -> Name -- cast the given object to this Unreal name type
-	**/
-	@:native("cast")
-	static public function _cast(object:Dynamic):unreal.Name;
-	/**
-		x.is_none() -> bool -- is this Unreal name set to NAME_None?
-	**/
-	public function is_none():Bool;
-	/**
-		x.is_valid() -> bool -- is this Unreal name valid?
-	**/
-	public function is_valid():Bool;
+
+import unreal.StringLibrary;
+
+@:forward
+abstract Name(NameBase) to NameBase {
+	public function new(value:String) {
+		this = new NameBase([value]);
+	}
+
+	@:from
+	static public function fromString(value:String) {
+		return new Name(value);
+	}
+
+	@:to
+	static public function toString(value:NameBase):String {
+		return StringLibrary.conv_name_to_string(cast value);
+	}
 }

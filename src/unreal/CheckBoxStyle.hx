@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "CheckBoxStyle") extern class CheckBoxStyle extends unreal.SlateWidgetStyle {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(SlateColor):  [Read-Write] BorderBackgroundColor refers to the actual color and opacity of the supplied border image on toggle buttons
 	**/
 	public var border_background_color : unreal.SlateColor;

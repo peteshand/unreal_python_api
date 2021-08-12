@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Slider") extern class Slider extends unreal.Widget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_normalized_value() -> float
 		Get the current value scaled from 0 to 1
 		

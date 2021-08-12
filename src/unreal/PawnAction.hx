@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PawnAction") extern class PawnAction extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] if this is FALSE and we're trying to push a new instance of a given class,
 		but the top of the stack is already an instance of that class ignore the attempted push
 	**/
@@ -21,7 +30,7 @@ package unreal;
 		Returns:
 		    PawnAction:
 	**/
-	static public function create_action_instance(world_context_object:unreal.Object, action_class:Class<Dynamic>):unreal.PawnAction;
+	static public function create_action_instance(world_context_object:unreal.Object, action_class:Dynamic):unreal.PawnAction;
 	/**
 		x.finish(with_result) -> None
 		Finish

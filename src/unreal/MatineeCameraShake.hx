@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MatineeCameraShake") extern class MatineeCameraShake extends unreal.CameraShakeBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(CameraAnimInst):  [Read-Only] The playing instance of the CameraAnim-based shake, if any.
 	**/
 	public var anim_inst : unreal.CameraAnimInst;

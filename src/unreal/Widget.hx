@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Widget") extern class Widget extends unreal.Visual {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(MouseCursor):  [Read-Only] The cursor to show when the mouse is over the widget
 	**/
 	public var cursor : unreal.MouseCursor;

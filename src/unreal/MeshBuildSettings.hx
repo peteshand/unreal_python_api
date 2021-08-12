@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MeshBuildSettings") extern class MeshBuildSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Required for PNT tessellation but can be slow. Recommend disabling for larger meshes.
 	**/
 	public var build_adjacency_buffer : Bool;

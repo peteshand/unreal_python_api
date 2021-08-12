@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MotionTrackedDeviceFunctionLibrary") extern class MotionTrackedDeviceFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.disable_motion_tracking_for_component(motion_controller_component) -> None
 		Disable tracking of the specified controller, by player index and tracked device type.
 		

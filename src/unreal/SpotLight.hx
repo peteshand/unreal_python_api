@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SpotLight") extern class SpotLight extends unreal.Light {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.set_inner_cone_angle(new_inner_cone_angle) -> None
 		BEGIN DEPRECATED (use component functions now in level script)
 		deprecated: Function 'SetInnerConeAngle' is deprecated.

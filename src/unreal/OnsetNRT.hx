@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "OnsetNRT") extern class OnsetNRT extends unreal.AudioSynesthesiaNRT {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_channel_onsets_between_times(start_seconds, end_seconds, channel) -> (out_onset_timestamps=Array(float), out_onset_strengths=Array(float))
 		Returns onsets which occured between start and end timestamps.
 		

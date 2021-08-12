@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "NavLocalGridManager") extern class NavLocalGridManager extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_local_navigation_grid_for_box(world_context_object, location, extent=[1.000000, 1.000000, 1.000000], rotation=[0.000000, 0.000000, 0.000000], radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		Add Local Navigation Grid for Box
 		
@@ -17,7 +26,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	static public function add_local_navigation_grid_for_box(world_context_object:unreal.Object, location:unreal.Vector, extent:unreal.Vector = [1.000000, 1.000000, 1.000000], rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], radius2d:Int = 5, height:Float = 100.000000, rebuild_grids:Bool = true):Int;
+	static public function add_local_navigation_grid_for_box(world_context_object:unreal.Object, location:unreal.Vector, ?extent:unreal.Vector, ?rotation:unreal.Rotator, radius2d:Int = 5, height:Float = 100.000000, rebuild_grids:Bool = true):Int;
 	/**
 		X.add_local_navigation_grid_for_capsule(world_context_object, location, capsule_radius, capsule_half_height, radius2d=5, height=100.000000, rebuild_grids=True) -> int32
 		Add Local Navigation Grid for Capsule

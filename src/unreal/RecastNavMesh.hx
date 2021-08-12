@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "RecastNavMesh") extern class RecastNavMesh extends unreal.NavigationData {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.k2_replace_area_in_tile_bounds(bounds, old_area, new_area, replace_links=True) -> bool
 		
 		
@@ -14,5 +23,5 @@ package unreal;
 		Returns:
 		    bool: true if any polygon/link has been touched
 	**/
-	public function k2_replace_area_in_tile_bounds(bounds:unreal.Box, old_area:Class<Dynamic>, new_area:Class<Dynamic>, replace_links:Bool = true):Bool;
+	public function k2_replace_area_in_tile_bounds(bounds:unreal.Box, old_area:Dynamic, new_area:Dynamic, replace_links:Bool = true):Bool;
 }

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EnvQueryContext_BlueprintBase") extern class EnvQueryContext_BlueprintBase extends unreal.EnvQueryContext {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.provide_actors_set(querier_object, querier_actor) -> Array(Actor)
 		Provide Actors Set
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorDialog") extern class EditorDialog extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.show_message(title, message, message_type, default_value=AppReturnType.NO) -> AppReturnType
 		Open a modal message box dialog with the given message. If running in "-unattended" mode it will immediately
 		return the value specified by DefaultValue. If not running in "-unattended" mode then it will block execution
@@ -16,5 +25,5 @@ package unreal;
 		Returns:
 		    AppReturnType: The result of the users decision, or DefaultValue if running in unattended mode.
 	**/
-	static public function show_message(title:unreal.Text, message:unreal.Text, message_type:unreal.AppMsgType, default_value:unreal.AppReturnType = AppReturnType.NO):unreal.AppReturnType;
+	static public function show_message(title:unreal.Text, message:unreal.Text, message_type:unreal.AppMsgType, ?default_value:unreal.AppReturnType):unreal.AppReturnType;
 }

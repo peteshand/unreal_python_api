@@ -91,7 +91,7 @@ package unreal;
 		Args:
 		    end (int32):
 	**/
-	public function set_end_frame(end:Dynamic):Void;
+	public function set_end_frame(end:Int):Void;
 	/**
 		x.set_end_seconds(end) -> None
 		Set the ending time for the specified range in seconds. Interpreted as the first time that is outside of the range.
@@ -99,7 +99,7 @@ package unreal;
 		Args:
 		    end (float):
 	**/
-	public function set_end_seconds(end:Dynamic):Void;
+	public function set_end_seconds(end:Float):Void;
 	/**
 		x.set_start_frame(start) -> None
 		Set the starting frame for the specified range. Interpreted as the first valid frame that is inside the range.
@@ -107,7 +107,7 @@ package unreal;
 		Args:
 		    start (int32):
 	**/
-	public function set_start_frame(start:Dynamic):Void;
+	public function set_start_frame(start:Int):Void;
 	/**
 		x.set_start_seconds(start) -> None
 		Set the starting time for the specified range in seconds. Interpreted as the first valid time that is inside the range.
@@ -115,5 +115,5 @@ package unreal;
 		Args:
 		    start (float):
 	**/
-	public function set_start_seconds(start:Dynamic):Void;
+	public function set_start_seconds(start:Float):Void;
 }

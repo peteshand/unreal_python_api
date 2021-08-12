@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Button") extern class Button extends unreal.ContentWidget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(LinearColor):  [Read-Only] The color multiplier for the button background
 	**/
 	public var background_color : unreal.LinearColor;

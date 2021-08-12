@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PawnNoiseEmitterComponent") extern class PawnNoiseEmitterComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.make_noise(noise_maker, loudness, noise_location) -> None
 		Cache noises instigated by the owning pawn for AI sensing
 		

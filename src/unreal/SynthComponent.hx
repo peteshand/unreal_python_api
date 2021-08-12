@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SynthComponent") extern class SynthComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Is this audio component allowed to be spatialized?
 	**/
 	public var allow_spatialization : Bool;

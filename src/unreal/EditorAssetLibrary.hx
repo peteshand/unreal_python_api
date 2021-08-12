@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorAssetLibrary") extern class EditorAssetLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.checkout_asset(asset_to_checkout) -> bool
 		Checkout the asset from the Content Browser.
 		
@@ -322,7 +331,7 @@ package unreal;
 		Returns:
 		    type(Class): Found or loaded class.
 	**/
-	static public function load_blueprint_class(asset_path:String):Class<Dynamic>;
+	static public function load_blueprint_class(asset_path:String):Dynamic;
 	/**
 		X.make_directory(directory_path) -> bool
 		Create the directory on disk and in the Content Browser.

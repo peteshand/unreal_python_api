@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "XRAssetFunctionLibrary") extern class XRAssetFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_device_visualization_component_blocking(target, xr_device_id, manual_attachment, relative_transform) -> PrimitiveComponent
 		Spawns a render component for the specified XR device.
 		

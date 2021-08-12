@@ -15,4 +15,13 @@ package unreal;
 	static public var COND_SIMULATED_OR_PHYSICS_NO_REPLAY : Dynamic;
 	static public var COND_SKIP_OWNER : Dynamic;
 	static public var COND_SKIP_REPLAY : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

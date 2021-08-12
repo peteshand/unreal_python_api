@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DynamicEntryBox") extern class DynamicEntryBox extends unreal.DynamicEntryBoxBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.bp_create_entry() -> UserWidget
 		Creates and establishes a new dynamic entry in the box
 		
@@ -19,12 +28,12 @@ package unreal;
 		Returns:
 		    UserWidget:
 	**/
-	public function bp_create_entry_of_class(entry_class:Class<Dynamic>):unreal.UserWidget;
+	public function bp_create_entry_of_class(entry_class:Dynamic):unreal.UserWidget;
 	/**
 		(type(Class)):  [Read-Only] The class of widget to create entries of.
 		If natively binding this widget, use the EntryClass UPROPERTY metadata to specify the desired entry widget base class.
 	**/
-	public var entry_widget_class : Class<Dynamic>;
+	public var entry_widget_class : Dynamic;
 	/**
 		x.remove_entry(entry_widget) -> None
 		Remove Entry

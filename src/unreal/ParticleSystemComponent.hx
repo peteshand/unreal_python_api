@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ParticleSystemComponent") extern class ParticleSystemComponent extends unreal.FXSystemComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] If true, this Particle System will be available for recycling after it has completed. Auto-destroyed systems cannot be recycled.
 		Some systems (currently particle trail effects) can recycle components to avoid respawning them to play new effects.
 		This is only an optimization and does not change particle system behavior, aside from not triggering normal component initialization events more than once.
@@ -70,7 +79,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_named_dynamic_material_instance(name:unreal.Name, source_material:unreal.MaterialInterface = null):unreal.MaterialInstanceDynamic;
+	public function create_named_dynamic_material_instance(name:unreal.Name, ?source_material:unreal.MaterialInterface):unreal.MaterialInstanceDynamic;
 	/**
 		(float):  [Read-Write] Scales DeltaTime in UParticleSystemComponent::Tick(...)
 	**/
@@ -262,7 +271,7 @@ package unreal;
 		    location_type (AttachLocation): Option for how we handle our location when we attach to Parent.
 	**/
 	@:deprecated
-	public function set_auto_attach_params(parent:unreal.SceneComponent, socket_name:unreal.Name = "\"None\"", location_type:unreal.AttachLocation = AttachLocation.KEEP_RELATIVE_OFFSET):Void;
+	public function set_auto_attach_params(parent:unreal.SceneComponent, ?socket_name:unreal.Name, ?location_type:unreal.AttachLocation):Void;
 	/**
 		x.set_beam_end_point(emitter_index, new_end_point) -> None
 		Set the beam end point

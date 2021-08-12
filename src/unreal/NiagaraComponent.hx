@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraComponent") extern class NiagaraComponent extends unreal.FXSystemComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.advance_simulation(tick_count, tick_delta_seconds) -> None
 		Advances this system's simulation by the specified number of ticks and delta time.
 		

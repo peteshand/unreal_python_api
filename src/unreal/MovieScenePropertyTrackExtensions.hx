@@ -20,7 +20,7 @@ package unreal;
 		Returns:
 		    type(Class): The property class for this object property track
 	**/
-	static public function get_object_property_class(track:Dynamic):Dynamic;
+	static public function get_object_property_class(track:unreal.MovieSceneObjectPropertyTrack):Dynamic;
 	/**
 		X.get_property_name(track) -> Name
 		Get this track's property name
@@ -31,7 +31,7 @@ package unreal;
 		Returns:
 		    Name: This track's property name
 	**/
-	static public function get_property_name(track:Dynamic):unreal.Name;
+	static public function get_property_name(track:unreal.MovieScenePropertyTrack):unreal.Name;
 	/**
 		X.get_property_path(track) -> str
 		Get this track's property path
@@ -42,7 +42,7 @@ package unreal;
 		Returns:
 		    str: This track's property path
 	**/
-	static public function get_property_path(track:Dynamic):String;
+	static public function get_property_path(track:unreal.MovieScenePropertyTrack):String;
 	/**
 		X.get_unique_track_name(track) -> Name
 		Get this track's unique name
@@ -53,7 +53,7 @@ package unreal;
 		Returns:
 		    Name: This track's unique name
 	**/
-	static public function get_unique_track_name(track:Dynamic):unreal.Name;
+	static public function get_unique_track_name(track:unreal.MovieScenePropertyTrack):unreal.Name;
 	/**
 		X.set_object_property_class(track, property_class) -> None
 		Set this object property track's property class
@@ -62,7 +62,7 @@ package unreal;
 		    track (MovieSceneObjectPropertyTrack): The track to use
 		    property_class (type(Class)): The property class to set
 	**/
-	static public function set_object_property_class(track:Dynamic, property_class:Dynamic):Void;
+	static public function set_object_property_class(track:unreal.MovieSceneObjectPropertyTrack, property_class:Dynamic):Void;
 	/**
 		X.set_property_name_and_path(track, property_name, property_path) -> None
 		Set this track's property name and path
@@ -72,5 +72,5 @@ package unreal;
 		    property_name (Name): The property name
 		    property_path (str): The property path
 	**/
-	static public function set_property_name_and_path(track:Dynamic, property_name:Dynamic, property_path:Dynamic):Void;
+	static public function set_property_name_and_path(track:unreal.MovieScenePropertyTrack, property_name:unreal.Name, property_path:String):Void;
 }

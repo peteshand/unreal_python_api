@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapRaycastHitResult") extern class MagicLeapRaycastHitResult extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] Confidence of the raycast result.
 		
 		Confidence is a non-negative value from 0 to 1 where closer to 1 indicates a higher quality.

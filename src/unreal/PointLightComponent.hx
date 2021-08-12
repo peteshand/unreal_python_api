@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PointLightComponent") extern class PointLightComponent extends unreal.LocalLightComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] Controls the radial falloff of the light when UseInverseSquaredFalloff is disabled.
 		2 is almost linear and very unrealistic and around 8 it looks reasonable.
 		With large exponents, the light has contribution to only a small area of its influence radius but still costs the same as low exponents.

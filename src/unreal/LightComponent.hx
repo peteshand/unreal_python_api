@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LightComponent") extern class LightComponent extends unreal.LightComponentBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Whether the light should be injected into the Light Propagation Volume
 	**/
 	public var affect_dynamic_indirect_lighting : Bool;

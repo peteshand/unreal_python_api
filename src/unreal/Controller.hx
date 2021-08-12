@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Controller") extern class Controller extends unreal.Actor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.cast_to_player_controller() -> PlayerController
 		Cast to Player Controller
 		deprecated: Use standard Cast To node instead.
@@ -96,7 +105,7 @@ package unreal;
 		Returns:
 		    bool: true if controller's pawn can see Other actor.
 	**/
-	public function line_of_sight_to(other:unreal.Actor, view_point:unreal.Vector = [0.000000, 0.000000, 0.000000], alternate_checks:Bool = false):Bool;
+	public function line_of_sight_to(other:unreal.Actor, ?view_point:unreal.Vector, alternate_checks:Bool = false):Bool;
 	/**
 		(InstigatedAnyDamageSignature):  [Read-Write] Called when the controller has instigated damage in any way
 	**/

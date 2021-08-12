@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SubmixEffectConvolutionReverbPreset") extern class SubmixEffectConvolutionReverbPreset extends unreal.SoundEffectSubmixPreset {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(SubmixEffectConvolutionReverbBlockSize):  [Read-Only] Set the internal block size. This can effect latency and performance. Higher values will result in
 		lower CPU costs while lower values will result higher CPU costs. Latency may be affected depending
 		on the interplay between audio engines buffer sizes and this effects block size. Generally, higher

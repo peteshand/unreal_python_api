@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SkinnedMeshComponent") extern class SkinnedMeshComponent extends unreal.MeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.bone_is_child_of(bone_name, parent_bone_name) -> bool
 		Tests if BoneName is child of (or equal to) ParentBoneName.
 		
@@ -133,7 +142,7 @@ package unreal;
 		Returns:
 		    Transform: the delta transform from refpose in that given space (BaseName)
 	**/
-	public function get_delta_transform_from_ref_pose(bone_name:unreal.Name, base_name:unreal.Name = "\"None\""):unreal.Transform;
+	public function get_delta_transform_from_ref_pose(bone_name:unreal.Name, ?base_name:unreal.Name):unreal.Transform;
 	/**
 		x.get_forced_lod() -> int32
 		Get ForcedLodModel of the mesh component. Note that the actual forced LOD level is the return value minus one and zero means no forced LOD

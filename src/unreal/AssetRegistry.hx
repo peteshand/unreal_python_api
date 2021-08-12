@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AssetRegistry") extern class AssetRegistry extends unreal.Interface {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_all_assets(include_only_on_disk_assets=False) -> Array(AssetData) or None
 		Gets asset data for all assets in the registry.
 		This method may be slow, use a filter if possible to avoid iterating over the entire registry.

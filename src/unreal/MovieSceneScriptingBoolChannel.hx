@@ -23,7 +23,7 @@ package unreal;
 		Returns:
 		    MovieSceneScriptingBoolKey: The key that was created with the specified values at the specified time.
 	**/
-	public function add_key(time:Dynamic, new_value:Dynamic, sub_frame:Dynamic, time_unit:Dynamic):unreal.MovieSceneScriptingBoolKey;
+	public function add_key(time:unreal.FrameNumber, new_value:Bool, sub_frame:Float = 0.000000, ?time_unit:unreal.SequenceTimeUnit):unreal.MovieSceneScriptingBoolKey;
 	/**
 		x.compute_effective_range() -> SequencerScriptingRange
 		Compute the effective range of this channel, for example, the extents of its key times
@@ -43,7 +43,7 @@ package unreal;
 		Returns:
 		    Array(bool): An array of values contained by this channel. Returns baked keys in the specified range.
 	**/
-	public function evaluate_keys(range:Dynamic, frame_rate:Dynamic):Dynamic;
+	public function evaluate_keys(range:unreal.SequencerScriptingRange, frame_rate:unreal.FrameRate):Array<Bool>;
 	/**
 		x.get_default() -> bool
 		Get this channel's default value that will be used when no keys are present. Only a valid
@@ -60,7 +60,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneScriptingKey): An array of UMovieSceneScriptingBoolKey's contained by this channel. Returns all keys even if clipped by the owning section's boundaries or outside of the current sequence play range.
 	**/
-	public function get_keys():Dynamic;
+	public function get_keys():Array<MovieSceneScriptingKey>;
 	/**
 		x.get_num_keys() -> int32
 		Returns number of keys in this channel.
@@ -89,7 +89,7 @@ package unreal;
 		Args:
 		    key (MovieSceneScriptingKey):
 	**/
-	public function remove_key(key:Dynamic):Void;
+	public function remove_key(key:unreal.MovieSceneScriptingKey):Void;
 	/**
 		x.set_default(default_value) -> None
 		Set this channel's default value that should be used when no keys are present.
@@ -98,5 +98,5 @@ package unreal;
 		Args:
 		    default_value (bool):
 	**/
-	public function set_default(default_value:Dynamic):Void;
+	public function set_default(default_value:Bool):Void;
 }

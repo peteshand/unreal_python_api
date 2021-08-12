@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "WidgetInteractionComponent") extern class WidgetInteractionComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(LinearColor):  [Read-Write] Determines the color of the debug lines.
 	**/
 	public var debug_color : unreal.LinearColor;

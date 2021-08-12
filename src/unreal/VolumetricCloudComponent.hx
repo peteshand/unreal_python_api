@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "VolumetricCloudComponent") extern class VolumetricCloudComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Color):  [Read-Only] The ground albedo used to light the cloud from below with respect to the sun light and sky atmosphere.
 		This is only used by the cloud material when the 'Volumetric Advanced' node have GroundContribution enabled.
 	**/

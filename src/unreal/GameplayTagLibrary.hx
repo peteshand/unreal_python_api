@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "GameplayTagLibrary") extern class GameplayTagLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_gameplay_tag(tag_container, tag) -> GameplayTagContainer
 		Adds a single tag to the passed in tag container
 		
@@ -117,7 +126,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)):
 	**/
-	static public function get_all_actors_of_class_matching_tag_query(world_context_object:unreal.Object, actor_class:Class<Dynamic>, gameplay_tag_query:unreal.GameplayTagQuery):Array<Actor>;
+	static public function get_all_actors_of_class_matching_tag_query(world_context_object:unreal.Object, actor_class:Dynamic, gameplay_tag_query:unreal.GameplayTagQuery):Array<Actor>;
 	/**
 		X.get_debug_string_from_gameplay_tag(gameplay_tag) -> str
 		Returns an FString representation of a gameplay tag for debugging purposes.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "QuartzSubsystem") extern class QuartzSubsystem extends unreal.WorldSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.create_new_clock(world_context_object, clock_name, settings, override_settings_if_clock_exists=False) -> QuartzClockHandle
 		Clock Creation
 		create a new clock (or return handle if clock already exists)

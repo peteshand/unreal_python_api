@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "BlackboardComponent") extern class BlackboardComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.clear_value(key_name) -> None
 		Clear Value
 		
@@ -56,7 +65,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_value_as_class(key_name:unreal.Name):Class<Dynamic>;
+	public function get_value_as_class(key_name:unreal.Name):Dynamic;
 	/**
 		x.get_value_as_enum(key_name) -> uint8
 		Get Value as Enum
@@ -173,7 +182,7 @@ package unreal;
 		    key_name (Name): 
 		    class_value (type(Class)):
 	**/
-	public function set_value_as_class(key_name:unreal.Name, class_value:Class<Dynamic>):Void;
+	public function set_value_as_class(key_name:unreal.Name, class_value:Dynamic):Void;
 	/**
 		x.set_value_as_enum(key_name, enum_value) -> None
 		Set Value as Enum

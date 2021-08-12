@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DragDropOperation") extern class DragDropOperation extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Widget):  [Read-Only] The Drag Visual is the widget to display when dragging the item.  Normally people create a new widget to represent the
 		temporary drag.
 	**/

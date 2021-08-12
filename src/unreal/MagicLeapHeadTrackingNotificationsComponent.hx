@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapHeadTrackingNotificationsComponent") extern class MagicLeapHeadTrackingNotificationsComponent extends unreal.VRNotificationsComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(VRNotificationsDelegate):  [Read-Write] Map was lost. It could possibly recover.
 	**/
 	public var on_head_tracking_lost : unreal.VRNotificationsDelegate;

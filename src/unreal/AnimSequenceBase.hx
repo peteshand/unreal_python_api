@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AnimSequenceBase") extern class AnimSequenceBase extends unreal.AnimationAsset {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_play_length() -> float
 		Returns the total play length of the montage, if played back with a speed of 1.0.
 		

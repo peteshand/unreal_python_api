@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AIHelperLibrary") extern class AIHelperLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_ai_controller(controlled_actor) -> AIController
 		The way it works exactly is if the actor passed in is a pawn, then the function retrieves
 		    pawn's controller cast to AIController. Otherwise the function returns actor cast to AIController.
@@ -160,7 +169,7 @@ package unreal;
 		Returns:
 		    Pawn:
 	**/
-	static public function spawn_ai_from_class(world_context_object:unreal.Object, pawn_class:Class<Dynamic>, behavior_tree:unreal.BehaviorTree, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], no_collision_fail:Bool = false, owner:unreal.Actor = null):unreal.Pawn;
+	static public function spawn_ai_from_class(world_context_object:unreal.Object, pawn_class:Dynamic, behavior_tree:unreal.BehaviorTree, location:unreal.Vector, ?rotation:unreal.Rotator, no_collision_fail:Bool = false, ?owner:unreal.Actor):unreal.Pawn;
 	/**
 		X.unlock_ai_resources_with_animation(anim_instance, unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources

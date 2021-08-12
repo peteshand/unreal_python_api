@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuEntry") extern class ToolMenuEntry extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_label() -> Text
 		Get Label
 		
@@ -42,7 +51,7 @@ package unreal;
 		    style_name (Name): 
 		    small_style_name (Name):
 	**/
-	public function set_icon(style_set_name:unreal.Name, style_name:unreal.Name = "\"None\"", small_style_name:unreal.Name = "\"None\""):Void;
+	public function set_icon(style_set_name:unreal.Name, ?style_name:unreal.Name, ?small_style_name:unreal.Name):Void;
 	/**
 		x.set_label(label) -> None
 		Set Label

@@ -3,6 +3,15 @@ package unreal;
 @:pythonImport("unreal", "Matrix") extern class Matrix extends unreal.StructBase {
 	static public var IDENTITY : Dynamic;
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add(b) -> Matrix
 		Gets the result of adding a matrix to this.
 		

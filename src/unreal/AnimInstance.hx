@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AnimInstance") extern class AnimInstance extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.blueprint_begin_play() -> None
 		Executed when begin play is called on the owning component
 	**/
@@ -139,7 +148,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_class(class_:Class<Dynamic>):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_class(class_:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instance_by_group(group) -> AnimInstance
 		Gets the layer linked instance corresponding to the specified group
@@ -162,7 +171,7 @@ package unreal;
 		Returns:
 		    AnimInstance:
 	**/
-	public function get_linked_anim_layer_instance_by_group_and_class(group:unreal.Name, class_:Class<Dynamic>):unreal.AnimInstance;
+	public function get_linked_anim_layer_instance_by_group_and_class(group:unreal.Name, class_:Dynamic):unreal.AnimInstance;
 	/**
 		x.get_linked_anim_layer_instances_by_group(group) -> Array(AnimInstance)
 		Runs through all nodes, attempting to find all distinct layer linked instances in the group
@@ -309,7 +318,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function link_anim_class_layers(class_:Class<Dynamic>):Void;
+	public function link_anim_class_layers(class_:Dynamic):Void;
 	/**
 		x.link_anim_graph_by_tag(tag, class_) -> None
 		Runs through all nodes, attempting to find a linked instance by name/tag, then sets the class of each node if the tag matches
@@ -318,7 +327,7 @@ package unreal;
 		    tag (Name): 
 		    class_ (type(Class)):
 	**/
-	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Class<Dynamic>):Void;
+	public function link_anim_graph_by_tag(tag:unreal.Name, class_:Dynamic):Void;
 	/**
 		x.lock_ai_resources(lock_movement, lock_ai_logic) -> None
 		locks indicated AI resources of animated pawn
@@ -353,7 +362,7 @@ package unreal;
 		Returns:
 		    Name:
 	**/
-	public function montage_get_current_section(montage:unreal.AnimMontage = null):unreal.Name;
+	public function montage_get_current_section(?montage:unreal.AnimMontage):unreal.Name;
 	/**
 		x.montage_get_is_stopped(montage) -> bool
 		return true if Montage is not currently active. (not valid or blending out)
@@ -420,7 +429,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_section(section_name:unreal.Name, montage:unreal.AnimMontage = null):Void;
+	public function montage_jump_to_section(section_name:unreal.Name, ?montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_jump_to_sections_end(section_name, montage=None) -> None
 		Makes a montage jump to the end of a named section. If Montage reference is NULL, it will do that to all active montages.
@@ -429,7 +438,7 @@ package unreal;
 		    section_name (Name): 
 		    montage (AnimMontage):
 	**/
-	public function montage_jump_to_sections_end(section_name:unreal.Name, montage:unreal.AnimMontage = null):Void;
+	public function montage_jump_to_sections_end(section_name:unreal.Name, ?montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_pause(montage=None) -> None
 		Pauses the animation montage. If reference is NULL, it will pause ALL active montages.
@@ -437,7 +446,7 @@ package unreal;
 		Args:
 		    montage (AnimMontage):
 	**/
-	public function montage_pause(montage:unreal.AnimMontage = null):Void;
+	public function montage_pause(?montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_play(montage_to_play, play_rate=1.000000, return_value_type=MontagePlayReturnType.MONTAGE_LENGTH, time_to_start_montage_at=0.000000, stop_all_montages=True) -> float
 		Plays an animation montage. Returns the length of the animation montage in seconds. Returns 0.f if failed to play.
@@ -452,7 +461,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function montage_play(montage_to_play:unreal.AnimMontage, play_rate:Float = 1.000000, return_value_type:unreal.MontagePlayReturnType = MontagePlayReturnType.MONTAGE_LENGTH, time_to_start_montage_at:Float = 0.000000, stop_all_montages:Bool = true):Float;
+	public function montage_play(montage_to_play:unreal.AnimMontage, play_rate:Float = 1.000000, ?return_value_type:unreal.MontagePlayReturnType, time_to_start_montage_at:Float = 0.000000, stop_all_montages:Bool = true):Float;
 	/**
 		x.montage_resume(montage) -> None
 		Resumes a paused animation montage. If reference is NULL, it will resume ALL active montages.
@@ -474,7 +483,7 @@ package unreal;
 		    next_section (Name): : new next section
 		    montage (AnimMontage):
 	**/
-	public function montage_set_next_section(section_name_to_change:unreal.Name, next_section:unreal.Name, montage:unreal.AnimMontage = null):Void;
+	public function montage_set_next_section(section_name_to_change:unreal.Name, next_section:unreal.Name, ?montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_set_play_rate(montage, new_play_rate=1.000000) -> None
 		Change AnimMontage play rate. NewPlayRate = 1.0 is the default playback rate.
@@ -501,7 +510,7 @@ package unreal;
 		    blend_out_time (float): 
 		    montage (AnimMontage):
 	**/
-	public function montage_stop(blend_out_time:Float, montage:unreal.AnimMontage = null):Void;
+	public function montage_stop(blend_out_time:Float, ?montage:unreal.AnimMontage):Void;
 	/**
 		x.montage_stop_group_by_name(blend_out_time, group_name) -> None
 		Stops all active montages belonging to a group.
@@ -645,7 +654,7 @@ package unreal;
 		    blend_out_time (float): 
 		    slot_node_name (Name):
 	**/
-	public function stop_slot_animation(blend_out_time:Float = 0.250000, slot_node_name:unreal.Name = "\"None\""):Void;
+	public function stop_slot_animation(blend_out_time:Float = 0.250000, ?slot_node_name:unreal.Name):Void;
 	/**
 		x.try_get_pawn_owner() -> Pawn
 		kismet event functions
@@ -663,7 +672,7 @@ package unreal;
 		Args:
 		    class_ (type(Class)):
 	**/
-	public function unlink_anim_class_layers(class_:Class<Dynamic>):Void;
+	public function unlink_anim_class_layers(class_:Dynamic):Void;
 	/**
 		x.unlock_ai_resources(unlock_movement, unlock_ai_logic) -> None
 		unlocks indicated AI resources of animated pawn. Will unlock only animation-locked resources.

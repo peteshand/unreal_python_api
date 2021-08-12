@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DecalComponent") extern class DecalComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.create_dynamic_material_instance() -> MaterialInstanceDynamic
 		Utility to allocate a new Dynamic Material Instance, set its parent to the currently applied material, and assign it
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "CineCameraComponent") extern class CineCameraComponent extends unreal.CameraComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] Current aperture, in terms of f-stop (e.g. 2.8 for f/2.8)
 	**/
 	public var current_aperture : Float;

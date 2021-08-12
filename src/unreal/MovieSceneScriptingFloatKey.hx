@@ -76,7 +76,7 @@ package unreal;
 		Returns:
 		    FrameTime: The time of this key which combines both the frame number and the sub-frame it is on. Sub-frame will be zero if you request Tick Resolution.
 	**/
-	public function get_time(time_unit:Dynamic):unreal.FrameTime;
+	public function get_time(?time_unit:unreal.SequenceTimeUnit):unreal.FrameTime;
 	/**
 		x.get_value() -> float
 		Gets the value for this key from the owning channel.
@@ -92,7 +92,7 @@ package unreal;
 		Args:
 		    new_value (float): Represents the geometric tangents in the form of "tan(y/x)" where y is the key's value and x is the seconds (both relative to key)
 	**/
-	public function set_arrive_tangent(new_value:Dynamic):Void;
+	public function set_arrive_tangent(new_value:Float):Void;
 	/**
 		x.set_arrive_tangent_weight(new_value) -> None
 		If Tangent Weight Mode is RCTWM_WeightedArrive or RCTWM_WeightedBoth, the weight of the arriving tangent on the left side.
@@ -100,7 +100,7 @@ package unreal;
 		Args:
 		    new_value (float): Specifies the new arriving tangent weight. Represents the length of the hypotenuse in the form of "sqrt(x*x+y*y)" using the same definitions for x and y as tangents.
 	**/
-	public function set_arrive_tangent_weight(new_value:Dynamic):Void;
+	public function set_arrive_tangent_weight(new_value:Float):Void;
 	/**
 		x.set_interpolation_mode(new_value) -> None
 		Sets the interpolation mode for this key, reflecting it in the owning channel.
@@ -108,7 +108,7 @@ package unreal;
 		Args:
 		    new_value (RichCurveInterpMode): Interpolation mode this key should use to interpolate between this key and the next.
 	**/
-	public function set_interpolation_mode(new_value:Dynamic):Void;
+	public function set_interpolation_mode(new_value:unreal.RichCurveInterpMode):Void;
 	/**
 		x.set_leave_tangent(new_value) -> None
 		If Interpolation Mode is RCIM_Cubic, the leaving tangent at this key.
@@ -116,7 +116,7 @@ package unreal;
 		Args:
 		    new_value (float): Represents the geometric tangents in the form of "tan(y/x)" where y is the key's value and x is the seconds (both relative to key)
 	**/
-	public function set_leave_tangent(new_value:Dynamic):Void;
+	public function set_leave_tangent(new_value:Float):Void;
 	/**
 		x.set_leave_tangent_weight(new_value) -> None
 		If Tangent Weight Mode is RCTWM_WeightedLeave or RCTWM_WeightedBoth, the weight of the leaving tangent on the right side.
@@ -124,7 +124,7 @@ package unreal;
 		Args:
 		    new_value (float): Specifies the new leaving tangent weight. Represents the length of the hypotenuse in the form of "sqrt(x*x+y*y)" using the same definitions for x and y as tangents.
 	**/
-	public function set_leave_tangent_weight(new_value:Dynamic):Void;
+	public function set_leave_tangent_weight(new_value:Float):Void;
 	/**
 		x.set_tangent_mode(new_value) -> None
 		Sets the tangent mode for this key, reflecting it in the owning channel.
@@ -132,7 +132,7 @@ package unreal;
 		Args:
 		    new_value (RichCurveTangentMode): Tangent mode that this key should use to specify which tangent values are respected when evaluating. See ERichCurveTangentMode for more details.
 	**/
-	public function set_tangent_mode(new_value:Dynamic):Void;
+	public function set_tangent_mode(new_value:unreal.RichCurveTangentMode):Void;
 	/**
 		x.set_tangent_weight_mode(new_value) -> None
 		If Interpolation Mode is RCIM_Cubic, the tangent weight mode at this key.
@@ -140,7 +140,7 @@ package unreal;
 		Args:
 		    new_value (RichCurveTangentWeightMode): Specifies which tangent weights should be respected when evaluating the key.
 	**/
-	public function set_tangent_weight_mode(new_value:Dynamic):Void;
+	public function set_tangent_weight_mode(new_value:unreal.RichCurveTangentWeightMode):Void;
 	/**
 		x.set_time(new_frame_number, sub_frame=0.000000, time_unit=SequenceTimeUnit.DISPLAY_RATE) -> None
 		Sets the time for this key in the owning channel. Will replace any key that already exists at that frame number in this channel.
@@ -150,7 +150,7 @@ package unreal;
 		    sub_frame (float): If using Display Rate time, what is the sub-frame this should go to? Clamped [0-1), and ignored with when TimeUnit is set to Tick Resolution.
 		    time_unit (SequenceTimeUnit): Should the NewFrameNumber be interpreted as Display Rate frames or in Tick Resolution?
 	**/
-	public function set_time(new_frame_number:Dynamic, sub_frame:Dynamic, time_unit:Dynamic):Void;
+	public function set_time(new_frame_number:unreal.FrameNumber, sub_frame:Float = 0.000000, ?time_unit:unreal.SequenceTimeUnit):Void;
 	/**
 		x.set_value(new_value) -> None
 		Sets the value for this key, reflecting it in the owning channel.
@@ -158,5 +158,5 @@ package unreal;
 		Args:
 		    new_value (float): The new float value for this key.
 	**/
-	public function set_value(new_value:Dynamic):Void;
+	public function set_value(new_value:Float):Void;
 }

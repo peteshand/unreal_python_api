@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SceneComponent") extern class SceneComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] If RelativeLocation should be considered relative to the world, rather than the parent
 	**/
 	public var absolute_location : Bool;
@@ -184,7 +193,7 @@ package unreal;
 		    scale_rule (DetachmentRule): How to handle scales when detaching.
 		    call_modify (bool): If true, call Modify() on the component and the current attach parent component
 	**/
-	public function detach_from_component(location_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, rotation_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, scale_rule:unreal.DetachmentRule = DetachmentRule.KEEP_RELATIVE, call_modify:Bool = true):Void;
+	public function detach_from_component(?location_rule:unreal.DetachmentRule, ?rotation_rule:unreal.DetachmentRule, ?scale_rule:unreal.DetachmentRule, call_modify:Bool = true):Void;
 	/**
 		x.detach_from_parent(maintain_world_position=False, call_modify=True) -> None
 		Detach from Parent
@@ -361,7 +370,7 @@ package unreal;
 		Returns:
 		    Transform: Socket transform in world space if socket if found. Otherwise it will return component's transform in world space.
 	**/
-	public function get_socket_transform(socket_name:unreal.Name, transform_space:unreal.RelativeTransformSpace = RelativeTransformSpace.RTS_WORLD):unreal.Transform;
+	public function get_socket_transform(socket_name:unreal.Name, ?transform_space:unreal.RelativeTransformSpace):unreal.Transform;
 	/**
 		x.get_up_vector() -> Vector
 		Get the up (Z) unit direction vector from this component, in world space.
@@ -424,7 +433,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function is_simulating_physics(bone_name:unreal.Name = "\"None\""):Bool;
+	public function is_simulating_physics(?bone_name:unreal.Name):Bool;
 	/**
 		x.is_visible() -> bool
 		Returns true if this component is visible in the current context
@@ -446,7 +455,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	public function k2_attach_to(parent:unreal.SceneComponent, socket_name:unreal.Name = "\"None\"", attach_type:unreal.AttachLocation = AttachLocation.KEEP_RELATIVE_OFFSET, weld_simulated_bodies:Bool = true):Bool;
+	public function k2_attach_to(parent:unreal.SceneComponent, ?socket_name:unreal.Name, ?attach_type:unreal.AttachLocation, weld_simulated_bodies:Bool = true):Bool;
 	/**
 		(ComponentMobility):  [Read-Only] How often this component is allowed to move, used to make various optimizations. Only safe to set in constructor.
 	**/
@@ -676,7 +685,7 @@ package unreal;
 		    bool:
 	**/
 	@:deprecated
-	public function snap_to(parent:unreal.SceneComponent, socket_name:unreal.Name = "\"None\""):Bool;
+	public function snap_to(parent:unreal.SceneComponent, ?socket_name:unreal.Name):Bool;
 	/**
 		x.toggle_visibility(propagate_to_children=False) -> None
 		Toggle visibility of the component

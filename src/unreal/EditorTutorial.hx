@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorTutorial") extern class EditorTutorial extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.begin_tutorial(tutorial_to_start, restart) -> None
 		Begin a tutorial. Note that this will end the current tutorial that is in progress, if any
 		

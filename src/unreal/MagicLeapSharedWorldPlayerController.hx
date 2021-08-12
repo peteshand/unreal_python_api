@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapSharedWorldPlayerController") extern class MagicLeapSharedWorldPlayerController extends unreal.PlayerController {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.can_send_local_data_to_server() -> bool
 		Getter to check if the current client can start sending local pins to the server
 		ServerSetLocalWorldData(): 

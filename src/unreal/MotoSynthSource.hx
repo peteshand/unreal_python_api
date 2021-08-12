@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MotoSynthSource") extern class MotoSynthSource extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Whether or not to convert this moto synth source to 8 bit on load to use less memory
 	**/
 	public var convert_to8_bit : Bool;

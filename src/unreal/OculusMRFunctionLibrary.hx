@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "OculusMRFunctionLibrary") extern class OculusMRFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_mrc_scaling_factor() -> float
 		Get the scaling factor for the MRC configuration. Returns 0 if not available.
 		

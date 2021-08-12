@@ -121,7 +121,7 @@ package unreal;
 	/**
 		x.parent_external_window_to_slate(external_window, parent_search_method=SlateParentWindowSearchMethod.ACTIVE_WINDOW) -> None -- parent the given OS specific external window handle to a suitable Slate window
 	**/
-	static public function parent_external_window_to_slate(external_window:Dynamic, parent_search_method:unreal.SlateParentWindowSearchMethod = SlateParentWindowSearchMethod.ACTIVE_WINDOW):Dynamic;
+	static public function parent_external_window_to_slate(external_window:Dynamic, ?parent_search_method:unreal.SlateParentWindowSearchMethod):Dynamic;
 	/**
 		x.purge_object_references(obj, include_inners=True) -> None -- purge all references to the given Unreal object from any living Python objects
 	**/

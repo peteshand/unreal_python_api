@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ReflectionCaptureComponent") extern class ReflectionCaptureComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] A brightness control to scale the captured scene's reflection intensity.
 	**/
 	public var brightness : Float;

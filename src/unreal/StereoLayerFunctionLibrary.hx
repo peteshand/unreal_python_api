@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "StereoLayerFunctionLibrary") extern class StereoLayerFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.enable_auto_loading_splash_screen(auto_show_enabled) -> None
 		Enables/disables splash screen to be automatically shown when LoadMap is called.
 		
@@ -29,7 +38,7 @@ package unreal;
 		    show_on_set (bool):
 	**/
 	@:deprecated
-	static public function set_splash_screen(texture:unreal.Texture, scale:unreal.Vector2D = [1.000000, 1.000000], offset:unreal.Vector = [0.000000, 0.000000, 0.000000], show_loading_movie:Bool = false, show_on_set:Bool = false):Void;
+	static public function set_splash_screen(texture:unreal.Texture, ?scale:unreal.Vector2D, ?offset:unreal.Vector, show_loading_movie:Bool = false, show_on_set:Bool = false):Void;
 	/**
 		X.show_splash_screen() -> None
 		Show the splash screen and override the VR display

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapARPinComponent") extern class MagicLeapARPinComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.attempt_pin_data_restoration() -> bool
 		If BeginPlay() is called before app sets ObjectUID (can happen when
 		component is spawned at runtime or actor that includes this component
@@ -40,7 +49,7 @@ package unreal;
 		    MagicLeapARPinSaveGame: The save game instance associated with this pin instance.
 	**/
 	@:deprecated
-	public function get_pin_data(pin_data_class:Class<Dynamic>):unreal.MagicLeapARPinSaveGame;
+	public function get_pin_data(pin_data_class:Dynamic):unreal.MagicLeapARPinSaveGame;
 	/**
 		x.get_pin_state() -> MagicLeapARPinState or None
 		Returns the state of this Pin.
@@ -107,7 +116,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] The user defined save game class associated with this pin.  Note that this MUST match the type passed into GetPinData().
 	**/
-	public var pin_data_class : Class<Dynamic>;
+	public var pin_data_class : Dynamic;
 	/**
 		x.pin_restored_or_synced() -> bool
 		True if the AR Pin for the unique ID ObjectUID was restored from the app's local storage or was repliated over network.
@@ -190,7 +199,7 @@ package unreal;
 		
 		    out_pin_data_valid (bool):
 	**/
-	public function try_get_pin_data(pin_data_class:Class<Dynamic>):Bool;
+	public function try_get_pin_data(pin_data_class:Dynamic):Bool;
 	/**
 		x.un_pin() -> None
 		Detach or un-pin the currently pinned entity (component) from the real-world.

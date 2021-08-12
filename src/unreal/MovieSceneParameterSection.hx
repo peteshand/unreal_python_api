@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneParameterSection") extern class MovieSceneParameterSection extends unreal.MovieSceneSection {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_bool_parameter_key(parameter_name, time, value) -> None
 		Adds a a key for a specific bool parameter at the specified time with the specified value.
 		

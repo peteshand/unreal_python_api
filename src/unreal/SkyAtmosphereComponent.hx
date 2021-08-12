@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SkyAtmosphereComponent") extern class SkyAtmosphereComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] The distance (kiloneters) at which we start evaluating the aerial pespective.
 		Keeping this value a little away from the camera can help with performance: pixels not affected by the aerial perspective will have their computation skipped using early depth test.
 	**/

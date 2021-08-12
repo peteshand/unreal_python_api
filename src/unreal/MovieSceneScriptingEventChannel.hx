@@ -23,7 +23,7 @@ package unreal;
 		Returns:
 		    MovieSceneScriptingEventKey: The key that was created with the specified values at the specified time.
 	**/
-	public function add_key(time:Dynamic, new_value:Dynamic, sub_frame:Dynamic, time_unit:Dynamic):unreal.MovieSceneScriptingEventKey;
+	public function add_key(time:unreal.FrameNumber, new_value:unreal.MovieSceneEvent, sub_frame:Float = 0.000000, ?time_unit:unreal.SequenceTimeUnit):unreal.MovieSceneScriptingEventKey;
 	/**
 		x.get_keys() -> Array(MovieSceneScriptingKey)
 		Gets all of the keys in this channel.
@@ -31,7 +31,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneScriptingKey): An array of UMovieSceneScriptingEventKey's contained by this channel. Returns all keys even if clipped by the owning section's boundaries or outside of the current sequence play range.
 	**/
-	public function get_keys():Dynamic;
+	public function get_keys():Array<MovieSceneScriptingKey>;
 	/**
 		x.remove_key(key) -> None
 		Removes the specified key. Does nothing if the key is not specified or the key belongs to another channel.
@@ -39,5 +39,5 @@ package unreal;
 		Args:
 		    key (MovieSceneScriptingKey):
 	**/
-	public function remove_key(key:Dynamic):Void;
+	public function remove_key(key:unreal.MovieSceneScriptingKey):Void;
 }

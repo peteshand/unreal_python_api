@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SwitchActor") extern class SwitchActor extends unreal.Actor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_options() -> Array(Actor)
 		Returns the child actors that are available options, in a fixed order that may differ from the one displayed in the world outliner
 		

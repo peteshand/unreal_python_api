@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PoseableMeshComponent") extern class PoseableMeshComponent extends unreal.SkinnedMeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.copy_pose_from_skeletal_component(component_to_copy) -> None
 		Copy Pose from Skeletal Component
 		

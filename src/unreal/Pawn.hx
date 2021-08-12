@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Pawn") extern class Pawn extends unreal.Actor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_controller_pitch_input(val) -> None
 		Add input (affecting Pitch) to the Controller's ControlRotation, if it is a local PlayerController.
 		This value is multiplied by the PlayerController's InputPitchScale value.
@@ -71,7 +80,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Default class to use when pawn is controlled by AI.
 	**/
-	public var ai_controller_class : Class<Dynamic>;
+	public var ai_controller_class : Dynamic;
 	/**
 		(float):  [Read-Write] Base eye height above collision center.
 	**/
@@ -264,7 +273,7 @@ package unreal;
 		    use_noise_maker_location (bool): If true, use the location of the NoiseMaker rather than NoiseLocation.  If false, use NoiseLocation.
 		    noise_maker (Actor): Which actor is the source of the noise.  Not to be confused with the Noise Instigator, which is responsible for the noise (and is the pawn on which this function is called).  If not specified, the pawn instigating the noise will be used as the NoiseMaker
 	**/
-	public function pawn_make_noise(loudness:Float, noise_location:unreal.Vector, use_noise_maker_location:Bool = true, noise_maker:unreal.Actor = null):Void;
+	public function pawn_make_noise(loudness:Float, noise_location:unreal.Vector, use_noise_maker_location:Bool = true, ?noise_maker:unreal.Actor):Void;
 	/**
 		deprecated: 'player_replication_info' was renamed to 'player_state'.
 	**/

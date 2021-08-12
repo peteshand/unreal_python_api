@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapControllerFunctionLibrary") extern class MagicLeapControllerFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_controller_mapping(controller_index) -> ControllerHand or None
 		Returns the hand to which given controller index has been mapped to in the device backend.
 		

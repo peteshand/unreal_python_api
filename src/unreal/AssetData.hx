@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AssetData") extern class AssetData extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Name):  [Read-Only] The name of the asset's class
 	**/
 	public var asset_class : unreal.Name;
@@ -24,7 +33,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_class():Class<Dynamic>;
+	public function get_class():Dynamic;
 	/**
 		x.get_export_text_name() -> str
 		Returns the name for the asset in the form: Class'ObjectPath'

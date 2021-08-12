@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MaterialLibrary") extern class MaterialLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.create_dynamic_material_instance(world_context_object, parent, optional_name="None", creation_flags=MIDCreationFlags.NONE) -> MaterialInstanceDynamic
 		Creates a Dynamic Material Instance which you can modify during gameplay.
 		
@@ -14,7 +23,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	static public function create_dynamic_material_instance(world_context_object:unreal.Object, parent:unreal.MaterialInterface, optional_name:unreal.Name = "\"None\"", creation_flags:unreal.MIDCreationFlags = MIDCreationFlags.NONE):unreal.MaterialInstanceDynamic;
+	static public function create_dynamic_material_instance(world_context_object:unreal.Object, parent:unreal.MaterialInterface, ?optional_name:unreal.Name, ?creation_flags:unreal.MIDCreationFlags):unreal.MaterialInstanceDynamic;
 	/**
 		deprecated: 'create_material_instance_dynamic' was renamed to 'create_dynamic_material_instance'.
 	**/

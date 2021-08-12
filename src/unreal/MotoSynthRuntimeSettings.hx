@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MotoSynthRuntimeSettings") extern class MotoSynthRuntimeSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(int32):  [Read-Write] Number of samples to cross fade grains when on a constant-RPM state. More crossfaded samples can reduce the robotic sound.
 	**/
 	public var grain_crossfade_samples_for_constant_rp_ms : Int;

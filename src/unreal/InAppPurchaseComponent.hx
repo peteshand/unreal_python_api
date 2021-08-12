@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InAppPurchaseComponent") extern class InAppPurchaseComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(InAppPurchaseLogMessage):  [Read-Write] In App Purchase Log Message
 	**/
 	public var app_purchase_log_message : unreal.InAppPurchaseLogMessage;

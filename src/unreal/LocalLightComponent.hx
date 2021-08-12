@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LocalLightComponent") extern class LocalLightComponent extends unreal.LightComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] Bounds the light's visible influence.
 		This clamping of the light's influence is not physically correct but very important for performance, larger lights cost more.
 	**/

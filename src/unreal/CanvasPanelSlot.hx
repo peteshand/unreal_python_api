@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "CanvasPanelSlot") extern class CanvasPanelSlot extends unreal.PanelSlot {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] When AutoSize is true we use the widget's desired size
 	**/
 	public var auto_size : Bool;

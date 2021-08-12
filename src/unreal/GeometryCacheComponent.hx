@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "GeometryCacheComponent") extern class GeometryCacheComponent extends unreal.MeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Only] Duration of the animation (maximum time)
 	**/
 	public var duration : Float;

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PawnAction_BlueprintBase") extern class PawnAction_BlueprintBase extends unreal.PawnAction {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.action_finished(controlled_pawn, with_result) -> None
 		Action Finished
 		

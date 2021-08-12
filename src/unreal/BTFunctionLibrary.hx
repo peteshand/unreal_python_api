@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "BTFunctionLibrary") extern class BTFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.clear_blackboard_value(node_owner, key) -> None
 		Resets indicated value to "not set" value, based on values type
 		
@@ -61,7 +70,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function get_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector):Class<Dynamic>;
+	static public function get_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector):Dynamic;
 	/**
 		X.get_blackboard_value_as_enum(node_owner, key) -> uint8
 		Get Blackboard Value as Enum
@@ -199,7 +208,7 @@ package unreal;
 		    key (BlackboardKeySelector): 
 		    value (type(Class)):
 	**/
-	static public function set_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector, value:Class<Dynamic>):Void;
+	static public function set_blackboard_value_as_class(node_owner:unreal.BTNode, key:unreal.BlackboardKeySelector, value:Dynamic):Void;
 	/**
 		X.set_blackboard_value_as_enum(node_owner, key, value) -> None
 		Set Blackboard Value as Enum

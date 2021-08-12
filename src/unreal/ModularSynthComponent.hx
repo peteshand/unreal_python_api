@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ModularSynthComponent") extern class ModularSynthComponent extends unreal.SynthComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.create_patch(patch_source, patch_cables, enable_by_default) -> PatchId
 		Creates a new modular synth patch between a modulation source and a set of modulation destinations
 		

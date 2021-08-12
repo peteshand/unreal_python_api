@@ -20,7 +20,7 @@ package unreal;
 		Returns:
 		    MovieSceneEventRepeaterSection: The newly created event repeater section
 	**/
-	static public function add_event_repeater_section(track:Dynamic):unreal.MovieSceneEventRepeaterSection;
+	static public function add_event_repeater_section(track:unreal.MovieSceneEventTrack):unreal.MovieSceneEventRepeaterSection;
 	/**
 		X.add_event_trigger_section(track) -> MovieSceneEventTriggerSection
 		Create a new event trigger section for the given track
@@ -31,5 +31,5 @@ package unreal;
 		Returns:
 		    MovieSceneEventTriggerSection: The newly created event trigger section
 	**/
-	static public function add_event_trigger_section(track:Dynamic):unreal.MovieSceneEventTriggerSection;
+	static public function add_event_trigger_section(track:unreal.MovieSceneEventTrack):unreal.MovieSceneEventTriggerSection;
 }

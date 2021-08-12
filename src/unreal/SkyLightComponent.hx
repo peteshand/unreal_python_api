@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SkyLightComponent") extern class SkyLightComponent extends unreal.LightComponentBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Only capture emissive materials. Skips all lighting making the capture cheaper. Recomended when using CaptureEveryFrame
 	**/
 	public var capture_emissive_only : Bool;

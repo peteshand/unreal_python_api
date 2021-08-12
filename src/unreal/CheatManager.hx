@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "CheatManager") extern class CheatManager extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.change_size(f) -> None
 		Scale the player's size to be F * default size.
 		
@@ -20,7 +29,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Debug camera - used to have independent camera without stopping gameplay
 	**/
-	public var debug_camera_controller_class : Class<Dynamic>;
+	public var debug_camera_controller_class : Dynamic;
 	/**
 		x.destroy_target() -> None
 		Destroy the actor you're looking at.

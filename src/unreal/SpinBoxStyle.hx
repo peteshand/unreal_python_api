@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SpinBoxStyle") extern class SpinBoxStyle extends unreal.SlateWidgetStyle {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(SlateBrush):  [Read-Write] Brush used to fill the spinbox when it's active
 	**/
 	public var active_fill_brush : unreal.SlateBrush;

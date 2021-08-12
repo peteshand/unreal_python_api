@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InputKeySelector") extern class InputKeySelector extends unreal.Widget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] When true gamepad keys are allowed in the input chord representing the selected key, otherwise they are ignored.
 	**/
 	public var allow_gamepad_keys : Bool;

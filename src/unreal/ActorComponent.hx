@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ActorComponent") extern class ActorComponent extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.activate(reset=False) -> None
 		Activates the SceneComponent, should be overridden by native child classes.
 		

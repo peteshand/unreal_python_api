@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EnvQueryInstanceBlueprintWrapper") extern class EnvQueryInstanceBlueprintWrapper extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_item_score(item_index) -> float
 		Get Item Score
 		
@@ -55,7 +64,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Item Type
 	**/
-	public var item_type : Class<Dynamic>;
+	public var item_type : Dynamic;
 	/**
 		(EQSQueryDoneSignature):  [Read-Write] On Query Finished Event
 	**/

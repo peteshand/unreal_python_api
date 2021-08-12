@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "GaussianSumBloomSettings") extern class GaussianSumBloomSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] Diameter size for the Bloom1 in percent of the screen width
 		(is done in 1/2 resolution, larger values cost more performance, good for high frequency details)
 		>=0: can be clamped because of shader limitations

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MediaPlayer") extern class MediaPlayer extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Whether this player should stop when entering or exiting PIE.
 	**/
 	public var affected_by_pie_handling : Bool;

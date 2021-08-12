@@ -31,7 +31,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack): An array containing any tracks that are exactly the same as the type specified
 	**/
-	public function find_tracks_by_exact_type(track_type:Dynamic):Dynamic;
+	public function find_tracks_by_exact_type(track_type:Dynamic):Array<MovieSceneTrack>;
 	/**
 		x.find_tracks_by_type(track_type) -> Array(MovieSceneTrack)
 		Find all tracks within a given binding of the specified type
@@ -42,7 +42,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack): An array containing any tracks that match the type specified
 	**/
-	public function find_tracks_by_type(track_type:Dynamic):Dynamic;
+	public function find_tracks_by_type(track_type:Dynamic):Array<MovieSceneTrack>;
 	/**
 		x.get_child_possessables() -> Array(SequencerBindingProxy)
 		Get all the children of this binding
@@ -50,7 +50,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBindingProxy): An array containing all the binding's children
 	**/
-	public function get_child_possessables():Dynamic;
+	public function get_child_possessables():Array<SequencerBindingProxy>;
 	/**
 		x.get_display_name() -> Text
 		Get this binding's name
@@ -106,7 +106,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack): An array containing all the binding's tracks
 	**/
-	public function get_tracks():Dynamic;
+	public function get_tracks():Array<MovieSceneTrack>;
 	/**
 		x.is_valid() -> bool
 		Check whether the specified binding is valid
@@ -122,7 +122,7 @@ package unreal;
 		Args:
 		    destination_binding_id (SequencerBindingProxy): The identifier of the binding ID to move the contents to
 	**/
-	public function move_binding_contents(destination_binding_id:Dynamic):Void;
+	public function move_binding_contents(destination_binding_id:unreal.SequencerBindingProxy):Void;
 	/**
 		x.remove() -> None
 		Remove the specified binding
@@ -135,7 +135,7 @@ package unreal;
 		Args:
 		    track_to_remove (MovieSceneTrack): The track to remove
 	**/
-	public function remove_track(track_to_remove:Dynamic):Void;
+	public function remove_track(track_to_remove:unreal.MovieSceneTrack):Void;
 	/**
 		(MovieSceneSequence):  [Read-Only] Sequence
 	**/
@@ -147,7 +147,7 @@ package unreal;
 		Args:
 		    display_name (Text):
 	**/
-	public function set_display_name(display_name:Dynamic):Void;
+	public function set_display_name(display_name:unreal.Text):Void;
 	/**
 		x.set_name(name) -> None
 		Set this binding's object non-display name
@@ -155,7 +155,7 @@ package unreal;
 		Args:
 		    name (str): The name of the binding
 	**/
-	public function set_name(name:Dynamic):Void;
+	public function set_name(name:String):Void;
 	/**
 		x.set_parent(parent_binding) -> None
 		Set the parent to this binding
@@ -163,5 +163,5 @@ package unreal;
 		Args:
 		    parent_binding (SequencerBindingProxy): The parent to set the InBinding to
 	**/
-	public function set_parent(parent_binding:Dynamic):Void;
+	public function set_parent(parent_binding:unreal.SequencerBindingProxy):Void;
 }

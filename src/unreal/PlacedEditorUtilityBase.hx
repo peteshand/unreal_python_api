@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PlacedEditorUtilityBase") extern class PlacedEditorUtilityBase extends unreal.Actor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.clear_actor_selection_set() -> None
 		Remove all actors from the selection set
 	**/

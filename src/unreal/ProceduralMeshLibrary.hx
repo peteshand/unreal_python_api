@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ProceduralMeshLibrary") extern class ProceduralMeshLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.calculate_tangents_for_mesh(vertices, triangles, u_vs) -> (normals=Array(Vector), tangents=Array(ProcMeshTangent))
 		Automatically generate normals and tangent vectors for a mesh
 		UVs are required for correct tangent generation.

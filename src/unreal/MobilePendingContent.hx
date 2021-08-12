@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MobilePendingContent") extern class MobilePendingContent extends unreal.MobileInstalledContent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_download_size() -> float
 		Get the total download size for this content installation
 		

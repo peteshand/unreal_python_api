@@ -21,7 +21,7 @@ package unreal;
 		Returns:
 		    bool: True if the addition is successful
 	**/
-	static public function add_child_folder(target_folder:Dynamic, folder_to_add:Dynamic):Bool;
+	static public function add_child_folder(target_folder:unreal.MovieSceneFolder, folder_to_add:unreal.MovieSceneFolder):Bool;
 	/**
 		X.add_child_master_track(folder, master_track) -> bool
 		Add a master track to this folder
@@ -33,7 +33,7 @@ package unreal;
 		Returns:
 		    bool: True if the addition is successful
 	**/
-	static public function add_child_master_track(folder:Dynamic, master_track:Dynamic):Bool;
+	static public function add_child_master_track(folder:unreal.MovieSceneFolder, master_track:unreal.MovieSceneTrack):Bool;
 	/**
 		X.add_child_object_binding(folder, object_binding) -> bool
 		Add a guid for an object binding to this folder
@@ -45,7 +45,7 @@ package unreal;
 		Returns:
 		    bool: True if the addition is successful
 	**/
-	static public function add_child_object_binding(folder:Dynamic, object_binding:Dynamic):Bool;
+	static public function add_child_object_binding(folder:unreal.MovieSceneFolder, object_binding:unreal.SequencerBindingProxy):Bool;
 	/**
 		X.get_child_folders(folder) -> Array(MovieSceneFolder)
 		Get the child folders of a given folder
@@ -56,7 +56,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneFolder): The child folders associated with the given folder
 	**/
-	static public function get_child_folders(folder:Dynamic):Dynamic;
+	static public function get_child_folders(folder:unreal.MovieSceneFolder):Array<MovieSceneFolder>;
 	/**
 		X.get_child_master_tracks(folder) -> Array(MovieSceneTrack)
 		Get the master tracks contained by this folder
@@ -67,7 +67,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneTrack): The master tracks under the given folder
 	**/
-	static public function get_child_master_tracks(folder:Dynamic):Dynamic;
+	static public function get_child_master_tracks(folder:unreal.MovieSceneFolder):Array<MovieSceneTrack>;
 	/**
 		X.get_child_object_bindings(folder) -> Array(SequencerBindingProxy)
 		Get the object bindings contained by this folder
@@ -78,7 +78,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBindingProxy): The object bindings under the given folder
 	**/
-	static public function get_child_object_bindings(folder:Dynamic):Dynamic;
+	static public function get_child_object_bindings(folder:unreal.MovieSceneFolder):Array<SequencerBindingProxy>;
 	/**
 		X.get_folder_color(folder) -> Color
 		Get the display color of the given folder
@@ -89,7 +89,7 @@ package unreal;
 		Returns:
 		    Color: The display color of the given folder
 	**/
-	static public function get_folder_color(folder:Dynamic):unreal.Color;
+	static public function get_folder_color(folder:unreal.MovieSceneFolder):unreal.Color;
 	/**
 		X.get_folder_name(folder) -> Name
 		Get the given folder's display name
@@ -100,7 +100,7 @@ package unreal;
 		Returns:
 		    Name: The target folder's name
 	**/
-	static public function get_folder_name(folder:Dynamic):unreal.Name;
+	static public function get_folder_name(folder:unreal.MovieSceneFolder):unreal.Name;
 	/**
 		X.remove_child_folder(target_folder, folder_to_remove) -> bool
 		Remove a child folder from the given folder
@@ -112,7 +112,7 @@ package unreal;
 		Returns:
 		    bool: True if the removal succeeds
 	**/
-	static public function remove_child_folder(target_folder:Dynamic, folder_to_remove:Dynamic):Bool;
+	static public function remove_child_folder(target_folder:unreal.MovieSceneFolder, folder_to_remove:unreal.MovieSceneFolder):Bool;
 	/**
 		X.remove_child_master_track(folder, master_track) -> bool
 		Remove a master track from the given folder
@@ -124,7 +124,7 @@ package unreal;
 		Returns:
 		    bool: True if the removal succeeds
 	**/
-	static public function remove_child_master_track(folder:Dynamic, master_track:Dynamic):Bool;
+	static public function remove_child_master_track(folder:unreal.MovieSceneFolder, master_track:unreal.MovieSceneTrack):Bool;
 	/**
 		X.remove_child_object_binding(folder, object_binding) -> bool
 		Remove an object binding from the given folder
@@ -136,7 +136,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds
 	**/
-	static public function remove_child_object_binding(folder:Dynamic, object_binding:Dynamic):Bool;
+	static public function remove_child_object_binding(folder:unreal.MovieSceneFolder, object_binding:unreal.SequencerBindingProxy):Bool;
 	/**
 		X.set_folder_color(folder, folder_color) -> bool
 		Set the display color of the given folder
@@ -148,7 +148,7 @@ package unreal;
 		Returns:
 		    bool: True if the folder's display color is set successfully
 	**/
-	static public function set_folder_color(folder:Dynamic, folder_color:Dynamic):Bool;
+	static public function set_folder_color(folder:unreal.MovieSceneFolder, folder_color:unreal.Color):Bool;
 	/**
 		X.set_folder_name(folder, folder_name) -> bool
 		Set the name of the given folder
@@ -160,5 +160,5 @@ package unreal;
 		Returns:
 		    bool: True if the setting of the folder name succeeds
 	**/
-	static public function set_folder_name(folder:Dynamic, folder_name:Dynamic):Bool;
+	static public function set_folder_name(folder:unreal.MovieSceneFolder, folder_name:unreal.Name):Bool;
 }

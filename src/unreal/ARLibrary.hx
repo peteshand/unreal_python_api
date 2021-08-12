@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ARLibrary") extern class ARLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_manual_environment_capture_probe(location, extent) -> bool
 		Adds an environment capture probe to the ar world
 		
@@ -88,7 +97,7 @@ package unreal;
 		    scale (float): 
 		    persist_for_seconds (float):
 	**/
-	static public function debug_draw_pin(ar_pin:unreal.ARPin, world_context_object:unreal.Object, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], scale:Float = 5.000000, persist_for_seconds:Float = 0.000000):Void;
+	static public function debug_draw_pin(ar_pin:unreal.ARPin, world_context_object:unreal.Object, ?color:unreal.LinearColor, scale:Float = 5.000000, persist_for_seconds:Float = 0.000000):Void;
 	/**
 		X.debug_draw_tracked_geometry(tracked_geometry, world_context_object, color=[0.000000, 0.000000, 0.000000, 0.000000], outline_thickness=5.000000, persist_for_seconds=0.000000) -> None
 		Given some real-world geometry being tracked by the Augmented Reality system, draw it on the screen for debugging purposes (rudimentary)
@@ -100,7 +109,7 @@ package unreal;
 		    outline_thickness (float): 
 		    persist_for_seconds (float):
 	**/
-	static public function debug_draw_tracked_geometry(tracked_geometry:unreal.ARTrackedGeometry, world_context_object:unreal.Object, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], outline_thickness:Float = 5.000000, persist_for_seconds:Float = 0.000000):Void;
+	static public function debug_draw_tracked_geometry(tracked_geometry:unreal.ARTrackedGeometry, world_context_object:unreal.Object, ?color:unreal.LinearColor, outline_thickness:Float = 5.000000, persist_for_seconds:Float = 0.000000):Void;
 	/**
 		X.find_tracked_points_by_name(point_name) -> Array(ARTrackedPoint)
 		
@@ -138,7 +147,7 @@ package unreal;
 		Returns:
 		    Array(ARTrackedGeometry): a list of all the real-world geometry of the specified class as currently seen by the Augmented Reality system
 	**/
-	static public function get_all_geometries_by_class(geometry_class:Class<Dynamic>):Array<ARTrackedGeometry>;
+	static public function get_all_geometries_by_class(geometry_class:Dynamic):Array<ARTrackedGeometry>;
 	/**
 		X.get_all_pins() -> Array(ARPin)
 		Get a list of all the \c UARPin objects that the Augmented Reality session is currently using to connect virtual objects to real-world, tracked locations.
@@ -498,7 +507,7 @@ package unreal;
 		Returns:
 		    ARPin: an object representing the pin that connects \c ComponentToPin component to a real-world location and optionally to the \c TrackedGeometry.
 	**/
-	static public function pin_component(component_to_pin:unreal.SceneComponent, pin_to_world_transform:unreal.Transform, tracked_geometry:unreal.ARTrackedGeometry = null, debug_name:unreal.Name = "\"None\""):unreal.ARPin;
+	static public function pin_component(component_to_pin:unreal.SceneComponent, pin_to_world_transform:unreal.Transform, ?tracked_geometry:unreal.ARTrackedGeometry, ?debug_name:unreal.Name):unreal.ARPin;
 	/**
 		X.pin_component_to_ar_pin(component_to_pin, pin) -> bool
 		Associate a component with an ARPin, so that its transform will be updated by the pin.  Any previously associated component will be detached.
@@ -524,7 +533,7 @@ package unreal;
 		Returns:
 		    ARPin:
 	**/
-	static public function pin_component_to_trace_result(component_to_pin:unreal.SceneComponent, trace_result:unreal.ARTraceResult, debug_name:unreal.Name = "\"None\""):unreal.ARPin;
+	static public function pin_component_to_trace_result(component_to_pin:unreal.SceneComponent, trace_result:unreal.ARTraceResult, ?debug_name:unreal.Name):unreal.ARPin;
 	/**
 		X.remove_all_ar_pins_from_local_store() -> None
 		Remove all ARPins from the local store

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AISense_Blueprint") extern class AISense_Blueprint extends unreal.AISense {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_all_listener_actors() -> Array(Actor)
 		Get All Listener Actors
 		
@@ -28,7 +37,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Listener Data Type
 	**/
-	public var listener_data_type : Class<Dynamic>;
+	public var listener_data_type : Dynamic;
 	/**
 		x.on_listener_registered(actor_listener, perception_component) -> None
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AssetEditorSubsystem") extern class AssetEditorSubsystem extends unreal.EditorSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.close_all_editors_for_asset(asset) -> int32
 		Close all active editors for the supplied asset and return the number of asset editors that were closed
 		

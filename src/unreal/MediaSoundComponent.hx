@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MediaSoundComponent") extern class MediaSoundComponent extends unreal.SynthComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_attenuation_settings_to_apply() -> SoundAttenuationSettings or None
 		Get the attenuation settings based on the current component settings.
 		
@@ -86,5 +95,5 @@ package unreal;
 		    frequencies_to_analyze (Array(float)): 
 		    fft_size (MediaSoundComponentFFTSize):
 	**/
-	public function set_spectral_analysis_settings(frequencies_to_analyze:Array<Float>, fft_size:unreal.MediaSoundComponentFFTSize = MediaSoundComponentFFTSize.MEDIUM_512):Void;
+	public function set_spectral_analysis_settings(frequencies_to_analyze:Array<Float>, ?fft_size:unreal.MediaSoundComponentFFTSize):Void;
 }

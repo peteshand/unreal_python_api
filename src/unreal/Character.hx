@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Character") extern class Character extends unreal.Pawn {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.cache_initial_mesh_offset(mesh_relative_location, mesh_relative_rotation) -> None
 		Cache mesh offset from capsule. This is used as the target for network smoothing interpolation, when the mesh is offset with lagged smoothing.
 		This is automatically called during initialization; call this at runtime if you intend to change the default mesh offset from the capsule.
@@ -309,7 +318,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function play_anim_montage(anim_montage:unreal.AnimMontage, play_rate:Float = 1.000000, start_section_name:unreal.Name = "\"None\""):Float;
+	public function play_anim_montage(anim_montage:unreal.AnimMontage, play_rate:Float = 1.000000, ?start_section_name:unreal.Name):Float;
 	/**
 		(bool):  [Read-Only] When true, player wants to jump
 	**/
@@ -325,7 +334,7 @@ package unreal;
 		Args:
 		    anim_montage (AnimMontage):
 	**/
-	public function stop_anim_montage(anim_montage:unreal.AnimMontage = null):Void;
+	public function stop_anim_montage(?anim_montage:unreal.AnimMontage):Void;
 	/**
 		x.stop_jumping() -> None
 		Stop the character from jumping on the next update.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneMediaSection") extern class MovieSceneMediaSection extends unreal.MovieSceneSection {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(MediaPlayer):  [Read-Write] The external media player this track should control.
 	**/
 	public var external_media_player : unreal.MediaPlayer;

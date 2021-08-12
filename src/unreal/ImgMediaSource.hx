@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ImgMediaSource") extern class ImgMediaSource extends unreal.BaseMediaSource {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(FrameRate):  [Read-Write] Overrides the default frame rate stored in the image files (0/0 = do not override).
 	**/
 	public var frame_rate_override : unreal.FrameRate;

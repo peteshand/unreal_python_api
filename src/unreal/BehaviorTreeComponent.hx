@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "BehaviorTreeComponent") extern class BehaviorTreeComponent extends unreal.BrainComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_cooldown_tag_duration(cooldown_tag, cooldown_duration, add_to_existing_duration) -> None
 		add to the cooldown tag's duration
 		

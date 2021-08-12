@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AutomatedAssetImportData") extern class AutomatedAssetImportData extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(str):  [Read-Write] Content path in the projects content directory where assets will be imported
 	**/
 	public var destination_path : String;

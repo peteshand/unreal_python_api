@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ListViewBase") extern class ListViewBase extends unreal.Widget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(OnListEntryGeneratedDynamic):  [Read-Write] Called when a row widget is generated for a list item
 	**/
 	public var bp_on_entry_generated : unreal.OnListEntryGeneratedDynamic;
@@ -16,7 +25,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The type of widget to create for each entry displayed in the list.
 	**/
-	public var entry_widget_class : Class<Dynamic>;
+	public var entry_widget_class : Dynamic;
 	/**
 		x.get_displayed_entry_widgets() -> Array(UserWidget)
 		Gets all of the list entry widgets currently being displayed by the list

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PaperTileSet") extern class PaperTileSet extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(IntMargin):  [Read-Only] The amount of padding around the border of the tile sheet (in pixels)
 	**/
 	public var border_margin : unreal.IntMargin;

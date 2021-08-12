@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ProceduralFoliageComponent") extern class ProceduralFoliageComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Whether to place foliage on BSP
 	**/
 	public var allow_bsp : Bool;

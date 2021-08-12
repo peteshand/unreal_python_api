@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LandscapeComponent") extern class LandscapeComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.editor_get_paint_layer_weight_at_location(location, paint_layer) -> float
 		Gets the landscape paint layer weight value at the given position using LandscapeLayerInfo . Returns 0 in case it fails.
 		

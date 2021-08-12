@@ -30,7 +30,7 @@ package unreal;
 		Returns:
 		    MovieSceneEvent: The created movie event. See: CreateQuickBinding
 	**/
-	static public function create_event(sequence:Dynamic, section:Dynamic, endpoint:Dynamic, payload:Dynamic):unreal.MovieSceneEvent;
+	static public function create_event(sequence:unreal.MovieSceneSequence, section:unreal.MovieSceneEventSectionBase, endpoint:unreal.SequencerQuickBindingResult, payload:Array<String>):unreal.MovieSceneEvent;
 	/**
 		X.create_quick_binding(sequence, object, function_name, call_in_editor) -> SequencerQuickBindingResult
 		Create a quick binding to an actor's member method to be used in an event sequence.
@@ -44,7 +44,7 @@ package unreal;
 		Returns:
 		    SequencerQuickBindingResult: The created binding.
 	**/
-	static public function create_quick_binding(sequence:Dynamic, object:Dynamic, function_name:Dynamic, call_in_editor:Dynamic):unreal.SequencerQuickBindingResult;
+	static public function create_quick_binding(sequence:unreal.MovieSceneSequence, object:unreal.Object, function_name:String, call_in_editor:Bool):unreal.SequencerQuickBindingResult;
 	/**
 		X.export_anim_sequence(world, sequence, anim_sequence, export_option, binding) -> bool
 		* Export Passed in Binding as an Anim Seqquence.
@@ -67,7 +67,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function export_anim_sequence(world:Dynamic, sequence:Dynamic, anim_sequence:Dynamic, export_option:Dynamic, binding:Dynamic):Bool;
+	static public function export_anim_sequence(world:unreal.World, sequence:unreal.LevelSequence, anim_sequence:unreal.AnimSequence, export_option:unreal.AnimSeqExportOption, binding:unreal.SequencerBindingProxy):Bool;
 	/**
 		X.export_fbx(world, sequence, bindings, override_options, fbx_file_name) -> bool
 		* Export Passed in Bindings to FBX
@@ -88,7 +88,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function export_fbx(world:Dynamic, sequence:Dynamic, bindings:Dynamic, override_options:Dynamic, fbx_file_name:Dynamic):Bool;
+	static public function export_fbx(world:unreal.World, sequence:unreal.LevelSequence, bindings:Array<SequencerBindingProxy>, override_options:unreal.FbxExportOption, fbx_file_name:String):Bool;
 	/**
 		X.get_bound_objects(world, sequence, bindings, range) -> Array(SequencerBoundObjects)
 		* Retrieve all objects currently bound to the specified binding identifiers. The sequence will be evaluated in lower bound of the specified range,
@@ -103,7 +103,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBoundObjects):
 	**/
-	static public function get_bound_objects(world:Dynamic, sequence:Dynamic, bindings:Dynamic, range:Dynamic):Dynamic;
+	static public function get_bound_objects(world:unreal.World, sequence:unreal.LevelSequence, bindings:Array<SequencerBindingProxy>, range:unreal.SequencerScriptingRange):Array<SequencerBoundObjects>;
 	/**
 		X.get_object_bindings(world, sequence, object, range) -> Array(SequencerBoundObjects)
 		* Get the object bindings for the requested object. The sequence will be evaluated in lower bound of the specified range,
@@ -118,7 +118,7 @@ package unreal;
 		Returns:
 		    Array(SequencerBoundObjects):
 	**/
-	static public function get_object_bindings(world:Dynamic, sequence:Dynamic, object:Dynamic, range:Dynamic):Dynamic;
+	static public function get_object_bindings(world:unreal.World, sequence:unreal.LevelSequence, object:Array<Object>, range:unreal.SequencerScriptingRange):Array<SequencerBoundObjects>;
 	/**
 		X.import_fbx(world, sequence, bindings, import_fbx_settings, import_filename) -> bool
 		* Import Passed in Bindings to FBX
@@ -140,7 +140,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function import_fbx(world:Dynamic, sequence:Dynamic, bindings:Dynamic, import_fbx_settings:Dynamic, import_filename:Dynamic):Bool;
+	static public function import_fbx(world:unreal.World, sequence:unreal.LevelSequence, bindings:Array<SequencerBindingProxy>, import_fbx_settings:unreal.MovieSceneUserImportFBXSettings, import_filename:String):Bool;
 	/**
 		X.import_fbx_to_control_rig(world, sequence, actor_with_control_rig_track, selected_control_rig_names, import_fbx_control_rig_settings, import_filename) -> bool
 		* Import FBX onto a control rig with the specified track name
@@ -164,7 +164,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function import_fbx_to_control_rig(world:Dynamic, sequence:Dynamic, actor_with_control_rig_track:Dynamic, selected_control_rig_names:Dynamic, import_fbx_control_rig_settings:Dynamic, import_filename:Dynamic):Bool;
+	static public function import_fbx_to_control_rig(world:unreal.World, sequence:unreal.LevelSequence, actor_with_control_rig_track:String, selected_control_rig_names:Array<String>, import_fbx_control_rig_settings:unreal.MovieSceneUserImportFBXControlRigSettings, import_filename:String):Bool;
 	/**
 		X.is_event_endpoint_valid(endpoint) -> bool
 		Check if an endpoint is valid and can be used to create movie scene event.
@@ -175,7 +175,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_event_endpoint_valid(endpoint:Dynamic):Bool;
+	static public function is_event_endpoint_valid(endpoint:unreal.SequencerQuickBindingResult):Bool;
 	/**
 		X.is_rendering_movie() -> bool
 		Returns if Render to Movie is currently in progress.
@@ -197,5 +197,5 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function render_movie(capture_settings:Dynamic, on_finished_callback:Dynamic):Bool;
+	static public function render_movie(capture_settings:unreal.MovieSceneCapture, on_finished_callback:unreal.OnRenderMovieStopped):Bool;
 }

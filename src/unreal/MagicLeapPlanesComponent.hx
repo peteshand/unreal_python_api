@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapPlanesComponent") extern class MagicLeapPlanesComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(int32):  [Read-Write] The maximum number of planes that should be returned in the result.
 	**/
 	public var max_results : Int;

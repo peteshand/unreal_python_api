@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LuminARSessionFunctionLibrary") extern class LuminARSessionFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.start_lumin_ar_session(world_context_object, latent_info, configuration) -> None
 		Starts a new LuminAR tracking session LuminAR specific configuration.
 		If the session already started and the config isn't the same, it will stop the previous session and start a new session with the new config.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PrimitiveComponent") extern class PrimitiveComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_angular_impulse(impulse, bone_name="None", vel_change=False) -> None
 		Add Angular Impulse
 		deprecated: Use AddAngularImpulseInRadians instead
@@ -12,7 +21,7 @@ package unreal;
 		    vel_change (bool):
 	**/
 	@:deprecated
-	public function add_angular_impulse(impulse:unreal.Vector, bone_name:unreal.Name = "\"None\"", vel_change:Bool = false):Void;
+	public function add_angular_impulse(impulse:unreal.Vector, ?bone_name:unreal.Name, vel_change:Bool = false):Void;
 	/**
 		x.add_angular_impulse_in_degrees(impulse, bone_name="None", vel_change=False) -> None
 		Add an angular impulse to a single rigid body. Good for one time instant burst.
@@ -22,7 +31,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply angular impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in angular velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_angular_impulse_in_degrees(impulse:unreal.Vector, bone_name:unreal.Name = "\"None\"", vel_change:Bool = false):Void;
+	public function add_angular_impulse_in_degrees(impulse:unreal.Vector, ?bone_name:unreal.Name, vel_change:Bool = false):Void;
 	/**
 		x.add_angular_impulse_in_radians(impulse, bone_name="None", vel_change=False) -> None
 		Add an angular impulse to a single rigid body. Good for one time instant burst.
@@ -32,7 +41,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply angular impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in angular velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_angular_impulse_in_radians(impulse:unreal.Vector, bone_name:unreal.Name = "\"None\"", vel_change:Bool = false):Void;
+	public function add_angular_impulse_in_radians(impulse:unreal.Vector, ?bone_name:unreal.Name, vel_change:Bool = false):Void;
 	/**
 		x.add_force(force, bone_name="None", accel_change=False) -> None
 		Add a force to a single rigid body.
@@ -43,7 +52,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 		    accel_change (bool): If true, Force is taken as a change in acceleration instead of a physical force (i.e. mass will have no effect).
 	**/
-	public function add_force(force:unreal.Vector, bone_name:unreal.Name = "\"None\"", accel_change:Bool = false):Void;
+	public function add_force(force:unreal.Vector, ?bone_name:unreal.Name, accel_change:Bool = false):Void;
 	/**
 		x.add_force_at_location(force, location, bone_name="None") -> None
 		Add a force to a single rigid body at a particular location in world space.
@@ -54,7 +63,7 @@ package unreal;
 		    location (Vector): Location to apply force, in world space.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 	**/
-	public function add_force_at_location(force:unreal.Vector, location:unreal.Vector, bone_name:unreal.Name = "\"None\""):Void;
+	public function add_force_at_location(force:unreal.Vector, location:unreal.Vector, ?bone_name:unreal.Name):Void;
 	/**
 		x.add_force_at_location_local(force, location, bone_name="None") -> None
 		Add a force to a single rigid body at a particular location. Both Force and Location should be in body space.
@@ -65,7 +74,7 @@ package unreal;
 		    location (Vector): Location to apply force, in component space.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply force to. 'None' indicates root body.
 	**/
-	public function add_force_at_location_local(force:unreal.Vector, location:unreal.Vector, bone_name:unreal.Name = "\"None\""):Void;
+	public function add_force_at_location_local(force:unreal.Vector, location:unreal.Vector, ?bone_name:unreal.Name):Void;
 	/**
 		deprecated: 'add_force_at_position' was renamed to 'add_force_at_location'.
 	**/
@@ -80,7 +89,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply impulse to. 'None' indicates root body.
 		    vel_change (bool): If true, the Strength is taken as a change in velocity instead of an impulse (ie. mass will have no effect).
 	**/
-	public function add_impulse(impulse:unreal.Vector, bone_name:unreal.Name = "\"None\"", vel_change:Bool = false):Void;
+	public function add_impulse(impulse:unreal.Vector, ?bone_name:unreal.Name, vel_change:Bool = false):Void;
 	/**
 		x.add_impulse_at_location(impulse, location, bone_name="None") -> None
 		Add an impulse to a single rigid body at a specific location.
@@ -90,7 +99,7 @@ package unreal;
 		    location (Vector): Point in world space to apply impulse at.
 		    bone_name (Name): If a SkeletalMeshComponent, name of bone to apply impulse to. 'None' indicates root body.
 	**/
-	public function add_impulse_at_location(impulse:unreal.Vector, location:unreal.Vector, bone_name:unreal.Name = "\"None\""):Void;
+	public function add_impulse_at_location(impulse:unreal.Vector, location:unreal.Vector, ?bone_name:unreal.Name):Void;
 	/**
 		deprecated: 'add_impulse_at_position' was renamed to 'add_impulse_at_location'.
 	**/
@@ -131,7 +140,7 @@ package unreal;
 		    accel_change (bool):
 	**/
 	@:deprecated
-	public function add_torque(torque:unreal.Vector, bone_name:unreal.Name = "\"None\"", accel_change:Bool = false):Void;
+	public function add_torque(torque:unreal.Vector, ?bone_name:unreal.Name, accel_change:Bool = false):Void;
 	/**
 		x.add_torque_in_degrees(torque, bone_name="None", accel_change=False) -> None
 		Add a torque to a single rigid body.
@@ -141,7 +150,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply torque to. 'None' indicates root body.
 		    accel_change (bool): If true, Torque is taken as a change in angular acceleration instead of a physical torque (i.e. mass will have no effect).
 	**/
-	public function add_torque_in_degrees(torque:unreal.Vector, bone_name:unreal.Name = "\"None\"", accel_change:Bool = false):Void;
+	public function add_torque_in_degrees(torque:unreal.Vector, ?bone_name:unreal.Name, accel_change:Bool = false):Void;
 	/**
 		x.add_torque_in_radians(torque, bone_name="None", accel_change=False) -> None
 		Add a torque to a single rigid body.
@@ -151,7 +160,7 @@ package unreal;
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to apply torque to. 'None' indicates root body.
 		    accel_change (bool): If true, Torque is taken as a change in angular acceleration instead of a physical torque (i.e. mass will have no effect).
 	**/
-	public function add_torque_in_radians(torque:unreal.Vector, bone_name:unreal.Name = "\"None\"", accel_change:Bool = false):Void;
+	public function add_torque_in_radians(torque:unreal.Vector, ?bone_name:unreal.Name, accel_change:Bool = false):Void;
 	/**
 		(bool):  [Read-Only] Controls whether the primitive should affect dynamic distance field lighting methods.  This flag is only used if CastShadow is true. *
 	**/
@@ -346,7 +355,7 @@ package unreal;
 		Returns:
 		    MaterialInstanceDynamic:
 	**/
-	public function create_dynamic_material_instance(element_index:Int, source_material:unreal.MaterialInterface = null, optional_name:unreal.Name = "\"None\""):unreal.MaterialInstanceDynamic;
+	public function create_dynamic_material_instance(element_index:Int, ?source_material:unreal.MaterialInterface, ?optional_name:unreal.Name):unreal.MaterialInstanceDynamic;
 	/**
 		(int32):  [Read-Only] Optionally write this 0-255 value to the stencil buffer in CustomDepth pass (Requires project setting or r.CustomDepth == 3)
 	**/
@@ -394,7 +403,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_center_of_mass(bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_center_of_mass(?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_closest_point_on_collision(point, bone_name="None") -> (float, out_point_on_body=Vector)
 		Returns the distance and closest point to the collision surface.
@@ -409,7 +418,7 @@ package unreal;
 		
 		    out_point_on_body (Vector): Point on the surface of collision closest to Point
 	**/
-	public function get_closest_point_on_collision(point:unreal.Vector, bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_closest_point_on_collision(point:unreal.Vector, ?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_collision_enabled() -> CollisionEnabled
 		Returns the form of collision for this component
@@ -455,7 +464,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_inertia_tensor(bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_inertia_tensor(?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_linear_damping() -> float
 		Returns the linear damping of this component.
@@ -482,7 +491,7 @@ package unreal;
 		Returns:
 		    float:
 	**/
-	public function get_mass_scale(bone_name:unreal.Name = "\"None\""):Float;
+	public function get_mass_scale(?bone_name:unreal.Name):Float;
 	/**
 		x.get_material(element_index) -> MaterialInterface
 		Returns the material used by the element at the specified index
@@ -532,7 +541,7 @@ package unreal;
 		
 		    overlapping_actors (Array(Actor)): [out] Returned list of overlapping actors
 	**/
-	public function get_overlapping_actors(class_filter:Class<Dynamic> = null):Array<Actor>;
+	public function get_overlapping_actors(?class_filter:Dynamic):Array<Actor>;
 	/**
 		x.get_overlapping_components() -> Array(PrimitiveComponent)
 		Returns unique list of components this component is overlapping.
@@ -555,7 +564,7 @@ package unreal;
 		    Vector:
 	**/
 	@:deprecated
-	public function get_physics_angular_velocity(bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_physics_angular_velocity(?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_angular_velocity_in_degrees(bone_name="None") -> Vector
 		Get the angular velocity of a single body, in degrees per second.
@@ -566,7 +575,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity_in_degrees(bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_physics_angular_velocity_in_degrees(?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_angular_velocity_in_radians(bone_name="None") -> Vector
 		Get the angular velocity of a single body, in radians per second.
@@ -577,7 +586,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_angular_velocity_in_radians(bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_physics_angular_velocity_in_radians(?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_linear_velocity(bone_name="None") -> Vector
 		Get the linear velocity of a single body.
@@ -588,7 +597,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_linear_velocity(bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_physics_linear_velocity(?bone_name:unreal.Name):unreal.Vector;
 	/**
 		x.get_physics_linear_velocity_at_point(point, bone_name="None") -> Vector
 		Get the linear velocity of a point on a single body.
@@ -600,7 +609,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function get_physics_linear_velocity_at_point(point:unreal.Vector, bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function get_physics_linear_velocity_at_point(point:unreal.Vector, ?bone_name:unreal.Name):unreal.Vector;
 	/**
 		deprecated: 'get_rb_angular_velocity' was renamed to 'get_physics_angular_velocity'.
 	**/
@@ -863,7 +872,7 @@ package unreal;
 		Args:
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to put to sleep. 'None' indicates root body.
 	**/
-	public function put_rigid_body_to_sleep(bone_name:unreal.Name = "\"None\""):Void;
+	public function put_rigid_body_to_sleep(?bone_name:unreal.Name):Void;
 	/**
 		(bool):  [Read-Only] Mobile only:
 		If disabled this component will not receive CSM shadows. (Components that do not receive CSM may have reduced shading cost)
@@ -911,7 +920,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	public function scale_by_moment_of_inertia(input_vector:unreal.Vector, bone_name:unreal.Name = "\"None\""):unreal.Vector;
+	public function scale_by_moment_of_inertia(input_vector:unreal.Vector, ?bone_name:unreal.Name):unreal.Vector;
 	/**
 		(bool):  [Read-Only] When enabled, the component will only cast a shadow on itself and not other components in the world.
 		This is especially useful for first person weapons, and forces bCastInsetShadow to be enabled.
@@ -1006,7 +1015,7 @@ package unreal;
 		    center_of_mass_offset (Vector): User specified offset for the center of mass of this object, from the calculated location.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to set center of mass of. 'None' indicates root body.
 	**/
-	public function set_center_of_mass(center_of_mass_offset:unreal.Vector, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_center_of_mass(center_of_mass_offset:unreal.Vector, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_collision_enabled(new_type) -> None
 		Controls what kind of collision is enabled for this body
@@ -1208,7 +1217,7 @@ package unreal;
 		    mass_in_kg (float): 
 		    override_mass (bool):
 	**/
-	public function set_mass_override_in_kg(bone_name:unreal.Name = "\"None\"", mass_in_kg:Float = 1.000000, override_mass:Bool = true):Void;
+	public function set_mass_override_in_kg(?bone_name:unreal.Name, mass_in_kg:Float = 1.000000, override_mass:Bool = true):Void;
 	/**
 		x.set_mass_scale(bone_name="None", mass_scale=1.000000) -> None
 		Change the mass scale used to calculate the mass of a single physics body
@@ -1217,7 +1226,7 @@ package unreal;
 		    bone_name (Name): 
 		    mass_scale (float):
 	**/
-	public function set_mass_scale(bone_name:unreal.Name = "\"None\"", mass_scale:Float = 1.000000):Void;
+	public function set_mass_scale(?bone_name:unreal.Name, mass_scale:Float = 1.000000):Void;
 	/**
 		x.set_material(element_index, material) -> None
 		Changes the material applied to an element of the mesh.
@@ -1292,7 +1301,7 @@ package unreal;
 		    bone_name (Name):
 	**/
 	@:deprecated
-	public function set_physics_angular_velocity(new_ang_vel:unreal.Vector, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_angular_velocity(new_ang_vel:unreal.Vector, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_angular_velocity_in_degrees(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the angular velocity of a single body.
@@ -1303,7 +1312,7 @@ package unreal;
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_angular_velocity_in_degrees(new_ang_vel:unreal.Vector, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_angular_velocity_in_degrees(new_ang_vel:unreal.Vector, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_angular_velocity_in_radians(new_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the angular velocity of a single body.
@@ -1314,7 +1323,7 @@ package unreal;
 		    add_to_current (bool): If true, NewAngVel is added to the existing angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_angular_velocity_in_radians(new_ang_vel:unreal.Vector, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_angular_velocity_in_radians(new_ang_vel:unreal.Vector, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_linear_velocity(new_vel, add_to_current=False, bone_name="None") -> None
 		Set the linear velocity of a single body.
@@ -1325,7 +1334,7 @@ package unreal;
 		    add_to_current (bool): If true, NewVel is added to the existing velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_linear_velocity(new_vel:unreal.Vector, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_linear_velocity(new_vel:unreal.Vector, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_max_angular_velocity(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set Physics Max Angular Velocity
@@ -1337,7 +1346,7 @@ package unreal;
 		    bone_name (Name):
 	**/
 	@:deprecated
-	public function set_physics_max_angular_velocity(new_max_ang_vel:Float, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_max_angular_velocity(new_max_ang_vel:Float, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_max_angular_velocity_in_degrees(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the maximum angular velocity of a single body.
@@ -1347,7 +1356,7 @@ package unreal;
 		    add_to_current (bool): If true, NewMaxAngVel is added to the existing maximum angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify maximum angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_max_angular_velocity_in_degrees(new_max_ang_vel:Float, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_max_angular_velocity_in_degrees(new_max_ang_vel:Float, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_physics_max_angular_velocity_in_radians(new_max_ang_vel, add_to_current=False, bone_name="None") -> None
 		Set the maximum angular velocity of a single body.
@@ -1357,7 +1366,7 @@ package unreal;
 		    add_to_current (bool): If true, NewMaxAngVel is added to the existing maximum angular velocity of the body.
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to modify maximum angular velocity of. 'None' indicates root body.
 	**/
-	public function set_physics_max_angular_velocity_in_radians(new_max_ang_vel:Float, add_to_current:Bool = false, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_physics_max_angular_velocity_in_radians(new_max_ang_vel:Float, add_to_current:Bool = false, ?bone_name:unreal.Name):Void;
 	/**
 		deprecated: 'set_rb_angular_velocity' was renamed to 'set_physics_angular_velocity'.
 	**/
@@ -1425,7 +1434,7 @@ package unreal;
 		    use_ccd (bool): 
 		    bone_name (Name):
 	**/
-	public function set_use_ccd(use_ccd:Bool, bone_name:unreal.Name = "\"None\""):Void;
+	public function set_use_ccd(use_ccd:Bool, ?bone_name:unreal.Name):Void;
 	/**
 		x.set_walkable_slope_override(new_override) -> None
 		Sets a new slope override for this component instance.
@@ -1545,7 +1554,7 @@ package unreal;
 		Args:
 		    bone_name (Name): If a SkeletalMeshComponent, name of body to wake. 'None' indicates root body.
 	**/
-	public function wake_rigid_body(bone_name:unreal.Name = "\"None\""):Void;
+	public function wake_rigid_body(?bone_name:unreal.Name):Void;
 	/**
 		x.was_recently_rendered(tolerance=0.200000) -> bool
 		Returns true if this component has been rendered "recently", with a tolerance in seconds to define what "recent" means.

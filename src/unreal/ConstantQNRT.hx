@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ConstantQNRT") extern class ConstantQNRT extends unreal.AudioSynesthesiaNRT {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_channel_constant_q_at_time(seconds, channel) -> Array(float)
 		Get a specific channel cqt of the analyzed sound at a given time.
 		

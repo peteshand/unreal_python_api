@@ -14,4 +14,13 @@ package unreal;
 	static public var MSM_THIN_TRANSLUCENT : Dynamic;
 	static public var MSM_TWO_SIDED_FOLIAGE : Dynamic;
 	static public var MSM_UNLIT : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

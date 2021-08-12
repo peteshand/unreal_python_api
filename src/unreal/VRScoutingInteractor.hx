@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "VRScoutingInteractor") extern class VRScoutingInteractor extends unreal.VREditorInteractor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(StaticMeshComponent):  [Read-Only] Shown in Navigation mode
 	**/
 	public var flying_indicator_component : unreal.StaticMeshComponent;

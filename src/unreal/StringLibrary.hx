@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "StringLibrary") extern class StringLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.build_string_bool(append_to, prefix, bool, suffix) -> str
 		Converts a boolean->string, creating a new string in the form AppendTo+Prefix+InBool+Suffix
 		
@@ -439,7 +448,7 @@ package unreal;
 		Returns:
 		    bool: true if this string ends with specified text, false otherwise
 	**/
-	static public function ends_with(source_string:String, suffix:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):Bool;
+	static public function ends_with(source_string:String, suffix:String, ?search_case:unreal.SearchCase):Bool;
 	/**
 		X.equal_equal_str_str(a, b) -> bool
 		Test if the input strings are equal (A == B)
@@ -611,7 +620,7 @@ package unreal;
 		Returns:
 		    bool: true if this string matches the *?-type wildcard given.
 	**/
-	static public function matches_wildcard(source_string:String, wildcard:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):Bool;
+	static public function matches_wildcard(source_string:String, wildcard:String, ?search_case:unreal.SearchCase):Bool;
 	/**
 		X.mid(source_string, start, count) -> str
 		Returns the substring from Start position for Count characters.
@@ -675,7 +684,7 @@ package unreal;
 		Returns:
 		    str: a copy of this string with the replacement made
 	**/
-	static public function replace(source_string:String, from_:String, to:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):String;
+	static public function replace(source_string:String, from_:String, to:String, ?search_case:unreal.SearchCase):String;
 	/**
 		X.replace_inline(source_string, search_text, replacement_text, search_case=SearchCase.IGNORE_CASE) -> (int32, source_string=str)
 		Replace all occurrences of SearchText with ReplacementText in this string.
@@ -691,7 +700,7 @@ package unreal;
 		
 		    source_string (str):
 	**/
-	static public function replace_inline(source_string:String, search_text:String, replacement_text:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):String;
+	static public function replace_inline(source_string:String, search_text:String, replacement_text:String, ?search_case:unreal.SearchCase):String;
 	/**
 		X.reverse(source_string) -> str
 		Returns a copy of this string, with the characters in reverse order
@@ -757,7 +766,7 @@ package unreal;
 		
 		    right_s (str): out the string to the right of InStr, not updated if return is false
 	**/
-	static public function split(source_string:String, str:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE, search_dir:unreal.SearchDir = SearchDir.FROM_START):Dynamic;
+	static public function split(source_string:String, str:String, ?search_case:unreal.SearchCase, ?search_dir:unreal.SearchDir):Dynamic;
 	/**
 		X.starts_with(source_string, prefix, search_case=SearchCase.IGNORE_CASE) -> bool
 		Test whether this string starts with given string.
@@ -770,7 +779,7 @@ package unreal;
 		Returns:
 		    bool: true if this string begins with specified text, false otherwise
 	**/
-	static public function starts_with(source_string:String, prefix:String, search_case:unreal.SearchCase = SearchCase.IGNORE_CASE):Bool;
+	static public function starts_with(source_string:String, prefix:String, ?search_case:unreal.SearchCase):Bool;
 	/**
 		X.time_seconds_to_string(seconds) -> str
 		Convert a number of seconds into minutes:seconds.milliseconds format string (including leading zeroes)

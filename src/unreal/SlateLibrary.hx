@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SlateLibrary") extern class SlateLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.absolute_to_local(geometry, absolute_coordinate) -> Vector2D
 		Absolute coordinates could be either desktop or window space depending on what space the root of the widget hierarchy is in.
 		

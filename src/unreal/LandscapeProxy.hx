@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LandscapeProxy") extern class LandscapeProxy extends unreal.Actor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Controls whether the primitive should affect dynamic distance field lighting methods.  This flag is only used if CastShadow is true. *
 	**/
 	public var affect_distance_field_lighting : Bool;
@@ -101,7 +110,7 @@ package unreal;
 		    paint_layer (LandscapeLayerInfoObject): LayerInfo to paint, or none to skip painting. The landscape must be configured with the same layer info in one of its layers or this will do nothing!
 		    edit_layer_name (Name): Name of the landscape edition layer to affect (in Edit Layers mode)
 	**/
-	public function editor_apply_spline(spline_component:unreal.SplineComponent, start_width:Float = 200.000000, end_width:Float = 200.000000, start_side_falloff:Float = 200.000000, end_side_falloff:Float = 200.000000, start_roll:Float = 0.000000, end_roll:Float = 0.000000, num_subdivisions:Int = 20, raise_heights:Bool = true, lower_heights:Bool = true, paint_layer:unreal.LandscapeLayerInfoObject = null, edit_layer_name:unreal.Name = "\"None\""):Void;
+	public function editor_apply_spline(spline_component:unreal.SplineComponent, start_width:Float = 200.000000, end_width:Float = 200.000000, start_side_falloff:Float = 200.000000, end_side_falloff:Float = 200.000000, start_roll:Float = 0.000000, end_roll:Float = 0.000000, num_subdivisions:Int = 20, raise_heights:Bool = true, lower_heights:Bool = true, ?paint_layer:unreal.LandscapeLayerInfoObject, ?edit_layer_name:unreal.Name):Void;
 	/**
 		(bool):  [Read-Only] If true, Landscape will generate overlap events when other components are overlapping it (eg Begin Overlap).
 		Both the Landscape and the other component must have this flag enabled for overlap events to occur.

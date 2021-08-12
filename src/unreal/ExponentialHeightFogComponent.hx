@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ExponentialHeightFogComponent") extern class ExponentialHeightFogComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(LinearColor):  [Read-Only] Controls the color of the directional inscattering, which is used to approximate inscattering from a directional light.
 		Note: there must be a directional light with bUsedAsAtmosphereSunLight enabled for DirectionalInscattering to be used.
 	**/

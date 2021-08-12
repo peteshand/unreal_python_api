@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "VectorFieldComponent") extern class VectorFieldComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] The intensity at which the vector field is applied.
 	**/
 	public var intensity : Float;

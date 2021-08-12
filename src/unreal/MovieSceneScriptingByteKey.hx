@@ -20,7 +20,7 @@ package unreal;
 		Returns:
 		    FrameTime: The time of this key which combines both the frame number and the sub-frame it is on. Sub-frame will be zero if you request Tick Resolution.
 	**/
-	public function get_time(time_unit:Dynamic):unreal.FrameTime;
+	public function get_time(?time_unit:unreal.SequenceTimeUnit):unreal.FrameTime;
 	/**
 		x.get_value() -> uint8
 		Gets the value for this key from the owning channel.
@@ -28,7 +28,7 @@ package unreal;
 		Returns:
 		    uint8: The value for this key.
 	**/
-	public function get_value():Dynamic;
+	public function get_value():UInt;
 	/**
 		x.set_time(new_frame_number, sub_frame=0.000000, time_unit=SequenceTimeUnit.DISPLAY_RATE) -> None
 		Sets the time for this key in the owning channel. Will replace any key that already exists at that frame number in this channel.
@@ -38,7 +38,7 @@ package unreal;
 		    sub_frame (float): If using Display Rate time, what is the sub-frame this should go to? Clamped [0-1), and ignored with when TimeUnit is set to Tick Resolution.
 		    time_unit (SequenceTimeUnit): Should the NewFrameNumber be interpreted as Display Rate frames or in Tick Resolution?
 	**/
-	public function set_time(new_frame_number:Dynamic, sub_frame:Dynamic, time_unit:Dynamic):Void;
+	public function set_time(new_frame_number:unreal.FrameNumber, sub_frame:Float = 0.000000, ?time_unit:unreal.SequenceTimeUnit):Void;
 	/**
 		x.set_value(new_value) -> None
 		Sets the value for this key, reflecting it in the owning channel.
@@ -46,5 +46,5 @@ package unreal;
 		Args:
 		    new_value (uint8): The new value for this key.
 	**/
-	public function set_value(new_value:Dynamic):Void;
+	public function set_value(new_value:UInt):Void;
 }

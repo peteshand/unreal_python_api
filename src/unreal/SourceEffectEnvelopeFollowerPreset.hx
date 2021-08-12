@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SourceEffectEnvelopeFollowerPreset") extern class SourceEffectEnvelopeFollowerPreset extends unreal.SoundEffectSourcePreset {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.register_envelope_follower_listener(envelope_follower_listener) -> None
 		Adds a submix effect preset to the master submix.
 		

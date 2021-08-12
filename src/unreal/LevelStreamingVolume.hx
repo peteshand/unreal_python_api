@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LevelStreamingVolume") extern class LevelStreamingVolume extends unreal.Volume {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] If true, this streaming volume is ignored by the streaming volume code.  Used to either
 		disable a level streaming volume without disassociating it from the level, or to toggle
 		the control of a level's streaming between Kismet and volume streaming.

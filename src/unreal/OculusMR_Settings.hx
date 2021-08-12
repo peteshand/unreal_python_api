@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "OculusMR_Settings") extern class OculusMR_Settings extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Color):  [Read-Write] When CompositionMethod is External Composition, the color of the backdrop in the foreground view
 	**/
 	public var backdrop_color : unreal.Color;

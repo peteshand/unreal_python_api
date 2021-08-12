@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "TextRenderComponent") extern class TextRenderComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Allows text to draw unmodified when using debug visualization modes. *
 	**/
 	public var always_render_as_text : Bool;

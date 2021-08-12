@@ -2,13 +2,22 @@
 package unreal;
 @:pythonImport("unreal", "GameStateBase") extern class GameStateBase extends unreal.Info {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(GameModeBase):  [Read-Only] Instance of the current game mode, exists only on the server. For non-authority clients, this will be NULL.
 	**/
 	public var authority_game_mode : unreal.GameModeBase;
 	/**
 		(type(Class)):  [Read-Only] Class of the server's game mode, assigned by GameModeBase.
 	**/
-	public var game_mode_class : Class<Dynamic>;
+	public var game_mode_class : Dynamic;
 	/**
 		x.get_player_respawn_delay(controller) -> float
 		Returns how much time needs to be spent before a player can respawn
@@ -70,5 +79,5 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Class used by spectators, assigned by GameModeBase.
 	**/
-	public var spectator_class : Class<Dynamic>;
+	public var spectator_class : Dynamic;
 }

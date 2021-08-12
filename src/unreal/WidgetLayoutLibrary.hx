@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "WidgetLayoutLibrary") extern class WidgetLayoutLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_mouse_position_on_platform() -> Vector2D
 		Gets the platform's mouse cursor position.  This is the 'absolute' desktop location of the mouse.
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SoundSubmixSpectralAnalysisBandSettings") extern class SoundSubmixSpectralAnalysisBandSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(int32):  [Read-Write] The attack time for the FFT band interpolation for delegate callback
 	**/
 	public var attack_time_msec : Int;

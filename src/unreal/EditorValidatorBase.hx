@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorValidatorBase") extern class EditorValidatorBase extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.asset_fails(asset, message, validation_errors) -> Array(Text)
 		Asset Fails
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AIPerceptionStimuliSourceComponent") extern class AIPerceptionStimuliSourceComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Auto Register as Source
 	**/
 	public var auto_register_as_source : Bool;
@@ -16,7 +25,7 @@ package unreal;
 		Args:
 		    sense_class (type(Class)):
 	**/
-	public function register_for_sense(sense_class:Class<Dynamic>):Void;
+	public function register_for_sense(sense_class:Dynamic):Void;
 	/**
 		x.register_with_perception_system() -> None
 		Registers owning actor as source of stimuli for senses specified in RegisterAsSourceForSenses.
@@ -35,5 +44,5 @@ package unreal;
 		Args:
 		    sense_class (type(Class)):
 	**/
-	public function unregister_from_sense(sense_class:Class<Dynamic>):Void;
+	public function unregister_from_sense(sense_class:Dynamic):Void;
 }

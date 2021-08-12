@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneCaptureEnvironment") extern class MovieSceneCaptureEnvironment extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.find_audio_capture_protocol() -> MovieSceneAudioCaptureProtocolBase
 		Attempt to locate a capture protocol - may not be in a capturing state
 		

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SubmixEffectFilterSettings") extern class SubmixEffectFilterSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(SubmixFilterAlgorithm):  [Read-Write] What type of filter algorithm to use for the submix filter effect
 	**/
 	public var filter_algorithm : unreal.SubmixFilterAlgorithm;

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AttenuationSubmixSendSettings") extern class AttenuationSubmixSendSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(RuntimeFloatCurve):  [Read-Write] The custom Submix send curve to use for distance-based send level.
 	**/
 	public var custom_submix_send_curve : unreal.RuntimeFloatCurve;

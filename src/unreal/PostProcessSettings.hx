@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PostProcessSettings") extern class PostProcessSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(TextureCube):  [Read-Write] The Ambient cubemap (Affects diffuse and specular shading), blends additively which if different from all other settings here
 	**/
 	public var ambient_cubemap : unreal.TextureCube;

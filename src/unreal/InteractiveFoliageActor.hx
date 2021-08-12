@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InteractiveFoliageActor") extern class InteractiveFoliageActor extends unreal.StaticMeshActor {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] Scales forces applied from damage events.
 	**/
 	public var foliage_damage_impulse_scale : Float;

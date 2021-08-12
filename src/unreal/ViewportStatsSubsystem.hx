@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ViewportStatsSubsystem") extern class ViewportStatsSubsystem extends unreal.WorldSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_display_delegate(delegate) -> int32
 		Add a dynamic delegate to the display subsystem.
 		
@@ -21,7 +30,7 @@ package unreal;
 		    color (LinearColor): Color of the text to be displayed
 		    duration (float): How long the text will be on screen, if 0 then it will stay indefinitely
 	**/
-	public function add_timed_display(text:unreal.Text, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
+	public function add_timed_display(text:unreal.Text, ?color:unreal.LinearColor, duration:Float = 0.000000):Void;
 	/**
 		x.remove_display_delegate(index_to_remove) -> None
 		Remove a callback function from the display subsystem

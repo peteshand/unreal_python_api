@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SkeletalMesh") extern class SkeletalMesh extends unreal.StreamableRenderAsset {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Object):  [Read-Write] The Default Control Rig To Animate with when used in Sequnecer.
 	**/
 	public var default_animating_rig : unreal.Object;
@@ -165,7 +174,7 @@ package unreal;
 		This blueprint will be ran before physics, but after the main
 		anim instance for any skeletal mesh component using this mesh.
 	**/
-	public var post_process_anim_blueprint : Class<Dynamic>;
+	public var post_process_anim_blueprint : Dynamic;
 	/**
 		x.regenerate_lod(new_lod_count=0, regenerate_even_if_imported=False, generate_base_lod=False) -> bool
 		Regenerate LODs of the mesh

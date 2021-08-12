@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapHandTrackingFunctionLibrary") extern class MagicLeapHandTrackingFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_configuration() -> (active_static_gestures=Array(MagicLeapHandTrackingGesture), keypoints_filter_level=MagicLeapHandTrackingKeypointFilterLevel, gesture_filter_level=MagicLeapHandTrackingGestureFilterLevel, tracking_enabled=bool) or None
 		Gets the list of static and dynamic gestures currently set to be identified by the gesture recognition system.
 		
@@ -226,7 +235,7 @@ package unreal;
 		Returns:
 		    bool: true if the configuration was set successfully.
 	**/
-	static public function set_configuration(static_gestures_to_activate:Array<MagicLeapHandTrackingGesture>, keypoints_filter_level:unreal.MagicLeapHandTrackingKeypointFilterLevel = MagicLeapHandTrackingKeypointFilterLevel.NO_FILTER, gesture_filter_level:unreal.MagicLeapHandTrackingGestureFilterLevel = MagicLeapHandTrackingGestureFilterLevel.NO_FILTER, tracking_enabled:Bool = true):Bool;
+	static public function set_configuration(static_gestures_to_activate:Array<MagicLeapHandTrackingGesture>, ?keypoints_filter_level:unreal.MagicLeapHandTrackingKeypointFilterLevel, ?gesture_filter_level:unreal.MagicLeapHandTrackingGestureFilterLevel, tracking_enabled:Bool = true):Bool;
 	/**
 		X.set_static_gesture_confidence_threshold(gesture, confidence) -> None
 		Sets the minimum gesture confidence to filter out the detected static gesture.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LayersBlueprintLibrary") extern class LayersBlueprintLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_actor_to_layer(actor, layer) -> None
 		Adds the actor to the specified layer
 		

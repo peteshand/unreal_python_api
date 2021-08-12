@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ForceFeedbackComponent") extern class ForceFeedbackComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.adjust_attenuation(attenuation_settings) -> None
 		Modify the attenuation settings of the component
 		

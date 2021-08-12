@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PaperTileMapComponent") extern class PaperTileMapComponent extends unreal.MeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_new_layer() -> PaperTileLayer
 		Creates and adds a new layer to the tile map
 		Note: This will only work on components that own their own tile map (OwnsTileMap returns true), you cannot modify standalone tile map assets

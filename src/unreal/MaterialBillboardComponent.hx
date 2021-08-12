@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MaterialBillboardComponent") extern class MaterialBillboardComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_element(material, distance_to_opacity_curve, size_is_in_screen_space, base_size_x, base_size_y, distance_to_size_curve) -> None
 		Adds an element to the sprite.
 		

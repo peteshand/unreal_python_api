@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InputActionKeyMapping") extern class InputActionKeyMapping extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Name):  [Read-Write] Friendly name of action, e.g "jump"
 	**/
 	public var action_name : unreal.Name;

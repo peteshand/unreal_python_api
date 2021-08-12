@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapRaycastQueryParams") extern class MagicLeapRaycastQueryParams extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] If true, a ray will terminate when encountering an unobserved area and return a surface or
 		the ray will continue until it ends or hits an observed surface.
 	**/

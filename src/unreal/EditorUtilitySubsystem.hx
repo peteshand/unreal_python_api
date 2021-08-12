@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorUtilitySubsystem") extern class EditorUtilitySubsystem extends unreal.EditorSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.close_tab_by_id(new_tab_id) -> bool
 		Given an ID for a tab, try to find and close an existing tab. Returns true if it found a tab to close.
 		

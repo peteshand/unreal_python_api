@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MaterialEditingLibrary") extern class MaterialEditingLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.clear_all_material_instance_parameters(instance) -> None
 		Clears all material parameters set by this Material Instance
 		
@@ -49,7 +58,7 @@ package unreal;
 		Returns:
 		    MaterialExpression:
 	**/
-	static public function create_material_expression(material:unreal.Material, expression_class:Class<Dynamic>, node_pos_x:Int = 0, node_pos_y:Int = 0):unreal.MaterialExpression;
+	static public function create_material_expression(material:unreal.Material, expression_class:Dynamic, node_pos_x:Int = 0, node_pos_y:Int = 0):unreal.MaterialExpression;
 	/**
 		X.create_material_expression_in_function(material_function, expression_class, node_pos_x=0, node_pos_y=0) -> MaterialExpression
 		Create a new material expression node within the supplied material function
@@ -63,7 +72,7 @@ package unreal;
 		Returns:
 		    MaterialExpression:
 	**/
-	static public function create_material_expression_in_function(material_function:unreal.MaterialFunction, expression_class:Class<Dynamic>, node_pos_x:Int = 0, node_pos_y:Int = 0):unreal.MaterialExpression;
+	static public function create_material_expression_in_function(material_function:unreal.MaterialFunction, expression_class:Dynamic, node_pos_x:Int = 0, node_pos_y:Int = 0):unreal.MaterialExpression;
 	/**
 		X.delete_all_material_expressions(material) -> None
 		Delete all material expressions in the supplied material
@@ -490,7 +499,7 @@ package unreal;
 		    material_function (MaterialFunctionInterface): 
 		    preview_material (Material):
 	**/
-	static public function update_material_function(material_function:unreal.MaterialFunctionInterface, preview_material:unreal.Material = null):Void;
+	static public function update_material_function(material_function:unreal.MaterialFunctionInterface, ?preview_material:unreal.Material):Void;
 	/**
 		X.update_material_instance(instance) -> None
 		Called after making modifications to a Material Instance to recompile shaders etc.

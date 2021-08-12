@@ -20,7 +20,7 @@ package unreal;
 		Returns:
 		    int32: The number of channels used for this track
 	**/
-	static public function get_num_channels_used(track:Dynamic):Int;
+	static public function get_num_channels_used(track:unreal.MovieSceneVectorTrack):Int;
 	/**
 		X.set_num_channels_used(track, num_channels_used) -> None
 		Set the number of channels used for this track
@@ -29,5 +29,5 @@ package unreal;
 		    track (MovieSceneVectorTrack): The track to set
 		    num_channels_used (int32): The number of channels to use for this track
 	**/
-	static public function set_num_channels_used(track:Dynamic, num_channels_used:Dynamic):Void;
+	static public function set_num_channels_used(track:unreal.MovieSceneVectorTrack, num_channels_used:Int):Void;
 }

@@ -1,6 +1,6 @@
 /* This file is generated, do not edit! */
 package unreal;
-@:pythonImport("unreal", "ScopedSlowTask") extern class ScopedSlowTask extends Dynamic {
+@:pythonImport("unreal", "ScopedSlowTask") extern class ScopedSlowTask {
 	/**
 		x.__enter__() -> self -- begin this slow task
 	**/
@@ -9,6 +9,15 @@ package unreal;
 		x.__exit__(type, value, traceback) -> None -- end this slow task
 	**/
 	public function __exit__(type:Dynamic, value:Dynamic, traceback:Dynamic):Void;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 	/**
 		x.enter_progress_frame(work=1.0, desc=Text()) -> None -- indicate that we are to enter a frame that will take up the specified amount of work (completes any previous frames)
 	**/

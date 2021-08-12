@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PaperGroupedSpriteComponent") extern class PaperGroupedSpriteComponent extends unreal.MeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_instance(transform, sprite, world_space=False, color=[0.000000, 0.000000, 0.000000, 0.000000]) -> int32
 		Add an instance to this component. Transform can be given either in the local space of this component or world space.
 		
@@ -14,7 +23,7 @@ package unreal;
 		Returns:
 		    int32:
 	**/
-	public function add_instance(transform:unreal.Transform, sprite:unreal.PaperSprite, world_space:Bool = false, color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000]):Int;
+	public function add_instance(transform:unreal.Transform, sprite:unreal.PaperSprite, world_space:Bool = false, ?color:unreal.LinearColor):Int;
 	/**
 		x.clear_instances() -> None
 		Clear all instances being rendered by this component

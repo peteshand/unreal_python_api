@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenuEntryScript") extern class ToolMenuEntryScript extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.can_execute(context) -> bool
 		Can Execute
 		
@@ -90,7 +99,7 @@ package unreal;
 		    label (Text): 
 		    tool_tip (Text):
 	**/
-	public function init_entry(owner_name:unreal.Name, menu:unreal.Name, section:unreal.Name, name:unreal.Name, label:unreal.Text = "\"\"", tool_tip:unreal.Text = "\"\""):Void;
+	public function init_entry(owner_name:unreal.Name, menu:unreal.Name, section:unreal.Name, name:unreal.Name, ?label:unreal.Text, ?tool_tip:unreal.Text):Void;
 	/**
 		x.is_visible(context) -> bool
 		Is Visible

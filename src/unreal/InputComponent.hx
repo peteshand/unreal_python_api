@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InputComponent") extern class InputComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_controller_analog_key_state(key) -> float
 		Returns the analog value for the given key/button.  If analog isn't supported, returns 1 for down and 0 for up.
 		deprecated: Use PlayerController.GetInputAnalogKeyState instead.

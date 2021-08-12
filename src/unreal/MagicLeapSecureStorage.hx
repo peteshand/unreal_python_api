@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapSecureStorage") extern class MagicLeapSecureStorage extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.delete_secure_data(key) -> bool
 		Deletes the data associated with the specified key.
 		deprecated: This function has been replaced by `UGameplayStatics::SaveGameToSlot()`

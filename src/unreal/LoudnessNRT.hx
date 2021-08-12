@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LoudnessNRT") extern class LoudnessNRT extends unreal.AudioSynesthesiaNRT {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_channel_loudness_at_time(seconds, channel) -> float
 		Get a specific channel loudness of the analyzed sound at a given time.
 		

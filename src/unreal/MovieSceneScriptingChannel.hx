@@ -10,4 +10,8 @@ package unreal;
 		Initialize self.  See help(type(self)) for accurate signature.
 	**/
 	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
+		(Name):  [Read-Only] Channel Name
+	**/
+	public var channel_name : unreal.Name;
 }

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapIdentity") extern class MagicLeapIdentity extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_all_available_attributes() -> (MagicLeapIdentityError, available_attributes=Array(MagicLeapIdentityAttributeType))
 		Get the attributes available for the user's Magic Leap profile. Note that this does not request the values for these attribtues.
 		This function makes a blocking call to the cloud. You can alternatively use GetAllAvailableAttributesAsync() to request the attributes asynchronously.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MovieSceneCaptureSettings") extern class MovieSceneCaptureSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Whether to allow player movement whilst capturing
 	**/
 	public var allow_movement : Bool;
@@ -32,7 +41,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Optional game mode to override the map's default game mode with.  This can be useful if the game's normal mode displays UI elements or loading screens that you don't want captured.
 	**/
-	public var game_mode_override : Class<Dynamic>;
+	public var game_mode_override : Dynamic;
 	/**
 		(int32):  [Read-Write] Number of frame handles to include for each shot
 	**/

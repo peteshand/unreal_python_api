@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "VertexAttributesForPolygon") extern class VertexAttributesForPolygon extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Array(MeshElementAttributeList)):  [Read-Write] For each polygon vertex, a list of attributes for that vertex.  Can be left empty if you don't want to set any attributes.
 	**/
 	public var perimeter_vertex_attribute_lists : Array<Dynamic>;

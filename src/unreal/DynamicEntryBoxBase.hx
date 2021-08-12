@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DynamicEntryBoxBase") extern class DynamicEntryBoxBase extends unreal.Widget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(HorizontalAlignment):  [Read-Only] Horizontal alignment of generated entries. Horizontal/Vertical/Wrap boxes only.
 	**/
 	public var entry_horizontal_alignment : unreal.HorizontalAlignment;

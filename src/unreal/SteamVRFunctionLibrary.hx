@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SteamVRFunctionLibrary") extern class SteamVRFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_hand_position_and_orientation(controller_index, hand) -> (out_position=Vector, out_orientation=Rotator) or None
 		Given a controller index and a hand, returns the position and orientation of the controller
 		deprecated: Use motion controller components instead

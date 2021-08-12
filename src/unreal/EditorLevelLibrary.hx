@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorLevelLibrary") extern class EditorLevelLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.clear_actor_selection_set() -> None
 		Remove all actors from the selection set
 	**/
@@ -18,7 +27,7 @@ package unreal;
 		Returns:
 		    Array(Actor):
 	**/
-	static public function convert_actors(actors:Array<Actor>, actor_class:Class<Dynamic>, static_mesh_package_path:String):Array<Actor>;
+	static public function convert_actors(actors:Array<Actor>, actor_class:Dynamic, static_mesh_package_path:String):Array<Actor>;
 	/**
 		X.create_proxy_mesh_actor(actors_to_merge, merge_options) -> StaticMeshActor or None
 		Build a proxy mesh actor that can replace a set of mesh actors.
@@ -332,7 +341,7 @@ package unreal;
 		Returns:
 		    Actor: The created actor.
 	**/
-	static public function spawn_actor_from_class(actor_class:Class<Dynamic>, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], transient:Bool = false):unreal.Actor;
+	static public function spawn_actor_from_class(actor_class:Dynamic, location:unreal.Vector, ?rotation:unreal.Rotator, transient:Bool = false):unreal.Actor;
 	/**
 		X.spawn_actor_from_object(object_to_use, location, rotation=[0.000000, 0.000000, 0.000000], transient=False) -> Actor
 		Create an actor and place it in the world editor. The Actor can be created from a Factory, Archetype, Blueprint, Class or an Asset.
@@ -347,5 +356,5 @@ package unreal;
 		Returns:
 		    Actor: The created actor.
 	**/
-	static public function spawn_actor_from_object(object_to_use:unreal.Object, location:unreal.Vector, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], transient:Bool = false):unreal.Actor;
+	static public function spawn_actor_from_object(object_to_use:unreal.Object, location:unreal.Vector, ?rotation:unreal.Rotator, transient:Bool = false):unreal.Actor;
 }

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LuminARImageTrackingFunctionLibrary") extern class LuminARImageTrackingFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_lumin_runtime_candidate_image(session_config, candidate_texture, friendly_name, physical_width, use_unreliable_pose, image_is_stationary) -> LuminARCandidateImage
 		Create a LuminARCandidateImage object and add it to the ARCandidateImageList of the given \c UARSessionConfig object.
 		

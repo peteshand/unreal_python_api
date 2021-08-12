@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AnimGraphLibrary") extern class AnimGraphLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.calculate_velocity_from_position_history(delta_seconds, position, history, number_of_samples, velocity_min, velocity_max) -> (float, history=PositionHistory)
 		This function calculates the velocity of a position changing over time.
 		You need to hook up a valid PositionHistory variable to this for storage.

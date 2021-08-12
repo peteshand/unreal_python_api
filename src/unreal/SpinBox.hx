@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SpinBox") extern class SpinBox extends unreal.Widget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Whether this spin box should use the delta snapping logic for typed values - default false
 	**/
 	public var always_uses_delta_snap : Bool;

@@ -2,13 +2,22 @@
 package unreal;
 @:pythonImport("unreal", "WorldSettings") extern class WorldSettings extends unreal.Info {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Vector):  [Read-Only] Default color scale for the level
 	**/
 	public var default_color_scale : unreal.Vector;
 	/**
 		(type(Class)):  [Read-Only] The default GameMode to use when starting this map in the game. If this value is NULL, the INI setting for default game type is used.
 	**/
-	public var default_game_mode : Class<Dynamic>;
+	public var default_game_mode : Dynamic;
 	/**
 		deprecated: 'default_game_type' was renamed to 'default_game_mode'.
 	**/
@@ -17,7 +26,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] level specific default physics volume
 	**/
-	public var default_physics_volume_class : Class<Dynamic>;
+	public var default_physics_volume_class : Dynamic;
 	/**
 		(bool):  [Read-Only] if set to false AI system will not get created. Use it to disable all AI-related activity on a map
 	**/
@@ -54,7 +63,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The type of damage inflicted when a actor falls below KillZ
 	**/
-	public var kill_z_damage_type : Class<Dynamic>;
+	public var kill_z_damage_type : Dynamic;
 	/**
 		(float):  [Read-Only] Distance from the player after which content will be rendered in mono if monoscopic far field rendering is activated
 	**/
@@ -68,7 +77,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] optional level specific collision handler
 	**/
-	public var physics_collision_handler_class : Class<Dynamic>;
+	public var physics_collision_handler_class : Dynamic;
 	/**
 		(bool):  [Read-Only] Enables client-side streaming volumes instead of server-side.
 		Expected usage scenario: server has all streaming levels always loaded, clients independently stream levels in/out based on streaming volumes.

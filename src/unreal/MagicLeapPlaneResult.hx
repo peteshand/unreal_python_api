@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapPlaneResult") extern class MagicLeapPlaneResult extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Rotator):  [Read-Write] Orientation of the content with its up-vector orthogonal to the plane.
 	**/
 	public var content_orientation : unreal.Rotator;

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AIPerceptionSystem") extern class AIPerceptionSystem extends unreal.AISubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_sense_class_for_stimulus(world_context_object, stimulus) -> type(Class)
 		Get Sense Class for Stimulus
 		
@@ -12,7 +21,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function get_sense_class_for_stimulus(world_context_object:unreal.Object, stimulus:unreal.AIStimulus):Class<Dynamic>;
+	static public function get_sense_class_for_stimulus(world_context_object:unreal.Object, stimulus:unreal.AIStimulus):Dynamic;
 	/**
 		X.register_perception_stimuli_source(world_context_object, sense, target) -> bool
 		Register Perception Stimuli Source
@@ -25,7 +34,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function register_perception_stimuli_source(world_context_object:unreal.Object, sense:Class<Dynamic>, target:unreal.Actor):Bool;
+	static public function register_perception_stimuli_source(world_context_object:unreal.Object, sense:Dynamic, target:unreal.Actor):Bool;
 	/**
 		x.report_event(perception_event) -> None
 		Report Event

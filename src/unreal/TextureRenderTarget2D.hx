@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "TextureRenderTarget2D") extern class TextureRenderTarget2D extends unreal.TextureRenderTarget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(TextureAddress):  [Read-Write] The addressing mode to use for the X axis.
 	**/
 	public var address_x : unreal.TextureAddress;

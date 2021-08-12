@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AnimNode_PoseDriver") extern class AnimNode_PoseDriver extends unreal.AnimNode_PoseHandler {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(PoseDriverOutput):  [Read-Write] Whether we should drive poses or curves
 	**/
 	public var drive_output : unreal.PoseDriverOutput;

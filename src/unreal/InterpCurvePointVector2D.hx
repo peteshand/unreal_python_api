@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InterpCurvePointVector2D") extern class InterpCurvePointVector2D extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Vector2D):  [Read-Write] Tangent of curve arriving at this point.
 	**/
 	public var arrive_tangent : unreal.Vector2D;

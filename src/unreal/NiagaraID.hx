@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "NiagaraID") extern class NiagaraID extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(int32):  [Read-Write] A unique tag for when this ID was acquired.
 		Allows us to differentiate between particles when one dies and another reuses it's Index.
 	**/

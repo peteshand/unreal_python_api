@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LayersSubsystem") extern class LayersSubsystem extends unreal.EditorSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_actor_to_layer(actor, layer_name) -> bool
 		Adds the actor to the named layer.
 		

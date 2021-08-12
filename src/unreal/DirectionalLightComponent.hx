@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DirectionalLightComponent") extern class DirectionalLightComponent extends unreal.LightComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(LinearColor):  [Read-Only] A color multiplied with the sun disk luminance.
 	**/
 	public var atmosphere_sun_disk_color_scale : unreal.LinearColor;

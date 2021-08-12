@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "OculusFunctionLibrary") extern class OculusFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_loading_splash_screen(texture, translation_in_meters, rotation, size_in_meters=[1.000000, 1.000000], delta_rotation=[0.000000, 0.000000, 0.000000], clear_before_add=False) -> None
 		Adds loading splash screen with parameters
 		deprecated: Use Add Loading Screen Splash from the Head Mounted Display Loading Screen functions instead.
@@ -15,7 +24,7 @@ package unreal;
 		    clear_before_add (bool): (in) If true, clears splashes before adding a new one.
 	**/
 	@:deprecated
-	static public function add_loading_splash_screen(texture:unreal.Texture2D, translation_in_meters:unreal.Vector, rotation:unreal.Rotator, size_in_meters:unreal.Vector2D = [1.000000, 1.000000], delta_rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], clear_before_add:Bool = false):Void;
+	static public function add_loading_splash_screen(texture:unreal.Texture2D, translation_in_meters:unreal.Vector, rotation:unreal.Rotator, ?size_in_meters:unreal.Vector2D, ?delta_rotation:unreal.Rotator, clear_before_add:Bool = false):Void;
 	/**
 		X.clear_loading_splash_screens() -> None
 		Removes all the splash screens.
@@ -212,7 +221,7 @@ package unreal;
 		
 		    neck_position (Vector): (out) The estimated neck position, calculated using NeckToEye vector from User Profile. Same coordinate space as DevicePosition.
 	**/
-	static public function get_pose(use_orienation_for_player_camera:Bool = false, use_position_for_player_camera:Bool = false, position_scale:unreal.Vector = [0.000000, 0.000000, 0.000000]):python.Tuple<Dynamic>;
+	static public function get_pose(use_orienation_for_player_camera:Bool = false, use_position_for_player_camera:Bool = false, ?position_scale:unreal.Vector):python.Tuple<Dynamic>;
 	/**
 		X.get_raw_sensor_data(device_type=TrackedDeviceType.HMD) -> (angular_acceleration=Vector, linear_acceleration=Vector, angular_velocity=Vector, linear_velocity=Vector, time_in_seconds=float)
 		Reports raw sensor data. If HMD doesn't support any of the parameters then it will be set to zero.
@@ -233,7 +242,7 @@ package unreal;
 		
 		    time_in_seconds (float): (out) Time when the reported IMU reading took place, in seconds.
 	**/
-	static public function get_raw_sensor_data(device_type:unreal.TrackedDeviceType = TrackedDeviceType.HMD):python.Tuple<Dynamic>;
+	static public function get_raw_sensor_data(?device_type:unreal.TrackedDeviceType):python.Tuple<Dynamic>;
 	/**
 		X.get_system_hmd3_dof_mode_enabled() -> bool
 		Returns true if system headset is in 3dof mode

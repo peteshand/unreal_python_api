@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SynthesisUtilitiesBlueprintFunctionLibrary") extern class SynthesisUtilitiesBlueprintFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_linear_frequency(log_frequency_value, domain_min, domain_max, range_min, range_max) -> float
 		Returns the log frequency of the input value. Maps linear domain and range values to log output (good for linear slider controlling frequency)
 		

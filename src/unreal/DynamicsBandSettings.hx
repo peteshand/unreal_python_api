@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DynamicsBandSettings") extern class DynamicsBandSettings extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] The amount of time to ramp into any dynamics processing effect in milliseconds.
 	**/
 	public var attack_time_msec : Float;

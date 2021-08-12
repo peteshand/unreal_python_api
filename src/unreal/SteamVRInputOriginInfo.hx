@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SteamVRInputOriginInfo") extern class SteamVRInputOriginInfo extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(str):  [Read-Only] The name of the component of the tracked device's render model that represents this input source, or an empty string if there is no associated render model component.
 	**/
 	public var render_model_component_name : String;

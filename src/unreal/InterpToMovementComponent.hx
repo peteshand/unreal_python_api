@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "InterpToMovementComponent") extern class InterpToMovementComponent extends unreal.MovementComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(InterpToBehaviourType):  [Read-Write] Movement behaviour of the component
 	**/
 	public var behaviour_type : unreal.InterpToBehaviourType;

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AudioComponent") extern class AudioComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.adjust_attenuation(attenuation_settings) -> None
 		Modify the attenuation settings of the audio component
 		
@@ -18,7 +27,7 @@ package unreal;
 		    adjust_volume_level (float): 
 		    fade_curve (AudioFaderCurve):
 	**/
-	public function adjust_volume(adjust_volume_duration:Float, adjust_volume_level:Float, fade_curve:unreal.AudioFaderCurve = AudioFaderCurve.LINEAR):Void;
+	public function adjust_volume(adjust_volume_duration:Float, adjust_volume_level:Float, ?fade_curve:unreal.AudioFaderCurve):Void;
 	/**
 		(bool):  [Read-Write] Overrides spatialization enablement in either the attenuation asset or on this audio component's attenuation settings override.
 	**/
@@ -95,7 +104,7 @@ package unreal;
 		    start_time (float): 
 		    fade_curve (AudioFaderCurve):
 	**/
-	public function fade_in(fade_in_duration:Float, fade_volume_level:Float = 1.000000, start_time:Float = 0.000000, fade_curve:unreal.AudioFaderCurve = AudioFaderCurve.LINEAR):Void;
+	public function fade_in(fade_in_duration:Float, fade_volume_level:Float = 1.000000, start_time:Float = 0.000000, ?fade_curve:unreal.AudioFaderCurve):Void;
 	/**
 		x.fade_out(fade_out_duration, fade_volume_level, fade_curve=AudioFaderCurve.LINEAR) -> None
 		This is used in place of "stop" when it is desired to fade the volume of the sound before stopping.
@@ -109,7 +118,7 @@ package unreal;
 		    fade_volume_level (float): the percentage of the AudioComponents's calculated volume in which to fade to
 		    fade_curve (AudioFaderCurve):
 	**/
-	public function fade_out(fade_out_duration:Float, fade_volume_level:Float, fade_curve:unreal.AudioFaderCurve = AudioFaderCurve.LINEAR):Void;
+	public function fade_out(fade_out_duration:Float, fade_volume_level:Float, ?fade_curve:unreal.AudioFaderCurve):Void;
 	/**
 		x.get_attenuation_settings_to_apply() -> SoundAttenuationSettings or None
 		BP Get Attenuation Settings to Apply
@@ -316,7 +325,7 @@ package unreal;
 		
 		    quantization_boundary (QuartzQuantizationBoundary):
 	**/
-	public function play_quantized(world_context_object:unreal.Object, clock_handle:unreal.QuartzClockHandle, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, start_time:Float = 0.000000, fade_in_duration:Float = 0.000000, fade_volume_level:Float = 1.000000, fade_curve:unreal.AudioFaderCurve = AudioFaderCurve.LINEAR):python.Tuple<Dynamic>;
+	public function play_quantized(world_context_object:unreal.Object, clock_handle:unreal.QuartzClockHandle, quantization_boundary:unreal.QuartzQuantizationBoundary, delegate:unreal.OnQuartzCommandEventBP, start_time:Float = 0.000000, fade_in_duration:Float = 0.000000, fade_volume_level:Float = 1.000000, ?fade_curve:unreal.AudioFaderCurve):python.Tuple<Dynamic>;
 	/**
 		(float):  [Read-Write] A priority value that is used for sounds that play on this component that scales against final output volume.
 	**/

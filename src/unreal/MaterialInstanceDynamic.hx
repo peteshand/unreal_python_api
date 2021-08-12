@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MaterialInstanceDynamic") extern class MaterialInstanceDynamic extends unreal.MaterialInstance {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.copy_material_instance_parameters(source, quick_parameters_only=False) -> None
 		Copies over parameters given a material interface (copy each instance following the hierarchy)
 		Very slow implementation, avoid using at runtime. Hopefully we can replace it later with something like CopyInterpParameters()

@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    MovieSceneScriptingFloatKey: The key that was created with the specified values at the specified time.
 	**/
-	public function add_key(time:Dynamic, new_value:Dynamic, sub_frame:Dynamic, time_unit:Dynamic, interpolation:Dynamic):unreal.MovieSceneScriptingFloatKey;
+	public function add_key(time:unreal.FrameNumber, new_value:Float, sub_frame:Float = 0.000000, ?time_unit:unreal.SequenceTimeUnit, ?interpolation:unreal.MovieSceneKeyInterpolation):unreal.MovieSceneScriptingFloatKey;
 	/**
 		x.compute_effective_range() -> SequencerScriptingRange
 		Compute the effective range of this channel, for example, the extents of its key times
@@ -44,7 +44,7 @@ package unreal;
 		Returns:
 		    Array(float): An array of float's contained by this channel. Returns baked keys in the specified range.
 	**/
-	public function evaluate_keys(range:Dynamic, frame_rate:Dynamic):Dynamic;
+	public function evaluate_keys(range:unreal.SequencerScriptingRange, frame_rate:unreal.FrameRate):Array<Float>;
 	/**
 		x.get_default() -> float
 		Get this channel's default value that will be used when no keys are present. Only a valid
@@ -61,7 +61,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneScriptingKey): An array of UMovieSceneScriptingFloatKey's contained by this channel. Returns all keys even if clipped by the owning section's boundaries or outside of the current sequence play range.
 	**/
-	public function get_keys():Dynamic;
+	public function get_keys():Array<MovieSceneScriptingKey>;
 	/**
 		x.get_num_keys() -> int32
 		Returns number of keys in this channel.
@@ -106,7 +106,7 @@ package unreal;
 		Args:
 		    key (MovieSceneScriptingKey):
 	**/
-	public function remove_key(key:Dynamic):Void;
+	public function remove_key(key:unreal.MovieSceneScriptingKey):Void;
 	/**
 		x.set_default(default_value) -> None
 		Set this channel's default value that should be used when no keys are present.
@@ -115,7 +115,7 @@ package unreal;
 		Args:
 		    default_value (float):
 	**/
-	public function set_default(default_value:Dynamic):Void;
+	public function set_default(default_value:Float):Void;
 	/**
 		x.set_post_infinity_extrapolation(extrapolation) -> None
 		Sets the Post-infinity extrapolation state. See ERichCurveExtrapolation for more detail.
@@ -123,7 +123,7 @@ package unreal;
 		Args:
 		    extrapolation (RichCurveExtrapolation): The new extrapolation mode this key should use for evaluating after this key.
 	**/
-	public function set_post_infinity_extrapolation(extrapolation:Dynamic):Void;
+	public function set_post_infinity_extrapolation(extrapolation:unreal.RichCurveExtrapolation):Void;
 	/**
 		x.set_pre_infinity_extrapolation(extrapolation) -> None
 		Sets the Pre-infinity extrapolation state. See ERichCurveExtrapolation for more detail.
@@ -131,5 +131,5 @@ package unreal;
 		Args:
 		    extrapolation (RichCurveExtrapolation): The new extrapolation mode this key should use for evaluating before this key.
 	**/
-	public function set_pre_infinity_extrapolation(extrapolation:Dynamic):Void;
+	public function set_pre_infinity_extrapolation(extrapolation:unreal.RichCurveExtrapolation):Void;
 }

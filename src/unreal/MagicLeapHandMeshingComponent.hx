@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapHandMeshingComponent") extern class MagicLeapHandMeshingComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.connect_mr_mesh(mr_mesh_ptr) -> bool
 		Connects the MRMesh component.
 		

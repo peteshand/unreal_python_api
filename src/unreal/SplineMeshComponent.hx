@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SplineMeshComponent") extern class SplineMeshComponent extends unreal.StaticMeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_boundary_max() -> float
 		Get the boundary max
 		
@@ -166,7 +175,7 @@ package unreal;
 		    end_scale (Vector2D): 
 		    update_mesh (bool):
 	**/
-	public function set_end_scale(end_scale:unreal.Vector2D = [1.000000, 1.000000], update_mesh:Bool = true):Void;
+	public function set_end_scale(?end_scale:unreal.Vector2D, update_mesh:Bool = true):Void;
 	/**
 		x.set_end_tangent(end_tangent, update_mesh=True) -> None
 		Set the end tangent vector of spline in local space
@@ -241,7 +250,7 @@ package unreal;
 		    start_scale (Vector2D): 
 		    update_mesh (bool):
 	**/
-	public function set_start_scale(start_scale:unreal.Vector2D = [1.000000, 1.000000], update_mesh:Bool = true):Void;
+	public function set_start_scale(?start_scale:unreal.Vector2D, update_mesh:Bool = true):Void;
 	/**
 		x.set_start_tangent(start_tangent, update_mesh=True) -> None
 		Set the start tangent vector of spline in local space

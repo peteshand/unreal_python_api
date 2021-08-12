@@ -3,4 +3,13 @@ package unreal;
 @:pythonImport("unreal", "AirAbsorptionMethod") extern class AirAbsorptionMethod extends unreal.EnumBase {
 	static public var CUSTOM_CURVE : Dynamic;
 	static public var LINEAR : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

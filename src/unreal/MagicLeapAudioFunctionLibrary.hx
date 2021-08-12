@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapAudioFunctionLibrary") extern class MagicLeapAudioFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.is_mic_muted() -> bool
 		Returns whether all microphone capture is muted or not.
 		

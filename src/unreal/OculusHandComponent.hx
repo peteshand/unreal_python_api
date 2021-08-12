@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "OculusHandComponent") extern class OculusHandComponent extends unreal.PoseableMeshComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Map(Bone, Name)):  [Read-Write] Bone mapping for custom hand skeletal meshes
 	**/
 	public var bone_name_mappings : Dynamic;

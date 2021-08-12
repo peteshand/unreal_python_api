@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "RotatingMovementComponent") extern class RotatingMovementComponent extends unreal.MovementComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Vector):  [Read-Write] Translation of pivot point around which we rotate, relative to current rotation.
 		For instance, with PivotTranslation set to (X=+100, Y=0, Z=0), rotation will occur
 		around the point +100 units along the local X axis from the center of the object,

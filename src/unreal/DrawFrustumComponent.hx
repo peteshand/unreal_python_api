@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DrawFrustumComponent") extern class DrawFrustumComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(float):  [Read-Write] Angle of longest dimension of view shape.
 		If the angle is 0 then an orthographic projection is used
 	**/

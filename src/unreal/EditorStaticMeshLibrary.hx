@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorStaticMeshLibrary") extern class EditorStaticMeshLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_simple_collisions(static_mesh, shape_type) -> int32
 		Same as AddSimpleCollisionsWithNotification but changes are automatically applied.
 		

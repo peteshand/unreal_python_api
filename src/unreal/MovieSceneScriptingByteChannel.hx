@@ -24,7 +24,7 @@ package unreal;
 		Returns:
 		    MovieSceneScriptingByteKey: The key that was created with the specified values at the specified time.
 	**/
-	public function add_key(time:Dynamic, new_value:Dynamic, sub_frame:Dynamic, time_unit:Dynamic, interpolation:Dynamic):unreal.MovieSceneScriptingByteKey;
+	public function add_key(time:unreal.FrameNumber, new_value:UInt, sub_frame:Float = 0.000000, ?time_unit:unreal.SequenceTimeUnit, ?interpolation:unreal.MovieSceneKeyInterpolation):unreal.MovieSceneScriptingByteKey;
 	/**
 		x.get_default() -> uint8
 		Get this channel's default value that will be used when no keys are present. Only a valid
@@ -33,7 +33,7 @@ package unreal;
 		Returns:
 		    uint8:
 	**/
-	public function get_default():Dynamic;
+	public function get_default():UInt;
 	/**
 		x.get_keys() -> Array(MovieSceneScriptingKey)
 		Gets all of the keys in this channel.
@@ -41,7 +41,7 @@ package unreal;
 		Returns:
 		    Array(MovieSceneScriptingKey): An array of UMovieSceneScriptingByteKey's contained by this channel. Returns all keys even if clipped by the owning section's boundaries or outside of the current sequence play range.
 	**/
-	public function get_keys():Dynamic;
+	public function get_keys():Array<MovieSceneScriptingKey>;
 	/**
 		x.has_default() -> bool
 		
@@ -62,7 +62,7 @@ package unreal;
 		Args:
 		    key (MovieSceneScriptingKey):
 	**/
-	public function remove_key(key:Dynamic):Void;
+	public function remove_key(key:unreal.MovieSceneScriptingKey):Void;
 	/**
 		x.set_default(default_value) -> None
 		Set this channel's default value that should be used when no keys are present.
@@ -71,5 +71,5 @@ package unreal;
 		Args:
 		    default_value (uint8):
 	**/
-	public function set_default(default_value:Dynamic):Void;
+	public function set_default(default_value:UInt):Void;
 }

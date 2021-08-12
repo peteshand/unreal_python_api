@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AssetTagsSubsystem") extern class AssetTagsSubsystem extends unreal.EngineSubsystem {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_asset_data_to_collection(name, asset_data) -> bool
 		Add the given asset to the given collection.
 		

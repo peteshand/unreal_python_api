@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorLoadingAndSavingUtils") extern class EditorLoadingAndSavingUtils extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.export_scene(export_selected_actors_only) -> None
 		Exports the current scene
 		
@@ -95,7 +104,7 @@ package unreal;
 		
 		    out_error_message (Text): An error message specifying any problems with reloading packages
 	**/
-	static public function reload_packages(packages_to_reload:Array<Package>, interaction_mode:unreal.ReloadPackagesInteractionMode = ReloadPackagesInteractionMode.INTERACTIVE):python.Tuple<Dynamic>;
+	static public function reload_packages(packages_to_reload:Array<Package>, ?interaction_mode:unreal.ReloadPackagesInteractionMode):python.Tuple<Dynamic>;
 	/**
 		X.save_current_level() -> bool
 		Saves the active level, prompting the use for checkout if necessary.

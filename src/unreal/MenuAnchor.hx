@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MenuAnchor") extern class MenuAnchor extends unreal.ContentWidget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.close() -> None
 		Closes the menu if it is currently open.
 	**/
@@ -43,7 +52,7 @@ package unreal;
 		If you want to customize the creation of the popup, you should bind a function to OnGetMenuContentEvent
 		instead.
 	**/
-	public var menu_class : Class<Dynamic>;
+	public var menu_class : Dynamic;
 	/**
 		(OnMenuOpenChangedEvent):  [Read-Write] Called when the opened state of the menu changes
 	**/

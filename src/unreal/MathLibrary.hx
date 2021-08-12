@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MathLibrary") extern class MathLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.abs(a) -> float
 		Returns the absolute (positive) value of A
 		
@@ -104,7 +113,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	static public function add_int64_int64(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function add_int64_int64(a:Dynamic, ?b:Dynamic):Dynamic;
 	/**
 		X.add_int_int(a, b=1) -> int32
 		Addition (A + B)
@@ -540,7 +549,7 @@ package unreal;
 		Returns:
 		    bool: true if TestClass == ParentClass, or if TestClass is a child of ParentClass; false otherwise, or if either the value for either parameter is 'None'.
 	**/
-	static public function class_is_child_of(test_class:Class<Dynamic>, parent_class:Class<Dynamic>):Bool;
+	static public function class_is_child_of(test_class:Dynamic, parent_class:Dynamic):Bool;
 	/**
 		X.compose_rotators(a, b) -> Rotator
 		Combine 2 rotations to give you the resulting rotation of first applying A, then B.
@@ -1226,7 +1235,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	static public function divide_int64_int64(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function divide_int64_int64(a:Dynamic, ?b:Dynamic):Dynamic;
 	/**
 		X.divide_int_int(a, b=1) -> int32
 		Division (A / B)
@@ -1358,7 +1367,7 @@ package unreal;
 		Returns:
 		    Vector:
 	**/
-	static public function divide_vector_vector(a:unreal.Vector, b:unreal.Vector = [1.000000, 1.000000, 1.000000]):unreal.Vector;
+	static public function divide_vector_vector(a:unreal.Vector, ?b:unreal.Vector):unreal.Vector;
 	/**
 		X.dot_product2d(a, b) -> float
 		Returns the dot product of two 2d vectors - see http://mathworld.wolfram.com/DotProduct.html
@@ -1469,7 +1478,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_class_class(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
+	static public function equal_equal_class_class(a:Dynamic, b:Dynamic):Bool;
 	/**
 		X.equal_equal_date_time_date_time(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -4765,7 +4774,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_class_class(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
+	static public function not_equal_class_class(a:Dynamic, b:Dynamic):Bool;
 	/**
 		X.not_equal_date_time_date_time(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -6063,7 +6072,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function select_class(a:Class<Dynamic>, b:Class<Dynamic>, select_a:Bool):Class<Dynamic>;
+	static public function select_class(a:Dynamic, b:Dynamic, select_a:Bool):Dynamic;
 	/**
 		X.select_color(a, b, pick_a) -> LinearColor
 		If bPickA is true, A is returned, otherwise B is
@@ -6333,7 +6342,7 @@ package unreal;
 		Returns:
 		    int64:
 	**/
-	static public function subtract_int64_int64(a:Dynamic, b:Dynamic = 1):Dynamic;
+	static public function subtract_int64_int64(a:Dynamic, ?b:Dynamic):Dynamic;
 	/**
 		X.subtract_int_int(a, b=1) -> int32
 		Subtraction (A - B)
@@ -6505,7 +6514,7 @@ package unreal;
 		Returns:
 		    Transform:
 	**/
-	static public function t_lerp(a:unreal.Transform, b:unreal.Transform, alpha:Float, interp_mode:unreal.LerpInterpolationMode = LerpInterpolationMode.QUAT_INTERP):unreal.Transform;
+	static public function t_lerp(a:unreal.Transform, b:unreal.Transform, alpha:Float, ?interp_mode:unreal.LerpInterpolationMode):unreal.Transform;
 	/**
 		X.tan(a) -> float
 		Returns the tan of A (expects Radians)

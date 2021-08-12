@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "GameModeBase") extern class GameModeBase extends unreal.Info {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.can_spectate(viewer, view_target) -> bool
 		Return whether Viewer is allowed to spectate from the point of view of ViewTarget.
 		
@@ -38,7 +47,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] The default pawn class used by players.
 	**/
-	public var default_pawn_class : Class<Dynamic>;
+	public var default_pawn_class : Dynamic;
 	/**
 		x.find_player_start(player, incoming_name) -> Actor
 		Return the specific player start actor that should be used for the next spawn
@@ -55,11 +64,11 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Class of GameSession, which handles login approval and online game interface
 	**/
-	public var game_session_class : Class<Dynamic>;
+	public var game_session_class : Dynamic;
 	/**
 		(type(Class)):  [Read-Only] Class of GameState associated with this GameMode.
 	**/
-	public var game_state_class : Class<Dynamic>;
+	public var game_state_class : Dynamic;
 	/**
 		x.get_default_pawn_class_for_controller(controller) -> type(Class)
 		Returns default pawn class for given controller
@@ -70,7 +79,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	public function get_default_pawn_class_for_controller(controller:unreal.Controller):Class<Dynamic>;
+	public function get_default_pawn_class_for_controller(controller:unreal.Controller):Dynamic;
 	/**
 		x.get_num_players() -> int32
 		Returns number of active human players, excluding spectators
@@ -114,7 +123,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] HUD class this game uses.
 	**/
-	public var hud_class : Class<Dynamic>;
+	public var hud_class : Dynamic;
 	/**
 		x.init_start_spot(start_spot, new_player) -> None
 		Called from RestartPlayerAtPlayerStart, can be used to initialize the start spawn actor
@@ -221,15 +230,15 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The class of PlayerController to spawn for players logging in.
 	**/
-	public var player_controller_class : Class<Dynamic>;
+	public var player_controller_class : Dynamic;
 	/**
 		(type(Class)):  [Read-Only] A PlayerState of this class will be associated with every player to replicate relevant player information to all clients.
 	**/
-	public var player_state_class : Class<Dynamic>;
+	public var player_state_class : Dynamic;
 	/**
 		(type(Class)):  [Read-Only] The PlayerController class used when spectating a network replay.
 	**/
-	public var replay_spectator_player_controller_class : Class<Dynamic>;
+	public var replay_spectator_player_controller_class : Dynamic;
 	/**
 		x.reset_level() -> None
 		Overridable function called when resetting level. This is used to reset the game state while staying in the same map
@@ -270,7 +279,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] Server Stat Replicator Class
 	**/
-	public var server_stat_replicator_class : Class<Dynamic>;
+	public var server_stat_replicator_class : Dynamic;
 	/**
 		x.should_reset(actor_to_reset) -> bool
 		Overridable function to determine whether an Actor should have Reset called when the game has Reset called on it.
@@ -310,7 +319,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Only] The pawn class used by the PlayerController for players when spectating.
 	**/
-	public var spectator_class : Class<Dynamic>;
+	public var spectator_class : Dynamic;
 	/**
 		x.start_play() -> None
 		Transitions to calls BeginPlay on actors.

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DatasmithContentLibrary") extern class DatasmithContentLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.get_all_datasmith_user_data(object_class) -> Array(DatasmithUserData)
 		Find all Datasmith User Data of loaded objects of the given type.
 		This is a slow operation, so editor only.
@@ -14,7 +23,7 @@ package unreal;
 		
 		    out_user_data (Array(DatasmithUserData)): Output array of Datasmith User Data.
 	**/
-	static public function get_all_datasmith_user_data(object_class:Class<Dynamic>):Array<DatasmithUserData>;
+	static public function get_all_datasmith_user_data(object_class:Dynamic):Array<DatasmithUserData>;
 	/**
 		X.get_all_objects_and_values_for_key(key, object_class) -> (out_objects=Array(Object), out_values=Array(str))
 		Find all loaded objects of the given type that have a Datasmith User Data that contains the given key and their associated values.
@@ -31,7 +40,7 @@ package unreal;
 		
 		    out_values (Array(str)): Output array of values associated with each object in OutObjects.
 	**/
-	static public function get_all_objects_and_values_for_key(key:unreal.Name, object_class:Class<Dynamic>):python.Tuple<Dynamic>;
+	static public function get_all_objects_and_values_for_key(key:unreal.Name, object_class:Dynamic):python.Tuple<Dynamic>;
 	/**
 		X.get_datasmith_user_data(object) -> DatasmithUserData
 		Get the Datasmith User Data of a given object

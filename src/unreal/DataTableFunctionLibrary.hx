@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "DataTableFunctionLibrary") extern class DataTableFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.does_data_table_row_exist(table, row_name) -> bool
 		Returns whether or not Table contains a row named RowName
 		
@@ -67,7 +76,7 @@ package unreal;
 		Returns:
 		    bool: True if the operation succeeds, check the log for errors if it didn't succeed.
 	**/
-	static public function fill_data_table_from_json_file(data_table:unreal.DataTable, json_file_path:String, import_row_struct:unreal.ScriptStruct = null):Bool;
+	static public function fill_data_table_from_json_file(data_table:unreal.DataTable, json_file_path:String, ?import_row_struct:unreal.ScriptStruct):Bool;
 	/**
 		X.fill_data_table_from_json_string(data_table, json_string) -> bool
 		Empty and fill a Data Table from JSON string.

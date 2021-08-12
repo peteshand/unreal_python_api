@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ToolMenus") extern class ToolMenus extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_menu_entry_object(menu_entry_object) -> bool
 		Registers menu entry object from blueprint/script
 		
@@ -34,7 +43,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	static public function find_context(context:unreal.ToolMenuContext, class_:Class<Dynamic>):unreal.Object;
+	static public function find_context(context:unreal.ToolMenuContext, class_:Dynamic):unreal.Object;
 	/**
 		x.find_menu(name) -> ToolMenu
 		Finds an existing menu that has been registered or extended.
@@ -94,7 +103,7 @@ package unreal;
 		Returns:
 		    ToolMenu: ToolMenu        Menu object
 	**/
-	public function register_menu(name:unreal.Name, parent:unreal.Name = "\"None\"", type:unreal.MultiBoxType = MultiBoxType.MENU, warn_if_already_registered:Bool = true):unreal.ToolMenu;
+	public function register_menu(name:unreal.Name, ?parent:unreal.Name, ?type:unreal.MultiBoxType, warn_if_already_registered:Bool = true):unreal.ToolMenu;
 	/**
 		x.remove_entry(menu_name, section, name) -> None
 		Removes a menu entry from a given menu and section

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AnimNotifyEvent") extern class AnimNotifyEvent extends unreal.AnimLinkableElement {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(MontageNotifyTickType):  [Read-Write] Montage Tick Type
 	**/
 	public var montage_tick_type : unreal.MontageNotifyTickType;

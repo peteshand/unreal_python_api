@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ARFaceComponent") extern class ARFaceComponent extends unreal.ARComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Whether the mesh should be rotated so that it's facing out of the screen.
 	**/
 	public var face_out_of_screen : Bool;

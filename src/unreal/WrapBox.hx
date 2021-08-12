@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "WrapBox") extern class WrapBox extends unreal.PanelWidget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_child_to_wrap_box(content) -> WrapBoxSlot
 		Add Child to Wrap Box
 		

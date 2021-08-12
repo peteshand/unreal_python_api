@@ -2,13 +2,22 @@
 package unreal;
 @:pythonImport("unreal", "PrimaryAssetId") extern class PrimaryAssetId extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_class() -> type(Class)
 		Returns the Blueprint Class associated with a Primary Asset Id, this will only return a valid object if it is in memory, it will not load it
 		
 		Returns:
 		    type(Class):
 	**/
-	public function get_class():Class<Dynamic>;
+	public function get_class():Dynamic;
 	/**
 		x.get_current_bundle_state(force_current_state) -> Array(Name) or None
 		Returns the list of loaded bundles for a given Primary Asset. This will return false if the asset is not loaded at all.
@@ -38,7 +47,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	public function get_soft_class_reference():Class<Dynamic>;
+	public function get_soft_class_reference():unreal.Class;
 	/**
 		x.get_soft_object_reference() -> Object
 		Returns the Object Id associated with a Primary Asset Id, this works even if the asset is not loaded

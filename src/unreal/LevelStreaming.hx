@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "LevelStreaming") extern class LevelStreaming extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.create_instance(unique_instance_name) -> LevelStreaming
 		Creates a new instance of this streaming level with a provided unique instance name
 		

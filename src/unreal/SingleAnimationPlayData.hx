@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SingleAnimationPlayData") extern class SingleAnimationPlayData extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(AnimationAsset):  [Read-Write]
 		in the future, we should make this one UObject and have detail customization to display different things The default sequence to play on this skeletal mesh:
 	**/

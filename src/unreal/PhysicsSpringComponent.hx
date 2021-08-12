@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PhysicsSpringComponent") extern class PhysicsSpringComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_normalized_compression_scalar() -> float
 		Returns the spring compression as a normalized scalar along spring direction.
 		0 implies spring is at rest

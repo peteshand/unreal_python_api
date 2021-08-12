@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "StaticMeshDescription") extern class StaticMeshDescription extends unreal.MeshDescriptionBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.create_cube(center, half_extents, polygon_group) -> (polygon_id_plus_x=PolygonID, polygon_id_minus_x=PolygonID, polygon_id_plus_y=PolygonID, polygon_id_minus_y=PolygonID, polygon_id_plus_z=PolygonID, polygon_id_minus_z=PolygonID)
 		Create Cube
 		

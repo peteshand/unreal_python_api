@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SafeZoneSlot") extern class SafeZoneSlot extends unreal.PanelSlot {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(HorizontalAlignment):  [Read-Only] HAlign
 	**/
 	public var h_align : unreal.HorizontalAlignment;

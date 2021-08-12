@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "Exporter") extern class Exporter extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(AssetExportTask):  [Read-Write] Export Task
 	**/
 	public var export_task : unreal.AssetExportTask;
@@ -51,7 +60,7 @@ package unreal;
 	/**
 		(type(Class)):  [Read-Write] Supported class of this exporter
 	**/
-	public var supported_class : Class<Dynamic>;
+	public var supported_class : Dynamic;
 	/**
 		(bool):  [Read-Write] If true, this will export the data as text
 	**/

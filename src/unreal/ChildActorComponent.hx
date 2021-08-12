@@ -2,13 +2,22 @@
 package unreal;
 @:pythonImport("unreal", "ChildActorComponent") extern class ChildActorComponent extends unreal.SceneComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(Actor):  [Read-Only] The actor that we spawned and own
 	**/
 	public var child_actor : unreal.Actor;
 	/**
 		(type(Class)):  [Read-Only] The class of Actor to spawn
 	**/
-	public var child_actor_class : Class<Dynamic>;
+	public var child_actor_class : Dynamic;
 	/**
 		x.set_child_actor_class(class_) -> None
 		Sets the class to use for the child actor.
@@ -18,5 +27,5 @@ package unreal;
 		Args:
 		    class_ (type(Class)): The Actor subclass to spawn as a child actor
 	**/
-	public function set_child_actor_class(class_:Class<Dynamic>):Void;
+	public function set_child_actor_class(class_:Dynamic):Void;
 }

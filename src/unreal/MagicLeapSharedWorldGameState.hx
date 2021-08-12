@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapSharedWorldGameState") extern class MagicLeapSharedWorldGameState extends unreal.GameState {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(MagicLeapSharedWorldAlignmentTransforms):  [Read-Only] Alignment transforms, replicated to all clients, to be used to calculate the final transform for the camera component parent to align coordinate spaces.
 		Order should match the pin order in SharedWorldData.PinIDs.
 		CalculateXRCameraRootTransform: 

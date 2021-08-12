@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MaterialImportHelpers") extern class MaterialImportHelpers extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.find_existing_material(base_path, material_full_name, recursive_paths) -> (MaterialInterface, out_error=Text)
 		Find Existing Material
 		

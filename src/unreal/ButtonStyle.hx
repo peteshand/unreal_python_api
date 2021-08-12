@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ButtonStyle") extern class ButtonStyle extends unreal.SlateWidgetStyle {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(SlateBrush):  [Read-Write] Button appearance when disabled, by default this is set to an invalid resource when that is the case default disabled drawing is used.
 	**/
 	public var disabled : unreal.SlateBrush;

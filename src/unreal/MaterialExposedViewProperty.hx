@@ -15,4 +15,13 @@ package unreal;
 	static public var MEVP_VIEW_SIZE : Dynamic;
 	static public var MEVP_WORLD_SPACE_CAMERA_POSITION : Dynamic;
 	static public var MEVP_WORLD_SPACE_VIEW_POSITION : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
 }

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SplineComponent") extern class SplineComponent extends unreal.PrimitiveComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_point(point, update_spline=True) -> None
 		Adds an FSplinePoint to the spline. This contains its input key, position, tangent, rotation and scale.
 		

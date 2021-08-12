@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ARTrackableNotifyComponent") extern class ARTrackableNotifyComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(TrackableEnvProbeDelegate):  [Read-Write] Event that happens when any new ar environment capture probe item is added
 	**/
 	public var on_add_tracked_env_probe : unreal.TrackableEnvProbeDelegate;

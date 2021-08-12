@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AssetRegistryDependencyOptions") extern class AssetRegistryDependencyOptions extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Write] Reference that says one object directly manages another object, set when Primary Assets manage things explicitly
 	**/
 	public var include_hard_management_references : Bool;

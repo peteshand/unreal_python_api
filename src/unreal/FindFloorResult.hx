@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "FindFloorResult") extern class FindFloorResult extends unreal.StructBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] True if there was a blocking hit in the floor test that was NOT in initial penetration.
 		The HitResult can give more info about other circumstances.
 	**/

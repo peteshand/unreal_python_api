@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AutomationLibrary") extern class AutomationLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_expected_log_error(expected_pattern_string, occurrences=1, exact_match=False) -> None
 		Mute the report of log error and warning matching a pattern during an automated test
 		
@@ -58,7 +67,7 @@ package unreal;
 		Returns:
 		    AutomationScreenshotOptions:
 	**/
-	static public function get_default_screenshot_options_for_gameplay(tolerance:unreal.ComparisonTolerance = ComparisonTolerance.LOW, delay:Float = 0.200000):unreal.AutomationScreenshotOptions;
+	static public function get_default_screenshot_options_for_gameplay(?tolerance:unreal.ComparisonTolerance, delay:Float = 0.200000):unreal.AutomationScreenshotOptions;
 	/**
 		X.get_default_screenshot_options_for_rendering(tolerance=ComparisonTolerance.LOW, delay=0.200000) -> AutomationScreenshotOptions
 		Get Default Screenshot Options for Rendering
@@ -70,7 +79,7 @@ package unreal;
 		Returns:
 		    AutomationScreenshotOptions:
 	**/
-	static public function get_default_screenshot_options_for_rendering(tolerance:unreal.ComparisonTolerance = ComparisonTolerance.LOW, delay:Float = 0.200000):unreal.AutomationScreenshotOptions;
+	static public function get_default_screenshot_options_for_rendering(?tolerance:unreal.ComparisonTolerance, delay:Float = 0.200000):unreal.AutomationScreenshotOptions;
 	/**
 		X.get_stat_call_count(stat_name) -> float
 		Get Stat Call Count
@@ -205,5 +214,5 @@ package unreal;
 		Returns:
 		    AutomationEditorTask:
 	**/
-	static public function take_high_res_screenshot(res_x:Int, res_y:Int, filename:String, camera:unreal.CameraActor = null, mask_enabled:Bool = false, capture_hdr:Bool = false, comparison_tolerance:unreal.ComparisonTolerance = ComparisonTolerance.LOW, comparison_notes:String = "\"\"", delay:Float = 0.000000):unreal.AutomationEditorTask;
+	static public function take_high_res_screenshot(res_x:Int, res_y:Int, filename:String, ?camera:unreal.CameraActor, mask_enabled:Bool = false, capture_hdr:Bool = false, ?comparison_tolerance:unreal.ComparisonTolerance, comparison_notes:String = "\"\"", delay:Float = 0.000000):unreal.AutomationEditorTask;
 }

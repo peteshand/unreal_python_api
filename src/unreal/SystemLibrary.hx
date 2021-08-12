@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SystemLibrary") extern class SystemLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.add_float_history_sample(value, float_history) -> DebugFloatHistory
 		Add Float History Sample
 		
@@ -46,7 +55,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function box_overlap_actors(world_context_object:unreal.Object, box_pos:unreal.Vector, box_extent:unreal.Vector, object_types:Array<ObjectTypeQuery>, actor_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<Actor>;
+	static public function box_overlap_actors(world_context_object:unreal.Object, box_pos:unreal.Vector, box_extent:unreal.Vector, object_types:Array<ObjectTypeQuery>, actor_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<Actor>;
 	/**
 		deprecated: 'box_overlap_actors_new' was renamed to 'box_overlap_actors'.
 	**/
@@ -69,7 +78,7 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function box_overlap_components(world_context_object:unreal.Object, box_pos:unreal.Vector, extent:unreal.Vector, object_types:Array<ObjectTypeQuery>, component_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
+	static public function box_overlap_components(world_context_object:unreal.Object, box_pos:unreal.Vector, extent:unreal.Vector, object_types:Array<ObjectTypeQuery>, component_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
 	/**
 		deprecated: 'box_overlap_components_new' was renamed to 'box_overlap_components'.
 	**/
@@ -100,7 +109,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish. The blocking hit will be the last hit, if there was one.
 	**/
-	static public function box_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function box_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.box_trace_multi_by_profile(world_context_object, start, end, half_size, orientation, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a box against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -127,7 +136,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish. The blocking hit will be the last hit, if there was one.
 	**/
-	static public function box_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function box_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.box_trace_multi_for_objects(world_context_object, start, end, half_size, orientation, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a box along the given line and returns all hits encountered.
@@ -153,7 +162,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function box_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function box_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.box_trace_single(world_context_object, start, end, half_size, orientation, trace_channel, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a box along the given line and returns the first blocking hit encountered.
@@ -179,7 +188,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function box_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function box_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.box_trace_single_by_profile(world_context_object, start, end, half_size, orientation, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a box against the world and return the first blocking hit using a specific profile
@@ -204,7 +213,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function box_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function box_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.box_trace_single_for_objects(world_context_object, start, end, half_size, orientation, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a box along the given line and returns the first hit encountered.
@@ -230,7 +239,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function box_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function box_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, half_size:unreal.Vector, orientation:unreal.Rotator, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.can_launch_url(url) -> bool
 		Can Launch URL
@@ -269,7 +278,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function capsule_overlap_actors(world_context_object:unreal.Object, capsule_pos:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, actor_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<Actor>;
+	static public function capsule_overlap_actors(world_context_object:unreal.Object, capsule_pos:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, actor_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<Actor>;
 	/**
 		deprecated: 'capsule_overlap_actors_new' was renamed to 'capsule_overlap_actors'.
 	**/
@@ -293,7 +302,7 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function capsule_overlap_components(world_context_object:unreal.Object, capsule_pos:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, component_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
+	static public function capsule_overlap_components(world_context_object:unreal.Object, capsule_pos:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, component_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
 	/**
 		deprecated: 'capsule_overlap_components_new' was renamed to 'capsule_overlap_components'.
 	**/
@@ -324,7 +333,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function capsule_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function capsule_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.capsule_trace_multi_by_profile(world_context_object, start, end, radius, half_height, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a capsule against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -351,7 +360,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function capsule_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function capsule_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.capsule_trace_multi_for_objects(world_context_object, start, end, radius, half_height, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a capsule along the given line and returns all hits encountered.
@@ -377,7 +386,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function capsule_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function capsule_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		deprecated: 'capsule_trace_multi_new' was renamed to 'capsule_trace_multi'.
 	**/
@@ -408,7 +417,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function capsule_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function capsule_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.capsule_trace_single_by_profile(world_context_object, start, end, radius, half_height, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a capsule against the world and return the first blocking hit using a specific profile
@@ -433,7 +442,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function capsule_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function capsule_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.capsule_trace_single_for_objects(world_context_object, start, end, radius, half_height, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a capsule along the given line and returns the first hit encountered.
@@ -459,7 +468,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function capsule_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function capsule_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, half_height:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		deprecated: 'capsule_trace_single_new' was renamed to 'capsule_trace_single'.
 	**/
@@ -531,7 +540,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function component_overlap_actors(component:unreal.PrimitiveComponent, component_transform:unreal.Transform, object_types:Array<ObjectTypeQuery>, actor_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<Actor>;
+	static public function component_overlap_actors(component:unreal.PrimitiveComponent, component_transform:unreal.Transform, object_types:Array<ObjectTypeQuery>, actor_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<Actor>;
 	/**
 		deprecated: 'component_overlap_actors_new' was renamed to 'component_overlap_actors'.
 	**/
@@ -553,7 +562,7 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function component_overlap_components(component:unreal.PrimitiveComponent, component_transform:unreal.Transform, object_types:Array<ObjectTypeQuery>, component_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
+	static public function component_overlap_components(component:unreal.PrimitiveComponent, component_transform:unreal.Transform, object_types:Array<ObjectTypeQuery>, component_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
 	/**
 		deprecated: 'component_overlap_components_new' was renamed to 'component_overlap_components'.
 	**/
@@ -610,7 +619,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	static public function conv_soft_class_path_to_soft_class_ref(soft_class_path:unreal.SoftClassPath):Class<Dynamic>;
+	static public function conv_soft_class_path_to_soft_class_ref(soft_class_path:unreal.SoftClassPath):unreal.Class;
 	/**
 		X.conv_soft_class_reference_to_string(soft_class_reference) -> str
 		Converts a Soft Class Reference to a string. The other direction is not provided because it cannot be validated
@@ -621,7 +630,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function conv_soft_class_reference_to_string(soft_class_reference:Class<Dynamic>):String;
+	static public function conv_soft_class_reference_to_string(soft_class_reference:unreal.Class):String;
 	/**
 		X.conv_soft_obj_path_to_soft_obj_ref(soft_object_path) -> Object
 		Converts a Soft Object Path into a base Soft Object Reference, this is not guaranteed to be resolvable
@@ -695,7 +704,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function does_implement_interface(test_object:unreal.Object, _interface:Class<Dynamic>):Bool;
+	static public function does_implement_interface(test_object:unreal.Object, _interface:Dynamic):Bool;
 	/**
 		X.draw_debug_arrow(world_context_object, line_start, line_end, arrow_size, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw directional arrow, pointing from LineStart to LineEnd.
@@ -723,7 +732,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_box(world_context_object:unreal.Object, center:unreal.Vector, extent:unreal.Vector, line_color:unreal.LinearColor, rotation:unreal.Rotator = [0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000):Void;
+	static public function draw_debug_box(world_context_object:unreal.Object, center:unreal.Vector, extent:unreal.Vector, line_color:unreal.LinearColor, ?rotation:unreal.Rotator, duration:Float = 0.000000, thickness:Float = 0.000000):Void;
 	/**
 		X.draw_debug_camera(camera_actor, camera_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draw a debug camera shape.
@@ -733,7 +742,7 @@ package unreal;
 		    camera_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_camera(camera_actor:unreal.CameraActor, camera_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
+	static public function draw_debug_camera(camera_actor:unreal.CameraActor, ?camera_color:unreal.LinearColor, duration:Float = 0.000000):Void;
 	/**
 		X.draw_debug_capsule(world_context_object, center, half_height, radius, rotation, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draw a debug capsule
@@ -748,7 +757,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_capsule(world_context_object:unreal.Object, center:unreal.Vector, half_height:Float, radius:Float, rotation:unreal.Rotator, line_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000):Void;
+	static public function draw_debug_capsule(world_context_object:unreal.Object, center:unreal.Vector, half_height:Float, radius:Float, rotation:unreal.Rotator, ?line_color:unreal.LinearColor, duration:Float = 0.000000, thickness:Float = 0.000000):Void;
 	/**
 		X.draw_debug_circle(world_context_object, center, radius, num_segments=12, line_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000, y_axis=[0.000000, 1.000000, 0.000000], z_axis=[0.000000, 0.000000, 1.000000], draw_axis=False) -> None
 		Draw a debug circle!
@@ -765,7 +774,7 @@ package unreal;
 		    z_axis (Vector): 
 		    draw_axis (bool):
 	**/
-	static public function draw_debug_circle(world_context_object:unreal.Object, center:unreal.Vector, radius:Float, num_segments:Int = 12, line_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000, y_axis:unreal.Vector = [0.000000, 1.000000, 0.000000], z_axis:unreal.Vector = [0.000000, 0.000000, 1.000000], draw_axis:Bool = false):Void;
+	static public function draw_debug_circle(world_context_object:unreal.Object, center:unreal.Vector, radius:Float, num_segments:Int = 12, ?line_color:unreal.LinearColor, duration:Float = 0.000000, thickness:Float = 0.000000, ?y_axis:unreal.Vector, ?z_axis:unreal.Vector, draw_axis:Bool = false):Void;
 	/**
 		X.draw_debug_cone(world_context_object, origin, direction, length, angle_width, angle_height, num_sides, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug cone
@@ -802,7 +811,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_cone_in_degrees(world_context_object:unreal.Object, origin:unreal.Vector, direction:unreal.Vector, length:Float = 100.000000, angle_width:Float = 45.000000, angle_height:Float = 45.000000, num_sides:Int = 12, line_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000):Void;
+	static public function draw_debug_cone_in_degrees(world_context_object:unreal.Object, origin:unreal.Vector, direction:unreal.Vector, length:Float = 100.000000, angle_width:Float = 45.000000, angle_height:Float = 45.000000, num_sides:Int = 12, ?line_color:unreal.LinearColor, duration:Float = 0.000000, thickness:Float = 0.000000):Void;
 	/**
 		X.draw_debug_coordinate_system(world_context_object, axis_loc, axis_rot, scale=1.000000, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug coordinate system.
@@ -830,7 +839,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_cylinder(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float = 100.000000, segments:Int = 12, line_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000):Void;
+	static public function draw_debug_cylinder(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float = 100.000000, segments:Int = 12, ?line_color:unreal.LinearColor, duration:Float = 0.000000, thickness:Float = 0.000000):Void;
 	/**
 		X.draw_debug_float_history_location(world_context_object, float_history, draw_location, draw_size, draw_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a 2D Histogram of size 'DrawSize' based FDebugFloatHistory struct, using DrawLocation for the location in the world, rotation will face camera of first player.
@@ -843,7 +852,7 @@ package unreal;
 		    draw_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_float_history_location(world_context_object:unreal.Object, float_history:unreal.DebugFloatHistory, draw_location:unreal.Vector, draw_size:unreal.Vector2D, draw_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
+	static public function draw_debug_float_history_location(world_context_object:unreal.Object, float_history:unreal.DebugFloatHistory, draw_location:unreal.Vector, draw_size:unreal.Vector2D, ?draw_color:unreal.LinearColor, duration:Float = 0.000000):Void;
 	/**
 		X.draw_debug_float_history_transform(world_context_object, float_history, draw_transform, draw_size, draw_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draws a 2D Histogram of size 'DrawSize' based FDebugFloatHistory struct, using DrawTransform for the position in the world.
@@ -856,7 +865,7 @@ package unreal;
 		    draw_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_float_history_transform(world_context_object:unreal.Object, float_history:unreal.DebugFloatHistory, draw_transform:unreal.Transform, draw_size:unreal.Vector2D, draw_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
+	static public function draw_debug_float_history_transform(world_context_object:unreal.Object, float_history:unreal.DebugFloatHistory, draw_transform:unreal.Transform, draw_size:unreal.Vector2D, ?draw_color:unreal.LinearColor, duration:Float = 0.000000):Void;
 	/**
 		X.draw_debug_frustum(world_context_object, frustum_transform, frustum_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000, thickness=0.000000) -> None
 		Draws a debug frustum.
@@ -868,7 +877,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_frustum(world_context_object:unreal.Object, frustum_transform:unreal.Transform, frustum_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000):Void;
+	static public function draw_debug_frustum(world_context_object:unreal.Object, frustum_transform:unreal.Transform, ?frustum_color:unreal.LinearColor, duration:Float = 0.000000, thickness:Float = 0.000000):Void;
 	/**
 		X.draw_debug_line(world_context_object, line_start, line_end, line_color, duration=0.000000, thickness=0.000000) -> None
 		Draw a debug line
@@ -894,7 +903,7 @@ package unreal;
 		    plane_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_plane(world_context_object:unreal.Object, plane_coordinates:unreal.Plane, location:unreal.Vector, size:Float, plane_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
+	static public function draw_debug_plane(world_context_object:unreal.Object, plane_coordinates:unreal.Plane, location:unreal.Vector, size:Float, ?plane_color:unreal.LinearColor, duration:Float = 0.000000):Void;
 	/**
 		X.draw_debug_point(world_context_object, position, size, point_color, duration=0.000000) -> None
 		Draw a debug point
@@ -920,7 +929,7 @@ package unreal;
 		    duration (float): 
 		    thickness (float):
 	**/
-	static public function draw_debug_sphere(world_context_object:unreal.Object, center:unreal.Vector, radius:Float = 100.000000, segments:Int = 12, line_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000, thickness:Float = 0.000000):Void;
+	static public function draw_debug_sphere(world_context_object:unreal.Object, center:unreal.Vector, radius:Float = 100.000000, segments:Int = 12, ?line_color:unreal.LinearColor, duration:Float = 0.000000, thickness:Float = 0.000000):Void;
 	/**
 		X.draw_debug_string(world_context_object, text_location, text, test_base_actor=None, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=0.000000) -> None
 		Draw a debug string at a 3d world location.
@@ -933,7 +942,7 @@ package unreal;
 		    text_color (LinearColor): 
 		    duration (float):
 	**/
-	static public function draw_debug_string(world_context_object:unreal.Object, text_location:unreal.Vector, text:String, test_base_actor:unreal.Actor = null, text_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 0.000000):Void;
+	static public function draw_debug_string(world_context_object:unreal.Object, text_location:unreal.Vector, text:String, ?test_base_actor:unreal.Actor, ?text_color:unreal.LinearColor, duration:Float = 0.000000):Void;
 	/**
 		X.end_transaction() -> int32
 		Attempt to end the current undo transaction. Only successful if the transaction's action counter is 1.
@@ -978,7 +987,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function equal_equal_soft_class_reference(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
+	static public function equal_equal_soft_class_reference(a:unreal.Class, b:unreal.Class):Bool;
 	/**
 		X.equal_equal_soft_object_reference(a, b) -> bool
 		Returns true if the values are equal (A == B)
@@ -1000,7 +1009,7 @@ package unreal;
 		    command (str): Command to send to the console
 		    specific_player (PlayerController): If specified, the console command will be routed through the specified player
 	**/
-	static public function execute_console_command(world_context_object:unreal.Object, command:String, specific_player:unreal.PlayerController = null):Void;
+	static public function execute_console_command(world_context_object:unreal.Object, command:String, ?specific_player:unreal.PlayerController):Void;
 	/**
 		deprecated: 'experimental_close_ad_banner' was renamed to 'force_close_ad_banner'.
 	**/
@@ -1073,7 +1082,7 @@ package unreal;
 		
 		    out_actor_list (Array(Actor)): Start of line segment.
 	**/
-	static public function get_actor_list_from_component_list(component_list:Array<PrimitiveComponent>, actor_class_filter:Class<Dynamic>):Array<Actor>;
+	static public function get_actor_list_from_component_list(component_list:Array<PrimitiveComponent>, actor_class_filter:Dynamic):Array<Actor>;
 	/**
 		X.get_ad_id_count() -> int32
 		Retrieves the total number of Ad IDs that can be selected between
@@ -1092,7 +1101,7 @@ package unreal;
 		Returns:
 		    str:
 	**/
-	static public function get_class_display_name(class_:Class<Dynamic>):String;
+	static public function get_class_display_name(class_:Dynamic):String;
 	/**
 		X.get_class_from_primary_asset_id(primary_asset_id) -> type(Class)
 		Returns the Blueprint Class associated with a Primary Asset Id, this will only return a valid object if it is in memory, it will not load it
@@ -1103,7 +1112,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function get_class_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):Class<Dynamic>;
+	static public function get_class_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):Dynamic;
 	/**
 		X.get_command_line() -> str
 		Returns the command line that the process was launched with.
@@ -1392,7 +1401,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	static public function get_primary_asset_id_from_class(class_:Class<Dynamic>):unreal.PrimaryAssetId;
+	static public function get_primary_asset_id_from_class(class_:Dynamic):unreal.PrimaryAssetId;
 	/**
 		X.get_primary_asset_id_from_object(object) -> PrimaryAssetId
 		Returns the Primary Asset Id for an Object, this can return an invalid one if not registered
@@ -1414,7 +1423,7 @@ package unreal;
 		Returns:
 		    PrimaryAssetId:
 	**/
-	static public function get_primary_asset_id_from_soft_class_reference(soft_class_reference:Class<Dynamic>):unreal.PrimaryAssetId;
+	static public function get_primary_asset_id_from_soft_class_reference(soft_class_reference:unreal.Class):unreal.PrimaryAssetId;
 	/**
 		X.get_primary_asset_id_from_soft_object_reference(soft_object_reference) -> PrimaryAssetId
 		Returns the Primary Asset Id for a Soft Object Reference, this can return an invalid one if not registered
@@ -1514,7 +1523,7 @@ package unreal;
 		Returns:
 		    Class:
 	**/
-	static public function get_soft_class_reference_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):Class<Dynamic>;
+	static public function get_soft_class_reference_from_primary_asset_id(primary_asset_id:unreal.PrimaryAssetId):unreal.Class;
 	/**
 		X.get_soft_object_reference_from_primary_asset_id(primary_asset_id) -> Object
 		Returns the Object Id associated with a Primary Asset Id, this works even if the asset is not loaded
@@ -1862,7 +1871,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_class(class_:Class<Dynamic>):Bool;
+	static public function is_valid_class(class_:Dynamic):Bool;
 	/**
 		X.is_valid_primary_asset_id(primary_asset_id) -> bool
 		Returns true if the Primary Asset Id is valid
@@ -1895,7 +1904,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function is_valid_soft_class_reference(soft_class_reference:Class<Dynamic>):Bool;
+	static public function is_valid_soft_class_reference(soft_class_reference:unreal.Class):Bool;
 	/**
 		X.is_valid_soft_object_reference(soft_object_reference) -> bool
 		Returns true if the Soft Object Reference is not null
@@ -1949,7 +1958,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	static public function line_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function line_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.line_trace_multi_by_profile(world_context_object, start, end, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Trace a ray against the world using a specific profile and return overlapping hits and then first blocking hit
@@ -1974,7 +1983,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	static public function line_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function line_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.line_trace_multi_for_objects(world_context_object, start, end, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Does a collision trace along the given line and returns all hits encountered.
@@ -1998,7 +2007,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)):
 	**/
-	static public function line_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function line_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		deprecated: 'line_trace_multi_new' was renamed to 'line_trace_multi'.
 	**/
@@ -2027,7 +2036,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function line_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function line_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.line_trace_single_by_profile(world_context_object, start, end, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Trace a ray against the world using a specific profile and return the first blocking hit
@@ -2050,7 +2059,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function line_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function line_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.line_trace_single_for_objects(world_context_object, start, end, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Does a collision trace along the given line and returns the first hit encountered.
@@ -2074,7 +2083,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function line_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function line_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		deprecated: 'line_trace_single_new' was renamed to 'line_trace_single'.
 	**/
@@ -2101,7 +2110,7 @@ package unreal;
 		Returns:
 		    type(Class):
 	**/
-	static public function load_class_asset_blocking(asset_class:Class<Dynamic>):Class<Dynamic>;
+	static public function load_class_asset_blocking(asset_class:unreal.Class):Dynamic;
 	/**
 		X.load_interstitial_ad(ad_id_index) -> None
 		Will load a fullscreen interstitial AdMob ad. Call this before using ShowInterstitialAd
@@ -2252,7 +2261,7 @@ package unreal;
 		Returns:
 		    bool:
 	**/
-	static public function not_equal_soft_class_reference(a:Class<Dynamic>, b:Class<Dynamic>):Bool;
+	static public function not_equal_soft_class_reference(a:unreal.Class, b:unreal.Class):Bool;
 	/**
 		X.not_equal_soft_object_reference(a, b) -> bool
 		Returns true if the values are not equal (A != B)
@@ -2351,7 +2360,7 @@ package unreal;
 		    text_color (LinearColor): Whether or not to print the output to the console
 		    duration (float): The display duration (if Print to Screen is True). Using negative number will result in loading the duration time from the config.
 	**/
-	static public function print_string(world_context_object:unreal.Object, string:String = "\"Hello\"", print_to_screen:Bool = true, print_to_log:Bool = true, text_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 2.000000):Void;
+	static public function print_string(world_context_object:unreal.Object, string:String = "\"Hello\"", print_to_screen:Bool = true, print_to_log:Bool = true, ?text_color:unreal.LinearColor, duration:Float = 2.000000):Void;
 	/**
 		X.print_text(world_context_object, text="Hello", print_to_screen=True, print_to_log=True, text_color=[0.000000, 0.000000, 0.000000, 0.000000], duration=2.000000) -> None
 		Prints text to the log, and optionally, to the screen
@@ -2365,7 +2374,7 @@ package unreal;
 		    text_color (LinearColor): Whether or not to print the output to the console
 		    duration (float): The display duration (if Print to Screen is True). Using negative number will result in loading the duration time from the config.
 	**/
-	static public function print_text(world_context_object:unreal.Object, text:unreal.Text = "\"Hello\"", print_to_screen:Bool = true, print_to_log:Bool = true, text_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], duration:Float = 2.000000):Void;
+	static public function print_text(world_context_object:unreal.Object, ?text:unreal.Text, print_to_screen:Bool = true, print_to_log:Bool = true, ?text_color:unreal.LinearColor, duration:Float = 2.000000):Void;
 	/**
 		X.quit_editor() -> None
 		Exit the editor
@@ -2547,7 +2556,7 @@ package unreal;
 		
 		    out_actors (Array(Actor)): Returned array of actors. Unsorted.
 	**/
-	static public function sphere_overlap_actors(world_context_object:unreal.Object, sphere_pos:unreal.Vector, sphere_radius:Float, object_types:Array<ObjectTypeQuery>, actor_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<Actor>;
+	static public function sphere_overlap_actors(world_context_object:unreal.Object, sphere_pos:unreal.Vector, sphere_radius:Float, object_types:Array<ObjectTypeQuery>, actor_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<Actor>;
 	/**
 		deprecated: 'sphere_overlap_actors_new' was renamed to 'sphere_overlap_actors'.
 	**/
@@ -2570,7 +2579,7 @@ package unreal;
 		
 		    out_components (Array(PrimitiveComponent)):
 	**/
-	static public function sphere_overlap_components(world_context_object:unreal.Object, sphere_pos:unreal.Vector, sphere_radius:Float, object_types:Array<ObjectTypeQuery>, component_class_filter:Class<Dynamic>, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
+	static public function sphere_overlap_components(world_context_object:unreal.Object, sphere_pos:unreal.Vector, sphere_radius:Float, object_types:Array<ObjectTypeQuery>, component_class_filter:Dynamic, actors_to_ignore:Array<Actor>):Array<PrimitiveComponent>;
 	/**
 		deprecated: 'sphere_overlap_components_new' was renamed to 'sphere_overlap_components'.
 	**/
@@ -2600,7 +2609,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function sphere_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function sphere_trace_multi(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.sphere_trace_multi_by_profile(world_context_object, start, end, radius, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweep a sphere against the world and return all initial overlaps using a specific profile, then overlapping hits and then first blocking hit
@@ -2626,7 +2635,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function sphere_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function sphere_trace_multi_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		X.sphere_trace_multi_for_objects(world_context_object, start, end, radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> Array(HitResult) or None
 		Sweeps a sphere along the given line and returns all hits encountered.
@@ -2651,7 +2660,7 @@ package unreal;
 		
 		    out_hits (Array(HitResult)): A list of hits, sorted along the trace from start to finish.  The blocking hit will be the last hit, if there was one.
 	**/
-	static public function sphere_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Array<HitResult>;
+	static public function sphere_trace_multi_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Array<HitResult>;
 	/**
 		deprecated: 'sphere_trace_multi_new' was renamed to 'sphere_trace_multi'.
 	**/
@@ -2681,7 +2690,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function sphere_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function sphere_trace_single(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, trace_channel:unreal.TraceTypeQuery, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.sphere_trace_single_by_profile(world_context_object, start, end, radius, profile_name, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweep a sphere against the world and return the first blocking hit using a specific profile
@@ -2705,7 +2714,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function sphere_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function sphere_trace_single_by_profile(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, profile_name:unreal.Name, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		X.sphere_trace_single_for_objects(world_context_object, start, end, radius, object_types, trace_complex, actors_to_ignore, draw_debug_type, ignore_self, trace_color=[0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color=[0.000000, 0.000000, 0.000000, 0.000000], draw_time=5.000000) -> HitResult or None
 		Sweeps a sphere along the given line and returns the first hit encountered.
@@ -2730,7 +2739,7 @@ package unreal;
 		
 		    out_hit (HitResult): Properties of the trace hit.
 	**/
-	static public function sphere_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, trace_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], trace_hit_color:unreal.LinearColor = [0.000000, 0.000000, 0.000000, 0.000000], draw_time:Float = 5.000000):Dynamic;
+	static public function sphere_trace_single_for_objects(world_context_object:unreal.Object, start:unreal.Vector, end:unreal.Vector, radius:Float, object_types:Array<ObjectTypeQuery>, trace_complex:Bool, actors_to_ignore:Array<Actor>, draw_debug_type:unreal.DrawDebugTrace, ignore_self:Bool, ?trace_color:unreal.LinearColor, ?trace_hit_color:unreal.LinearColor, draw_time:Float = 5.000000):Dynamic;
 	/**
 		deprecated: 'sphere_trace_single_new' was renamed to 'sphere_trace_single'.
 	**/

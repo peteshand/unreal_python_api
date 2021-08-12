@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "EditorUtilityLibrary") extern class EditorUtilityLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_actor_reference(path_to_actor) -> Actor
 		Attempts to find the actor specified by PathToActor in the current editor world
 		

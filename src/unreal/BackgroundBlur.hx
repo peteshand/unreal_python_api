@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "BackgroundBlur") extern class BackgroundBlur extends unreal.ContentWidget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] True to modulate the strength of the blur based on the widget alpha.
 	**/
 	public var apply_alpha_to_blur : Bool;

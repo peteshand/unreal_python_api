@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "AssetTools") extern class AssetTools extends unreal.Interface {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.create_asset(asset_name, package_path, asset_class, factory, calling_context="None") -> Object
 		Creates an asset with the specified name, path, and factory
 		
@@ -15,7 +24,7 @@ package unreal;
 		Returns:
 		    Object: the new asset or NULL if it fails
 	**/
-	public function create_asset(asset_name:String, package_path:String, asset_class:Class<Dynamic>, factory:unreal.Factory, calling_context:unreal.Name = "\"None\""):unreal.Object;
+	public function create_asset(asset_name:String, package_path:String, asset_class:Dynamic, factory:unreal.Factory, ?calling_context:unreal.Name):unreal.Object;
 	/**
 		x.create_asset_with_dialog(asset_name, package_path, asset_class, factory, calling_context="None") -> Object
 		Opens an asset picker dialog and creates an asset with the specified name and path
@@ -30,7 +39,7 @@ package unreal;
 		Returns:
 		    Object:
 	**/
-	public function create_asset_with_dialog(asset_name:String, package_path:String, asset_class:Class<Dynamic>, factory:unreal.Factory, calling_context:unreal.Name = "\"None\""):unreal.Object;
+	public function create_asset_with_dialog(asset_name:String, package_path:String, asset_class:Dynamic, factory:unreal.Factory, ?calling_context:unreal.Name):unreal.Object;
 	/**
 		x.create_unique_asset_name(base_package_name, suffix) -> (out_package_name=str, out_asset_name=str)
 		Creates a unique package and asset name taking the form InBasePackageName+InSuffix

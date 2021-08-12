@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "SoundSubmix") extern class SoundSubmix extends unreal.SoundSubmixWithParentBase {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_envelope_follower_delegate(world_context_object, on_submix_envelope_bp) -> None
 		Adds an envelope follower delegate to the submix when envelope following is enabled on this submix.
 		
@@ -109,7 +118,7 @@ package unreal;
 		    hop_size (float): 
 		    spectrum_type (AudioSpectrumType):
 	**/
-	public function start_spectral_analysis(world_context_object:unreal.Object, fft_size:unreal.FFTSize = FFTSize.DEFAULT_SIZE, interpolation_method:unreal.FFTPeakInterpolationMethod = FFTPeakInterpolationMethod.LINEAR, window_type:unreal.FFTWindowType = FFTWindowType.HANN, hop_size:Float = 0.000000, spectrum_type:unreal.AudioSpectrumType = AudioSpectrumType.MAGNITUDE_SPECTRUM):Void;
+	public function start_spectral_analysis(world_context_object:unreal.Object, ?fft_size:unreal.FFTSize, ?interpolation_method:unreal.FFTPeakInterpolationMethod, ?window_type:unreal.FFTWindowType, hop_size:Float = 0.000000, ?spectrum_type:unreal.AudioSpectrumType):Void;
 	/**
 		x.stop_envelope_following(world_context_object) -> None
 		Start envelope following the submix output. Register with OnSubmixEnvelope to receive envelope follower data in BP.
@@ -129,7 +138,7 @@ package unreal;
 		    path (str): 
 		    existing_sound_wave_to_overwrite (SoundWave):
 	**/
-	public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, existing_sound_wave_to_overwrite:unreal.SoundWave = null):Void;
+	public function stop_recording_output(world_context_object:unreal.Object, export_type:unreal.AudioRecordingExportType, name:String, path:String, ?existing_sound_wave_to_overwrite:unreal.SoundWave):Void;
 	/**
 		x.stop_spectral_analysis(world_context_object) -> None
 		Start spectrum analysis of the audio output.

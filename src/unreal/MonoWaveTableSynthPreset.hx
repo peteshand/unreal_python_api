@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MonoWaveTableSynthPreset") extern class MonoWaveTableSynthPreset extends unreal.Object {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(int32):  [Read-Only] How many evenly-spaced keyframes to use when LockKeyframesToGrid is true
 	**/
 	public var lock_keyframes_to_grid : Int;

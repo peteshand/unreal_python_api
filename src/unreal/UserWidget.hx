@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "UserWidget") extern class UserWidget extends unreal.Widget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.add_to_player_screen(z_order=0) -> bool
 		Adds the widget to the game's viewport in a section dedicated to the player.  This is valuable in a split screen
 		game where you need to only show a widget over a player's portion of the viewport.
@@ -32,7 +41,7 @@ package unreal;
 		    animation_event (WidgetAnimationEvent): the event to watch for.
 		    user_tag (Name): Scopes the delegate to only be called when the animation completes with a specific tag set on it when it was played.
 	**/
-	public function bind_to_animation_event(animation:unreal.WidgetAnimation, delegate:unreal.WidgetAnimationDynamicEvent, animation_event:unreal.WidgetAnimationEvent, user_tag:unreal.Name = "\"None\""):Void;
+	public function bind_to_animation_event(animation:unreal.WidgetAnimation, delegate:unreal.WidgetAnimationDynamicEvent, animation_event:unreal.WidgetAnimationEvent, ?user_tag:unreal.Name):Void;
 	/**
 		x.bind_to_animation_finished(animation, delegate) -> None
 		Bind an animation finished delegate.
@@ -629,7 +638,7 @@ package unreal;
 		Returns:
 		    UMGSequencePlayer:
 	**/
-	public function play_animation(animation:unreal.WidgetAnimation, start_at_time:Float = 0.000000, num_loops_to_play:Int = 1, play_mode:unreal.UMGSequencePlayMode = UMGSequencePlayMode.FORWARD, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
+	public function play_animation(animation:unreal.WidgetAnimation, start_at_time:Float = 0.000000, num_loops_to_play:Int = 1, ?play_mode:unreal.UMGSequencePlayMode, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
 	/**
 		deprecated: 'play_animation_at_time' was renamed to 'play_animation'.
 	**/
@@ -681,7 +690,7 @@ package unreal;
 		Returns:
 		    UMGSequencePlayer:
 	**/
-	public function play_animation_time_range(animation:unreal.WidgetAnimation, start_at_time:Float = 0.000000, end_at_time:Float = 0.000000, num_loops_to_play:Int = 1, play_mode:unreal.UMGSequencePlayMode = UMGSequencePlayMode.FORWARD, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
+	public function play_animation_time_range(animation:unreal.WidgetAnimation, start_at_time:Float = 0.000000, end_at_time:Float = 0.000000, num_loops_to_play:Int = 1, ?play_mode:unreal.UMGSequencePlayMode, playback_speed:Float = 1.000000, restore_state:Bool = false):unreal.UMGSequencePlayer;
 	/**
 		deprecated: 'play_animation_to' was renamed to 'play_animation_time_range'.
 	**/

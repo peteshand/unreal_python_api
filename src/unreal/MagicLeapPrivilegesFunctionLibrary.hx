@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "MagicLeapPrivilegesFunctionLibrary") extern class MagicLeapPrivilegesFunctionLibrary extends unreal.BlueprintFunctionLibrary {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		X.check_privilege(privilege) -> bool
 		Check whether the application has the specified privilege.
 		This does not solicit consent from the end-user and is non-blocking.

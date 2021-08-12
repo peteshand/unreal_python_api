@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "ScrollBox") extern class ScrollBox extends unreal.PanelWidget {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		(bool):  [Read-Only] Disable to stop scrollbars from activating inertial overscrolling
 	**/
 	public var allow_overscroll : Bool;
@@ -99,7 +108,7 @@ package unreal;
 		    scroll_destination (DescendantScrollDestination): 
 		    padding (float):
 	**/
-	public function scroll_widget_into_view(widget_to_find:unreal.Widget, animate_scroll:Bool = true, scroll_destination:unreal.DescendantScrollDestination = DescendantScrollDestination.INTO_VIEW, padding:Float = 0.000000):Void;
+	public function scroll_widget_into_view(widget_to_find:unreal.Widget, animate_scroll:Bool = true, ?scroll_destination:unreal.DescendantScrollDestination, padding:Float = 0.000000):Void;
 	/**
 		(Margin):  [Read-Only] The margin around the scrollbar
 	**/

@@ -2,6 +2,15 @@
 package unreal;
 @:pythonImport("unreal", "PathFollowingComponent") extern class PathFollowingComponent extends unreal.ActorComponent {
 	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+	/**
 		x.get_path_action_type() -> PathFollowingAction
 		Get Path Action Type
 		deprecated: This function is now deprecated, please use AIController.GetMoveStatus instead
