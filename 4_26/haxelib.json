@@ -3,8 +3,9 @@
     "url":"https://github.com/peteshand/unreal_python_api",
     "license":"MIT",
     "tags":["ue4", "ue5", "unreal", "unreal engine", "python api", "editor"],
-    "description":"Unreal Engine Python API externs",
+    "description":"Unreal Engine Python API Haxe externs",
     "version":"0.0.1",
     "contributors": ["p.j.shand"],
-    "classPath": "src"
+    "classPath": "src",
+    "releasenote": "initial release"
 }
