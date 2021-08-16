@@ -1,0 +1,17 @@
+/* This file is generated, do not edit! */
+package unreal;
+@:pythonImport("unreal", "LightEstimationCamera") extern class LightEstimationCamera extends unreal.EnumBase {
+	static public var FAR_LEFT : Dynamic;
+	static public var FAR_RIGHT : Dynamic;
+	static public var LEFT : Dynamic;
+	static public var RIGHT : Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	@:native("__init__")
+	public function ___init__(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Dynamic;
+	/**
+		Initialize self.  See help(type(self)) for accurate signature.
+	**/
+	public function new(?args:python.VarArgs<Dynamic>, ?kwargs:python.KwArgs<Dynamic>):Void;
+}
